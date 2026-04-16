@@ -1,0 +1,95 @@
+.oke-stars {
+  line-height:1;
+  position:relative;
+  display:inline-block
+}
+.oke-stars-background svg {
+  overflow:visible
+}
+.oke-stars-foreground {
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  left:0
+}
+.oke-sr {
+  --oke-starRating-spaceAbove: 0;
+  --oke-starRating-spaceBelow: 0;
+  display:inline-block;
+  padding-top:var(--oke-starRating-spaceAbove);
+  padding-bottom:var(--oke-starRating-spaceBelow)
+}
+.oke-sr .oke-is-clickable {
+  cursor:pointer
+}
+.oke-sr--hidden {
+  display:none
+}
+.oke-sr-count,
+.oke-sr-rating,
+.oke-sr-stars {
+  display:inline-block;
+  vertical-align:middle
+}
+.oke-sr-stars {
+  line-height:1;
+  margin-right:8px
+}
+.oke-sr-rating {
+  display:none
+}
+.oke-sr-count--brackets:before {
+  content:"("
+}
+.oke-sr-count--brackets:after {
+  content:")"
+}
+.oke-sr {
+  --oke-stars-foregroundColor: #000000;
+  --oke-stars-backgroundColor: #E5E5E5;
+  --oke-stars-borderWidth: 0;
+}
+.underlined-info-button {
+  position: relative;
+  appearance: button;
+  display: block!important;
+  width: fit-content!important;
+  outline: none!important;
+  text-decoration: underline!important;
+  text-decoration-color: rgb(0, 0, 0)!important;
+  background-color: rgba(0, 0, 0, 0)!important;
+  border-bottom-color: rgb(0, 0, 0)!important;
+  border-bottom-style: none!important;
+  border-bottom-width: 0!important;
+  border-left-color: rgb(0, 0, 0)!important;
+  border-left-style: none!important;
+  border-left-width: 0!important;
+  border-right-color: rgb(0, 0, 0)!important;
+  border-right-style: none!important;
+  border-right-width: 0!important;
+  border-top-color: rgb(0, 0, 0)!important;
+  border-radius: 8px!important;
+  border-top-style: none!important;
+  border-top-width: 0!important;
+  color: rgb(0, 0, 0)!important;
+  overflow-wrap: break-word;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0!important;
+  text-transform: none!important;
+  transition-duration: 0.2s;
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform, outline;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+  font-family: var(--global-typography-text-font-family), sans-serif!important;
+  font-size: 12px!important;
+  line-height: 21px;
+  font-weight: 400!important;
+}
+.underlined-info-button.inline {
+  display: inline-block!important;
+}
+.underlined-info-button.danger {
+  color: rgb(222, 20, 20)!important;
+  text-decoration-color: rgb(222, 20, 20)!important;
+}
