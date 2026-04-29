@@ -90,7 +90,7 @@
   .button-link::after {
     position: absolute;
     bottom: -0.25rem;
-    left: 0px;
+    left: 0;
     display: block;
     height: 1px;
     width: 100%;

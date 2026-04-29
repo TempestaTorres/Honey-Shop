@@ -1,4 +1,4 @@
-import { Component, effect, ElementRef, Input, signal, viewChildren, WritableSignal } from '@angular/core';
+import { Component, effect, ElementRef, Input, signal, viewChildren } from '@angular/core';
 import { FaqType } from '../../types/faq-type';
 import { IntersectingService } from '../../services/intersecting-service';
 import { ObserveElementDirective } from '../../directives/scroll-observer';

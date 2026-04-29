@@ -622,8 +622,7 @@ button.swiper-pagination-bullet {
 }
 @media (hover: hover) and (pointer: fine) {
 
-  .group:hover .carousel-swiper-product .swiper-button-prev,.group:hover
-  .carousel-swiper-product .swiper-button-next {
+  .group:hover .carousel-swiper-product .swiper-button-prev,.group:hover .carousel-swiper-product .swiper-button-next {
     visibility: visible;
     opacity: 1;
   }
@@ -713,8 +712,7 @@ button.swiper-pagination-bullet {
 }
 @media (hover: hover) and (pointer: fine) {
 
-  .group:hover .carousel-swiper-plp-card-image .swiper-button-prev,.group:hover
-  .carousel-swiper-plp-card-image .swiper-button-next {
+  .group:hover .carousel-swiper-plp-card-image .swiper-button-prev,.group:hover .carousel-swiper-plp-card-image .swiper-button-next {
     transform: translate(0px, 0px);
   }
 }

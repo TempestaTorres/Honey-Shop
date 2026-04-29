@@ -16,7 +16,7 @@ export class ZoomableImage {
   public isLoading = signal(true);
 
   public zoomIn(): void {
-    this.isZoomed.update((value) => !this.isZoomed());
+    this.isZoomed.update((value) => !value);
 
     this.zoomer.nativeElement.style.transform = this.isZoomed() ? 'scale(2)' : 'scale(1)';
   }
