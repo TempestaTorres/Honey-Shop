@@ -1,0 +1,21 @@
+.product-gallery-zoomable .swiper-slide {
+  display: flex;
+}
+.product-gallery-zoomable-item {
+  cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' fill='none'%3E%3Cpath fill='%23000' fill-opacity='.32' d='M0 0h44v44H0z'/%3E%3Cpath stroke='%23fff' stroke-linecap='square' stroke-linejoin='round' d='M16.5 22h11M22 16.5v11'/%3E%3C/svg%3E") 22 22,zoom-in;
+  display: inline-block;
+  transition-property: transform;
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: 100%;
+  height: 100%;
+}
+.product-gallery-zoomable-item.zoom-in {
+  cursor:
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2744%27 height=%2744%27 fill=%27none%27%3E%3Cpath fill=%27%23000%27 fill-opacity=%27.32%27 d=%27M0 0h44v44H0z%27/%3E%3Cpath stroke=%27%23fff%27 stroke-linecap=%27square%27 stroke-linejoin=%27round%27 d=%27M16.5 22h11%27/%3E%3C/svg%3E")
+    22 22,
+    zoom-out;
+}

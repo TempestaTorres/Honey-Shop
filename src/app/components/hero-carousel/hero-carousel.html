@@ -1,0 +1,67 @@
+<div #carousel class="swiper carousel-swiper-hero-carousel swiper-backface-hidden">
+  <div class="swiper-wrapper">
+
+    @for (slide of heroData.slides; track $index) {
+
+      <!-- Slide -->
+      <div class="swiper-slide">
+
+        @if (slide.imageUrl.param !== null) {
+
+          <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="slide-image-wrapper">
+            <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+          </a>
+        } @else {
+
+          <a [routerLink]="[slide.imageUrl.url]" class="slide-image-wrapper">
+            <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+          </a>
+        }
+
+        @if (slide.content.hasContent) {
+
+          <!-- Content -->
+          <div class="hero-carousel-content-wrapper">
+            <div class="hero-carousel-content">
+              <div class="content-inner">
+                <h2 class="heading" role="heading">{{ slide.content.title }}</h2>
+                <p class="content-text">{{ slide.content.text }}</p>
+
+                @if (slide.content.button.hasButton && slide.content.button.buttonType === "link-underline") {
+
+                  @if (slide.imageUrl.param !== null) {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="hero-button button-link-underline">
+                    {{ slide.content.button.buttonText }}
+                  </a>
+                  } @else {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url]" class="hero-button button-link-underline">
+                    {{ slide.content.button.buttonText }}
+                  </a>
+                  }
+                } @else if (slide.content.button.hasButton && slide.content.button.buttonType === "button-blur") {
+
+                  @if (slide.imageUrl.param !== null) {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="hero-button button-blur white-before-after">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  } @else {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url]" class="hero-button button-blur white-before-after">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  }
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+  @if (heroData.pagination) {
+    <div class="swiper-pagination js-carousel-pagination" [class.swiper-pagination-lock]="paginationLocked()"></div>
+  }
+</div>

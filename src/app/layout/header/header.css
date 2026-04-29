@@ -1,0 +1,17 @@
+.shopify-section-group-header-group {
+  width: 100%;
+  position: relative;
+}
+.shopify-section-group-header-group .app-header-section {
+  width: 100%;
+}
+.app-section-topbar {
+  padding: 0 .5rem;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  overflow: hidden;
+  position: relative;
+}

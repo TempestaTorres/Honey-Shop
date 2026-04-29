@@ -1,0 +1,67 @@
+.section-how-it-works {
+  padding: 40px 0;
+  flex-wrap: wrap;
+}
+.app-widget-heading-default.how-it-works-heading .app-heading-title  {
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 1.75rem;
+  color: var(--global-color-neutral);
+}
+.honey-club-media-content {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.honey-club-media-wrapper {
+  padding: 1.5rem;
+  background-color: #f1ece4;
+  color: #000000;
+}
+.honey-club-heading .app-heading-title {
+  text-align: center;
+}
+.honey-club-progress {
+  padding-top: 1.5rem;
+}
+.section-tires-text-block > .container {
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  background-color: var(--global--color-secondary);
+}
+.section-tires-text-block .app-heading-title {
+  margin-bottom: 1.5rem;
+}
+.section-honey-club-faqs {
+  padding: 1.5rem 0;
+}
+/*============== Media ===============*/
+@media (min-width: 1024px) {
+  .section-how-it-works {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .app-widget-heading-default.how-it-works-heading .app-heading-title {
+    padding-bottom: 2.5rem;
+  }
+  .honey-club-media-content {
+    padding-bottom: 70px;
+    padding-top: 70px;
+  }
+  .honey-club-media-wrapper {
+    max-width: 748px;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+  .section-tires-text-block > .container {
+    padding-bottom: 3.5rem;
+  }
+  .section-honey-club-faqs {
+    padding: 2.5rem 0 5rem 0;
+  }
+}
+@media (min-width: 1200px) {
+  .section-how-it-works {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}

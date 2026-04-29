@@ -93,3 +93,147 @@
   color: rgb(222, 20, 20)!important;
   text-decoration-color: rgb(222, 20, 20)!important;
 }
+.app-widget {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.app-widget.flex {
+  display: flex;
+}
+.app-widget-heading > .app-widget-container {
+  width: 100%;
+}
+.app-widget-text-editor .app-text-title {
+  width: 100%!important;
+}
+.app-widget-text-editor .app-text-subtitle {
+  width: 100%!important;
+  margin-top: .75rem;
+}
+.app-widget-element-wrapper > .app-widget-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+}
+.app-widget-button .app-button {
+  width: 100%!important;
+}
+.app-widget-column {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.app-widget-column > .app-widget-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.app-widget-image {
+  overflow: hidden;
+  background-color: var(--global--color-primary);
+}
+.app-widget-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition-duration: .3s;
+}
+.app-widget-image-text .image-wrapper {
+  position: relative;
+  width: 100%;
+}
+.app-widget-image-text .image-wrapper img {
+  width: 100%;
+  max-width: 100%;
+  height: fit-content;
+  display: block;
+  object-fit: cover;
+}
+.app-widget-image-text .image-wrapper.image-aspect {
+  aspect-ratio: 4/3;
+}
+.app-widget-image-text .image-wrapper.image-aspect img {
+  aspect-ratio: 4/3;
+}
+.app-widget-image-text .text-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  flex: 1 1 0;
+}
+.app-widget-image-text .text-wrapper.has-padding {
+  padding-top: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .app-widget-image-text .image-wrapper {
+    width: 56.25%;
+  }
+  .app-widget-image-text .text-wrapper.has-padding {
+    padding-bottom: 2.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (min-width: 1440px) {
+  .app-widget-image-text .text-wrapper.has-padding {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+.breadcrumbs-widget ul, .breadcrumbs-widget ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.breadcrumbs-widget .breadcrumb {
+  display: inline-block;
+}
+.breadcrumbs-widget .breadcrumb:last-child {
+  color: rgba(0,0,0,.56);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 450;
+  white-space: nowrap;
+}
+.breadcrumbs-widget .breadcrumb a {
+  position: relative;
+  text-decoration-line: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 450;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 1);
+}
+.breadcrumbs-widget .breadcrumb a:hover {
+  text-decoration: underline;
+  color: rgba(51,51,51,var(--text-opacity,1));
+}
+.breadcrumb-separator {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 450;
+  color: rgba(0,0,0,.32);
+}
+@media (max-width: 767px) {
+  .breadcrumbs-widget {
+    display: none;
+  }
+}

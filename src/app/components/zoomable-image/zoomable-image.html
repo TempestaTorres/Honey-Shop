@@ -1,0 +1,20 @@
+<div class="swiper-wrapper js-carousel-swiper-gallery product-gallery-zoomable">
+  <div class="swiper-slide">
+    <a #zoomer
+       (click)="zoomIn()"
+       (mouseleave)="reset()"
+       (mousemove)="onMouseMove($event)"
+      [class.zoom-in]="isZoomed()"
+       [class.loading]="isLoading()"
+      class="product-gallery-zoomable-item media"
+       appObserveElement
+       [isContinuous]="false"
+       (isIntersecting)="isIntersecting($event)">
+
+      <div class="lazy-load-overlay"><span class="spinner"></span></div>
+      <div class="image-wrapper desktop-aspect">
+        <img class="lazy-img" [src]="image.src" [alt]="image.name" loading="eager" fetchpriority="high">
+      </div>
+    </a>
+  </div>
+</div>

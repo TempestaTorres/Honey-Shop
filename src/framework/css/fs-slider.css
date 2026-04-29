@@ -1765,15 +1765,15 @@ div.fs-okeReviews .fs-reviews-a11yText {
   opacity: 0 !important;
 }
 .fs-wrapper .fs-detail-right .fs-detail-nav-bar-arrows {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  padding-top: 15px !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-top: 1.5rem !important;
 }
 @media (min-width: 1024px) {
   .fs-wrapper .fs-detail-right .fs-detail-nav-bar-arrows {
-    padding-left: 25px !important;
-    padding-right: 25px !important;
-    padding-top: 25px !important;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    padding-top: 2.5rem !important;
   }
 }
 .fs-wrapper .fs-detail-right .fs-detail-nav-bar-arrows .fs-detail-nav-button#fs-prev-post,
@@ -1815,23 +1815,23 @@ div.fs-okeReviews .fs-reviews-a11yText {
 }
 
 .fs-wrapper .fs-detail-right .fs-detail-nav-bar-arrows .fs-detail-nav-bar-close {
-  width: 10px !important;
-  height: 10px !important;
+  width: 1rem !important;
+  height: 1rem !important;
 }
 .fs-wrapper .fs-detail-right .fs-detail-nav-bar-arrows .fs-detail-nav-bar-close .fs-detail-nav-button {
   position: relative;
 }
 .fs-wrapper .fs-detail-right .fs-detail-nav-bar-arrows .fs-detail-nav-bar-close .fs-detail-nav-button svg {
-  width: 10px;
-  height: 10px;
+  width: 1rem;
+  height: 1rem;
   opacity: 0;
 }
 .fs-wrapper .fs-detail-right .fs-detail-nav-bar-arrows .fs-detail-nav-bar-close .fs-detail-nav-button::after {
   position: absolute;
   top: 30px;
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 1rem;
+  height: 1rem;
   background-repeat: no-repeat;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1849,7 +1849,7 @@ div.fs-okeReviews .fs-reviews-a11yText {
   background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\"><path stroke=\"%23000\" stroke-linecap=\"square\" d=\"m12.5 3.5-9 9\"/><path stroke=\"%23000\" stroke-linecap=\"square\" stroke-linejoin=\"round\" d=\"m12.5 12.5-9-9\"/></svg>");
 }
 .fs-wrapper .fs-detail-right .fs-detail-title {
-  padding: 15px 25px !important;
+  padding: 1.5rem 2.5rem !important;
   font-family:var( --global-typography-accent-font-family ), sans-serif !important;
   font-size: 14px !important;
   line-height: 20px !important;

@@ -1,0 +1,137 @@
+<main class="outline-none">
+  <!--  Hero Carousel-->
+  <section class="section-boxed section-hero-carousel">
+    <!-- Cover image -->
+    <div class="cover-image-wrapper">
+      <img src="/assets/images/common/Header_Desktop.jpg" alt="" fetchpriority="high" loading="eager">
+    </div>
+    <!-- Carousel -->
+    <div class="section-hero-carousel__carousel">
+      <app-hero-carousel [heroData]="topHeroCarousel" class="app-widget"></app-hero-carousel>
+    </div>
+  </section>
+  <!--  How it works -->
+  <section class="section-boxed section-how-it-works">
+    <!-- Heading -->
+    <div
+      #howItWorksHeading
+      appObserveElement
+      #intersectionHowItWorksHeading="intersection"
+      [isContinuous]="false"
+      (isIntersecting)="isIntersecting($event, howItWorksHeading)"
+      [class.scroll-trigger]="intersectionHowItWorksHeading._isIntersecting"
+      [class.animate--slide-in]="intersectionHowItWorksHeading._isIntersecting"
+
+      class="app-widget app-widget-heading app-widget-heading-default how-it-works-heading app-invisible">
+      <div class="app-widget-container">
+        <h2 class="app-heading-title">how it works</h2>
+      </div>
+    </div>
+
+    <!-- Images -->
+    <div
+      #threeColumns
+      appObserveElement
+      #intersectionThreeColumns="intersection"
+      [isContinuous]="false"
+      (isIntersecting)="isIntersecting($event, threeColumns)"
+      [class.scroll-trigger]="intersectionThreeColumns._isIntersecting"
+      [class.animate--slide-in]="intersectionThreeColumns._isIntersecting"
+      class="app-widget app-invisible">
+
+      <app-about-carousel-swiper class="app-widget"></app-about-carousel-swiper>
+    </div>
+  </section>
+  <!--  Media loyalty tiers -->
+  <section class="section-boxed section-media">
+    <div class="app-container">
+      <!-- Media layout -->
+      <div class="media-layout">
+        <img class="media-image" src="/assets/images/common/Black_Desktop.jpg" alt="" loading="lazy">
+      </div>
+      <!-- Media content -->
+      <div class="media-content honey-club-media-content">
+        <div class="media-container">
+          <div class="media-wrapper honey-club-media-wrapper">
+            <!-- Heading -->
+            <div class="app-widget app-widget-heading app-widget-heading-default honey-club-heading">
+              <div class="app-widget-container">
+                <h2 class="app-heading-title">the honey club loyalty tiers</h2>
+              </div>
+            </div>
+            <!-- Progress bar -->
+            <div class="app-widget app-progress-bar-widget honey-club-progress">
+              <div class="progress-bar-line"></div>
+              <!-- Bullets -->
+              <div class="progress-bar-bullets">
+                <!-- Bullet -->
+                <div class="progress-bar__bullet-wrapper">
+                  <div class="bullet-wrapper"><div class="bullet"></div></div>
+                  <h3 class="bullet-heading text-button">Gold</h3>
+                  <div class="text-button small">$0 - $599</div>
+                </div>
+                <!-- Bullet -->
+                <div class="progress-bar__bullet-wrapper">
+                  <div class="bullet-wrapper"><div class="bullet"></div></div>
+                  <h3 class="bullet-heading text-button">Diamond</h3>
+                  <div class="text-button small">$600 - $3,999</div>
+                </div>
+                <!-- Bullet -->
+                <div class="progress-bar__bullet-wrapper">
+                  <div class="bullet-wrapper"><div class="bullet"></div></div>
+                  <h3 class="bullet-heading text-button">Platinum</h3>
+                  <div class="text-button small">$4,000+</div>
+                </div>
+                <!-- Bullet -->
+                <div class="progress-bar__bullet-wrapper">
+                  <div class="bullet-wrapper"><div class="bullet"></div></div>
+                  <h3 class="bullet-heading text-button">Invite only</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  Loyalty Tiers-->
+  <section class="section-boxed section-tires-text-block">
+    <div class="container">
+      <!-- Heading -->
+      <div
+        #tiresHeading
+        appObserveElement
+        #intersectionTiresHeading="intersection"
+        [isContinuous]="false"
+        (isIntersecting)="isIntersecting($event, tiresHeading)"
+        [class.scroll-trigger]="intersectionTiresHeading._isIntersecting"
+        [class.animate--slide-in]="intersectionTiresHeading._isIntersecting"
+        class="app-widget app-widget-heading app-widget-heading-default honey-club-heading app-invisible">
+        <div class="app-widget-container">
+          <h2 class="app-heading-title">the honey club loyalty tiers</h2>
+        </div>
+      </div>
+      <!-- Tabs -->
+      <app-tab-list [tabTitles]="tabTitles" [tabsContent]="tabsContent" class="tab-list-widget"></app-tab-list>
+    </div>
+  </section>
+  <!--  FAQs -->
+  <section class="section-boxed section-honey-club-faqs">
+    <div class="container">
+      <app-accordion-list
+        [faqs]="honeyClubFaqs"
+        class="accordion-list-widget accordion-list-type-medium"></app-accordion-list>
+    </div>
+  </section>
+</main>
+<!-- Footer hero -->
+<section class="section-boxed section-hero-carousel">
+  <!-- Cover image -->
+  <div class="cover-image-wrapper">
+    <img src="/assets/images/common/Footer_Desktop.jpg" alt="" fetchpriority="high" loading="eager">
+  </div>
+  <!-- Carousel -->
+  <div class="section-hero-carousel__carousel">
+    <app-hero-carousel [heroData]="bottomHeroCarousel" class="app-widget"></app-hero-carousel>
+  </div>
+</section>

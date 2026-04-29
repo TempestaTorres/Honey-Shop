@@ -1,0 +1,71 @@
+<div #dialog class="modal-dialog type-slideout" [class.modal-dialog-opened]="open()">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+  <!-- Content -->
+  <div class="modal-dialog-content content-medium">
+    <!-- Header -->
+    <div class="modal-dialog-content-header sticky">
+      <!-- Close button -->
+      <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+      <!-- Title -->
+      <h2 class="modal-dialog-heading-title">Select your country/region</h2>
+    </div>
+
+    <!-- Content -->
+    <div class="modal-dialog-inner">
+      <!-- Panel -->
+      <div class="modal-dialog-panel">
+        <!-- Heading -->
+        <div class="app-widget app-widget-heading app-widget-heading-default">
+          <div class="app-widget-container">
+            <h3 class="app-heading-title">You are currently shopping in</h3>
+          </div>
+        </div>
+        <!-- Current region -->
+        <div class="app-widget-element-wrapper">
+          <div class="app-widget-container">
+            <span class="geolocation-flag-wrapper" [innerHTML]="country"></span>
+            <span class="modal-dialog-heading-title">{{ countryName }}</span>
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="typeset">
+          Be advised that changing your location while shopping will remove all
+          the contents from your shopping bag
+        </div>
+      </div>
+      <!-- Region list -->
+      <ul class="js-list-regions">
+        @for (country of countryLocations; track $index) {
+
+          <li>
+            <a (click)="changeGeoLocation($index)" tabindex="-1">
+              <div class="item-country">
+                <span class="geolocation-flag-wrapper" [innerHTML]="safeHtml[$index]"></span>
+                <span class="modal-dialog-heading-title">{{ country.name }}</span>
+              </div>
+              <span class="modal-dialog-heading-title geolocation-currency">{{ country.currency }}</span>
+            </a>
+          </li>
+
+        }
+      </ul>
+      <!-- Find boutique -->
+      <a (click)="boutiqueFinderClick()" class="boutique-finder group" title="Find a boutique" tabindex="0">
+        <!-- Image -->
+        <div class="app-widget app-widget-image">
+          <img class="group-hover-zoom" src="/assets/images/shots/Honey_Shot.jpg" alt="Honey shot" loading="lazy">
+        </div>
+        <!-- Button -->
+        <div class="button-link"><span class="text-wrapper">Find a boutique</span></div>
+      </a>
+    </div>
+  </div>
+</div>

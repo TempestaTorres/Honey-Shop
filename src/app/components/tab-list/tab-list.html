@@ -1,0 +1,39 @@
+<div
+  #tabListHeader
+  appObserveElement
+  #intersectionTabListHeader="intersection"
+  [isContinuous]="false"
+  (isIntersecting)="isIntersecting($event, tabListHeader)"
+  [class.scroll-trigger]="intersectionTabListHeader._isIntersecting"
+  [class.animate--slide-in]="intersectionTabListHeader._isIntersecting"
+  class="tab-list-header app-invisible">
+  <!--  Navigation -->
+  <div class="tab-titles-wrapper">
+    <div class="tab-titles js-tab-titles ">
+
+      @for (tab of tabTitles; track $index) {
+
+        <div #tabTitle
+             (click)="tabClick($index)"
+            [class.active]="activeTabs[$index]()"
+            class="tab-title js-tab-title" role="tab" tabindex="0">{{ tab }}</div>
+      }
+
+    </div>
+    <!-- Underline -->
+    <div #tabUnderline class="tab-underline js-tab-underline"></div>
+  </div>
+</div>
+
+<!--  Tabs -->
+<div class="tab-contents-wrapper">
+
+  @for (item of tabsContent.tabs; track $index) {
+
+    <app-tab-content
+      [tabsContent]="{type: tabsContent.type, content: item}"
+      [class.active]="activeTabsContent[$index]()"
+      class="tab-content js-tab-content"></app-tab-content>
+  }
+
+</div>

@@ -31,10 +31,11 @@
               }
             ],
             "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
             ],
             "scripts": [
-
+              "src/plugins/swiper/swiper.min.js"
             ]
           },
           "configurations": {

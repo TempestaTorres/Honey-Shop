@@ -1,0 +1,230 @@
+.shopify-kit {
+  .text-button {
+    cursor: pointer;
+    color: currentColor;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    line-height: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    .text-button {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  @media (max-width: 767px) {
+    .text-button.small {
+      font-size: 10px;
+      line-height: normal;
+    }
+  }
+  .button-link-underline {
+    position: relative;
+    padding-bottom: 0.25rem;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-color-primary);
+    text-decoration-line: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+
+    a.button-link-underline:hover {
+      color: var(--buttons-hover-color);
+    }
+  }
+  .button-link-underline::before,
+  .button-link-underline::after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    content: '';
+  }
+  .button-link-underline::before {
+    transform-origin: left;
+    transform: scaleX(0) scaleY(1);
+    transition-duration: 500ms;
+  }
+
+  .button-link-underline::after {
+    transform-origin: left;
+    transform: scaleX(1) scaleY(1);
+    transition-duration: 0s;
+  }
+
+  .button-link-underline:hover::before {
+    transform: scaleX(1) scaleY(1);
+    transition-delay: 500ms;
+  }
+
+  .button-link-underline:hover::after {
+    transform-origin: right;
+    transform: scaleX(0) scaleY(1);
+    transition-duration: 300ms;
+  }
+  .button-link {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 450;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 1);
+    text-decoration-line: none;
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  .button-link::after {
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0px;
+    display: block;
+    height: 1px;
+    width: 100%;
+    transform-origin: right;
+    transform: scaleX(0) scaleY(1);
+    background-color: rgba(0, 0, 0, 1);
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+    content: '';
+  }
+  .button-link:hover {
+    color: rgba(17,17,17,var(--text-opacity,1));
+  }
+  .button-link:hover::after {
+    transform-origin: left;
+    transform: scaleX(1) scaleY(1);
+  }
+  .button-link .text-wrapper {
+    color: var(--buttons-color-neutral);
+  }
+  /* Primary */
+  .button-primary {
+    --text-opacity: 1;
+    position: relative;
+    display: inline-block;
+    min-height: 42px;
+    width: auto;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 450;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, var(--text-opacity, 1));
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  .button-primary:disabled,
+  .button-primary.disabled{
+    pointer-events: none;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.32);
+    color: rgba(0, 0, 0, 0.32);
+  }
+
+  .button-primary {
+    --border-opacity: 1;
+    --bg-opacity: 1;
+    border-color: rgba(0, 0, 0, var(--border-opacity, 1));
+    background-color: rgba(0, 0, 0, var(--bg-opacity, 1));
+  }
+  .button-primary:hover {
+    --border-opacity: 1;
+    --bg-opacity: 1;
+    border-color: rgba(51, 51, 51, var(--border-opacity, 1));
+    background-color: rgba(51, 51, 51, var(--bg-opacity, 1));
+  }
+
+  a.button-primary:hover {
+    --text-opacity: 1;
+    color: rgba(255, 255, 255, var(--text-opacity, 1));
+  }
+  .button-large {
+    min-height: 50px;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  /* Button blur */
+  .button-blur {
+    position: relative;
+    display: inline-block;
+    min-height: 42px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  .button-blur:disabled {
+    pointer-events: none;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.32);
+    color: rgba(0, 0, 0, 0.32);
+  }
+  .button-blur {
+    --backdrop-blur: blur(2px);
+    border-width: 0 !important;
+    background-color: rgba(0, 0, 0, 0.32);
+    color: rgba(255, 255, 255, 1);
+    backdrop-filter: var(--backdrop-blur) var(--backdrop-brightness) var(--backdrop-contrast) var(--backdrop-grayscale) var(--backdrop-hue-rotate) var(--backdrop-invert) var(--backdrop-opacity) var(--backdrop-saturate) var(--backdrop-sepia);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+
+    .button-blur:hover {
+      background-color: rgba(255, 255, 255, 1);
+      color: rgba(0, 0, 0, 1)!important;
+    }
+  }
+  .button-blur.white-before-after::before, .button-blur.white-before-after::after {
+    content: "";
+    background-color: rgb(255, 255, 255);
+  }
+
+  .button-disabled {
+    pointer-events: none;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.32);
+    color: rgba(0, 0, 0, 0.32);
+  }
+
+  .button-loading {
+    color: transparent !important;
+  }
+
+  .button-loading svg {
+    color: transparent !important;
+  }
+}
+

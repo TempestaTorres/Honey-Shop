@@ -1,0 +1,405 @@
+<div #megaMenu class="mega-menu-panel-wrap">
+  <div class="mega-menu-populated">
+    <div class="mega-menu-container">
+
+      <!-- Menu New -->
+      <div class="desktop-mega-menu-item mega-menu-list-items" [class.menu-hidden]="menuItemHidden[0]()">
+
+        @for (item of news; track $index) {
+
+          <div class="list-item menu-list-item">
+            <a (click)="menuCollectionsItemClick(item.url)" class="picture-wrapper group" tabindex="0">
+              <!-- Image -->
+              <div class="app-widget app-widget-image">
+                <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+              </div>
+            </a>
+            <div class="menu-list-item-footer">
+              <a class="button-link"
+                 (click)="menuCollectionsItemClick(item.url)"
+                 tabindex="0">
+                {{ item.category }}
+              </a>
+            </div>
+          </div>
+
+        }
+
+      </div>
+
+      <!-- Menu Lingerie -->
+      <div class="desktop-mega-menu-item desktop-menu-sub-group-wrapper" [class.menu-hidden]="menuItemHidden[1]()">
+        <div class="menu-sub-items-title"><strong>Lingerie</strong></div>
+
+        <div class="desktop-menu-sub-group">
+          <!-- List items -->
+          <ul class="desktop-menu-list">
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('all-lingerie')"
+                   class="button-link"
+                   title="Shop All Lingerie">Shop All Lingerie</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('bras')"
+                   class="button-link"
+                   title="Bras">Bras</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('bottoms')"
+                   class="button-link"
+                   title="Bottoms">Bottoms</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('bodysuits')"
+                   class="button-link"
+                   title="Bodysuits">Bodysuits</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('bustiers-corsets')"
+                   class="button-link"
+                   title="Bustiers & Corsets">Bustiers & Corsets</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('dresses')"
+                   class="button-link"
+                   title="Dresses">Dresses</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('suspenders')"
+                   class="button-link"
+                   title="Garter Belts">Garter Belts</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('loungewear')"
+                   class="button-link"
+                   title="Lounge">Lounge</a>
+              </div>
+            </li>
+          </ul>
+          <!-- List items -->
+          <ul class="desktop-menu-list">
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('robes-chemises')"
+                   class="button-link"
+                   title="Robes & Chemises">Robes & Chemises</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('stockings')"
+                   class="button-link"
+                   title="Stockings">Stockings</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('latex-lingerie')"
+                   class="button-link"
+                   title="Latex">Latex</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="navigateTo('online-gift-voucher')"
+                   class="button-link"
+                   title="Gift Cards">Gift Cards</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="desktop-mega-menu-item mega-menu-list-items" [class.menu-hidden]="menuItemHidden[1]()">
+
+        @for ( item of newsLingerie; track $index) {
+
+          <div class="list-item menu-list-item">
+            <a (click)="menuCollectionsItemClick(item.url)" class="picture-wrapper aspect-ratio group" tabindex="0">
+              <!-- Image -->
+              <div class="app-widget app-widget-image">
+                <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+              </div>
+            </a>
+            <div class="menu-list-item-footer">
+              <a class="button-link"
+                 (click)="menuCollectionsItemClick(item.url)"
+                 tabindex="0">
+                {{ item.category }}
+              </a>
+            </div>
+          </div>
+        }
+
+      </div>
+
+      <!-- Menu Collections -->
+      <div class="desktop-mega-menu-item desktop-menu-sub-group-wrapper" [class.menu-hidden]="menuItemHidden[2]()">
+        <div class="menu-sub-items-title"><strong>Collections</strong></div>
+
+        <div class="desktop-menu-sub-group">
+          <!-- List items -->
+          <ul class="desktop-menu-list">
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('all-lingerie')"
+                   class="button-link"
+                   title="Shop All Collections">Shop All Collections</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('whitney-lingerie-collection')"
+                   class="button-link"
+                   title="Whitney">Whitney</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('kukuro-lingerie-collection')"
+                   class="button-link"
+                   title="Kukuro">Kukuro</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('jules-lingerie-collection')"
+                   class="button-link"
+                   title="Jules">Jules</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('nakeds-lingerie-collection')"
+                   class="button-link"
+                   title="Nakeds 2.0">Nakeds 2.0</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('bestsellers')"
+                   class="button-link"
+                   title="Best Sellers">Best Sellers</a>
+              </div>
+            </li>
+          </ul>
+          <!-- List items -->
+          <ul class="desktop-menu-list">
+            <li class="menu-sub-label">
+              <span>Edits</span>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('bridal-lingerie')"
+                   class="button-link"
+                   title="Bridal Lingerie">Bridal Lingerie</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('latex-lingerie')"
+                   class="button-link"
+                   title="Latex Lingerie">Latex Lingerie</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('bondage-lingerie')"
+                   class="button-link"
+                   title="Bondage Lingerie">Bondage Lingerie</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('lace-lingerie')"
+                   class="button-link"
+                   title="Lace Lingerie">Lace Lingerie</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('black-lingerie')"
+                   class="button-link"
+                   title="Black Lingerie">Black Lingerie</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="desktop-mega-menu-item mega-menu-list-items" [class.menu-hidden]="menuItemHidden[2]()">
+
+        @for ( item of newsCollections; track $index) {
+
+          <div class="list-item menu-list-item">
+            <a (click)="menuCollectionsItemClick(item.url)" class="picture-wrapper aspect-ratio group" tabindex="0">
+              <!-- Image -->
+              <div class="app-widget app-widget-image">
+                <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+              </div>
+            </a>
+            <div class="menu-list-item-footer">
+              <a class="button-link"
+                 (click)="menuCollectionsItemClick(item.url)"
+                 tabindex="0">
+                {{ item.category }}
+              </a>
+            </div>
+          </div>
+        }
+
+      </div>
+
+      <!-- Menu Accessories-->
+      <div class="desktop-mega-menu-item desktop-menu-sub-group-wrapper" [class.menu-hidden]="menuItemHidden[3]()">
+        <div class="menu-sub-items-title"><strong>Accessories</strong></div>
+
+        <div class="desktop-menu-sub-group">
+          <!-- List items -->
+          <ul class="desktop-menu-list">
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('pleasure-parlour')"
+                   class="button-link"
+                   title="Shop All">Shop All</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('bondage')"
+                   class="button-link"
+                   title="Bondage">Bondage</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('fashion-fetish-cuffs-collars')"
+                   class="button-link"
+                   title="Cuffs & Collars">Cuffs & Collars</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('games')"
+                   class="button-link"
+                   title="Games">Games</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="menuCollectionsItemClick('massage-candles')"
+                   class="button-link"
+                   title="Massage Candles">Massage Candles</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="navigateTo('online-gift-voucher')"
+                   class="button-link"
+                   title="Gift Cards">Gift Cards</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="desktop-mega-menu-item mega-menu-list-items" [class.menu-hidden]="menuItemHidden[3]()">
+
+        @for ( item of newsAccessories; track $index) {
+
+          <div class="list-item menu-list-item">
+            <a (click)="menuCollectionsItemClick(item.url)" class="picture-wrapper aspect-ratio group" tabindex="0">
+              <!-- Image -->
+              <div class="app-widget app-widget-image">
+                <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+              </div>
+            </a>
+            <div class="menu-list-item-footer">
+              <a class="button-link"
+                 (click)="menuCollectionsItemClick(item.url)"
+                 tabindex="0">
+                {{ item.category }}
+              </a>
+            </div>
+          </div>
+        }
+
+      </div>
+
+      <!-- Menu Boutiques -->
+      <div class="desktop-mega-menu-item desktop-menu-sub-group-wrapper" [class.menu-hidden]="menuItemHidden[4]()">
+        <div class="menu-sub-items-title"><strong>Boutiques</strong></div>
+
+        <div class="desktop-menu-sub-group">
+          <!-- List items -->
+          <ul class="desktop-menu-list">
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="navigateTo('boutique-finder')"
+                   class="button-link"
+                   title="Find A Boutique">Find A Boutique</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="navigateTo('services')"
+                   class="button-link"
+                   title="Book An Appointment">Book An Appointment</a>
+              </div>
+            </li>
+            <li>
+              <div class="desktop-menu-list-item">
+                <a (click)="navigateTo('online-gift-voucher')"
+                   class="button-link"
+                   title="Gift Cards">Gift Cards</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="desktop-mega-menu-item mega-menu-list-items" [class.menu-hidden]="menuItemHidden[4]()">
+
+        @for ( item of newsBoutiques; track $index) {
+
+          <div class="list-item menu-list-item">
+            <a (click)="navigateTo(item.url)" class="picture-wrapper aspect-ratio group" tabindex="0">
+              <!-- Image -->
+              <div class="app-widget app-widget-image">
+                <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+              </div>
+            </a>
+            <div class="menu-list-item-footer">
+              <a class="button-link"
+                 (click)="navigateTo(item.url)"
+                 tabindex="0">
+                {{ item.category }}
+              </a>
+            </div>
+          </div>
+        }
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<button type="button" (pointerenter)="menuClose()"
+        aria-label="Mega menu overlay"
+        class="mega-menu-panel-overlay"
+        [class.hidden]="overlayHidden()">
+</button>

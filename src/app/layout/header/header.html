@@ -1,1 +1,13 @@
-<p>header works!</p>
+<div class="shopify-section-group-header-group" (mouseenter)="mouseEnter()">
+  <!--  Top bar -->
+  <div class="app-section-topbar app-header-section">
+    <app-carousel-swiper class="app-widget"></app-carousel-swiper>
+  </div>
+
+  <!--  Geolocation -->
+  <div class="app-section-geolocation app-header-section">
+    <div class="desktop-hidden">
+      <app-geolocation-region></app-geolocation-region>
+    </div>
+  </div>
+</div>

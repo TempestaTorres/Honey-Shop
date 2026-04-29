@@ -1,0 +1,125 @@
+.js-section-site-footer {
+  display: block;
+  margin-top: auto;
+}
+.js-section-site-footer > .footer,
+.js-section-site-footer > .footer-bottom {
+  display: block;
+  width: 100%;
+  background-color: var(--global--color-secondary);
+}
+.js-footer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-reverse {
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.footer-no-gap {
+  gap: 0 !important;
+}
+.js-footer-desktop-navigation {
+  width: 100%;
+  display: flex;
+}
+.js-footer-navigation-block {
+  width: 100%;
+}
+.js-footer-navigation-block .js-footer-heading-title {
+  font-size: 12px;
+  letter-spacing: .48px;
+  line-height: 10px;
+  width: 100%;
+  color: var(--global-color-muted);
+  padding-bottom: 1.25rem;
+}
+.js-footer-desktop-navigation .nav-item {
+  display: flex;
+}
+.js-footer-desktop-navigation .nav-item:not(:last-child) {
+  margin-bottom: .75rem;
+}
+.js-footer-column {
+  display: flex;
+}
+.js-footer-column.column {
+  width: 100%;
+}
+/* Bottom footer */
+.js-section-site-footer > .footer-bottom {
+  background-color: var(--bg-color-primary);
+  padding: 1.5rem 0 5rem 0;
+}
+.footer-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  /*padding-left: 1rem;*/
+  /*padding-right: 1rem;*/
+  position: relative;
+}
+.image-wrapper .site-logo {
+  width: 138px;
+  height: auto;
+  max-width: none;
+}
+.logo-invert {
+  filter: invert(100%);
+}
+.footer-bottom__icons-wrapper .geolocation-trigger-button {
+  position: static;
+}
+.js-footer-mobile-container {
+  width: 100%;
+}
+.js-footer-container .geolocation-trigger-button {
+  position: static;
+}
+/*================ Media ====================*/
+@media (min-width: 1024px) {
+  .js-section-site-footer > .footer {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  .js-footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .js-footer-desktop-navigation {
+    gap: 2rem;
+  }
+  .js-footer-navigation-block {
+    width: 200px;
+  }
+  .js-footer-column.column {
+    width: 34.88%;
+  }
+  .footer-inner {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .image-wrapper .site-logo {
+    width: 192px;
+  }
+}
+@media (min-width: 1200px) {
+  .js-footer-navigation-block {
+    width: 150px;
+  }
+}
+@media (min-width: 1536px) {
+  .js-footer-desktop-navigation {
+    gap: 4rem;
+  }
+}
+@media (min-width: 1536px) {
+  .js-footer-navigation-block {
+    width: 250px;
+  }
+}

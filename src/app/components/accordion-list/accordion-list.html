@@ -1,0 +1,54 @@
+<!-- Heading -->
+<div
+  #faqsHeading
+  appObserveElement
+  #intersectionFaqsHeading="intersection"
+  [isContinuous]="false"
+  (isIntersecting)="isIntersecting($event, faqsHeading)"
+  [class.scroll-trigger]="intersectionFaqsHeading._isIntersecting"
+  [class.animate--slide-in]="intersectionFaqsHeading._isIntersecting"
+  class="app-widget app-widget-heading accordion--faqs-heading app-invisible">
+
+  <div class="app-widget-container">
+    <h2 class="app-heading-title">the honey club loyalty tiers</h2>
+  </div>
+
+  <!-- Accordion Item -->
+  @for (item of faqs; track $index) {
+
+    <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === $index + 1">
+      <!-- Header -->
+      <button #accordionHeader type="button" [attr.data-id]="$index + 1"
+              (click)="toggleItem($index + 1)"
+              class="accordion-item-title js-accordion-button">
+        <span class="text">{{ item.name }}</span>
+        <div class="js-accordion-button__icons-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+            <title id="title-icon-plus">Icon of plus</title>
+            <g id="icon-plus">
+              <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+            </g>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+            <title id="title-icon-minus">Icon of minus</title>
+            <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </button>
+
+      <!-- Content -->
+      <div class="accordion-item-description">
+        <div class="js-accordion-content shopify-policy__container">
+
+          @for (listItem of item.list; track $index) {
+
+            <p>{{ listItem }}</p>
+
+          }
+        </div>
+      </div>
+    </div>
+
+  }
+</div>

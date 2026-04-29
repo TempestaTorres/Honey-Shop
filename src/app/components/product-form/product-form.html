@@ -1,0 +1,110 @@
+<form
+  [formGroup]="productForm"
+  class="js-product-form"
+  (ngSubmit)="onSubmit()"
+  novalidate>
+
+<!--  Select amount -->
+  <div class="product-form-block">
+    <div class="js-form-field-wrapper">
+      <select
+        (change)="isValid()"
+        formControlName="amount"
+        class="input js-select">
+        <option disabled value="">Select your amount</option>
+        <option value="$50">$50</option>
+        <option value="$100">$100</option>
+        <option value="$150">$150</option>
+        <option value="$180">$180</option>
+        <option value="$200">$200</option>
+        <option value="$250">$250</option>
+        <option value="$300">$300</option>
+        <option value="$400">$400</option>
+        <option value="$500">$500</option>
+        <option value="$600">$600</option>
+        <option value="$700">$700</option>
+        <option value="$800">$800</option>
+        <option value="$900">$900</option>
+        <option value="$1,000">$1,000</option>
+      </select>
+    </div>
+  </div>
+  <!--  Other fields -->
+  <div class="product-form-block">
+    <!-- Name -->
+    <div class="js-form-field-wrapper">
+      <input
+        formControlName="name"
+        (input)="isValid()"
+        class="peer input"
+        id="gift-card-sender-name"
+        type="text"
+        aria-label="Recipient’s Name"
+        placeholder="Recipient’s Name"
+        required >
+      <label for="gift-card-sender-name" class="input-label sr-only">Recipient’s Name *</label>
+
+      @if (name?.errors?.['required'] && (name?.dirty || name?.touched)) {
+        <div class="input-error js-input-error-message">Recipient’s Name is required</div>
+      }
+    </div>
+    <!-- Email -->
+    <div class="js-form-field-wrapper">
+      <input
+        formControlName="email"
+        (input)="isValid()"
+        class="peer input"
+        id="gift-card-recipient-email"
+        type="email"
+        aria-label="Recipient’s Email"
+        placeholder="Recipient’s Email"
+        required >
+      <label for="gift-card-recipient-email" class="input-label sr-only">Recipient’s Email *</label>
+
+      @if (email?.errors?.['required'] && (email?.dirty || email?.touched)) {
+        <div class="input-error js-input-error-message">Recipient’s Email is required</div>
+      } @else if (email?.errors?.['email'] && (email?.dirty || email?.touched)) {
+        <div class="input-error js-input-error-message">Invalid Email address</div>
+      }
+    </div>
+    <!-- Message -->
+    <div class="js-form-field-wrapper">
+      <textarea
+        (input)="messageInput()"
+        formControlName="message"
+        class="peer input text-input-giftcard"
+        id="gift-card-message"
+        type="textarea"
+        aria-label="Message"
+        placeholder="Message"
+        rows="5"
+        required ></textarea>
+      <label for="gift-card-message" class="input-label sr-only">Message *</label>
+
+      @if (message?.errors?.['required'] && (message?.dirty || message?.touched)) {
+        <div class="input-error js-input-error-message">Message is required</div>
+      }
+    </div>
+    <!-- Message count -->
+    <div class="js-message-counter">
+      <span>Message {{ messageCounter() }} / 200</span>
+    </div>
+
+  </div>
+  <!--  Button -->
+  <div class="product-form-block">
+    <div class="js-form-field-wrapper">
+      <div class="app-widget app-widget-button">
+        <button
+          [class.disabled]="submitDisabled()"
+          class="button-primary app-button uppercase button-large">
+          Select amount &amp; enter details
+        </button>
+      </div>
+      <div class="app-widget-text-editor app-widget">
+        <p class="text-tiny align-center app-text-title">*Online gift vouchers are valid for 3 year and non-refundable.</p>
+      </div>
+    </div>
+  </div>
+
+</form>

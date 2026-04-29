@@ -1,0 +1,66 @@
+<main class="outline-none">
+  <section class="section-boxed">
+    <!-- Product Image -->
+    <div class="product-image-container">
+      <!-- Zoomable Image -->
+      <app-zoomable-image
+        [image]="{src: '/assets/images/vouchers/VOUCHER_2.jpg', name: 'Online Gift Voucher'}"
+        class="app-widget"></app-zoomable-image>
+    </div>
+    <!-- Gift card summary -->
+    <div class="gift-card-summary">
+      <div class="gift-card-summary-wrap">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs-widget app-widget">
+          <ol>
+            <li class="breadcrumb">
+              <a [routerLink]="['/']">Home</a>
+            </li>
+            <li class="breadcrumb-separator"> — </li>
+            <li class="breadcrumb">
+              <a [routerLink]="['/collections', 'all-lingerie']">Collections</a>
+            </li>
+            <li class="breadcrumb-separator"> — </li>
+            <li class="breadcrumb">Online Gift Voucher</li>
+          </ol>
+        </div>
+
+        <!-- Info -->
+        <div class="gift-card-info">
+          <!-- Heading -->
+          <div class="app-widget-heading gift-card-info-heading">
+            <div class="app-widget-container">
+              <h1 class="app-heading-title">GIFT CARD</h1>
+            </div>
+          </div>
+          <!-- Text -->
+          <div class="app-widget-text-editor gift-card-info-text-editor">
+           <p class="app-text-title typeset">Online</p>
+          </div>
+          <!-- Info Panel -->
+          <div class="gift-card-info-panel">
+            <div class="typeset-description-primary">
+              <p>Shopping for someone else but not sure what to give them? Give the perfect gift
+                that always fits with a Honey Online Gift Voucher*
+              </p>
+              <p>Sent within 30 min via email (the perfect last minute gift).</p>
+              <p><br></p>
+              <p>
+                <em>
+                  <strong>Don't forget to select your gifting amount and add to cart, honey.</strong>
+                </em>
+              </p>
+              <p><br></p>
+              <p>
+                <a [routerLink]="['/terms-conditions']" target="_blank">Gift Card Terms & Conditions</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product form -->
+        <app-product-form class="app-widget"></app-product-form>
+      </div>
+    </div>
+  </section>
+</main>

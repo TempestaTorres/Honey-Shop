@@ -1,0 +1,116 @@
+.tab-list-widget {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.tab-list-widget p,
+.tab-list-widget h1,
+.tab-list-widget h2,
+.tab-list-widget h3,
+.tab-list-widget h4,
+.tab-list-widget h5,
+.tab-list-widget h6 {
+  margin: 0;
+}
+.tab-list-widget .tab-list-header {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+}
+.tab-titles-wrapper {
+  position: relative;
+}
+
+.tab-titles-wrapper::after {
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.08);
+  content: '';
+}
+
+.tab-underline {
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 1);
+  transition-property: transform;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-out;
+  transform: translate3d(0, 0, 0);
+}
+.tab-titles {
+  display: flex;
+  justify-content: center;
+  scrollbar-width: none;
+  width: fit-content;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+.tab-title {
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.56);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.tab-title:hover,
+.tab-title.active {
+  color: rgba(0, 0, 0, 1);
+}
+.tab-contents-wrapper {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  scrollbar-width: none;
+  position: relative;
+}
+.tab-content {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition-property: all;
+  transition-duration: 0s;
+  transition-timing-function: ease-out;
+  transform: translate3d(0, 2rem, 0);
+}
+
+.tab-content.active {
+  opacity: 1;
+  visibility: visible;
+  overflow: visible;
+  max-height: 100%;
+  transition-duration: 0.8s;
+  transform: translate3d(0, 0, 0);
+}
+.tab-content-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1rem 0 1rem;
+}
+/*========== Media ======================*/
+@media (min-width: 1024px) {
+  .tab-content-inner {
+    flex-direction: row;
+    padding: 2.5rem 3rem 0 3rem;
+  }
+}

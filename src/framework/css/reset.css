@@ -1,5 +1,5 @@
 html {
-  line-height:1.15;
+  line-height:1.5;
 }
 *,
 :after,
@@ -64,7 +64,6 @@ pre {
 }
 a {
   background-color:transparent;
-  color:#c36;
   text-decoration:none;
 }
 a:active,
@@ -86,7 +85,7 @@ abbr[title] {
 }
 b,
 strong {
-  font-weight:bolder
+  font-weight:500
 }
 code,
 kbd,
@@ -206,9 +205,6 @@ input[type=text],
 input[type=url],
 select,
 textarea {
-  border:1px solid #666;
-  border-radius:3px;
-  padding:.5rem 1rem;
   transition:all .3s;
   width:100%
 }
@@ -243,13 +239,10 @@ button {
 [type=submit],
 button {
   background-color:transparent;
-  border:1px solid #c36;
-  border-radius:3px;
-  color:#c36;
+  border:1px solid transparent;
   display:inline-block;
   font-size:1rem;
   font-weight:400;
-  padding:.5rem 1rem;
   text-align:center;
   transition:all .3s;
   -webkit-user-select:none;
@@ -257,19 +250,13 @@ button {
   user-select:none;
   white-space:nowrap
 }
-[type=button]:focus:not(:focus-visible),
-[type=submit]:focus:not(:focus-visible),
-button:focus:not(:focus-visible) {
-  outline:none
-}
+
 [type=button]:focus,
 [type=button]:hover,
 [type=submit]:focus,
 [type=submit]:hover,
 button:focus,
 button:hover {
-  background-color:#c36;
-  color:#fff;
   text-decoration:none
 }
 [type=button]:not(:disabled),
@@ -385,4 +372,72 @@ ul {
   margin-block-start:0;
   outline:0;
   vertical-align:baseline
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0);
+  outline-width: 0 !important;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; /* 2 */
 }

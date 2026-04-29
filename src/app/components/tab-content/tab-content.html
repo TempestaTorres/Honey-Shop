@@ -1,0 +1,36 @@
+@if (tabsContent.type === types.HONEY_CLUB) {
+  <div class="tab-content-inner app-widget-image-text">
+    <!-- Image -->
+    <div class="image-wrapper image-aspect">
+      <img [src]="tabsContent.content?.image" alt="Content Image" loading="lazy">
+    </div>
+    <!-- Text -->
+    <div class="text-wrapper has-padding wysiwyg">
+      <!-- Heading -->
+      <div class="app-widget app-widget-heading app-widget-heading-default">
+        <div class="app-widget-container">
+          <h2 class="app-heading-title">{{ tabsContent.content?.title }}</h2>
+        </div>
+      </div>
+      <!-- Subtitle -->
+      <div class="app-widget-text-editor typeset-description-primary">
+        <div class="app-text-subtitle">
+          <span>{{ tabsContent.content?.subTitle }}</span>
+        </div>
+      </div>
+      <!-- Description List -->
+      @if (tabsContent.content.listItems !== undefined) {
+
+        <div class="typeset-description-block typeset-description-primary">
+          <ul class="list-unstyled">
+
+            @for (item of tabsContent.content.listItems; track $index) {
+
+              <li><strong>{{ item.title }}</strong>&nbsp;{{ item.description }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+}

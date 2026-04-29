@@ -1,0 +1,503 @@
+<div class="mega-menu" [class.active]="megaMenuActive()">
+  <div class="js-mega-menu-content">
+    <div class="mega-menu-content-wrapper">
+      <ul>
+        <!-- New Item -->
+        <li>
+          <button (click)="subMenuClick(0)" class="menu-sub-title">
+            <span class="menu-sub-title-text">New</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </button>
+          <!-- Sub menu needs class active -->
+          <div class="menu-sub-panel js-menu-sub-panel" [class.active]="menuSubmenuItemStates[0]()">
+            <div class="menu-sub-panel-wrapper">
+              <div class="menu-sub-panel-content">
+                <!-- Close button -->
+                <button (click)="subMenuClick(0)" class="menu-sub-panel-back" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+                    <path id="icon-chevron-left-2" d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <!-- Text -->
+                  <div class="text">New</div>
+                </button>
+
+                <!-- Content -->
+                <div class="menu-sub-panel-front">
+                  <!-- If we have a sub group -->
+                  <div class="menu-sub-group"></div>
+
+                  <!-- Banner -->
+                  <div class="menu-sub-panel-banner js-menu-sub-panel-banner grid">
+                    @for ( item of news; track $index) {
+
+                      <div class="menu-list-item">
+                        <a (click)="subMenuCollectionsItemClick(item.url)" class="picture-wrapper group" tabindex="0">
+                          <!-- Image -->
+                          <div class="app-widget app-widget-image">
+                            <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+                          </div>
+                        </a>
+                        <div class="menu-list-item-footer">
+                          <a class="button-link"
+                             (click)="subMenuCollectionsItemClick(item.url)"
+                             tabindex="0">
+                            {{ item.category }}
+                          </a>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Lingerie Item -->
+        <li>
+          <button (click)="subMenuClick(1)" class="menu-sub-title">
+            <span class="menu-sub-title-text">Lingerie</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </button>
+          <!-- Sub menu needs class active -->
+          <div class="menu-sub-panel js-menu-sub-panel" [class.active]="menuSubmenuItemStates[1]()">
+            <div class="menu-sub-panel-wrapper">
+              <div class="menu-sub-panel-content">
+                <!-- Close button -->
+                <button (click)="subMenuClick(1)" class="menu-sub-panel-back" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+                    <path id="icon-chevron-left-2" d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <!-- Text -->
+                  <div class="text">Lingerie</div>
+                </button>
+
+                <!-- Content -->
+                <div class="menu-sub-panel-front">
+                  <!-- If we have a sub group -->
+                  <div class="menu-sub-group">
+                    <ul class="menu-sub-items menu-sub-items-level-1">
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('all-lingerie')"
+                           title="Shop All Lingerie"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-1">Shop All Lingerie</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('bras')"
+                           title="Bras"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-2">Bras</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('bottoms')"
+                           title="Bottoms"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-3">Bottoms</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('bodysuits')"
+                           title="Bodysuits"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-4">Bodysuits</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('bustiers-corsets')"
+                           title="Bustiers & Corsets"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-5">Bustiers & Corsets</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('dresses')"
+                           title="Dresses"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-6">Dresses</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('suspenders')"
+                           title="Garter Belts"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-7">Garter Belts</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('loungewear')"
+                           title="Lounge"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-8">Lounge</a>
+                      </li>
+                    </ul>
+                    <!-- More -->
+                    <ul class="menu-sub-items menu-sub-items-level-1">
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('robes-chemises')"
+                           title="Robes & Chemises"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-9">Robes & Chemises</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('stockings')"
+                           title="Stockings"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-10">Stockings</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('latex-lingerie')"
+                           title="Latex"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-11">Latex</a>
+                      </li>
+                      <li>
+                        <a (click)="navigateTo('online-gift-voucher')"
+                           title="Gift Cards"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-12">Gift Cards</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Banner -->
+                  <div class="menu-sub-panel-banner js-menu-sub-panel-banner grid">
+
+                    @for ( item of newsLingerie; track $index) {
+
+                      <div class="menu-list-item">
+                        <a (click)="subMenuCollectionsItemClick(item.url)" class="picture-wrapper group" tabindex="0">
+                          <!-- Image -->
+                          <div class="app-widget app-widget-image">
+                            <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+                          </div>
+                        </a>
+                        <div class="menu-list-item-footer">
+                          <a class="button-link"
+                             (click)="subMenuCollectionsItemClick(item.url)"
+                             tabindex="0">
+                            {{ item.category }}
+                          </a>
+                        </div>
+                      </div>
+                    }
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Collections Item -->
+        <li>
+          <button (click)="subMenuClick(2)" class="menu-sub-title">
+            <span class="menu-sub-title-text">Collections</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </button>
+          <!-- Sub menu needs class active -->
+          <div class="menu-sub-panel js-menu-sub-panel" [class.active]="menuSubmenuItemStates[2]()">
+            <div class="menu-sub-panel-wrapper">
+              <div class="menu-sub-panel-content">
+                <!-- Close button -->
+                <button (click)="subMenuClick(2)" class="menu-sub-panel-back" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+                    <path id="icon-chevron-left-2" d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <!-- Text -->
+                  <div class="text">Collections</div>
+                </button>
+
+                <!-- Content -->
+                <div class="menu-sub-panel-front">
+
+                  <!-- If we have a sub group -->
+                  <div class="menu-sub-group">
+                    <ul class="menu-sub-items menu-sub-items-level-1">
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('all-lingerie')"
+                           title="Shop All Collections"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-1">Shop All Collections</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('whitney-lingerie-collection')"
+                           title="Whitney"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-2">Whitney</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('kukuro-lingerie-collection')"
+                           title="Kukuro"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-3">Kukuro</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('jules-lingerie-collection')"
+                           title="Jules"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-4">Jules</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('nakeds-lingerie-collection')"
+                           title="Nakeds 2.0"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-5">Nakeds 2.0</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('bestsellers')"
+                           title="Best Sellers"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-6">Best Sellers</a>
+                      </li>
+                    </ul>
+                    <!-- More -->
+                    <ul class="menu-sub-items menu-sub-items-level-1">
+                      <li class="menu-sub-label custom-delay-7">
+                        <span>Edits</span>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('bridal-lingerie')"
+                           title="Bridal Lingerie"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-8">Bridal Lingerie</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('latex-lingerie')"
+                           title="Latex Lingerie"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-9">Latex Lingerie</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('bondage-lingerie')"
+                           title="Bondage Lingerie"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-10">Bondage Lingerie</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('lace-lingerie')"
+                           title="Lace Lingerie"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-11">Lace Lingerie</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('black-lingerie')"
+                           title="Black Lingerie"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-12">Black Lingerie</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Banner -->
+                  <div class="menu-sub-panel-banner js-menu-sub-panel-banner grid">
+
+                    @for ( item of newsCollections; track $index) {
+
+                      <div class="menu-list-item">
+                        <a (click)="subMenuCollectionsItemClick(item.url)" class="picture-wrapper group" tabindex="0">
+                          <!-- Image -->
+                          <div class="app-widget app-widget-image">
+                            <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+                          </div>
+                        </a>
+                        <div class="menu-list-item-footer">
+                          <a class="button-link"
+                             (click)="subMenuCollectionsItemClick(item.url)"
+                             tabindex="0">
+                            {{ item.category }}
+                          </a>
+                        </div>
+                      </div>
+                    }
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Accessories Item -->
+        <li>
+          <button (click)="subMenuClick(3)" class="menu-sub-title">
+            <span class="menu-sub-title-text">Accessories</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </button>
+          <!-- Sub menu needs class active -->
+          <div class="menu-sub-panel js-menu-sub-panel" [class.active]="menuSubmenuItemStates[3]()">
+            <div class="menu-sub-panel-wrapper">
+              <div class="menu-sub-panel-content">
+                <!-- Close button -->
+                <button (click)="subMenuClick(3)" class="menu-sub-panel-back" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+                    <path id="icon-chevron-left-2" d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <!-- Text -->
+                  <div class="text">Accessories</div>
+                </button>
+
+                <!-- Content -->
+                <div class="menu-sub-panel-front">
+
+                  <!-- If we have a sub group -->
+                  <div class="menu-sub-group">
+                    <ul class="menu-sub-items menu-sub-items-level-1">
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('pleasure-parlour')"
+                           title="Shop All"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-1">Shop All</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('bondage')"
+                           title="Bondage"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-2">Bondage</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('fashion-fetish-cuffs-collars')"
+                           title="Cuffs & Collars"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-3">Cuffs & Collars</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('games')"
+                           title="Games"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-4">Games</a>
+                      </li>
+                      <li>
+                        <a (click)="subMenuCollectionsItemClick('massage-candles')"
+                           title="Massage Candles"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-5">Massage Candles</a>
+                      </li>
+                      <li>
+                        <a (click)="navigateTo('online-gift-voucher')"
+                           title="Gift Cards"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-6">Gift Cards</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Banner -->
+                  <div class="menu-sub-panel-banner js-menu-sub-panel-banner grid">
+
+                    @for ( item of newsAccessories; track $index) {
+
+                      <div class="menu-list-item">
+                        <a (click)="subMenuCollectionsItemClick(item.url)" class="picture-wrapper group" tabindex="0">
+                          <!-- Image -->
+                          <div class="app-widget app-widget-image">
+                            <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+                          </div>
+                        </a>
+                        <div class="menu-list-item-footer">
+                          <a class="button-link"
+                             (click)="subMenuCollectionsItemClick(item.url)"
+                             tabindex="0">
+                            {{ item.category }}
+                          </a>
+                        </div>
+                      </div>
+                    }
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Boutiques Item -->
+        <li>
+          <button (click)="subMenuClick(4)" class="menu-sub-title">
+            <span class="menu-sub-title-text">Boutiques</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </button>
+          <!-- Sub menu needs class active -->
+          <div class="menu-sub-panel js-menu-sub-panel" [class.active]="menuSubmenuItemStates[4]()">
+            <div class="menu-sub-panel-wrapper">
+              <div class="menu-sub-panel-content">
+                <!-- Close button -->
+                <button (click)="subMenuClick(4)" class="menu-sub-panel-back" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+                    <path id="icon-chevron-left-2" d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <!-- Text -->
+                  <div class="text">Boutiques</div>
+                </button>
+
+                <!-- Content -->
+                <div class="menu-sub-panel-front">
+
+                  <!-- If we have a sub group -->
+                  <div class="menu-sub-group">
+                    <ul class="menu-sub-items menu-sub-items-level-1">
+                      <li>
+                        <a (click)="navigateTo('boutique-finder')"
+                           title="Find A Boutique"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-1">Find A Boutique</a>
+                      </li>
+                      <li>
+                        <a (click)="navigateTo('services')"
+                           title="Book An Appointment"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-2">Book An Appointment</a>
+                      </li>
+                      <li>
+                        <a (click)="navigateTo('online-gift-voucher')"
+                           title="Gift Cards"
+                           class="menu-sub-title menu-sub-title-level-1 custom-delay-3">Gift Cards</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Banner -->
+                  <div class="menu-sub-panel-banner js-menu-sub-panel-banner grid">
+
+                    @for ( item of newsBoutiques; track $index) {
+
+                      <div class="menu-list-item">
+                        <a (click)="navigateTo(item.url)" class="picture-wrapper group" tabindex="0">
+                          <!-- Image -->
+                          <div class="app-widget app-widget-image">
+                            <img class="group-hover-zoom" [src]="item.image" [alt]="item.category" loading="lazy">
+                          </div>
+                        </a>
+                        <div class="menu-list-item-footer">
+                          <a class="button-link"
+                             (click)="navigateTo(item.url)"
+                             tabindex="0">
+                            {{ item.category }}
+                          </a>
+                        </div>
+                      </div>
+                    }
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Honey Club Item -->
+        <li>
+          <a (click)="navigateTo('the-honey-club')"
+            type="button" class="menu-sub-title">
+            <span class="menu-sub-title-text">The Honey Club</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="js-mega-menu-footer">
+      <ul>
+        <!-- Account item -->
+        <li>
+          <a class="menu-link" [routerLink]="['/login']">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <g id="icon-person">
+                <path d="M4.37524 4.4704C4.37524 2.96797 5.56688 1.75 7.03684 1.75C8.5068 1.75 9.69844 2.96797 9.69844 4.4704C9.69844 5.97284 8.5068 7.19081 7.03684 7.19081C6.33094 7.19081 5.65395 6.90419 5.15481 6.39402C4.65566 5.88384 4.37524 5.1919 4.37524 4.4704Z" stroke="currentColor"></path>
+                <path d="M12.25 12.25C12.25 12.25 10.5 8.75 7 8.75C3.5 8.75 1.75 12.25 1.75 12.25" stroke="currentColor"></path>
+              </g>
+            </svg>
+            Accounts</a>
+        </li>
+        <!-- Contact item -->
+        <li>
+          <a class="menu-link" [routerLink]="['/contacts']">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path id="icon-user" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M2.483 9.68a5.245 5.245 0 1 1 1.837 1.837v0l-1.815.514a.433.433 0 0 1-.536-.536l.514-1.815Z"></path>
+            </svg>
+            Contacts</a>
+        </li>
+        <!-- Geolocation item -->
+        <li>
+          <button type="button" class="menu-link">
+            <span #countryFlag></span>
+            <span #countryName></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,347 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="container">
+    <div class="js-footer-container">
+      <!-- Mobile menu -->
+      <div class="js-footer-mobile-container mobile-tablet-hidden">
+
+        <div class="accordion-list-widget">
+
+          <!-- Accordion Item Top Collections -->
+          <div class="accordion-item js-accordion-item accordion--nav" [class.active]="openedAccordionItem() === '1'">
+            <!-- Header -->
+            <button type="button"
+                    (click)="toggleItem('1')"
+                    class="accordion-item-title js-accordion-button">
+              <span class="text">Top Collection</span>
+              <div class="js-accordion-button__icons-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title id="title-icon-plus">Icon of plus</title>
+                  <g id="icon-plus">
+                    <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title id="title-icon-minus">Icon of minus</title>
+                  <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </button>
+            <!-- Content -->
+            <div #content class="accordion-item-description ease-in-out" [attr.data-id]="1">
+              <div class="js-accordion-content">
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/collections', 'all-lingerie']" title="Lingerie">Lingerie</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/collections', 'bras']" title="Bras">Bras</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/collections', 'lace-bras']" title="Lace Bras">Lace Bras</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/collections', 'bridal-lingerie']" title="Bridal Lingerie">Bridal Lingerie</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/collections', 'lingerie-sets']" title="Lingerie Sets">Lingerie Sets</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item Info -->
+          <div class="accordion-item js-accordion-item accordion--nav" [class.active]="openedAccordionItem() === '2'">
+            <!-- Header -->
+            <button type="button"
+                    (click)="toggleItem('2')"
+                    class="accordion-item-title js-accordion-button">
+              <span class="text">Info</span>
+              <div class="js-accordion-button__icons-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title id="title-icon-plus">Icon of plus</title>
+                  <g id="icon-plus">
+                    <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title id="title-icon-minus">Icon of minus</title>
+                  <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </button>
+            <!-- Content -->
+            <div #content class="accordion-item-description ease-in-out" [attr.data-id]="2">
+              <div class="js-accordion-content">
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/contact-us']" title="Contact us">Contact us</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/returns-exchanges']" title="Returns & Exchanges">Returns & Exchanges</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/shipping-delivery']" title="Shipping & Delivery">Shipping & Delivery</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/faqs']" title="FAQs">FAQs</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/privacy-policy']" title="Privacy Policy">Privacy Policy</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/terms-conditions']" title="Terms & Conditions">Terms & Conditions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item Inside -->
+          <div class="accordion-item js-accordion-item accordion--nav" [class.active]="openedAccordionItem() === '3'">
+            <!-- Header -->
+            <button type="button"
+                    (click)="toggleItem('3')"
+                    class="accordion-item-title js-accordion-button">
+              <span class="text">Inside Honey</span>
+              <div class="js-accordion-button__icons-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title id="title-icon-plus">Icon of plus</title>
+                  <g id="icon-plus">
+                    <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title id="title-icon-minus">Icon of minus</title>
+                  <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </button>
+            <!-- Content -->
+            <div #content class="accordion-item-description ease-in-out" [attr.data-id]="3">
+              <div class="js-accordion-content">
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a [routerLink]="['/the-honey-club']" title="Contact us">The Honey Club</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/boutique-finder']" title="Boutique Finder">Boutique Finder</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a [routerLink]="['/services']" title="Book An Appointment">Book An Appointment</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/our-story']" title="Our Story">Our Story</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/size-guide']" title="Size Guide">Size Guide</a>
+                </div>
+                <!-- Menu Item -->
+                <div class="accordion-content-item">
+                  <a class="hover-link" [routerLink]="['/sustainability']" title="Sustainability">Sustainability</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- Desktop menu -->
+      <nav class="js-footer-desktop-navigation desktop-hidden">
+
+        <!-- Collection Menu item -->
+        <div class="js-footer-navigation-block desktop-hidden">
+          <!--  Heading -->
+          <h3 class="js-footer-heading-title" role="heading">Top Collections</h3>
+
+          <ul class="list-unstyled">
+            <li class="nav-item">
+              <a [routerLink]="['/collections', 'all-lingerie']" class="button-link">Lingerie</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/collections', 'bras']" class="button-link">Bras</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/collections', 'lace-bras']" class="button-link">Lace Bras</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/collections', 'bridal-lingerie']" class="button-link">Bridal Lingerie</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/collections', 'lingerie-sets']" class="button-link">Lingerie Sets</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Info Menu item -->
+        <div class="js-footer-navigation-block desktop-hidden">
+          <!--  Heading -->
+          <h3 class="js-footer-heading-title" role="heading">Info</h3>
+
+          <ul class="list-unstyled">
+            <li class="nav-item">
+              <a [routerLink]="['/contact-us']" class="button-link">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/returns-exchanges']" class="button-link">Returns & Exchanges</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/shipping-delivery']" class="button-link">Shipping & Delivery</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/faqs']" class="button-link">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/privacy-policy']" class="button-link">Privacy Policy</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/terms-conditions']" class="button-link">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Inside Menu item -->
+        <div class="js-footer-navigation-block desktop-hidden">
+          <!--  Heading -->
+          <h3 class="js-footer-heading-title" role="heading">Inside Honey</h3>
+
+          <ul class="list-unstyled">
+            <li class="nav-item">
+              <a [routerLink]="['/the-honey-club']" class="button-link">The Honey Club</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/boutique-finder']" class="button-link">Boutique Finder</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/services']" class="button-link">Book An Appointment</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/our-story']" class="button-link">Our Story</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/size-guide']" class="button-link">Size Guide</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/sustainability']" class="button-link">Sustainability</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Right side -->
+      <div class="js-footer-column column">
+        <div class="js-footer-right-panel">
+          <!-- Picture -->
+          <a tabindex="0"
+             [routerLink]="['/']"
+             class="picture-wrapper picture-rounded aspect-ratio group">
+
+            <div class="app-widget app-widget-image shadow-form">
+              <div class="picture-overlay"></div>
+              <img loading="lazy" class="group-hover-zoom" src="/assets/images/common/original.png" alt="Honey">
+            </div>
+          </a>
+          <!-- Social icons -->
+          <ul class="list-unstyled list-horizontal icon-list">
+            <li>
+              <a href="https://www.instagram.com/" target="_blank" class="icon-wrapper icon-item">
+                <img src="/assets/images/icons/istagram.svg" alt="Instagram" loading="lazy">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank" class="icon-wrapper icon-item">
+                <img src="/assets/images/icons/facebook.svg" alt="Facebook" loading="lazy">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/" target="_blank" class="icon-wrapper icon-item">
+                <img src="/assets/images/icons/youtube.svg" alt="Youtube" loading="lazy">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/" target="_blank" class="icon-wrapper icon-item">
+                <img src="/assets/images/icons/tiktok.svg" alt="Youtube" loading="lazy">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bottom footer -->
+<footer class="footer-bottom">
+  <div class="container">
+    <div class="js-footer-container footer-reverse footer-no-gap">
+      <!-- Logo & Mobile geolocation -->
+      <div class="footer-inner">
+        <!-- Logo -->
+        <div class="logo logo-invert">
+          <a [routerLink]="['/']" title="Honey Shop" tabindex="0">
+            <div class="image-wrapper">
+              <img class="site-logo" src="/assets/images/logo/honey-logo-2025.svg" alt="Honey logo" loading="lazy">
+            </div>
+          </a>
+        </div>
+        <!-- Geolocation button -->
+        <div class="mobile-tablet-hidden">
+          <app-geolocation-region></app-geolocation-region>
+        </div>
+      </div>
+      <!-- Icons & Desktop Geolocation -->
+      <div class="footer-bottom__icons-wrapper">
+        <!-- Icon -->
+        <div class="image-icon-wrapper">
+          <div>
+            <img src="/assets/images/icons/apple-pay.svg" alt="Apple Pay: Payment option available" loading="lazy">
+          </div>
+        </div>
+        <!-- Icon -->
+        <div class="image-icon-wrapper">
+          <div>
+            <img src="/assets/images/icons/Visa.svg" alt="Visa: Payment option available" loading="lazy">
+          </div>
+        </div>
+        <!-- Icon -->
+        <div class="image-icon-wrapper">
+          <div>
+            <img src="/assets/images/icons/master-card.svg" alt="Master card: Payment option available" loading="lazy">
+          </div>
+        </div>
+        <!-- Icon -->
+        <div class="image-icon-wrapper">
+          <div>
+            <img src="/assets/images/icons/after-pay.svg" alt="AfterPay: Payment option available" loading="lazy">
+          </div>
+        </div>
+        <!-- Icon -->
+        <div class="image-icon-wrapper">
+          <div>
+            <img src="/assets/images/icons/icon-american_express.svg" alt="American Express: Payment option available" loading="lazy">
+          </div>
+        </div>
+        <!-- Icon -->
+        <div class="image-icon-wrapper">
+          <div>
+            <img src="/assets/images/icons/paypal.svg" alt="PayPal: Payment option available" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Geolocation button Desktop -->
+        <div class="content-wrapper desktop-hidden">
+          <app-geolocation-region></app-geolocation-region>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

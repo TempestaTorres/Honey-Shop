@@ -1,0 +1,48 @@
+.app-progress-bar-widget {
+  --pb-bg-color: #000000;
+  --pb-line-left:12.5%;
+  --pb-line-right:12.5%;
+  --pb-height:1px;
+  --pb-bullets-number: 4;
+  --pb-bullet-size:.25rem;
+}
+
+.app-progress-bar-widget > .progress-bar-line {
+  position: absolute;
+  left: var(--pb-line-left);
+  right: var(--pb-line-right);
+  background-color: var(--pb-bg-color);
+  height: var(--pb-height);
+}
+.progress-bar-bullets {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(var(--pb-bullets-number),minmax(0,1fr));
+}
+.progress-bar__bullet-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.bullet-wrapper {
+  --translate-y: -0.25rem;
+  position: absolute;
+  top: 0;
+  height: calc(var(--pb-bullet-size) * 2);
+  width: calc(var(--pb-bullet-size) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--global--color-primary);
+  transform: translateY(var(--translate-y));
+}
+.bullet-wrapper .bullet {
+  width: var(--pb-bullet-size);
+  height: var(--pb-bullet-size);
+  background-color: var(--pb-bg-color);
+}
+.bullet-heading {
+  padding-top: .75rem;
+}

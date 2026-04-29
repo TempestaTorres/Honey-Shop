@@ -1,0 +1,115 @@
+.geolocation-trigger-button {
+  position: absolute;
+  right: 1.5rem;
+  top: .75rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  cursor: pointer;
+}
+.geolocation-trigger-button .icon {
+  width: 14px;
+  height: 14px;
+}
+.geolocation-title {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.geolocation-flag-wrapper {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+.geolocation-flag-wrapper .icon {
+  width: 100%;
+  height: 100%;
+}
+.js-list-regions {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 100%;
+  list-style: none;
+  padding:1.5rem 0 0 0;
+}
+.js-list-regions > li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  color: inherit;
+  text-decoration: none;
+  padding: .75rem 1rem;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .js-list-regions > li a:hover {
+    background-color: var(--global--color-secondary);
+  }
+}
+.js-list-regions .geolocation-flag-wrapper {
+  width: 1rem;
+  height: 1rem;
+}
+.js-list-regions .geolocation-flag-wrapper .icon {
+  border-radius: 50%;
+  border-width: 1px;
+}
+.js-list-regions .geolocation-currency {
+  color: rgba(0,0,0,.56);
+}
+.js-list-regions .item-country {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+}
+.store-locator {
+  position: relative;
+  width: 100%;
+}
+.store-locator > .store-locator-header {
+  position: relative;
+  display: flex;
+  background-color: var(--global--color-primary);
+  padding: 2.5rem 1rem 1rem 1rem;
+}
+.store-locator-header > .inner {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  width: 100%;
+}
+.store-locator-content > .inner {
+  padding:1rem;
+}
+.stockist-store-locator {
+  display:block;
+  clear:both;
+  outline:0!important
+}
+.stockist-store-locator.hidden {
+  display:none
+}
+
+/*================ Media ===================*/
+@media (min-width: 1024px) {
+  .js-list-regions {
+    padding-bottom: 1.5rem;
+  }
+  .store-locator > .store-locator-header {
+    background-color: var(--global--color-secondary);
+    padding: 5rem;
+  }
+  .store-locator-header > .inner {
+    width: calc(50% - 40px);
+    gap: 1rem;
+  }
+}

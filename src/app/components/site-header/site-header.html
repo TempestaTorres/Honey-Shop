@@ -1,0 +1,177 @@
+<div class="js-wrapper" [class.is-sticky]="isSticky()">
+<!--  Header container -->
+  <div
+    [class.header-transparent]="isHome()"
+    [class.header-classic]="!isHome()"
+    [class.header-half-inverse]="isHalfInverse()"
+    [class.header-black-mobile]="isBlackMobile()"
+    class="header-container js-header-container header-inverse">
+    <div class="inner">
+
+      <!-- Logo Mobile wrapper -->
+      <div class="header-logo-mobile-wrapper">
+
+        <!-- Mobile left side -->
+        <div class="site-header-left-mobile mobile-tablet-hidden">
+          <!-- Burger button needs class active -->
+          <button class="js-menu-trigger" (click)="menuTrigger()" [class.active]="isMenuActive()">
+            <!-- Burger -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title id="title-icon-menu">Icon of menu</title>
+              <g id="icon-menu">
+                <path d="M2.1875 7H11.8125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                <path d="M2.1875 3.5H11.8125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                <path d="M2.1875 10.5H11.8125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </g>
+            </svg>
+            <!-- Close -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 16 16" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title id="title-icon-close">Icon of close</title>
+              <g id="icon-close">
+                <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+                <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </g>
+            </svg>
+          </button>
+          <!-- Mobile Search -->
+          <button type="button" class="search-bar-native js-search-toggle" aria-label="open search bar">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="img" aria-labelledby="title-icon-search">
+              <title id="title-icon-search">Icon of search</title>
+              <g id="icon-search">
+                <path d="M6.70833 11.6667C9.44675 11.6667 11.6667 9.44675 11.6667 6.70833C11.6667 3.96992 9.44675 1.75 6.70833 1.75C3.96992 1.75 1.75 3.96992 1.75 6.70833C1.75 9.44675 3.96992 11.6667 6.70833 11.6667Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10.5 10.5L12.25 12.25" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Logo -->
+        <div class="logo desktop-hidden">
+          <a (click)="logoClick()" title="Honey Shop" tabindex="0">
+            <div class="image-wrapper">
+              <img class="site-logo" src="/assets/images/logo/honey-logo-2025.svg" alt="Honey logo" loading="lazy">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation  -->
+      <div class="js-header-nav-container">
+        <!-- Mobile Logo -->
+        <h1 class="logo mobile-logo mobile-tablet-hidden">
+          <a [routerLink]="['/']" title="Honey Shop">
+            <div class="image-wrapper">
+              <img class="site-logo" src="/assets/images/logo/honey-logo-2025.svg" alt="Honey logo" loading="lazy">
+            </div>
+          </a>
+        </h1>
+        <!-- Desktop navigation -->
+        <div class="js-desktop-nav">
+          <nav class="menu-navigation-wrapper js-menu-navigation">
+            <ul>
+              <li>
+                <a  tabindex="0"
+                   (click)="navLinkCollectionsClick('new-lingerie')"
+                   (mouseenter)="groupHover(0, 'new')"
+                  class="js-menu-item header-menu-item group" [class.active]="isGroupActive[0]()">
+                  <span>New<span class="group-active origin-left scale-x-100"></span></span>
+                </a>
+              </li>
+              <li>
+                <a tabindex="0"
+                   (click)="navLinkCollectionsClick('all-lingerie')"
+                   (mouseenter)="groupHover(1, 'lingerie')"
+                  class="js-menu-item header-menu-item group" [class.active]="isGroupActive[1]()">
+                  <span>Lingerie<span class="group-active origin-left scale-x-100"></span></span>
+                </a>
+              </li>
+              <li>
+                <a tabindex="0"
+                   (click)="navLinkCollectionsClick('all-lingerie')"
+                   (mouseenter)="groupHover(2, 'collections')"
+                  class="js-menu-item header-menu-item group" [class.active]="isGroupActive[2]()">
+                  <span>Collections<span class="group-active origin-left scale-x-100"></span></span>
+                </a>
+              </li>
+              <li>
+                <a tabindex="0"
+                   (click)="navLinkCollectionsClick('pleasure-parlour')"
+                   (mouseenter)="groupHover(3, 'accessories')"
+                  class="js-menu-item menu-item-inverse header-menu-item group" [class.active]="isGroupActive[3]()">
+                  <span>Accessories<span class="group-active origin-left scale-x-100"></span></span>
+                </a>
+              </li>
+              <li>
+                <a
+                   tabindex="0"
+                   (click)="navLinkRouteClick('/boutique-finder')"
+                   (mouseenter)="groupHover(4, 'boutiques')"
+                  class="js-menu-item menu-item-inverse header-menu-item group" [class.active]="isGroupActive[4]()">
+                  <span>Boutiques<span class="group-active origin-left scale-x-100"></span></span>
+                </a>
+              </li>
+              <li>
+                <a [routerLink]="['/the-honey-club']"
+                   (mouseenter)="groupHover(-1, '')"
+                  class="js-menu-item menu-item-inverse header-menu-item group">
+                  <span>The Honey Club<span class="group-active origin-left scale-x-100"></span></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <div class="js-header-icons">
+        <div class="js-header-icons-wrapper">
+          <!-- User -->
+          <div class="icon-wrapper desktop-hidden js-header-icon">
+            <a [routerLink]="['account']" title="account">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="img" aria-labelledby="title-icon-person">
+                <title id="title-icon-person">Icon of person</title>
+                <g id="icon-person">
+                  <path d="M4.37524 4.4704C4.37524 2.96797 5.56688 1.75 7.03684 1.75C8.5068 1.75 9.69844 2.96797 9.69844 4.4704C9.69844 5.97284 8.5068 7.19081 7.03684 7.19081C6.33094 7.19081 5.65395 6.90419 5.15481 6.39402C4.65566 5.88384 4.37524 5.1919 4.37524 4.4704Z" stroke="currentColor"></path>
+                  <path d="M12.25 12.25C12.25 12.25 10.5 8.75 7 8.75C3.5 8.75 1.75 12.25 1.75 12.25" stroke="currentColor"></path>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <!-- Desktop Search bar -->
+          <div class="icon-wrapper desktop-hidden js-header-icon">
+            <button type="button" class="search-bar-native js-search-toggle" aria-label="open search bar">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="img" aria-labelledby="title-icon-search">
+                <title id="title-icon-search">Icon of search</title>
+                <g id="icon-search">
+                  <path d="M6.70833 11.6667C9.44675 11.6667 11.6667 9.44675 11.6667 6.70833C11.6667 3.96992 9.44675 1.75 6.70833 1.75C3.96992 1.75 1.75 3.96992 1.75 6.70833C1.75 9.44675 3.96992 11.6667 6.70833 11.6667Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M10.5 10.5L12.25 12.25" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+          <!-- Wish list needs class has-items -->
+          <a [routerLink]="['wishlist']" class="icon-wrapper js-wishlist-count has-items" title="open wishlist">
+            <!-- No items icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title id="title-icon-heart">Icon of heart</title>
+              <path id="icon-heart" d="M7.59571 2.96285L7.00458 3.55698L6.41345 2.96285C5.26474 1.81251 3.40331 1.81251 2.25878 2.96285C1.11426 4.11319 1.11426 5.98407 2.25878 7.13441L2.84991 7.72854L7.00039 11.9001L11.1509 7.72854L11.742 7.13441C12.8865 5.98407 12.8865 4.11319 11.742 2.96285C10.5975 1.81251 8.73605 1.81251 7.59152 2.96285H7.59571Z" stroke="currentColor" stroke-miterlimit="10"></path>
+            </svg>
+            <!-- Has items icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title id="title-icon-heart-has-items">Icon of heart has items</title>
+              <path id="icon-heart-has-items" d="M7.46477 2.88767C8.81208 1.66487 10.8982 1.70527 12.1962 3.00974C13.3833 4.20287 13.517 6.05752 12.5986 7.40036H11.2695L11.4872 7.18161C12.4373 6.22639 12.4373 4.67099 11.4872 3.71579C10.5514 2.77532 9.03876 2.76345 8.08684 3.6777L8.04973 3.71579L7.10442 4.66599L6.74993 4.30954L6.15813 3.71579C5.20435 2.76199 3.66114 2.76291 2.71282 3.71579C1.76257 4.67106 1.76251 6.22638 2.71282 7.18161L7.09953 11.5908V13.0088L2.00383 7.88669C0.665466 6.54128 0.665313 4.35505 2.00383 3.00974C3.30233 1.70504 5.38766 1.66565 6.73821 2.88767L6.86711 3.00974L7.10149 3.24509L7.33684 3.00974L7.46477 2.88767Z" fill="currentColor"></path>
+            </svg>
+            <!-- Count -->
+            <div class="wishlist-count-number count-number">1</div>
+          </a>
+
+          <!-- Cart -->
+          <app-cart-count class="app-widget flex"></app-cart-count>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  Desktop Mega Menu -->
+  <app-mega-menu-desktop class="mega-menu-panel"></app-mega-menu-desktop>
+</div>

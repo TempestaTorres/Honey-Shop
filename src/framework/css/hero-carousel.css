@@ -1,0 +1,233 @@
+
+.cover-image-wrapper {
+  display: flex;
+  width: 100%;
+  pointer-events: none;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.cover-image-wrapper img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.section-hero-carousel__carousel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.section-hero-carousel__carousel > .app-widget {
+  height: 100%;
+}
+.carousel-swiper-hero-carousel {
+  overflow: hidden;
+}
+.carousel-swiper-hero-carousel > .swiper-wrapper {
+  display: flex;
+}
+.carousel-swiper-hero-carousel .swiper-slide {
+  position: relative;
+  display: block;
+}
+.carousel-swiper-hero-carousel .hero-carousel-content {
+  visibility: hidden;
+}
+
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide {
+  pointer-events: none;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0 !important;
+  transition-property: opacity,visibility;
+  transition-duration: 500ms !important;
+  transition-timing-function: linear;
+}
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide .hero-carousel-content {
+  --translate-y: 1rem;
+  visibility: hidden;
+  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+  opacity: 0;
+  transition-property: all;
+  transition-delay: 100ms;
+  transition-duration: 800ms;
+  transition-timing-function: linear;
+}
+
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide img {
+  visibility: hidden;
+}
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active {
+  pointer-events: auto;
+  visibility: visible;
+  z-index: 7;
+  opacity: 1 !important;
+}
+
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active .hero-carousel-content {
+  --translate-y: 0px;
+  visibility: visible;
+  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+  opacity: 1;
+}
+
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active img {
+  visibility: visible;
+}
+.carousel-swiper-hero-carousel .swiper-pagination {
+  bottom: 46px;
+  display: flex !important;
+  min-height: fit-content;
+  gap: 0;
+}
+.carousel-swiper-hero-carousel .swiper-pagination .swiper-pagination-bullet {
+  position: relative;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  height: 0.625rem;
+  width: 1rem;
+  overflow: hidden;
+  border-radius: 0;
+  border-width: 0;
+  background-color: transparent;
+}
+
+.carousel-swiper-hero-carousel .swiper-pagination .swiper-pagination-bullet::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+  height: 0.125rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.16);
+  content: '';
+}
+
+.carousel-swiper-hero-carousel .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+  --bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--bg-opacity, 1));
+}
+.carousel-swiper-hero-carousel .swiper-pagination.swiper-pagination-lock {
+  display: none !important;
+}
+.carousel-swiper-hero-carousel.carousel-swiper-hero-auto-play .swiper-pagination .swiper-pagination-bullet::before {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+.carousel-swiper-hero-carousel.carousel-swiper-hero-auto-play .swiper-pagination .swiper-pagination-bullet::after {
+  --translate-x: -100%;
+  --bg-opacity: 1;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  height: 0.125rem;
+  width: 100%;
+  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+  background-color: rgba(255, 255, 255, var(--bg-opacity, 1));
+  content: '';
+}
+
+@keyframes progress {
+
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+.carousel-swiper-hero-carousel.carousel-swiper-hero-auto-play .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+  --duration-auto-play: 500ms;
+  animation: progress var(--duration-auto-play) ease-in-out forwards;
+}
+.hero-carousel-content-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.hero-carousel-content-wrapper::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: rgba(0,0,0,.32);
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-carousel-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 125px 2.5rem;
+}
+.hero-carousel-content > .content-inner {
+  margin: 0 auto;
+  text-align: center;
+}
+.content-text {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--global-color-white);
+  margin: 0;
+}
+.hero-button {
+  color: var(--global-color-white)!important;
+  display: inline-flex;
+  margin-top: 1.5rem;
+  pointer-events: auto;
+}
+.hero-button::before, .hero-button::after {
+  content: '';
+  background-color: var(--global-color-white)!important;
+}
+.slide-image-wrapper {
+  position: relative;
+  pointer-events: auto;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.slide-image-wrapper img {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/*=================== Media =====================*/
+@media (min-width: 768px) {
+  .cover-image-wrapper, .slide-image-wrapper {
+    aspect-ratio: 2/1;
+  }
+  .hero-carousel-content {
+    padding: 5rem;
+  }
+  .content-text {
+    margin-top: .75rem;
+  }
+}
+@media (min-width: 1024px) {
+
+  .carousel-swiper-hero-carousel .swiper-pagination {
+    bottom: 2.5rem;
+  }
+  .hero-carousel-content {
+    padding-bottom: 146px !important;
+    padding-top: 146px !important;
+  }
+}
