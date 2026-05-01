@@ -2,12 +2,9 @@
 <div
   #faqsHeading
   appObserveElement
-  #intersectionFaqsHeading="intersection"
   [isContinuous]="false"
   (isIntersecting)="isIntersecting($event, faqsHeading)"
-  [class.scroll-trigger]="intersectionFaqsHeading._isIntersecting"
-  [class.animate--slide-in]="intersectionFaqsHeading._isIntersecting"
-  class="app-widget app-widget-heading accordion--faqs-heading app-invisible">
+  class="app-widget app-widget-heading accordion--faqs-heading scroll-trigger--offscreen scroll-trigger animate--slide-in">
 
   <div class="app-widget-container">
     <h2 class="app-heading-title">the honey club loyalty tiers</h2>

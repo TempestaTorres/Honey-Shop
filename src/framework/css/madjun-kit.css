@@ -1,0 +1,862 @@
+@font-face {
+  font-family:Futura PT;
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+  src:url(/assets/fonts/FuturaCyrillicLight.woff) format("woff")
+}
+@font-face {
+  font-family:Futura PT;
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url(/assets/fonts/FuturaCyrillicBook.woff) format("woff")
+}
+@font-face {
+  font-family:Futura PT;
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url(/assets/fonts/FuturaCyrillicMedium.woff) format("woff")
+}
+@font-face {
+  font-family:Futura PT;
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url(/assets/fonts/FuturaCyrillicDemi.woff) format("woff")
+}
+@font-face {
+  font-family:Futura PT;
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url(/assets/fonts/FuturaCyrillicBold.woff) format("woff")
+}
+@font-face {
+  font-family:Futura PT;
+  font-style:normal;
+  font-weight:800;
+  font-display:swap;
+  src:url(/assets/fonts/FuturaCyrillicHeavy.woff) format("woff")
+}
+@font-face {
+  font-family:Futura PT;
+  font-style:normal;
+  font-weight:900;
+  font-display:swap;
+  src:url(/assets/fonts/FuturaCyrillicExtraBold.woff) format("woff")
+}
+main.madjun-kit {
+
+  --mj-global-text-font-family: "Futura PT";
+  --mj-global-text-font-size: 16px;
+  --mj-global-text-font-weight: 400;
+  --mj-global-text-line-height: 1.5;
+  --mj-global-text-letter-spacing: normal;
+  --mj-global-font-family: "Futura PT";
+  --mj-global-font-size: 24px;
+  --mj-global-font-weight: 500;
+  --mj-global-line-height: 1.4;
+  --mj-global-text-transform: none;
+  --mj-global-letter-spacing: normal;
+
+  --mj-global-color-primary:#f1ece4;
+
+
+  font-family: var(--mj-global-font-family) ,DM Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: var(--mj-global-text-font-size);
+  font-weight: var(--mj-global-text-font-weight);
+  line-height: var(--mj-global-text-line-height);
+  background-color:var(--mj-global-color-primary);
+
+  h1 {
+    font-family: var(--mj-global-font-family), sans-serif;
+    font-size: var(--mj-global-font-size);
+    font-weight: var(--mj-global-font-weight);
+    line-height: var(--mj-global-line-height);
+    text-transform: var(--mj-global-text-transform);
+    letter-spacing: var(--mj-global-letter-spacing);
+    margin-bottom: 16px;
+  }
+  .animation--spin {
+    animation-name:spin;
+    animation-duration:1s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear
+  }
+  @keyframes spin {
+    0% {
+      transform:rotate(90deg)
+    }
+    to {
+      transform:rotate(450deg)
+    }
+  }
+  @keyframes pulse {
+    0% {
+      opacity:1
+    }
+    50% {
+      opacity:.8
+    }
+    to {
+      opacity:1
+    }
+  }
+
+  .LogoImage.is-mobile {
+    display:block
+  }
+  .LogoImage.is-desktop {
+    display:none
+  }
+
+  .Login-form {
+    margin-top: 24px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .level {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .level.justify--start {
+    justify-content: flex-start;
+  }
+  .level > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .Field {
+    margin:16px 0
+  }
+  .Field:first-child {
+    margin-top:0
+  }
+  .Field:last-child {
+    margin-bottom:0
+  }
+  .FieldLabel {
+    font-weight:500;
+    opacity: .75;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom:4px
+  }
+  .FieldLabel:first-child {
+    margin-top:0
+  }
+  .FieldLabel:last-child {
+    margin-bottom:0
+  }
+  @media (min-width: 600px) {
+    .FieldLabel {
+      font-size: 16px;
+    }
+  }
+  .FieldHeader,
+  .FieldLabel {
+    display:block
+  }
+  .FieldHeader * {
+    pointer-events:none
+  }
+
+  .FieldTitle {
+    opacity:1
+  }
+  .FieldDescription {
+    display:block;
+    margin:8px 0 0;
+    opacity:.5
+  }
+  .FieldDescriptionBefore {
+    margin:0 0 8px
+  }
+  .FieldError {
+    display:block;
+    color:#ff5630;
+    margin-top:8px;
+    font-size:12px;
+  }
+  @media (min-width: 600px) {
+    .FieldError {
+      font-size: 14px;
+    }
+  }
+  .Field.is-disabled {
+    pointer-events:none
+  }
+  .Field.is-disabled input,
+  .Field.is-disabled select,
+  .Field.is-disabled textarea {
+    background:#eee
+  }
+  .Field.is-inactive {
+    opacity:.5
+  }
+  .Field.is-valid .InputContainer .ValidIndicator {
+    opacity:1
+  }
+  .Field.is-valid .InputContainer .ValidIndicator:before {
+    opacity:1;
+    transform:none
+  }
+  .Field .InputContainer input.ng-valid + .ValidIndicator {
+    opacity:1
+  }
+  .Field .InputContainer input.ng-valid + .ValidIndicator:before {
+    opacity:1;
+    transform:none
+  }
+  .Field.is-loading {
+    pointer-events:none
+  }
+  .Field.is-loading input,
+  .Field.is-loading select,
+  .Field.is-loading textarea {
+    background:transparent;
+    pointer-events:none
+  }
+  .Field.is-loading-field .InputContainer:before {
+    animation:spin 1s ease infinite;
+    opacity:1
+  }
+  .Field.is-not-required .FieldLabel:after {
+    content:" - optional";
+    font-style:italic;
+    opacity:.4
+  }
+  .Field.is-required .asterisks {
+    color:#de350b
+  }
+  .Field.has-error .InputContainer input {
+    box-shadow:inset 0 0 0 1px #ff5630!important
+  }
+  .Field.has-error .InputContainer input:focus {
+    box-shadow:inset 0 0 0 2px #ff5630!important
+  }
+  .Field .InputContainer input.ng-touched.ng-invalid {
+    box-shadow:inset 0 0 0 1px #ff5630!important
+  }
+  .Field .InputContainer input.ng-touched.ng-invalid:focus {
+    box-shadow:inset 0 0 0 2px #ff5630!important
+  }
+  .Field.has-floating-label input {
+    padding-top:6px
+  }
+  .Field .InputContainer {
+    position:relative
+  }
+  .Field .InputContainer:before {
+    content:"";
+    border:2px solid rgba(0,0,0,.1);
+    border-top-color:rgba(0,0,0,.5);
+    border-radius:50%;
+    top:50%;
+    margin-top:-11px;
+    margin-left:-11px;
+    z-index:1
+  }
+  .Field .InputContainer .ValidIndicator,
+  .Field .InputContainer:before {
+    position:absolute;
+    width:20px;
+    height:20px;
+    right:12px;
+    opacity:0;
+    pointer-events:none
+  }
+  .Field .InputContainer .ValidIndicator {
+    top:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center
+  }
+  .Field .InputContainer .ValidIndicator:before {
+    content:"";
+    width:20px;
+    height:14px;
+    display:block;
+    transition:all .3s cubic-bezier(.19,1,.22,1);
+    background:url(/assets/images/madjun-kit/check-green@2x.png) 50% no-repeat;
+    background-size:20px 14px;
+    opacity:0;
+    transform:scale(.9)
+  }
+  @media(min-width:600px) {
+    .Field .InputContainer .ValidIndicator {
+      top:10px
+    }
+  }
+  .Field .FloatingFieldLabel {
+    position:absolute;
+    pointer-events:none;
+    top:1px;
+    left:8px;
+    background:#fff;
+    margin:-6px 0 0;
+    padding:0 4px;
+    line-height:1;
+    transition:all .3s ease
+  }
+  .Field .FloatingFieldLabel.is-hidden {
+    opacity:0;
+    transform:translateY(5px)
+  }
+  .Field input:not([type=checkbox]):not([type=radio]),
+  .Field select,
+  .Field textarea {
+    -webkit-appearance:none;
+    font-size:16px;
+    font-family:inherit;
+    border-radius:4px;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);
+    height:44px;
+    padding:0 12px;
+    width:100%;
+    background:transparent
+  }
+  .Field input:not([type=checkbox]):not([type=radio]):focus,
+  .Field select:focus,
+  .Field textarea:focus {
+    box-shadow:inset 0 0 0 2px #444;
+    outline:none;
+  }
+  @media(min-width:600px) {
+    .Field input:not([type=checkbox]):not([type=radio]),
+    .Field select,
+    .Field textarea {
+      height:40px
+    }
+  }
+  .Field.theme-light input:not([type=checkbox]):not([type=radio]),
+  .Field.theme-light select,
+  .Field.theme-light textarea {
+    background:#fff;
+    box-shadow:none
+  }
+  .Field.theme-inverted input:not([type=checkbox]):not([type=radio]),
+  .Field.theme-inverted select,
+  .Field.theme-inverted textarea {
+    color:#fff;
+    box-shadow:inset 0 0 0 1px hsla(0,0%,100%,.4)
+  }
+  .Field.theme-inverted input:not([type=checkbox]):not([type=radio]):focus,
+  .Field.theme-inverted select:focus,
+  .Field.theme-inverted textarea:focus {
+    box-shadow:inset 0 0 0 2px hsla(0,0%,100%,.8)
+  }
+  .Field.has-value>.InputContainer {
+    background-color:#f7f5f5;
+    box-shadow:none!important
+  }
+  .Field.SelectField .InputContainer:after {
+    content:"";
+    position:absolute;
+    top:50%;
+    right:16px;
+    width:0;
+    height:0;
+    margin-top:-3px;
+    border-left:6px solid transparent;
+    border-right:6px solid transparent;
+    pointer-events:none;
+    border-top:8px solid rgba(0,0,0,.2)
+  }
+  .Field.SelectField .InputContainer .ValidIndicator {
+    display:none
+  }
+  .TextArea textarea {
+    padding:10px 12px;
+    resize:none;
+    position:relative;
+    overflow:hidden;
+    height:40px;
+    background:#fff
+  }
+  .Field textarea {
+    padding:10px 12px
+  }
+  .Button {
+    position:relative;
+    text-align:center;
+    font-weight:500;
+    letter-spacing:.02em;
+    padding:12px 16px;
+    border-radius:8px;
+    background:#000;
+    width:auto;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    line-height:1;
+    font-size:14px;
+    user-select:none;
+    transition:all .3s cubic-bezier(.19,1,.22,1);
+    margin-top: 8px;
+  }
+  .Button .PlaceholderText {
+    opacity:.2
+  }
+  .Button:first-child {
+    margin-top:0
+  }
+  .Button:focus,
+  .Button:hover {
+    transform:scale(1.02);
+    cursor:pointer;
+    background:#222;
+    color:#fff;
+  }
+  .Button:active {
+    transform:scale(.95)
+  }
+  .Button:before {
+    content:"";
+    position:absolute;
+    border:2px solid hsla(0,0%,100%,.2);
+    border-top-color:#fff;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    top:50%;
+    left:50%;
+    margin-top:-11px;
+    margin-left:-11px;
+    opacity:0;
+    transition:all .3s ease;
+    z-index:1
+  }
+  .Button.theme-secondary {
+    background:#f2f2f2;
+    color:#000
+  }
+  .Button.theme-secondary:focus,
+  .Button.theme-secondary:hover {
+    background:#eee
+  }
+  .Button.theme-subtle {
+    background:#f8f8f8;
+    color:#000
+  }
+  .Button.theme-subtle:focus,
+  .Button.theme-subtle:hover {
+    background:#eee
+  }
+  .Button.theme-dark {
+    background:#222;
+    color:#fff
+  }
+  .Button.theme-dark:focus,
+  .Button.theme-dark:hover {
+    background:#444
+  }
+  .Button.theme-white {
+    background:#fff;
+    color:#000
+  }
+  .Button.theme-white:focus,
+  .Button.theme-white:hover {
+    background:#eee
+  }
+  .Button.theme-blue {
+    background:#2684ff;
+    color:#fff
+  }
+  .Button.theme-blue:focus,
+  .Button.theme-blue:hover {
+    background:#4c9aff
+  }
+  .Button.theme-green {
+    background:#36b37e;
+    color:#fff
+  }
+  .Button.theme-green:focus,
+  .Button.theme-green:hover {
+    background:#57d9a3
+  }
+  .Button.theme-green--subtle {
+    background:#79f2c0;
+    color:#000
+  }
+  .Button.theme-green--subtle:focus,
+  .Button.theme-green--subtle:hover {
+    background:#abf5d1
+  }
+  .Button.theme-red--subtle {
+    background:#ffebe6;
+    color:#000
+  }
+  .Button.theme-red--subtle:focus,
+  .Button.theme-red--subtle:hover {
+    background:#ff8f73
+  }
+  .Button.size-small {
+    padding:8px;
+    min-height:32px
+  }
+  .Button.is-full {
+    width:100%;
+    padding:0 16px;
+    height:40px
+  }
+  @media(max-width:600px) {
+    .Button.is-full--mobile {
+      width:100%;
+      padding:0 16px;
+      height:40px
+    }
+  }
+  .Button.ShopButton {
+    margin: auto;
+    display: flex;
+    width: 40%;
+  }
+  .Button.is-small {
+    padding:12px
+  }
+  .Button.is-disabled {
+    pointer-events:none;
+    opacity:.25
+  }
+  .Button.is-loading {
+    pointer-events:none;
+    color:hsla(0,0%,100%,0);
+    animation:pulse 1.5s ease infinite;
+    transform:scale(.95)
+  }
+  .Button.is-loading:before {
+    animation:spin 1s linear infinite;
+    opacity:1
+  }
+  .Button.is-loading-withtouch {
+    pointer-events:all
+  }
+  .Button.is-custom {
+    padding:0;
+    background:transparent!important
+  }
+  .Button>* {
+    margin:0 4px
+  }
+  .Button>:first-child {
+    margin-left:0
+  }
+  .Button>:last-child {
+    margin-right:0
+  }
+  .SubmitButton {
+    position:absolute;
+    pointer-events:none;
+    opacity:0;
+    height:0;
+    width:0
+  }
+
+  .ToastContainer {
+    position:fixed;
+    top:8px;
+    left:8px;
+    right:8px;
+    z-index:200
+  }
+  @media(min-width:600px) {
+    .ToastContainer {
+      left:0;
+      right:0;
+      margin:0 auto;
+      max-width:420px
+    }
+  }
+  @media(min-width:800px) {
+    .ToastContainer {
+      top:40px;
+      right:40%
+    }
+  }
+  @media(min-width:1024px) {
+    .ToastContainer {
+      right:50%
+    }
+  }
+  .ToastItem {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    background:#000;
+    color:#fff;
+    border-radius:4px;
+    pointer-events:none;
+    transition:all .3s cubic-bezier(.175,.885,.32,1.275);
+    padding:8px 16px
+  }
+  .ToastItem:first-child {
+    z-index:2
+  }
+  .ToastItem:first-child.not-ready {
+    opacity:0;
+    transform:translateY(-8px) scale(.95)
+  }
+  .ToastItem:first-child.is-out {
+    transform:scale(.95)
+  }
+  .ToastItem:nth-child(2) {
+    z-index:1;
+    opacity:.5;
+    transform:translateY(6px) scale(.95)
+  }
+  .ToastItem:nth-child(2).not-ready {
+    opacity:0;
+    transform:translateY(12px) scale(.9)
+  }
+  .ToastItem:nth-child(3) {
+    z-index:0;
+    opacity:.1;
+    transform:translateY(12px) scale(.9)
+  }
+  .ToastItem:nth-child(3).not-ready {
+    opacity:0;
+    transform:translateY(18px) scale(.85)
+  }
+  .ToastItem.is-out {
+    opacity:0!important
+  }
+  .ToastTitle {
+    line-height:1;
+    font-weight:500
+  }
+  .ToastText,
+  .ToastTitle {
+    font-size:14px;
+    text-align:center
+  }
+  .ToastText {
+    line-height:1.4;
+    font-weight:400
+  }
+  .type-error {
+    background:#ff5630
+  }
+  .type-warning {
+    background:#ff8b00
+  }
+  .type-success {
+    background:#36b37e
+  }
+  .type-info {
+    background:#0065ff
+  }
+  .type-subtle {
+    background:#eee;
+    color:#000
+  }
+
+  .SkeletonText {
+    border-radius:2px;
+    background:#000;
+    min-width:2em;
+    display:inline-block;
+    color:transparent;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    opacity:.1;
+    animation:fade 1s ease infinite alternate;
+    height:1em;
+    margin:.25em 0
+  }
+  @keyframes fade {
+    0% {
+      opacity:.1
+    }
+    to {
+      opacity:.05
+    }
+  }
+  .progressBar {
+    position: absolute;
+    top:0;
+    left:0;
+    height:4px;
+    width:100%;
+    border-radius:9px;
+    background-color:#fcfcfc;
+    visibility: hidden;
+  }
+  .progressBar.width-50 {
+    width:50%;
+  }
+  .progressBar.loading {
+    visibility: visible;
+  }
+  .progressBar .progress {
+    height:4px;
+    border-radius:9px;
+    background-color:rgba(0,0,0,1);
+    width: 0;
+    transition-property: width;
+    transition-duration:3000ms;
+    transition-timing-function: linear;
+    will-change:width;
+  }
+  .progressBar.loading .progress {
+    width: 100%;
+  }
+
+  .FloatingCard {
+    position:relative;
+    box-shadow:0 40px 32px -32px rgba(0,0,0,.4);
+    border-radius:8px;
+    overflow:hidden;
+    user-select:none;
+    margin:0 auto;
+  }
+  .FloatingCard.is-ready {
+    background-color:rgba(0,0,0,1);
+    background-image: none;
+  }
+  .FloatingCard * {
+    user-select:none;
+    pointer-events:none
+  }
+  .FloatingCard.is-ready {
+    transition:all .5s cubic-bezier(.19,1,.22,1)
+  }
+  @media(min-width:600px) {
+    .FloatingCard.is-ready:focus,
+    .FloatingCard.is-ready:hover {
+      transform:scale(1.02);
+      box-shadow:0 40px 36px -32px rgba(0,0,0,.4)
+    }
+  }
+  .FloatingCard.is-ready:active {
+    transform:scale(.95);
+    box-shadow:0 32px 24px -24px rgba(0,0,0,.4)
+  }
+  .StoreCard {
+    color:#fff;
+    margin:0 auto;
+    padding:20px;
+    background:50% no-repeat;
+    background-size:cover
+  }
+  .StoreCardHeader {
+    display: flex;
+    flex-direction: column;
+    margin-bottom:15px
+  }
+  .StoreCardHeaderUser {
+    display:flex;
+    margin-top:5px;
+    font-size:14px
+  }
+  .StoreCardHeaderUser .name {
+    display:inline-block;
+    font-weight:700;
+    margin-right:10px
+  }
+  .StoreCardHeaderUser .join_date {
+    line-height: normal;
+    display:inline-block
+  }
+  .StoreCardDescription {
+    line-height: normal;
+    margin:15px 0 0;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between
+  }
+  .StoreCardDescriptionName {
+    font-size:18px;
+    font-weight:500;
+    line-height:1;
+    margin-top:4px
+  }
+  .StoreCardDescriptionNumber {
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.05em
+  }
+  .StoreCardProgramName {
+    font-size:18px;
+    line-height: normal;
+    font-weight:700
+  }
+  .StoreCardFooter {
+    height:25px;
+    display:flex;
+    justify-content:space-between;
+    line-height:0;
+    margin-top:20px
+  }
+  .StoreCardBalance {
+    font-size:20px;
+    font-weight:500;
+    text-align:right;
+    letter-spacing:.05em;
+    line-height:16px;
+  }
+  .StoreCardLogo {
+    height:16px;
+    flex:1 0 auto;
+    background: url("/assets/images/logo/profile-card-logo2.png") no-repeat 100% 50%;
+    background-size:contain;
+    line-height:0;
+  }
+  .StoreCardBarcode {
+    margin-top:16px
+  }
+  .StoreCardBarcode .BarcodeText {
+    font-size:14px;
+    line-height:18px;
+    text-align:center;
+    font-weight:700
+  }
+  .StoreCardAdd {
+    text-align:center;
+    margin-top:24px;
+    line-height:0;
+    font-size:0
+  }
+  .Barcode {
+    display:block;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    height: 32px;
+  }
+  .BarcodeWrapper {
+    padding:4px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:4px
+  }
+  .BarcodeTransform {
+    display:inline-block;
+    transform-origin:0 0
+  }
+
+  /*=============== Media =================*/
+  @media(min-width:600px) {
+    .LogoImage.is-mobile {
+      display:none
+    }
+    .LogoImage.is-desktop {
+      display:block
+    }
+    .StoreCard {
+      max-width:360px
+    }
+  }
+
+}

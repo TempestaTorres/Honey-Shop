@@ -163,7 +163,12 @@
       <nav class="js-footer-desktop-navigation desktop-hidden">
 
         <!-- Collection Menu item -->
-        <div class="js-footer-navigation-block desktop-hidden">
+        <div
+          #collection
+          appObserveElement
+          [isContinuous]="false"
+          (isIntersecting)="isIntersecting($event, collection)"
+          class="js-footer-navigation-block desktop-hidden scroll-trigger--offscreen scroll-trigger animate--slide-in">
           <!--  Heading -->
           <h3 class="js-footer-heading-title" role="heading">Top Collections</h3>
 
@@ -186,7 +191,12 @@
           </ul>
         </div>
         <!-- Info Menu item -->
-        <div class="js-footer-navigation-block desktop-hidden">
+        <div
+          #info
+          appObserveElement
+          [isContinuous]="false"
+          (isIntersecting)="isIntersecting($event, info)"
+          class="js-footer-navigation-block desktop-hidden scroll-trigger--offscreen scroll-trigger animate--slide-in">
           <!--  Heading -->
           <h3 class="js-footer-heading-title" role="heading">Info</h3>
 
@@ -212,7 +222,12 @@
           </ul>
         </div>
         <!-- Inside Menu item -->
-        <div class="js-footer-navigation-block desktop-hidden">
+        <div
+          #inside
+          appObserveElement
+          [isContinuous]="false"
+          (isIntersecting)="isIntersecting($event, inside)"
+          class="js-footer-navigation-block desktop-hidden scroll-trigger--offscreen scroll-trigger animate--slide-in">
           <!--  Heading -->
           <h3 class="js-footer-heading-title" role="heading">Inside Honey</h3>
 

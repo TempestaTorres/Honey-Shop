@@ -7,7 +7,7 @@ export class IntersectingService {
 
   public isIntersecting (status: boolean, element: HTMLElement) {
     if (status) {
-      element.classList.remove('app-invisible');
+      element.classList.remove('scroll-trigger--offscreen');
     }
   }
 }

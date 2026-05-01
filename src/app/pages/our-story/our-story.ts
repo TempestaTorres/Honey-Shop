@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ScrollingService } from '../../services/scrolling-service';
-import { IntersectingService } from '../../services/intersecting-service';
 
 @Component({
   selector: 'app-our-story',
@@ -11,14 +10,10 @@ import { IntersectingService } from '../../services/intersecting-service';
 export class OurStory implements OnInit {
   constructor(
     private scrollingService: ScrollingService,
-    private intersectingService: IntersectingService,
   ) {}
 
   ngOnInit() {
     this.scrollingService.toTop();
   }
 
-  public isIntersecting(status: boolean, element: HTMLElement) {
-    this.intersectingService.isIntersecting(status, element);
-  }
 }

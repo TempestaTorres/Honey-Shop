@@ -16,13 +16,9 @@
     <div
       #howItWorksHeading
       appObserveElement
-      #intersectionHowItWorksHeading="intersection"
       [isContinuous]="false"
       (isIntersecting)="isIntersecting($event, howItWorksHeading)"
-      [class.scroll-trigger]="intersectionHowItWorksHeading._isIntersecting"
-      [class.animate--slide-in]="intersectionHowItWorksHeading._isIntersecting"
-
-      class="app-widget app-widget-heading app-widget-heading-default how-it-works-heading app-invisible">
+      class="app-widget app-widget-heading app-widget-heading-default how-it-works-heading scroll-trigger--offscreen scroll-trigger animate--slide-in">
       <div class="app-widget-container">
         <h2 class="app-heading-title">how it works</h2>
       </div>
@@ -32,12 +28,9 @@
     <div
       #threeColumns
       appObserveElement
-      #intersectionThreeColumns="intersection"
       [isContinuous]="false"
       (isIntersecting)="isIntersecting($event, threeColumns)"
-      [class.scroll-trigger]="intersectionThreeColumns._isIntersecting"
-      [class.animate--slide-in]="intersectionThreeColumns._isIntersecting"
-      class="app-widget app-invisible">
+      class="app-widget scroll-trigger--offscreen scroll-trigger animate--slide-in">
 
       <app-about-carousel-swiper class="app-widget"></app-about-carousel-swiper>
     </div>
@@ -101,12 +94,9 @@
       <div
         #tiresHeading
         appObserveElement
-        #intersectionTiresHeading="intersection"
         [isContinuous]="false"
         (isIntersecting)="isIntersecting($event, tiresHeading)"
-        [class.scroll-trigger]="intersectionTiresHeading._isIntersecting"
-        [class.animate--slide-in]="intersectionTiresHeading._isIntersecting"
-        class="app-widget app-widget-heading app-widget-heading-default honey-club-heading app-invisible">
+        class="app-widget app-widget-heading app-widget-heading-default honey-club-heading scroll-trigger--offscreen scroll-trigger animate--slide-in">
         <div class="app-widget-container">
           <h2 class="app-heading-title">the honey club loyalty tiers</h2>
         </div>

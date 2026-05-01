@@ -4,12 +4,12 @@ import { AboutCarouselSwiper } from '../../components/about-carousel-swiper/abou
 import { HeroCarousel } from '../../components/hero-carousel/hero-carousel';
 import { ObserveElementDirective } from '../../directives/scroll-observer';
 import { TabList } from '../../components/tab-list/tab-list';
-import { IntersectingService } from '../../services/intersecting-service';
 import { HoneyClub, HoneyTabs, tabTypes } from '../../types/tabs/tab-types';
 import { HoneyClubDataTabs, HoneyClubFaqs } from '../../data/honey-club-data';
 import { FaqType } from '../../types/faq-type';
 import { AccordionList } from '../../components/accordion-list/accordion-list';
 import { HeroType } from '../../types/hero-type';
+import { IntersectingService } from '../../services/intersecting-service';
 
 @Component({
   selector: 'app-the-honey-club',

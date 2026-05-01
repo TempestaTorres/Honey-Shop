@@ -1,8 +1,8 @@
 import { Component, effect, ElementRef, Input, signal, viewChildren } from '@angular/core';
 import { FaqType } from '../../types/faq-type';
-import { IntersectingService } from '../../services/intersecting-service';
 import { ObserveElementDirective } from '../../directives/scroll-observer';
 import { ScrollingService } from '../../services/scrolling-service';
+import { IntersectingService } from '../../services/intersecting-service';
 
 @Component({
   selector: 'app-accordion-list',
@@ -15,8 +15,8 @@ export class AccordionList {
   public openedItem = signal<number>(0);
   readonly accordionHeaders = viewChildren<ElementRef<HTMLElement>>('accordionHeader');
 
-  constructor(private intersectingService: IntersectingService,
-              private scrollingService: ScrollingService) {
+  constructor(private scrollingService: ScrollingService,
+              private intersectingService: IntersectingService,) {
 
     effect(() => {
 

@@ -1,12 +1,9 @@
 <div
   #tabListHeader
   appObserveElement
-  #intersectionTabListHeader="intersection"
   [isContinuous]="false"
   (isIntersecting)="isIntersecting($event, tabListHeader)"
-  [class.scroll-trigger]="intersectionTabListHeader._isIntersecting"
-  [class.animate--slide-in]="intersectionTabListHeader._isIntersecting"
-  class="tab-list-header app-invisible">
+  class="tab-list-header scroll-trigger--offscreen scroll-trigger animate--slide-in">
   <!--  Navigation -->
   <div class="tab-titles-wrapper">
     <div class="tab-titles js-tab-titles ">

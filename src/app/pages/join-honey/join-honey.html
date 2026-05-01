@@ -1,1 +1,177 @@
-<p>join-honey works!</p>
+
+<main class="madjun-kit">
+  <!--  Toaster -->
+  <div class="ToastContainer">
+    <div class="ToastItem"
+         [class.not-ready]="isNotReady()"
+         [class.type-error]="typeError()"
+         [class.type-success]="!typeError()">
+
+      <div class="ToastTitle">{{ toastMessage }}</div>
+    </div>
+  </div>
+  <!--  Progress bar -->
+  <div class="progressBar width-50 desktop-hidden" [class.loading]="isLoading()"><div class="progress"></div></div>
+
+  <!-- Log in -->
+  <section class="login">
+    <!-- Mobile logo -->
+    <div class="mobile-cover"></div>
+    <!--    Login Card -->
+    <article>
+      <!-- Logo -->
+      <div class="Logo">
+        <!-- Mobile Logo -->
+        <a [routerLink]="['/']" class="LogoImage is-mobile">
+          <img class="svg-image" src="/assets/images/login/brand-logo.svg" alt="Logo">
+        </a>
+        <!-- Desktop Logo -->
+        <a [routerLink]="['/']" class="LogoImage is-desktop">
+          <img class="svg-image" src="/assets/images/login/brand-logo.svg" alt="Logo">
+        </a>
+      </div>
+      <!-- Heading -->
+      <div class="app-widget app-widget-heading login-heading">
+        <div class="app-widget-container">
+
+          @if (!isLogged()) {
+            <h1 class="app-heading-title">The Honey Club</h1>
+          } @else {
+            <h1 class="app-heading-title">Welcome back, honey! Check your email.</h1>
+          }
+
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="app-widget app-widget-text-editor login-text-editor">
+
+        @if (!isLogged()) {
+          <p class="app-text-title">
+            <strong>Let's be friends with benefits.</strong>
+            Sign up or sign in with your email address below. Indulge your curiosities.
+            The Honey Club awaits...
+          </p>
+        } @else {
+          <p class="app-text-title">
+            We've sent you a secure email link, click on the link to access your Honey Club Account.
+            In the meantime, your boutique card is ready to use, so you can start earning rewards
+            on your next boutique visit.
+          </p>
+        }
+
+      </div>
+
+      <!-- Login Form -->
+      @if (!isLogged()) {
+
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="onSubmit()"
+          class="Login-form">
+
+          <!-- Email Field needs class is-valid -->
+          <div
+            [class.is-valid]="fieldValid()"
+            [class.has-value]="fieldHasValue()"
+            class="Field is-required">
+            <!-- Label -->
+            <div class="field-info">
+              <div class="level justify--start">
+                <label class="FieldHeader" for="email">
+                  <label class="FieldLabel" for="email">
+                    Email address
+                    <span class="asterisks">*</span>
+                  </label>
+                </label>
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="InputContainer">
+
+              <input
+                (input)="emailInput()"
+                formControlName="email"
+                placeholder="email@example.com"
+                required
+                type="email">
+
+              <div class="ValidIndicator"></div>
+            </div>
+            <!-- Error -->
+            @if (email?.errors?.['required'] && (email?.dirty || email?.touched)) {
+              <span class="FieldError">This field is required</span>
+            } @else if (email?.errors?.['email'] && (email?.dirty || email?.touched)) {
+              <span class="FieldError">Please enter a valid email address</span>
+            }
+          </div>
+
+          <!-- Button -->
+          <div (click)="buttonClicked()" class="Button is-full theme-primary" [class.is-loading]="isLoading()">Continue</div>
+          <button #submitButton aria-label="Submit form" class="SubmitButton"></button>
+        </form>
+
+      }
+
+    </article>
+    <!-- Store Card -->
+    @if (isLogged()) {
+
+      <article>
+        <div class="FloatingCard StoreCard is-ready">
+          <!-- Heading -->
+          <div class="StoreCardHeader">
+            <div class="StoreCardProgramName">The Honey Club</div>
+            <div class="StoreCardHeaderUser">
+              <span class="join_date">Indulging since 2025</span>
+            </div>
+          </div>
+          <!-- Description -->
+          <div class="StoreCardDescription">
+            <div>
+              <div class="StoreCardDescriptionNumber">76321014926995</div>
+            </div>
+          </div>
+          <!-- Bar code -->
+          <div class="StoreCardBarcode">
+            <div class="BarcodeWrapper">
+              <div class="Barcode">
+                <div class="BarcodeTransform">
+                  <svg width="224px" height="32px" x="0px" y="0px" viewBox="0 0 224 32" xmlns="http://www.w3.org/2000/svg" version="1.1" style="transform: translate(0,0);">
+                    <rect x="0" y="0" width="224" height="32" style="fill:#ffffff;"></rect>
+                    <g transform="translate(0, 0)" style="fill:#000000;">
+                      <rect x="0" y="0" width="4" height="32"></rect><rect x="6" y="0" width="2" height="32"></rect>
+                      <rect x="12" y="0" width="6" height="32"></rect><rect x="22" y="0" width="4" height="32"></rect>
+                      <rect x="30" y="0" width="2" height="32"></rect><rect x="34" y="0" width="2" height="32"></rect>
+                      <rect x="44" y="0" width="4" height="32"></rect><rect x="54" y="0" width="4" height="32"></rect>
+                      <rect x="60" y="0" width="4" height="32"></rect><rect x="66" y="0" width="4" height="32"></rect>
+                      <rect x="74" y="0" width="2" height="32"></rect><rect x="82" y="0" width="2" height="32"></rect>
+                      <rect x="88" y="0" width="2" height="32"></rect><rect x="94" y="0" width="4" height="32"></rect>
+                      <rect x="102" y="0" width="6" height="32"></rect><rect x="110" y="0" width="2" height="32"></rect>
+                      <rect x="114" y="0" width="2" height="32"></rect><rect x="118" y="0" width="8" height="32"></rect>
+                      <rect x="132" y="0" width="2" height="32"></rect><rect x="136" y="0" width="4" height="32"></rect>
+                      <rect x="144" y="0" width="2" height="32"></rect><rect x="154" y="0" width="2" height="32"></rect>
+                      <rect x="158" y="0" width="8" height="32"></rect><rect x="168" y="0" width="2" height="32"></rect>
+                      <rect x="176" y="0" width="2" height="32"></rect><rect x="182" y="0" width="6" height="32"></rect>
+                      <rect x="190" y="0" width="4" height="32"></rect><rect x="198" y="0" width="4" height="32"></rect>
+                      <rect x="208" y="0" width="6" height="32"></rect><rect x="216" y="0" width="2" height="32"></rect>
+                      <rect x="220" y="0" width="4" height="32"></rect></g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Footer -->
+          <div class="StoreCardFooter">
+            <div class="StoreCardBalance"></div>
+            <div class="StoreCardLogo"></div>
+          </div>
+        </div>
+      </article>
+      <!-- Button -->
+      <a [routerLink]="['/']" class="Button ShopButton is-full theme-primary">Treat Yourself Now</a>
+    }
+  </section>
+
+  <!--  Image Panel -->
+  <div class="login-image-panel"></div>
+</main>

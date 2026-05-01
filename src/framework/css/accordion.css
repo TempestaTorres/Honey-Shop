@@ -85,6 +85,7 @@
 }
 .js-accordion-button .text {
   flex: 1 1 0;
+  text-wrap: wrap;
 }
 .js-accordion-button__icons-wrapper {
   position: relative;

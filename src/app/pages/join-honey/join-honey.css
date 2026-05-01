@@ -1,0 +1,109 @@
+main {
+  position:relative
+}
+main section {
+  position:relative;
+  width:100%;
+  margin:0 auto;
+  padding:40px 0
+}
+
+main .login-image-panel {
+  display:none;
+  position:fixed;
+  top:0;
+  bottom:0;
+  right:0;
+  left:50%;
+  background-color: rgb(238, 238, 238);
+  background-image: url("/assets/images/login/profile-banner-desktop2.jpg");
+  background-size:cover;
+  background-position:30%
+}
+.login .mobile-cover {
+  background-size:cover;
+  position: relative;
+  background: rgb(238, 238, 238) url("/assets/images/login/profile-banner-mobile2.jpg") no-repeat 50% 50%;
+  background-size:cover;
+  padding: 50% 0 0;
+  margin: 0 0 32px;
+}
+main article {
+  margin:24px 0;
+  padding:0 20px
+}
+main article:first-child {
+  margin-top:0
+}
+main article:last-child {
+  margin-bottom:0
+}
+.Logo,
+.PlaceholderText {
+  user-select:none
+}
+.Logo {
+  position:relative;
+  border-bottom:1px solid #eee;
+  padding:24px 20px;
+}
+.Logo .svg-image {
+  width:auto
+}
+.login .Logo {
+  margin:0;
+  border-bottom:none;
+  padding:8px 0 16px
+}
+.LogoImage .svg-image {
+  height: 50px;
+  display: block;
+}
+.app-widget-text-editor.login-text-editor .app-text-title {
+  margin-bottom: 24px;
+  margin-top: .5rem;
+  opacity: .75;
+}
+/*===================== Media =========================*/
+@media(min-width:800px) {
+  main {
+    min-height:100vh;
+    padding-right:40%;
+    display:flex;
+    align-items:center;
+    justify-content:center
+  }
+  main .login-image-panel {
+    display:block;
+    left:60%
+  }
+}
+@media(min-width:1024px) {
+  main {
+    padding-right:50%
+  }
+  main .login-image-panel {
+    left:50%
+  }
+}
+
+@media(min-width:600px) {
+  main section {
+    flex:1 1;
+    padding:80px 0;
+    width:auto;
+    max-width:500px
+  }
+  .login .mobile-cover {
+    display: none;
+  }
+  .Logo {
+    margin:0 20px;
+    padding:0 0 16px
+  }
+}
+@media(max-width:599px) {
+  main .login {
+    padding-top:0
+  }
+}
