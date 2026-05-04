@@ -1,0 +1,20 @@
+export interface ProductType {
+  name: string,
+  description: string,
+  imageTitle?: string,
+  url: string,
+  addFavoriteButton: boolean,
+  addToCartButton: boolean,
+  price?: number,
+  priceFrom?: number,
+  colorName: string,
+  colorClass: string,
+  images: string[],
+  ratings?: {
+    stars: number[],
+    score: string,
+  }
+}
+export type ProductItem = {
+  product: ProductType[]
+}

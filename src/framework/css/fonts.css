@@ -154,3 +154,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Fino Sans';
+  src: url("/assets/fonts/FinoSans-Regular.eot");
+  src: url("/assets/fonts/FinoSans-Regular.woff2") format('woff2'),
+  url("/assets/fonts/FinoSans-Regular.woff") format('woff'),
+  url("/assets/fonts/FinoSans-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

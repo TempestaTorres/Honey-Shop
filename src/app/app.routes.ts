@@ -16,6 +16,7 @@ import { Sustainability } from './pages/sustainability/sustainability';
 import { Faqs } from './pages/faqs/faqs';
 import { OurStory } from './pages/our-story/our-story';
 import { JoinHoney } from './pages/join-honey/join-honey';
+import { Products } from './pages/products/products';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,7 @@ export const routes: Routes = [
       {path: 'sustainability', component: Sustainability},
       {path: 'our-story', component: OurStory},
       {path: 'faqs', component: Faqs},
+      {path: 'products/:item', component: Products},
     ]
   },
   {path: 'services', component: Services},

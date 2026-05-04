@@ -1,0 +1,139 @@
+<div #carousel class="swiper carousel-swiper-hero-carousel swiper-backface-hidden">
+  <div class="swiper-wrapper">
+
+    @for (slide of heroData.slides; track $index) {
+
+      <!-- Slide -->
+      <div class="swiper-slide">
+
+      @if (slide.imageUrl.param !== null) {
+
+        <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="slide-image-wrapper">
+
+          <app-video-player [url]="slide.desktopImage" class="video-player-wrapper desktop-hidden"></app-video-player>
+          <app-video-player [url]="slide.mobileImage" class="video-player-wrapper mobile-tablet-hidden"></app-video-player>
+
+        </a>
+        <!-- Content -->
+        @if (slide.content.hasContent) {
+
+          <div class="hero-carousel-video-content-wrapper">
+            <div class="hero-carousel-content">
+              <div class="content-inner">
+                <!-- Subheading -->
+                <div class="subheading-text">{{ slide.content.text }}</div>
+                <!-- Heading -->
+                <div class="app-widget-heading video-heading">
+                  <div class="app-widget-container">
+
+                    @if (slide.content.title2) {
+                      <h2 class="app-heading-title" role="heading">{{ slide.content.title }}
+                        <br>{{ slide.content.title2 }}</h2>
+                    } @else {
+                      <h2 class="app-heading-title" role="heading">{{ slide.content.title }}</h2>
+                    }
+
+                  </div>
+                </div>
+
+                @if (slide.content.button.hasButton && slide.content.button.buttonType === "link-underline") {
+
+                  @if (slide.imageUrl.param !== null) {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="hero-button button-link-underline">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  } @else {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url]" class="hero-button button-link-underline">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  }
+                } @else if (slide.content.button.hasButton && slide.content.button.buttonType === "button-blur") {
+
+                  @if (slide.imageUrl.param !== null) {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="hero-button button-blur white-before-after">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  } @else {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url]" class="hero-button button-blur white-before-after">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  }
+                }
+              </div>
+            </div>
+          </div>
+        }
+
+      } @else {
+
+        <a [routerLink]="[slide.imageUrl.url]" class="slide-image-wrapper">
+          <app-video-player [url]="slide.desktopImage" class="video-player-wrapper desktop-hidden"></app-video-player>
+          <app-video-player [url]="slide.mobileImage" class="video-player-wrapper mobile-tablet-hidden"></app-video-player>
+        </a>
+
+        <!-- Content -->
+        @if (slide.content.hasContent) {
+
+          <div class="hero-carousel-video-content-wrapper">
+            <div class="hero-carousel-content">
+              <div class="content-inner">
+                <!-- Subheading -->
+                <div class="subheading-text">{{ slide.content.text }}</div>
+                <!-- Heading -->
+                <div class="app-widget-heading video-heading">
+                  <div class="app-widget-container">
+
+                    @if (slide.content.title2) {
+                      <h2 class="app-heading-title" role="heading">{{ slide.content.title }}
+                        <br>{{ slide.content.title2 }}</h2>
+                    } @else {
+                      <h2 class="app-heading-title" role="heading">{{ slide.content.title }}</h2>
+                    }
+
+                  </div>
+                </div>
+
+                @if (slide.content.button.hasButton && slide.content.button.buttonType === "link-underline") {
+
+                  @if (slide.imageUrl.param !== null) {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="hero-button button-link-underline">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  } @else {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url]" class="hero-button button-link-underline">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  }
+                } @else if (slide.content.button.hasButton && slide.content.button.buttonType === "button-blur") {
+
+                  @if (slide.imageUrl.param !== null) {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="hero-button button-blur white-before-after">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  } @else {
+                    <!-- Button -->
+                    <a [routerLink]="[slide.imageUrl.url]" class="hero-button button-blur white-before-after">
+                      {{ slide.content.button.buttonText }}
+                    </a>
+                  }
+                }
+              </div>
+            </div>
+          </div>
+        }
+      }
+      </div>
+    }
+  </div>
+
+  @if (heroData.pagination) {
+    <div class="swiper-pagination js-carousel-pagination" [class.swiper-pagination-lock]="paginationLocked()"></div>
+  }
+</div>

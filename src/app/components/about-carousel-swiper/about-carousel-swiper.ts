@@ -34,7 +34,8 @@ export class AboutCarouselSwiper {
     });
 
     this.destroyRef.onDestroy(() => {
-      this.swiper.destroy();
+      if (this.swiper)
+        this.swiper.destroy();
     });
   }
 }

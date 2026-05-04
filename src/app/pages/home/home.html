@@ -1,4 +1,94 @@
 <main class="outline-none">
-  <h6>home works!</h6>
+  <!--  Carousel -->
+  <section class="section-boxed section-hero-carousel">
+    <!-- Cover image -->
+    <div class="cover-image-wrapper">
+      <img src="/assets/images/common/BRIDAL_4.jpg" alt="" fetchpriority="high" loading="eager">
+    </div>
+    <!-- Carousel -->
+    <div class="section-hero-carousel__carousel">
+      <app-hero-video-carousel [heroData]="topHeroCarousel" class="app-widget"></app-hero-video-carousel>
+    </div>
+  </section>
+  <!--  Category -->
+  <section class="section-boxed section-home-category">
+    <div #categoryGrid
+         appObserveElement
+         [isContinuous]="false"
+         (isIntersecting)="isIntersecting($event, categoryGrid)"
+         class="product-gallery-grid scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+          <!-- Category item New -->
+      <a [routerLink]="['/collections', 'new-lingerie']" title="NEW" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/NEW_41.jpg" alt="New">
+          </div>
+          <!-- Content -->
+          <div class="picture-content">
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">NEW</h3>
+          </div>
+        </div>
+
+      </a>
+          <!-- Category item Bras -->
+      <a [routerLink]="['/collections', 'bras']" title="BRAS" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/BRAS.jpg" alt="Bras">
+          </div>
+          <!-- Content -->
+          <div class="picture-content">
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">BRAS</h3>
+          </div>
+        </div>
+
+      </a>
+          <!-- Category item loungewear -->
+      <a [routerLink]="['/collections', 'loungewear']" title="LOUNGE" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/LOUNGE.jpg" alt="LOUNGE">
+          </div>
+          <!-- Content -->
+          <div class="picture-content">
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">LOUNGE</h3>
+          </div>
+        </div>
+
+      </a>
+          <!-- Category item BOTTOMS -->
+      <a [routerLink]="['/collections', 'bottoms']" title="BOTTOMS" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/BOTTOMS.jpg" alt="BOTTOMS">
+          </div>
+          <!-- Content -->
+          <div class="picture-content">
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">BOTTOMS</h3>
+          </div>
+        </div>
+
+      </a>
+    </div>
+  </section>
+
+  <!-- New arrivals -->
+  <section class="section-boxed section-product-carousel">
+    <div class="app-wrapper">
+      <!-- Heading -->
+      <div class="app-widget app-widget-heading app-widget-heading-default new-arrivals-heading">
+        <div class="app-widget-container">
+          <h2 class="app-heading-title">NEW ARRIVALS</h2>
+        </div>
+      </div>
+      <!-- Products Carousel -->
+      <app-product-carousel [requestType]="'new-arrivals'" class="app-wrapper"></app-product-carousel>
+    </div>
+  </section>
 </main>
 

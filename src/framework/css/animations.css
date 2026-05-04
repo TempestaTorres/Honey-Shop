@@ -155,4 +155,42 @@
       opacity: 1;
     }
   }
+
+  @keyframes before-slide {
+    0% {
+      width: 0;
+      left: 0;
+    }
+    25% {
+      width: 0;
+      left: 0;
+    }
+    50% {
+      width: 100%;
+      left: 0;
+    }
+    100% {
+      width: 0;
+      left: 100%;
+    }
+  }
+
+  @keyframes after-shrink {
+    0% {
+      width: 0;
+      left: 0;
+    }
+    25% {
+      width: 100%;
+      left: 0;
+    }
+    50% {
+      width: 0%;
+      left: 100%;
+    }
+    100% {
+      width: 0%;
+      left: 0;
+    }
+  }
 }

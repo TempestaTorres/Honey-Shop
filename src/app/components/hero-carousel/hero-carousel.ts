@@ -38,11 +38,11 @@ export class HeroCarousel {
       }
     });
 
-    if (this.swiper) {
-      this.destroyRef.onDestroy(() => {
+    this.destroyRef.onDestroy(() => {
+
+      if (this.swiper)
         this.swiper.destroy();
-      });
-    }
+    });
 
   }
 

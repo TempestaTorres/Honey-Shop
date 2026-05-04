@@ -93,6 +93,12 @@
   color: rgb(222, 20, 20)!important;
   text-decoration-color: rgb(222, 20, 20)!important;
 }
+.app-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 .app-widget {
   position: relative;
   width: 100%;

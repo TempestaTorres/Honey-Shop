@@ -682,10 +682,15 @@ button.swiper-pagination-bullet {
   right: 0;
 }
 
+.carousel-swiper-plp-card-image.black-face {
+  background-color: #000;
+}
+
 .carousel-swiper-plp-card-image .swiper-pagination-progressbar {
   position: absolute;
   bottom: 0;
   left: 0;
+  top: initial;
   z-index: 1;
   margin-top: 0;
   min-height: 0.125rem;
