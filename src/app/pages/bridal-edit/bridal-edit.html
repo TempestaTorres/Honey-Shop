@@ -1,0 +1,170 @@
+<main class="outline-none">
+  <!--  Hero Carousel-->
+  <section class="section-boxed section-hero-carousel">
+    <!-- Cover image -->
+    <div class="cover-image-wrapper">
+      <img src="/assets/images/common/BRIDAL_HERO.jpg" alt="" fetchpriority="high" loading="eager">
+    </div>
+    <!-- Carousel -->
+    <div class="section-hero-carousel__carousel js-default-hero-carousel">
+      <app-hero-carousel [heroData]="topHeroCarousel" class="app-widget"></app-hero-carousel>
+    </div>
+  </section>
+
+  <!--  Bridal lingerie -->
+  <section class="section-boxed js-section-product-carousel">
+    <div class="app-wrapper">
+      <app-products-tab-list [productTabs]="productTabs" class="tab-list-widget"></app-products-tab-list>
+    </div>
+  </section>
+
+  <!--  Category -->
+  <section class="section-boxed section">
+    <div #categoryGrid
+         appObserveElement
+         [isContinuous]="false"
+         (isIntersecting)="isIntersecting($event, categoryGrid)"
+         class="product-gallery-grid scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+      <!-- Category item Something New -->
+      <a [routerLink]="['/collections', 'new-lingerie']" title="SOMETHING NEW" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Bra_Suspender_Thong_Front.jpg"
+                 alt="Something New">
+          </div>
+          <!-- Content -->
+          <div class="picture-content">
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">SOMETHING NEW</h3>
+          </div>
+        </div>
+
+      </a>
+
+      <!-- Category item SOMETHING BLUE -->
+      <a (click)="routeSomethingBlue()" title="SOMETHING BLUE" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/SOMETHING_BLUE.jpg" alt="SOMETHING BLUE">
+          </div>
+          <!-- Content -->
+          <div class="picture-content">
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">SOMETHING BLUE</h3>
+          </div>
+        </div>
+
+      </a>
+
+      <!-- Category item loungewear -->
+      <a [routerLink]="['/collections', 'loungewear']" title="THE HONEYMOON" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/THE_HONEYMOON.jpg" alt="THE HONEYMOON">
+          </div>
+          <!-- Content -->
+          <div class="picture-content">
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">THE HONEYMOON</h3>
+          </div>
+        </div>
+
+      </a>
+
+      <!-- Category item GIFT THE BRIDE -->
+      <a [routerLink]="['/collections', 'gifts-and-games']" title="GIFT THE BRIDE" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/GIFT_THE_BRIDE.jpg" alt="GIFT THE BRIDE">
+          </div>
+          <!-- Content -->
+          <div class="picture-content">
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">GIFT THE BRIDE</h3>
+          </div>
+        </div>
+
+      </a>
+    </div>
+  </section>
+
+  <!--  Media Grid -->
+  <section class="section-boxed section-media-grid media-grid grid-2">
+    <!-- Item -->
+    <div class="media-grid--item">
+      <a [routerLink]="['/collections', 'bridal-lingerie']" class="picture-wrapper">
+        <img src="/assets/images/common/Image_1.jpg" alt="" loading="lazy">
+      </a>
+    </div>
+    <!-- Item -->
+    <div class="media-grid--item">
+      <a [routerLink]="['/collections', 'bridal-lingerie']" class="picture-wrapper">
+        <img src="/assets/images/common/Image_2.jpg" alt="" loading="lazy">
+      </a>
+    </div>
+  </section>
+
+  <!--  Text Image -->
+  <section class="section-boxed section-text-image">
+    <div class="text-image-widget">
+      <!-- Image -->
+      <div class="text-image__image portrait">
+        <app-video-player [url]="'/assets/video/honey-party.mp4'" class="video-player-wrapper portrait"></app-video-player>
+      </div>
+
+      <!--  Text -->
+      <div class="text-image__text">
+        <div class="text-image__text-wrapper">
+          <!-- Heading -->
+          <div class="app-widget app-widget-heading app-widget-heading-default">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">THE BRIDAL EDIT</h2>
+            </div>
+          </div>
+          <!-- Text -->
+          <div class="app-widget-text-editor typeset-description-primary">
+            <div class="app-text-title">
+              <p>
+                <strong>Love, lace and luxury bridal lingerie. Discover our wedding lingerie
+                  collection made from sheer and silky fabrics, intricate lace and delicate hardware.
+                  Designed with versatility in mind, our wedding lingerie will be the perfect fit
+                  under your wedding dress and make for a more than memorable wedding night.
+                </strong>
+              </p>
+            </div>
+          </div>
+          <!-- Button -->
+          <div class="app-widget">
+            <a [routerLink]="['/collections', 'bridal-lingerie']"
+               class="button-link-underline">SHOP NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  Category Carousel -->
+  <section class="section-boxed js-section-product-carousel">
+    <app-picture-card-carousel
+      class="swiper-widget"
+    [slides]="bridalSlides"
+    [className]="'js-bridal-pictures-carousel'"></app-picture-card-carousel>
+  </section>
+
+  <!--  Media Grid -->
+  <section class="section-boxed section-media-grid media-grid grid-2">
+    <!-- Item -->
+    <div class="media-grid--item">
+      <a [routerLink]="['/collections', 'bridal-lingerie']" class="picture-wrapper">
+        <img src="/assets/images/common/Image_3.jpg" alt="" loading="lazy">
+      </a>
+    </div>
+    <!-- Item -->
+    <div class="media-grid--item">
+      <a [routerLink]="['/collections', 'bridal-lingerie']" class="picture-wrapper">
+        <img src="/assets/images/common/Image_4.jpg" alt="" loading="lazy">
+      </a>
+    </div>
+  </section>
+</main>

@@ -317,10 +317,50 @@ a.picture-wrapper {
 .section-hero-carousel {
   position: relative;
 }
+.section {
+  padding: 24px 1rem;
+}
+@media (min-width: 1024px) {
+  .section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
 .section-boxed {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.section-text-block .text-block-container {
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  max-width: 840px;
+  margin: 0 auto;
+}
+.section-text-block.page-block .text-block-container {
+  padding-top: 112px;
+  padding-bottom: 112px;
+}
+@media screen and (max-width: 768px) {
+  .section-text-block .text-block-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .section-text-block.page-block .text-block-container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+.text-block-heading:not(:last-child) .app-heading-title {
+  margin-bottom: .75rem;
+}
+.section-text-block .text-block-container p {
+  margin-bottom: .75rem;
+}
+.section-media-grid {
+  padding: 50px;
 }
 .section-media > .app-container {
   display: block;
@@ -653,7 +693,10 @@ a.picture-wrapper {
 .loading-bar-white::after {
   background-color: rgba(255, 255, 255, 0.32);
 }
-
+.section-three-columns {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
 
 /*============ media =======================*/
 @media (min-width: 1024px) {
@@ -662,6 +705,16 @@ a.picture-wrapper {
   }
   .section-terms-conditions {
     padding: 2.5rem 0 5rem 0;
+  }
+  .section-three-columns {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .section-three-columns {
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 @media (max-width: 1023px) {

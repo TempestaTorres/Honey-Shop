@@ -1,0 +1,27 @@
+.media-grid {
+  --bg-color:#f1ede4;
+  --gap: 20px;
+  --w-mobile: 100%;
+  --w-desktop: 100%;
+  --max-h: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  background: var(--bg-color);
+  gap: var(--gap);
+}
+.media-grid.grid-2 {
+  --w-desktop: 50%;
+}
+.media-grid--item {
+  position: relative;
+  width: calc(var(--w-mobile) - var(--gap));
+}
+@media (min-width: 740px) {
+  .media-grid--item {
+    max-height: var(--max-h);
+    width: calc(var(--w-desktop) - var(--gap));
+  }
+}

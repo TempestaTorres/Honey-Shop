@@ -104,7 +104,27 @@
   height: 1px;
   background-color: rgba(0,0,0,.56);
 }
-
+.swatchAlmond {
+  background-color:#e1bca6;
+}
+.swatchAnimalPrint {
+  background-image: url("/assets/swatches/swatch-animal-print.png");
+}
+.swatchBlue {
+  background-color:#90c4f7;
+}
+.swatchBronze {
+  background-color:#8d4b10;
+}
+.swatchBrown {
+  background-color:#7b4b3a;
+}
+.swatchCaramel {
+  background-color:#8e3413;
+}
+.swatchCedar {
+  background-color:#d8916d;
+}
 .swatchChartreuse {
   background-color: #a2c33a;
 }
@@ -125,6 +145,93 @@
 }
 .swatchHotPink {
   background-color: #e13478;
+}
+.swatchIvory {
+  background-color:#ffffff;
+}
+.swatchChestnut {
+  background-color:#8f5647;
+}
+.swatchChocolate {
+  background-color:#883e2e;
+}
+.swatchEmerald {
+  background-color:#257941;
+}
+.swatchGold {
+  background-color:#d7b565;
+}
+.swatchGreen {
+  background-color:#bfd79d;
+}
+.swatchHoneysuckle {
+  background-color:#e8b9a0;
+}
+.swatch-leopard {
+  background-image: url("/assets/swatches/swatch-animal-print2.png");
+}
+.swatchMahogany {
+  background-color:#4c291f;
+}
+.swatchMaple {
+  background-color:#e6d4c5;
+}
+.swatchMidnight {
+  background-color:#1d3884;
+}
+.swatchMulberry {
+  background-color:#a42c52;
+}
+.swatchMulti {
+  background-image: url("/assets/swatches/swatch-multi.png");
+}
+.swatchNude {
+  background-color:#e6cba8;
+}
+.swatchMystic {
+  background-color:#77439f;
+}
+.swatchNavy {
+  background-color:#081864;
+}
+.swatchNeonPink {
+  background-color:#eb4b60;
+}
+.swatchOrange {
+  background-color:#f27f5a;
+}
+.swatchPink {
+  background-color:#fa94c7;
+}
+.swatchPurple {
+  background-color:#c9b6e4;
+}
+.swatchPython {
+  background-color:#13b4c3;
+}
+.swatchRainbow {
+  background-image: url("/assets/swatches/swatch_rainbow.jpg");
+}
+.swatchRed {
+  background-color:#cf4752;
+}
+.swatchRosewood {
+  background-color:#b26c51;
+}
+.swatchShimmer {
+  background-image: url("/assets/swatches/swatch-shimmer.jpg");
+}
+.swatchSkyBlue {
+  background-color:#D1ECFF;
+}
+.swatchToffee {
+  background-color:#edcaaa;
+}
+.swatchWhite {
+  background-color:#f8f7f3;
+}
+.swatchYellow {
+  background-color:#fff3b0;
 }
 .carousel-swiper-card-image {
   display: block;
@@ -334,6 +441,9 @@
 .swiper-navigation-wrapper .swiper-button-next {
   top: initial;
 }
+.picture-carousel-slide {
+  width: calc(272 / 376 * 100%);
+}
 /*================= Media ==================*/
 @media (min-width: 768px) {
   .product-carousel-slide {
@@ -344,6 +454,9 @@
   .product-carousel-slide {
     width: calc(406 / 1024 * 100%);
   }
+  .picture-carousel-slide {
+    width: calc(280 / 960 * 100%);
+  }
 }
 @media (min-width: 1200px) {
   .product-carousel-slide {
@@ -353,5 +466,10 @@
 @media (min-width: 1536px) {
   .product-carousel-slide {
     width: calc(429 / 1440 * 100%);
+  }
+}
+@media (max-width: 1023px) {
+  .picture-carousel-slide {
+    margin-left: 1rem;
   }
 }

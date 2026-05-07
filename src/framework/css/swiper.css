@@ -1,3 +1,11 @@
+.swiper-widget {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
 .swiper-navigation,
 .swiper-scrollbar,
 .swiper-button-next,
@@ -834,4 +842,7 @@ button.swiper-pagination-bullet {
   gap: 1rem;
   padding: 1.5rem 1rem 0 1rem;
   flex: 1 1 0;
+}
+.swiper-slide-image-button {
+  margin-top: auto;
 }

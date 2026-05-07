@@ -1,3 +1,5 @@
+import { UrlType } from '../url-type';
+
 export const tabTypes = {
   HONEY_CLUB: 'honey-club',
 }
@@ -19,4 +21,13 @@ export type HoneyTab = {
 export type HoneyTabs = {
   type: string,
   tabs: any[],
+}
+export type Tab = {
+  title: string,
+  tabUrl: UrlType,
+  button: string,
+  productUrl: string,
+}
+export type ListTabs = {
+  tabs: Tab[];
 }

@@ -1,0 +1,59 @@
+<div #swiperElement class="swiper swiper-backface-hidden">
+  <div class="swiper-wrapper">
+
+    @for (slide of videoData.slides; track $index) {
+
+      <div class="swiper-slide carousel-slide">
+        <div class="app-widget-column">
+          <div class="app-widget-container">
+            <!-- Video -->
+            @if (slide.videoUrl.param === null) {
+
+              <a [routerLink]="[slide.videoUrl.url]" class="swiper-slide-image-wrapper aspect-square">
+                <app-video-player [url]="slide.videoSrc" class="video-player-wrapper"></app-video-player>
+              </a>
+            } @else {
+              <a [routerLink]="[slide.videoUrl.url, slide.videoUrl.param]" class="swiper-slide-image-wrapper aspect-square">
+                <app-video-player [url]="slide.videoSrc" class="video-player-wrapper"></app-video-player>
+              </a>
+            }
+
+            <!-- Content -->
+            @if (slide.content) {
+
+              <!-- Description -->
+              <div class="swiper-slide-image-description">
+                <!-- Heading -->
+                <div class="app-widget app-widget-heading app-widget-heading-default align-center">
+                  <div class="app-widget-container">
+                    <h2 class="app-heading-title">{{ slide.content.title }}</h2>
+                  </div>
+                </div>
+                <!-- Text -->
+                <div class="app-widget align-center typeset-description-primary">
+                  <div>{{ slide.content.description }}</div>
+                </div>
+                <!-- Button -->
+              @if (slide.videoUrl.param === null) {
+
+                <a [routerLink]="[slide.videoUrl.url]"
+                   [ngClass]="{link: slide.content.button.className === 'link'}"
+                    class="auto-fit-button swiper-slide-image-button">
+                  {{ slide.content.button.buttonText }}
+                </a>
+              } @else {
+                <a [routerLink]="[slide.videoUrl.url, slide.videoUrl.param]"
+                   [ngClass]="{link: slide.content.button.className === 'link'}"
+                   class="auto-fit-button swiper-slide-image-button">
+                  {{ slide.content.button.buttonText }}
+                </a>
+              }
+              </div>
+            }
+
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,13 +1,14 @@
 export type HeroSlide = {
   image: string,
   imageUrl: {
-    url: string,
+    url: string | null,
     param: string | null
   }
   content: {
     hasContent: boolean,
     title: string;
-    text: string;
+    subtitle?: string;
+    text?: string;
     button: {
       hasButton: boolean,
       buttonType: string,

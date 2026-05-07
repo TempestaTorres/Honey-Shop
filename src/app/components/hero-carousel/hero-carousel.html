@@ -6,6 +6,13 @@
       <!-- Slide -->
       <div class="swiper-slide">
 
+      @if (slide.imageUrl.url === null) {
+
+        <div class="slide-image-wrapper">
+          <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+        </div>
+      } @else {
+
         @if (slide.imageUrl.param !== null) {
 
           <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="slide-image-wrapper">
@@ -17,6 +24,7 @@
             <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
           </a>
         }
+      }
 
         @if (slide.content.hasContent) {
 
@@ -24,8 +32,15 @@
           <div class="hero-carousel-content-wrapper">
             <div class="hero-carousel-content">
               <div class="content-inner">
+                <!-- Subtitle -->
+                @if (slide.content.subtitle) {
+                  <div class="subheading-text">{{ slide.content.subtitle }}</div>
+                }
+
                 <h2 class="heading" role="heading">{{ slide.content.title }}</h2>
-                <p class="content-text">{{ slide.content.text }}</p>
+                @if (slide.content.text) {
+                  <p class="content-text">{{ slide.content.text }}</p>
+                }
 
                 @if (slide.content.button.hasButton && slide.content.button.buttonType === "link-underline") {
 

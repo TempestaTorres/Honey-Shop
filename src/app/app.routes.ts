@@ -17,6 +17,7 @@ import { Faqs } from './pages/faqs/faqs';
 import { OurStory } from './pages/our-story/our-story';
 import { JoinHoney } from './pages/join-honey/join-honey';
 import { Products } from './pages/products/products';
+import { BridalEdit } from './pages/bridal-edit/bridal-edit';
 
 export const routes: Routes = [
   {
@@ -38,6 +39,7 @@ export const routes: Routes = [
       {path: 'our-story', component: OurStory},
       {path: 'faqs', component: Faqs},
       {path: 'products/:item', component: Products},
+      {path: 'bridal-edit', component: BridalEdit},
     ]
   },
   {path: 'services', component: Services},

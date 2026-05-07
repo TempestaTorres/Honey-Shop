@@ -18,3 +18,7 @@ export interface ProductType {
 export type ProductItem = {
   product: ProductType[]
 }
+export type ProductRequestType = {
+  type: string,
+  key?: string
+}

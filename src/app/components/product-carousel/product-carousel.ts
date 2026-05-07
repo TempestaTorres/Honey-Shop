@@ -1,15 +1,15 @@
 import {
   afterNextRender,
   Component,
-  DestroyRef,
+  DestroyRef, ElementRef,
   Input,
   OnDestroy,
   OnInit,
-  signal,
+  signal, ViewChild,
   WritableSignal
 } from '@angular/core';
 import { ProductsService } from '../../products/products-service';
-import { ProductItem } from '../../products/types/product-type';
+import { ProductItem, ProductRequestType } from '../../products/types/product-type';
 import { Subscription } from 'rxjs';
 import { SwiperSlide } from '../swiper-slide/swiper-slide';
 declare var Swiper: any;
@@ -20,7 +20,10 @@ declare var Swiper: any;
   templateUrl: './product-carousel.html',
 })
 export class ProductCarousel implements OnInit, OnDestroy {
-  @Input() requestType: string = 'product';
+  @Input() requestType: ProductRequestType = {type: ''};
+  @Input() className: string = '';
+
+  @ViewChild('swiperElement') swiperElement!: ElementRef;
 
   public loading: WritableSignal<boolean> = signal<boolean>(true);
   public products: ProductItem[] = [];
@@ -32,29 +35,36 @@ export class ProductCarousel implements OnInit, OnDestroy {
 
     afterNextRender(() => {
 
-      this.swiper = new Swiper('.js-carousel-swiper-new-arrivals', {
-        slidesPerView: 'auto',
-        spaceBetween: 4,
-        keyboard: true,
-        grabCursor: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-          addIcons: false
-        },
-        breakpoints: {
+      const swp = this.swiperElement.nativeElement;
 
-          768: {
-            centeredSlides: true,
-            centeredSlidesBounds: true,
+      if (swp) {
+        swp.classList.add(this.className);
+
+        this.swiper = new Swiper('.' + this.className, {
+          slidesPerView: 'auto',
+          spaceBetween: 4,
+          keyboard: true,
+          grabCursor: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            addIcons: false
           },
-          1024: {
-            centeredSlides: false,
-            centeredSlidesBounds: false,
-          }
-        }
+          breakpoints: {
 
-      });
+            768: {
+              centeredSlides: true,
+              centeredSlidesBounds: true,
+            },
+            1024: {
+              centeredSlides: false,
+              centeredSlidesBounds: false,
+            }
+          }
+
+        });
+      }
+
     });
 
     this.destroyRef.onDestroy(() => {
@@ -63,16 +73,27 @@ export class ProductCarousel implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    if (this.requestType === 'new-arrivals') {
+
+    if (this.requestType.type === 'new-arrivals') {
       this.productSubscription$ = this.service.getNewArrivals().subscribe((items) => {
         this.products = items;
-
-        //console.log(this.products);
 
         if (this.products.length > 0) {
           this.loading.set(false);
         }
       });
+    }
+    else if (this.requestType.type === 'bridal-lingerie') {
+
+      this.productSubscription$ = this.service.getBridalLingerie().subscribe((items) => {
+        this.products = items;
+
+        if (this.products.length > 0) {
+          this.loading.set(false);
+        }
+      });
+
+
     }
   }
 

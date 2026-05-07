@@ -1,5 +1,5 @@
 <main class="outline-none">
-  <!--  Carousel -->
+  <!-- Video Carousel -->
   <section class="section-boxed section-hero-carousel">
     <!-- Cover image -->
     <div class="cover-image-wrapper">
@@ -10,6 +10,7 @@
       <app-hero-video-carousel [heroData]="topHeroCarousel" class="app-widget"></app-hero-video-carousel>
     </div>
   </section>
+
   <!--  Category -->
   <section class="section-boxed section-home-category">
     <div #categoryGrid
@@ -78,7 +79,7 @@
   </section>
 
   <!-- New arrivals -->
-  <section class="section-boxed section-product-carousel">
+  <section class="section-boxed js-section-product-carousel">
     <div class="app-wrapper">
       <!-- Heading -->
       <div class="app-widget app-widget-heading app-widget-heading-default new-arrivals-heading">
@@ -87,7 +88,144 @@
         </div>
       </div>
       <!-- Products Carousel -->
-      <app-product-carousel [requestType]="'new-arrivals'" class="app-wrapper"></app-product-carousel>
+      <app-product-carousel [className]="'js-carousel-swiper-new-arrivals'" [requestType]="{type: 'new-arrivals'}" class="app-wrapper"></app-product-carousel>
+    </div>
+  </section>
+
+  <!--  Bestsellers -->
+  <section class="section-boxed section-hero-carousel">
+    <!-- Cover image -->
+    <div class="cover-image-wrapper">
+      <img src="/assets/images/common/BESTSELLERS.jpg" alt="" fetchpriority="high" loading="eager">
+    </div>
+    <!-- Carousel -->
+    <div class="section-hero-carousel__carousel js-default-hero-carousel">
+      <app-hero-carousel [heroData]="bestsellersCarousel" class="app-widget"></app-hero-carousel>
+    </div>
+  </section>
+
+  <!-- Categories Whitney & Bondage -->
+  <section class="section-boxed section-home-category">
+
+    <div #categoryBigGrid
+         appObserveElement
+         [isContinuous]="false"
+         (isIntersecting)="isIntersecting($event, categoryBigGrid)"
+         class="product-gallery-grid grid-column-2 scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+      <!-- Category item New -->
+      <a [routerLink]="['/collections', 'whitney-lingerie-collection']" title="Whitney" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/PRINTS_1.jpg" alt="Whitney">
+          </div>
+        </div>
+
+      </a>
+      <!-- Category item Bras -->
+      <a [routerLink]="['/collections', 'bondage-lingerie']" title="Bondage" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/BONDAGE.jpg" alt="Bondage">
+          </div>
+        </div>
+
+      </a>
+    </div>
+
+  </section>
+
+  <!--  Bridal Hero Carousel -->
+  <section class="section-boxed section-hero-carousel">
+    <!-- Cover image -->
+    <div class="cover-image-wrapper">
+      <img src="/assets/images/categories/BRIDAL.jpg" alt="" fetchpriority="high" loading="eager">
+    </div>
+    <!-- Carousel -->
+    <div class="section-hero-carousel__carousel js-default-hero-carousel">
+      <app-hero-carousel [heroData]="bridalCarousel" class="app-widget"></app-hero-carousel>
+    </div>
+  </section>
+
+  <!--  Text block -->
+  <section class="section-text-block">
+    <div class="container">
+      <div class="text-block-container"></div>
+    </div>
+  </section>
+
+  <!-- Video Carousel -->
+  <section class="section-boxed section-hero-carousel">
+    <!-- Cover image -->
+    <div class="cover-image-wrapper">
+      <img src="/assets/images/common/Top_Banner.jpg" alt="" fetchpriority="high" loading="eager">
+    </div>
+
+    <!-- Carousel -->
+    <div class="section-hero-carousel__carousel">
+      <app-hero-video-carousel [heroData]="bottomHeroCarousel" class="app-widget"></app-hero-video-carousel>
+    </div>
+  </section>
+
+  <!--  Text block -->
+  <section class="section-text-block page-block">
+    <div class="container">
+      <div class="text-block-container">
+
+        <!-- Heading -->
+        <div
+          #textBlockHeading
+          appObserveElement
+          [isContinuous]="false"
+          (isIntersecting)="isIntersecting($event, textBlockHeading)"
+          class="app-widget app-widget-heading app-widget-heading-default text-block-heading scroll-trigger--offscreen scroll-trigger animate--slide-in">
+          <div class="app-widget-container">
+            <h2 class="app-heading-title">Step into a world of lace, leather, and luxury lingerie.</h2>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div
+          #textBlockText
+          appObserveElement
+          [isContinuous]="false"
+          (isIntersecting)="isIntersecting($event, textBlockText)"
+          class="app-widget align-center typeset-description-primary scroll-trigger--offscreen scroll-trigger animate--slide-in">
+          <p>
+            Leaders in the pursuit of pleasure, Honey is made to inspire and
+            empower with sensuality on a silver
+            <br>
+            platter. Bringing a sense of playfulness to your everyday intimates, we pride ourselves
+            on the fit, feel, and finishes that area cut above the rest.
+          </p>
+        </div>
+
+        <!-- Button -->
+        <a
+          #textBlockButton
+          appObserveElement
+          [isContinuous]="false"
+          (isIntersecting)="isIntersecting($event, textBlockButton)"
+          [routerLink]="['/our-story']"
+          class="button-link-underline auto-fit-button scroll-trigger--offscreen scroll-trigger animate--slide-in">
+          About US
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!--  Services -->
+  <section class="section-boxed section-three-columns">
+    <div
+      #threeColumns
+      appObserveElement
+      [isContinuous]="false"
+      (isIntersecting)="isIntersecting($event, threeColumns)"
+      class="app-widget scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+      <app-carousel-video-swiper [videoData]="servicesVideoData" class="app-widget"></app-carousel-video-swiper>
     </div>
   </section>
 </main>

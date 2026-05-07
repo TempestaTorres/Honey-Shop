@@ -8,6 +8,7 @@ import { AccessoriesData } from './data/accessories-data';
 import { BoutiquesData } from './data/boutiques-data';
 import { ProductItem } from './types/product-type';
 import { NewArrivalData } from './data/new-arrival-data';
+import { BridalLingerieData } from './data/bridal-lingerie-data';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,12 @@ export class ProductsService {
 
     return new Observable<ProductItem[]>(observer => {
       observer.next(NewArrivalData);
+    });
+  }
+  public getBridalLingerie(): Observable<ProductItem[]> {
+
+    return new Observable<ProductItem[]>(observer => {
+      observer.next(BridalLingerieData);
     });
   }
 

@@ -10,8 +10,8 @@
 
         <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="slide-image-wrapper">
 
-          <app-video-player [url]="slide.desktopImage" class="video-player-wrapper desktop-hidden"></app-video-player>
-          <app-video-player [url]="slide.mobileImage" class="video-player-wrapper mobile-tablet-hidden"></app-video-player>
+          <app-video-player [url]="slide.desktopImage" class="video-player-wrapper video-desktop-hidden"></app-video-player>
+          <app-video-player [url]="slide.mobileImage" class="video-player-wrapper video-mobile-tablet-hidden"></app-video-player>
 
         </a>
         <!-- Content -->
@@ -71,8 +71,8 @@
       } @else {
 
         <a [routerLink]="[slide.imageUrl.url]" class="slide-image-wrapper">
-          <app-video-player [url]="slide.desktopImage" class="video-player-wrapper desktop-hidden"></app-video-player>
-          <app-video-player [url]="slide.mobileImage" class="video-player-wrapper mobile-tablet-hidden"></app-video-player>
+          <app-video-player [url]="slide.desktopImage" class="video-player-wrapper video-desktop-hidden"></app-video-player>
+          <app-video-player [url]="slide.mobileImage" class="video-player-wrapper video-mobile-tablet-hidden"></app-video-player>
         </a>
 
         <!-- Content -->

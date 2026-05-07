@@ -1,0 +1,38 @@
+<div #swiperElement class="swiper swiper-backface-hidden carousel-swiper-category">
+  <div class="swiper-wrapper">
+
+    @for (slide of slides; track $index) {
+
+      <div class="swiper-slide picture-carousel-slide">
+        <div class="picture-wrapper group">
+          <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+            <div class="app-widget-container">
+              <img [src]="slide.image" alt="Picture" loading="lazy">
+            </div>
+            <!-- Content -->
+            <div class="picture-content">
+              <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">
+                {{ slide.title }}
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!--  Navigation -->
+  <div class="swiper-navigation-wrapper">
+    <button class="swiper-button-prev js-carousel-prev">
+      <svg class="icon-chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+        <path d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <button class="swiper-button-next js-carousel-next">
+      <svg class="icon-chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+        <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+

@@ -315,6 +315,11 @@
   --global-typography-101-font-weight:700;
   --global-typography-101-line-height:82px;
   --global-typography-101-letter-spacing:1px;
+  --global-typography-102-font-family:'Fino Sans';
+  --global-typography-102-font-size:100px;
+  --global-typography-102-font-weight:700;
+  --global-typography-102-line-height:82px;
+  --global-typography-102-letter-spacing:1px;
 
   --bg-color-primary: #000000;
   --bg-color-classic: rgba(241,236,228,var(--bg-opacity,1));
@@ -437,4 +442,9 @@
     --global-typography-accent-line-height:20px;
     --global-typography-accent-letter-spacing:1px;
   }
+  @media (max-width: 1023px) {
+    --global-typography-102-font-size:36px;
+    --global-typography-102-line-height:normal;
+  }
 }
+

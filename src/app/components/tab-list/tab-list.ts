@@ -49,6 +49,9 @@ export class TabList implements OnInit, AfterViewInit {
   }
 
   public tabClick(i: number): void {
+
+    if (this.activeTabs[i]()) return;
+
     this.resetTabs();
     this.activeTabs[i].set(true);
     this.activeTabsContent[i].set(true);

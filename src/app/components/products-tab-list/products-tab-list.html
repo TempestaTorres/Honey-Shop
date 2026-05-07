@@ -1,0 +1,79 @@
+<div class="tab-list product-carousel-tab tab-divider-hidden">
+  <div class="tab-wrapper" [class.single-tab]="singleTab()">
+    <!-- Header Desktop -->
+    <div
+      #tabListHeader
+      appObserveElement
+      [isContinuous]="false"
+      (isIntersecting)="isIntersecting($event, tabListHeader)"
+      class="scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+      <!--  Navigation -->
+      <div class="tab-titles-wrapper">
+        <div class="tab-titles js-tab-titles">
+
+          @for (tab of productTabs.tabs; track $index) {
+
+            <div
+                 (click)="tabClick($index)"
+                 [class.active]="activeTabs[$index]()"
+                 class="tab-title js-tab-title" role="tab" tabindex="0">{{ tab.title }}</div>
+          }
+
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="tab-buttons">
+
+        @for (tab of productTabs.tabs; track $index) {
+
+          <div class="js-tab-button" [class.active]="tabIndex() === $index">
+
+            @if (tab.tabUrl.param === null) {
+
+              <a [routerLink]="[tab.tabUrl.url]" class="button-link-underline">{{ tab.button }}</a>
+            } @else {
+
+              <a [routerLink]="[tab.tabUrl.url, tab.tabUrl.param]" class="button-link-underline">{{ tab.button }}</a>
+            }
+
+          </div>
+        }
+      </div>
+    </div>
+
+    <!--  Mobile buttons -->
+    <div class="mobile-tab-buttons">
+      @for (tab of productTabs.tabs; track $index) {
+
+        <div class="js-tab-button" [class.active]="tabIndex() === $index">
+
+          @if (tab.tabUrl.param === null) {
+
+            <a [routerLink]="[tab.tabUrl.url]" class="button-link-underline">{{ tab.button }}</a>
+          } @else {
+
+            <a [routerLink]="[tab.tabUrl.url, tab.tabUrl.param]" class="button-link-underline">{{ tab.button }}</a>
+          }
+
+        </div>
+      }
+    </div>
+
+    <!--    Tab Content -->
+    <div class="tab-contents-wrapper">
+
+      @for (tab of productTabs.tabs; track $index) {
+
+        <div
+          class="tab-content js-tab-content"
+          [class.active]="tabIndex() === $index">
+
+          <!-- Products Carousel -->
+          <app-product-carousel [className]="carouselName + tab.productUrl" [requestType]="{type: tab.productUrl}" class="app-wrapper"></app-product-carousel>
+        </div>
+      }
+    </div>
+  </div>
+</div>
