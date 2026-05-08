@@ -3,7 +3,7 @@ import { NewsType } from '../types/news';
 export const NewsData:NewsType[] = [
   {
     category: 'New Lingerie',
-    image: '/assets/images/news/PHILIPPA.jpg',
+    image: '/assets/images/news/PAMMY_6.jpg',
     url: 'new-lingerie'
   },
   {

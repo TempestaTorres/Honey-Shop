@@ -4,6 +4,68 @@ export const NewArrivalData: ProductItem[] = [
   {
     product: [
       {
+        name: "PAMMY",
+        description: "3 Piece Lingerie Set",
+        url: "pammy-3-piece-lingerie-set",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        priceFrom: 360,
+        colorName: "black",
+        colorClass: "swatch-black",
+        images: [
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Thong_Front.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Thong_Back.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Thong_Side.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Brief_Front1.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Brief_Back.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Brief_Side1.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Front1.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Back1.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_SideZOOM.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Thong_Suspender_Front.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Thong_Suspender_Back.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Brief_Front.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Brief_Back.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Thong_Front2.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Thong_Back.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/PAMMY1.jpg",
+        ],
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "PAMMY",
+        description: "Bra & Bottom Lingerie Set",
+        url: "pammy-bra-bottom-lingerie-set",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        priceFrom: 240,
+        colorName: "black",
+        colorClass: "swatch-black",
+        images: [
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Brief_Front.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Brief_Back.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Brief_Side.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Thong_Front.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Thong_Back.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Thong_Side.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Front4.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Back.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_SideZOOM.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Brief_Front.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Brief_Back.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Thong_Front.jpg",
+          "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Thong_Back.jpg",
+          "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/PAMMY1.jpg",
+        ],
+      },
+    ]
+  },
+  {
+    product: [
+      {
         name: "WHITNEY",
         description: "Chartreuse 3 Piece Lingerie Set",
         url: "whitney-chartreuse-3-piece-lingerie-set",

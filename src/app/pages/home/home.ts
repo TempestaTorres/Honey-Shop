@@ -28,16 +28,15 @@ export class Home implements OnInit {
     class: 'js-hero-video-carousel',
     slides: [
       {
-        desktopImage: '/assets/video/home-desktop.mp4',
-        mobileImage: '/assets/video/home-mobile.mp4',
+        desktopImage: '/assets/video/desktop-home-hero.mp4',
+        mobileImage: '/assets/video/mobile-home-hero.mp4',
         imageUrl: {
           url: '/collections',
           param: 'new-lingerie',
         },
         content: {
           hasContent: true,
-          title: 'WHITNEY',
-          title2: 'CHARTREUSE',
+          title: 'PAMMY',
           text: 'Introducing',
           button: {
             hasButton: true,

@@ -1,3 +1,179 @@
 <main class="outline-none">
 
+  <!--  Text Image -->
+  <section class="section-boxed section-text-image">
+    <div class="text-image-widget">
+      <!-- Image -->
+      <div #image1
+           appObserveElement
+           [isContinuous]="false"
+           (isIntersecting)="isIntersecting($event, image1)"
+        class="text-image__image landscape scroll-trigger--offscreen scroll-trigger animate--slide-left">
+        <img class="desktop-image" src="/assets/images/our-story/HB_SF_desktop.jpg" alt="" loading="lazy">
+        <img class="mobile-image" src="/assets/images/our-story/HB_SF.jpg" alt="" loading="lazy">
+      </div>
+
+      <!-- Text -->
+      <div #text1
+           appObserveElement
+           [isContinuous]="false"
+           (isIntersecting)="isIntersecting($event, text1)"
+        class="text-image__text scroll-trigger--offscreen scroll-trigger animate--slide-right">
+        <div class="text-image__text-wrapper landscape-text">
+          <!-- Heading -->
+          <div class="app-widget app-widget-heading app-widget-heading-default">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">About Honey</h2>
+            </div>
+          </div>
+          <!-- Text -->
+          <div class="app-widget-text-editor typeset-description-primary">
+            <div class="app-text-title">
+              <p>
+                Honey is created by women and desired by all - a brand born to inspire confidence,
+                empowerment, and unapologetic pleasure. At the forefront of luxury lingerie,
+                our designs are bold, playful, and a little bit naughty…
+                <br><br>
+                Founded in 2006 with our first boutique in Australia, Honey has evolved into a
+                global powerhouse, with a daring online presence and boutiques around the world.
+                Every piece we create is crafted to celebrate sensuality, spark confidence, and
+                make you feel incredible from the inside out.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  Text Image -->
+  <section class="section-boxed section-text-image">
+    <div class="text-image-widget row">
+      <!-- Image -->
+      <div #image2
+           appObserveElement
+           [isContinuous]="false"
+           (isIntersecting)="isIntersecting($event, image2)"
+        class="text-image__image landscape scroll-trigger--offscreen scroll-trigger animate--slide-right">
+        <img class="desktop-image" src="/assets/images/our-story/FLAT_desktop.jpg" alt="" loading="lazy">
+        <img class="mobile-image" src="/assets/images/our-story/Edit_1.jpg" alt="" loading="lazy">
+      </div>
+
+      <!-- Text -->
+      <div #text2
+        appObserveElement
+        [isContinuous]="false"
+        (isIntersecting)="isIntersecting($event, text2)"
+        class="text-image__text scroll-trigger--offscreen scroll-trigger animate--slide-left">
+        <div class="text-image__text-wrapper landscape-text">
+          <!-- Heading -->
+          <div class="app-widget app-widget-heading app-widget-heading-default">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">LUXURY LINGERIE & ACCESSORIES MADE FOR YOU.</h2>
+            </div>
+          </div>
+          <!-- Text -->
+          <div class="app-widget-text-editor typeset-description-primary">
+            <div class="app-text-title">
+              <p>
+                Designed by our world-class in-house team, every Honey Birdette piece is a testament
+                to unmatched craftsmanship, quality, and attention to detail. From concept to
+                creation, our designs are carefully considered - made to be loved and to last,
+                in sizes A to G.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  Text Image -->
+  <section class="section-boxed section-text-image">
+    <div class="text-image-widget">
+      <!-- Image -->
+      <div #image3
+           appObserveElement
+           [isContinuous]="false"
+           (isIntersecting)="isIntersecting($event, image3)"
+        class="text-image__image landscape scroll-trigger--offscreen scroll-trigger animate--slide-left">
+        <img class="desktop-image" src="/assets/images/our-story/Edit-desktop.jpg" alt="" loading="lazy">
+        <img class="mobile-image" src="/assets/images/our-story/Edit-mobile.jpg" alt="" loading="lazy">
+      </div>
+
+      <!-- Text -->
+      <div #text3
+           appObserveElement
+           [isContinuous]="false"
+           (isIntersecting)="isIntersecting($event, text3)"
+        class="text-image__text scroll-trigger--offscreen scroll-trigger animate--slide-right">
+        <div class="text-image__text-wrapper landscape-text">
+          <!-- Heading -->
+          <div class="app-widget app-widget-heading app-widget-heading-default">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">ANYTHING BUT ORDINARY.</h2>
+            </div>
+          </div>
+          <!-- Text -->
+          <div class="app-widget-text-editor typeset-description-primary">
+            <div class="app-text-title">
+              <p>
+                Our designs are fearless, provocative, and anything but ordinary. From sheer
+                seduction to subtle intrigue, Honey excites and pushes boundaries.
+                Whilst others imitate, we continue to innovate - delivering exclusive,
+                custom-designed collections you won’t find anywhere else.
+                <br><br>
+                Slip into silks, satins, premium lace, and some of the world’s finest embroideries,
+                brought to life by our expert team at Honey’s in-house atelier.
+                <br><br>
+                That feeling when you slip into your first Honey?
+              </p>
+              <p>Unmatched. Unforgettable. Unapologetically you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  Text Image -->
+  <section class="section-boxed section-text-image">
+    <div class="text-image-widget row">
+      <!-- Image -->
+      <div #image4
+           appObserveElement
+           [isContinuous]="false"
+           (isIntersecting)="isIntersecting($event, image4)"
+        class="text-image__image landscape scroll-trigger--offscreen scroll-trigger animate--slide-right">
+        <img class="desktop-image" src="/assets/images/our-story/HB_SF_2-desktop.jpg" alt="" loading="lazy">
+        <img class="mobile-image" src="/assets/images/our-story/HB_SF_2-mobile.jpg" alt="" loading="lazy">
+      </div>
+
+      <!-- Text -->
+      <div #text4
+           appObserveElement
+           [isContinuous]="false"
+           (isIntersecting)="isIntersecting($event, text4)"
+        class="text-image__text scroll-trigger--offscreen scroll-trigger animate--slide-left">
+        <div class="text-image__text-wrapper landscape-text">
+          <!-- Heading -->
+          <div class="app-widget app-widget-heading app-widget-heading-default">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">WELCOME TO A WORLD OF PLEASURE, LEATHER AND LACE.</h2>
+            </div>
+          </div>
+          <!-- Text -->
+          <div class="app-widget-text-editor typeset-description-primary">
+            <div class="app-text-title">
+              <p>Now you’ve found us, stay and play a while.<br><br></p>
+            </div>
+          </div>
+          <!-- Button  -->
+          <div class="app-widget">
+            <a [routerLink]="['/']" class="button-link-underline">Lets Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
