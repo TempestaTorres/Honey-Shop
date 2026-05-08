@@ -283,5 +283,188 @@
   .button-loading svg {
     color: transparent !important;
   }
+  /* button beige */
+  .button-beige {
+    position: relative;
+    display: inline-block;
+    min-height: 42px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  .button-beige:disabled {
+    pointer-events: none;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.32);
+    color: rgba(0, 0, 0, 0.32);
+  }
+
+  .button-beige {
+    border-color: rgba(233, 227, 218, 1);
+    background-color: rgba(233, 227, 218, 1);
+    color: rgba(17, 17, 17, 1);
+  }
+  @media (hover: hover) and (pointer: fine) {
+
+    .button-beige:hover {
+      border-color: rgba(227, 219, 208, 1);
+      background-color: rgba(227, 219, 208, 1);
+    }
+  }
+
+  .button-beige:disabled {
+    background-color: rgba(233, 227, 218, 1) !important;
+  }
+  /* button light */
+  .button-light {
+    position: relative;
+    display: inline-block;
+    min-height: 42px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  .button-light:disabled {
+    pointer-events: none;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.32);
+    color: rgba(0, 0, 0, 0.32);
+  }
+  .button-light {
+    border-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.32);
+    color: rgba(255, 255, 255, 0.32);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+
+    .button-light:hover {
+      border-color: rgba(244, 244, 244, 1);
+      background-color: rgba(244, 244, 244, 1);
+    }
+  }
+  .button-outlined {
+    position: relative;
+    display: inline-block;
+    min-height: 42px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  .button-outlined:disabled {
+    pointer-events: none;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.32);
+    color: rgba(0, 0, 0, 0.32);
+  }
+
+  .button-outlined {
+    border-color: rgba(0, 0, 0, 0.08);
+    background-color: transparent;
+    color: rgba(17, 17, 17, 1);
+  }
+
+  .button-small {
+    min-height: 2rem;
+    padding: 7px 0.875rem;
+  }
+
+  .button-large {
+    min-height: 50px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  /* Button icon */
+  .button-icon-beige {
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border: none;
+    padding: 1rem;
+    text-align: left;
+
+    background-color: rgba(233, 227, 218, 1);
+    color: rgba(17, 17, 17, 1);
+  }
+
+  .button-icon-beige:disabled {
+    pointer-events: none;
+    border-color: transparent;
+    color: rgba(0, 0, 0, 0.32);
+    background-color: rgba(233, 227, 218, 1);
+  }
+  .button-icon-beige:hover {
+    border-color: rgba(227, 219, 208, 1);
+    background-color: rgba(227, 219, 208, 1);
+  }
+  .button-icon-beige span {
+    flex: 1 1 0%;
+    text-align: left;
+    color: black;
+    margin-left: .75rem;
+  }
+  .button-icon-beige svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .button-icon-beige svg:first-of-type {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .button-icon-beige.width-full {
+    width: 100%;
+    gap: 0;
+  }
 }
 

@@ -1,0 +1,15 @@
+.section-anchor-link {
+  position: sticky;
+  top: 66px;
+  z-index: 30;
+}
+.section-accordion-list {
+  position: relative;
+  overflow: hidden;
+}
+/*========== Media ===============*/
+@media (min-width: 1024px) {
+  .section-accordion-list > .container {
+    padding: 2.5rem 0 5rem 0;
+  }
+}

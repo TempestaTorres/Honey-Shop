@@ -55,8 +55,6 @@ export class TermsConditions implements OnInit {
 
     const stickyHeaderHeight = 66;
 
-    this.scrollingService.scrollToPoint(headerEl.nativeElement, stickyHeaderHeight);
-
     setTimeout(() => {
       this.scrollingService.scrollToPoint(headerEl.nativeElement, stickyHeaderHeight);
     }, 500);

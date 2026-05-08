@@ -1,1 +1,420 @@
-<p>returns-exchanges works!</p>
+<main class="outline-none">
+  <!--  Heading -->
+  <section class="js-page-header">
+    <div class="container">
+      <div class="js-page-header-heading">
+        <h1>RETURNS & EXCHANGES</h1>
+
+        <!-- Text -->
+        <div class="app-widget-text-editor">
+          <div class="app-text-title align-center typeset-description-primary">
+            <p>
+              We will happily credit, refund or exchange items of the same style for a different
+              size, providing the items meet our Terms and Conditions detailed below.
+            </p>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="app-widget">
+          <a [routerLink]="['/book-return']" class="button-primary">book a return</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  Anchor links -->
+  <section class="section-anchor-link">
+    <div class="container">
+      <div class="js-anchor-link">
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(returns)"
+            class="button-beige button-small js-anchor-button" type="button">RETURNS</button>
+        </div>
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(refunds)"
+            class="button-beige button-small js-anchor-button" type="button">REFUNDS</button>
+        </div>
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(exchanges)"
+            class="button-beige button-small js-anchor-button" type="button">EXCHANGES</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  FAQs -->
+  <section class="section-boxed section-accordion-list">
+    <div class="container">
+      <!-- Accordion -->
+      <div class="accordion-list-widget accordion-list-type-medium">
+
+        <h3 #returns class="accordion-item-title accordion-item-heading">returns</h3>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '1'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="1"
+                  (click)="toggleItem('1')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">What Can I Return?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                We will be happy to accept your item back for return, provided that the item meets
+                the return criteria below:
+              </p>
+              <ol>
+                <li>In its original condition with tags attached</li>
+                <li>No signs of wear (marks from tan, deodorant or other personal&nbsp;stains)</li>
+                <li>FULL PRICE items within 45 days of purchase</li>
+                <li>SALE items can be returned within 14 days of purchase for an Exchange or Credit</li>
+                <li>Items may only be returned with proof of purchase</li>
+              </ol>
+              <p>*while stocks last, available for domestic orders only. </p>
+              <p>
+                <strong>Final Sale</strong>
+                <br><br>
+                Final Sale Items cannot be returned or exchanged, unless faulty. This exclusion will
+                be noted on the product page and/or at checkout.
+                <br><br>
+                <strong><br>Flash Sale</strong>
+              </p>
+              <p>
+                Flash Sale Item return T&amp;C's apply for items purchased during a
+                FLASH SALE Promotion.
+                <br><strong><br>Spend &amp; Save</strong>
+              </p>
+              <p>
+                Refunds or credit notes will be issued for the discounted price paid, NOT the
+                original ticket price. The discounted price is shown on your receipt/order confirmation.
+              </p>
+              <p>
+                <em><strong>Please note:</strong></em>
+                <em> If a refund reduces the total spend amount BELOW the minimum spend requirement,
+                  the discount will no longer apply and will be deducted from the refund.
+                  For minimum spend requirements, please refer to our Terms &amp; Conditions page
+                </em>
+                <a [routerLink]="['/terms-conditions']" target="_blank"><em>here</em></a>
+                <em>. Items must meet our regular return criteria as usual. <br></em>
+                <strong><br>Returning A Bundle Set/ Promotion Items</strong>
+              </p>
+              <p>
+                If you are wanting a full refund or credit note on a bundle purchase,
+                all pieces must be returned.
+              </p>
+              <p>
+                If returning just one or two pieces from a bundle purchase, the value of the free
+                item will be deducted from the refund amount.
+              </p>
+              <p>
+                This includes any free gifts with purchase. If you are returning an item that came
+                with a free gift, the gift must also be returned.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '2'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="2"
+                  (click)="toggleItem('2')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Non-returnable Items</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>The following cannot be returned:</p>
+              <ul>
+                <li>
+                  Lingerie and Swimwear – not in their original condition, or with components missing
+                  (such as detachable pendants, straps, harnesses or chains).
+                </li>
+                <li>
+                  <em><strong>Please note</strong></em>
+                  <em>: Lingerie is considered an intimate item, therefore, if any items are soiled
+                    (make-up, fake tan, deodorant or personal stains), we will deem these as
+                    unacceptable for return and will post these items back to you.
+                  </em>
+                </li>
+                <li>
+                  Hosiery – where one or both hygiene seals have been opened.
+                </li>
+                <li>
+                  Latex – where the packaging or hygiene seals have been opened.
+                </li>
+                <li>
+                  Bondage items – not in their original condition, or with components missing
+                  (such as handcuff links or collar chain).
+                </li>
+                <li>
+                  Candles, oils and lubricants – if packaging has been opened, or the item has
+                  been damaged through personal use.
+                </li>
+                <li>
+                  Toys – where one or both hygiene seals have been opened. Faulty toys are covered
+                  by a 1 year manufacturers warranty.
+                </li>
+                <li>
+                  Gift Cards – All gift cards are FINAL SALE and cannot be refunded for monetary value.
+                  Read full Terms &amp; Conditions&nbsp;
+                  <a [routerLink]="['/terms-conditions']" title="Terms &amp; Conditions">here</a>.
+                </li>
+                <li>
+                  Duties &amp; Taxes as well as any associated shipping costs. These cannot be
+                  refunded by Honey once your order is sent.
+                </li>
+                <li>
+                  Duties and VAT are collected on behalf of the Government therefore it is the
+                  Government who would give a refund, if applicable.
+                </li>
+                <li>
+                  Countries tend to have some system refunding Duties and /or VAT but the customer
+                  needs to go through the appropriate government agency (usually  Customs) and
+                  provide the requisite documents.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '3'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="3"
+                  (click)="toggleItem('3')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Long Will My Return Take?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>Keep the details of your tracking number so you can see when it arrives back to us.</p>
+              <p>
+                Once it has arrived, your return will be processed within 14 business days,
+                provided that the items meet the conditions of the Returns &amp; Exchanges Policy.
+                Please allow additional processing time over sale and holiday periods.
+              </p>
+              <p>After your exchange/refund has been processed, you will receive an email as confirmation.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 #refunds class="accordion-item-title accordion-item-heading">Refunds</h3>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '4'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="4"
+                  (click)="toggleItem('4')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Will I Be Refunded?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>Refunds will be issued&nbsp;to the original form of payment.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '5'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="5"
+                  (click)="toggleItem('5')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Credit</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Credits are issued in the form of a Honey Gift Card, valid for 3 years
+                for use both online and in-store.
+              </p>
+              <p>
+                <em>
+                  Please note: the Honey Gift Card will be issued to the email address attached to
+                  the original order.
+                </em>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '6'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="6"
+                  (click)="toggleItem('6')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Sale Price Adjustments</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                We are unable to offer price adjustments on items originally purchased in
+                sale or on promotion.
+              </p>
+              <p>
+                Once an item has been purchased at a discounted sale price, no price adjustment will be
+                offered should the item be further marked-down.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 #exchanges class="accordion-item-title accordion-item-heading">Exchanges</h3>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '7'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="7"
+                  (click)="toggleItem('7')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Exchange my Item?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                We gladly offer exchanges on&nbsp;unworn, unwashed and unopened items in
+                re-sellable condition with original tags still attached.
+              </p>
+              <p>
+                If the requested item for an exchange is out of stock, our Customer Obsessive Team
+                will contact you to organise an alternative solution. All exchanges are shipped
+                with standard postage.
+              </p>
+              <p>
+                Simply book your exchange&nbsp;
+                <a [routerLink]="['/book-return']">here</a>.</p>
+              <p><strong>Please note: We do not offer International exchanges.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="accordion-item-title accordion-item-heading">Contact us</h3>
+
+        <!-- Buttons -->
+        <div class="js-accordion-list-footer">
+          <a class="button-icon-beige width-full" href="mailto:honey@honey.com" title="Email us">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" class="icon " fill="none" viewBox="0 0 20 20" role="presentation" disabled="true" clickable="false">
+              <title>Icon of email</title>
+              <path stroke="#000" stroke-linecap="square" d="M2.5 4.375h15V15a.624.624 0 0 1-.625.625H3.125A.625.625 0 0 1 2.5 15V4.375Z"></path>
+              <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M17.5 4.375 10 11.25 2.5 4.375"></path>
+            </svg>
+            <span>Email us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title>Icon of chevron right</title>
+              <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
