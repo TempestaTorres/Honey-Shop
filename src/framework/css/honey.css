@@ -7,8 +7,35 @@
   min-height: 100vh;
 }
 .main-content {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  height: auto;
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+}
+.app-underlay {
+  position: fixed;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-color: transparent;
+}
+
 /* Heading */
 .app-widget-heading-default .app-heading-title  {
   font-family: var(--global-typography-accent-font-family), sans-serif;

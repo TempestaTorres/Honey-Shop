@@ -1,1 +1,143 @@
-<p>book-return works!</p>
+<main class="outline-none madjun-kit">
+  <div class="main-content">
+    <div class="app-underlay"></div>
+
+    <section class="inner-section">
+      <div class="app-wrap">
+        <!-- Header -->
+        <div class="section-header"></div>
+
+          <!-- Card -->
+        <div class="BaseCard">
+          <!-- Heading -->
+          <h2 class="BaseCard__heading">RETURNS &amp; EXCHANGES</h2>
+          <!-- Subheading -->
+          <div class="BaseCard__subheading">
+            <p>
+              PLEASE NOTE: IF YOUR ITEM(S) DO NOT MEET OUR RETURNS POLICY, ITEM(S) WILL BE RETURNED
+              TO SENDER AT THEIR EXPENSE.
+            </p>
+          </div>
+
+          <!--  Form -->
+          <form
+            (ngSubmit)="onSubmit()"
+            [formGroup]="orderForm"
+            class="order-lookup__form"
+            novalidate>
+
+            <!--  Input -->
+            <div class="order-lookup__line">
+              <div class="input-wrapper base-input has-icon order-lookup__order-number">
+                <!--  Icons & Popper -->
+                <span class="input-wrapper__icons">
+                  <span class="popper order-lookup__tip-wrapper">
+                    <!-- Button -->
+                    <span class="popper__trigger">
+                      <button (click)="popperTrigger()" type="button" class="order-lookup__tip">
+                        <span class="visually-hidden">Open help tooltip</span>
+                        <svg class="order-lookup__tip-icon" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path data-v-0a90ec8e="" d="M10.04.162C4.552.162.082 4.586.082 10.02c0 5.434 4.47 9.858 9.96 9.858 5.49 0 9.959-4.424 9.959-9.858C20 4.586 15.531.16 10.04.16zm0 18.222c-4.653 0-8.448-3.758-8.448-8.363 0-4.607 3.796-8.364 8.449-8.364 4.653 0 8.448 3.758 8.448 8.364-.02 4.605-3.795 8.363-8.448 8.363zm0-4.687c-.55 0-.98.444-.98.97s.45.97.98.97c.532 0 .98-.444.98-.97a.988.988 0 0 0-.98-.97zm0-9.111c-1.632 0-2.98 1.313-2.98 2.95a.75.75 0 0 0 .756.747.763.763 0 0 0 .754-.747c0-.788.653-1.435 1.45-1.435.837 0 1.45.585 1.45 1.374v.06c0 .445-.124 1.495-1.572 1.718a.763.763 0 0 0-.653.747v2.04a.75.75 0 0 0 .755.748.763.763 0 0 0 .755-.747v-1.435c1.918-.585 2.224-2.222 2.224-3.131.041-1.616-1.306-2.89-2.938-2.89z" fill-rule="nonzero" fill="currentColor"></path>
+                        </svg>
+                      </button>
+                    </span>
+                    <!-- Popper content -->
+                    <span class="popper__content-wrapper" [class.active]="popperActive()" x-placement="bottom">
+                      <span class="popper__content">
+                        <div class="pop">
+                          <div class="pop-wrapper">
+                            <div class="pop-container">
+                              <!-- Close button -->
+                              <button (click)="popperTrigger()"
+                                class="legacy-button pop-close" type="button">
+                                <img src="/assets/images/icons/close.svg" alt="Close">
+                              </button>
+
+                              <p>Your order number can be found in your order confirmation email.</p>
+                              <p>
+                                <span>
+                                  For help contact
+                                  <a href="mailto:honey@honey.com">honey&#64;honey.com</a>
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+
+                <!-- Order number input -->
+                <input
+                  formControlName="order"
+                  (input)="onInputChange()"
+                  id="order-number"
+                  class="base-input__input"
+                  required
+                  autocomplete="off"
+                  placeholder=" "
+                  type="text">
+
+                <label class="input-wrapper__label" for="order-number">Order Number</label>
+                <!-- Messages -->
+                <span class="input-wrapper__bottom">
+                  @if (order?.errors?.['required'] && (order?.dirty || order?.touched)) {
+                    <span class="input-wrapper__messages">*This field is required</span>
+                  }
+                </span>
+              </div>
+            </div>
+            <!--  Input -->
+            <div class="order-lookup__line">
+              <div class="input-wrapper base-input">
+
+                <!-- Order email input -->
+                <input
+                  formControlName="email"
+                  (input)="onInputChange()"
+                  id="order-email"
+                  class="base-input__input"
+                  required
+                  autocomplete="off"
+                  placeholder=" "
+                  type="email">
+
+                <label class="input-wrapper__label" for="order-email">Email Address (used at purchase)</label>
+                <!-- Messages -->
+                <span class="input-wrapper__bottom">
+                  @if (email?.errors?.['required'] && (email?.dirty || email?.touched)) {
+                    <span class="input-wrapper__messages">*This field is required</span>
+                  } @else if (email?.errors?.['email'] && (email?.dirty || email?.touched)) {
+                    <span class="input-wrapper__messages">Invalid email address</span>
+                  }
+                </span>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <button #submitBtn class="base-button regular primary order-lookup__submit" disabled>
+              <span class="base-button__text">START A RETURN</span>
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="section-footer">
+          <span class="blurred-background">
+            <div class="support-block">
+              <h2 class="support-block__text">NEED HELP HONEY?</h2>
+              <p class="support-block__text">
+                <span>
+                  CONTACT US
+                  <a [routerLink]="['/contact-us']">HERE</a>
+                </span>
+              </p>
+            </div>
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

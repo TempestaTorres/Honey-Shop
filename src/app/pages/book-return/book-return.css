@@ -1,0 +1,54 @@
+main.madjun-kit {
+  background-color: transparent;
+}
+.app-underlay {
+  background-image: url("/assets/images/common/underlay.jpg");
+  top: 66px;
+}
+.inner-section {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  padding-top: 1rem;
+  margin: 0 auto auto auto;
+}
+.app-wrap {
+  width: 80%;
+  margin: auto;
+  max-width: 1200px;
+}
+.section-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 0;
+  flex-direction: column;
+  margin: 3rem 0;
+}
+.section-footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-600) 0 var(--spacing-900) 0;
+  margin: auto;
+  max-width: 26rem;
+}
+.support-block {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.support-block__text {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--theme-text-color);
+}
+.support-block__text a {
+  color: var(--theme-primary-color);
+  text-decoration: underline;
+}
