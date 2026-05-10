@@ -1,1 +1,1288 @@
-<p>faqs works!</p>
+<main class="outline-none">
+  <!--  Heading -->
+  <section class="js-page-header">
+    <div class="container">
+      <div class="js-page-header-heading">
+        <h1>FREQUENTLY ASKED QUESTIONS</h1>
+      </div>
+    </div>
+  </section>
+
+  <!--  Anchor links -->
+  <section class="section-anchor-link">
+    <div class="container">
+      <div class="js-anchor-link">
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(payments)"
+            class="button-beige button-small js-anchor-button" type="button">PAYMENTS & GIFT CARDS</button>
+        </div>
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(shipping)"
+            class="button-beige button-small js-anchor-button" type="button">SHIPPING & DELIVERY</button>
+        </div>
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(preoders)"
+            class="button-beige button-small js-anchor-button" type="button">PRE-ORDERS</button>
+        </div>
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(returns)"
+            class="button-beige button-small js-anchor-button" type="button">RETURNS</button>
+        </div>
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(product)"
+            class="button-beige button-small js-anchor-button" type="button">PRODUCT & STOCK</button>
+        </div>
+        <!-- Link -->
+        <div class="js-anchor-link__link">
+          <button
+            (click)="anchorClick(toys)"
+            class="button-beige button-small js-anchor-button" type="button">TOYS</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  FAQs -->
+  <section class="section-boxed section-accordion-list">
+    <div class="container">
+      <!-- Accordion -->
+      <div class="accordion-list-widget accordion-list-type-medium">
+
+        <h3 #payments class="accordion-item-title accordion-item-heading">PAYMENTS & GIFT CARDS</h3>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '1'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="1"
+                  (click)="toggleItem('1')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Why Has My Payment Declined?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                There are many factors that can cause a payment to decline. To help ensure this
+                doesn’t happen when you retry, please try the following:
+              </p>
+              <ul>
+                <li>
+                  Check the card details are correct; including the expiry, security code and
+                  billing address.
+                </li>
+                <li>
+                  If you are using a form of payment such as Apple Pay or Google Pay, ensure your
+                  details are up to date.
+                </li>
+                <li>
+                  Instead of selecting the billing address ‘same as shipping address’, please
+                  untick this option and try typing out the address.
+                </li>
+                <li>
+                  Your bank has likely declined the payment. You may wish to call them to find out why.
+                </li>
+              </ul>
+              <p>
+                <em><strong>Please note:</strong></em>
+                <em>You will NOT be charged unless you receive an order number. There may be times
+                  when your bank withholds the amount of your declined payment. If you see any
+                  pending transactions on your bank statement, please contact your bank to confirm
+                  when these funds will be released.</em>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '2'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="2"
+                  (click)="toggleItem('2')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Why Has My Order Been Cancelled?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p><strong>Fraudulent</strong></p>
+              <p>
+                To ensure your safety when shopping online, an order may be marked as fraudulent if
+                you have entered the wrong shipping or payment details. To help ensure this doesn’t
+                happen when you retry, check that the card details are correct, including the expiry,
+                security code and billing address.
+              </p>
+              <p><strong><br>Stock Discrepancy</strong></p>
+              <p>
+                You will receive an email if your order has been cancelled due to a stock discrepancy.
+                &nbsp;Please be sure to check your Inbox, Junk and Spam folders so we can&nbsp;
+                find a fast resolution for you.
+              </p>
+              <p>
+                If you have not received an email, please reach out to our Customer Obsessive team
+                via our 24/7 live chat or
+                <a [routerLink]="['/contact-us']" title="Contact Us">contact us.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '3'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="3"
+                  (click)="toggleItem('3')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Purchase A Gift Card?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                To purchase a digital gift card, follow the link&nbsp;
+                <a [routerLink]="['/online-gift-voucher']" title="Online Gift Voucher">here</a>.&nbsp;
+                Once you have filled in the details, press ‘ADD TO BAG’ and complete the payment at checkout.
+              </p>
+              <p>Once purchased, the digital gift card is emailed to your recipient within&nbsp;30 minutes.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '4'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="4"
+                  (click)="toggleItem('4')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Can I Return A Gift Card?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Gift cards are FINAL SALE and cannot be refunded for monetary value. For more
+                information, please read the full Terms &amp; Conditions&nbsp;
+                <a [routerLink]="['/terms-conditions']" title="Terms &amp; Conditions">here.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '5'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="5"
+                  (click)="toggleItem('5')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Use My Promo Code?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                The first step is the fun part; you get to go shopping! Choose the items that you
+                desire and head to the checkout when you’re ready.
+              </p>
+              <p><br><strong>Redeeming Your Code On A Mobile</strong></p>
+              <ol>
+                <li>Before submitting any details at the checkout, tap ‘Show order summary’.</li>
+                <li>Underneath your pictured items, enter the code in the box that shows ‘Gift card or discount code’.</li>
+                <li>
+                  You may need to press ‘Go’ or ‘Enter’ on your mobile keypad. Once applied,
+                  you will see the discount code confirmed and your total will be recalculated.
+                </li>
+              </ol>
+              <p><br><strong>Redeeming Your Code On A Desktop Computer</strong><br> </p>
+              <ol>
+                <li>
+                  Before submitting any details at the checkout, look to the right-hand side
+                  of your screen.
+                </li>
+                <li>Underneath your order summary, you will see a box that shows ‘Gift card
+                  or discount code’.
+                </li>
+                <li>
+                  Enter your unique code and click ‘APPLY’. Once applied, you will see the discount
+                  code confirmed and your total will be recalculated.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '6'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="6"
+                  (click)="toggleItem('6')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Use Youpay?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Share your deepest wants and needs with your lover or make spoiling someone special
+                effortless with YouPay. Simply create your wishlist, share with your midnight
+                rendezvous and wait for your fantasies to be fulfilled with the click of a button.
+                Welcome to the multiplayer soiree that is YouPay.
+              </p>
+              <p><strong>Is YouPay Free?</strong></p>
+              <p>
+                Yes, YouPay is a charge free service for both the shopper receiving the products
+                and the Payer who makes the purchase.
+              </p>
+              <p><strong>Is YouPay Private?</strong></p>
+              <p>
+                Yes. Receive selected gifts from your admirers whilst keeping both parties
+                personal information confidential. YouPay does not require much information to
+                create or pay for your cart, but any information that is required is stored privately
+                and discreetly- giving both shoppers and payers complete peace of mind.
+              </p>
+              <p><strong>How does the payer pay for a YouPay cart?</strong></p>
+              <p>
+                The payer will follow the checkout instructions in the link provided by the shopper.
+                YouPay offers the same payment methods available through Honey with the most
+                popular being PayPal and credit card. YouPay also supports other payment methods
+                including Visa and mastercard. No card details or payment information is stored by YouPay.
+              </p>
+              <p><strong>Can I purchase a gift card with YouPay?</strong></p>
+              <p>No. Honey does not currently offer the option to purchase online gift cards using YouPay.</p>
+              <p><strong>Can I refund or exchange my order if purchased through YouPay?</strong></p>
+              <p>
+                If you choose to exchange your purchase and all items meet return criteria, you can
+                follow the usual exchange process that can be found below. If the Shopper decides
+                to send their items back for a refund, the Payer will receive the returned funds to
+                the payment method originally used. For more information see our returns &amp;
+                exchanges policy <a [routerLink]="['/returns-exchanges']" title="Returns &amp; Exchanges">here</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 #shipping class="accordion-item-title accordion-item-heading">SHIPPING & DELIVERY</h3>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '7'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="7"
+                  (click)="toggleItem('7')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Will My Order Be Packaged Discreetly?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                All online Honey orders are wrapped and placed in a luxurious black satin bag. Your
+                order is then placed in an unmarked shipping satchel with no logo or brand name
+                for discreet and private delivery.
+              </p>
+              <p><strong>Please note:</strong>&nbsp;Due to legislation we are required to
+                declare product details for Toys / Bondage on International Duty &amp; Custom
+                declarations. As always, we attempt to be as discreet as possible.&nbsp;
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '8'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="8"
+                  (click)="toggleItem('8')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Can I Combine Separate Orders?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>Due to the fast turn-around of our dispatch and deliveries, we are unable to
+                combine orders placed separately.&nbsp;</p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '9'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="9"
+                  (click)="toggleItem('9')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Much Is Delivery?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                To view delivery information and pricing, please visit our Shipping Page&nbsp;
+                <a [routerLink]="['/shipping-delivery']" title="Shipping & Delivery">here.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '10'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="10"
+                  (click)="toggleItem('10')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">When Will My Items Be Shipped?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Delivery time frames will depend on your location, as well as the date and time of
+                your order.&nbsp;To view delivery information and pricing, please visit our
+                Shipping Page&nbsp;
+                <a [routerLink]="['/shipping-delivery']" title="Shipping & Delivery">here.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '11'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="11"
+                  (click)="toggleItem('11')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Where Is My Order?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Once your order has shipped, you will receive an email notification with a tracking
+                number. Be sure to keep an eye on your tracking number. If you wish to view the
+                status and tracking of multiple orders, you can do this from your account login.
+              </p>
+              <p>Please note:</p>
+              <ul>
+                <li>
+                  Some orders may be shipped from multiple locations, and your items may be delivered
+                  on different days.
+                </li>
+                <li>
+                  When an item is travelling overseas or across state borders, it may take a few
+                  days to update on your tracking.
+                </li>
+              </ul>
+              <p>If your expected delivery date has passed, please allow 1-3 business days for
+                tracking updates to occur.</p>
+              <p>
+                If your order is more than 3 days overdue, please contact the parcel carrier or our
+                Customer Obsessive Team will be happy to investigate for you.
+                <a [routerLink]="['/contact-us']" title="contact-us">Contact Us</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '12'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="12"
+                  (click)="toggleItem('12')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">I Received The Wrong Item In My Order</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>We’re sorry to hear that you’ve received an incorrect item!&nbsp;</p>
+              <p>
+                To help amend this issue, please reach out to our Customer Obsessive Team and be
+                sure to include photos of the incorrect item(s). This will help us identify the mix
+                up and find a fast resolution for you.&nbsp;
+                <a [routerLink]="['/contact-us']" title="Contact Us">Contact us.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '13'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="13"
+                  (click)="toggleItem('13')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Can I Update My Order Once It Has Been Placed?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Unfortunately, we are unable to change, cancel or edit orders once they have been
+                placed. Please follow our return process if your order is incorrect. Our returns
+                information can be found
+                <a [routerLink]="['/shipping-delivery']" target="_blank" title="Shipping & Delivery">here.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 #preoders class="accordion-item-title accordion-item-heading">Pre-Orders</h3>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '14'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="14"
+                  (click)="toggleItem('14')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">When Will I Receive My Pre-order Items?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                We do our best to ensure that anticipated delivery dates on pre-order items are
+                accurate. However, delivery times cannot be guaranteed and Honey takes no
+                responsibility in the event that pre-order items are delayed.
+              </p>
+              <p>
+                Please note that multiple item orders (including pre-order item/s) will be
+                dispatched once all items are available.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 #returns class="accordion-item-title accordion-item-heading">Returns</h3>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '15'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="15"
+                  (click)="toggleItem('15')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">What Is Your Returns Policy?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                It’s okay to change your mind, however,  due to the intimate nature of our items,
+                some may not be eligible for return. To check which items can be returned, please
+                visit our Returns &amp; Exchanges Page&nbsp;
+                <a [routerLink]="['/returns-exchanges']" title="Returns & Exchanges">here.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '16'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="16"
+                  (click)="toggleItem('16')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Return An Item?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>Postal Returns within the US are FREE.</p>
+              <p>Simply book your return&nbsp;
+                <a [routerLink]="['/book-return']">here</a>.
+              </p>
+              <p>
+                Please use the same&nbsp;email address that you used to purchase your order.
+                <br><br>
+                Once we receive your parcel, your return will be processed within 14 business days.
+                Your items must meet the Terms and Conditions in our policy. Please allow additional
+                processing time over sale / holiday periods.
+                <br><br>
+                <strong>Please note:</strong> Returning via Post is for online orders only.
+                To return any items that were purchased in-store, please visit your nearest boutique.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '17'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="17"
+                  (click)="toggleItem('17')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Can I Return Underwear?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>As per health and hygiene regulations, underwear MUST be tried over the top of your own.</p>
+              <p>
+                To return or exchange any underwear, it must be returned in original condition;
+                unworn, unwashed, and free from marks or stains. We recommend checking over the
+                garment thoroughly and confirming with our&nbsp;
+                <a [routerLink]="['/returns-exchanges']" title="Returns & Exchanges">Returns &amp; Exchanges Policy.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '18'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="18"
+                  (click)="toggleItem('18')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Long Will My Return Take?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Keep the details of your tracking number so you can see when it arrives back to us.
+                <br><br>
+                Once it has arrived, your return will be processed within 14 business days, provided
+                that the items meet the conditions of the
+                <a [routerLink]="['/returns-exchanges']" title="Returns & Exchanges">Returns &amp; Exchanges Policy.</a>
+                Please allow additional processing time over sale and holiday periods.
+                <br><br>
+                After your exchange/refund has been processed, you will receive an email as confirmation.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '19'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="19"
+                  (click)="toggleItem('19')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Can I Return My Online Order In-store?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Yes, online orders can be returned to a store in the same country that the items
+                were purchased. Please bring proof of purchase to ensure a smooth refund or
+                exchange process.
+                <a [routerLink]="['/boutique-finder']" title="Honey Lingerie Store Finder">Find your nearest store.</a>
+                <br><br>
+                Please remember to check that your items meet the conditions of the
+                <a [routerLink]="['/returns-exchanges']" title="Returns & Exchanges">Returns &amp; Exchanges Policy</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '20'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="20"
+                  (click)="toggleItem('20')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Can I Return An In-store Purchase To Online?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                No, unfortunately in-store purchases cannot be processed through our online returns.
+                <br><br>
+                If your items were purchased in-store, it is likely they were purchased using cash
+                or card. Unfortunately, we are unable to refund in these methods as either will
+                require you to be present. For this reason, in-store purchases can only be returned
+                at one of our boutiques. Please visit our
+                <a [routerLink]="['/boutique-finder']" title="Honey Lingerie Store Finder">Boutique Finder</a>
+                to locate your nearest store.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 #product class="accordion-item-title accordion-item-heading">Product & Stock</h3>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '21'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="21"
+                  (click)="toggleItem('21')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Know My Size?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Finding your perfect fit should feel effortless.<br>
+                Explore our Size Guide for detailed measurements and international conversions
+                <a [routerLink]="['/size-guide']" title="Size Guide">here</a>.
+                <br><br>
+                Prefer a more tailored touch? Our fitting experts are available via
+                <a [routerLink]="['/contact-us']" title="Contact Us">Live Chat</a> for personalised guidance.
+                <br><br>Or visit us in-store for an intimate fitting experience at your nearest
+                <a [routerLink]="['/boutique-finder']" title="Boutique Finder">Honey boutique</a>.
+                Because nothing beats a perfect fit, especially when it’s in lace.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '22'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="22"
+                  (click)="toggleItem('22')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">When Will A Style Be Restocked In My Size?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                As a boutique brand, our collections are designed in limited runs, so once a piece
+                sells out, it may not return. That’s part of the Honey allure.
+                <br><br>
+                But don’t give up just yet. If your size is unavailable, select it on the product
+                page and click ‘Waitlist Me’ to enter your email. We’ll let you know if it’s restocked.
+                <br><br>
+                For your best chance at securing a piece, we always recommend shopping early.
+                These styles don’t stay waiting for long.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '23'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="23"
+                  (click)="toggleItem('23')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Should I Wash My H Lingerie?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                To keep your gorgeous new goodies in their best condition, we suggest gentle hand
+                washing in cold water only. This helps to preserve shimmering foil, delicate
+                lace or luxe trims.
+                <br><br>
+                You’ll also find specific care instructions listed under the ‘Care Instructions’
+                dropdown on each product page.
+                <br><br>
+                A few extra tips for keeping your lingerie flawless:<br>
+              </p>
+              <ul>
+                <li>No harsh soaps or chemicals</li>
+                <li>Avoid detergents with bleach or ‘oxy-action’</li>
+                <li>Don’t rub, wring, or twist</li>
+                <li>No ironing or dry cleaning</li>
+                <li>Always line dry, preferably in the shade</li>
+                <li>Store dark colours separately to avoid colour transfer<br></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '24'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="24"
+                  (click)="toggleItem('24')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Care For My H Latex?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p><strong>Latex Care</strong></p>
+              <p>
+                Your latex comes in a specially designed rubber-feel storage bag, lightly powdered
+                to protect the finish. When not in use, keep your latex stored in this bag to
+                prevent damage and preserve its shape and sheen.
+                <br><br>
+                Need to wipe your Latex down? Use a soft microfibre cloth. DO NOT use any chemicals
+                on your Latex other than the recommended&nbsp;Dressing Aid&nbsp;and&nbsp;Shining Spray.
+                Water won’t harm your latex, but make sure it’s completely dry before storing.
+              </p>
+              <p><strong>Tips For Dressing Into Your Latex</strong></p>
+              <ol>
+                <li>Remove all jewellery before handling, especially rings and bracelets.</li>
+                <li>Be generous with Dressing Aid. Pump a few sprays inside the garment before slipping in.</li>
+                <li>Apply Dressing Aid all over the legs and derrière. Even better, have a lover help you!</li>
+                <li>Use Shining Spray to achieve that glossy, liquid finish. Spray on matte areas and buff gently in circular motions.</li>
+                <li>Take your time! Enjoy the experience of dressing in your Latex. Rushing into
+                  them can result in tearing. Same applies for removal; roll them down slowly.
+                </li>
+              </ol>
+              <p>
+                Any questions? Feel free to get in touch with our Customer Obsessive Team.&nbsp;
+                <a [routerLink]="['/contact-us']" title="Contact Us">Contact us.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 #toys class="accordion-item-title accordion-item-heading">Toys</h3>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '25'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="25"
+                  (click)="toggleItem('25')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Charge My Toy?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                First, you’ll find the charging cable tucked into the bottom of the box, and
+                the port is usually located at the back or base of the toy. Then insert the
+                pin-shaped charger fully into the charging port. Some charging ports are discreet
+                by design, so if you’re unsure, refer to the instruction manual for detailed guidance.
+                <br><br>
+                Once the charger is securely connected, a light will blink to indicate it's charging.
+                When fully powered, the light will remain on. Now all that’s left to do...
+                is enjoy the pleasure that’s fully charged and ready for you.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '26'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="26"
+                  (click)="toggleItem('26')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Can I Purchase A Replacement Charger For My Toy?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Lost your charger, honey? Don’t worry, we’ll get you buzzing again.
+                <br><br>
+                You can purchase a replacement charger online or in-store:
+                <br><strong><br></strong>
+                <a [routerLink]="['/products', 'hb-toy-charger-1']" title="Honey Toy Charger 12mm">
+                  <strong>Charger 1 (12mm pin</strong></a><strong>):&nbsp;</strong>
+                Compatible with Aura, Beso, Bobbi, Cobra, Gemini, Luna, Perla &amp; all remote controls.
+                <br><br>
+                <a [routerLink]="['/products', 'hb-toy-charger-50125579']" title="Honey Toy Charger 17mm">
+                  <strong>Charger 2 (17mm pi</strong></a>
+                  <strong>)</strong><strong>: </strong>
+                Compatible with Aphrodite, Brandi, Bullet, Colt, Dolly, Dolly II, Duke, Duke II,
+                Florence, Gogo, Harley, Magnum, Piccolo, Rex, Ryder, Scorpio, Taurus &amp; Venus.
+                <br><br>Need an excuse to upgrade? Most new toy purchases include a charger.
+                Just be sure to choose one that’s compatible with your existing toy.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '27'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="27"
+                  (click)="toggleItem('27')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">How Do I Clean My Toy?</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Give your toy the treatment it deserves. We recommend using our
+                <a [routerLink]="['/products', 'hb-antibacterial-spray']" title="Antibacterial Cleaning Spray">H Antibacterial Spray</a>,
+                formulated to kill 99.9% of germs while balancing pH and protecting your toy’s finish.
+                <br><br>
+                Simply spritz the surface, leave for 60 seconds, then wipe gently with a soft cloth.
+                No soap, no harsh cleaners, as they may damage the finish of your toy.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '28'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="28"
+                  (click)="toggleItem('28')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">My Toy Isn't Working</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>No buzz? No panic. Let’s try a few quick tricks to get your toy back in action...<br></p>
+              <ol>
+                <li>
+                  First things first: make sure your toy and remote (if it has one) are fully
+                  charged. Give it an overnight charge just to be sure.
+                </li>
+                <li>
+                  Ensure your toy is unlocked by pressing the HB symbol button 3 times quickly
+                  and consecutively (click, click, click!).
+                </li>
+                <li>
+                  On the device, press and hold the HB symbol button for 5 seconds, then release.
+                </li>
+                <li>
+                  Now try pressing the + button and your toy should begin to vibrate. If not,
+                  repeat these steps one more time.<br>
+                </li>
+              </ol>
+              <p>
+                Still having trouble? Our Customer Obsessive Team are here to help.
+                <a [routerLink]="['/contact-us']" title="Contact Us">Contact us </a>and we’ll get you
+                back to buzzing in no time.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '29'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="29"
+                  (click)="toggleItem('29')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">My remote isn't Working</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>No spark? Let’s get your remote back in sync.<br></p>
+              <ol>
+                <li>
+                  Make sure your remote is fully charged. Even if it looks good, try giving
+                  it an overnight top-up.<br>
+                </li>
+                <li>
+                  Double-check your charger compatibility:<br>– 12mm Pin Charger: Compatible
+                  with Aura, Beso, Bobbi, Colt, Curva, Gemini, Luna, Magnum, Maxx, Perla &amp;
+                  all remote controls.<br>– 17mm Pin Charger: Compatible with Aphrodite, Bullet,
+                  Dolly II, Duke II, Harley, Ryder, Taurus &amp; Venus.<br>
+                </li>
+              </ol>
+              <p>
+                Still having trouble? Our Customer Obsessive Team are here to help.&nbsp;
+                <a [routerLink]="['/contact-us']" title="Contact Us">Contact us.</a></p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="accordion-item-title accordion-item-heading">Contact us</h3>
+
+        <!-- Buttons -->
+        <div class="js-accordion-list-footer">
+          <a class="button-icon-beige width-full" href="mailto:honey@honey.com" title="Email us">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" class="icon " fill="none" viewBox="0 0 20 20" role="presentation" disabled="true" clickable="false">
+              <title>Icon of email</title>
+              <path stroke="#000" stroke-linecap="square" d="M2.5 4.375h15V15a.624.624 0 0 1-.625.625H3.125A.625.625 0 0 1 2.5 15V4.375Z"></path>
+              <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M17.5 4.375 10 11.25 2.5 4.375"></path>
+            </svg>
+            <span>Email us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title>Icon of chevron right</title>
+              <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

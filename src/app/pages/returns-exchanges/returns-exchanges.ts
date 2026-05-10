@@ -6,7 +6,6 @@ import { RouterLink } from '@angular/router';
   selector: 'app-returns-exchanges',
   imports: [RouterLink],
   templateUrl: './returns-exchanges.html',
-  styleUrl: './returns-exchanges.css',
 })
 export class ReturnsExchanges implements OnInit {
 
@@ -34,6 +33,7 @@ export class ReturnsExchanges implements OnInit {
 
     this.scrollingService.scrollToPoint(target, 148);
   }
+
   public toggleItem(itemId: string): void {
     this.openedItem.update(currentId => {
 

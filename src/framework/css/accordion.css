@@ -1,3 +1,13 @@
+.section-accordion-list {
+  position: relative;
+  overflow: hidden;
+}
+/*========== Media ===============*/
+@media (min-width: 1024px) {
+  .section-accordion-list > .container {
+    padding: 2.5rem 0 5rem 0;
+  }
+}
 .accordion-list-widget {
   width: 100%;
   display: flex;
@@ -175,12 +185,21 @@
   text-transform: uppercase;
   color: rgb(17, 17, 17);
 }
-.js-accordion-list-footer {
+
+.js-accordion-list-footer, .js-accordion-list-header {
   display: flex;
   gap: .5rem;
   width: 100%;
 }
+.js-accordion-list-header {
+  margin-bottom: 1rem;
+}
 /* ============== Media ===================*/
+@media (min-width: 768px) {
+  .js-accordion-list-header {
+    margin-bottom: 1.5rem;
+  }
+}
 @media (min-width: 1024px) {
   .js-accordion-button {
     padding-bottom: 1.5rem;

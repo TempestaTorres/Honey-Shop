@@ -1,1 +1,428 @@
-<p>shipping-delivery works!</p>
+<main class="outline-none">
+  <!--  Heading -->
+  <section class="js-page-header">
+    <div class="container">
+      <div class="js-page-header-heading">
+        <h1>SHIPPING & DELIVERY</h1>
+
+        <!-- Text -->
+        <div class="app-widget-text-editor">
+          <div class="app-text-title align-center typeset-description-primary">
+            <p>
+              Please see international and domestic shipping information below. We’ll keep you
+              up-to-date with your tracking number once your order has shipped.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  Accordion Faqs List -->
+  <section class="section-boxed section-accordion-list">
+    <div class="container">
+      <!-- Accordion -->
+      <div class="accordion-list-widget accordion-list-type-medium">
+
+        <!-- Accordion item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '1'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="1"
+                  (click)="toggleItem('1')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">United States Shipping</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container wysiwyg">
+              <!-- Table -->
+              <table>
+                <thead>
+                  <tr>
+                    <th>SHIPPING OPTIONS</th>
+                    <th>ESTIMATED TRANSIT TIME*</th>
+                    <th>COST</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>USA Next Day Delivery:</strong>
+                      <br>
+                      Order before 11.00am PST for same day shipping.
+                      <br>
+                      Order after 11.00am PST for next day shipping.
+                      <br>
+                      <em>Business days only</em>
+                    </td>
+                    <td>1 business day</td>
+                    <td>$35 USD</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>USA Standard Shipping:</strong>
+                      Orders will ship within 2 business days.
+                      <br>
+                      <em>*During Sale periods dispatch may be delayed by 5-7 business days</em>
+                    </td>
+                    <td>3 - 7 business days</td>
+                    <td>
+                      <strong>FREE</strong> – Orders $200 USD and over
+                      <br>
+                      <strong>$12</strong> – Orders under $200 USD
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>USA Priority Delivery:</strong>
+                      <br>
+                      Order before 11.00am PST for same day shipping.
+                      <br>
+                      Order after 11.00am PST for next day shipping.
+                      <br>
+                      <em>Business days only*</em>
+                      <br>
+                      <em>*During Sale periods dispatch may be delayed by 5-7 business days</em>
+                    </td>
+                    <td>2 - 3 business days</td>
+                    <td>
+                      <strong>FREE</strong> – Orders $350 USD and over
+                      <br>
+                      <strong>$15</strong> – Orders under $350 USD
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Alaska &amp; Hawaii Standard Delivery:</strong>
+                      Orders will ship within 2 business days*
+                      <br>
+                      <em>*During Sale periods dispatch may be delayed by 5-7 business days</em>
+                    </td>
+                    <td>3 – 7 business days</td>
+                    <td>
+                      <strong>FREE</strong> – Orders $250 USD and over
+                      <br>
+                      <strong>$20</strong> – Orders under $250 USD
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Puerto Rico Standard Delivery:</strong>
+                      Orders will ship within 2 business days*
+                      <br>
+                      <em>*During Sale periods dispatch may be delayed by 5-7 business days</em>
+                    </td>
+                    <td>3 – 7 business days</td>
+                    <td>
+                      <strong>FREE</strong> – Orders $250 USD and over
+                      <br>
+                      <strong>$20</strong> – Orders under $250 USD</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Description -->
+              <p>
+                <em><br>
+                  *All delivery times are indicative via our shipping partners. Orders dispatched
+                  on business days only.
+                </em>
+              </p>
+              <p>
+                <em><strong>Shipping to PO Boxes:</strong>
+                  If you are wanting your order shipped to a PO box please select the PO box
+                  shipping option at checkout.
+                </em>
+              </p>
+              <p>
+                <em><strong>Please note:</strong>
+                Any items processed through US customs for personal use with a value of under
+                $800 USD can be subject to imported duty free. Any articles imported for personal
+                use with a value between $800 USD and $1800 USD will be subject to a flat 4%
+                duty rate charged to the purchaser.
+              </em>
+              </p>
+              <p>
+                <em>Due to the fast turnaround time of our orders, any address changes, order
+                  cancellations or amendments can only be done within 30 minutes of the order being
+                  placed. If this time frame has passed, please wait for the order to be shipped,
+                  and contact the carrier directly to request a redirection.
+                </em>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '2'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="2"
+                  (click)="toggleItem('2')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">International shipping</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container wysiwyg">
+              <!-- Table -->
+              <table>
+                <thead>
+                  <tr>
+                    <th>SHIPPING OPTIONS</th>
+                    <th>ESTIMATED TRANSIT TIME*</th>
+                    <th>COST</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>Canada: Standard Delivery</strong>
+                      <br>
+                      Duties &amp; Taxes calculated at checkout
+                      <br>
+                      <em>During Sale periods dispatch may be delayed 5–7 business days</em>
+                    </td>
+                    <td>3–10 business days</td>
+                    <td>
+                      <strong>FREE</strong>
+                      <br>
+                      Orders over $350 USD
+                      <br>
+                      <strong>$40 USD</strong>
+                      <br>Orders under $350 USD
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>International Standard Shipping</strong>
+                      <br>
+                      Duties &amp; Taxes calculated at checkout
+                      <br>
+                      <em>During Sale periods dispatch may be delayed 5–7 business days</em>
+                    </td>
+                    <td>3–10 business days</td>
+                    <td>
+                      <strong>FREE</strong>
+                      <br>
+                      Orders over $500 USD
+                      <br>
+                      <strong>$50 USD</strong>
+                      <br>Orders under $500 USD
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Description -->
+              <p>
+                <em><br>
+                *All delivery times are indicative via our shipping partners. During Sale periods
+                dispatch may be delayed by 5–7 business days.
+                </em>
+              </p>
+              <p>
+                <strong><em>Please note:</em></strong>
+                Any items processed through US customs for personal use with a value under $800 USD
+                are duty free. Items valued between $800 USD and $1,800 USD for personal use are
+                subject to a flat 4% duty rate charged to the purchaser.
+              </p>
+              <p>
+                <em>Due to the fast turnaround time of our orders, any address changes, order
+                  cancellations or amendments can only be done within 30 minutes of placing your
+                  order. If this time frame has passed, please wait for your order to be shipped
+                  and contact the carrier directly to request a redirection.
+                </em>
+              </p>
+              <p>
+                <strong><em>Please note:</em></strong>
+                We do not ship to Cuba, Guatemala, Iran, Syria, Sudan, Russia, Belarus, Eritrea,
+                Ukraine, Venezuela or International PO Boxes.
+              </p>
+              <p>
+                <em>The following countries reject any orders including adult toys, bondage,
+                  massage gels or beauty products: Saudi Arabia, U.A.E, Thailand, Turkey, Vietnam,
+                  Malaysia, India, Maldives, Alabama (U.S), Egypt, Dubai, Qatar, Oman, Bahrain,
+                  Yemen, India, Pakistan, Indonesia, Syria, Iraq, Afghanistan.
+                </em>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '3'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="3"
+                  (click)="toggleItem('3')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Find In-store</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                Don't feel like waiting for an online delivery? Enjoy the convenience and speed of
+                Find In-Store, available across all <strong>United States</strong> stores.
+                <br><br>
+                It’s really that easy. Just order online and pick up your Honey order from your
+                selected store, usually within three hours*! Your order may be sent from our
+                warehouse to the store, if this is the case it will take 2-5 days to arrive.
+                <br><br>
+                If you have opted to pick up your order instore you will receive an email to
+                confirm that your order is ready to collect. Please wait for this email before
+                heading in to collect your goodies.
+                <br><br>
+                <strong>When can I collect my Find In-Store order?</strong>
+                <br>
+                After placing your order, you will receive a 'Ready For Collection' email, usually
+                within three hours. Once you get the notification, simply visit your selected store
+                to pick up your order.
+                <br><br><strong>How long do you hold Find In-Store orders?</strong><br>
+                We will hold your order for 30 days from the date it is ready for collection.
+                Unfortunately, we are unable to extend this timeframe, so be sure to collect your
+                order in time!
+                <br><br>
+                <strong>What if I can't make it to collect my order within 30 days?</strong>
+                <br>
+                If your order is not collected within 30 days of the collection date, it will no
+                longer be available for collection. You will receive an email from us confirming
+                that we have cancelled the order and provide you with a refund. Refunds will be
+                processed in line with our Returns and Exchanges Policy.
+                <br><br>
+                <strong>What do I need to bring to collect my Find In-Store order?</strong>
+                <br>
+                To pick up your order, just be ready to show a valid photo ID
+                (passport, driver’s license), your credit card if you used it to pay for this order
+                and your ready for collection email.
+                <br><br><strong>Are there any Find In-Store fees?</strong><br>No. There is no
+                delivery fee or minimum spend at checkout required for a Find In-Store order.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '4'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="4"
+                  (click)="toggleItem('4')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Duties And Taxes</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <ul>
+                <li>Honey is not responsible for applicable customs fees, import duties, taxes, or
+                  any other charges for international orders.
+                </li>
+                <li>
+                  For international orders, you will be responsible for all duties, taxes and
+                  customs charges which will be calculated at the time of your order and collected
+                  at checkout.
+                </li>
+                <li>
+                  Duties, taxes and customs charges vary from country to country. In the European
+                  Union, duties and taxes can be 20% or more of the total declared value of your
+                  order. We recommend contacting your local customs office for further information.
+                </li>
+                <li>
+                  Some countries may require additional government charges, they must be paid by
+                  you in order for your package to clear customs.&nbsp;
+                </li>
+                <li>
+                  Any additional international fees not paid at checkout will need to be paid by
+                  the customer&nbsp;to the local carrier within your country.
+                </li>
+                <li>
+                  Please note if you refuse any shipments upon delivery, you will still be
+                  responsible for duties, taxes and customs fees incurred in shipping the
+                  package.
+                </li>
+                <li>Duties &amp; Taxes are non-refundable once your order has shipped. Any items
+                  returned will not be eligible for a refund on the duties &amp; taxes associated.
+                </li>
+                <li>
+                  <strong>NOTE:</strong>&nbsp;Honey does not make any profit on our shipping
+                  services to international customers and has made every effort to minimize
+                  our international shipping charges. Honey is&nbsp;legally required to
+                  disclose the full value of the package contents.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="accordion-item-title accordion-item-heading">Contact us</h3>
+
+        <!-- Buttons -->
+        <div class="js-accordion-list-footer">
+          <a class="button-icon-beige width-full" href="mailto:honey@honey.com" title="Email us">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" class="icon " fill="none" viewBox="0 0 20 20" role="presentation" disabled="true" clickable="false">
+              <title>Icon of email</title>
+              <path stroke="#000" stroke-linecap="square" d="M2.5 4.375h15V15a.624.624 0 0 1-.625.625H3.125A.625.625 0 0 1 2.5 15V4.375Z"></path>
+              <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M17.5 4.375 10 11.25 2.5 4.375"></path>
+            </svg>
+            <span>Email us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title>Icon of chevron right</title>
+              <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
