@@ -33,4 +33,8 @@
       }
     </div>
   </div>
+} @else if ((tabsContent.type === types.HONEY_SIZES)) {
+
+  <app-size-guide-type [sizeType]="{type: tabsContent.content.type, content: tabsContent.content.content}"
+  class="app-widget"></app-size-guide-type>
 }

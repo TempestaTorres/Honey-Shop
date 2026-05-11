@@ -1,4 +1,4 @@
-import { HoneyClub } from '../types/tabs/tab-types';
+import { HoneyClub, HoneyTabs, tabTypes } from '../types/tabs/tab-types';
 import { FaqType } from '../types/faq-type';
 
 export const HoneyClubDataTabs: HoneyClub[] = [
@@ -86,7 +86,7 @@ export const HoneyClubFaqs: FaqType[] = [
   {
     name: "What Is The Honey Club?",
     list: [
-      "The Honey Club is an exclusive loyalty program for lovers of Honey Birdette. It’s your VIP pass to rewards, perks, and guilt-free pleasure. Like friends with benefits, only better!"
+      "The Honey Club is an exclusive loyalty program for lovers of Honey. It’s your VIP pass to rewards, perks, and guilt-free pleasure. Like friends with benefits, only better!"
     ]
   },
   {
@@ -218,3 +218,170 @@ export const HoneyClubFaqs: FaqType[] = [
     list: ["Are you sure, honey? By closing your account, you’ll lose your hard-earned loyalty tier and all the perks that come with it. We’d be sad to see you go because the best rewards are still to come! If you wish to opt out of the Honey Club, please reach out to us."],
   }
 ]
+export const HoneyBodysuitSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'bodysuit',
+      content: 'size',
+    },
+    {
+      type: 'bodysuit',
+      content: 'conversion',
+    },
+    {
+      type: 'bodysuit',
+      content: 'measure',
+    },
+  ]
+}
+export const HoneyBraletteSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'bralette',
+      content: 'size',
+    },
+    {
+      type: 'bralette',
+      content: 'conversion',
+    },
+    {
+      type: 'bralette',
+      content: 'measure',
+    },
+  ]
+}
+export const HoneyBraSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'bra',
+      content: 'size',
+    },
+    {
+      type: 'bra',
+      content: 'conversion',
+    },
+    {
+      type: 'bra',
+      content: 'measure',
+    },
+  ]
+}
+export const HoneyBriefSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'brief',
+      content: 'size',
+    },
+    {
+      type: 'brief',
+      content: 'conversion',
+    },
+    {
+      type: 'brief',
+      content: 'measure',
+    },
+  ]
+}
+export const HoneySuspenderSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'suspender',
+      content: 'size',
+    },
+    {
+      type: 'suspender',
+      content: 'conversion',
+    },
+    {
+      type: 'suspender',
+      content: 'measure',
+    },
+  ]
+}
+export const HoneySwimwearSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'swimwear',
+      content: 'size',
+    },
+    {
+      type: 'swimwear',
+      content: 'conversion',
+    },
+    {
+      type: 'swimwear',
+      content: 'measure',
+    },
+  ]
+}
+export const HoneyChemiseSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'chemise',
+      content: 'size',
+    },
+    {
+      type: 'chemise',
+      content: 'conversion',
+    }
+  ]
+}
+export const HoneyDressSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'dress',
+      content: 'size',
+    },
+    {
+      type: 'dress',
+      content: 'conversion',
+    }
+  ]
+}
+export const HoneyHosierySize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'hosiery',
+      content: 'size',
+    },
+    {
+      type: 'hosiery',
+      content: 'conversion',
+    }
+  ]
+}
+export const HoneyLatexSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'latex',
+      content: 'size',
+    },
+    {
+      type: 'latex',
+      content: 'conversion',
+    }
+  ]
+}
+export const HoneyRobeSize: HoneyTabs = {
+  type: tabTypes.HONEY_SIZES,
+  tabs: [
+    {
+      type: 'robe',
+      content: 'size',
+    },
+    {
+      type: 'robe',
+      content: 'conversion',
+    }
+  ]
+}

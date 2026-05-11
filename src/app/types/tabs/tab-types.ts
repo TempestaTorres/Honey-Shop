@@ -2,6 +2,7 @@ import { UrlType } from '../url-type';
 
 export const tabTypes = {
   HONEY_CLUB: 'honey-club',
+  HONEY_SIZES: 'honey-sizes',
 }
 
 export type Description = {

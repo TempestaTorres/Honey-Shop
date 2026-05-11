@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { GeolocationRegion } from '../../components/geolocation-region/geolocation-region';
 import { ObserveElementDirective } from '../../directives/scroll-observer';
 import { IntersectingService } from '../../services/intersecting-service';
+import { AccordionService } from '../../services/accordion-service';
 
 @Component({
   selector: 'app-footer',
@@ -15,40 +16,15 @@ export class Footer {
 
   readonly contents = viewChildren<ElementRef<HTMLElement>>('content');
 
-  constructor(private intersectingService: IntersectingService) {}
+  constructor(private intersectingService: IntersectingService, private accordionService: AccordionService) {}
 
   public toggleItem(itemId: string): void {
-    this.openedAccordionItem.update((currentId) => {
-      if (currentId === itemId) {
-        this.setMaxHeight(itemId, true);
-        return '0';
-      }
 
-      this.setMaxHeight(itemId);
-      return itemId;
-    });
-  }
-
-  private setMaxHeight(itemId: string, reset: boolean = false): void {
     const elContents = this.contents();
-    let el = elContents.find((el) => el.nativeElement.dataset['id'] === itemId);
+    this.accordionService.jsAccordionToggle(itemId, this.openedAccordionItem, elContents);
 
-    if (reset) {
-      if (el) {
-        el.nativeElement.style.maxHeight = '0px';
-      }
-    } else {
-      if (el) {
-        for (let elContent of elContents) {
-          elContent.nativeElement.style.maxHeight = '0px';
-        }
-        let height: number | undefined =
-          el.nativeElement.firstElementChild?.getBoundingClientRect().height;
-
-        el.nativeElement.style.maxHeight = `${height}px`;
-      }
-    }
   }
+
   public isIntersecting(status: boolean, element: HTMLElement) {
     this.intersectingService.isIntersecting(status, element);
   }

@@ -23,7 +23,11 @@
 </div>
 
 <!--  Tabs -->
-<div class="tab-contents-wrapper">
+<div #tabContents
+     appObserveElement
+     [isContinuous]="false"
+     (isIntersecting)="isIntersecting($event, tabContents)"
+  class="tab-contents-wrapper scroll-trigger--offscreen scroll-trigger animate--slide-in">
 
   @for (item of tabsContent.tabs; track $index) {
 

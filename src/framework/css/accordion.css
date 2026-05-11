@@ -38,34 +38,41 @@
 }
 
 .accordion-item::after {
-  --bg-opacity: 1;
   position: absolute;
   bottom: -1px;
   left: 0;
   z-index: 1;
   height: 1px;
   width: 0;
-  background-color: rgba(0, 0, 0, var(--bg-opacity, 1));
+  background-color: rgb(0, 0, 0);
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
   content: '';
 }
 /* Opened */
-.accordion-item.active::after {
+.accordion-item:not(.accordion-sub-item).active::after {
+  width: 100%;
+}
+.accordion-item.accordion-sub-item.active::after {
   width: 100%;
 }
 
-.accordion-item.active .accordion-item-icon-open {
+.accordion-item:not(.accordion-sub-item).active .accordion-item-icon-open:not(.sub-item-icon),
+.accordion-item.accordion-sub-item.active .accordion-item-icon-open {
   --rotate: 90deg;
   transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
   opacity: 0;
 }
 
-.accordion-item.active .accordion-item-icon-close {
+.accordion-item:not(.accordion-sub-item).active .accordion-item-icon-close:not(.sub-item-icon),
+.accordion-item.accordion-sub-item.active .accordion-item-icon-close {
   --rotate: 180deg;
   transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
   opacity: 1;
+}
+.accordion-item.accordion-sub-item:last-child {
+  border-bottom-width: 0;
 }
 .accordion-item-title {
   --text-opacity: 1;
@@ -125,7 +132,8 @@
   transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.accordion-item.active .accordion-item-description {
+.accordion-item:not(.accordion-sub-item).active .accordion-item-description:not(.accordion-sub-item),
+.accordion-item.accordion-sub-item.active .accordion-item-description.accordion-sub-item {
   visibility: visible;
   opacity: 1;
   max-height: 100%;
@@ -162,6 +170,12 @@
 }
 .js-accordion-content .accordion-content-item:not(:last-child) {
   margin-bottom: .5rem;
+}
+.js-accordion-content .tab-list-widget .tab-list-header {
+  margin: 0;
+}
+.js-accordion-content .tab-contents-wrapper {
+  padding-bottom: 0;
 }
 .accordion-content-item a {
   text-transform: uppercase;

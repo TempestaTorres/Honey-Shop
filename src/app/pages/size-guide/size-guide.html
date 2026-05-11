@@ -2,15 +2,77 @@
   <!--  Anchor links -->
   <section class="section-anchor-link">
     <div class="container">
-      <div class="js-anchor-link">
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(bodysuit)"
-            class="button-beige button-small js-anchor-button" type="button">BODYSUIT & CORSET</button>
+      <div class="js-anchor-link-wrapper">
+        <div class="swiper js-anchor-link-swiper">
+          <div class="swiper-wrapper js-anchor-link">
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(bodysuit)"
+                class="button-beige button-small js-anchor-button" type="button">BODYSUIT & CORSET</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(bralette)"
+                class="button-beige button-small js-anchor-button" type="button">BRALETTE</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(bra)"
+                class="button-beige button-small js-anchor-button" type="button">BRA & BUSTIER (EU)</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(brief)"
+                class="button-beige button-small js-anchor-button" type="button">BOTTOMS</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(chemise)"
+                class="button-beige button-small js-anchor-button" type="button">CHEMISE</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(dress)"
+                class="button-beige button-small js-anchor-button" type="button">TOPS & DRESSES</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(hosiery)"
+                class="button-beige button-small js-anchor-button" type="button">HOSIERY</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(latex)"
+                class="button-beige button-small js-anchor-button" type="button">LATEX</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(robe)"
+                class="button-beige button-small js-anchor-button" type="button">ROBE</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(suspender)"
+                class="button-beige button-small js-anchor-button" type="button">SUSPENDER</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(swimwear)"
+                class="button-beige button-small js-anchor-button" type="button">SWIMWEAR</button>
+            </div>
+          </div>
         </div>
-        <!-- Link -->
-
       </div>
     </div>
   </section>
@@ -61,7 +123,329 @@
           <!-- Content -->
           <div class="accordion-item-description">
             <div class="js-accordion-content shopify-policy__container">
-              <p>Content</p>
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabFullTitles" [tabsContent]="tabBodysuitContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #bralette class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '2'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="2"
+                  (click)="toggleItem('2')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bralette Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabFullTitles" [tabsContent]="tabBraletteContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #bra class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '3'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="3"
+                  (click)="toggleItem('3')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bra & Bustier Sizing (EU)</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabFullTitles" [tabsContent]="tabBraContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #brief class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '4'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="4"
+                  (click)="toggleItem('4')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bottoms Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabFullTitles" [tabsContent]="tabBriefContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #chemise class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '5'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="5"
+                  (click)="toggleItem('5')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Chemise Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabTitles" [tabsContent]="tabChemiseContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #dress class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '6'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="6"
+                  (click)="toggleItem('6')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Tops & Dresses Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabTitles" [tabsContent]="tabDressContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #hosiery class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '7'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="7"
+                  (click)="toggleItem('7')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Hosiery Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabTitles" [tabsContent]="tabHosieryContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #latex class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '8'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="8"
+                  (click)="toggleItem('8')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Latex Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabTitles" [tabsContent]="tabLatexContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #robe class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '9'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="9"
+                  (click)="toggleItem('9')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Robe Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabTitles" [tabsContent]="tabRobeContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #suspender class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '10'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="10"
+                  (click)="toggleItem('10')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Suspender Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabFullTitles" [tabsContent]="tabSuspenderContent"
+                            class="tab-list-widget"></app-tab-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div #swimwear class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '11'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="11"
+                  (click)="toggleItem('11')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Swimwear Sizing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <!-- Tabs -->
+              <app-tab-list [tabTitles]="sizeTabFullTitles" [tabsContent]="tabSwimwearContent"
+                            class="tab-list-widget"></app-tab-list>
             </div>
           </div>
         </div>

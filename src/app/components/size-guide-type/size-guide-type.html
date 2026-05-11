@@ -1,0 +1,2019 @@
+<div class="size-guide-panel"
+     [class.current-tab-size-guide]="sizeType.content === 'size'"
+     [class.current-tab-converter]="sizeType.content === 'conversion'"
+     [class.current-tab-how-to-measure]="sizeType.content === 'measure'"
+     [attr.data-type]="sizeType.type">
+
+  @if (sizeType.content === 'size' && sizeType.type !== "chemise" && sizeType.type !== "dress"
+        && sizeType.type !== "latex" && sizeType.type !== "robe") {
+
+    <!-- Radio buttons -->
+    <div class="size-guide-panel__buttons">
+      <div class="size-guide-panel__radio-group-buttons">
+        <!-- CM Button -->
+        <label class="toggle-button" [for]="'CM-' + sizeType.type + sizeType.content">
+          <input
+            (change)="cmClick()"
+            [id]="'CM-' + sizeType.type + sizeType.content" type="radio"
+            [name]="'SZ-' + sizeType.type + sizeType.content"
+            class="sr-only"
+            [value]="'CM-' + sizeType.type"
+            checked="">
+          <div class="toggle-button__title">CM</div>
+        </label>
+        <!-- INCH Button -->
+        <label class="toggle-button" [for]="'INCH-' + sizeType.type + sizeType.content">
+          <input
+            (change)="inchClick()"
+            [id]="'INCH-' + sizeType.type + sizeType.content" type="radio"
+            [name]="'SZ-' + sizeType.type + sizeType.content"
+            class="sr-only"
+            [value]="'INCH-' + sizeType.type">
+          <div class="toggle-button__title">IN</div>
+        </label>
+      </div>
+    </div>
+  }
+
+  @if (sizeType.content === 'size') {
+
+    @if (sizeType.type !== "latex" && sizeType.type !== "robe") {
+
+      <!--  Size Table -->
+      <div class="wysiwyg wysiwyg-size-guide">
+
+        @if (sizeType.type === 'chemise' || sizeType.type === 'dress') {
+          <p><span class="title"><strong>{{ sizeType.type | uppercase }}</strong></span></p>
+        }
+        <table [class.layout-fixed]="sizeType.type === 'chemise' || sizeType.type === 'dress'">
+          <tbody>
+
+            @if (sizeType.type === "bodysuit" || sizeType.type === "swimwear") {
+
+              <tr>
+                <td>SIZE</td>
+                <td>XXS</td>
+                <td>XS</td>
+                <td>S</td>
+                <td>M</td>
+                <td>L</td>
+                <td>XL</td>
+                <td>XXL</td>
+              </tr>
+              @if (toggle()) {
+                <tr>
+                  <td>Bust CM</td>
+                  <td>73-77</td>
+                  <td>78-82</td>
+                  <td>83-87</td>
+                  <td>88-92</td>
+                  <td>93-97</td>
+                  <td>98-102</td>
+                  <td>103-107</td>
+                </tr>
+                <tr>
+                  <td>Waist CM</td>
+                  <td>57-61</td>
+                  <td>61-65</td>
+                  <td>65-70</td>
+                  <td>70-75</td>
+                  <td>75-80</td>
+                  <td>80-85</td>
+                  <td>85-91</td>
+                </tr>
+                <tr>
+                  <td>Hip CM</td>
+                  <td>82-86</td>
+                  <td>86-90</td>
+                  <td>90-95</td>
+                  <td>95-100</td>
+                  <td>100-105</td>
+                  <td>105-110</td>
+                  <td>110-116</td>
+                </tr>
+              } @else {
+                <tr>
+                  <td>Bust INCHES</td>
+                  <td>28.5-30.5</td>
+                  <td>30.5-32.5</td>
+                  <td>32.5-34.5</td>
+                  <td>34.5-36.5</td>
+                  <td>36.5-38.5</td>
+                  <td>38.5-40.5</td>
+                  <td>40.5-42.5</td>
+                </tr>
+                <tr>
+                  <td>Waist INCHES</td>
+                  <td>22.5-24</td>
+                  <td>24-25.5</td>
+                  <td>25.5-27.5</td>
+                  <td>27.5-29.5</td>
+                  <td>29.5-31.5</td>
+                  <td>31.5-33.5</td>
+                  <td>33.5-36</td>
+                </tr>
+                <tr>
+                  <td>Hip INCHES</td>
+                  <td>32-34</td>
+                  <td>34-35-5</td>
+                  <td>35.5-37.5</td>
+                  <td>37.5-39.5</td>
+                  <td>39.5-41</td>
+                  <td>41-43</td>
+                  <td>43-45.5</td>
+                </tr>
+              }
+            } @else if (sizeType.type === "bralette") {
+
+              <tr>
+                <td>SIZE</td>
+                <td>XXS</td>
+                <td>XS</td>
+                <td>S</td>
+                <td>M</td>
+                <td>L</td>
+                <td>XL</td>
+                <td>XXL</td>
+              </tr>
+              @if (toggle()) {
+                <tr>
+                  <td>SIZE</td>
+                  <td>6</td>
+                  <td>8</td>
+                  <td>10</td>
+                  <td>12</td>
+                  <td>14</td>
+                  <td>16</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <td>Bust CM</td>
+                  <td>73-77</td>
+                  <td>78-82</td>
+                  <td>83-87</td>
+                  <td>88-92</td>
+                  <td>93-97</td>
+                  <td>98-102</td>
+                  <td>103-107</td>
+                </tr>
+              } @else {
+                <tr>
+                  <td>SIZE</td>
+                  <td>6</td>
+                  <td>8</td>
+                  <td>10</td>
+                  <td>12</td>
+                  <td>14</td>
+                  <td>16</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <td>Bust INCHES</td>
+                  <td>28.5-30.5</td>
+                  <td>30.5-32.5</td>
+                  <td>32.5-34.5</td>
+                  <td>34.5-36.5</td>
+                  <td>36.5-38.5</td>
+                  <td>38.5-40.5</td>
+                  <td>40.5-42.5</td>
+                </tr>
+              }
+            } @else if (sizeType.type === "bra") {
+
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>CUP SIZE</td>
+              </tr>
+              <tr>
+                <td>Underbust</td>
+                <td></td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+              </tr>
+              @if (toggle()) {
+                <tr>
+                  <td>62-67</td>
+                  <td>65</td>
+                  <td>77-79</td>
+                  <td>79-81</td>
+                  <td>81-83</td>
+                  <td>83-85</td>
+                  <td>85-87</td>
+                  <td>87-89</td>
+                  <td>89-91</td>
+                  <td>91-93</td>
+                </tr>
+                <tr>
+                  <td>68-72</td>
+                  <td>70</td>
+                  <td>82-84</td>
+                  <td>84-86</td>
+                  <td>86-88</td>
+                  <td>88-90</td>
+                  <td>90-92</td>
+                  <td>92-94</td>
+                  <td>94-96</td>
+                  <td>96-98</td>
+                </tr>
+                <tr>
+                  <td>73-77</td>
+                  <td>75</td>
+                  <td>87-89</td>
+                  <td>89-91</td>
+                  <td>91-93</td>
+                  <td>93-95</td>
+                  <td>95-97</td>
+                  <td>97-99</td>
+                  <td>99-101</td>
+                  <td>101-103</td>
+                </tr>
+                <tr>
+                  <td>78-82</td>
+                  <td>80</td>
+                  <td>92-94</td>
+                  <td>94-96</td>
+                  <td>94-96</td>
+                  <td>98-100</td>
+                  <td>100-102</td>
+                  <td>102-104</td>
+                  <td>104-106</td>
+                  <td>106-108</td>
+                </tr>
+                <tr>
+                  <td>83-87</td>
+                  <td>85</td>
+                  <td>97-99</td>
+                  <td>99-101</td>
+                  <td>99-100</td>
+                  <td>103-105</td>
+                  <td>105-107</td>
+                  <td>107-109</td>
+                  <td>109-111</td>
+                  <td>111-113</td>
+                </tr>
+                <tr>
+                  <td>88-92</td>
+                  <td>90</td>
+                  <td>102-104</td>
+                  <td>104-106</td>
+                  <td>106-108</td>
+                  <td>108-110</td>
+                  <td>110-112</td>
+                  <td>112-114</td>
+                  <td>114-116</td>
+                  <td>116-118</td>
+                </tr>
+              } @else {
+                <tr>
+                  <td>25-26</td>
+                  <td>65</td>
+                  <td>30-31</td>
+                  <td>31-32</td>
+                  <td>32-32.5</td>
+                  <td>32.2-33.5</td>
+                  <td>33.5-34</td>
+                  <td>34-35</td>
+                  <td>35-36</td>
+                  <td>36-36.5</td>
+                </tr>
+                <tr>
+                  <td>27-28</td>
+                  <td>70</td>
+                  <td>32-33</td>
+                  <td>33-34</td>
+                  <td>34-34.5</td>
+                  <td>34.5-35.5</td>
+                  <td>35.5-36</td>
+                  <td>36-37</td>
+                  <td>37-38</td>
+                  <td>38-38.5</td>
+                </tr>
+                <tr>
+                  <td>29-30</td>
+                  <td>75</td>
+                  <td>34-35</td>
+                  <td>35-36</td>
+                  <td>36-36.5</td>
+                  <td>36.5-37.5</td>
+                  <td>37.5-38</td>
+                  <td>38-39</td>
+                  <td>39-40</td>
+                  <td>40-40.5</td>
+                </tr>
+                <tr>
+                  <td>31-32</td>
+                  <td>80</td>
+                  <td>36-37</td>
+                  <td>37-38</td>
+                  <td>38-38.5</td>
+                  <td>38.5-39.5</td>
+                  <td>39.5-40</td>
+                  <td>40-41</td>
+                  <td>41-42</td>
+                  <td>42-42.5</td>
+                </tr>
+                <tr>
+                  <td>33-34</td>
+                  <td>85</td>
+                  <td>38-39</td>
+                  <td>39-40</td>
+                  <td>40-40.5</td>
+                  <td>40.5-41.5</td>
+                  <td>41.5-42</td>
+                  <td>42-43</td>
+                  <td>43-44</td>
+                  <td>44-44.5</td>
+                </tr>
+                <tr>
+                  <td>35-36</td>
+                  <td>90</td>
+                  <td>40-41</td>
+                  <td>41-42</td>
+                  <td>42-42.5</td>
+                  <td>42.5-43.5</td>
+                  <td>43.5-44</td>
+                  <td>44-45</td>
+                  <td>45-45.5</td>
+                  <td>45.5-46.5</td>
+                </tr>
+              }
+            } @else if (sizeType.type === "brief") {
+
+              <tr>
+                <td>SIZE</td>
+                <td>XXS</td>
+                <td>XS</td>
+                <td>S</td>
+                <td>M</td>
+                <td>L</td>
+                <td>XL</td>
+                <td>XXL</td>
+              </tr>
+              @if (toggle()) {
+                <tr>
+                  <td>CM</td>
+                  <td>82-86</td>
+                  <td>86-90</td>
+                  <td>90-95</td>
+                  <td>95-100</td>
+                  <td>100-105</td>
+                  <td>105-110</td>
+                  <td>110-116</td>
+                </tr>
+              } @else {
+                <tr>
+                  <td>INCHES</td>
+                  <td>32-34</td>
+                  <td>34-35-5</td>
+                  <td>35.5-37.5</td>
+                  <td>37.5-39.5</td>
+                  <td>39.5-41</td>
+                  <td>41-43</td>
+                  <td>43-45.5</td>
+                </tr>
+              }
+            } @else if (sizeType.type === "chemise" || sizeType.type === "dress") {
+              <tr>
+                <td>H Size</td>
+                <td>AU</td>
+                <td>UK</td>
+                <td>USA</td>
+                <td>EUROPE</td>
+                <td>CHINA</td>
+              </tr>
+              <tr>
+                <td>XXS</td>
+                <td>6</td>
+                <td>6</td>
+                <td>2</td>
+                <td>34</td>
+                <td>34</td>
+              </tr>
+              <tr>
+                <td>XS</td>
+                <td>8</td>
+                <td>8</td>
+                <td>4</td>
+                <td>36</td>
+                <td>36</td>
+              </tr>
+              <tr>
+                <td>S</td>
+                <td>10</td>
+                <td>10</td>
+                <td>6</td>
+                <td>38</td>
+                <td>38</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>12</td>
+                <td>12</td>
+                <td>8</td>
+                <td>40</td>
+                <td>40</td>
+              </tr>
+              <tr>
+                <td>L</td>
+                <td>14</td>
+                <td>14</td>
+                <td>10</td>
+                <td>42</td>
+                <td>42</td>
+              </tr>
+              <tr>
+                <td>XL</td>
+                <td>16</td>
+                <td>16</td>
+                <td>12</td>
+                <td>44</td>
+                <td>44</td>
+              </tr>
+              <tr>
+                <td>XXL</td>
+                <td>18</td>
+                <td>18</td>
+                <td>14</td>
+                <td>46</td>
+                <td>46</td>
+              </tr>
+            } @else if (sizeType.type === "hosiery") {
+              <tr>
+                <td>SIZE</td>
+                <td>SMALL</td>
+                <td>MEDIUM</td>
+                <td>LARGE</td>
+              </tr>
+              @if (toggle()) {
+                <tr>
+                  <td>HEIGHT</td>
+                  <td>150-160</td>
+                  <td>160-170</td>
+                  <td>170-180</td>
+                </tr>
+              } @else {
+                <tr>
+                  <td role="rowheader" scope="row">HEIGHT</td>
+                  <td>5-5.2</td>
+                  <td>5.2-5.6</td>
+                  <td>5.6-5.10</td>
+                </tr>
+              }
+            } @else if (sizeType.type === "suspender") {
+              <tr>
+                <td>SIZE</td>
+                <td>XXS</td>
+                <td>XS</td>
+                <td>S</td>
+                <td>M</td>
+                <td>L</td>
+                <td>XL</td>
+                <td>XXL</td>
+              </tr>
+              @if (toggle()) {
+                <tr>
+                  <td>CM</td>
+                  <td>57-61</td>
+                  <td>61-65</td>
+                  <td>65-70</td>
+                  <td>70-75</td>
+                  <td>75-80</td>
+                  <td>80-85</td>
+                  <td>85-91</td>
+                </tr>
+              } @else {
+                <tr>
+                  <td>INCHES</td>
+                  <td>22.5-24</td>
+                  <td>24-25.5</td>
+                  <td>25.5-27.5</td>
+                  <td>27.5-29.5</td>
+                  <td>29.5-31.5</td>
+                  <td>31.5-33.5</td>
+                  <td>33.5-36</td>
+                </tr>
+              }
+            }
+
+          </tbody>
+        </table>
+      </div>
+
+    } @else if (sizeType.type === "latex") {
+
+      <!-- Size Table -->
+      <div class="wysiwyg wysiwyg-size-guide align-middle">
+        <p><strong>LATEX BODYSUIT &amp; LATEX BRALETTE</strong></p>
+        <table>
+          <tbody>
+          <tr>
+            <td>&nbsp;</td>
+            <td>AU</td>
+            <td>UK</td>
+            <td>USA</td>
+            <td>EUROPE</td>
+          </tr>
+          <tr>
+            <td>XS/S</td>
+            <td>
+              <p>4 - 6</p>
+              <p>A to C cup</p>
+            </td>
+            <td>
+              <p>4 - 6</p>
+              <p>A to C cup</p>
+            </td>
+            <td>
+              <p>0 - 2</p>
+              <p>A to C cup</p>
+            </td>
+            <td>
+              <p>32 - 34</p>
+              <p>A to C cup</p>
+            </td>
+          </tr>
+          <tr>
+            <td>M/L</td>
+            <td>
+              <p>8 - 12</p>
+              <p>D to E cup</p>
+            </td>
+            <td>
+              <p>8 - 12</p>
+              <p>D to E cup</p>
+            </td>
+            <td>
+              <p>4 - 8</p>
+              <p>D to DDD/F cup</p>
+            </td>
+            <td>
+              <p>36 - 40</p>
+              <p>D to F cup</p>
+            </td>
+          </tr>
+          <tr>
+            <td>XL/XXL</td>
+            <td>
+              <p>14 - 16</p>
+              <p>F to G cup</p>
+            </td>
+            <td>
+              <p>14 - 16</p>
+              <p>F to G cup</p>
+            </td>
+            <td>
+              <p>10 - 12</p>
+              <p>G to H cup</p>
+            </td>
+            <td>
+              <p>42 - 44</p>
+              <p>G to H cup</p>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Size Table -->
+      <div class="wysiwyg wysiwyg-size-guide align-middle">
+        <p><strong>LATEX MINI SKIRT, LATEX LEGGINGS, LATEX SUSPENDER &amp; LATEX STOCKINGS</strong></p>
+        <table>
+          <tbody>
+          <tr>
+            <td>&nbsp;</td>
+            <td>AU</td>
+            <td>UK</td>
+            <td>USA</td>
+            <td>EUROPE</td>
+          </tr>
+          <tr>
+            <td>XS/S</td>
+            <td>4 - 6</td>
+            <td>4 - 6</td>
+            <td>0 - 2</td>
+            <td>32 - 34</td>
+          </tr>
+          <tr>
+            <td>M/L</td>
+            <td>8 - 12</td>
+            <td>8 - 12</td>
+            <td>4 - 8</td>
+            <td>36 - 40</td>
+          </tr>
+          <tr>
+            <td>XL/XXL</td>
+            <td>14 - 16</td>
+            <td>14 - 16</td>
+            <td>10 - 12</td>
+            <td>42 - 44</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    } @else if (sizeType.type === "robe") {
+
+      <!-- Size Table -->
+      <div class="wysiwyg wysiwyg-size-guide text-align-center">
+        <p><strong>SHOT ROBE</strong></p>
+        <table>
+          <tbody>
+            <tr>
+            <td>SIZE</td>
+            <td><strong>&nbsp; XS/S</strong></td>
+            <td><strong>S/M</strong></td>
+            <td><strong>M/L</strong></td>
+            <td><strong>L/XL</strong></td>
+          </tr>
+            <tr>
+              <td>SIZE</td>
+              <td>8 / 10</td>
+              <td>10 / 12</td>
+              <td>12 / 14</td>
+              <td>16 / 18</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>LONG ROBE</strong></p>
+        <table>
+        <tbody>
+        <tr>
+          <td>SIZE</td>
+          <td><strong>S</strong></td>
+          <td><strong>M</strong></td>
+          <td><strong>L</strong></td>
+        </tr>
+        <tr>
+          <td>SIZE</td>
+          <td>4 / 6</td>
+          <td>8</td>
+          <td>10 / 12</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    }
+
+
+    @if (sizeType.type === "hosiery") {
+      <div class="wysiwyg-size-guide">
+        <img alt="" src="/assets/images/sizes/Hosiery_SizeChart.png" width="461" height="368">
+      </div>
+    }
+
+  } @else if (sizeType.content === 'conversion') {
+
+      <!--    Converter -->
+      @if (sizeType.type === "bodysuit" || sizeType.type === "bra" || sizeType.type === "chemise"
+          || sizeType.type === "dress" || sizeType.type === "hosiery" || sizeType.type === "latex"
+          || sizeType.type === "swimwear") {
+
+      <div class="accordion-list-widget">
+
+        <!-- Accordion item -->
+        <div class="accordion-item accordion-sub-item js-accordion-item" [class.active]="openedAccordionItem() === '1'">
+          <!-- Header -->
+          <button type="button"
+                  (click)="toggleItem('1')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bras</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+          <!-- Content -->
+          <div #content class="accordion-item-description accordion-sub-item ease-in-out" [attr.data-id]="1">
+            <div class="js-accordion-content">
+
+              <!--  Size Table -->
+              <div class="wysiwyg wysiwyg-size-guide">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td style="width: 73px;">EUROPE</td>
+                    <td style="width: 82px;">FRANCE</td>
+                    <td style="width: 71px;">UK</td>
+                    <td style="width: 88px;">USA/CAN</td>
+                    <td style="width: 66px;">AU</td>
+                    <td style="width: 66px;">CHINA</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65A</td>
+                    <td style="width: 82px;">80A</td>
+                    <td style="width: 71px;">30A</td>
+                    <td style="width: 88px;">30A</td>
+                    <td style="width: 66px;">8A</td>
+                    <td style="width: 66px;">65A</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65B</td>
+                    <td style="width: 82px;">80B</td>
+                    <td style="width: 71px;">30B</td>
+                    <td style="width: 88px;">30B</td>
+                    <td style="width: 66px;">8B</td>
+                    <td style="width: 66px;">65B</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65C</td>
+                    <td style="width: 82px;">80C</td>
+                    <td style="width: 71px;">30C</td>
+                    <td style="width: 88px;">30C</td>
+                    <td style="width: 66px;">8C</td>
+                    <td style="width: 66px;">65C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65D</td>
+                    <td style="width: 82px;">80D</td>
+                    <td style="width: 71px;">30D</td>
+                    <td style="width: 88px;">30D</td>
+                    <td style="width: 66px;">8D</td>
+                    <td style="width: 66px;">65D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65E</td>
+                    <td style="width: 82px;">80DD</td>
+                    <td style="width: 71px;">30DD</td>
+                    <td style="width: 88px;">30DD/E</td>
+                    <td style="width: 66px;">8DD</td>
+                    <td style="width: 66px;">65E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65F</td>
+                    <td style="width: 82px;">80E</td>
+                    <td style="width: 71px;">30E</td>
+                    <td style="width: 88px;">30DDD/F</td>
+                    <td style="width: 66px;">8E</td>
+                    <td style="width: 66px;">65F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65G</td>
+                    <td style="width: 82px;">80F</td>
+                    <td style="width: 71px;">30F</td>
+                    <td style="width: 88px;">30G</td>
+                    <td style="width: 66px;">8F</td>
+                    <td style="width: 66px;">65G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65H</td>
+                    <td style="width: 82px;">80G</td>
+                    <td style="width: 71px;">30G</td>
+                    <td style="width: 88px;">30H</td>
+                    <td style="width: 66px;">8G</td>
+                    <td style="width: 66px;">65H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70A</td>
+                    <td style="width: 82px;">85A</td>
+                    <td style="width: 71px;">32A</td>
+                    <td style="width: 88px;">32A</td>
+                    <td style="width: 66px;">10A</td>
+                    <td style="width: 66px;">70A</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70B</td>
+                    <td style="width: 82px;">85B</td>
+                    <td style="width: 71px;">32B</td>
+                    <td style="width: 88px;">32B</td>
+                    <td style="width: 66px;">10B</td>
+                    <td style="width: 66px;">70B</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70C</td>
+                    <td style="width: 82px;">85C</td>
+                    <td style="width: 71px;">32C</td>
+                    <td style="width: 88px;">32C</td>
+                    <td style="width: 66px;">10C</td>
+                    <td style="width: 66px;">70C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70D</td>
+                    <td style="width: 82px;">85D</td>
+                    <td style="width: 71px;">32D</td>
+                    <td style="width: 88px;">32D</td>
+                    <td style="width: 66px;">10D</td>
+                    <td style="width: 66px;">70D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70E</td>
+                    <td style="width: 82px;">85DD</td>
+                    <td style="width: 71px;">32DD</td>
+                    <td style="width: 88px;">32DD</td>
+                    <td style="width: 66px;">10DD</td>
+                    <td style="width: 66px;">70E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70F</td>
+                    <td style="width: 82px;">85E</td>
+                    <td style="width: 71px;">32E</td>
+                    <td style="width: 88px;">32DDD/F</td>
+                    <td style="width: 66px;">10E</td>
+                    <td style="width: 66px;">70F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70G</td>
+                    <td style="width: 82px;">85F</td>
+                    <td style="width: 71px;">32F</td>
+                    <td style="width: 88px;">32G</td>
+                    <td style="width: 66px;">10F</td>
+                    <td style="width: 66px;">70G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70H</td>
+                    <td style="width: 82px;">85G</td>
+                    <td style="width: 71px;">32G</td>
+                    <td style="width: 88px;">32H</td>
+                    <td style="width: 66px;">10G</td>
+                    <td style="width: 66px;">70H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75A</td>
+                    <td style="width: 82px;">90A</td>
+                    <td style="width: 71px;">34A</td>
+                    <td style="width: 88px;">34A</td>
+                    <td style="width: 66px;">12A</td>
+                    <td style="width: 66px;">75A</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75B</td>
+                    <td style="width: 82px;">90B</td>
+                    <td style="width: 71px;">34B</td>
+                    <td style="width: 88px;">34B</td>
+                    <td style="width: 66px;">12B</td>
+                    <td style="width: 66px;">75B</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75C</td>
+                    <td style="width: 82px;">90C</td>
+                    <td style="width: 71px;">34C</td>
+                    <td style="width: 88px;">34C</td>
+                    <td style="width: 66px;">12C</td>
+                    <td style="width: 66px;">75C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75D</td>
+                    <td style="width: 82px;">90D</td>
+                    <td style="width: 71px;">34D</td>
+                    <td style="width: 88px;">34D</td>
+                    <td style="width: 66px;">12D</td>
+                    <td style="width: 66px;">75D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75E</td>
+                    <td style="width: 82px;">90DD</td>
+                    <td style="width: 71px;">34DD</td>
+                    <td style="width: 88px;">34DD/E</td>
+                    <td style="width: 66px;">12DD</td>
+                    <td style="width: 66px;">75E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75F</td>
+                    <td style="width: 82px;">90E</td>
+                    <td style="width: 71px;">34E</td>
+                    <td style="width: 88px;">34DDD/F</td>
+                    <td style="width: 66px;">12E</td>
+                    <td style="width: 66px;">75F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75G</td>
+                    <td style="width: 82px;">90F</td>
+                    <td style="width: 71px;">34F</td>
+                    <td style="width: 88px;">34G</td>
+                    <td style="width: 66px;">12F</td>
+                    <td style="width: 66px;">75G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75H</td>
+                    <td style="width: 82px;">90G</td>
+                    <td style="width: 71px;">34G</td>
+                    <td style="width: 88px;">34H</td>
+                    <td style="width: 66px;">12G</td>
+                    <td style="width: 66px;">75H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80A</td>
+                    <td style="width: 82px;">95A</td>
+                    <td style="width: 71px;">36A</td>
+                    <td style="width: 88px;">36A</td>
+                    <td style="width: 66px;">14A</td>
+                    <td style="width: 66px;">80A</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80B</td>
+                    <td style="width: 82px;">95B</td>
+                    <td style="width: 71px;">36B</td>
+                    <td style="width: 88px;">36B</td>
+                    <td style="width: 66px;">14B</td>
+                    <td style="width: 66px;">80B</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80C</td>
+                    <td style="width: 82px;">95C</td>
+                    <td style="width: 71px;">36C</td>
+                    <td style="width: 88px;">36C</td>
+                    <td style="width: 66px;">14C</td>
+                    <td style="width: 66px;">80C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80D</td>
+                    <td style="width: 82px;">95D</td>
+                    <td style="width: 71px;">36D</td>
+                    <td style="width: 88px;">36D</td>
+                    <td style="width: 66px;">14D</td>
+                    <td style="width: 66px;">80D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80E</td>
+                    <td style="width: 82px;">95DD</td>
+                    <td style="width: 71px;">36DD</td>
+                    <td style="width: 88px;">36DD/E</td>
+                    <td style="width: 66px;">14DD</td>
+                    <td style="width: 66px;">80E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80F</td>
+                    <td style="width: 82px;">95E</td>
+                    <td style="width: 71px;">36E</td>
+                    <td style="width: 88px;">36DDD/F</td>
+                    <td style="width: 66px;">14E</td>
+                    <td style="width: 66px;">80F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80G</td>
+                    <td style="width: 82px;">95F</td>
+                    <td style="width: 71px;">36F</td>
+                    <td style="width: 88px;">36G</td>
+                    <td style="width: 66px;">14F</td>
+                    <td style="width: 66px;">80G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80H</td>
+                    <td style="width: 82px;">95G</td>
+                    <td style="width: 71px;">36G</td>
+                    <td style="width: 88px;">36H</td>
+                    <td style="width: 66px;">14G</td>
+                    <td style="width: 66px;">80H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85C</td>
+                    <td style="width: 82px;">100C</td>
+                    <td style="width: 71px;">38C</td>
+                    <td style="width: 88px;">38C</td>
+                    <td style="width: 66px;">16C</td>
+                    <td style="width: 66px;">85C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85D</td>
+                    <td style="width: 82px;">100D</td>
+                    <td style="width: 71px;">38D</td>
+                    <td style="width: 88px;">38D</td>
+                    <td style="width: 66px;">16D</td>
+                    <td style="width: 66px;">85D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85E</td>
+                    <td style="width: 82px;">100DD</td>
+                    <td style="width: 71px;">38DD</td>
+                    <td style="width: 88px;">38DD/E</td>
+                    <td style="width: 66px;">16DD</td>
+                    <td style="width: 66px;">85E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85F</td>
+                    <td style="width: 82px;">100E</td>
+                    <td style="width: 71px;">38E</td>
+                    <td style="width: 88px;">38DDD/F</td>
+                    <td style="width: 66px;">16E</td>
+                    <td style="width: 66px;">85F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85G</td>
+                    <td style="width: 82px;">100F</td>
+                    <td style="width: 71px;">38F</td>
+                    <td style="width: 88px;">38G</td>
+                    <td style="width: 66px;">16F</td>
+                    <td style="width: 66px;">85G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85H</td>
+                    <td style="width: 82px;">100G</td>
+                    <td style="width: 71px;">38G</td>
+                    <td style="width: 88px;">38H</td>
+                    <td style="width: 66px;">16G</td>
+                    <td style="width: 66px;">85H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90C</td>
+                    <td style="width: 82px;">105C</td>
+                    <td style="width: 71px;">40C</td>
+                    <td style="width: 88px;">40C</td>
+                    <td style="width: 66px;">18C</td>
+                    <td style="width: 66px;">90C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90D</td>
+                    <td style="width: 82px;">105D</td>
+                    <td style="width: 71px;">40D</td>
+                    <td style="width: 88px;">40D</td>
+                    <td style="width: 66px;">18D</td>
+                    <td style="width: 66px;">90D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90E</td>
+                    <td style="width: 82px;">105DD</td>
+                    <td style="width: 71px;">40DD</td>
+                    <td style="width: 88px;">40DD/E</td>
+                    <td style="width: 66px;">18DD</td>
+                    <td style="width: 66px;">90E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90F</td>
+                    <td style="width: 82px;">105E</td>
+                    <td style="width: 71px;">40E</td>
+                    <td style="width: 88px;">40DDD/F</td>
+                    <td style="width: 66px;">18E</td>
+                    <td style="width: 66px;">90F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90G</td>
+                    <td style="width: 82px;">105F</td>
+                    <td style="width: 71px;">40F</td>
+                    <td style="width: 88px;">40G</td>
+                    <td style="width: 66px;">18F</td>
+                    <td style="width: 66px;">90G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90H</td>
+                    <td style="width: 82px;">105G</td>
+                    <td style="width: 71px;">40G</td>
+                    <td style="width: 88px;">40H</td>
+                    <td style="width: 66px;">18G</td>
+                    <td style="width: 66px;">90H</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item -->
+        <div class="accordion-item accordion-sub-item js-accordion-item" [class.active]="openedAccordionItem() === '2'">
+          <!-- Header -->
+          <button type="button"
+                  (click)="toggleItem('2')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bralettes</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+          <!-- Content -->
+          <div #content class="accordion-item-description accordion-sub-item ease-in-out" [attr.data-id]="2">
+            <div class="js-accordion-content">
+
+              <!--  Size Table -->
+              <div class="wysiwyg wysiwyg-size-guide">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td style="width: 90px;">H Size</td>
+                    <td style="width: 90px;">EUROPE</td>
+                    <td style="width: 77px;">UK</td>
+                    <td style="width: 73px;">USA</td>
+                    <td style="width: 80px;">AU</td>
+                    <td style="width: 87px;">CHINA</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XXS</td>
+                    <td style="width: 90px;">34</td>
+                    <td style="width: 77px;">6</td>
+                    <td style="width: 73px;">2</td>
+                    <td style="width: 80px;">6</td>
+                    <td style="width: 87px;">34</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XS</td>
+                    <td style="width: 90px;">36</td>
+                    <td style="width: 77px;">8</td>
+                    <td style="width: 73px;">4</td>
+                    <td style="width: 80px;">8</td>
+                    <td style="width: 87px;">36</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">S</td>
+                    <td style="width: 90px;">38</td>
+                    <td style="width: 77px;">10</td>
+                    <td style="width: 73px;">6</td>
+                    <td style="width: 80px;">10</td>
+                    <td style="width: 87px;">38</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">M</td>
+                    <td style="width: 90px;">40</td>
+                    <td style="width: 77px;">12</td>
+                    <td style="width: 73px;">8</td>
+                    <td style="width: 80px;">12</td>
+                    <td style="width: 87px;">40</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">L</td>
+                    <td style="width: 90px;">42</td>
+                    <td style="width: 77px;">14</td>
+                    <td style="width: 73px;">10</td>
+                    <td style="width: 80px;">14</td>
+                    <td style="width: 87px;">42</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XL</td>
+                    <td style="width: 90px;">44</td>
+                    <td style="width: 77px;">16</td>
+                    <td style="width: 73px;">12</td>
+                    <td style="width: 80px;">16</td>
+                    <td style="width: 87px;">44</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XXL</td>
+                    <td style="width: 90px;">46</td>
+                    <td style="width: 77px;">18</td>
+                    <td style="width: 73px;">14</td>
+                    <td style="width: 80px;">18</td>
+                    <td style="width: 87px;">46</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item -->
+        <div class="accordion-item accordion-sub-item js-accordion-item" [class.active]="openedAccordionItem() === '3'">
+          <!-- Header -->
+          <button type="button"
+                  (click)="toggleItem('3')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bottoms</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+          <!-- Content -->
+          <div #content class="accordion-item-description accordion-sub-item ease-in-out" [attr.data-id]="3">
+            <div class="js-accordion-content">
+
+              <!--  Size Table -->
+              <div class="wysiwyg wysiwyg-size-guide">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td style="width: 90px;">H Size</td>
+                    <td style="width: 90px;">EUROPE</td>
+                    <td style="width: 77px;">UK</td>
+                    <td style="width: 73px;">USA</td>
+                    <td style="width: 80px;">AU</td>
+                    <td style="width: 87px;">CHINA</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XXS</td>
+                    <td style="width: 90px;">34</td>
+                    <td style="width: 77px;">6</td>
+                    <td style="width: 73px;">2</td>
+                    <td style="width: 80px;">6</td>
+                    <td style="width: 87px;">34</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XS</td>
+                    <td style="width: 90px;">36</td>
+                    <td style="width: 77px;">8</td>
+                    <td style="width: 73px;">4</td>
+                    <td style="width: 80px;">8</td>
+                    <td style="width: 87px;">36</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">S</td>
+                    <td style="width: 90px;">38</td>
+                    <td style="width: 77px;">10</td>
+                    <td style="width: 73px;">6</td>
+                    <td style="width: 80px;">10</td>
+                    <td style="width: 87px;">38</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">M</td>
+                    <td style="width: 90px;">40</td>
+                    <td style="width: 77px;">12</td>
+                    <td style="width: 73px;">8</td>
+                    <td style="width: 80px;">12</td>
+                    <td style="width: 87px;">40</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">L</td>
+                    <td style="width: 90px;">42</td>
+                    <td style="width: 77px;">14</td>
+                    <td style="width: 73px;">10</td>
+                    <td style="width: 80px;">14</td>
+                    <td style="width: 87px;">42</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XL</td>
+                    <td style="width: 90px;">44</td>
+                    <td style="width: 77px;">16</td>
+                    <td style="width: 73px;">12</td>
+                    <td style="width: 80px;">16</td>
+                    <td style="width: 87px;">44</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XXL</td>
+                    <td style="width: 90px;">46</td>
+                    <td style="width: 77px;">18</td>
+                    <td style="width: 73px;">14</td>
+                    <td style="width: 80px;">18</td>
+                    <td style="width: 87px;">46</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    } @else if (sizeType.type === 'bralette' || sizeType.type === "brief" || sizeType.type === "robe"
+      || sizeType.type === "suspender") {
+
+      <!--  Size Table -->
+      <div class="wysiwyg wysiwyg-size-guide">
+        <table>
+          <tbody>
+            <tr>
+              <td>H Size</td>
+              <td>AU</td>
+              <td>UK</td>
+              <td>USA</td>
+              <td>EUROPE</td>
+              <td>CHINA</td>
+            </tr>
+            <tr>
+              <td>XXS</td>
+              <td>6</td>
+              <td>6</td>
+              <td>2</td>
+              <td>34</td>
+              <td>34</td>
+            </tr>
+            <tr>
+              <td>XS</td>
+              <td>8</td>
+              <td>8</td>
+              <td>4</td>
+              <td>36</td>
+              <td>36</td>
+            </tr>
+            <tr>
+              <td>S</td>
+              <td>10</td>
+              <td>10</td>
+              <td>6</td>
+              <td>38</td>
+              <td>38</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>12</td>
+              <td>12</td>
+              <td>8</td>
+              <td>40</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>14</td>
+              <td>14</td>
+              <td>10</td>
+              <td>42</td>
+              <td>42</td>
+            </tr>
+            <tr>
+              <td>XL</td>
+              <td>16</td>
+              <td>16</td>
+              <td>12</td>
+              <td>44</td>
+              <td>44</td>
+            </tr>
+            <tr>
+              <td>XXL</td>
+              <td>18</td>
+              <td>18</td>
+              <td>14</td>
+              <td>46</td>
+              <td>46</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="accordion-list-widget">
+
+        <!-- Accordion item -->
+        <div class="accordion-item accordion-sub-item js-accordion-item" [class.active]="openedAccordionItem() === '1'">
+          <!-- Header -->
+          <button type="button"
+                  (click)="toggleItem('1')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bras</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+          <!-- Content -->
+          <div #content class="accordion-item-description accordion-sub-item ease-in-out" [attr.data-id]="1">
+            <div class="js-accordion-content">
+
+              <!--  Size Table -->
+              <div class="wysiwyg wysiwyg-size-guide">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td style="width: 73px;">EUROPE</td>
+                    <td style="width: 82px;">FRANCE</td>
+                    <td style="width: 71px;">UK</td>
+                    <td style="width: 88px;">USA/CAN</td>
+                    <td style="width: 66px;">AU</td>
+                    <td style="width: 66px;">CHINA</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65A</td>
+                    <td style="width: 82px;">80A</td>
+                    <td style="width: 71px;">30A</td>
+                    <td style="width: 88px;">30A</td>
+                    <td style="width: 66px;">8A</td>
+                    <td style="width: 66px;">65A</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65B</td>
+                    <td style="width: 82px;">80B</td>
+                    <td style="width: 71px;">30B</td>
+                    <td style="width: 88px;">30B</td>
+                    <td style="width: 66px;">8B</td>
+                    <td style="width: 66px;">65B</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65C</td>
+                    <td style="width: 82px;">80C</td>
+                    <td style="width: 71px;">30C</td>
+                    <td style="width: 88px;">30C</td>
+                    <td style="width: 66px;">8C</td>
+                    <td style="width: 66px;">65C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65D</td>
+                    <td style="width: 82px;">80D</td>
+                    <td style="width: 71px;">30D</td>
+                    <td style="width: 88px;">30D</td>
+                    <td style="width: 66px;">8D</td>
+                    <td style="width: 66px;">65D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65E</td>
+                    <td style="width: 82px;">80DD</td>
+                    <td style="width: 71px;">30DD</td>
+                    <td style="width: 88px;">30DD/E</td>
+                    <td style="width: 66px;">8DD</td>
+                    <td style="width: 66px;">65E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65F</td>
+                    <td style="width: 82px;">80E</td>
+                    <td style="width: 71px;">30E</td>
+                    <td style="width: 88px;">30DDD/F</td>
+                    <td style="width: 66px;">8E</td>
+                    <td style="width: 66px;">65F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65G</td>
+                    <td style="width: 82px;">80F</td>
+                    <td style="width: 71px;">30F</td>
+                    <td style="width: 88px;">30G</td>
+                    <td style="width: 66px;">8F</td>
+                    <td style="width: 66px;">65G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">65H</td>
+                    <td style="width: 82px;">80G</td>
+                    <td style="width: 71px;">30G</td>
+                    <td style="width: 88px;">30H</td>
+                    <td style="width: 66px;">8G</td>
+                    <td style="width: 66px;">65H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70A</td>
+                    <td style="width: 82px;">85A</td>
+                    <td style="width: 71px;">32A</td>
+                    <td style="width: 88px;">32A</td>
+                    <td style="width: 66px;">10A</td>
+                    <td style="width: 66px;">70A</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70B</td>
+                    <td style="width: 82px;">85B</td>
+                    <td style="width: 71px;">32B</td>
+                    <td style="width: 88px;">32B</td>
+                    <td style="width: 66px;">10B</td>
+                    <td style="width: 66px;">70B</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70C</td>
+                    <td style="width: 82px;">85C</td>
+                    <td style="width: 71px;">32C</td>
+                    <td style="width: 88px;">32C</td>
+                    <td style="width: 66px;">10C</td>
+                    <td style="width: 66px;">70C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70D</td>
+                    <td style="width: 82px;">85D</td>
+                    <td style="width: 71px;">32D</td>
+                    <td style="width: 88px;">32D</td>
+                    <td style="width: 66px;">10D</td>
+                    <td style="width: 66px;">70D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70E</td>
+                    <td style="width: 82px;">85DD</td>
+                    <td style="width: 71px;">32DD</td>
+                    <td style="width: 88px;">32DD</td>
+                    <td style="width: 66px;">10DD</td>
+                    <td style="width: 66px;">70E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70F</td>
+                    <td style="width: 82px;">85E</td>
+                    <td style="width: 71px;">32E</td>
+                    <td style="width: 88px;">32DDD/F</td>
+                    <td style="width: 66px;">10E</td>
+                    <td style="width: 66px;">70F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70G</td>
+                    <td style="width: 82px;">85F</td>
+                    <td style="width: 71px;">32F</td>
+                    <td style="width: 88px;">32G</td>
+                    <td style="width: 66px;">10F</td>
+                    <td style="width: 66px;">70G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">70H</td>
+                    <td style="width: 82px;">85G</td>
+                    <td style="width: 71px;">32G</td>
+                    <td style="width: 88px;">32H</td>
+                    <td style="width: 66px;">10G</td>
+                    <td style="width: 66px;">70H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75A</td>
+                    <td style="width: 82px;">90A</td>
+                    <td style="width: 71px;">34A</td>
+                    <td style="width: 88px;">34A</td>
+                    <td style="width: 66px;">12A</td>
+                    <td style="width: 66px;">75A</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75B</td>
+                    <td style="width: 82px;">90B</td>
+                    <td style="width: 71px;">34B</td>
+                    <td style="width: 88px;">34B</td>
+                    <td style="width: 66px;">12B</td>
+                    <td style="width: 66px;">75B</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75C</td>
+                    <td style="width: 82px;">90C</td>
+                    <td style="width: 71px;">34C</td>
+                    <td style="width: 88px;">34C</td>
+                    <td style="width: 66px;">12C</td>
+                    <td style="width: 66px;">75C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75D</td>
+                    <td style="width: 82px;">90D</td>
+                    <td style="width: 71px;">34D</td>
+                    <td style="width: 88px;">34D</td>
+                    <td style="width: 66px;">12D</td>
+                    <td style="width: 66px;">75D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75E</td>
+                    <td style="width: 82px;">90DD</td>
+                    <td style="width: 71px;">34DD</td>
+                    <td style="width: 88px;">34DD/E</td>
+                    <td style="width: 66px;">12DD</td>
+                    <td style="width: 66px;">75E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75F</td>
+                    <td style="width: 82px;">90E</td>
+                    <td style="width: 71px;">34E</td>
+                    <td style="width: 88px;">34DDD/F</td>
+                    <td style="width: 66px;">12E</td>
+                    <td style="width: 66px;">75F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75G</td>
+                    <td style="width: 82px;">90F</td>
+                    <td style="width: 71px;">34F</td>
+                    <td style="width: 88px;">34G</td>
+                    <td style="width: 66px;">12F</td>
+                    <td style="width: 66px;">75G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">75H</td>
+                    <td style="width: 82px;">90G</td>
+                    <td style="width: 71px;">34G</td>
+                    <td style="width: 88px;">34H</td>
+                    <td style="width: 66px;">12G</td>
+                    <td style="width: 66px;">75H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80A</td>
+                    <td style="width: 82px;">95A</td>
+                    <td style="width: 71px;">36A</td>
+                    <td style="width: 88px;">36A</td>
+                    <td style="width: 66px;">14A</td>
+                    <td style="width: 66px;">80A</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80B</td>
+                    <td style="width: 82px;">95B</td>
+                    <td style="width: 71px;">36B</td>
+                    <td style="width: 88px;">36B</td>
+                    <td style="width: 66px;">14B</td>
+                    <td style="width: 66px;">80B</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80C</td>
+                    <td style="width: 82px;">95C</td>
+                    <td style="width: 71px;">36C</td>
+                    <td style="width: 88px;">36C</td>
+                    <td style="width: 66px;">14C</td>
+                    <td style="width: 66px;">80C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80D</td>
+                    <td style="width: 82px;">95D</td>
+                    <td style="width: 71px;">36D</td>
+                    <td style="width: 88px;">36D</td>
+                    <td style="width: 66px;">14D</td>
+                    <td style="width: 66px;">80D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80E</td>
+                    <td style="width: 82px;">95DD</td>
+                    <td style="width: 71px;">36DD</td>
+                    <td style="width: 88px;">36DD/E</td>
+                    <td style="width: 66px;">14DD</td>
+                    <td style="width: 66px;">80E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80F</td>
+                    <td style="width: 82px;">95E</td>
+                    <td style="width: 71px;">36E</td>
+                    <td style="width: 88px;">36DDD/F</td>
+                    <td style="width: 66px;">14E</td>
+                    <td style="width: 66px;">80F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80G</td>
+                    <td style="width: 82px;">95F</td>
+                    <td style="width: 71px;">36F</td>
+                    <td style="width: 88px;">36G</td>
+                    <td style="width: 66px;">14F</td>
+                    <td style="width: 66px;">80G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">80H</td>
+                    <td style="width: 82px;">95G</td>
+                    <td style="width: 71px;">36G</td>
+                    <td style="width: 88px;">36H</td>
+                    <td style="width: 66px;">14G</td>
+                    <td style="width: 66px;">80H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85C</td>
+                    <td style="width: 82px;">100C</td>
+                    <td style="width: 71px;">38C</td>
+                    <td style="width: 88px;">38C</td>
+                    <td style="width: 66px;">16C</td>
+                    <td style="width: 66px;">85C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85D</td>
+                    <td style="width: 82px;">100D</td>
+                    <td style="width: 71px;">38D</td>
+                    <td style="width: 88px;">38D</td>
+                    <td style="width: 66px;">16D</td>
+                    <td style="width: 66px;">85D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85E</td>
+                    <td style="width: 82px;">100DD</td>
+                    <td style="width: 71px;">38DD</td>
+                    <td style="width: 88px;">38DD/E</td>
+                    <td style="width: 66px;">16DD</td>
+                    <td style="width: 66px;">85E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85F</td>
+                    <td style="width: 82px;">100E</td>
+                    <td style="width: 71px;">38E</td>
+                    <td style="width: 88px;">38DDD/F</td>
+                    <td style="width: 66px;">16E</td>
+                    <td style="width: 66px;">85F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85G</td>
+                    <td style="width: 82px;">100F</td>
+                    <td style="width: 71px;">38F</td>
+                    <td style="width: 88px;">38G</td>
+                    <td style="width: 66px;">16F</td>
+                    <td style="width: 66px;">85G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">85H</td>
+                    <td style="width: 82px;">100G</td>
+                    <td style="width: 71px;">38G</td>
+                    <td style="width: 88px;">38H</td>
+                    <td style="width: 66px;">16G</td>
+                    <td style="width: 66px;">85H</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90C</td>
+                    <td style="width: 82px;">105C</td>
+                    <td style="width: 71px;">40C</td>
+                    <td style="width: 88px;">40C</td>
+                    <td style="width: 66px;">18C</td>
+                    <td style="width: 66px;">90C</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90D</td>
+                    <td style="width: 82px;">105D</td>
+                    <td style="width: 71px;">40D</td>
+                    <td style="width: 88px;">40D</td>
+                    <td style="width: 66px;">18D</td>
+                    <td style="width: 66px;">90D</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90E</td>
+                    <td style="width: 82px;">105DD</td>
+                    <td style="width: 71px;">40DD</td>
+                    <td style="width: 88px;">40DD/E</td>
+                    <td style="width: 66px;">18DD</td>
+                    <td style="width: 66px;">90E</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90F</td>
+                    <td style="width: 82px;">105E</td>
+                    <td style="width: 71px;">40E</td>
+                    <td style="width: 88px;">40DDD/F</td>
+                    <td style="width: 66px;">18E</td>
+                    <td style="width: 66px;">90F</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90G</td>
+                    <td style="width: 82px;">105F</td>
+                    <td style="width: 71px;">40F</td>
+                    <td style="width: 88px;">40G</td>
+                    <td style="width: 66px;">18F</td>
+                    <td style="width: 66px;">90G</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 73px;">90H</td>
+                    <td style="width: 82px;">105G</td>
+                    <td style="width: 71px;">40G</td>
+                    <td style="width: 88px;">40H</td>
+                    <td style="width: 66px;">18G</td>
+                    <td style="width: 66px;">90H</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item -->
+        <div class="accordion-item accordion-sub-item js-accordion-item" [class.active]="openedAccordionItem() === '2'">
+          <!-- Header -->
+          <button type="button"
+                  (click)="toggleItem('2')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bralettes</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+          <!-- Content -->
+          <div #content class="accordion-item-description accordion-sub-item ease-in-out" [attr.data-id]="2">
+            <div class="js-accordion-content">
+
+              <!--  Size Table -->
+              <div class="wysiwyg wysiwyg-size-guide">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td style="width: 90px;">H Size</td>
+                    <td style="width: 90px;">EUROPE</td>
+                    <td style="width: 77px;">UK</td>
+                    <td style="width: 73px;">USA</td>
+                    <td style="width: 80px;">AU</td>
+                    <td style="width: 87px;">CHINA</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XXS</td>
+                    <td style="width: 90px;">34</td>
+                    <td style="width: 77px;">6</td>
+                    <td style="width: 73px;">2</td>
+                    <td style="width: 80px;">6</td>
+                    <td style="width: 87px;">34</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XS</td>
+                    <td style="width: 90px;">36</td>
+                    <td style="width: 77px;">8</td>
+                    <td style="width: 73px;">4</td>
+                    <td style="width: 80px;">8</td>
+                    <td style="width: 87px;">36</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">S</td>
+                    <td style="width: 90px;">38</td>
+                    <td style="width: 77px;">10</td>
+                    <td style="width: 73px;">6</td>
+                    <td style="width: 80px;">10</td>
+                    <td style="width: 87px;">38</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">M</td>
+                    <td style="width: 90px;">40</td>
+                    <td style="width: 77px;">12</td>
+                    <td style="width: 73px;">8</td>
+                    <td style="width: 80px;">12</td>
+                    <td style="width: 87px;">40</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">L</td>
+                    <td style="width: 90px;">42</td>
+                    <td style="width: 77px;">14</td>
+                    <td style="width: 73px;">10</td>
+                    <td style="width: 80px;">14</td>
+                    <td style="width: 87px;">42</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XL</td>
+                    <td style="width: 90px;">44</td>
+                    <td style="width: 77px;">16</td>
+                    <td style="width: 73px;">12</td>
+                    <td style="width: 80px;">16</td>
+                    <td style="width: 87px;">44</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XXL</td>
+                    <td style="width: 90px;">46</td>
+                    <td style="width: 77px;">18</td>
+                    <td style="width: 73px;">14</td>
+                    <td style="width: 80px;">18</td>
+                    <td style="width: 87px;">46</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion item -->
+        <div class="accordion-item accordion-sub-item js-accordion-item" [class.active]="openedAccordionItem() === '3'">
+          <!-- Header -->
+          <button type="button"
+                  (click)="toggleItem('3')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Bottoms</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon sub-item-icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+          <!-- Content -->
+          <div #content class="accordion-item-description accordion-sub-item ease-in-out" [attr.data-id]="3">
+            <div class="js-accordion-content">
+
+              <!--  Size Table -->
+              <div class="wysiwyg wysiwyg-size-guide">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td style="width: 90px;">H Size</td>
+                    <td style="width: 90px;">EUROPE</td>
+                    <td style="width: 77px;">UK</td>
+                    <td style="width: 73px;">USA</td>
+                    <td style="width: 80px;">AU</td>
+                    <td style="width: 87px;">CHINA</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XXS</td>
+                    <td style="width: 90px;">34</td>
+                    <td style="width: 77px;">6</td>
+                    <td style="width: 73px;">2</td>
+                    <td style="width: 80px;">6</td>
+                    <td style="width: 87px;">34</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XS</td>
+                    <td style="width: 90px;">36</td>
+                    <td style="width: 77px;">8</td>
+                    <td style="width: 73px;">4</td>
+                    <td style="width: 80px;">8</td>
+                    <td style="width: 87px;">36</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">S</td>
+                    <td style="width: 90px;">38</td>
+                    <td style="width: 77px;">10</td>
+                    <td style="width: 73px;">6</td>
+                    <td style="width: 80px;">10</td>
+                    <td style="width: 87px;">38</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">M</td>
+                    <td style="width: 90px;">40</td>
+                    <td style="width: 77px;">12</td>
+                    <td style="width: 73px;">8</td>
+                    <td style="width: 80px;">12</td>
+                    <td style="width: 87px;">40</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">L</td>
+                    <td style="width: 90px;">42</td>
+                    <td style="width: 77px;">14</td>
+                    <td style="width: 73px;">10</td>
+                    <td style="width: 80px;">14</td>
+                    <td style="width: 87px;">42</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XL</td>
+                    <td style="width: 90px;">44</td>
+                    <td style="width: 77px;">16</td>
+                    <td style="width: 73px;">12</td>
+                    <td style="width: 80px;">16</td>
+                    <td style="width: 87px;">44</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 90px;">XXL</td>
+                    <td style="width: 90px;">46</td>
+                    <td style="width: 77px;">18</td>
+                    <td style="width: 73px;">14</td>
+                    <td style="width: 80px;">18</td>
+                    <td style="width: 87px;">46</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    }
+
+  } @else if (sizeType.content === 'measure') {
+
+    @if (sizeType.type === "brief") {
+      <!-- Description -->
+      <div class="how-to-measure-description">
+        <div class="inner wysiwyg-size-guide">
+          <p><strong><span>HOW TO MEASURE HIPS</span></strong></p>
+          <p>
+            Wrap the tape measure around the fullest part of your hips. Use the mirror to make sure
+            the tape measure is straight all the way around. The tape measure should be snug and
+            parallel to the ground.
+          </p>
+        </div>
+      </div>
+    } @else {
+
+      <!-- Image -->
+      <div class="size-guide-image-wrapper">
+        <img src="/assets/images/measure/HowToMeasure.png" alt="" loading="lazy" fetchpriority="auto">
+      </div>
+
+      <!-- Description -->
+      <div class="how-to-measure-description">
+        <div class="inner wysiwyg-size-guide">
+
+          @if (sizeType.type !== "suspender") {
+
+            <p><span class="title"><strong>HOW TO MEASURE THE UNDER-BUST</strong></span></p>
+            <p>Wrap the tape measure around your chest firmly, just under the bust and straight across your back.</p>
+            <p><span class="title"><strong>HOW TO MEASURE THE OVER-BUST</strong></span></p>
+            <p>
+              Measure around the fullest part of your bust (usually over the nipple). This is best
+              done while you're wearing a bra that is not padded. Hold the tape gently so that the tape
+              is resting lightly against your body.
+            </p>
+          }
+
+          @if (sizeType.type === "bodysuit" || sizeType.type === "suspender" || sizeType.type === "swimwear") {
+
+            <p><span class="title"><strong>HOW TO MEASURE WAIST</strong></span></p>
+            <p>
+              Wrap the tape measure slightly tight around the natural indentation of the waist,
+              preferably on bare skin. If you can't find this curve, bend to one side and the crease
+              will show you where to measure.
+            </p>
+            <p><span class="title"><strong>HOW TO MEASURE HIPS</strong></span></p>
+            <p>
+              Wrap the tape measure around the fullest part of your hips. Use the mirror to make sure
+              the tape measure is straight all the way around. The tape measure should be snug and
+              parallel to the ground.
+            </p>
+          }
+
+        </div>
+      </div>
+    }
+  }
+
+</div>
+

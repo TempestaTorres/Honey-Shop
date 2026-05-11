@@ -18,6 +18,9 @@ table tbody tr:hover > th {
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.08);
 }
+.wysiwyg table.layout-fixed {
+  table-layout: fixed;
+}
 .wysiwyg table:first-child {
   margin-top: 0;
 }
