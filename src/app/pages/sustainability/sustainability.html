@@ -1,1 +1,252 @@
-<p>sustainability works!</p>
+<main class="outline-none">
+  <!--  Accordion list -->
+  <section class="section-boxed section-accordion-list">
+    <div class="container">
+
+      <!-- Accordion -->
+      <div class="accordion-list-widget accordion-list-type-medium">
+        <!--Heading -->
+        <h3 class="accordion-item-heading">SUSTAINABLITY</h3>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '1'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="1"
+                  (click)="toggleItem('1')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Sustainable Packaging</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                More than&nbsp;<em>87 billion</em>&nbsp;parcels are sent across the world every year.
+                Sadly, it’s the environment that suffers the cost of convenience. Which is why we’ve
+                vowed to reduce this impact and work towards a sustainable future.
+              </p>
+              <p>
+                Bringing it back to basics, we’ve integrated sustainable packaging across all
+                operations, including biodegradable hangers, recyclable carry bags and postage
+                satchels made from recycled plastics.
+              </p>
+              <p>
+                In our commitment to sustaining the environment, we’ve made the switch to FSC
+                certified® stationary which includes our gift boxes, luxurious bags, thank you notes,
+                and cards.
+              </p>
+              <p>
+                This means that from our stores to your front door, you can rest assured that you’ll
+                receive your goodies in eco-friendly packaging.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '2'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="2"
+                  (click)="toggleItem('2')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Textile Solutions</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>Luxury lingerie shouldn’t cost the earth.</p>
+              <p>
+                From design to development and into your intimates drawer, every element is
+                carefully considered to minimise waste and environmental impact.
+              </p>
+              <p>
+                Focusing on the finer details, we’re implementing conscious manufacturing and design
+                from start to finish. This includes using advanced digital technology instead of
+                physical lay plans, so there’s no wasted fabrics in the trial and error of design.
+              </p>
+              <p>
+                Additionally, we’ve adopted edge-to-edge design methods that involve using all areas
+                of fabric panels and lace, leaving nothing on the cutting room floor. Every yarn and
+                scallop can be recycled into other pieces of the collection or saved for a future design.
+              </p>
+              <p>
+                New textile technology has also allowed us to integrate digital printing as opposed
+                to traditional methods. Digital fabric printing typically uses 90% less ink than
+                standard screen printing, without the need for any harsh chemicals! Eliminating
+                the need for excessive washing and water-treatments, this technology saves over
+                40 billion litres of water per year.
+              </p>
+              <p>
+                Our next challenge is incorporating more sustainable fabrics made from recycled
+                material. This process has begun with our statement swimwear range that’s created
+                with Italian ECOwave fabrics. These specially formulated fabrics are made from
+                ocean-recycled materials and post-consumer plastics, recovered
+                from the Mediterranean Sea.
+              </p>
+              <p>
+                While this is only the beginning of our sustainable journey, Honey has an ingrained
+                ethos of quality over quantity. We believe in creating products that will stand
+                the test of time and give you the ability to wear them again and again.<br>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '3'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="3"
+                  (click)="toggleItem('3')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Ethical Manufacturing</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                We’ve partnered with manufacturers who uphold our values of ethics, quality and
+                sustainability. We adamantly ensure that all our manufacturing partners are ethically
+                compliant within all operations, following internationally recognised standards for:
+              </p>
+              <ul>
+                <li>Fair employment</li>
+                <li>Safe and comfortable working conditions</li>
+                <li>Above minimum and median wage</li>
+                <li>Employment rights &amp; HR management</li>
+                <li>Standard working hours (40 hours a week)</li>
+                <li>Strictly no child labour</li>
+              </ul>
+              <p>
+                While adhering to these ethical practices, our partners are also working to make
+                their businesses more environmentally conscious. As a proud example, our Italian
+                lace manufacturer uses recycled materials to produce GRS certified ‘Green Label’
+                fabrics, while our embroidery manufacturer in Switzerland uses wastewater management
+                systems to ensure that waterways are kept clean.
+              </p>
+              <p>
+                In addition to these values and standards, our manufacturers are subject to random
+                inspections and are Oeko-Tex certified.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '4'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="4"
+                  (click)="toggleItem('4')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Cutting Carbon Emissions</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                It’s no secret that the fashion industry is widely responsible for increased carbon
+                emissions and landfill waste. In an affirmation to change this, we’ve adopted cleaner
+                transport avenues, carbon offsets, and sea freighting vs. air freight.
+                <br>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '5'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="5"
+                  (click)="toggleItem('5')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Everyday Operations</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                In the office, we categorise all rubbish into their correct bins and recycle wherever
+                possible. The office uses a paper recycling service to ensure that paper waste is
+                diverted from landfill and directly repurposed through a recycling plant.
+                We also encourage the use of digital resources to become a 100% paper-free environment.
+              </p>
+              <p>
+                All soaps and detergents are Thank You.™ branded which helps provide safe water
+                and toilets to people in need.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
