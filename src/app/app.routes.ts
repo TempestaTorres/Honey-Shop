@@ -19,6 +19,7 @@ import { JoinHoney } from './pages/join-honey/join-honey';
 import { Products } from './pages/products/products';
 import { BridalEdit } from './pages/bridal-edit/bridal-edit';
 import { BookReturn } from './pages/book-return/book-return';
+import { Cart } from './pages/cart/cart';
 
 export const routes: Routes = [
   {
@@ -42,6 +43,7 @@ export const routes: Routes = [
       {path: 'products/:item', component: Products},
       {path: 'bridal-edit', component: BridalEdit},
       {path: 'book-return', component: BookReturn},
+      {path: 'cart', component: Cart},
     ]
   },
   {path: 'services', component: Services},

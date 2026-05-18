@@ -1,6 +1,17 @@
-import { Component, effect, ElementRef, OnInit, signal, viewChildren, WritableSignal } from '@angular/core';
+import {
+  afterNextRender,
+  Component,
+  DestroyRef,
+  effect,
+  ElementRef,
+  OnInit,
+  signal,
+  viewChildren,
+  WritableSignal
+} from '@angular/core';
 import { ScrollingService } from '../../services/scrolling-service';
 import { RouterLink } from '@angular/router';
+declare var Swiper: any;
 
 @Component({
   selector: 'app-faqs',
@@ -12,7 +23,9 @@ export class Faqs implements OnInit {
   public openedItem: WritableSignal<string> = signal<string>('0');
   readonly accordionHeaders = viewChildren<ElementRef<HTMLElement>>('accordionHeader');
 
-  constructor(private scrollingService: ScrollingService) {
+  private swiper: any;
+
+  constructor(private scrollingService: ScrollingService, private destroyRef: DestroyRef,) {
 
     effect(() => {
       const openedId: string = this.openedItem();
@@ -20,6 +33,26 @@ export class Faqs implements OnInit {
       if (openedId !== '0') {
         setTimeout(() => this.scrollToOpenedHeader(), 500);
       }
+    });
+
+    afterNextRender(() => {
+      this.swiper = new Swiper('.js-faqs-anchor-link-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        keyboard: true,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        freeMode: {
+          enabled: true,
+          sticky: false,
+        },
+
+      });
+    });
+
+    this.destroyRef.onDestroy(() => {
+      if (this.swiper)
+        this.swiper.destroy();
     });
   }
 

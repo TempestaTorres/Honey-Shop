@@ -4,6 +4,89 @@ export const NewArrivalData: ProductItem[] = [
   {
     product: [
       {
+        name: "ELODIE ROMANCE",
+        description: "3 Piece Lingerie Set",
+        url: "elodie-romance-3-piece-lingerie-set",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        priceFrom: 325,
+        colorName: "sparkling pink",
+        colorClass: "swatch-sparkling-pink",
+        images: [
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Thong_Front.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Thong_Back.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Thong_Side1.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Brief_Front.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Brief_Back1.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Brief_Side.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Front2.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Back.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_FrontZOOM.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Thong_Suspender_Front1.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Thong_Suspender_Back.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Brief_Front.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Brief_Back.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Thong_Front1.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Thong_Back.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ELODIE5.jpg",
+        ],
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "ELODIE ROMANCE",
+        description: "Bra & Bottom Lingerie Set",
+        url: "elodie-romance-bra-bottom-lingerie-set",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        priceFrom: 215,
+        colorName: "sparkling pink",
+        colorClass: "swatch-sparkling-pink",
+        images: [
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Front1.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Back.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Side.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Thong_Front.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Thong_Back.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Thong_Side.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Front1.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Back2.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_SideZOOM2.jpg",
+          "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Brief_Front.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Brief_Back1.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Thong_Front.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Thong_Back.jpg",
+          "/assets/images/products/eloidie/lingerie-set/pink/ELODIE2.jpg",
+        ],
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "Pink Flower Suspender",
+        description: "Stockings",
+        url: "elodie-suspender-stockings-romantic-pink",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 30,
+        colorName: "sparkling pink",
+        colorClass: "swatch-sparkling-pink",
+        images: [
+          "/assets/images/products/eloidie/stockings/pink/Elodie_Romance_Stockings.jpg",
+          "/assets/images/products/eloidie/stockings/pink/ElodieRomance_Thong_Suspender_Front.jpg",
+          "/assets/images/products/eloidie/stockings/pink/ElodieRomance_Thong_Suspender_Back1.jpg",
+          "/assets/images/products/eloidie/stockings/pink/ElodieRomance_Thong_Suspender_Side.jpg",
+          "/assets/images/products/eloidie/stockings/pink/ELODIE8.jpg",
+        ],
+      },
+    ]
+  },
+  {
+    product: [
+      {
         name: "PAMMY",
         description: "3 Piece Lingerie Set",
         url: "pammy-3-piece-lingerie-set",

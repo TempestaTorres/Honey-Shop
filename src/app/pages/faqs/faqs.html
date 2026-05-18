@@ -11,42 +11,46 @@
   <!--  Anchor links -->
   <section class="section-anchor-link">
     <div class="container">
-      <div class="js-anchor-link">
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(payments)"
-            class="button-beige button-small js-anchor-button" type="button">PAYMENTS & GIFT CARDS</button>
-        </div>
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(shipping)"
-            class="button-beige button-small js-anchor-button" type="button">SHIPPING & DELIVERY</button>
-        </div>
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(preoders)"
-            class="button-beige button-small js-anchor-button" type="button">PRE-ORDERS</button>
-        </div>
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(returns)"
-            class="button-beige button-small js-anchor-button" type="button">RETURNS</button>
-        </div>
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(product)"
-            class="button-beige button-small js-anchor-button" type="button">PRODUCT & STOCK</button>
-        </div>
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(toys)"
-            class="button-beige button-small js-anchor-button" type="button">TOYS</button>
+      <div class="js-anchor-link-wrapper">
+        <div class="swiper js-faqs-anchor-link-swiper">
+          <div class="swiper-wrapper js-anchor-link">
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(payments)"
+                class="button-beige button-small js-anchor-button" type="button">PAYMENTS & GIFT CARDS</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(shipping)"
+                class="button-beige button-small js-anchor-button" type="button">SHIPPING & DELIVERY</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(preoders)"
+                class="button-beige button-small js-anchor-button" type="button">PRE-ORDERS</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(returns)"
+                class="button-beige button-small js-anchor-button" type="button">RETURNS</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(product)"
+                class="button-beige button-small js-anchor-button" type="button">PRODUCT & STOCK</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(toys)"
+                class="button-beige button-small js-anchor-button" type="button">TOYS</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

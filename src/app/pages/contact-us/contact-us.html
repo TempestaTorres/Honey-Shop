@@ -1,1 +1,176 @@
-<p>contact-us works!</p>
+<main class="outline-none">
+  <!--  Heading -->
+  <section class="js-page-header">
+    <div class="container">
+      <div class="js-page-header-heading">
+        <h1>Contact Us</h1>
+
+        <!-- Text -->
+        <div class="app-widget-text-editor">
+          <div class="app-text-title align-center typeset-description-primary">
+            <p>
+              Our customer obsessive Honeys are here to help you. If you have any enquiries,
+              please do not hesitate to contact us via the below.
+              <br><br>
+              Please note, Honey does not tolerate verbal or written abusive behaviour.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  Contact us section -->
+  <section class="section-boxed section-accordion-list">
+    <div class="container">
+      <div class="accordion-list-widget accordion-list-type-medium">
+
+        <h3 class="accordion-list-heading">Contact us</h3>
+
+        <!-- Header -->
+        <div class="js-accordion-list-header contact-us-list-header">
+          <a class="button-icon-beige width-full" href="mailto:honey@honey.com" title="Email us">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" class="icon " fill="none" viewBox="0 0 20 20" role="presentation" disabled="true" clickable="false">
+              <title>Icon of email</title>
+              <path stroke="#000" stroke-linecap="square" d="M2.5 4.375h15V15a.624.624 0 0 1-.625.625H3.125A.625.625 0 0 1 2.5 15V4.375Z"></path>
+              <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M17.5 4.375 10 11.25 2.5 4.375"></path>
+            </svg>
+            <span>Email us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title>Icon of chevron right</title>
+              <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </a>
+        </div>
+
+        <h3 class="accordion-list-heading">Need some help</h3>
+
+        <!-- Header -->
+        <div class="js-accordion-list-header contact-us-list-header">
+
+          <!-- Shipping button -->
+          <a class="button-icon-beige width-full"
+             [routerLink]="['/shipping-delivery']" title="Shipping and Delivery">
+
+            <div class="accordion-button-image">
+              <img src="/assets/images/icons/Truck.svg" alt="Shipping and Delivery"
+                   loading="lazy" width="20" height="20">
+            </div>
+            <span>Shipping and Delivery</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title>Icon of chevron right</title>
+              <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </a>
+
+          <!-- Return Exchanges button -->
+          <a class="button-icon-beige width-full"
+             [routerLink]="['/returns-exchanges']" title="Returns & Exchanges">
+
+            <div class="accordion-button-image">
+              <img src="/assets/images/icons/ArrowUUpLeft.svg" alt="Shipping and Delivery"
+                   loading="lazy" width="20" height="20">
+            </div>
+            <span>Returns & Exchanges</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title>Icon of chevron right</title>
+              <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </a>
+
+          <!-- FAQs button -->
+          <a class="button-icon-beige width-full"
+             [routerLink]="['/faqs']" title="FAQs">
+
+            <div class="accordion-button-image">
+              <img src="/assets/images/icons/ChatCircle.svg" alt="Shipping and Delivery"
+                   loading="lazy" width="20" height="20">
+            </div>
+            <span>FAQs</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+              <title>Icon of chevron right</title>
+              <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  Guidelines-->
+  <section class="section-boxed section-accordion-list">
+    <div class="container">
+      <div class="accordion-list-widget accordion-list-type-medium">
+        <h3 class="accordion-item-title accordion-item-heading">Guidelines</h3>
+
+        <!-- Accordion Item -->
+        <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedItem() === '1'">
+          <!-- Header -->
+          <button #accordionHeader type="button" [attr.data-id]="1"
+                  (click)="toggleItem('1')"
+                  class="accordion-item-title js-accordion-button">
+            <span class="text">Chat Guidelines</span>
+            <div class="js-accordion-button__icons-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-plus">Icon of plus</title>
+                <g id="icon-plus">
+                  <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                  <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title id="title-icon-minus">Icon of minus</title>
+                <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Content -->
+          <div class="accordion-item-description">
+            <div class="js-accordion-content shopify-policy__container">
+              <p>
+                <em>
+                  By entering our Live Chat, you agree to the following Chat Guidelines. Failure to
+                  adhere to these policies, may result in disconnection of your chat with the Honey.
+                  All communication with Honey Birdette may be recorded for quality and training purposes.
+              </em>
+              </p>
+              <p><strong><br>Save the naughty-talk for the bedroom</strong></p>
+              <p>
+                Our Agents are trained to provide discretion and respect in the topics we discuss,
+                please remember to do the same.
+              </p>
+              <p><strong><br>A honey doesn't kiss and tell</strong></p>
+              <p>
+                Our Customer Obsessive Agents take pride and joy in supporting you. We'd like to
+                keep the conversation directed towards&nbsp;
+                <em>your</em>
+                &nbsp;wants and needs - after all, that's why we're here! Please remember that our
+                team are not required to discuss their personal experience with products and cannot
+                divulge their personal information.
+              </p>
+              <p><strong><br>Experts in pleasure...</strong></p>
+              <p>
+                Although our team are experts in all things leather and lace, they are unable to
+                provide personal/relationship counselling, as well as sexual or medical advice.
+                If you require any medical advice, we recommend consulting with your usual
+                physician or general practitioner.
+              </p>
+              <p><strong><br>Keep it clean, honey</strong></p>
+              <p>We have a zero tolerance policy in regards to any profanity or abusive language
+                towards our honeys.
+              </p>
+              <p><strong><br>No robots here</strong></p>
+              <p>
+                Remember we're human and we do not use automated systems. This is in an effort to
+                provide personable and caring support for you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -9,6 +9,7 @@ import { ProductCarousel } from '../../components/product-carousel/product-carou
 import { HeroCarousel } from '../../components/hero-carousel/hero-carousel';
 import { SwiperVideoCarouselType, SwiperVideoSlide } from '../../types/swiper-carosel-types';
 import { CarouselVideoSwiper } from '../../components/carousel-video-swiper/carousel-video-swiper';
+import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
 
 @Component({
   selector: 'app-home',
@@ -19,24 +20,42 @@ import { CarouselVideoSwiper } from '../../components/carousel-video-swiper/caro
     ProductCarousel,
     HeroCarousel,
     CarouselVideoSwiper,
+    InstagramFeed,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
+
+  private videos: {desktop: string, tablet: string}[] = [
+    {
+      desktop: '/assets/video/desktop-hero-2.mp4',
+      tablet: '/assets/video/mobile-hero-2.mp4'
+    },
+    {
+      desktop: '/assets/video/desktop-home-hero.mp4',
+      tablet: '/assets/video/mobile-home-hero.mp4'
+    },
+    {
+      desktop: '/assets/video/home-desktop.mp4',
+      tablet: '/assets/video/home-mobile.mp4'
+    },
+  ];
+
   public topHeroCarousel: HeroVideoType = {
     class: 'js-hero-video-carousel',
     slides: [
       {
-        desktopImage: '/assets/video/desktop-home-hero.mp4',
-        mobileImage: '/assets/video/mobile-home-hero.mp4',
+        desktopImage: this.videos[0].desktop,
+        mobileImage: this.videos[0].tablet,
         imageUrl: {
           url: '/collections',
           param: 'new-lingerie',
         },
         content: {
           hasContent: true,
-          title: 'PAMMY',
+          title: 'ELODIE',
+          title2: 'ROMANCE',
           text: 'Introducing',
           button: {
             hasButton: true,
@@ -245,6 +264,13 @@ export class Home implements OnInit {
       },
     },
   };
+
+  public videoOverlay: string[] = [
+    "/assets/images/common/VIDEO_BUFFER_3.jpg",
+    "/assets/images/common/VIDEO_BUFFER_21.jpg",
+    "/assets/images/common/underlay.jpg",
+  ];
+  public currentUnderlay: number = 0;
 
   constructor(
     private scrollingService: ScrollingService,

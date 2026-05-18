@@ -3,7 +3,7 @@
   <section class="section-boxed section-hero-carousel">
     <!-- Cover image -->
     <div class="cover-image-wrapper">
-      <img src="/assets/images/common/VIDEO_BUFFER_21.jpg" alt="" fetchpriority="high" loading="eager">
+      <img [src]="videoOverlay[currentUnderlay]" alt="" fetchpriority="high" loading="eager">
     </div>
     <!-- Carousel -->
     <div class="section-hero-carousel__carousel">
@@ -24,7 +24,7 @@
 
         <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
           <div class="app-widget-container">
-            <img src="/assets/images/categories/NEW_42.jpg" alt="New">
+            <img src="/assets/images/categories/NEW1.jpg" alt="New">
           </div>
           <!-- Content -->
           <div class="picture-content">
@@ -33,6 +33,7 @@
         </div>
 
       </a>
+
           <!-- Category item Bras -->
       <a [routerLink]="['/collections', 'bras']" title="BRAS" class="picture-wrapper group">
 
@@ -47,6 +48,7 @@
         </div>
 
       </a>
+
           <!-- Category item loungewear -->
       <a [routerLink]="['/collections', 'loungewear']" title="LOUNGE" class="picture-wrapper group">
 
@@ -61,12 +63,13 @@
         </div>
 
       </a>
+
           <!-- Category item BOTTOMS -->
       <a [routerLink]="['/collections', 'bottoms']" title="BOTTOMS" class="picture-wrapper group">
 
         <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
           <div class="app-widget-container">
-            <img src="/assets/images/categories/BOTTOMS.jpg" alt="BOTTOMS">
+            <img src="/assets/images/categories/BOTTOMS2.jpg" alt="BOTTOMS">
           </div>
           <!-- Content -->
           <div class="picture-content">
@@ -227,6 +230,11 @@
 
       <app-carousel-video-swiper [videoData]="servicesVideoData" class="app-widget"></app-carousel-video-swiper>
     </div>
+  </section>
+
+  <!--  Instagram -->
+  <section class="section-boxed">
+    <app-instagram-feed class="app-widget"></app-instagram-feed>
   </section>
 </main>
 

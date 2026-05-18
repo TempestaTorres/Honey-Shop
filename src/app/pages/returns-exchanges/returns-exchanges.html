@@ -26,24 +26,28 @@
   <!--  Anchor links -->
   <section class="section-anchor-link">
     <div class="container">
-      <div class="js-anchor-link">
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(returns)"
-            class="button-beige button-small js-anchor-button" type="button">RETURNS</button>
-        </div>
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(refunds)"
-            class="button-beige button-small js-anchor-button" type="button">REFUNDS</button>
-        </div>
-        <!-- Link -->
-        <div class="js-anchor-link__link">
-          <button
-            (click)="anchorClick(exchanges)"
-            class="button-beige button-small js-anchor-button" type="button">EXCHANGES</button>
+      <div class="js-anchor-link-wrapper">
+        <div class="swiper js-returns-exchanges-anchor-link-swiper">
+          <div class="swiper-wrapper js-anchor-link">
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(returns)"
+                class="button-beige button-small js-anchor-button" type="button">RETURNS</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(refunds)"
+                class="button-beige button-small js-anchor-button" type="button">REFUNDS</button>
+            </div>
+            <!-- Link -->
+            <div class="swiper-slide js-anchor-link__link">
+              <button
+                (click)="anchorClick(exchanges)"
+                class="button-beige button-small js-anchor-button" type="button">EXCHANGES</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

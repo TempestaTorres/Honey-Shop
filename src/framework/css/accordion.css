@@ -108,6 +108,15 @@
 .accordion-item-heading:first-child {
   padding-top: 0;
 }
+.accordion-list-heading {
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .accordion-list-heading {
+    padding-top: 60px;
+  }
+}
 .js-accordion-button {
   cursor: pointer;
   padding-bottom: 1.25rem;
@@ -204,9 +213,21 @@
   display: flex;
   gap: .5rem;
   width: 100%;
+  flex-direction: column;
 }
 .js-accordion-list-header {
   margin-bottom: 1rem;
+}
+.accordion-button-image {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+.accordion-button-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
 }
 /* ============== Media ===================*/
 @media (min-width: 768px) {
@@ -221,5 +242,8 @@
   }
   .accordion--faqs-heading {
     padding-bottom: 1rem;
+  }
+  .js-accordion-list-footer, .js-accordion-list-header {
+    flex-direction: row;
   }
 }

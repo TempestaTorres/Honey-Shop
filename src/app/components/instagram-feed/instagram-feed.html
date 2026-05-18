@@ -1,0 +1,102 @@
+<!-- Heading -->
+<div #instaHeading
+     appObserveElement
+     [isContinuous]="false"
+     (isIntersecting)="isIntersecting($event, instaHeading)"
+  class="app-widget app-widget-heading app-widget-insta-heading scroll-trigger--offscreen scroll-trigger animate--slide-in">
+  <div class="app-widget-container">
+    <h3 class="app-heading-title">FOLLOW
+      <a class="link" href="https://www.instagram.com/">&#64;HONEY</a></h3>
+  </div>
+</div>
+
+<!-- Slider -->
+<div #fsSlider
+     appObserveElement
+     [isContinuous]="false"
+     (isIntersecting)="isIntersecting($event, fsSlider)"
+  class="app-widget instagram-feed scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+  <!--  Fs Slider -->
+  <div class="fs-desktop fs-mobile fs-instagram-slider fs-slider-container fs-wide-timeline">
+
+    <!--  Prev Button -->
+    <div class="centered-content fs-slider-prev-button"
+         role="button" tabindex="0">
+      <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"
+           aria-labelledby="fs-chevron-left"><title id="fs-chevron-left">Chevron pointing left</title>
+        <g>
+          <path class="fs-arrow" fill="none" stroke-width="1px" d="m22.5,0l-15,15l15,15" stroke="#222"></path>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Wrapper -->
+    <div class="fs-wrapper fs-timeline fs-slider-feed swiper-wrapper">
+
+      @for (feed of feeds; track $index) {
+
+        <!-- Slide -->
+        <div class="swiper-slide fs-entry-container">
+
+          <!--  Thumbnail button has class fs-tab-focused-->
+          <div
+            (click)="onTimeLineClick($index)"
+            class="fs-timeline-entry"
+            [class.fs-tab-focused]="$index === focused()"
+            [ngStyle]="{'background-image': 'url(' + feed.image + ')'}"
+            tabindex="0" role="button">
+
+            <div class="fs-text-container">
+              <!-- Icon -->
+              <div class="fs-service-icon">
+                <i class="fs-icon fs-fa-instagram" role="presentation"></i>
+              </div>
+
+              @if (feed.hasLink) {
+                <!-- Link -->
+                <div class="fs-has-links"><i class="fs-icon fs-fa-tag fa fa-tag" role="presentation"></i></div>
+              }
+
+              <!-- Hidden text if fs-desktop or fs-mobile-->
+              <div class="fs-timeline-text">
+                <div class="fs-entry-title">{{ feed.title }}</div>
+              </div>
+              <div class="fs-entry-date">{{ feed.date }}</div>
+
+              @if (feed.details) {
+
+                @for (product of feed.details; track $index) {
+
+                  <div class="fs-hover-product hidden">
+                    <div class="fs-hover-product-name">{{ product.name }}</div>
+                    <div class="fs-hover-product-price">{{ product.price }}</div>
+                  </div>
+                }
+              }
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- Next Button -->
+    <div class="centered-content fs-slider-next-button"
+         role="button" tabindex="0">
+      <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"
+           aria-labelledby="fs-chevron-right"><title id="fs-chevron-right">Chevron pointing right</title>
+        <g>
+          <path class="fs-arrow" stroke="#222" d="m7.5,0l15,15l-15,15" fill="none"></path>
+        </g>
+      </svg>
+    </div>
+
+  </div>
+
+</div>
