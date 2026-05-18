@@ -7,7 +7,7 @@ import { ObserveElementDirective } from '../../directives/scroll-observer';
 import { RouterLink } from '@angular/router';
 import { ProductCarousel } from '../../components/product-carousel/product-carousel';
 import { HeroCarousel } from '../../components/hero-carousel/hero-carousel';
-import { SwiperVideoCarouselType, SwiperVideoSlide } from '../../types/swiper-carosel-types';
+import { SwiperVideoCarouselType } from '../../types/swiper-carosel-types';
 import { CarouselVideoSwiper } from '../../components/carousel-video-swiper/carousel-video-swiper';
 import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
 

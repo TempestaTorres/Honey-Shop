@@ -218,7 +218,7 @@ i.fs-icon {
 #fs-detail-branding {
   position: absolute;
   bottom: -15px;
-  right: 0px;
+  right: 0;
   color: #ddd;
   font-family: Montserrat, sans-serif;
   font-size: 12px;
@@ -245,7 +245,6 @@ i.fs-icon {
   width: 20px;
   line-height: 20px;
   font-size: 12px;
-  font-family: sans-serif;
   text-align: center;
   color: white;
   display: inline-block;
@@ -335,7 +334,7 @@ li.fs-link-list {
 
 .fs-service-icon {
   color: #fff;
-  padding: 5px 10px 0px 5px;
+  padding: 5px 10px 0 5px;
   font-size: 18pt; }
 
 .fs-service-name {

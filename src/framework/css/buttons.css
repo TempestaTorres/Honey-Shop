@@ -447,7 +447,7 @@
     background-color: rgba(227, 219, 208, 1);
   }
   .button-icon-beige span {
-    flex: 1 1 0%;
+    flex: 1 1 0;
     text-align: left;
     color: black;
     margin-left: .75rem;
