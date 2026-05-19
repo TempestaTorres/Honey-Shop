@@ -169,6 +169,15 @@
   a.link:hover {
     color: rgba(0, 0, 0, 1);
   }
+  .link.inline {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  @media (min-width: 640px) {
+    .link.inline {
+      margin-bottom: 0;
+    }
+  }
   /* Primary */
   .button-primary {
     --text-opacity: 1;

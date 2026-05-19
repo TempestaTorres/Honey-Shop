@@ -1,1 +1,154 @@
-<p>cart works!</p>
+<main class="outline-none">
+  <section class="section-boxed cart-section" [class.empty]="empty()">
+
+    @if (empty()) {
+
+      <div class="section-wrapper">
+        <h3>Your shopping Bag is empty!</h3>
+
+        <!-- Shopping links-->
+        <div class="shopping-links-header">
+          <a [routerLink]="['/collections', 'bras']" class="button-beige button-small">Bras</a>
+          <a [routerLink]="['/collections', 'all-lingerie']" class="button-beige button-small">Lingerie</a>
+          <a [routerLink]="['/collections', 'bondage-lingerie']" class="button-beige button-small">bondage lingerie</a>
+          <a [routerLink]="['/collections', 'bottoms']" class="button-beige button-small">bottoms</a>
+          <a [routerLink]="['/collections', 'bodysuits']" class="button-beige button-small">bodysuits</a>
+        </div>
+      </div>
+    } @else {
+
+      <form class="cart-form" novalidate>
+
+        <div class="form-wrap">
+
+          <!--Cart Container -->
+          <div class="cart-container">
+            <!-- Header -->
+            <div class="cart-header">
+              <!-- Heading -->
+              <div class="app-widget-heading-primary">
+                <h1 class="app-heading-title">Your bag</h1>
+              </div>
+              <!-- Link -->
+              <a class="link desktop-hidden" [routerLink]="['/collections', 'all-lingerie']">Continue Shopping</a>
+            </div>
+
+            <!-- Loyalty Message -->
+            <div class="cart-loyalty-message">
+              <p>THE HONEY CLUB</p>
+              <p>
+                <a class="link inline" [routerLink]="['/sign-up']" title="account">SIGN UP</a>
+                OR
+                <a class="link inline" [routerLink]="['/sign-in']" title="account">LOG IN</a>
+                &nbsp;TO ACCESS YOUR EXCLUSIVE BENEFITS
+              </p>
+            </div>
+
+            <!-- Items Container -->
+            <div class="cart-container__items-list">
+
+              @for (product of cartItems(); track $index) {
+
+                <div class="cart-container__list-item">
+
+                  <!-- Main container -->
+                  <div class="cart__product-container">
+
+                    <!-- Image -->
+                    <a
+                      class="cart__image-wrapper"
+                      [routerLink]="['/products', product.url]"
+                      tabindex="-1"
+                      role="presentation"
+                      [title]="product.name">
+
+                      <img [src]="product.image" [alt]="product.name" loading="lazy" fetchpriority="auto">
+                    </a>
+
+                    <!-- Product panel -->
+                    <div class="cart__product-info-panel">
+                      <!-- Info -->
+                      <div class="cart__product-info">
+                        <!-- Name -->
+                        <a class="cart__product-name-wrapper"
+                          tabindex="-1"
+                          [title]="product.name"
+                          [routerLink]="['/products', product.url]">
+                          {{ product.name }}
+                        </a>
+
+                        <!-- Price -->
+                        <div class="cart__product-price">${{ product.price }}</div>
+
+                        <!-- Spacer -->
+                        <div class="cart__product-info-panel__spacer"></div>
+
+                        <!-- Mobile Counter -->
+                        <div class="counter-wrapper mobile-tablet-hidden">
+                          <app-product-counter [product]="product"></app-product-counter>
+                        </div>
+
+                        <!-- Desktop button remove -->
+                        <button (click)="removeCartItem(product)" class="link cart__remove-btn desktop-hidden"
+                                type="button"
+                                aria-label="Remove">
+                          Remove
+                        </button>
+                      </div>
+
+                      <!--  Mobile Buttons -->
+                      <div class="cart__mobile-buttons mobile-tablet-hidden">
+
+                        <!-- Wishlist Toggle -->
+                        <button (click)="wishlistToggle(product)"
+                          class="cart__wishlist-btn" type="button" aria-label="Wishlist Toggle">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+                            <path id="icon-heart" d="M7.59571 2.96285L7.00458 3.55698L6.41345 2.96285C5.26474 1.81251 3.40331 1.81251 2.25878 2.96285C1.11426 4.11319 1.11426 5.98407 2.25878 7.13441L2.84991 7.72854L7.00039 11.9001L11.1509 7.72854L11.742 7.13441C12.8865 5.98407 12.8865 4.11319 11.742 2.96285C10.5975 1.81251 8.73605 1.81251 7.59152 2.96285H7.59571Z" stroke="currentColor" stroke-miterlimit="10"></path>
+                          </svg>
+                        </button>
+
+                        <!-- Remove -->
+                        <button (click)="removeCartItem(product)" class="link cart__remove-btn"
+                                type="button"
+                                aria-label="Remove">
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Wishlist Toggle -->
+                  <button (click)="wishlistToggle(product)"
+                    class="cart__wishlist-btn desktop-hidden" type="button" aria-label="Wishlist Toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+                      <path id="icon-heart" d="M7.59571 2.96285L7.00458 3.55698L6.41345 2.96285C5.26474 1.81251 3.40331 1.81251 2.25878 2.96285C1.11426 4.11319 1.11426 5.98407 2.25878 7.13441L2.84991 7.72854L7.00039 11.9001L11.1509 7.72854L11.742 7.13441C12.8865 5.98407 12.8865 4.11319 11.742 2.96285C10.5975 1.81251 8.73605 1.81251 7.59152 2.96285H7.59571Z" stroke="currentColor" stroke-miterlimit="10"></path>
+                    </svg>
+                  </button>
+
+                  <!-- Counter -->
+                  <div class="counter-wrapper desktop-hidden">
+                    <app-product-counter [product]="product"></app-product-counter>
+                  </div>
+
+                  <!-- Price -->
+                  <div class="cart__product-price desktop-hidden">${{ product.price }}</div>
+
+                </div>
+
+              }
+            </div>
+
+          </div>
+
+          <!-- Summary-->
+          <div class="cart-summary">
+
+          </div>
+
+        </div>
+
+      </form>
+    }
+  </section>
+</main>

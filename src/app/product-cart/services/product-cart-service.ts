@@ -22,7 +22,14 @@ export class ProductCartService {
   }
 
   public removeFromCart(productCartType: ProductCartType): void {
-    this.products = this.products.filter(product => product.url !== productCartType.url);
+
+    if (this.products.length > 1) {
+      this.products = this.products.filter(product => product.url !== productCartType.url);
+    }
+    else if (this.products[0].url === productCartType.url) {
+      this.products = [];
+    }
+
     this.cartCount.next(this.products.length);
   }
 

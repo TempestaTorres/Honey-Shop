@@ -11,6 +11,7 @@ export interface ProductDetailsType {
   url: string,
   linkStyle: string,
   sizes?: {key:string, sizes:string[]}[],
+  soldout?: boolean
 }
 export interface InstagramFeedType {
   image: string,

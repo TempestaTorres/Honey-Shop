@@ -4,5 +4,6 @@ export interface ProductCartType {
   price: string,
   image: string,
   count: string,
+  favorite?: boolean,
   size?: {key: string, value: string}
 }

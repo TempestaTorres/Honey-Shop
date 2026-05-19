@@ -20,6 +20,9 @@ import { Products } from './pages/products/products';
 import { BridalEdit } from './pages/bridal-edit/bridal-edit';
 import { BookReturn } from './pages/book-return/book-return';
 import { Cart } from './pages/cart/cart';
+import { SignUp } from './pages/sign-up/sign-up';
+import { SignIn } from './pages/sign-in/sign-in';
+import { Wishlist } from './pages/wishlist/wishlist';
 
 export const routes: Routes = [
   {
@@ -44,6 +47,9 @@ export const routes: Routes = [
       {path: 'bridal-edit', component: BridalEdit},
       {path: 'book-return', component: BookReturn},
       {path: 'cart', component: Cart},
+      {path: 'wishlist', component: Wishlist},
+      {path: 'sign-up', component: SignUp},
+      {path: 'sign-in', component: SignIn},
     ]
   },
   {path: 'services', component: Services},

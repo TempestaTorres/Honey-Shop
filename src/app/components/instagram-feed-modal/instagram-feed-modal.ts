@@ -190,6 +190,7 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
     if (product.type === "bra") {
 
       this.checkCups(product);
+      return;
     }
 
     if (product.sizes) {

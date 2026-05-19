@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit,signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal, WritableSignal } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { CartCount } from '../cart-count/cart-count';
@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { MegaMenuService } from '../../services/mega-menu-service';
 import { MegaMenuDesktop } from '../mega-menu-desktop/mega-menu-desktop';
 import { headerLocations } from './header-locations';
+import { WishlistService } from '../../product-wishlist/wishlist-service';
 
 @Component({
   selector: 'app-site-header',
@@ -29,16 +30,26 @@ export class SiteHeader implements OnInit, OnDestroy {
   public isBlackMobile = signal(false);
   public isMenuActive = signal(false);
 
+  public wishlistCount: WritableSignal<number> = signal<number>(0);
+
   private megaMenu$: Subscription | undefined;
   private megaMenuDesktop$: Subscription | undefined;
+  private wishlist$: Subscription | undefined;
 
   constructor(
     private router: Router,
     private location: Location,
     private megaMenuService: MegaMenuService,
+    private wishlistService: WishlistService,
   ) {}
 
   ngOnInit() {
+
+    this.wishlist$ = this.wishlistService.wishlistCount.subscribe((wishlistCount) => {
+      this.wishlistCount.set(wishlistCount);
+    });
+
+    // Megamenu
     this.megaMenu$ = this.megaMenuService.megaMenuState$.subscribe((megaMenuState) => {
       this.isMenuActive.set(megaMenuState);
     });
@@ -79,6 +90,9 @@ export class SiteHeader implements OnInit, OnDestroy {
     }
     if (this.megaMenuDesktop$) {
       this.megaMenuDesktop$.unsubscribe();
+    }
+    if (this.wishlist$) {
+      this.wishlist$.unsubscribe();
     }
   }
 

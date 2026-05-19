@@ -293,6 +293,11 @@
   --buttons-hover-color: #000000;
   --buttons-color-neutral: var(--global-color-neutral);
 
+  --global-typography-primary-font-family:"futura-pt";
+  --global-typography-primary-font-size:14px;
+  --global-typography-primary-font-weight:500;
+  --global-typography-primary-line-height:20px;
+  --global-typography-primary-letter-spacing:1px;
   --global-typography-text-font-family: "futura-pt";
   --global-typography-text-font-size:16px;
   --global-typography-text-font-weight:300;
@@ -302,7 +307,7 @@
   --global-typography-accent-font-size:12px;
   --global-typography-accent-font-weight:500;
   --global-typography-accent-line-height:16px;
-  --global-typography-accent-letter-spacing:1.2px;
+  --global-typography-accent-letter-spacing:1px;
   --global-typography-accent-text-transform:uppercase;
   --global-typography-100-font-family:"futura-pt";
   --global-typography-100-font-size:24px;

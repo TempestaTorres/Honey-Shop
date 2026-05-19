@@ -1,0 +1,53 @@
+.product-counter-wrapper {
+  position: relative;
+  border: 1px solid rgba(0,0,0,.08);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .375rem;
+  width: fit-content;
+  height: 1.75rem;
+}
+.counter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.counter-btn:hover, .counter-btn:focus {
+  background-color: rgb(233,227,218);
+}
+.counter-btn .icon {
+  height: .75rem;
+  width: .75rem;
+  color: black;
+  display: block;
+}
+.input-counter-wrapper {
+  position: relative;
+  width: 1.5rem;
+}
+.input-counter-wrapper > input {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-style: none;
+  background-color: var(--global--color-primary);
+  appearance: textfield;
+  box-shadow: none;
+}
+.input-counter-wrapper > input:focus {
+  outline: none;
+}

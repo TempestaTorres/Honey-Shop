@@ -1,0 +1,26 @@
+<div class="product-counter-wrapper">
+  <!-- Decrease -->
+  <button (click)="toggleCount(false)" class="counter-btn" type="button" [attr.aria-label]="'Decrease quantity for ' + product.name">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false">
+      <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+
+  <div class="input-counter-wrapper">
+    <input type="number"
+           min="1"
+           max="30"
+           aria-label="Quantity"
+          [ngModel]="product.count">
+  </div>
+
+  <!-- Increase -->
+  <button (click)="toggleCount()" class="counter-btn" type="button" [attr.aria-label]="'Increase quantity for ' + product.name">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false">
+      <g id="icon-plus">
+        <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+        <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+      </g>
+    </svg>
+  </button>
+</div>

@@ -61,29 +61,207 @@ export const InstagramFeedsData: InstagramFeedType[] = [
     image: "/assets/images/instagram-feed/insta-14.jpg",
     title: "Sweet like honey. Dripping in European crystals and garlands of forget-me-nots, Elodie Romance is a sheer sensation. 🌸",
     date: "17 MAY 2026",
-    hasLink: false,
+    hasLink: true,
     author: "Honey",
+    details: [
+      {
+        name: "Elodie Romance Bra",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Front.jpg",
+        type: "bra",
+        price: "150.00",
+        url: "elodie-underwire-balconette-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 48.19%; left: 56.87%;",
+        sizes: braSizes,
+        soldout: true
+      },
+      {
+        name: "Elodie Romance Suspender",
+        image: "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Thong_Front2.jpg",
+        type: "suspender",
+        price: "125.00",
+        url: "elodie-suspender-slim-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 63.64%; left: 45.54%;",
+        sizes: dressSizes
+      },
+      {
+        name: "Elodie Romance Thong",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Thong_Back.jpg",
+        type: "thong",
+        price: "95.00",
+        url: "elodie-string-ouvert-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 77.16%; left: 50.37%;",
+        sizes: dressSizes,
+        soldout: true
+      },
+      {
+        name: "Elodie Romance Garter",
+        image: "/assets/images/products/eloidie/garter/pink/Elodie_Romance_Garter_Box.jpg",
+        type: "accessory",
+        price: "85.00",
+        url: "elodie-garter-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 77.16%; left: 50.37%;",
+        soldout: true
+      },
+    ]
   },
   {
     image: "/assets/images/instagram-feed/insta-13.jpg",
     title: "Isn’t she sweet? Don’t let looks deceive you... Elodie has other plans for tonight 💋",
     date: "17 MAY 2026",
-    hasLink: false,
+    hasLink: true,
     author: "Honey",
+    details: [
+      {
+        name: "Elodie Romance Bra",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Front.jpg",
+        type: "bra",
+        price: "150.00",
+        url: "elodie-underwire-balconette-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 52.39%; left: 38.14%;",
+        sizes: braSizes,
+        soldout: true
+      },
+      {
+        name: "Elodie Romance Suspender",
+        image: "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Thong_Front2.jpg",
+        type: "suspender",
+        price: "125.00",
+        url: "elodie-suspender-slim-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 66.5%; left: 28.86%;",
+        sizes: dressSizes
+      },
+      {
+        name: "Elodie Romance Thong",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Thong_Back.jpg",
+        type: "thong",
+        price: "95.00",
+        url: "elodie-string-ouvert-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 75.48%; left: 31.1%;",
+        sizes: dressSizes,
+        soldout: true
+      },
+      {
+        name: "Pink Flower Suspender Stockings",
+        image: "/assets/images/products/eloidie/stockings/pink/Elodie_Romance_Stockings.jpg",
+        type: "stockings",
+        price: "35.00",
+        url: "elodie-suspender-stockings-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 92.7%; left: 36.91%;",
+        sizes: stockingsSizes,
+      },
+      {
+        name: "Elodie Romance Bra",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Front.jpg",
+        type: "bra",
+        price: "150.00",
+        url: "elodie-underwire-balconette-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 47.02%; left: 67.11%;",
+        sizes: braSizes,
+        soldout: true
+      },
+      {
+        name: "Elodie Romance Brief",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Back.jpg",
+        type: "thong",
+        price: "110.00",
+        url: "elodie-brazilian-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 69.52%; left: 68.23%;",
+        sizes: dressSizes,
+      },
+      {
+        name: "Elodie Romance Garter",
+        image: "/assets/images/products/eloidie/garter/pink/Elodie_Romance_Garter_Box.jpg",
+        type: "accessory",
+        price: "85.00",
+        url: "elodie-garter-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 84.21%; left: 74.38%;",
+        soldout: true
+      },
+    ]
   },
   {
     image: "/assets/images/instagram-feed/insta-12.jpg",
     title: "Elodie Romance. Pretty from the front and even better from behind, honey. 🌸 As worn by @oliviamirah",
     date: "15 MAY 2026",
-    hasLink: false,
+    hasLink: true,
     author: "Honey",
+    details: [
+      {
+        name: "Elodie Romance Bra",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Front.jpg",
+        type: "bra",
+        price: "150.00",
+        url: "elodie-underwire-balconette-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 48.53%; left: 55.82%;",
+        sizes: braSizes,
+        soldout: true
+      },
+      {
+        name: "Elodie Romance Brief",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Back.jpg",
+        type: "thong",
+        price: "110.00",
+        url: "elodie-brazilian-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 76.57%; left: 75.34%;",
+        sizes: dressSizes,
+      },
+      {
+        name: "Elodie Romance Garter",
+        image: "/assets/images/products/eloidie/garter/pink/Elodie_Romance_Garter_Box.jpg",
+        type: "accessory",
+        price: "85.00",
+        url: "elodie-garter-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 82.96%; left: 32%;",
+        soldout: true
+      },
+    ]
   },
   {
     image: "/assets/images/instagram-feed/insta-11.jpg",
     title: "Smooth support meets barely-there tulle… It’s easy to see why we all love Elodie 🌸🍃",
     date: "15 MAY 2026",
-    hasLink: false,
+    hasLink: true,
     author: "Honey",
+    details: [
+      {
+        name: "Elodie Romance Bra",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Front.jpg",
+        type: "bra",
+        price: "150.00",
+        url: "elodie-underwire-balconette-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 50.04%; left: 61.52%;",
+        sizes: braSizes,
+        soldout: true
+      },
+      {
+        name: "Elodie Romance Suspender",
+        image: "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Bra_Suspender_Thong_Front2.jpg",
+        type: "suspender",
+        price: "125.00",
+        url: "elodie-suspender-slim-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 67.59%; left: 49.78%;",
+        sizes: dressSizes
+      },
+      {
+        name: "Elodie Romance Thong",
+        image: "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Thong_Back.jpg",
+        type: "thong",
+        price: "95.00",
+        url: "elodie-string-ouvert-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 74.39%; left: 55.48%;",
+        sizes: dressSizes,
+        soldout: true
+      },
+      {
+        name: "Pink Flower Suspender Stockings",
+        image: "/assets/images/products/eloidie/stockings/pink/Elodie_Romance_Stockings.jpg",
+        type: "stockings",
+        price: "35.00",
+        url: "elodie-suspender-stockings-romantic-pink",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 93.28%; left: 69.57%;",
+        sizes: stockingsSizes,
+      },
+    ]
   },
   {
     image: "/assets/images/instagram-feed/insta-10.jpg",

@@ -153,7 +153,9 @@
           </div>
 
           <!-- Wish list needs class has-items -->
-          <a [routerLink]="['wishlist']" class="icon-wrapper js-wishlist-count has-items" title="open wishlist">
+          <a [routerLink]="['wishlist']"
+             [class.has-items]="wishlistCount() > 0"
+             class="icon-wrapper js-wishlist-count" title="open wishlist">
             <!-- No items icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
               <title id="title-icon-heart">Icon of heart</title>
@@ -165,7 +167,7 @@
               <path id="icon-heart-has-items" d="M7.46477 2.88767C8.81208 1.66487 10.8982 1.70527 12.1962 3.00974C13.3833 4.20287 13.517 6.05752 12.5986 7.40036H11.2695L11.4872 7.18161C12.4373 6.22639 12.4373 4.67099 11.4872 3.71579C10.5514 2.77532 9.03876 2.76345 8.08684 3.6777L8.04973 3.71579L7.10442 4.66599L6.74993 4.30954L6.15813 3.71579C5.20435 2.76199 3.66114 2.76291 2.71282 3.71579C1.76257 4.67106 1.76251 6.22638 2.71282 7.18161L7.09953 11.5908V13.0088L2.00383 7.88669C0.665466 6.54128 0.665313 4.35505 2.00383 3.00974C3.30233 1.70504 5.38766 1.66565 6.73821 2.88767L6.86711 3.00974L7.10149 3.24509L7.33684 3.00974L7.46477 2.88767Z" fill="currentColor"></path>
             </svg>
             <!-- Count -->
-            <div class="wishlist-count-number count-number">1</div>
+            <div class="wishlist-count-number count-number">{{ wishlistCount() }}</div>
           </a>
 
           <!-- Cart -->

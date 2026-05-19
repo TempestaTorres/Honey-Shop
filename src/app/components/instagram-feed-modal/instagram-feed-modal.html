@@ -106,18 +106,36 @@
                   <!-- Product -->
                   <div class="fs-shop-product">
 
-                    <a (click)="showProduct(product.url)"
+                  @if (product.soldout) {
+
+                    <a
                        (mouseenter)="linkHover($index + 1)"
                        (mouseleave)="linkReset()"
                        [class.fs-link-active]="productLink() === $index + 1"
-                       class="fs-shop-link fs-link-list"
-                        tabindex="0">
+                       tabindex="0">
 
                       <div class="fs-detail-product-container">
                         <img class="fs-detail-product-image"
                              [src]="product.image" [alt]="product.name">
                       </div>
                     </a>
+
+                  } @else {
+
+                    <a (click)="showProduct(product.url)"
+                       (mouseenter)="linkHover($index + 1)"
+                       (mouseleave)="linkReset()"
+                       [class.fs-link-active]="productLink() === $index + 1"
+                       class="fs-shop-link fs-link-list"
+                       tabindex="0">
+
+                      <div class="fs-detail-product-container">
+                        <img class="fs-detail-product-image"
+                             [src]="product.image" [alt]="product.name">
+                      </div>
+                    </a>
+
+                  }
 
                   @if (!feed()?.hasLink) {
 
@@ -134,24 +152,44 @@
                     <!-- Add to cart button -->
                     <div class="fs-shopify-options">
                       <div class="fs-view">
-                        <a class="fs-shop-link"
-                          (click)="showProduct(product.url)"
-                           [attr.aria-label]="product.name">
-                          <div class="fs-product-price">${{ product.price }}</div>
-                          <span class="fs-product-name">{{ product.name }}</span>
-                          <span class="fs-product-vendor">Honey</span>
-                        </a>
+
+                        @if (product.soldout) {
+
+                          <a>
+                            <div class="fs-product-price">${{ product.price }}</div>
+                            <span class="fs-product-name">{{ product.name }}</span>
+                            <span class="fs-product-vendor">Honey</span>
+                          </a>
+
+                        } @else {
+                          <a class="fs-shop-link"
+                             (click)="showProduct(product.url)"
+                             [attr.aria-label]="product.name">
+                            <div class="fs-product-price">${{ product.price }}</div>
+                            <span class="fs-product-name">{{ product.name }}</span>
+                            <span class="fs-product-vendor">Honey</span>
+                          </a>
+                        }
+
                       </div>
 
-                      <!-- Button -->
-                      <div class="fs-add">
-                        <button
-                          (click)="openBuyContainer(product)"
-                          class="fs-shopify-add-cart fs-shopify-add-cart-container"
-                        type="button">
-                          Add to Cart
-                        </button>
-                      </div>
+                      @if (product.soldout) {
+                        <div class="fs-soldout">
+                          <p>Sold out</p>
+                        </div>
+                      } @else {
+
+                        <!-- Button -->
+                        <div class="fs-add">
+                          <button
+                            (click)="openBuyContainer(product)"
+                            class="fs-shopify-add-cart fs-shopify-add-cart-container"
+                            type="button">
+                            Add to Cart
+                          </button>
+                        </div>
+                      }
+
                     </div>
                   }
                   </div>
