@@ -9,6 +9,7 @@ import { BoutiquesData } from './data/boutiques-data';
 import { ProductItem } from './types/product-type';
 import { NewArrivalData } from './data/new-arrival-data';
 import { BridalLingerieData } from './data/bridal-lingerie-data';
+import { RecommendedData } from './data/recommended-data';
 
 @Injectable({
   providedIn: 'root',
@@ -32,6 +33,13 @@ export class ProductsService {
 
     return new Observable<NewsType[]>(observer => {
       observer.next(NewsData);
+    });
+  }
+
+  public getRecommended(): Observable<ProductItem[]> {
+
+    return new Observable<ProductItem[]>(observer => {
+      observer.next(RecommendedData);
     });
   }
 

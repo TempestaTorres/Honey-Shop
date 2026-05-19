@@ -26,7 +26,9 @@
         <!-- Slides -->
         @for (item of products; track $index) {
 
-          <app-swiper-slide class="swiper-slide product-carousel-slide" [product]="item.product"></app-swiper-slide>
+          <app-swiper-slide class="swiper-slide product-carousel-slide"
+                            [class.medium]="medium()"
+                            [product]="item.product"></app-swiper-slide>
         }
 
       </div>

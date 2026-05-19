@@ -28,6 +28,8 @@ export class ProductCarousel implements OnInit, OnDestroy {
   public loading: WritableSignal<boolean> = signal<boolean>(true);
   public products: ProductItem[] = [];
 
+  public medium: WritableSignal<boolean> = signal<boolean>(false);
+
   private productSubscription$: Subscription | undefined;
   private swiper: any;
 
@@ -93,7 +95,17 @@ export class ProductCarousel implements OnInit, OnDestroy {
         }
       });
 
+    }
+    else if (this.requestType.type === 'recommended') {
+      this.medium.set(true);
 
+      this.productSubscription$ = this.service.getRecommended().subscribe((items) => {
+        this.products = items;
+
+        if (this.products.length > 0) {
+          this.loading.set(false);
+        }
+      });
     }
   }
 

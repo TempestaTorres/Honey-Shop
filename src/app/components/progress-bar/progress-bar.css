@@ -1,0 +1,52 @@
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: .125rem;
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgba(0,0,0,.08);
+}
+.progress-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  background-color: #000000;
+  transition-duration: .3s;
+  transition-property: transform;
+  transform: scaleX(0);
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+/* ==================== Color Stages ==================== */
+
+.progress-line.low {      /* 0% - 49% */
+  background-color: #ef4444;   /* red */
+}
+
+.progress-line.medium {   /* 50% - 79% */
+  background-color: #f59e0b;   /* amber */
+}
+
+.progress-line.high {     /* 80% - 99% */
+  background-color: #22c55e;   /* green */
+}
+/* ==================== 100% Celebration ==================== */
+
+.progress-line.reached {
+  background-color: #000000;
+  /*animation: glow-pulse 4s ease-out infinite;*/
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 3px #22c55e,
+    0 0 6px #22c55e;
+  }
+  50% {
+    box-shadow: 0 0 3px #22c55e,
+    0 0 8px #22c55e,
+    0 0 10px rgba(34, 197, 94, 0.5);
+  }
+}

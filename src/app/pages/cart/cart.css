@@ -196,3 +196,106 @@
     justify-content: space-between;
   }
 }
+
+/* Summary */
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--global--color-secondary);
+  padding: 1.5rem 1rem;
+}
+.cart-summary__heading > .app-widget-container {
+  text-align: center;
+}
+.cart-page, .subtotal-page {
+  width: 100%;
+}
+.cart-page {
+  margin-top: 1.5rem;
+}
+
+.subtotal-page__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-subtotal {
+  text-transform: uppercase;
+  font-family: inherit;
+  color: rgb(17, 17, 17);
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.cart__alert-message {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,.08);
+  padding-top: 1.5rem;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: rgb(85, 85, 85)
+}
+.cart__checkout-btn-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+}
+.cart__help-button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .125rem;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #000000;
+  text-transform: uppercase;
+}
+.cart__help-button .icon, .cart__free-shipping-message .icon {
+  height: 1.25rem !important;
+  width: 1.25rem !important;
+}
+.cart__free-shipping-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.cart-shipping-bar {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+/* ========================= Media ================== */
+@media (min-width: 1024px) {
+  .cart-summary {
+    position: sticky;
+    top: 0;
+    max-height: 100dvh;
+    width: calc(480 / 1440 * 100%);
+    gap: 2.5rem;
+    padding: 5rem;
+  }
+}
+/* Recommendations */
+.section-recommendations {
+  padding: 24px 0 0 0;
+}

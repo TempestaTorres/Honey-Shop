@@ -17,7 +17,7 @@
       </div>
     } @else {
 
-      <form class="cart-form" novalidate>
+      <form (ngSubmit)="onSubmit()" class="cart-form" novalidate>
 
         <div class="form-wrap">
 
@@ -144,6 +144,76 @@
           <!-- Summary-->
           <div class="cart-summary">
 
+            <!-- Heading -->
+            <div class="app-widget-heading cart-summary__heading">
+              <div class="app-widget-container">
+                <h3 class="app-heading-title">Order summary</h3>
+              </div>
+            </div>
+
+            <!-- Cart page -->
+            <div class="cart-page">
+
+              <div class="cart__free-shipping-message">
+              @if (cartSubtotal() < 150) {
+
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+                    <g id="icon-shopping-bag">
+                      <path d="M11.8996 4.8999H2.09961V12.5999H11.8996V4.8999Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M4.8125 6.65L4.8125 3.9375C4.8125 3.35734 5.04297 2.80094 5.4532 2.3907C5.86344 1.98047 6.41984 1.75 7 1.75C7.58016 1.75 8.13656 1.98047 8.5468 2.3907C8.95703 2.80094 9.1875 3.35734 9.1875 3.9375V6.65" stroke="currentColor" stroke-linecap="square"></path>
+                    </g>
+                  </svg>
+
+                  <span>You’re only <strong>{{ 150 - cartSubtotal() | currency}}</strong> away from free shipping</span>
+
+              } @else {
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                  <g id="icon-check">
+                    <path fill="#000" stroke="currentColor" stroke-linecap="square" d="M16.25 3.125H3.75a.625.625 0 0 0-.625.625v12.5c0 .345.28.625.625.625h12.5c.345 0 .625-.28.625-.625V3.75a.625.625 0 0 0-.625-.625Z"></path>
+                    <path stroke="#F1ECE4" stroke-linecap="square" stroke-linejoin="round" d="M13.438 8.125 8.851 12.5l-2.29-2.188"></path>
+                  </g>
+                </svg>
+
+                <span>Enjoy your free shipping, honey</span>
+              }
+              </div>
+
+              <!-- Progress bar -->
+              <div class="cart-shipping-bar">
+                <app-progress-bar [maxValue]="maxForProgress" [currentValue]="cartSubtotal()" class="app-widget"></app-progress-bar>
+              </div>
+            </div>
+
+            <!-- Subtotal page -->
+            <div class="subtotal-page">
+              <div class="subtotal-page__header">
+                <span class="cart-subtotal">Subtotal</span>
+                <span class="cart-subtotal">{{ cartSubtotal() | currency }}</span>
+              </div>
+
+              <!-- Message -->
+              <div class="cart__alert-message" role="alert"
+                   aria-live="polite">
+                Shipping &amp; taxes calculated at checkout
+              </div>
+
+              <!-- Checkout button -->
+              <div class="cart__checkout-btn-wrapper">
+                <button name="checkout"
+                        class="button-primary button-large full-width-button">Checkout</button>
+              </div>
+
+              <!-- Help button if we have a chat bot -->
+              <button type="button" class="cart__help-button" title="Need some help?">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" aria-hidden="true" focusable="false">
+                  <path id="icon-chat" d="M3.54709 13.8281C2.61653 12.2581 2.29103 10.4025 2.6317 8.60949C2.97237 6.81652 3.95578 5.20954 5.39731 4.09025C6.83883 2.97096 8.63934 2.41633 10.4608 2.53049C12.2823 2.64464 13.9995 3.41972 15.29 4.71023C16.5805 6.00073 17.3556 7.71791 17.4697 9.53939C17.5839 11.3609 17.0292 13.1614 15.91 14.6029C14.7907 16.0444 13.1837 17.0278 11.3907 17.3685C9.59775 17.7092 7.74208 17.3837 6.17209 16.4531V16.4531L3.57834 17.1875C3.47207 17.2186 3.3594 17.2205 3.25213 17.1931C3.14487 17.1656 3.04696 17.1098 2.96866 17.0315C2.89037 16.9533 2.83459 16.8553 2.80715 16.7481C2.77971 16.6408 2.78163 16.5281 2.81271 16.4219L3.54709 13.8281Z" stroke="currentColor" stroke-linecap="square"></path>
+                </svg>
+                <span>Need some help?</span>
+              </button>
+
+            </div>
+
           </div>
 
         </div>
@@ -151,4 +221,22 @@
       </form>
     }
   </section>
+  @if (!empty()) {
+
+    <!--  Recommendations -->
+    <section class="section-boxed section-recommendations">
+      <div class="app-wrapper">
+        <!-- Heading -->
+        <div class="app-widget app-widget-heading app-widget-heading-default carousel-heading">
+          <div class="app-widget-container">
+            <h2 class="app-heading-title">Recommended</h2>
+          </div>
+        </div>
+        <!-- Products Carousel -->
+        <app-product-carousel [className]="'js-carousel-swiper-recommended'" [requestType]="{type: 'recommended'}" class="app-wrapper"></app-product-carousel>
+      </div>
+    </section>
+
+  }
+
 </main>

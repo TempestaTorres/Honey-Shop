@@ -54,6 +54,8 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
     // Init Feed
     this.openedFeed$ = this.instagramFeedService.openedFeed.subscribe((index) => {
       this.prev.set(index);
+      this.buyContainerOpen.set(false);
+      this.cartProduct.set(null);
 
       if (index !== -1) {
         this.feed.set(this.instagramFeedService.getFeed(index));
@@ -108,6 +110,8 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
   }
 
   public proceedToCheckout(): void {
+    this.fsError.set("");
+    this.productAdded.set(false);
     this.onClose();
     this.router.navigate(['/cart']).then(() => {});
   }
@@ -173,7 +177,7 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
     this.cartProduct.set(cartItem);
     this.productAdded.set(true);
 
-    console.log(cartItem);
+
   }
 
   public cancelPurchase(): void {

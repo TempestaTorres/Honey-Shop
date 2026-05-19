@@ -304,10 +304,10 @@
   --global-typography-text-line-height:24px;
   --global-typography-text-text-transform:none;
   --global-typography-accent-font-family:"futura-pt";
-  --global-typography-accent-font-size:12px;
   --global-typography-accent-font-weight:500;
-  --global-typography-accent-line-height:16px;
   --global-typography-accent-letter-spacing:1px;
+  --global-typography-accent-font-size:14px;
+  --global-typography-accent-line-height:20px;
   --global-typography-accent-text-transform:uppercase;
   --global-typography-100-font-family:"futura-pt";
   --global-typography-100-font-size:24px;
@@ -443,9 +443,6 @@
   /*==================== media =========================*/
   @media (min-width: 1024px) {
     --global-typography-101-font-size: 76px;
-    --global-typography-accent-font-size:14px;
-    --global-typography-accent-line-height:20px;
-    --global-typography-accent-letter-spacing:1px;
   }
   @media (max-width: 1023px) {
     --global-typography-102-font-size:36px;
