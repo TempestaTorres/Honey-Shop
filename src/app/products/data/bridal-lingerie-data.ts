@@ -5,13 +5,14 @@ export const BridalLingerieData: ProductItem[] = [
     product: [
       {
         name: "LIAN",
-        description: "Panty",
+        description: "Brief",
         url: "lian-ivory-brazilian",
         addFavoriteButton: true,
         addToCartButton: true,
-        price: 105,
+        price: 95,
         colorName: "ivory",
         colorClass: "swatch-ivory",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Front.jpg",
@@ -32,9 +33,10 @@ export const BridalLingerieData: ProductItem[] = [
         url: "lian-ivory-balconette",
         addFavoriteButton: true,
         addToCartButton: true,
-        price: 145,
+        price: 130,
         colorName: "ivory",
         colorClass: "swatch-ivory",
+        type: "bra",
         images: [
           "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Front.jpg",
           "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Front.jpg",
@@ -53,13 +55,14 @@ export const BridalLingerieData: ProductItem[] = [
     product: [
       {
         name: "LIAN",
-        description: "Garter Belt",
+        description: "SUSPENDER",
         url: "lian-ivory-suspender",
         addFavoriteButton: true,
         addToCartButton: true,
-        price: 120,
+        price: 110,
         colorName: "ivory",
         colorClass: "swatch-ivory",
+        type: "suspender",
         images: [
           "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Front.jpg",
           "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Thong_Suspender_Front.jpg",
@@ -81,9 +84,10 @@ export const BridalLingerieData: ProductItem[] = [
         url: "lian-ivory-thong",
         addFavoriteButton: true,
         addToCartButton: true,
-        price: 95,
+        price: 85,
         colorName: "ivory",
         colorClass: "swatch-ivory",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Back.jpg",
           "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Front.jpg",
@@ -110,6 +114,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 280,
         colorName: "ivory",
         colorClass: "swatch-ivory",
+        type: "robe",
         images: [
           "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Front.jpg",
           "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Back.jpg",
@@ -135,6 +140,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 85,
         colorName: "ivory",
         colorClass: "swatch-ivory",
+        type: "accessory",
         images: [
           "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Garter_Box_1.jpg",
           "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Thong_Garter_Front2.jpg",
@@ -156,6 +162,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 240,
         colorName: "ivory",
         colorClass: "swatch-ivory",
+        type: "accessory",
         images: [
           "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Bra_Thong_Veil_Garter_Front2_2.jpg",
           "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Veil_Back1.jpg",
@@ -175,6 +182,7 @@ export const BridalLingerieData: ProductItem[] = [
         url: "nipple-pasties-pearl",
         addFavoriteButton: true,
         addToCartButton: true,
+        type: "accessory",
         price: 75,
         colorName: "white",
         colorClass: "swatch-white",
@@ -196,6 +204,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 165,
         colorName: "blue",
         colorClass: "swatch-blue",
+        type: "bra",
         images: [
           "/assets/images/products/bridal-lingerie/kate/bra/blue/Kate_Bra_Harness_Suspender_Thong_Front.jpg",
           "/assets/images/products/bridal-lingerie/kate/bra/blue/Kate_Harness_Bra_Front2.jpg",
@@ -224,6 +233,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 120,
         colorName: "blue",
         colorClass: "swatch-blue",
+        type: "suspender",
         images: [
           "/assets/images/products/bridal-lingerie/kate/garter-belt/blue/Kate_Bra_Harness_Suspender_Thong_Front1.jpg",
           "/assets/images/products/bridal-lingerie/kate/garter-belt/blue/Kate_Thong_Suspender_Front1.jpg",
@@ -248,6 +258,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 105,
         colorName: "blue",
         colorClass: "swatch-blue",
+        type: "brief",
         images: [
           "/assets/images/products/bridal-lingerie/kate/panty/blue/Kate_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/kate/panty/blue/Kate_Brief_Front.jpg",
@@ -271,6 +282,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 95,
         colorName: "blue",
         colorClass: "swatch-blue",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/kate/thong/blue/Kate_Bra_Thong_Back.jpg",
           "/assets/images/products/bridal-lingerie/kate/thong/blue/Kate_Thong_Front.jpg",
@@ -297,6 +309,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 210,
         colorName: "blue",
         colorClass: "swatch-blue",
+        type: "dress",
         images: [
           "/assets/images/products/bridal-lingerie/kate/babydoll/blue/Kate_Chemise_Brief_FrontZOOM1.jpg",
           "/assets/images/products/bridal-lingerie/kate/babydoll/blue/Kate_Chemise_Brief_BackZOOM.jpg",
@@ -321,6 +334,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 280,
         colorName: "blue",
         colorClass: "swatch-blue",
+        type: "robe",
         images: [
           "/assets/images/products/bridal-lingerie/kate/robe/blue/Kate_Robe_Bra_Thong_Front1.jpg",
           "/assets/images/products/bridal-lingerie/kate/robe/blue/Kate_Robe_Bra_Thong_Back.jpg",
@@ -344,6 +358,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 95,
         colorName: "white",
         colorClass: "swatch-white",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/maisie/panty/white/Maisie_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/maisie/panty/white/Maisie_Brief_Front.jpg",
@@ -368,6 +383,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 210,
         colorName: "white",
         colorClass: "swatch-white",
+        type: "bodysuit",
         images: [
           "/assets/images/products/bridal-lingerie/maisie/bodysuit/white/Maisie_Bodysuit_Front.jpg",
           "/assets/images/products/bridal-lingerie/maisie/bodysuit/white/Maisie_Bodysuit_Back.jpg",
@@ -395,6 +411,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 85,
         colorName: "white",
         colorClass: "swatch-white",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_Pasties_PearlThong_Back1.jpg",
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_PearlString_Zoom.jpg",
@@ -415,6 +432,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 185,
         colorName: "white",
         colorClass: "swatch-white",
+        type: "corset",
         images: [
           "/assets/images/products/bridal-lingerie/maisie/corset/white/Maisie_Corset_Brief_Front.jpg",
           "/assets/images/products/bridal-lingerie/maisie/corset/white/Maisie_CorsetNoStraps_Front.jpg",
@@ -439,6 +457,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 95,
         colorName: "black",
         colorClass: "swatch-black",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/gabrielle/thong/black/Gabrielle_Bra_Thong_Back.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/thong/black/Gabrielle_Thong_Front.jpg",
@@ -464,6 +483,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 85,
         colorName: "white",
         colorClass: "swatch-white",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_Bra_Thong_Back.jpg",
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_Thong_Front.jpg",
@@ -487,6 +507,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 105,
         colorName: "black",
         colorClass: "swatch-black",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/gabrielle/panty/black/Gabrielle_Bra_Brief_Back2.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/panty/black/Gabrielle_Brief_Front1.jpg",
@@ -512,6 +533,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 145,
         colorName: "black",
         colorClass: "swatch-black",
+        type: "accessory",
         images: [
           "/assets/images/products/bridal-lingerie/gabrielle/veil/black/Gabrielle_Bra_Suspender_Thong_Veil_Front1.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/veil/black/Gabrielle_Veil_FrontZOOM.jpg",
@@ -532,6 +554,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 85,
         colorName: "black",
         colorClass: "swatch-black",
+        type: "accessory",
         images: [
           "/assets/images/products/bridal-lingerie/gabrielle/garter/black/Gabrielle_Bra_Brief_Garter_Front.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/garter/black/Gabrielle_Garter_Front.jpg",
@@ -555,6 +578,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 145,
         colorName: "white",
         colorClass: "swatch-white",
+        type: "accessory",
         images: [
           "/assets/images/products/bridal-lingerie/maisie/veil/white/Maisie_Veil_Bra_Thong_Front1.jpg",
           "/assets/images/products/bridal-lingerie/maisie/veil/white/Maisie_Veil_Bra_Thong_FrontZOOM.jpg",

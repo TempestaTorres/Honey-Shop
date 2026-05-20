@@ -12,6 +12,7 @@ export const RecommendedData: ProductItem[] = [
         price: 30,
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
+        type: "suspender",
         images: [
           "/assets/images/products/eloidie/stockings/pink/Elodie_Romance_Stockings.jpg",
         ],
@@ -29,6 +30,7 @@ export const RecommendedData: ProductItem[] = [
         price: 130,
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
+        type: "bra",
         images: [
           "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Front.jpg",
         ],
@@ -46,6 +48,7 @@ export const RecommendedData: ProductItem[] = [
         price: 85,
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
+        type: "thong",
         images: [
           "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Thong_Back.jpg",
         ],
@@ -80,6 +83,7 @@ export const RecommendedData: ProductItem[] = [
         price: 95,
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
+        type: "thong",
         images: [
           "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Back.jpg",
         ],

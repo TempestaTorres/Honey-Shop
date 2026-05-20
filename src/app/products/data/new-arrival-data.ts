@@ -74,6 +74,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 30,
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
+        type: "stockings",
         images: [
           "/assets/images/products/eloidie/stockings/pink/Elodie_Romance_Stockings.jpg",
           "/assets/images/products/eloidie/stockings/pink/ElodieRomance_Thong_Suspender_Front.jpg",

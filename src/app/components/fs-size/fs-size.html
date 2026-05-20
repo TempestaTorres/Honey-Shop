@@ -1,0 +1,328 @@
+@let product = productType();
+@if (product !== null) {
+
+  @if (product.type === "bra") {
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_65" value="65">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_65">65</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_70" value="70">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_70">70</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_75" value="75">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_75">75</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_80" value="80">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_80">80</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_85" value="85">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_85">85</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_90" value="90">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_90">90</label>
+    </div>
+
+    <!-- Cups -->
+    <div class="fs-option-group fs-CUP">
+      <div class="fs-option-name fs-medium-text">CUP</div>
+
+      <div class="fs-variant-select">
+        <input #radioCap
+               (change)="cupChange($event, product)"
+               role="button"
+               type="radio"
+               class="fs-option"
+               name="CUP" id="option_value_CUP_A" value="A">
+
+        <label class="fs-option-label fs-small-text" for="option_value_CUP_A">A</label>
+      </div>
+
+      <div class="fs-variant-select">
+        <input #radioCap
+               (change)="cupChange($event, product)"
+               role="button"
+               type="radio"
+               class="fs-option"
+               name="CUP" id="option_value_CUP_B" value="B">
+
+        <label class="fs-option-label fs-small-text" for="option_value_CUP_B">B</label>
+      </div>
+
+      <div class="fs-variant-select">
+        <input #radioCap
+               (change)="cupChange($event, product)"
+               role="button"
+               type="radio"
+               class="fs-option"
+               name="CUP" id="option_value_CUP_C" value="C">
+
+        <label class="fs-option-label fs-small-text" for="option_value_CUP_C">C</label>
+      </div>
+
+      <div class="fs-variant-select">
+        <input #radioCap
+               (change)="cupChange($event, product)"
+               role="button"
+               type="radio"
+               class="fs-option"
+               name="CUP" id="option_value_CUP_D" value="D">
+
+        <label class="fs-option-label fs-small-text" for="option_value_CUP_D">D</label>
+      </div>
+
+      <div class="fs-variant-select">
+        <input #radioCap
+               (change)="cupChange($event, product)"
+               role="button"
+               type="radio"
+               class="fs-option"
+               name="CUP" id="option_value_CUP_E" value="E">
+
+        <label class="fs-option-label fs-small-text" for="option_value_CUP_E">E</label>
+      </div>
+
+      <div class="fs-variant-select">
+        <input #radioCap
+               (change)="cupChange($event, product)"
+               role="button"
+               type="radio"
+               class="fs-option"
+               name="CUP" id="option_value_CUP_F" value="F">
+
+        <label class="fs-option-label fs-small-text" for="option_value_CUP_F">F</label>
+      </div>
+
+      <div class="fs-variant-select">
+        <input #radioCap
+               (change)="cupChange($event, product)"
+               role="button"
+               type="radio"
+               class="fs-option"
+               name="CUP" id="option_value_CUP_G" value="G">
+
+        <label class="fs-option-label fs-small-text" for="option_value_CUP_G">G</label>
+      </div>
+
+      <div class="fs-variant-select">
+        <input #radioCap
+               (change)="cupChange($event, product)"
+               role="button"
+               type="radio"
+               class="fs-option"
+               name="CUP" id="option_value_CUP_H" value="H">
+
+        <label class="fs-option-label fs-small-text" for="option_value_CUP_H">H</label>
+      </div>
+
+    </div>
+
+  } @else if (product.type === "thong" || product.type === "suspender"
+  || product.type === "chemise" || product.type === "corset"
+  || product.type === "bodysuit") {
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_XXS" value="XXS">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_XXS">XSS</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_XS" value="XS">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_XS">XS</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_S" value="S">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_S">S</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_M" value="M">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_M">M</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_L" value="L">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_L">L</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_XL" value="XL">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_XL">XL</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_XXL" value="XXL">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_XXL">XXL</label>
+    </div>
+
+  } @else if (product.type === "robe") {
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_XS/S" value="XS/S">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_XS/S">XS/S</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_S/M" value="S/M">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_S/M">S/M</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_M/L" value="M/L">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_M/L">M/L</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_L/XL" value="L/XL">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_L/XL">L/XL</label>
+    </div>
+
+  } @else if (product.type === "stockings") {
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_S" value="S">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_S">S</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_M" value="M">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_M">M</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSize
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="Size" id="option_value_Size_L" value="L">
+
+      <label class="fs-option-label fs-small-text" for="option_value_Size_L">L</label>
+    </div>
+  }
+}

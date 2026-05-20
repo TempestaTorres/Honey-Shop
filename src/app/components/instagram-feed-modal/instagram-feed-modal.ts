@@ -1,19 +1,19 @@
-import { Component, ElementRef, OnDestroy, OnInit, signal, viewChildren, WritableSignal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal, WritableSignal } from '@angular/core';
 import { InstagramFeedsService } from '../../services/instagram-feeds-service';
 import { Subscription } from 'rxjs';
 import { InstagramFeedType, ProductDetailsType } from '../../types/instagram/instagram-feeds-type';
 import { Router} from '@angular/router';
 import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
 import { ProductCartService } from '../../product-cart/services/product-cart-service';
+import { FsSize } from '../fs-size/fs-size';
 
 @Component({
   selector: 'app-instagram-feed-modal',
-  imports: [],
+  imports: [FsSize],
   templateUrl: './instagram-feed-modal.html',
   styleUrl: './instagram-feed-modal.css',
 })
 export class InstagramFeedModal implements OnInit, OnDestroy {
-
   private openedFeed$: Subscription | undefined;
 
   public dialogOpen: WritableSignal<boolean> = signal<boolean>(false);
@@ -24,12 +24,11 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
   public count: number = -1;
 
   public buyContainerOpen: WritableSignal<boolean> = signal<boolean>(false);
-  public buyProduct: WritableSignal<ProductDetailsType | null> = signal<ProductDetailsType | null>(null);
+  public buyProduct: WritableSignal<ProductDetailsType | null> = signal<ProductDetailsType | null>(
+    null,
+  );
 
-  public fsError: WritableSignal<string> = signal<string>("");
-
-  readonly radioCups = viewChildren<ElementRef<HTMLInputElement>>('radioCap');
-  readonly radioSizes = viewChildren<ElementRef<HTMLInputElement>>('radioSize');
+  public fsError: WritableSignal<string> = signal<string>('');
 
   private fsSize: string = '';
   private fsCup: string = '';
@@ -40,12 +39,14 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
   private cartSub$: Subscription | undefined;
   public cartCount: WritableSignal<number> = signal<number>(0);
 
-  constructor(private instagramFeedService: InstagramFeedsService,
-              private router: Router, private cartService: ProductCartService,) {}
+  constructor(
+    private instagramFeedService: InstagramFeedsService,
+    private router: Router,
+    private cartService: ProductCartService,
+  ) {}
 
   ngOnInit() {
-
-    this.cartSub$ = this.cartService.cartCount.subscribe(cartCount => {
+    this.cartSub$ = this.cartService.cartCount.subscribe((cartCount) => {
       this.cartCount.set(cartCount);
     });
 
@@ -61,12 +62,10 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
         this.feed.set(this.instagramFeedService.getFeed(index));
 
         if (!this.dialogOpen()) {
-
           setTimeout(() => {
             this.dialogOpen.set(true);
           }, 300);
         }
-
       } else {
         this.dialogOpen.set(false);
       }
@@ -84,6 +83,14 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
 
   public onClose(): void {
     this.instagramFeedService.toggleOpenedFeed(-1);
+  }
+
+  public getFsSize(size: string): void {
+    this.fsSize = size;
+  }
+
+  public getCupSize(size: string): void {
+    this.fsCup = size;
   }
 
   public nextFeed(): void {
@@ -110,16 +117,14 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
   }
 
   public proceedToCheckout(): void {
-    this.fsError.set("");
+    this.fsError.set('');
     this.productAdded.set(false);
     this.onClose();
     this.router.navigate(['/cart']).then(() => {});
   }
 
   public openBuyContainer(product: ProductDetailsType): void {
-
-    if (product.type === "accessory") {
-
+    if (product.type === 'accessory') {
       this.buyProduct.set(product);
 
       let cartItem: ProductCartType = {
@@ -127,7 +132,7 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
         url: product.url,
         price: product.price,
         image: product.image,
-        count: "1",
+        count: '1',
       };
 
       this.cartService.addToCart(cartItem);
@@ -137,172 +142,50 @@ export class InstagramFeedModal implements OnInit, OnDestroy {
       return;
     }
 
-    this.fsError.set("");
+    this.fsError.set('');
     this.buyProduct.set(product);
     this.productAdded.set(false);
-    this.resetSizes();
+
     this.toggleDetailContainer();
   }
 
   public addToCart(product: ProductDetailsType): void {
-
-    if (this.fsSize === "") {
-      this.fsError.set("All options should be selected!");
+    if (this.fsSize === '') {
+      this.fsError.set('All options should be selected!');
       return;
     }
-    if (product.type === "bra" && this.fsCup === "") {
-      this.fsError.set("All options should be selected!");
+    if (product.type === 'bra' && this.fsCup === '') {
+      this.fsError.set('All options should be selected!');
       return;
     }
 
-    this.fsError.set("");
+    this.fsError.set('');
 
     let cartItem: ProductCartType = {
       name: product.name,
       url: product.url,
       price: product.price,
       image: product.image,
-      count: "1",
+      count: '1',
     };
 
-    if (product.type === "bra") {
-
-      cartItem.size = {key: this.fsCup, value: this.fsSize};
-    }
-    else {
-      cartItem.size = {key: "", value: this.fsSize};
+    if (product.type === 'bra') {
+      cartItem.size = { key: this.fsCup, value: this.fsSize };
+    } else {
+      cartItem.size = { key: '', value: this.fsSize };
     }
 
     this.cartService.addToCart(cartItem);
     this.cartProduct.set(cartItem);
     this.productAdded.set(true);
-
-
   }
 
   public cancelPurchase(): void {
     this.toggleDetailContainer();
   }
 
-  public sizeChange(e: Event, product: ProductDetailsType): void {
-
-    let target = e.target as HTMLInputElement;
-    if (target !== null) {
-      this.fsSize = target.value;
-    }
-
-    if (product.type === "bra") {
-
-      this.checkCups(product);
-      return;
-    }
-
-    if (product.sizes) {
-
-      let productSizes = this.radioSizes();
-
-      for (let i = 0; i < product.sizes[0].sizes.length; i++) {
-
-        const input = productSizes[i].nativeElement;
-        input.disabled = false;
-      }
-
-      if (product.sizes[0].sizes.length < productSizes.length) {
-
-        for (let k = product.sizes[0].sizes.length; k < productSizes.length; k++) {
-
-          const input = productSizes[k].nativeElement;
-          input.disabled = true;
-        }
-      }
-    }
-
-  }
-
-  public cupChange(e: Event, product: ProductDetailsType): void {
-
-    let target = e.target as HTMLInputElement;
-    if (target !== null) {
-      this.fsCup = target.value;
-    }
-
-    let cupSizes = this.radioSizes();
-
-    if (product.sizes) {
-
-      for (let i = 0; i < product.sizes.length; i++) {
-
-        if (product.sizes[i].key === this.fsCup) {
-
-          for (let j = 0; j < product.sizes[i].sizes.length; j++) {
-
-            const input = cupSizes[j].nativeElement;
-            input.disabled = false;
-          }
-
-          if (product.sizes[i].sizes.length < cupSizes.length) {
-
-            for (let k = product.sizes[i].sizes.length; k < cupSizes.length; k++) {
-
-              const input = cupSizes[k].nativeElement;
-              input.disabled = true;
-            }
-          }
-        }
-
-      }
-    }
-
-  }
-
-  private checkCups(product: ProductDetailsType): void {
-
-    let caps = this.radioCups();
-
-    if (product.sizes) {
-
-      for (let i = 0; i < product.sizes.length; i++) {
-
-        let found: boolean = false;
-
-        for (let j = 0; j < product.sizes[i].sizes.length; j++) {
-
-          if (product.sizes[i].sizes[j] === this.fsSize) {
-            found = true;
-            break;
-          }
-        }
-
-        const input = caps[i].nativeElement;
-
-        input.disabled = !found;
-      }
-    }
-
-  }
-
-  private resetSizes(): void {
-
-    const sizes = this.radioSizes();
-
-    if (sizes) {
-
-      sizes.forEach((size) => {
-        size.nativeElement.checked = false;
-      });
-    }
-
-    const cups = this.radioCups();
-
-    if (cups) {
-      cups.forEach(cup => {
-        cup.nativeElement.checked = false;
-      })
-    }
-  }
-
   public toggleDetailContainer(): void {
-    this.buyContainerOpen.update(value => !value);
+    this.buyContainerOpen.update((value) => !value);
   }
 
   public linkHover(index: number): void {

@@ -18,6 +18,7 @@ import { ScrollingService } from '../../services/scrolling-service';
   styleUrl: './cart.css',
 })
 export class Cart implements OnInit, OnDestroy {
+
   public empty: WritableSignal<boolean> = signal<boolean>(true);
   public cartItems: WritableSignal<ProductCartType[]> = signal<ProductCartType[]>([]);
   public cartSubtotal: WritableSignal<number> = signal<number>(0);

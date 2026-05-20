@@ -8,6 +8,7 @@ export interface ProductType {
   price?: number,
   priceFrom?: number,
   favorite?: boolean,
+  type?: string,
   colorName: string,
   colorClass: string,
   images: string[],
