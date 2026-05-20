@@ -1,5 +1,7 @@
 import { Component, effect, ElementRef, OnInit, signal, viewChildren, WritableSignal } from '@angular/core';
 import { ScrollingService } from '../../services/scrolling-service';
+import { AccordionService } from '../../services/accordion-service';
+import { ChatBoxService } from '../../components/chat-box/chat-box-service';
 
 @Component({
   selector: 'app-shipping-delivery',
@@ -12,14 +14,16 @@ export class ShippingDelivery implements OnInit {
   public openedItem: WritableSignal<string> = signal<string>('1');
   readonly accordionHeaders = viewChildren<ElementRef<HTMLElement>>('accordionHeader');
 
-  constructor(private scrollingService: ScrollingService) {
+  constructor(private scrollingService: ScrollingService,
+              private accordionService: AccordionService,
+              private chatboxService$: ChatBoxService) {
 
     effect(() => {
 
       const openedId: string = this.openedItem();
 
       if (openedId !== '0') {
-        setTimeout(() => this.scrollToOpenedHeader(), 500);
+        this.accordionService.scrollToOpenedHeader(openedId, this.accordionHeaders(), 66);
       }
 
     });
@@ -30,30 +34,11 @@ export class ShippingDelivery implements OnInit {
   }
 
   public toggleItem(itemId: string): void {
-    this.openedItem.update(currentId => {
-
-      if (currentId === itemId) {
-        return '0';
-      }
-      return itemId;
-    });
+    this.accordionService.jsAccordionToggleEx(itemId, this.openedItem);
   }
 
-  private scrollToOpenedHeader(): void {
-
-    const openedId: string = this.openedItem();
-    if (openedId === '0') return;
-
-    const headers = this.accordionHeaders();
-
-    const headerEl = headers.find(header => header.nativeElement.dataset['id'] === openedId);
-
-    if (!headerEl) return;
-
-    const stickyHeaderHeight = 66;
-
-    setTimeout(() => {
-      this.scrollingService.scrollToPoint(headerEl.nativeElement, stickyHeaderHeight);
-    }, 500);
+  public openChatBox(): void {
+    this.chatboxService$.openChatBox();
   }
+
 }

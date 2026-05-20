@@ -2,6 +2,7 @@ import { Component, effect, ElementRef, OnInit, signal, viewChildren, WritableSi
 import { ScrollingService } from '../../services/scrolling-service';
 import { RouterLink } from '@angular/router';
 import { AccordionService } from '../../services/accordion-service';
+import { ChatBoxService } from '../../components/chat-box/chat-box-service';
 
 @Component({
   selector: 'app-contact-us',
@@ -15,7 +16,8 @@ export class ContactUs implements OnInit {
   readonly accordionHeaders = viewChildren<ElementRef<HTMLElement>>('accordionHeader');
 
   constructor(private scrollingService: ScrollingService,
-              private accordionService: AccordionService) {
+              private accordionService: AccordionService,
+              private chatboxService$: ChatBoxService) {
 
     effect(() => {
       const openedId: string = this.openedItem();
@@ -36,5 +38,9 @@ export class ContactUs implements OnInit {
 
     this.accordionService.jsAccordionToggleEx(itemId, this.openedItem);
 
+  }
+
+  public openChatBox(): void {
+    this.chatboxService$.openChatBox();
   }
 }

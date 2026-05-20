@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { ProgressBar } from '../../components/progress-bar/progress-bar';
 import { ProductCarousel } from '../../components/product-carousel/product-carousel';
 import { ScrollingService } from '../../services/scrolling-service';
-import { AuthService } from '../../auth/auth-service';
 
 @Component({
   selector: 'app-cart',
@@ -30,7 +29,6 @@ export class Cart implements OnInit, OnDestroy {
     private cartService$: ProductCartService,
     private wishlistService$: WishlistService,
     private scrollingService: ScrollingService,
-    private authService: AuthService,
   ) {}
 
   ngOnInit() {
@@ -50,28 +48,13 @@ export class Cart implements OnInit, OnDestroy {
 
   public wishlistToggle(product: ProductCartType) {
 
-    if (this.authService.isLoggedIn()) {
-
-      this.proceedWishlist(product);
-
-    } else {
-      this.authService.toggleAlert(true);
-    }
+    this.wishlistService$.wishlistToggle(product);
 
   }
 
   public removeCartItem(item: ProductCartType) {
     this.cartService$.removeFromCart(item);
     this.getCartItems();
-  }
-
-  private proceedWishlist(product: ProductCartType): void {
-    if (product.favorite === undefined) {
-      product.favorite = false;
-    }
-    product.favorite = !product.favorite;
-
-    this.wishlistService$.wishlistAddRemove(product);
   }
 
   private getCartItems(): void {

@@ -89,6 +89,9 @@
   .modal-dialog-content.content-medium {
     width: 376px;
   }
+  .modal-dialog-content.content-small {
+    width: 362px;
+  }
   .modal-shop-the-look-tiles .modal-dialog-overlay, .modal-shop-the-look-slideshow .modal-dialog-overlay {
     background-color: rgba(0, 0, 0, 0.32);
   }
@@ -134,6 +137,10 @@
   background-color: var(--md-bg-color);
   padding: 1.5rem 1rem;
 }
+.modal-dialog-content-header.default-layout {
+  padding: 1.5rem;
+  justify-content: space-between;
+}
 .modal-dialog-content-header.sticky {
   position: sticky;
   top: 0;
@@ -145,6 +152,10 @@
   width: 1rem;
   height: 1rem;
   z-index: 1;
+}
+.modal-dialog-content-header.default-layout .js-close-modal-dialog {
+  position: relative;
+  inset: unset;
 }
 .js-close-modal-dialog .icon {
   display: block;
@@ -165,6 +176,10 @@
   border-top: 1px solid rgba(0,0,0,.08);
   padding: 1.5rem 0;
 }
+.modal-dialog-inner.default-layout {
+  padding: 1.5rem;
+  margin: 0;
+}
 .modal-dialog-panel {
   display: flex;
   flex-direction: column;
@@ -174,14 +189,14 @@
 }
 
 @media (min-width: 768px) {
-  .modal-dialog-content-header {
+  .modal-dialog-content-header:not(.default-layout) {
     padding: 2.5rem 2.5rem 1.5rem 2.5rem;
   }
   .js-close-modal-dialog {
     top: 2.5rem;
     right: 2.5rem;
   }
-  .modal-dialog-inner {
+  .modal-dialog-inner:not(.default-layout) {
     padding-bottom: 2.5rem;
     margin:0 2.5rem;
   }
@@ -189,4 +204,14 @@
 .js-modal-dialog-trigger {
   position: relative;
 }
-
+.modal-text-block {
+  margin-bottom: 1.5rem;
+}
+.modal-text-block * {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.modal-text-block p:last-child {
+  margin: 0;
+}

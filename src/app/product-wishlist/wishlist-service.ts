@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ProductCartType } from '../product-cart/cart-type/product-cart-type';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { AuthService } from '../auth/auth-service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +12,31 @@ export class WishlistService {
 
   public wishlistCount: BehaviorSubject<number>;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.wishlistCount = new BehaviorSubject<number>(0);
   }
+
+  public wishlistToggle(product: ProductCartType) {
+
+    if (this.authService.isLoggedIn()) {
+
+      this.proceedWishlist(product);
+
+    } else {
+      this.authService.toggleAlert(true, "wishlist");
+    }
+
+  }
+
+  private proceedWishlist(product: ProductCartType): void {
+    if (product.favorite === undefined) {
+      product.favorite = false;
+    }
+    product.favorite = !product.favorite;
+
+    this.wishlistAddRemove(product);
+  }
+
 
   public wishlistAddRemove(item: ProductCartType) {
     if (item.favorite)

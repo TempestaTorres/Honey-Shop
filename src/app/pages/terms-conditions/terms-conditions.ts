@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, effect, ElementRef, OnInit, signal, viewChildren } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ScrollingService } from '../../services/scrolling-service';
+import { AccordionService } from '../../services/accordion-service';
 
 @Component({
   selector: 'app-terms-conditions',
@@ -14,14 +15,14 @@ export class TermsConditions implements OnInit {
 
   readonly accordionHeaders = viewChildren<ElementRef<HTMLElement>>('accordionHeader');
 
-  constructor(private scrollingService: ScrollingService) {
+  constructor(private scrollingService: ScrollingService, private accordionService: AccordionService) {
 
     effect(() => {
 
       const openedId: string = this.openedItem();
 
       if (openedId !== '0') {
-        setTimeout(() => this.scrollToOpenedHeader(), 500);
+        this.accordionService.scrollToOpenedHeader(openedId, this.accordionHeaders(), 66);
       }
 
     });
@@ -33,30 +34,8 @@ export class TermsConditions implements OnInit {
   }
 
   public toggleItem(itemId: string): void {
-    this.openedItem.update(currentId => {
 
-      if (currentId === itemId) {
-        return '0';
-      }
-      return itemId;
-    });
+    this.accordionService.jsAccordionToggleEx(itemId, this.openedItem);
   }
 
-  private scrollToOpenedHeader(): void {
-
-    const openedId: string = this.openedItem();
-    if (openedId === '0') return;
-
-    const headers = this.accordionHeaders();
-
-    const headerEl = headers.find(header => header.nativeElement.dataset['id'] === openedId);
-
-    if (!headerEl) return;
-
-    const stickyHeaderHeight = 66;
-
-    setTimeout(() => {
-      this.scrollingService.scrollToPoint(headerEl.nativeElement, stickyHeaderHeight);
-    }, 500);
-  }
 }

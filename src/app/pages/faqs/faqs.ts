@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { ScrollingService } from '../../services/scrolling-service';
 import { RouterLink } from '@angular/router';
+import { ChatBoxService } from '../../components/chat-box/chat-box-service';
 declare var Swiper: any;
 
 @Component({
@@ -25,7 +26,8 @@ export class Faqs implements OnInit {
 
   private swiper: any;
 
-  constructor(private scrollingService: ScrollingService, private destroyRef: DestroyRef,) {
+  constructor(private scrollingService: ScrollingService, private destroyRef: DestroyRef,
+              private chatboxService$: ChatBoxService) {
 
     effect(() => {
       const openedId: string = this.openedItem();
@@ -62,6 +64,10 @@ export class Faqs implements OnInit {
 
   public anchorClick(target: HTMLElement): void {
     this.scrollingService.scrollToPoint(target, 148);
+  }
+
+  public openChatBox(): void {
+    this.chatboxService$.openChatBox();
   }
 
   public toggleItem(itemId: string): void {

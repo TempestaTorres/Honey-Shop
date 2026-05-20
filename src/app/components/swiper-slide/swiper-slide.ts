@@ -11,6 +11,9 @@ import {
 import { ProductType } from '../../products/types/product-type';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
+import { WishlistService } from '../../product-wishlist/wishlist-service';
+import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
+import { ProductCartService } from '../../product-cart/services/product-cart-service';
 declare var Swiper: any;
 
 @Component({
@@ -27,7 +30,8 @@ export class SwiperSlide {
   private carouselSwp = viewChild<ElementRef<HTMLElement>>('carouselSwiper');
   private swiperClassName: string = '';
 
-  constructor(private destroyRef: DestroyRef) {
+  constructor(private destroyRef: DestroyRef, private wishlistService$: WishlistService,
+              private cartService$: ProductCartService) {
     afterNextRender(() => {
 
       this.initSwiper();
@@ -69,12 +73,29 @@ export class SwiperSlide {
 
   public addToWishList(index: number): void {
 
-    console.log('Add to Wishlist',this.product[index]);
+    let product: ProductCartType = {
+      name: this.product[index].name,
+      url: this.product[index].url,
+      price: String(this.product[index].price),
+      image: this.product[index].images[0],
+      count: "",
+      favorite: this.product[index].favorite,
+    }
+    this.wishlistService$.wishlistToggle(product);
   }
 
   public addToCart(index: number): void {
 
-    console.log('Add to Cart',this.product[index]);
+    // Open select size modal window
+    let cartItem: ProductCartType = {
+      name: this.product[index].name,
+      url: this.product[index].url,
+      price: String(this.product[index].price),
+      image: this.product[index].images[0],
+      count: "1",
+    };
+
+    this.cartService$.addToCart(cartItem);
   }
 
   private initSwiper(): void {

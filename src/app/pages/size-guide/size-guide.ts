@@ -26,6 +26,7 @@ import {
   HoneySwimwearSize
 } from '../../data/honey-club-data';
 import { AccordionService } from '../../services/accordion-service';
+import { ChatBoxService } from '../../components/chat-box/chat-box-service';
 
 declare var Swiper: any;
 
@@ -56,7 +57,8 @@ export class SizeGuide implements OnInit {
   private swiper: any;
 
   constructor(private scrollingService: ScrollingService, private destroyRef: DestroyRef,
-              private accordionService: AccordionService) {
+              private accordionService: AccordionService,
+              private chatboxService$: ChatBoxService) {
 
     effect(() => {
       const openedId: string = this.openedItem();
@@ -95,6 +97,10 @@ export class SizeGuide implements OnInit {
 
   public anchorClick(target: HTMLElement): void {
     this.scrollingService.scrollToPoint(target, 148);
+  }
+
+  public openChatBox(): void {
+    this.chatboxService$.openChatBox();
   }
 
   public toggleItem(itemId: string): void {

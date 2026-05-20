@@ -12,6 +12,7 @@ import {
 import { ScrollingService } from '../../services/scrolling-service';
 import { RouterLink } from '@angular/router';
 import { AccordionService } from '../../services/accordion-service';
+import { ChatBoxService } from '../../components/chat-box/chat-box-service';
 declare var Swiper: any;
 
 @Component({
@@ -26,7 +27,8 @@ export class ReturnsExchanges implements OnInit {
   private swiper: any;
 
   constructor(private scrollingService: ScrollingService, private destroyRef: DestroyRef,
-              private accordionService: AccordionService) {
+              private accordionService: AccordionService,
+              private chatboxService$: ChatBoxService) {
 
     effect(() => {
 
@@ -66,6 +68,10 @@ export class ReturnsExchanges implements OnInit {
   public anchorClick(target: HTMLElement): void {
 
     this.scrollingService.scrollToPoint(target, 148);
+  }
+
+  public openChatBox(): void {
+    this.chatboxService$.openChatBox();
   }
 
   public toggleItem(itemId: string): void {

@@ -1,0 +1,49 @@
+<div class="modal-dialog type-slideout" [class.modal-dialog-opened]="alertTriggered()">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  <!-- Content -->
+  <div class="modal-dialog-content content-small">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+
+      @if (alertType() === "wishlist") {
+        <h3>save your wishlist</h3>
+      }
+
+      <!-- Close button -->
+      <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Content -->
+    <div class="modal-dialog-inner default-layout">
+      <!--      Text -->
+      <div class="modal-text-block">
+
+        @if (alertType() === "wishlist") {
+
+          <p>You are currently shopping anonymously. Login to save your wishlist items.</p>
+        }
+
+      </div>
+
+      <!-- Button -->
+      <a (click)="login()"
+        class="button-primary button-large full-width-button"
+        title="Login"
+        tabindex="0"
+        role="button">Login
+      </a>
+    </div>
+
+  </div>
+</div>

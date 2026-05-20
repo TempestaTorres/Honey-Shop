@@ -228,6 +228,7 @@ button,
 select {
   text-transform:none
 }
+[role=button] {cursor: pointer}
 [type=button],
 [type=reset],
 [type=submit],

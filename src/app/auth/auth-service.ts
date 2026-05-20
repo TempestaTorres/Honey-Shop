@@ -10,7 +10,7 @@ export class AuthService {
   public userLogged$: BehaviorSubject<boolean>;
   private isLogged: boolean = false;
 
-  public loginAlert$: BehaviorSubject<boolean>;
+  public loginAlert$: BehaviorSubject<{state: boolean, type: string}>;
 
   private readonly userKey: string = "User";
 
@@ -20,11 +20,11 @@ export class AuthService {
     this.isLogged = !!user;
     this.userLogged$ = new BehaviorSubject<boolean>(this.isLogged);
 
-    this.loginAlert$ = new BehaviorSubject<boolean>(false);
+    this.loginAlert$ = new BehaviorSubject<{state: boolean, type: string}>({state: false, type: ''});
   }
 
-  public toggleAlert(state: boolean): void {
-    this.loginAlert$.next(state);
+  public toggleAlert(state: boolean, type: string = ""): void {
+    this.loginAlert$.next({state: state, type: type});
   }
 
   public isLoggedIn(): boolean {
