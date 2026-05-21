@@ -1,6 +1,6 @@
 import { InstagramFeedType } from '../types/instagram/instagram-feeds-type';
 
-const braSizes = [
+export const braSizes = [
   {
     key: "A",
     sizes: ["65", "70", "75"]
@@ -35,21 +35,21 @@ const braSizes = [
   },
 ];
 
-const dressSizes = [
+export const dressSizes = [
   {
     key: "",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"]
   },
 ];
 
-const robeSizes = [
+export const robeSizes = [
   {
     key: "",
     sizes: ["XS/S", "S/M", "M/L", "L/XL"]
   }
 ];
 
-const stockingsSizes = [
+export const stockingsSizes = [
   {
     key: "",
     sizes: ["S", "M", "L"]

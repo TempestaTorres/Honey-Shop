@@ -1,4 +1,5 @@
 import { ProductItem } from '../types/product-type';
+import { stockingsSizes } from '../../data/instagram-feeds-data';
 
 export const NewArrivalData: ProductItem[] = [
   {
@@ -82,6 +83,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/eloidie/stockings/pink/ElodieRomance_Thong_Suspender_Side.jpg",
           "/assets/images/products/eloidie/stockings/pink/ELODIE8.jpg",
         ],
+        sizes: stockingsSizes
       },
     ]
   },

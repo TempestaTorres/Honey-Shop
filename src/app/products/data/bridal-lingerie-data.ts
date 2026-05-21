@@ -1,4 +1,5 @@
 import { ProductItem } from '../types/product-type';
+import { braSizes, dressSizes, robeSizes } from '../../data/instagram-feeds-data';
 
 export const BridalLingerieData: ProductItem[] = [
   {
@@ -21,7 +22,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Bra_Brief_Front.jpg",
           "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Bra_Brief_Side.jpg",
           "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian5.jpg",
-        ]
+        ],
+        sizes: dressSizes,
       },
     ]
   },
@@ -47,7 +49,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Side.jpg",
           "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian7.jpg",
-        ]
+        ],
+        sizes: braSizes
       },
     ],
   },
@@ -72,7 +75,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Back.jpg",
           "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Side_1.jpg",
           "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian7.jpg"
-        ]
+        ],
+        sizes: dressSizes,
       },
     ],
   },
@@ -99,7 +103,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Back1.jpg",
           "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Side_1.jpg",
           "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian11.jpg",
-        ]
+        ],
+        sizes: dressSizes,
       },
     ],
   },
@@ -124,7 +129,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_BackZOOM.jpg",
           "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_SideZOOM.jpg",
           "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian9.jpg",
-        ]
+        ],
+        sizes: robeSizes
       },
     ],
   },
@@ -218,7 +224,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/kate/bra/blue/Kate_Bra_Thong_Back.jpg",
           "/assets/images/products/bridal-lingerie/kate/bra/blue/Kate_Bra_Thong_Side.jpg",
           "/assets/images/products/bridal-lingerie/kate/bra/blue/Kate2.jpg",
-        ]
+        ],
+        sizes: braSizes
       },
     ],
   },
@@ -243,7 +250,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/kate/garter-belt/blue/Kate_Bra_Suspender_Thong_Back.jpg",
           "/assets/images/products/bridal-lingerie/kate/garter-belt/blue/Kate_Bra_Suspender_Thong_Side.jpg",
           "/assets/images/products/bridal-lingerie/kate/garter-belt/blue/Kate.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -258,7 +266,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 105,
         colorName: "blue",
         colorClass: "swatch-blue",
-        type: "brief",
+        type: "thong",
         images: [
           "/assets/images/products/bridal-lingerie/kate/panty/blue/Kate_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/kate/panty/blue/Kate_Brief_Front.jpg",
@@ -267,7 +275,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/kate/panty/blue/Kate_Bra_Brief_Front.jpg",
           "/assets/images/products/bridal-lingerie/kate/panty/blue/Kate_Bra_Brief_Side.jpg",
           "/assets/images/products/bridal-lingerie/kate/bra/blue/Kate2.jpg"
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -294,7 +303,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/kate/thong/blue/Kate_Bra_Thong_Front.jpg",
           "/assets/images/products/bridal-lingerie/kate/thong/blue/Kate_Bra_Thong_Side.jpg",
           "/assets/images/products/bridal-lingerie/kate/thong/blue/Kate1.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -309,7 +319,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 210,
         colorName: "blue",
         colorClass: "swatch-blue",
-        type: "dress",
+        type: "bodysuit",
         images: [
           "/assets/images/products/bridal-lingerie/kate/babydoll/blue/Kate_Chemise_Brief_FrontZOOM1.jpg",
           "/assets/images/products/bridal-lingerie/kate/babydoll/blue/Kate_Chemise_Brief_BackZOOM.jpg",
@@ -319,7 +329,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/kate/babydoll/blue/Kate_Chemise_Thong_SideZOOM.jpg",
           "/assets/images/products/bridal-lingerie/kate/babydoll/blue/Kate_Robe_Chemise_Brief_Front.jpg",
           "/assets/images/products/bridal-lingerie/kate/babydoll/blue/Kate3.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -343,7 +354,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/kate/robe/blue/Kate_Robe_Bra_Thong_BackZOOM.jpg",
           "/assets/images/products/bridal-lingerie/kate/robe/blue/Kate_Robe_Bra_Thong_SideZOOM.jpg",
           "/assets/images/products/bridal-lingerie/kate/garter-belt/blue/Kate.jpg"
-        ]
+        ],
+        sizes: robeSizes
       },
     ],
   },
@@ -368,7 +380,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/maisie/panty/white/Maisie_Bra_Brief_Front.jpg",
           "/assets/images/products/bridal-lingerie/maisie/panty/white/Maisie_Bra_Brief_Side.jpg",
           "/assets/images/products/bridal-lingerie/maisie/panty/white/Maisie1.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -396,7 +409,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/maisie/bodysuit/white/Maisie_Bra_Bodysuit_Front.jpg",
           "/assets/images/products/bridal-lingerie/maisie/bodysuit/white/Maisie_Bra_Bodysuit_Back.jpg",
           "/assets/images/products/bridal-lingerie/maisie/bodysuit/white/Maisie3.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -417,7 +431,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_PearlString_Zoom.jpg",
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_PearlThong_Back.jpg",
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_PearlString_Box.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -442,7 +457,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/maisie/corset/white/Maisie_Bolero_Corset_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/maisie/corset/white/Maisie_Bolero_Corset_Brief_Side.jpg",
           "/assets/images/products/bridal-lingerie/maisie/panty/white/Maisie1.jpg"
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -468,7 +484,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/gabrielle/thong/black/Gabrielle_Bra_Thong_Front.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/thong/black/Gabrielle_Bra_Thong_Side.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/thong/black/BOTTOMS.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -492,7 +509,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_Bra_Thong_Front.jpg",
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie_Bra_Thong_Side.jpg",
           "/assets/images/products/bridal-lingerie/maisie/thong/white/Maisie4.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },
@@ -518,7 +536,8 @@ export const BridalLingerieData: ProductItem[] = [
           "/assets/images/products/bridal-lingerie/gabrielle/panty/black/Gabrielle_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/panty/black/Gabrielle_Bra_Brief_Garter_Side.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/panty/black/GABRIELLE_LHS.jpg",
-        ]
+        ],
+        sizes: dressSizes
       },
     ],
   },

@@ -1,4 +1,5 @@
 import { ProductItem } from '../types/product-type';
+import { braSizes, dressSizes, stockingsSizes } from '../../data/instagram-feeds-data';
 
 export const RecommendedData: ProductItem[] = [
   {
@@ -16,6 +17,7 @@ export const RecommendedData: ProductItem[] = [
         images: [
           "/assets/images/products/eloidie/stockings/pink/Elodie_Romance_Stockings.jpg",
         ],
+        sizes: stockingsSizes
       },
     ]
   },
@@ -34,6 +36,7 @@ export const RecommendedData: ProductItem[] = [
         images: [
           "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Front.jpg",
         ],
+        sizes: braSizes
       },
     ]
   },
@@ -52,6 +55,7 @@ export const RecommendedData: ProductItem[] = [
         images: [
           "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Thong_Back.jpg",
         ],
+        sizes: dressSizes
       },
     ]
   },
@@ -87,6 +91,7 @@ export const RecommendedData: ProductItem[] = [
         images: [
           "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Back.jpg",
         ],
+        sizes: dressSizes
       },
     ]
   },

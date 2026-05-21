@@ -15,7 +15,8 @@ export interface ProductType {
   ratings?: {
     stars: number[],
     score: string,
-  }
+  },
+  sizes?: {key:string, sizes:string[]}[],
 }
 export type ProductItem = {
   product: ProductType[]

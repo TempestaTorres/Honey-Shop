@@ -1,1 +1,45 @@
-<p>select-size-modal works!</p>
+<div class="modal-dialog type-slideout fs-add-to-cart-enabled" [class.modal-dialog-opened]="productDetails() !== null">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  <!--  Modal window -->
+  <div class="modal-dialog-content content-large">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+      <h3>Select options</h3>
+
+      <!-- Close button -->
+      <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class="modal-dialog-inner default-layout position-top">
+      <div class="modal-boxed">
+
+        <!-- Swiper Container -->
+        <div class="modal-swiper-container">
+
+          @let product = productDetails();
+          @if (product !== null) {
+
+            <app-image-swiper
+              [className]="product.url"
+              [images]="product.images" class="swiper-widget"></app-image-swiper>
+
+          }
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

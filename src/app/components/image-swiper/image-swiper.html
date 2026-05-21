@@ -1,0 +1,14 @@
+<div #swiperElement class="swiper image-swiper swiper-backface-hidden">
+  <div class="swiper-wrapper">
+
+    @for (image of images(); track $index) {
+
+      <!-- Slide -->
+      <div class="swiper-slide mobile-slide" [attr.aria-label]="$index + 1 + '/' + images().length">
+        <figure class="portrait-image">
+          <img [src]="image" alt="" loading="lazy" fetchpriority="auto">
+        </figure>
+      </div>
+    }
+  </div>
+</div>
