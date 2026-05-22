@@ -1,4 +1,4 @@
-<div class="modal-dialog type-slideout fs-add-to-cart-enabled" [class.modal-dialog-opened]="productDetails() !== null">
+<div class="modal-dialog type-slideout" [class.modal-dialog-opened]="productDetails() !== null">
   <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
 
   <!--  Modal window -->
@@ -20,6 +20,7 @@
       </button>
     </div>
 
+    @let product = productDetails();
     <!-- Content -->
     <div class="modal-dialog-inner default-layout position-top">
       <div class="modal-boxed">
@@ -27,19 +28,140 @@
         <!-- Swiper Container -->
         <div class="modal-swiper-container">
 
-          @let product = productDetails();
           @if (product !== null) {
 
             <app-image-swiper
               [className]="product.url"
-              [images]="product.images" class="swiper-widget"></app-image-swiper>
+              [images]="product.images" class="app-widget"></app-image-swiper>
 
           }
 
         </div>
+
+        <!-- Select Info Panel -->
+        <div class="modal-info-container">
+
+          @if (product !== null) {
+
+            <!-- Header -->
+            <div class="modal-header">
+
+              <!-- Heading -->
+              <a class="modal-dialog-heading-title"
+                 (click)="navigateToProductDetails(product.url)"
+                  role="button"
+                  [attr.aria-label]="'View ' + product.name">
+                {{ product.name }}
+                <span class="heading-description">{{ product.description }}</span>
+              </a>
+
+              <!-- Wishlist toggle -->
+              <button (click)="wishlistToggle()"
+                      class="button"
+                      type="button"
+                      aria-label="Wishlist Toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false"
+                     class="icon">
+                  <path d="M7.59571 2.96285L7.00458 3.55698L6.41345 2.96285C5.26474 1.81251 3.40331 1.81251 2.25878 2.96285C1.11426 4.11319 1.11426 5.98407 2.25878 7.13441L2.84991 7.72854L7.00039 11.9001L11.1509 7.72854L11.742 7.13441C12.8865 5.98407 12.8865 4.11319 11.742 2.96285C10.5975 1.81251 8.73605 1.81251 7.59152 2.96285H7.59571Z" stroke="currentColor" stroke-miterlimit="10"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Info -->
+            <div class="modal-info-block">
+              @if (product.price) {
+                <div>{{ product.price | currency }}</div>
+              } @else if (product.priceFrom) {
+
+                <div>From {{ product.priceFrom | currency }}</div>
+              }
+
+              <div class="color-info-block">
+                <span class="color-name">{{ product.colorName }}</span>
+                <button
+                  class="select-color-button active"
+                  [ngClass]="{swatchChartreuse: product.colorClass === 'swatch-chartreuse', swatchBlack: product.colorClass === 'swatch-black',
+                  swatchLove: product.colorClass === 'swatch-love', swatchOcean: product.colorClass === 'swatch-ocean',
+                  swatchLimoncello: product.colorClass === 'swatch-limoncello', swatchSparklingPink: product.colorClass === 'swatch-sparkling-pink',
+                  swatchHotPink: product.colorClass === 'swatch-hot-pink', swatchIvory: product.colorClass === 'swatch-ivory',
+                  swatchAlmond: product.colorClass === 'swatch-almond', swatchAnimalPrint: product.colorClass === 'swatch-animal-print',
+                  swatchBlue: product.colorClass === 'swatch-blue', swatchBronze: product.colorClass === 'swatch-bronze',
+                  swatchBrown: product.colorClass === 'swatch-brown', swatchCaramel: product.colorClass === 'swatch-caramel',
+                  swatchCedar: product.colorClass === 'swatch-cedar', swatchWhite: product.colorClass === 'swatch-white',
+                  swatchSkyBlue: product.colorClass === 'swatch-sky-blue'}"
+                  [title]="product.colorName"
+                  type="button"></button>
+              </div>
+
+            </div>
+
+            <!--  Select Size Block -->
+            <div class="fs-buy-container modal-inner-info-container">
+              <div class="modal-header">
+                <span>Size</span>
+
+                <button (click)="openSizeGuidance()" class="button-link-icon" type="button">
+                  Size Guide
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false" class="icon">
+                    <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+                  </svg>
+                </button>
+
+              </div>
+
+              <div class="fs-buy-now-form fs-add-to-cart-enabled">
+
+                @let p = buyProduct();
+                @if (p !== null) {
+
+                  <app-fs-size
+                    (fSize)="getFsSize($event)"
+                    (cupSize)="getCupSize($event)"
+                    [productType]="p"></app-fs-size>
+
+                }
+
+              </div>
+
+            </div>
+
+            <!-- Add to cart button -->
+            <div class="app-widget js-button-add-to-car">
+
+              <button
+                (click)="addToCart()"
+                [class.disabled]="selectDisabled()"
+                class="button-primary button-large full-width-button"
+                type="button" aria-label="Select Size">{{ buttonTitle() }}
+
+                @if (loading()) {
+                  <div class="loading-bar loading-bar-white"></div>
+                }
+
+              </button>
+            </div>
+
+            <!-- View product details -->
+            <div class="app-widget js-button-view-details">
+
+              <button
+                (click)="navigateToProductDetails(product.url)"
+                class="button-link-icon auto-fit-button centered-button" type="button">
+                View Full Details
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false" class="icon">
+                  <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+                </svg>
+              </button>
+            </div>
+
+          }
+
+        </div>
+
       </div>
     </div>
 
 
   </div>
+
 </div>

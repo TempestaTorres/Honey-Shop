@@ -10,6 +10,7 @@ import { FaqType } from '../../types/faq-type';
 import { AccordionList } from '../../components/accordion-list/accordion-list';
 import { HeroType } from '../../types/hero-type';
 import { IntersectingService } from '../../services/intersecting-service';
+import { ChatBoxService } from '../../components/chat-box/chat-box-service';
 
 @Component({
   selector: 'app-the-honey-club',
@@ -122,12 +123,18 @@ export class TheHoneyClub implements OnInit {
   constructor(
     private scrollingService: ScrollingService,
     private intersectingService: IntersectingService,
+    private chatboxService$: ChatBoxService
   ) {}
 
   ngOnInit() {
     this.scrollingService.toTop();
   }
+
   public isIntersecting(status: boolean, element: HTMLElement) {
     this.intersectingService.isIntersecting(status, element);
+  }
+
+  public openChatBox(): void {
+    this.chatboxService$.openChatBox();
   }
 }

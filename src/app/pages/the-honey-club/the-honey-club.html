@@ -117,6 +117,51 @@
         class="accordion-list-widget accordion-list-type-medium"></app-accordion-list>
     </div>
   </section>
+
+  <!--  Help -->
+  <section class="section-boxed section-honey-club-help section-text-block">
+    <div class="container">
+      <div class="text-block-container">
+
+        <!-- Heading -->
+        <div
+          #helpHeading
+          appObserveElement
+          [isContinuous]="false"
+          (isIntersecting)="isIntersecting($event, helpHeading)"
+          class="app-widget app-widget-heading text-block-heading app-widget-heading-default honey-club-heading scroll-trigger--offscreen scroll-trigger animate--slide-in">
+          <div class="app-widget-container">
+            <h2 class="app-heading-title">Need help?</h2>
+          </div>
+        </div>
+
+        <div
+          #helpText
+          appObserveElement
+          [isContinuous]="false"
+          (isIntersecting)="isIntersecting($event, helpText)"
+          class="typeset-description-primary scroll-trigger--offscreen scroll-trigger animate--slide-in">
+          <p>For more information on The Honey Club, see our FAQs above or reach out via live chat. </p>
+
+          <!-- Chat box trigger -->
+          <div class="chat-box-trigger-wrapper">
+            <!-- Chat box -->
+            <button (click)="openChatBox()" class="button-icon-beige width-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="none" role="img" aria-labelledby="title-icon-chat">
+                <title id="title-icon-chat">Icon of chat</title>
+                <path id="icon-chat" d="M3.54709 13.8281C2.61653 12.2581 2.29103 10.4025 2.6317 8.60949C2.97237 6.81652 3.95578 5.20954 5.39731 4.09025C6.83883 2.97096 8.63934 2.41633 10.4608 2.53049C12.2823 2.64464 13.9995 3.41972 15.29 4.71023C16.5805 6.00073 17.3556 7.71791 17.4697 9.53939C17.5839 11.3609 17.0292 13.1614 15.91 14.6029C14.7907 16.0444 13.1837 17.0278 11.3907 17.3685C9.59775 17.7092 7.74208 17.3837 6.17209 16.4531V16.4531L3.57834 17.1875C3.47207 17.2186 3.3594 17.2205 3.25213 17.1931C3.14487 17.1656 3.04696 17.1098 2.96866 17.0315C2.89037 16.9533 2.83459 16.8553 2.80715 16.7481C2.77971 16.6408 2.78163 16.5281 2.81271 16.4219L3.54709 13.8281Z" stroke="currentColor" stroke-linecap="square"></path>
+              </svg>
+              <span>Live Chat</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                <title>Icon of chevron right</title>
+                <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 <!-- Footer hero -->
 <section class="section-boxed section-hero-carousel">

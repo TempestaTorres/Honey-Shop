@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, signal, WritableSignal } from '@angular/core';
 import { ProductCartService } from '../../product-cart/services/product-cart-service';
 import { Subscription } from 'rxjs';
+import { MiniCartService } from '../../modals/mini-cart/mini-cart-service';
 
 @Component({
   selector: 'app-cart-count',
@@ -14,7 +15,8 @@ export class CartCount implements OnInit, OnDestroy {
 
   private cartSubscription$: Subscription | undefined;
 
-  constructor(private cartService: ProductCartService) {
+  constructor(private cartService: ProductCartService,
+              private miniCartService: MiniCartService,) {
   }
 
   ngOnInit() {
@@ -31,6 +33,6 @@ export class CartCount implements OnInit, OnDestroy {
   }
 
   public openMiniCart(): void {
-
+    this.miniCartService.toggleMiniCart(true);
   }
 }

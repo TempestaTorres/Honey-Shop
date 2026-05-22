@@ -87,7 +87,7 @@
   margin-top: .75rem;
   gap: .25rem;
 }
-.select-item-buttons-group .select-item-button {
+.select-item-buttons-group .select-item-button, .select-color-button {
   display: block;
   height: 7px;
   width: 15px;
@@ -98,7 +98,7 @@
 .select-item-buttons-group .select-item-button:hover {
   cursor: hand;
 }
-.select-item-buttons-group .select-item-button.active::after {
+.select-item-buttons-group .select-item-button.active::after, .select-color-button.active::after {
   content: '';
   position: absolute;
   top: calc(100% + 3px);
@@ -225,7 +225,7 @@
   background-image: url("/assets/swatches/swatch-shimmer.jpg");
 }
 .swatchSkyBlue {
-  background-color:#D1ECFF;
+  background-color:#C5E3F7;
 }
 .swatchToffee {
   background-color:#edcaaa;

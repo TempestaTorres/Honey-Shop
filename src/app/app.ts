@@ -5,6 +5,7 @@ import { ModalGeolocation } from './components/modal-geolocation/modal-geolocati
 import { InstagramFeedModal } from './components/instagram-feed-modal/instagram-feed-modal';
 import { LoginAlertModal } from './modals/login-alert-modal/login-alert-modal';
 import { SelectSizeModal } from './modals/select-size-modal/select-size-modal';
+import { MiniCart } from './modals/mini-cart/mini-cart';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { SelectSizeModal } from './modals/select-size-modal/select-size-modal';
     InstagramFeedModal,
     LoginAlertModal,
     SelectSizeModal,
+    MiniCart,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

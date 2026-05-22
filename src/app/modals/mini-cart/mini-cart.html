@@ -1,0 +1,201 @@
+<div class="modal-dialog modal-dialog-mini-cart type-slideout" [class.modal-dialog-opened]="miniCartOpen()">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  @let products = cartItems();
+
+  <!--  Modal window -->
+
+  <div class="modal-dialog-content js-mini-cart-content">
+
+    <div class="mini-cart-container">
+
+      <div class="js-mini-cart-content-wrapper" [class.empty-cart]="products.length === 0">
+
+        <div class="mini-cart-content">
+
+          <!-- Header -->
+          <div class="modal-dialog-content-header default-layout">
+            <h3>Your Bag</h3>
+
+            <!-- Close button -->
+            <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+                <title id="title-icon-close">Icon of close</title>
+                <g id="icon-close">
+                  <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+                  <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          @if (!loggedIn()) {
+
+            <!-- Loyalty Message -->
+            <div class="cart-loyalty-message">
+              <p>THE HONEY CLUB</p>
+              <p>
+                <a class="link inline" (click)="navigateTo('/sign-up')" title="account">SIGN UP</a>
+                OR
+                <a class="link inline" (click)="navigateTo('/sign-in')" title="account">LOG IN</a>
+                &nbsp;TO ACCESS YOUR EXCLUSIVE BENEFITS
+              </p>
+            </div>
+          }
+
+          @if (products.length === 0) {
+
+            <div class="cart-empty-container">
+              <strong class="modal-dialog-heading-title">Your shopping Bag is empty!</strong>
+
+              <a (click)="navigateToProducts()"
+                 class="button-primary button-large" tabindex="0" role="button">start shopping</a>
+
+            </div>
+
+          } @else {
+
+            <div class="cart__free-shipping-message">
+              @if (cartSubtotal() < maxForProgress) {
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+                  <g id="icon-shopping-bag">
+                    <path d="M11.8996 4.8999H2.09961V12.5999H11.8996V4.8999Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M4.8125 6.65L4.8125 3.9375C4.8125 3.35734 5.04297 2.80094 5.4532 2.3907C5.86344 1.98047 6.41984 1.75 7 1.75C7.58016 1.75 8.13656 1.98047 8.5468 2.3907C8.95703 2.80094 9.1875 3.35734 9.1875 3.9375V6.65" stroke="currentColor" stroke-linecap="square"></path>
+                  </g>
+                </svg>
+
+                <span>You’re only <strong>{{ 150 - cartSubtotal() | currency}}</strong> away from free shipping</span>
+
+              } @else {
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                  <g id="icon-check">
+                    <path fill="#000" stroke="currentColor" stroke-linecap="square" d="M16.25 3.125H3.75a.625.625 0 0 0-.625.625v12.5c0 .345.28.625.625.625h12.5c.345 0 .625-.28.625-.625V3.75a.625.625 0 0 0-.625-.625Z"></path>
+                    <path stroke="#F1ECE4" stroke-linecap="square" stroke-linejoin="round" d="M13.438 8.125 8.851 12.5l-2.29-2.188"></path>
+                  </g>
+                </svg>
+
+                <span>Enjoy your free shipping, honey</span>
+              }
+            </div>
+
+            <!-- Progress bar -->
+            <div class="cart-shipping-bar">
+              <app-progress-bar [maxValue]="maxForProgress" [currentValue]="cartSubtotal()" class="app-widget"></app-progress-bar>
+            </div>
+
+            <!-- Cart Items List -->
+            <div class="mini-cart-items-list">
+
+              @for (item of products; track $index) {
+
+                <div class="mini-cart-list-item">
+
+                  <!-- Image -->
+                  <div class="mini-cart__item-image">
+                    <a (click)="navigateToProduct(item.url)"
+                       [title]="item.name"
+                       role="button" tabindex="-1">
+
+                      <figure class="mini-cart__image">
+                        <img [src]="item.image" [alt]="item.name" sizes="90px" loading="lazy" fetchpriority="auto">
+                      </figure>
+                    </a>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="cart-item mini-cart-item">
+                    <!-- Header -->
+                    <div class="cart-item__header">
+                      <a (click)="navigateToProduct(item.url)"
+                          role="button"
+                          tabindex="-1"
+                          [title]="item.name"
+                          class="cart-item-title">{{ item.name }}
+                        <span class="cart-item-type">{{ item.type }}</span>
+                      </a>
+
+                      <!-- Icon favorite -->
+                      <button
+                        (click)="wishlistToggle(item)"
+                        class="wishlist" type="button" aria-label="Wishlist Toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" class="icon">
+                          <path class="icon-heart" d="M7.59571 2.96285L7.00458 3.55698L6.41345 2.96285C5.26474 1.81251 3.40331 1.81251 2.25878 2.96285C1.11426 4.11319 1.11426 5.98407 2.25878 7.13441L2.84991 7.72854L7.00039 11.9001L11.1509 7.72854L11.742 7.13441C12.8865 5.98407 12.8865 4.11319 11.742 2.96285C10.5975 1.81251 8.73605 1.81251 7.59152 2.96285H7.59571Z" stroke="currentColor" stroke-miterlimit="10"></path>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="cart-item-price">{{ item.price | currency }}</div>
+
+                    <!-- Variants -->
+                    <div class="cart-item-variant-title">
+                      <span>{{ item.color }}</span>
+                      <span class="slash">|</span>
+
+                      @if (item.type !== 'bra') {
+                        <span>{{ item.size?.value }}</span>
+                      } @else {
+                        <span>{{ item.size?.key }}</span>
+                        <span class="slash">|</span>
+                        <span>{{ item.size?.value }}</span>
+                      }
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="cart-item__footer">
+                      <!-- Counter -->
+                      <div class="cart-item__counter-wrapper">
+                        <app-product-counter [product]="item"></app-product-counter>
+                      </div>
+
+                      <!-- Remove button -->
+                      <button type="button"
+                              (click)="removeCartItem(item)"
+                              aria-label="Remove"
+                              class="cart-item-remove link"
+                              tabindex="0">Remove</button>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              }
+            </div>
+
+            <!-- Recommended -->
+            <div class="cart__recommended-container">
+              <app-mini-cart-carousel class="app-widget" [items]="cartRecommendedItems()"></app-mini-cart-carousel>
+            </div>
+
+            <!-- Sub total -->
+            <div class="mini-cart__checkout-content">
+              <div class="cart-checkout-container">
+                <!-- Header -->
+                <div class="cart-item__header">
+                  <span class="cart-subtotal">Subtotal</span>
+                  <div class="cart-subtotal__amount">{{ cartSubtotal() | currency }}</div>
+                </div>
+
+                <!-- Button -->
+                <div class="cart-checkout-container__footer">
+                  <button class="button-primary full-width-button button-large" type="button">
+                    Checkout
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
