@@ -1,4 +1,4 @@
-import { Component, DestroyRef, effect, input } from '@angular/core';
+import { afterNextRender, Component, DestroyRef, effect, input } from '@angular/core';
 import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
 import { Router } from '@angular/router';
 import { WishlistService } from '../../product-wishlist/wishlist-service';
@@ -32,20 +32,36 @@ export class MiniCartCarousel {
 
         if (this.swiper) {
           this.swiper.destroy();
+
+          this.swiper = new Swiper(".js-carousel-swiper-mini-cart-related", {
+            slidesPerView: 'auto',
+            spaceBetween: 16,
+            grabCursor: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+              addIcons: false
+            },
+
+          });
         }
 
-        this.swiper = new Swiper(".js-carousel-swiper-mini-cart-related", {
-          slidesPerView: 'auto',
-          spaceBetween: 16,
-          grabCursor: true,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-            addIcons: false
-          },
-
-        });
       }
+    });
+
+    afterNextRender(() => {
+
+      this.swiper = new Swiper(".js-carousel-swiper-mini-cart-related", {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        grabCursor: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+          addIcons: false
+        },
+
+      });
     });
 
     this.destroyRef.onDestroy(() => {

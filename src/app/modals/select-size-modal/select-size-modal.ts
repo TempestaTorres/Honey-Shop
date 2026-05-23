@@ -176,5 +176,10 @@ export class SelectSizeModal implements OnInit, OnDestroy {
 
   public openSizeGuidance(): void {
 
+    this.modalClose();
+
+    setTimeout(() => {
+      this.router.navigate(['/size-guide']).then(() => {});
+    }, 500);
   }
 }

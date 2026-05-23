@@ -507,6 +507,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 45,
         colorName: "chartreuse",
         colorClass: "swatch-chartreuse",
+        type: "stockings",
         images: [
           "/assets/images/products/whitney-stockings/Whitney_Chartreuse_Stockings.jpg",
           "/assets/images/products/whitney-stockings/WhitneyChartreuse_Thong_Suspender_Front.jpg",
@@ -528,6 +529,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 180,
         colorName: "chartreuse",
         colorClass: "swatch-chartreuse",
+        type: "bodysuit",
         images: [
           "/assets/images/products/whitney-bodysuit/chartreuse/WhitneyChartreuse_Bodysuit_Front.jpg",
           "/assets/images/products/whitney-bodysuit/chartreuse/WhitneyChartreuse_Bodysuit_Back1.jpg",
@@ -550,6 +552,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 180,
         colorName: "black",
         colorClass: "swatch-black",
+        type: "bodysuit",
         images: [
           "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_Front1.jpg",
           "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_Back1.jpg",
@@ -577,6 +580,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 190,
         colorName: "chartreuse",
         colorClass: "swatch-chartreuse",
+        type: "chemise",
         images: [
           "/assets/images/products/whitney-chemise/chartreuse/WhitneyChartreuse_Chemise_Front1.jpg",
           "/assets/images/products/whitney-chemise/chartreuse/WhitneyChartreuse_Chemise_Back.jpg",
@@ -599,6 +603,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 190,
         colorName: "black",
         colorClass: "swatch-black",
+        type: "chemise",
         images: [
           "/assets/images/products/whitney-chemise/black/WhitneyBlk_Chemise_Front.jpg",
           "/assets/images/products/whitney-chemise/black/WhitneyBlk_Chemise_Back.jpg",
@@ -617,6 +622,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 190,
         colorName: "love",
         colorClass: "swatch-love",
+        type: "chemise",
         images: [
           "/assets/images/products/whitney-chemise/love/WhitneyL_Chemise_Front1.jpg",
           "/assets/images/products/whitney-chemise/love/WhitneyL_Chemise_Back.jpg",
@@ -637,6 +643,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 190,
         colorName: "ocean",
         colorClass: "swatch-ocean",
+        type: "chemise",
         images: [
           "/assets/images/products/whitney-chemise/ocean/Whitney_Chemise_Front.jpg",
           "/assets/images/products/whitney-chemise/ocean/Whitney_Chemise_Back.jpg",
@@ -660,6 +667,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 190,
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
+        type: "chemise",
         images: [
           "/assets/images/products/whitney-chemise/sparkling-pink/WhitneyP_Chemise_Front.jpg",
           "/assets/images/products/whitney-chemise/sparkling-pink/WhitneyP_Chemise_Back1.jpg",
@@ -688,6 +696,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 240,
         colorName: "chartreuse",
         colorClass: "swatch-chartreuse",
+        type: "robe",
         images: [
           "/assets/images/products/whitney-robe/chartreuse/WhitneyChartreuse_Robe_Front1.jpg",
           "/assets/images/products/whitney-robe/chartreuse/WhitneyChartreuse_Robe_Back1.jpg",
@@ -709,6 +718,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 240,
         colorName: "black",
         colorClass: "swatch-black",
+        type: "robe",
         images: [
           "/assets/images/products/whitney-robe/black/WhitneyBlk_Robe_Front.jpg",
           "/assets/images/products/whitney-robe/black/WhitneyBlk_Robe_Back.jpg",
@@ -728,6 +738,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 240,
         colorName: "love",
         colorClass: "swatch-love",
+        type: "robe",
         images: [
           "/assets/images/products/whitney-robe/love/WhitneyL_Robe_Front.jpg",
           "/assets/images/products/whitney-robe/love/WhitneyL_Robe_Back.jpg",
@@ -754,6 +765,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 240,
         colorName: "ocean",
         colorClass: "swatch-ocean",
+        type: "robe",
         images: [
           "/assets/images/products/whitney-robe/ocean/Whitney_Robe_Front.jpg",
           "/assets/images/products/whitney-robe/ocean/Whitney_Robe_Back.jpg",
@@ -773,6 +785,7 @@ export const NewArrivalData: ProductItem[] = [
         price: 240,
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
+        type: "robe",
         images: [
           "/assets/images/products/whitney-robe/sparkling-pink/WhitneyP_Robe_Front.jpg",
           "/assets/images/products/whitney-robe/sparkling-pink/WhitneyP_Robe_Back.jpg",
