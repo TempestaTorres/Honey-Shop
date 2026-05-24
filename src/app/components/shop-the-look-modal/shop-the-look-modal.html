@@ -1,0 +1,58 @@
+<div class="modal-dialog modal-dialog-shop-the-look type-slideout" [class.modal-dialog-opened]="open()">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  <!--  Modal window -->
+  <div class="modal-dialog-content content-shop">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+      <h3>Shop the look</h3>
+
+      <!-- Close button -->
+      <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class="modal-dialog-content-container">
+      <div class="shop-the-look-section">
+
+        <!-- Shop The Look List Items -->
+        <div class="shop-the-look-list" role="list">
+
+          @let shopCollection = collection();
+
+          @for (product of shopCollection; track $index) {
+
+            <div #item
+                 appObserveElement
+                 [isContinuous]="false"
+                 (isIntersecting)="isIntersecting($event, item)"
+                 role="listitem"
+                class="shop-the-look-list__item scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+              <app-shop-the-look-item
+                (showProduct)="navigateToProduct($event)"
+                (addToBag)="addToCart($event)"
+                (addItemToWishlist)="addToWishList($event)"
+                [product]="product"></app-shop-the-look-item>
+
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

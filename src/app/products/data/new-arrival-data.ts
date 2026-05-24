@@ -1,5 +1,5 @@
 import { ProductItem } from '../types/product-type';
-import { stockingsSizes } from '../../data/instagram-feeds-data';
+import { dressSizes, robeSizes, stockingsSizes } from '../../data/instagram-feeds-data';
 
 export const NewArrivalData: ProductItem[] = [
   {
@@ -515,6 +515,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-stockings/WhitneyChartreuse_Thong_Suspender_Side1.jpg",
           "/assets/images/products/whitney-stockings/WHITNEYCHARTREUSE4.jpg",
         ],
+        sizes: stockingsSizes
       },
     ]
   },
@@ -542,6 +543,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-bodysuit/chartreuse/WhitneyChartreuse_Bodysuit_Side1.jpg",
           "/assets/images/products/whitney-bodysuit/chartreuse/WHITNEYCHARTREUSE2.jpg",
         ],
+        sizes: dressSizes
       },
       {
         name: "WHITNEY",
@@ -562,6 +564,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_SideZOOM1.jpg",
           "/assets/images/products/whitney-bodysuit/black/H033.jpg",
         ],
+        sizes: dressSizes,
         ratings: {
           stars: [1,2,3,4,5],
           score: "4.9 (14)"
@@ -593,6 +596,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-chemise/chartreuse/WhitneyChartreuse_Robe_Chemise_Front.jpg",
           "/assets/images/products/whitney-chemise/chartreuse/WHITNEYCHARTREUSE1.jpg",
         ],
+        sizes: dressSizes
       },
       {
         name: "WHITNEY",
@@ -612,6 +616,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-chemise/black/WhitneyBlk_Chemise_BackZOOM.jpg",
           "/assets/images/products/whitney-chemise/black/WhitneyBlk_Chemise_SideZOOM.jpg",
         ],
+        sizes: dressSizes
       },
       {
         name: "WHITNEY",
@@ -633,6 +638,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-chemise/love/WhitneyL_Chemise_SideZOOM.jpg",
           "/assets/images/products/whitney-chemise/love/WhitneyLove10.jpg",
         ],
+        sizes: dressSizes
       },
       {
         name: "WHITNEY",
@@ -656,7 +662,8 @@ export const NewArrivalData: ProductItem[] = [
         ratings: {
           stars: [1,2,3,4,5],
           score: "5.0 (4)"
-        }
+        },
+        sizes: dressSizes
       },
       {
         name: "WHITNEY",
@@ -681,7 +688,8 @@ export const NewArrivalData: ProductItem[] = [
         ratings: {
           stars: [1,2,3,4,5],
           score: "5.0 (1)"
-        }
+        },
+        sizes: dressSizes
       },
     ]
   },
@@ -708,6 +716,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/chartreuse/WhitneyChartreuse_Robe_Chemise_Front.jpg",
           "/assets/images/products/whitney-robe/chartreuse/WHITNEYCHARTREUSE7.jpg",
         ],
+        sizes: robeSizes
       },
       {
         name: "WHITNEY",
@@ -728,6 +737,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/black/WhitneyBlk_Robe_SideZOOM.jpg",
           "/assets/images/products/whitney-robe/black/WhitneyBlk_Robe_Playsuit_Front.jpg",
         ],
+        sizes: robeSizes
       },
       {
         name: "WHITNEY",
@@ -754,7 +764,8 @@ export const NewArrivalData: ProductItem[] = [
         ratings: {
           stars: [1,2,3,4,5],
           score: "5.0 (1)"
-        }
+        },
+        sizes: robeSizes
       },
       {
         name: "WHITNEY",
@@ -775,6 +786,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/ocean/Whitney_Robe_SideZOOM.jpg",
           "/assets/images/products/whitney-robe/ocean/Content_Whitney_Ocean.jpg",
         ],
+        sizes: robeSizes
       },
       {
         name: "WHITNEY",
@@ -796,7 +808,8 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/sparkling-pink/WhitneyP_Robe_Chemise_FrontZOOM.jpg",
           "/assets/images/products/whitney-robe/sparkling-pink/WhitneyP_Robe_Playsuit_Front.jpg",
           "/assets/images/products/whitney-robe/sparkling-pink/WHITNEYSPINK.jpg",
-        ]
+        ],
+        sizes: robeSizes
       },
     ]
   },

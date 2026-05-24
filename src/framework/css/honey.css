@@ -216,6 +216,9 @@ a.picture-wrapper {
 .group:hover .picture-overlay {
   background-image: linear-gradient(transparent,rgba(0,0,0,.8));
 }
+.group:hover .group-hover-text-black {
+  color: #000000;
+}
 /* gradient card */
 .gradient-card::after,
 .gradient-card::before,
@@ -372,6 +375,9 @@ a.picture-wrapper {
 }
 .section {
   padding: 24px 1rem;
+}
+.section-default-padding {
+  padding: 24px;
 }
 @media (min-width: 1024px) {
   .section {

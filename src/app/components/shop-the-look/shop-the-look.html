@@ -1,0 +1,99 @@
+<section class="shop-the-look-slideshow-section js-slide-show">
+
+  <!-- Text slide show -->
+  <div class="text-slide-show-container">
+
+    <div #textSwiper class="swiper carousel-swiper-shop-the-look-left swiper-backface-hidden">
+      <div class="swiper-wrapper">
+
+        @for (description of shopTheLookData.descriptions; track $index) {
+
+          <div class="swiper-slide">
+            <h3 class="heading-title">{{ description.name }}</h3>
+            <div class="typeset-description-primary">
+              <p>{{ description.text }}</p>
+            </div>
+            <a [routerLink]="['/collections/', description.url]"
+               class="button-link-underline button-fit-content js-slide-show-button"
+               aria-label="VIEW COLLECTION">VIEW COLLECTION</a>
+          </div>
+        }
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Image Slides show -->
+  <div #imageSlideShow
+       appObserveElement
+       [isContinuous]="false"
+       (isIntersecting)="isIntersecting($event, imageSlideShow)"
+    class="image-slide-show-container scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+    <div class="image-slide-show-wrapper">
+
+      <div #imageSwiper class="swiper carousel-swiper-shop-the-look-right swiper-backface-hidden">
+
+        <div class="swiper-wrapper">
+
+          @for (slide of shopTheLookData.slides; track $index) {
+
+            <div class="swiper-slide">
+              <a
+                class="image-slide-wrapper"
+                tabindex="-1"
+                [routerLink]="['/collections/', slide.url]">
+
+                <div class="image-slide-container">
+                  <div class="image-slide">
+                    <img [src]="slide.images[0]" alt="Shop the look" loading="lazy">
+                  </div>
+                  <div class="image-slide desktop-hidden">
+                    <img [src]="slide.images[1]" alt="Shop the look" loading="lazy">
+                  </div>
+
+                </div>
+              </a>
+            </div>
+          }
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination js-carousel-pagination"></div>
+
+        <!-- Navigation -->
+        <button class="swiper-button-prev js-carousel-prev" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-chevron-left">
+            <title id="title-icon-chevron-left">Icon of chevron left</title>
+            <path class="icon-chevron-left" d="M7.5 9.75L3.75 6L7.5 2.25" stroke="currentColor" stroke-linecap="square"></path>
+          </svg>
+        </button>
+
+        <button class="swiper-button-next js-carousel-next" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-chevron-right">
+            <title id="title-icon-chevron-right">Icon of chevron right</title>
+            <path class="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+          </svg>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!--  Button -->
+    <button (click)="triggerShopTheLook()" class="js-modal-trigger-button button-light button-small group">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon group-hover-text-black" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-plus-outline">
+        <title id="title-icon-plus-outline">Icon of plus outline</title>
+        <g id="icon-plus-outline">
+          <path d="M2.5 8H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M8 2.5V13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+      </svg>
+      Shop this look
+    </button>
+
+  </div>
+
+</section>

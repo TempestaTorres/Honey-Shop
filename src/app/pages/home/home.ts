@@ -10,6 +10,8 @@ import { HeroCarousel } from '../../components/hero-carousel/hero-carousel';
 import { SwiperVideoCarouselType } from '../../types/swiper-carosel-types';
 import { CarouselVideoSwiper } from '../../components/carousel-video-swiper/carousel-video-swiper';
 import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
+import { ShopTheLook } from '../../components/shop-the-look/shop-the-look';
+import { ShopTheLookModal } from '../../components/shop-the-look-modal/shop-the-look-modal';
 
 @Component({
   selector: 'app-home',
@@ -21,24 +23,29 @@ import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
     HeroCarousel,
     CarouselVideoSwiper,
     InstagramFeed,
+    ShopTheLook,
+    ShopTheLookModal,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
-
-  private videos: {desktop: string, tablet: string}[] = [
+  private videos: { desktop: string; tablet: string }[] = [
+    {
+      desktop: '/assets/video/annalise-desktop.mp4',
+      tablet: '/assets/video/annalise-mobile.mp4',
+    },
     {
       desktop: '/assets/video/desktop-hero-2.mp4',
-      tablet: '/assets/video/mobile-hero-2.mp4'
+      tablet: '/assets/video/mobile-hero-2.mp4',
     },
     {
       desktop: '/assets/video/desktop-home-hero.mp4',
-      tablet: '/assets/video/mobile-home-hero.mp4'
+      tablet: '/assets/video/mobile-home-hero.mp4',
     },
     {
       desktop: '/assets/video/home-desktop.mp4',
-      tablet: '/assets/video/home-mobile.mp4'
+      tablet: '/assets/video/home-mobile.mp4',
     },
   ];
 
@@ -54,8 +61,7 @@ export class Home implements OnInit {
         },
         content: {
           hasContent: true,
-          title: 'ELODIE',
-          title2: 'ROMANCE',
+          title: 'ANNALISE',
           text: 'Introducing',
           button: {
             hasButton: true,
@@ -266,11 +272,14 @@ export class Home implements OnInit {
   };
 
   public videoOverlay: string[] = [
-    "/assets/images/common/VIDEO_BUFFER_3.jpg",
-    "/assets/images/common/VIDEO_BUFFER_21.jpg",
-    "/assets/images/common/underlay.jpg",
+    '/assets/images/common/VIDEO_BUFFER_1_f.jpg',
+    '/assets/images/common/VIDEO_BUFFER_3.jpg',
+    '/assets/images/common/VIDEO_BUFFER_21.jpg',
+    '/assets/images/common/underlay.jpg',
   ];
   public currentUnderlay: number = 0;
+
+  public slideShowDataIndex: number = 0;
 
   constructor(
     private scrollingService: ScrollingService,

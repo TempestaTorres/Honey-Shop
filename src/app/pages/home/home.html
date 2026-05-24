@@ -12,7 +12,7 @@
   </section>
 
   <!--  Category -->
-  <section class="section-boxed section-home-category">
+  <section class="section-boxed section">
     <div #categoryGrid
          appObserveElement
          [isContinuous]="false"
@@ -24,7 +24,7 @@
 
         <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
           <div class="app-widget-container">
-            <img src="/assets/images/categories/NEW1.jpg" alt="New">
+            <img src="/assets/images/categories/new/NEW_1_5.jpg" alt="New">
           </div>
           <!-- Content -->
           <div class="picture-content">
@@ -39,7 +39,7 @@
 
         <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
           <div class="app-widget-container">
-            <img src="/assets/images/categories/BRAS.jpg" alt="Bras">
+            <img src="/assets/images/categories/bras/BRAS2.jpg" alt="Bras">
           </div>
           <!-- Content -->
           <div class="picture-content">
@@ -49,16 +49,16 @@
 
       </a>
 
-          <!-- Category item loungewear -->
-      <a [routerLink]="['/collections', 'loungewear']" title="LOUNGE" class="picture-wrapper group">
+          <!-- Category item BESTSELLERS -->
+      <a [routerLink]="['/collections', 'bestsellers']" title="BESTSELLERS" class="picture-wrapper group">
 
         <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
           <div class="app-widget-container">
-            <img src="/assets/images/categories/LOUNGE.jpg" alt="LOUNGE">
+            <img src="/assets/images/categories/bestsellers/LOUNGE_6.jpg" alt="LOUNGE">
           </div>
           <!-- Content -->
           <div class="picture-content">
-            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">LOUNGE</h3>
+            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">BESTSELLERS</h3>
           </div>
         </div>
 
@@ -69,7 +69,7 @@
 
         <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
           <div class="app-widget-container">
-            <img src="/assets/images/categories/BOTTOMS2.jpg" alt="BOTTOMS">
+            <img src="/assets/images/categories/bottoms/BOTTOMS_1_7.jpg" alt="BOTTOMS">
           </div>
           <!-- Content -->
           <div class="picture-content">
@@ -95,6 +95,13 @@
     </div>
   </section>
 
+  <!--  Shop the look slideshow -->
+
+  <section class="section-boxed section-default-padding">
+    <app-shop-the-look [dataIndex]="slideShowDataIndex" class="app-widget"></app-shop-the-look>
+    <app-shop-the-look-modal></app-shop-the-look-modal>
+  </section>
+
   <!--  Bestsellers -->
   <section class="section-boxed section-hero-carousel">
     <!-- Cover image -->
@@ -108,7 +115,7 @@
   </section>
 
   <!-- Categories Whitney & Bondage -->
-  <section class="section-boxed section-home-category">
+  <section class="section-boxed section">
 
     <div #categoryBigGrid
          appObserveElement

@@ -95,6 +95,9 @@
   .modal-dialog.type-modal {
     justify-content: center;
   }
+  .modal-dialog-content.content-shop {
+    width: 640px;
+  }
   .modal-dialog-content.content-large {
     width: 483px;
   }
@@ -216,6 +219,12 @@
 }
 .modal-boxed .image-swiper {
   overflow: visible !important;
+}
+.modal-dialog-content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
 @media (min-width: 768px) {

@@ -170,7 +170,7 @@
 .swatchHoneysuckle {
   background-color:#e8b9a0;
 }
-.swatch-leopard {
+.swatchLeopard {
   background-image: url("/assets/swatches/swatch-animal-print2.png");
 }
 .swatchMahogany {
@@ -447,6 +447,7 @@
 .picture-carousel-slide {
   width: calc(272 / 376 * 100%);
 }
+
 /*================= Media ==================*/
 @media (min-width: 768px) {
   .product-carousel-slide {
