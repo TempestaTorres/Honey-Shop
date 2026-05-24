@@ -1,4 +1,4 @@
-import { ProductItem, ProductType } from '../../types/product-type';
+import { ProductType } from '../../types/product-type';
 import { braSizes } from '../../../data/instagram-feeds-data';
 
 export interface ShopCollectionType {
