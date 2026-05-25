@@ -68,17 +68,39 @@ export class SiteHeader implements OnInit, OnDestroy {
       .subscribe((event) => {
         // this only fires for `NavigationStart` and no other events
 
-        this.isHome.set(this.isHeaderTransparent(event.url));
+        //console.log("Url: ",event.url);
 
-        this.isBlackMobile.update(value => event.url === '/online-gift-voucher');
-        this.isHalfInverse.update(value => event.url === '/online-gift-voucher');
+        this.updateHeaderState(event.url);
 
       });
 
-    this.isHome.set(this.isHeaderTransparent(this.location.path()));
+    this.updateHeaderState(this.location.path());
 
-    this.isBlackMobile.update(value => this.location.path() === '/online-gift-voucher');
-    this.isHalfInverse.update(value => this.location.path() === '/online-gift-voucher');
+    //console.log("Location: ",this.location.path());
+
+  }
+
+  private updateHeaderState(url: string): void {
+
+    this.isHome.set(this.isHeaderTransparent(url));
+
+    this.isBlackMobile.update(value => {
+
+      if (url === '/online-gift-voucher') {
+        return true;
+      }
+      return url.startsWith('/products');
+      }
+    );
+
+    this.isHalfInverse.update(value => {
+
+      if (url === '/online-gift-voucher') {
+        return true;
+      }
+      return url.startsWith('/products');
+      }
+    );
 
   }
 
@@ -102,7 +124,9 @@ export class SiteHeader implements OnInit, OnDestroy {
         return true;
       }
     }
-    return false;
+
+    return url.startsWith('/products');
+
   }
 
   private onScroll(): void {

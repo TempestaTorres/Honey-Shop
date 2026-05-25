@@ -1,3 +1,3 @@
 export const headerLocations: string[] = [
-  "/",'/online-gift-voucher',""
+  "/",'/online-gift-voucher',"/products"
 ]

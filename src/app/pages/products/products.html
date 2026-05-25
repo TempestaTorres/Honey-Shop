@@ -1,1 +1,14 @@
-<p>products works!</p>
+<main class="outline-none">
+  <section class="section-boxed js-product-main">
+
+    @let product = shopProduct();
+    <!-- Product Slide Show -->
+    <div class="js-product-gallery-container">
+      @if (product !== null) {
+        <app-product-gallery class="js-product-gallery group" [product]="product"></app-product-gallery>
+
+        <!-- Modal Bio Button -->
+      }
+    </div>
+  </section>
+</main>

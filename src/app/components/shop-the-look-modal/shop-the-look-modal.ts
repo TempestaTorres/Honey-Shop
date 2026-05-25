@@ -19,9 +19,7 @@ import { SelectSizeService } from '../../modals/select-size-modal/select-size-se
 })
 export class ShopTheLookModal implements OnInit, OnDestroy {
   public open: WritableSignal<boolean> = signal<boolean>(false);
-  public collection: WritableSignal<Array<ProductType[]> | null> = signal<Array<
-    ProductType[]
-  > | null>(null);
+  public collection: WritableSignal<Array<ProductType[]> | null> = signal<Array<ProductType[]> | null>(null);
 
   private subscription$: Subscription | undefined;
   private productSubscription$: Subscription | undefined;
@@ -45,6 +43,7 @@ export class ShopTheLookModal implements OnInit, OnDestroy {
         this.productSubscription$ = this.productService
           .getCollection(url)
           .subscribe((collection) => {
+
             this.collection.set(collection);
 
             if (collection) {

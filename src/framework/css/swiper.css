@@ -654,9 +654,11 @@ button.swiper-pagination-bullet {
   position: absolute;
   bottom: 0;
   left: 0;
+  top: initial;
   z-index: 1;
   margin-top: 0;
   min-height: 0.125rem;
+  height: auto;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.32);
 }

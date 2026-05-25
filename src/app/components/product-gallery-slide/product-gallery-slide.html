@@ -1,0 +1,11 @@
+<a #zoomer
+  role="button"
+  tabindex="-1"
+   (click)="zoomIn()"
+   (mouseleave)="reset()"
+   (mousemove)="onMouseMove($event)"
+   [class.zoom-in]="isZoomed()"
+  class="product-gallery-zoomable-item top-most">
+
+  <img [src]="slideImage()" alt="" loading="lazy" fetchpriority="auto">
+</a>
