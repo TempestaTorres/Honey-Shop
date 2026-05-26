@@ -1,0 +1,79 @@
+<div class="modal-dialog type-slideout" [class.modal-dialog-opened]="open()">
+  <div class="modal-dialog-overlay" (mousedown)="closeModal()"></div>
+
+  <!--  Modal window -->
+  <div class="modal-dialog-content content-small">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+      <h3>Model Bio</h3>
+
+      <!-- Close button -->
+      <button (click)="closeModal()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    @let bios = models();
+
+    @if (bios.length > 0) {
+
+    <!-- Content -->
+    <div class="modal-dialog-inner default-layout position-top">
+      <div class="modal-boxed">
+
+        @for (bio of bios; track $index) {
+
+          <div class="modal-info-container">
+
+            <!-- Header -->
+            <div class="modal-header modal-header-layout-traditional">
+              <!-- Model image -->
+              <div class="modal-dialog-image-wrapper small">
+                <figure>
+                  <img [src]="bio.image" [alt]="'Bio ' + bio.name" loading="lazy" sizes="100px">
+                </figure>
+              </div>
+              <!-- Model Name -->
+              <div class="modal-dialog-heading-title">{{ bio.name }}</div>
+            </div>
+
+            <!-- Model info -->
+            <div class="modal-inner-info-container modal-info-list" role="list">
+              <div class="modal-info-list__item">
+                <span>Height</span>
+                <span class="description">{{ bio.height }}</span>
+              </div>
+              <div class="modal-info-list__item">
+                <span>Bust</span>
+                <span class="description">{{ bio.bust }}</span>
+              </div>
+              <div class="modal-info-list__item">
+                <span>Waist</span>
+                <span class="description">{{ bio.waist }}</span>
+              </div>
+              <div class="modal-info-list__item">
+                <span>Hips</span>
+                <span class="description">{{ bio.hips }}</span>
+              </div>
+              <div class="modal-info-list__item">
+                <span>Dress</span>
+                <span class="description">{{ bio.dress }}</span>
+              </div>
+            </div>
+
+          </div>
+        }
+      </div>
+    </div>
+
+    }
+
+  </div>
+</div>

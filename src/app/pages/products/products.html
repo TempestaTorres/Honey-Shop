@@ -6,9 +6,14 @@
     <div class="js-product-gallery-container">
       @if (product !== null) {
         <app-product-gallery class="js-product-gallery group" [product]="product"></app-product-gallery>
-
-        <!-- Modal Bio Button -->
       }
     </div>
+
+    <!-- Product summary -->
+
+    @if (product !== null) {
+      <app-modal-bio [product]="product"></app-modal-bio>
+    }
+
   </section>
 </main>

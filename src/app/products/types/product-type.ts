@@ -17,6 +17,7 @@ export interface ProductType {
     score: string,
   },
   sizes?: {key:string, sizes:string[]}[],
+  models?: string[],
 }
 export type ProductItem = {
   product: ProductType[]

@@ -5,10 +5,11 @@ import { ProductsService } from '../../products/products-service';
 import { Subscription } from 'rxjs';
 import { ProductType } from '../../products/types/product-type';
 import { ProductGallery } from '../../components/product-gallery/product-gallery';
+import { ModalBio } from '../../modals/modal-bio/modal-bio';
 
 @Component({
   selector: 'app-products',
-  imports: [ProductGallery],
+  imports: [ProductGallery, ModalBio],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -32,7 +33,6 @@ export class Products implements OnInit, OnDestroy {
 
     this.activatedRoute.params.subscribe((params) => {
       if (params['item']) {
-        console.log(params['item']);
 
         this.getProductType(params['item']);
       }

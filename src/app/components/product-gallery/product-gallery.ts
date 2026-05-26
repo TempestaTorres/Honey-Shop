@@ -1,6 +1,7 @@
 import { afterNextRender, Component, DestroyRef, input } from '@angular/core';
 import { ProductType } from '../../products/types/product-type';
 import { ProductGallerySlide } from '../product-gallery-slide/product-gallery-slide';
+import { ModelsService } from '../../products/data/models/models-service';
 declare var Swiper: any;
 
 @Component({
@@ -13,7 +14,8 @@ export class ProductGallery {
 
   private swiper: any;
 
-  constructor(private destroyRef: DestroyRef) {
+  constructor(private destroyRef: DestroyRef,
+              private modelsService: ModelsService,) {
 
     afterNextRender(() => {
 
@@ -39,5 +41,9 @@ export class ProductGallery {
         this.swiper.destroy();
       }
     });
+  }
+
+  public openModalBio(): void {
+    this.modelsService.triggerModalBio(true);
   }
 }
