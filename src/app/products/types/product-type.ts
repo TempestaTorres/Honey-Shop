@@ -3,6 +3,7 @@ export interface ProductType {
   description: string,
   imageTitle?: string,
   url: string,
+  collection: string,
   addFavoriteButton: boolean,
   addToCartButton: boolean,
   price?: number,

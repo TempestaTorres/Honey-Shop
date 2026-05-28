@@ -1,19 +1,88 @@
 <main class="outline-none">
+
+  <!--  Main section -->
   <section class="section-boxed js-product-main">
 
     @let product = shopProduct();
-    <!-- Product Slide Show -->
-    <div class="js-product-gallery-container">
-      @if (product !== null) {
-        <app-product-gallery class="js-product-gallery group" [product]="product"></app-product-gallery>
-      }
-    </div>
-
-    <!-- Product summary -->
 
     @if (product !== null) {
+
+      <!-- Product Slide Show -->
+      <div class="js-product-gallery-container">
+        <app-product-gallery class="js-product-gallery group"></app-product-gallery>
+      </div>
+
+      <!-- Product summary -->
+
+      <div class="js-product-summary-container">
+        <div class="js-product-summary-wrapper">
+
+          <!-- Navigation -->
+
+          <div class="app-widget breadcrumbs-widget">
+            <ol>
+              <li class="breadcrumb">
+                <a [routerLink]="['/']" tabindex="-1">Home</a>
+              </li>
+              <li class="breadcrumb-separator" tabindex="-1"> — </li>
+              <li class="breadcrumb">
+                <a [routerLink]="['/products', product.url]" tabindex="-1">Collection</a>
+              </li>
+              <li class="breadcrumb-separator" tabindex="-1"> — </li>
+              <li class="breadcrumb">
+                <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.name }}</a>
+              </li>
+              <li class="breadcrumb-separator" tabindex="-1"> — </li>
+              <li class="breadcrumb truncate">{{ product.name }}&nbsp;{{ product.description }}</li>
+            </ol>
+          </div>
+
+          <!-- Info -->
+          <app-product-info [product]="product" [reviewsSelector]="revSelector"></app-product-info>
+
+          <!-- Colors -->
+          <div class="js-collection-colors-widget">
+            <app-collection-color-button
+              (itemSelected)="colorSelected($event)"
+              class="js-colors-button"
+              [index]="index()"
+              [collectionItem]="collectionItem()"></app-collection-color-button>
+
+            <!-- Button Trigger Modal Colors -->
+            @let items =collectionItem();
+            @if (items !== null && items.length > 1) {
+
+              <button
+                (click)="openViewColors()"
+                type="button"
+                class="button-link-icon js-modal-dialog-trigger"
+                aria-label="View Colours">
+                View Colours
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title id="title-icon-chevron-right">Icon of chevron right</title>
+                  <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+                </svg>
+              </button>
+            }
+
+          </div>
+
+        </div>
+
+        <!-- Product Pair with -->
+      </div>
+
       <app-modal-bio [product]="product"></app-modal-bio>
+      <app-modal-view-colors></app-modal-view-colors>
     }
 
   </section>
+
+  <!--  Reviews -->
+  @if (product !== null && product.ratings) {
+
+    <section id="reviews">
+
+    </section>
+  }
 </main>

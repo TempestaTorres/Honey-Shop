@@ -81,6 +81,13 @@
     font-size: 100px;
   }
 }
+.text-ellipsis, .truncate {
+  text-overflow: ellipsis;
+}
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+}
 .app-invisible {
   visibility:hidden;
 }
@@ -362,7 +369,13 @@ a.picture-wrapper {
 
 .group:hover .group-hover-after-scale-x-100::after {
   content: "";
-  transform: scaleX(1) scaleY(var(--scale-y));
+  --scale-x: 1;
+  transform: scaleX(var(--scale-x)) scaleY(var(--scale-y));
+}
+.group-item {
+  position: relative;
+  width: fit-content;
+  padding-top: .5rem;
 }
 
 .section-anchor-link {

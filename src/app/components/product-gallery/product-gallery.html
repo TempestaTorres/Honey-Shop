@@ -1,47 +1,57 @@
-<div class="swiper carousel-swiper-product js-carousel-swiper-gallery swiper-backface-hidden">
-  <div class="swiper-wrapper">
+@let product = productType();
 
-    @let slides = product().images;
+@if (product !== null) {
 
-    @for (slide of slides; track $index) {
+  <div class="swiper carousel-swiper-product js-carousel-swiper-gallery swiper-backface-hidden">
+    <div class="swiper-wrapper">
 
-      <div class="swiper-slide">
-        <app-product-gallery-slide class="js-swiper-slide-zoomable" [slideImage]="slide"></app-product-gallery-slide>
-      </div>
-    }
+      @let slides = product.images;
+
+      @for (slide of slides; track $index) {
+
+        <div class="swiper-slide">
+          <app-product-gallery-slide class="js-swiper-slide-zoomable" [slideImage]="slide"></app-product-gallery-slide>
+        </div>
+      }
 
 
+    </div>
+
+    <!--  Pagination -->
+    <div class="swiper-pagination js-carousel-pagination"></div>
+
+    <!-- Navigation -->
+    <button class="swiper-button-prev js-carousel-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-chevron-left">
+        <title id="title-icon-chevron-left">Icon of chevron left</title>
+        <path id="icon-chevron-left" d="M7.5 9.75L3.75 6L7.5 2.25" stroke="currentColor" stroke-linecap="square"></path>
+      </svg>
+    </button>
+
+    <button class="swiper-button-next js-carousel-next">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-chevron-right">
+        <title id="title-icon-chevron-right">Icon of chevron right</title>
+        <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+      </svg>
+    </button>
   </div>
 
-  <!--  Pagination -->
-  <div class="swiper-pagination js-carousel-pagination"></div>
+  @if (product.models !== undefined) {
 
-  <!-- Navigation -->
-  <button class="swiper-button-prev js-carousel-prev">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-chevron-left">
-      <title id="title-icon-chevron-left">Icon of chevron left</title>
-      <path id="icon-chevron-left" d="M7.5 9.75L3.75 6L7.5 2.25" stroke="currentColor" stroke-linecap="square"></path>
-    </svg>
-  </button>
+    <!-- Modal Bio Button -->
+    <div class="js-modal-bio-wrapper">
+      <button (click)="openModalBio()" class="button-blur button-small js-modal-dialog-trigger-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+          <title id="title-icon-plus-outline">Icon of plus outline</title>
+          <g id="icon-plus-outline">
+            <path d="M2.5 8H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M8 2.5V13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+        Model Bio
+      </button>
+    </div>
 
-  <button class="swiper-button-next js-carousel-next">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-chevron-right">
-      <title id="title-icon-chevron-right">Icon of chevron right</title>
-      <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
-    </svg>
-  </button>
-</div>
+  }
+}
 
-<!-- Modal Bio Button -->
-<div class="js-modal-bio-wrapper">
-  <button (click)="openModalBio()" class="button-blur button-small js-modal-dialog-trigger-button">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
-      <title id="title-icon-plus-outline">Icon of plus outline</title>
-      <g id="icon-plus-outline">
-        <path d="M2.5 8H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-        <path d="M8 2.5V13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-      </g>
-    </svg>
-    Model Bio
-  </button>
-</div>

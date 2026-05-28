@@ -1,15 +1,27 @@
 import { Component, OnDestroy, OnInit, signal, WritableSignal } from '@angular/core';
 import { ScrollingService } from '../../services/scrolling-service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProductsService } from '../../products/products-service';
 import { Subscription } from 'rxjs';
 import { ProductType } from '../../products/types/product-type';
 import { ProductGallery } from '../../components/product-gallery/product-gallery';
 import { ModalBio } from '../../modals/modal-bio/modal-bio';
+import { ProductInfo } from '../../components/product-info/product-info';
+import { CollectionColorButton } from '../../components/collection-color-button/collection-color-button';
+import { ProductGalleryService } from '../../components/product-gallery/product-gallery-service';
+import { ModalViewColors } from '../../modals/modal-view-colors/modal-view-colors';
+import { ViewColorsService } from '../../modals/modal-view-colors/view-colors-service';
 
 @Component({
   selector: 'app-products',
-  imports: [ProductGallery, ModalBio],
+  imports: [
+    ProductGallery,
+    ModalBio,
+    RouterLink,
+    ProductInfo,
+    CollectionColorButton,
+    ModalViewColors,
+  ],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -20,20 +32,21 @@ export class Products implements OnInit, OnDestroy {
   public shopProduct: WritableSignal<ProductType | null> = signal<ProductType | null>(null);
   public collectionItem: WritableSignal<ProductType[] | null> = signal<ProductType[] | null>(null);
   public index: WritableSignal<number> = signal<number>(0);
+  public revSelector: string = 'reviews';
 
   constructor(
     private scrollingService: ScrollingService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private productsService: ProductsService,
+    private galleryService$: ProductGalleryService,
+    private viewColors$: ViewColorsService,
   ) {}
 
   ngOnInit(): void {
-    this.scrollingService.toTop();
-
     this.activatedRoute.params.subscribe((params) => {
       if (params['item']) {
-
+        this.scrollingService.toTop();
         this.getProductType(params['item']);
       }
     });
@@ -48,6 +61,17 @@ export class Products implements OnInit, OnDestroy {
     }
   }
 
+  public colorSelected(i: number): void {
+    const items = this.collectionItem();
+    if (items !== null) {
+      this.router.navigate(['/products', items[i].url]).then(() => {});
+    }
+  }
+
+  public openViewColors(): void {
+    this.viewColors$.triggerViewColors(this.collectionItem());
+  }
+
   private getProductType(url: string): void {
     if (this.productSubscription) {
       this.productSubscription.unsubscribe();
@@ -55,6 +79,7 @@ export class Products implements OnInit, OnDestroy {
 
     this.productsService.getShopProduct(url).subscribe((product) => {
       this.shopProduct.set(product);
+      this.galleryService$.triggerGallery(product);
 
       if (product) {
         if (this.collectionSubscription) {

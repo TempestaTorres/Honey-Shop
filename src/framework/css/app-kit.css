@@ -365,7 +365,12 @@
     color: var(--global-color-neutral);
     margin: 0;
   }
-  .typeset {
+  .text-heading {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .typeset, .text-heading {
     font-size: 14px;
     line-height: 20px;
     color: rgba(0,0,0,.56);

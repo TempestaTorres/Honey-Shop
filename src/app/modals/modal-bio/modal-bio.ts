@@ -1,4 +1,4 @@
-import { Component, effect, input, OnDestroy, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, input, OnDestroy, OnInit, signal, WritableSignal } from '@angular/core';
 import { ProductType } from '../../products/types/product-type';
 import { ModelsService } from '../../products/data/models/models-service';
 import { ModelBioType } from '../../products/types/model-bio-type';
@@ -18,17 +18,22 @@ export class ModalBio implements OnDestroy, OnInit {
   private openModalSubscription: Subscription | undefined;
 
   constructor(private modelsService: ModelsService) {
-    effect(() => {
-      this.getBios();
-    });
+
   }
 
   ngOnInit(): void {
 
     this.openModalSubscription = this.modelsService.modalBioOpen$.subscribe(state => {
-      this.open.set(state);
 
-      console.log("Modal triggered",state);
+      if (state) {
+        this.getBios();
+
+        setTimeout(() => {
+          this.open.set(state);
+        },100);
+      }else {
+        this.open.set(state);
+      }
     });
   }
 
@@ -56,7 +61,6 @@ export class ModalBio implements OnDestroy, OnInit {
       this.modelsService.getModelsBio(modelNames).subscribe((models) => {
         this.models.set(models);
 
-        console.log('Effect: ', models);
       });
     }
   }

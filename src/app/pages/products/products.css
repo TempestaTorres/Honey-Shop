@@ -1,1 +1,24 @@
+.js-product-summary-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
+/*========= Media ===============*/
+@media (min-width: 768px) {
+  .js-product-summary-wrapper {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .js-product-summary-wrapper {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+@media (min-width: 1536px) {
+  .js-product-summary-wrapper {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}

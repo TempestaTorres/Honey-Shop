@@ -1,0 +1,49 @@
+@let item = product();
+
+<div class="product-info-header">
+  <!-- Heading -->
+  <div class="product-info-heading">
+    <h1 class="heading-title">{{ item.name }}</h1>
+    <p class="text-heading">{{ item.description }}</p>
+  </div>
+
+  <!-- Wishlist button -->
+  <button class="js-wishlist-toggle"
+          aria-label="Wishlist Toggle"
+          type="button" (click)="addToWishList()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false"
+         class="icon">
+      <path d="M7.59571 2.96285L7.00458 3.55698L6.41345 2.96285C5.26474 1.81251 3.40331 1.81251 2.25878 2.96285C1.11426 4.11319 1.11426 5.98407 2.25878 7.13441L2.84991 7.72854L7.00039 11.9001L11.1509 7.72854L11.742 7.13441C12.8865 5.98407 12.8865 4.11319 11.742 2.96285C10.5975 1.81251 8.73605 1.81251 7.59152 2.96285H7.59571Z" stroke="currentColor" stroke-miterlimit="10"></path>
+    </svg>
+  </button>
+</div>
+
+@if (item.ratings) {
+
+  <!-- Review -->
+  <div class="product-review">
+    <div class="oke-sr">
+      <div (click)="scrollToReviews()" class="oke-is-clickable">
+
+        <!-- Stars -->
+        <div class="oke-sr-stars">
+          <div class="oke-stars">
+            <svg height="15" viewBox="0 0 16 16" aria-hidden="true" style="overflow: visible;">
+              <path id="star-thin--filled" fill="var(--oke-stars-foregroundColor)" stroke="var(--oke-stars-borderColor)" stroke-width="var(--oke-stars-borderWidth)" d="M9.944 6.4L8 0L6.056 6.4H0L4.944 9.928L3.064 16L8 12.248L12.944 16L11.064 9.928L16 6.4H9.944Z"></path>
+            </svg>
+          </div>
+        </div>
+        <!-- Count -->
+        <div class="oke-sr-count">
+          <span class="oke-sr-count-number">{{ count() }}</span>
+          <span class="oke-sr-total-text"> ({{ item.ratings.score }} Reviews)</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+}
+
+<!-- Price -->
+<div class="product-info-price">{{ item.price | currency }}</div>

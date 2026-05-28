@@ -11,6 +11,8 @@ import { NewArrivalData } from './data/new-arrival-data';
 import { BridalLingerieData } from './data/bridal-lingerie-data';
 import { RecommendedData } from './data/recommended-data';
 import { AllCollectionsData } from './data/collections/collections-data';
+import { CollectionsNewsType } from './types/collections-news-type';
+import { CollectionsNewsData } from './data/collections/collections-news-data';
 
 @Injectable({
   providedIn: 'root',
@@ -95,6 +97,12 @@ export class ProductsService {
     });
   }
 
+  public getCollectionsNews(): Observable<CollectionsNewsType[]> {
+
+    return new Observable<CollectionsNewsType[]>(observer => {
+      observer.next(CollectionsNewsData);
+    });
+  }
   public getNews(): Observable<NewsType[]> {
 
     return new Observable<NewsType[]>(observer => {

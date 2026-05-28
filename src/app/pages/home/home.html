@@ -3,7 +3,7 @@
   <section class="section-boxed section-hero-carousel">
     <!-- Cover image -->
     <div class="cover-image-wrapper">
-      <img [src]="videoOverlay[currentUnderlay]" alt="" fetchpriority="high" loading="eager">
+      <img [src]="videoData[0].coverImage" alt="" fetchpriority="high" loading="eager">
     </div>
     <!-- Carousel -->
     <div class="section-hero-carousel__carousel">
@@ -19,65 +19,27 @@
          (isIntersecting)="isIntersecting($event, categoryGrid)"
          class="product-gallery-grid scroll-trigger--offscreen scroll-trigger animate--slide-in">
 
-          <!-- Category item New -->
-      <a [routerLink]="['/collections', 'new-lingerie']" title="NEW" class="picture-wrapper group">
+      @for (collection of collectionsNewsData; track $index) {
 
-        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
-          <div class="app-widget-container">
-            <img src="/assets/images/categories/new/NEW_1_5.jpg" alt="New">
+        <!-- Category item New -->
+        <a [routerLink]="['/collections', collection.url]"
+           [title]="collection.title" class="picture-wrapper group" role="presentation">
+
+          <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+            <div class="app-widget-container">
+              <img [src]="collection.image" [alt]="collection.title" loading="lazy" fetchpriority="auto">
+            </div>
+            <!-- Content -->
+            <div class="picture-content">
+              <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">
+                {{ collection.title }}
+              </h3>
+            </div>
           </div>
-          <!-- Content -->
-          <div class="picture-content">
-            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">NEW</h3>
-          </div>
-        </div>
 
-      </a>
+        </a>
+      }
 
-          <!-- Category item Bras -->
-      <a [routerLink]="['/collections', 'bras']" title="BRAS" class="picture-wrapper group">
-
-        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
-          <div class="app-widget-container">
-            <img src="/assets/images/categories/bras/BRAS2.jpg" alt="Bras">
-          </div>
-          <!-- Content -->
-          <div class="picture-content">
-            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">BRAS</h3>
-          </div>
-        </div>
-
-      </a>
-
-          <!-- Category item BESTSELLERS -->
-      <a [routerLink]="['/collections', 'bestsellers']" title="BESTSELLERS" class="picture-wrapper group">
-
-        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
-          <div class="app-widget-container">
-            <img src="/assets/images/categories/bestsellers/LOUNGE_6.jpg" alt="LOUNGE">
-          </div>
-          <!-- Content -->
-          <div class="picture-content">
-            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">BESTSELLERS</h3>
-          </div>
-        </div>
-
-      </a>
-
-          <!-- Category item BOTTOMS -->
-      <a [routerLink]="['/collections', 'bottoms']" title="BOTTOMS" class="picture-wrapper group">
-
-        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
-          <div class="app-widget-container">
-            <img src="/assets/images/categories/bottoms/BOTTOMS_1_7.jpg" alt="BOTTOMS">
-          </div>
-          <!-- Content -->
-          <div class="picture-content">
-            <h3 class="button-link group-hover-after-origin-left group-hover-after-scale-x-100">BOTTOMS</h3>
-          </div>
-        </div>
-
-      </a>
     </div>
   </section>
 
@@ -170,7 +132,7 @@
   <section class="section-boxed section-hero-carousel">
     <!-- Cover image -->
     <div class="cover-image-wrapper">
-      <img src="/assets/images/common/Top_Banner.jpg" alt="" fetchpriority="high" loading="eager">
+      <img [src]="videoData[1].coverImage" alt="" fetchpriority="high" loading="eager">
     </div>
 
     <!-- Carousel -->

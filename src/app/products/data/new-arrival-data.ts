@@ -5,12 +5,211 @@ export const NewArrivalData: ProductItem[] = [
   {
     product: [
       {
+        name: "EVERLY EMERALD",
+        description: "3 Piece Lingerie Set",
+        url: "everly-emerald-3-piece-lingerie-set",
+        collection: "everly-emerald-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 275,
+        priceFrom: 275,
+        type: "lingerie-set",
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+        images: [
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Side1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Brief_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Brief_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Brief_Side1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Front1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Back1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_SideZOOM1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Suspender_Front1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Suspender_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Front1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Back1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Back1.jpg",
+          "/assets/images/products/collections/everly-emerald/EVERLY7.jpg",
+        ],
+        models: ["olivia", "sianie"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "EVERLY EMERALD",
+        description: "Bra & Bottom Lingerie Set",
+        url: "everly-emerald-bra-bottom-lingerie-set",
+        collection: "everly-emerald-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 180,
+        priceFrom: 180,
+        type: "lingerie-set",
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+        images: [
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Brief_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Brief_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Brief_Side.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Side.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Front1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Back1.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_SideZOOM2.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EVERLY7.jpg",
+        ],
+        models: ["olivia", "sianie"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "ANNALISE",
+        description: "Corset Lingerie Set",
+        url: "annalise-corset-lingerie-set",
+        collection: "annalise-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 235,
+        priceFrom: 235,
+        type: "lingerie-set",
+        colorName: "sky blue",
+        colorClass: "swatch-sky-blue",
+        images: [
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bustier_Brief_Front1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bustier_Brief_Back1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bustier_Brief_Side.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bustier_Front2.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bustier_Back1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bustier_Side1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bustier_BackZOOM.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Front.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Back.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Front.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Back.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/ANNALISE6.jpg",
+        ],
+        models: ["olivia"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "ANNALISE",
+        description: "3 Piece Lingerie Set",
+        url: "annalise-3-piece-lingerie-set",
+        collection: "annalise-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 275,
+        priceFrom: 275,
+        type: "lingerie-set",
+        colorName: "sky blue",
+        colorClass: "swatch-sky-blue",
+        images: [
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Suspender_Thong_Front.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Suspender_Thong_Back.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Suspender_Thong_Side.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Suspender_Brief_Front.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Suspender_Brief_Back2.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Suspender_Brief_Side1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Front3.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Back4.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_FrontZOOM5.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Suspender_Front.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Suspender_Back1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Front1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Back1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Front1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Back.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/ANNALISE2.jpg",
+        ],
+        models: ["olivia", "sianie"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "ANNALISE",
+        description: "Bra & Bottom Lingerie Set",
+        url: "annalise-bra-bottom-lingerie-set",
+        collection: "annalise-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 185,
+        priceFrom: 185,
+        type: "lingerie-set",
+        colorName: "sky blue",
+        colorClass: "swatch-sky-blue",
+        images: [
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Front1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Back1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Side.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Thong_Front.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Thong_Back1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Thong_Side1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Front1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Back2.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_FrontZOOM.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Front.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Back1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Front.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Back.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/ANNALISE1.jpg",
+        ],
+        models: ["olivia", "sianie"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "SKY BLUE SHEERS STAY UP",
+        description: "Stockings",
+        imageTitle: "BUY 2 GET 1 FREE",
+        url: "annalise-stay-ups-sky-blue",
+        collection: "annalise-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 30,
+        type: "stockings",
+        colorName: "sky blue",
+        colorClass: "swatch-sky-blue",
+        images: [
+          "/assets/images/products/collections/annalise/sky-blue/Annalise_SkyBlue_Stockings_Web.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Suspender_Front1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Suspender_Back1.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Suspender_Side.jpg",
+          "/assets/images/products/collections/annalise/sky-blue/ANNALISE2.jpg",
+        ],
+        sizes: stockingsSizes
+      },
+    ]
+  },
+  {
+    product: [
+      {
         name: "ELODIE ROMANCE",
         description: "3 Piece Lingerie Set",
         url: "elodie-romance-3-piece-lingerie-set",
+        collection: "elodie-romance-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 325,
+        type: "lingerie-set",
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
         images: [
@@ -31,6 +230,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/eloidie/3-piece-lingerie-set/white/ElodieRomance_Thong_Back.jpg",
           "/assets/images/products/eloidie/3-piece-lingerie-set/white/ELODIE5.jpg",
         ],
+        models: ['sianie', 'olivia'],
       },
     ]
   },
@@ -40,9 +240,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "ELODIE ROMANCE",
         description: "Bra & Bottom Lingerie Set",
         url: "elodie-romance-bra-bottom-lingerie-set",
+        collection: "elodie-romance-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 215,
+        type: "lingerie-set",
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
         images: [
@@ -61,6 +263,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Thong_Back.jpg",
           "/assets/images/products/eloidie/lingerie-set/pink/ELODIE2.jpg",
         ],
+        models: ['sianie', 'olivia'],
       },
     ]
   },
@@ -70,6 +273,7 @@ export const NewArrivalData: ProductItem[] = [
         name: "Pink Flower Suspender",
         description: "Stockings",
         url: "elodie-suspender-stockings-romantic-pink",
+        collection: "elodie-romance-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 30,
@@ -93,9 +297,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "PAMMY",
         description: "3 Piece Lingerie Set",
         url: "pammy-3-piece-lingerie-set",
+        collection: "pammy-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 360,
+        type: "lingerie-set",
         colorName: "black",
         colorClass: "swatch-black",
         images: [
@@ -125,9 +331,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "PAMMY",
         description: "Bra & Bottom Lingerie Set",
         url: "pammy-bra-bottom-lingerie-set",
+        collection: "pammy-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 240,
+        type: "lingerie-set",
         colorName: "black",
         colorClass: "swatch-black",
         images: [
@@ -155,9 +363,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Chartreuse 3 Piece Lingerie Set",
         url: "whitney-chartreuse-3-piece-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 350,
+        type: "lingerie-set",
         colorName: "chartreuse",
         colorClass: "swatch-chartreuse",
         images: [
@@ -179,17 +389,19 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney/chartreuse/WHITNEYCHARTREUSE7_1.jpg",
         ],
         ratings: {
-          stars: [1,2,3,4,5],
-          score: "4.9 (14)"
+          stars: [1,1,1,1,0.9],
+          score: "14"
         }
       },
       {
         name: "WHITNEY",
         description: "Black 3 Piece Lingerie Set",
         url: "whitney-black-3-piece-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 325,
+        type: "lingerie-set",
         colorName: "black",
         colorClass: "swatch-black",
         images: [
@@ -213,9 +425,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Love 3 Piece Lingerie Set",
         url: "whitney-love-3-piece-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 360,
+        type: "lingerie-set",
         colorName: "love",
         colorClass: "swatch-love",
         images: [
@@ -243,9 +457,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Ocean 3 Piece Lingerie Set",
         url: "whitney-ocean-3-piece-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 325,
+        type: "lingerie-set",
         colorName: "ocean",
         colorClass: "swatch-ocean",
         images: [
@@ -274,9 +490,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Limoncello 3 Piece Lingerie Set",
         url: "whitney-limoncello-3-piece-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 350,
+        type: "lingerie-set",
         colorName: "limoncello",
         colorClass: "swatch-limoncello",
         images: [
@@ -303,9 +521,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Sparkling Pink 3 Piece Lingerie Set",
         url: "whitney-sparkling-pink-3-piece-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 370,
+        type: "lingerie-set",
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
         images: [
@@ -336,9 +556,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Chartreuse Bra & Bottom Lingerie Set",
         url: "whitney-chartreuse-bra-bottom-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 235,
+        type: "lingerie-set",
         colorName: "chartreuse",
         colorClass: "swatch-chartreuse",
         images: [
@@ -361,9 +583,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "BLACK BRA & BOTTOMS LINGERIE SET",
         url: "whitney-black-bra-bottoms-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 215,
+        type: "lingerie-set",
         colorName: "black",
         colorClass: "swatch-black",
         images: [
@@ -387,9 +611,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Limoncello Bra & Bottom Lingerie Set",
         url: "whitney-limoncello-bra-bottom-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 235,
+        type: "lingerie-set",
         colorName: "limoncello",
         colorClass: "swatch-limoncello",
         images: [
@@ -413,9 +639,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Love Bra & Bottom Lingerie Set",
         url: "whitney-love-bra-bottom-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 240,
+        type: "lingerie-set",
         colorName: "love",
         colorClass: "swatch-love",
         images: [
@@ -441,9 +669,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "OCEAN Bra & Bottoms Lingerie Set",
         url: "whitney-ocean-bra-bottom-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 215,
+        type: "lingerie-set",
         colorName: "ocean",
         colorClass: "swatch-ocean",
         images: [
@@ -467,9 +697,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Sparkling Pink Bra & Bottom Lingerie Set",
         url: "whitney-sparkling-pink-bra-bottom-lingerie-set",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 250,
+        type: "lingerie-set",
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
         images: [
@@ -502,6 +734,7 @@ export const NewArrivalData: ProductItem[] = [
         description: "Stockings",
         imageTitle: "BUY 2 GET 1 FREE",
         url: "whitney-stockings-chartreuse",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 45,
@@ -525,6 +758,7 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Chartreuse Bodysuit",
         url: "whitney-bodysuit-chartreuse",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 180,
@@ -543,12 +777,14 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-bodysuit/chartreuse/WhitneyChartreuse_Bodysuit_Side1.jpg",
           "/assets/images/products/whitney-bodysuit/chartreuse/WHITNEYCHARTREUSE2.jpg",
         ],
-        sizes: dressSizes
+        sizes: dressSizes,
+        models: ["sianie"]
       },
       {
         name: "WHITNEY",
         description: "Black Bodysuit",
         url: "whitney-black-new-bodysuit",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 180,
@@ -578,6 +814,7 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "Chartreuse Chemise",
         url: "whitney-chemise-chartreuse",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 190,
@@ -596,12 +833,14 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-chemise/chartreuse/WhitneyChartreuse_Robe_Chemise_Front.jpg",
           "/assets/images/products/whitney-chemise/chartreuse/WHITNEYCHARTREUSE1.jpg",
         ],
-        sizes: dressSizes
+        sizes: dressSizes,
+        models: ["sianie"]
       },
       {
         name: "WHITNEY",
         description: "Black Chemise",
         url: "whitney-chemise-black-new",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 190,
@@ -616,12 +855,14 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-chemise/black/WhitneyBlk_Chemise_BackZOOM.jpg",
           "/assets/images/products/whitney-chemise/black/WhitneyBlk_Chemise_SideZOOM.jpg",
         ],
-        sizes: dressSizes
+        sizes: dressSizes,
+        models: ["sianie"]
       },
       {
         name: "WHITNEY",
         description: "Love Chemise",
         url: "whitney-love-chemise",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 190,
@@ -638,12 +879,18 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-chemise/love/WhitneyL_Chemise_SideZOOM.jpg",
           "/assets/images/products/whitney-chemise/love/WhitneyLove10.jpg",
         ],
-        sizes: dressSizes
+        sizes: dressSizes,
+        ratings: {
+          stars: [1,1,1,1,1],
+          score: "2"
+        },
+        models: ["annalise"]
       },
       {
         name: "WHITNEY",
         description: "OCEAN Chemise",
         url: "whitney-chemise-ocean",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 190,
@@ -660,15 +907,17 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-chemise/ocean/Content_Whitney_Ocean1_2.jpg",
         ],
         ratings: {
-          stars: [1,2,3,4,5],
-          score: "5.0 (4)"
+          stars: [1,1,1,1,1],
+          score: "4"
         },
-        sizes: dressSizes
+        sizes: dressSizes,
+        models: ["tyniesha", "keesha"]
       },
       {
         name: "WHITNEY",
         description: "Sparkling Pink Chemise",
         url: "chemise-sparkling-pink",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 190,
@@ -686,10 +935,11 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-chemise/sparkling-pink/WhitneyP_Robe_Chemise_FrontZOOM1.jpg",
         ],
         ratings: {
-          stars: [1,2,3,4,5],
-          score: "5.0 (1)"
+          stars: [1,1,1,1,1],
+          score: "1"
         },
-        sizes: dressSizes
+        sizes: dressSizes,
+        models: ["annalise"]
       },
     ]
   },
@@ -699,9 +949,10 @@ export const NewArrivalData: ProductItem[] = [
         name: "WHITNEY",
         description: "CHARTREUSE ROBE",
         url: "whitney-short-robe-chartreuse",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
-        price: 240,
+        price: 220,
         colorName: "chartreuse",
         colorClass: "swatch-chartreuse",
         type: "robe",
@@ -716,15 +967,21 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/chartreuse/WhitneyChartreuse_Robe_Chemise_Front.jpg",
           "/assets/images/products/whitney-robe/chartreuse/WHITNEYCHARTREUSE7.jpg",
         ],
-        sizes: robeSizes
+        sizes: robeSizes,
+        ratings: {
+          stars: [1,1,1,1,1],
+          score: "1"
+        },
+        models: ["sianie", "olivia"],
       },
       {
         name: "WHITNEY",
         description: "BLACK ROBE",
         url: "whitney-short-robe-black",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
-        price: 240,
+        price: 220,
         colorName: "black",
         colorClass: "swatch-black",
         type: "robe",
@@ -737,15 +994,17 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/black/WhitneyBlk_Robe_SideZOOM.jpg",
           "/assets/images/products/whitney-robe/black/WhitneyBlk_Robe_Playsuit_Front.jpg",
         ],
-        sizes: robeSizes
+        sizes: robeSizes,
+        models: ["sianie"],
       },
       {
         name: "WHITNEY",
         description: "Love Robe",
         url: "whitney-love-short-robe",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
-        price: 240,
+        price: 220,
         colorName: "love",
         colorClass: "swatch-love",
         type: "robe",
@@ -762,18 +1021,20 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/love/WhitneyLove8.jpg",
         ],
         ratings: {
-          stars: [1,2,3,4,5],
-          score: "5.0 (1)"
+          stars: [1,1,1,1,1],
+          score: "1"
         },
+        models: ["ella", "annalise"],
         sizes: robeSizes
       },
       {
         name: "WHITNEY",
         description: "OCEAN ROBE",
         url: "whitney-short-robe-ocean",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
-        price: 240,
+        price: 220,
         colorName: "ocean",
         colorClass: "swatch-ocean",
         type: "robe",
@@ -786,12 +1047,14 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/ocean/Whitney_Robe_SideZOOM.jpg",
           "/assets/images/products/whitney-robe/ocean/Content_Whitney_Ocean.jpg",
         ],
-        sizes: robeSizes
+        sizes: robeSizes,
+        models: ["tyniesha", "keesha"]
       },
       {
         name: "WHITNEY",
         description: "Sparkling Pink Robe",
         url: "whitney-short-robe-sparkling-pink",
+        collection: "whitney-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 240,
@@ -809,7 +1072,12 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/whitney-robe/sparkling-pink/WhitneyP_Robe_Playsuit_Front.jpg",
           "/assets/images/products/whitney-robe/sparkling-pink/WHITNEYSPINK.jpg",
         ],
-        sizes: robeSizes
+        sizes: robeSizes,
+        ratings: {
+          stars: [1,1,1,1,1],
+          score: "1"
+        },
+        models: ["esha", "sianie"],
       },
     ]
   },
@@ -819,9 +1087,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "TARA",
         description: "Complete Lingerie Set",
         url: "tara-complete-lingerie-set",
+        collection: "tara-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 650,
+        type: "lingerie-set",
         colorName: "hot pink",
         colorClass: "swatch-hot-pink",
         images: [
@@ -851,6 +1121,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/tara/complete-lingerie-set/love/Tara_Skirt_BackZOOM.jpg",
           "/assets/images/products/tara/complete-lingerie-set/love/TARA5.jpg",
         ],
+        models: ["sianie", "olivia"]
       },
     ]
   },
@@ -860,9 +1131,11 @@ export const NewArrivalData: ProductItem[] = [
         name: "TARA",
         description: "Bra & Bottom Lingerie Set",
         url: "tara-bra-bottom-lingerie-set",
+        collection: "tara-lingerie-collection",
         addFavoriteButton: false,
         addToCartButton: false,
         priceFrom: 240,
+        type: "lingerie-set",
         colorName: "hot pink",
         colorClass: "swatch-hot-pink",
         images: [
@@ -881,6 +1154,7 @@ export const NewArrivalData: ProductItem[] = [
           "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Thong_Back.jpg",
           "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/TARA.jpg",
         ],
+        models: ["sianie", "olivia"]
       },
     ]
   }

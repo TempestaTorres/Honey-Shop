@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ScrollingService } from '../../services/scrolling-service';
 import { HeroVideoCarousel } from '../../components/hero-video-carousel/hero-video-carousel';
 import { HeroType, HeroVideoType } from '../../types/hero-type';
@@ -12,6 +12,11 @@ import { CarouselVideoSwiper } from '../../components/carousel-video-swiper/caro
 import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
 import { ShopTheLook } from '../../components/shop-the-look/shop-the-look';
 import { ShopTheLookModal } from '../../components/shop-the-look-modal/shop-the-look-modal';
+import { ProductsService } from '../../products/products-service';
+import { Subscription } from 'rxjs';
+import { CollectionsNewsType } from '../../products/types/collections-news-type';
+import { VideoDataService } from '../../services/video-data-service';
+import { VideoDataType } from '../../data/video-data';
 
 @Component({
   selector: 'app-home',
@@ -29,39 +34,21 @@ import { ShopTheLookModal } from '../../components/shop-the-look-modal/shop-the-
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home implements OnInit {
-  private videos: { desktop: string; tablet: string }[] = [
-    {
-      desktop: '/assets/video/annalise-desktop.mp4',
-      tablet: '/assets/video/annalise-mobile.mp4',
-    },
-    {
-      desktop: '/assets/video/desktop-hero-2.mp4',
-      tablet: '/assets/video/mobile-hero-2.mp4',
-    },
-    {
-      desktop: '/assets/video/desktop-home-hero.mp4',
-      tablet: '/assets/video/mobile-home-hero.mp4',
-    },
-    {
-      desktop: '/assets/video/home-desktop.mp4',
-      tablet: '/assets/video/home-mobile.mp4',
-    },
-  ];
+export class Home implements OnInit, OnDestroy {
 
   public topHeroCarousel: HeroVideoType = {
     class: 'js-hero-video-carousel',
     slides: [
       {
-        desktopImage: this.videos[0].desktop,
-        mobileImage: this.videos[0].tablet,
+        desktopImage: "",
+        mobileImage: "",
         imageUrl: {
           url: '/collections',
           param: 'new-lingerie',
         },
         content: {
           hasContent: true,
-          title: 'ANNALISE',
+          title: 'EVERLY',
           text: 'Introducing',
           button: {
             hasButton: true,
@@ -87,6 +74,46 @@ export class Home implements OnInit {
       keyboard: true,
     },
   };
+  public bottomHeroCarousel: HeroVideoType = {
+    class: 'js-carousel-swiper-hero-auto-play',
+    slides: [
+      {
+        desktopImage: '',
+        mobileImage: '',
+        imageUrl: {
+          url: '/collections',
+          param: 'simple-pleasures',
+        },
+        content: {
+          hasContent: false,
+          title: '',
+          title2: '',
+          text: '',
+          button: {
+            hasButton: false,
+            buttonType: 'link-underline',
+            buttonText: '',
+          },
+        },
+      },
+    ],
+    pagination: true,
+    navigation: false,
+    swiperOptions: {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      virtualTranslate: true,
+      keyboard: true,
+    },
+  };
+
   public bestsellersCarousel: HeroType = {
     class: 'js-bestsellers-hero-carousel',
     slides: [
@@ -159,45 +186,7 @@ export class Home implements OnInit {
       keyboard: true,
     },
   };
-  public bottomHeroCarousel: HeroVideoType = {
-    class: 'js-carousel-swiper-hero-auto-play',
-    slides: [
-      {
-        desktopImage: '/assets/video/home-desktop-2.mp4',
-        mobileImage: '/assets/video/home-mobile-2.mp4',
-        imageUrl: {
-          url: '/collections',
-          param: 'simple-pleasures',
-        },
-        content: {
-          hasContent: false,
-          title: '',
-          title2: '',
-          text: '',
-          button: {
-            hasButton: false,
-            buttonType: 'link-underline',
-            buttonText: '',
-          },
-        },
-      },
-    ],
-    pagination: true,
-    navigation: false,
-    swiperOptions: {
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true,
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-      virtualTranslate: true,
-      keyboard: true,
-    },
-  };
+
   public servicesVideoData: SwiperVideoCarouselType = {
     className: 'js-carousel-swiper-three-column',
     slides: [
@@ -271,23 +260,45 @@ export class Home implements OnInit {
     },
   };
 
-  public videoOverlay: string[] = [
-    '/assets/images/common/VIDEO_BUFFER_1_f.jpg',
-    '/assets/images/common/VIDEO_BUFFER_3.jpg',
-    '/assets/images/common/VIDEO_BUFFER_21.jpg',
-    '/assets/images/common/underlay.jpg',
-  ];
-  public currentUnderlay: number = 0;
-
   public slideShowDataIndex: number = 0;
+
+  private subscriptions: Subscription = new Subscription();
+
+  public collectionsNewsData: CollectionsNewsType[] = [];
+  public videoData: VideoDataType[] = [];
 
   constructor(
     private scrollingService: ScrollingService,
     private intersectingService: IntersectingService,
+    private productsService: ProductsService,
+    private videoDataService: VideoDataService,
   ) {}
 
   ngOnInit() {
     this.scrollingService.toTop();
+
+    const newsSub = this.productsService.getCollectionsNews().subscribe(news => {
+      this.collectionsNewsData = news;
+    });
+
+    this.subscriptions.add(newsSub);
+
+    const videoSub = this.videoDataService.getTopHomeVideoData().subscribe(videos => {
+      this.videoData = videos;
+
+      this.topHeroCarousel.slides[0].desktopImage = videos[0].desktopVideo;
+      this.topHeroCarousel.slides[0].mobileImage = videos[0].mobileVideo;
+      this.bottomHeroCarousel.slides[0].desktopImage = videos[1].desktopVideo;
+      this.bottomHeroCarousel.slides[0].mobileImage = videos[1].mobileVideo;
+    });
+
+    this.subscriptions.add(videoSub);
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
   }
 
   public isIntersecting(status: boolean, element: HTMLElement) {

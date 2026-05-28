@@ -1,0 +1,55 @@
+<div class="modal-dialog type-slideout" [class.modal-dialog-opened]="open()">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  <!--  Modal window -->
+  <div class="modal-dialog-content js-content-modal-dialog">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+      <h3>View Colours</h3>
+
+      <!-- Close button -->
+      <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    @let items = colors();
+    @if (items !== null) {
+
+      <div class="modal-dialog-inner position-top">
+        <!-- Gallery Grid -->
+        <div class="js-product-gallery-grid grid-column-2">
+
+          @for (item of items; track $index) {
+
+            <a (click)="navigateToProducts(item.url)"
+              class="js-grid-item group"
+               role="button"
+               [title]="item.colorName"
+               tabindex="-1">
+
+              <!-- Image -->
+              <div class="gallery-image-wrapper">
+                <img [src]="item.images[0]" alt="" loading="lazy" role="presentation">
+              </div>
+              <!-- Color Name -->
+              <span class="button-link group-item group-hover-after-origin-left group-hover-after-scale-x-100">
+                {{ item.colorName }}
+              </span>
+            </a>
+
+          }
+
+        </div>
+      </div>
+    }
+  </div>
+
+</div>

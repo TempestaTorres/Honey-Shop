@@ -1,0 +1,33 @@
+.product-info-header {
+  display: flex;
+  justify-content: space-between;
+}
+.product-info-heading {
+  flex: 1 1 0;
+  margin: 1.5rem 0;
+}
+.product-info-heading .heading-title {
+  margin-bottom: .25rem;
+}
+.js-wishlist-toggle {
+  height: 1rem;
+  width: 1rem;
+  margin-top: 1.75rem;
+}
+.js-wishlist-toggle .icon {
+  width: 100%;
+  height: 100%;
+  color: #000000;
+}
+.product-review {
+  min-height: 1.75rem;
+  padding-bottom: 1.5rem;
+}
+.product-info-price {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  display: flex;
+  gap: .375rem;
+}
