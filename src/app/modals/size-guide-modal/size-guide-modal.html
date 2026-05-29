@@ -1,0 +1,114 @@
+@let productType = openType();
+<div class="modal-dialog modal-dialog-size-guide type-slideout" [class.modal-dialog-opened]="open()">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  <!--  Modal window -->
+  <div class="modal-dialog-content">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+      <h3>{{ productType }} Sizing</h3>
+
+      <!-- Close button -->
+      <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class="modal-dialog-inner default-layout">
+      <div class="modal-container">
+
+        @let tabs = sizes();
+        @if (tabs !== null) {
+
+          <!-- Tabs -->
+          <app-tab-list [tabTitles]="tabs.sizeTabTitles" [tabsContent]="tabs.tabContent"
+                        class="tab-list-widget"></app-tab-list>
+
+          <div #footer
+               appObserveElement
+               [isContinuous]="false"
+               (isIntersecting)="isIntersecting($event, footer)"
+               class="modal-dialog-size-guide__footer scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+            <!-- Buttons -->
+            <div class="footer-row">
+
+              <a (click)="navigateTo('/size-guide')"
+                 tabindex="-1"
+                 role="button"
+                 class="button-icon-beige width-full" title="View Full Guide">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false" class="icon">
+                  <path d="M12.6805 2.81562L2.31694 13.1792C2.07286 13.4232 2.07286 13.819 2.31694 14.063L6.43308 18.1792C6.67715 18.4232 7.07288 18.4232 7.31696 18.1792L17.6805 7.81564C17.9246 7.57156 17.9246 7.17583 17.6805 6.93175L13.5644 2.81562C13.3203 2.57154 12.9246 2.57154 12.6805 2.81562Z" stroke="black" stroke-linecap="square"></path>
+                  <path d="M10.3125 5.1875L12.8125 7.6875" stroke="black" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M7.5 8L10 10.5" stroke="#555555" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M4.6875 10.8125L7.1875 13.3125" stroke="#555555" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span>View full size guide</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title>Icon of chevron right</title>
+                  <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+                </svg>
+              </a>
+              <!-- Chat box -->
+              <button (click)="openChatBox()" class="button-icon-beige width-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="none" role="img" aria-labelledby="title-icon-chat">
+                  <title id="title-icon-chat">Icon of chat</title>
+                  <path id="icon-chat" d="M3.54709 13.8281C2.61653 12.2581 2.29103 10.4025 2.6317 8.60949C2.97237 6.81652 3.95578 5.20954 5.39731 4.09025C6.83883 2.97096 8.63934 2.41633 10.4608 2.53049C12.2823 2.64464 13.9995 3.41972 15.29 4.71023C16.5805 6.00073 17.3556 7.71791 17.4697 9.53939C17.5839 11.3609 17.0292 13.1614 15.91 14.6029C14.7907 16.0444 13.1837 17.0278 11.3907 17.3685C9.59775 17.7092 7.74208 17.3837 6.17209 16.4531V16.4531L3.57834 17.1875C3.47207 17.2186 3.3594 17.2205 3.25213 17.1931C3.14487 17.1656 3.04696 17.1098 2.96866 17.0315C2.89037 16.9533 2.83459 16.8553 2.80715 16.7481C2.77971 16.6408 2.78163 16.5281 2.81271 16.4219L3.54709 13.8281Z" stroke="currentColor" stroke-linecap="square"></path>
+                </svg>
+                <span>Need Help?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                  <title>Icon of chevron right</title>
+                  <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-group-links">
+              <div class="icon-link-widget">
+                <div class="icon-wrapper">
+                  <img src="/assets/images/icons/ArrowUDownLeft.svg"
+                       alt=""
+                       width="16"
+                       height="16"
+                       loading="lazy"
+                       sizes="16px">
+                </div>
+                <a (click)="navigateTo('/returns-exchanges')"
+                   role="button"
+                   tabindex="-1">45 DAY RETURNS*</a>
+              </div>
+
+              <span class="link-spacer">—</span>
+
+              <div class="icon-link-widget">
+                <div class="icon-wrapper">
+                  <img src="/assets/images/icons/kiss.png"
+                       alt=""
+                       width="33"
+                       height="32"
+                       loading="lazy"
+                       sizes="16px">
+                </div>
+                <a (click)="navigateTo('/shipping-delivery')"
+                   role="button"
+                   tabindex="-1">Discreet Packaging</a>
+              </div>
+            </div>
+          </div>
+        }
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

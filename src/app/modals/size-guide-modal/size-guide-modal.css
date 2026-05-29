@@ -1,0 +1,41 @@
+.modal-dialog-size-guide .modal-dialog-content-header.default-layout {
+  padding: .75rem 1rem;
+}
+.modal-dialog-size-guide .modal-dialog-inner.default-layout {
+  padding: 0 1rem 1.5rem 1rem;
+  border-top: none !important;
+}
+.modal-dialog-size-guide__footer {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.footer-row {
+  display: flex;
+  gap: .5rem;
+}
+.footer-group-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/*========== Media =================*/
+@media (min-width: 768px) {
+  .modal-dialog-size-guide .modal-dialog-content {
+    width: calc(1024/1440*100%);
+  }
+}
+@media (min-width: 1024px) {
+  .modal-dialog-size-guide .modal-dialog-content-header.default-layout {
+    padding: 2.5rem 5rem;
+  }
+  .modal-dialog-size-guide .modal-dialog-inner.default-layout {
+    padding: 0 5rem 5rem 5rem;
+  }
+  .footer-group-links {
+    min-height: 107px;
+  }
+}

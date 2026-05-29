@@ -374,7 +374,7 @@
   font-weight: 400;
   text-align: center;
 }
-.js-button-add-to-car, .js-button-view-details {
+.js-button-add-to-cart, .js-button-view-details {
   margin-top: 1.5rem;
 }
 .modal-info-list {
@@ -388,4 +388,11 @@
 .modal-info-list__item .description {
   font-weight: 400;
 }
-
+.modal-container {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .modal-container {
+    height: calc(100dvh - 160px);
+  }
+}

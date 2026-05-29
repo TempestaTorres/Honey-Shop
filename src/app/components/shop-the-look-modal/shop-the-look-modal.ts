@@ -47,7 +47,7 @@ export class ShopTheLookModal implements OnInit, OnDestroy {
             this.collection.set(collection);
 
             if (collection) {
-              console.log(collection);
+
               setTimeout(() => {
                 this.open.set(true);
               }, 500);

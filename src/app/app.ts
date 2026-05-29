@@ -6,6 +6,7 @@ import { InstagramFeedModal } from './components/instagram-feed-modal/instagram-
 import { LoginAlertModal } from './modals/login-alert-modal/login-alert-modal';
 import { SelectSizeModal } from './modals/select-size-modal/select-size-modal';
 import { MiniCart } from './modals/mini-cart/mini-cart';
+import { SizeGuideModal } from './modals/size-guide-modal/size-guide-modal';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { MiniCart } from './modals/mini-cart/mini-cart';
     LoginAlertModal,
     SelectSizeModal,
     MiniCart,
+    SizeGuideModal,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

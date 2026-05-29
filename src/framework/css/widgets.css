@@ -318,3 +318,41 @@
     display: none;
   }
 }
+.icon-link-widget {
+  display: flex;
+  gap: .5rem;
+}
+.icon-link-widget .icon-wrapper {
+  aspect-ratio: 1/1;
+}
+.icon-link-widget img {
+  display: block;
+  object-fit: contain;
+  height: 1rem;
+  width: 1rem;
+  max-width: 100%;
+}
+.icon-link-widget a {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000000;
+}
+@media (hover: hover) and (pointer: fine) {
+  .icon-link-widget a:hover {
+    color: #333;
+  }
+}
+.icon-link-widget + .link-spacer {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  color: rgba(0,0,0,.32);
+}
+@media (min-width: 1024px) {
+  .icon-link-widget + .link-spacer {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

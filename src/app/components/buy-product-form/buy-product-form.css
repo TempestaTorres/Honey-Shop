@@ -1,0 +1,22 @@
+.js-buy-product-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-height: 100%;
+  margin-top: 1.5rem;
+}
+.js-buy-product-form * {
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #000000;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.buy-product-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: .75rem;
+}

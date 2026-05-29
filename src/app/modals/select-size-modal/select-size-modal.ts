@@ -12,6 +12,7 @@ import { ProductDetailsType } from '../../types/instagram/instagram-feeds-type';
 import { FsSize } from '../../components/fs-size/fs-size';
 import { ProductCartService } from '../../product-cart/services/product-cart-service';
 import { MiniCartService } from '../mini-cart/mini-cart-service';
+import { SizeGuideService } from '../size-guide-modal/size-guide-service';
 
 @Component({
   selector: 'app-select-size-modal',
@@ -41,6 +42,7 @@ export class SelectSizeModal implements OnInit, OnDestroy {
     private authService: AuthService,
     private cartService: ProductCartService,
     private miniCartService: MiniCartService,
+    private sizeGuideService: SizeGuideService,
   ) {}
 
   ngOnInit(): void {
@@ -63,6 +65,9 @@ export class SelectSizeModal implements OnInit, OnDestroy {
             sizes: product.sizes,
           };
           this.buyProduct.set(details);
+        }
+        else {
+          this.buyProduct.set(null);
         }
       },
     );
@@ -176,10 +181,15 @@ export class SelectSizeModal implements OnInit, OnDestroy {
 
   public openSizeGuidance(): void {
 
+    const product = this.productDetails();
+    if (product === null) return;
+
     this.modalClose();
 
     setTimeout(() => {
-      this.router.navigate(['/size-guide']).then(() => {});
-    }, 500);
+      this.sizeGuideService.triggerSizeGuide(product.type);
+
+      console.log(product.type);
+    }, 400);
   }
 }

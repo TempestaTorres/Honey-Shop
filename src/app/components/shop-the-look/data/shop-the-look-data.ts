@@ -65,7 +65,7 @@ export const ShopTheLookData: ShopTheLookType[] = [
           "/assets/images/shop-look/whitney/ShopLook_Whit_1.jpg",
           "/assets/images/shop-look/whitney/ShopLook_Whit_2.jpg",
         ],
-        url: "whitney-chartreuse-lingerie-collection"
+        url: "whitney-lingerie-collection"
       },
     ]
   }

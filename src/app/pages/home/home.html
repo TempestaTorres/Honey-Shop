@@ -83,7 +83,7 @@
          appObserveElement
          [isContinuous]="false"
          (isIntersecting)="isIntersecting($event, categoryBigGrid)"
-         class="product-gallery-grid grid-column-2 scroll-trigger--offscreen scroll-trigger animate--slide-in">
+         class="product-gallery-grid grid-column-2 grid-column-3 scroll-trigger--offscreen scroll-trigger animate--slide-in">
 
       <!-- Category item New -->
       <a [routerLink]="['/collections', 'whitney-lingerie-collection']" title="Whitney" class="picture-wrapper group">
@@ -101,6 +101,16 @@
         <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
           <div class="app-widget-container">
             <img src="/assets/images/categories/BONDAGE.jpg" alt="Bondage">
+          </div>
+        </div>
+
+      </a>
+      <!-- Category All lingerie -->
+      <a [routerLink]="['/collections', 'all-lingerie']" title="Prints" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/PRINTS_2.jpg" alt="Hero image">
           </div>
         </div>
 

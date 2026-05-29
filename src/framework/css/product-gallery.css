@@ -167,6 +167,7 @@
   .js-product-gallery-grid {
     row-gap: .25rem;
   }
+
   .js-product-gallery-container {
     position: sticky;
     top: 0;
@@ -189,5 +190,8 @@
   }
   .product-gallery-grid.grid-column-2 {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .product-gallery-grid.grid-column-3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -11,6 +11,9 @@ import { CollectionColorButton } from '../../components/collection-color-button/
 import { ProductGalleryService } from '../../components/product-gallery/product-gallery-service';
 import { ModalViewColors } from '../../modals/modal-view-colors/modal-view-colors';
 import { ViewColorsService } from '../../modals/modal-view-colors/view-colors-service';
+import { ProductDetailsType } from '../../types/instagram/instagram-feeds-type';
+import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
+import { BuyProductForm } from '../../components/buy-product-form/buy-product-form';
 
 @Component({
   selector: 'app-products',
@@ -21,6 +24,7 @@ import { ViewColorsService } from '../../modals/modal-view-colors/view-colors-se
     ProductInfo,
     CollectionColorButton,
     ModalViewColors,
+    BuyProductForm,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',
@@ -32,6 +36,7 @@ export class Products implements OnInit, OnDestroy {
   public shopProduct: WritableSignal<ProductType | null> = signal<ProductType | null>(null);
   public collectionItem: WritableSignal<ProductType[] | null> = signal<ProductType[] | null>(null);
   public index: WritableSignal<number> = signal<number>(0);
+
   public revSelector: string = 'reviews';
 
   constructor(
@@ -82,6 +87,7 @@ export class Products implements OnInit, OnDestroy {
       this.galleryService$.triggerGallery(product);
 
       if (product) {
+
         if (this.collectionSubscription) {
           this.collectionSubscription.unsubscribe();
         }
@@ -102,4 +108,5 @@ export class Products implements OnInit, OnDestroy {
       }
     });
   }
+
 }

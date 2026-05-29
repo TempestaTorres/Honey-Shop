@@ -1,0 +1,46 @@
+
+<div class="fs-buy-container js-buy-product-form">
+
+  <!-- Header -->
+  <div class="buy-product-header">
+    <span>Size</span>
+
+    <button (click)="openSizeModal()" class="button-link-icon" type="button">
+      Size Guide
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false" class="icon">
+        <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Select Size -->
+  <div class="fs-buy-now-form fs-add-to-cart-enabled">
+    @let p = buyProductDetails();
+    @if (p !== null) {
+
+      <app-fs-size
+        (fSize)="getFsSize($event)"
+        (cupSize)="getCupSize($event)"
+        [productType]="p"></app-fs-size>
+
+    }
+  </div>
+
+</div>
+
+<!-- Add to cart button -->
+<div class="app-widget js-button-add-to-cart">
+
+  <button
+    (click)="addToCart()"
+    [class.disabled]="selectDisabled()"
+    class="button-primary button-large full-width-button"
+    type="button" aria-label="Select Size">{{ buttonTitle() }}
+
+    @if (loading()) {
+      <div class="loading-bar loading-bar-white"></div>
+    }
+
+  </button>
+</div>

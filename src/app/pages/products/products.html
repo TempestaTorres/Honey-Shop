@@ -67,6 +67,44 @@
 
           </div>
 
+          @if (product.type !== "lingerie-set") {
+
+            <app-buy-product-form [buyProduct]="product"></app-buy-product-form>
+
+          }
+          <!-- Else For Lingerie sets -->
+
+          <!-- Info Links -->
+          <div class="product-info__links-container">
+
+            <div class="icon-link-widget">
+              <div class="icon-wrapper">
+                <img src="/assets/images/icons/ArrowUDownLeft.svg"
+                     alt=""
+                     width="16"
+                     height="16"
+                     loading="lazy"
+                      sizes="16px">
+              </div>
+              <a [routerLink]="['/returns-exchanges']" tabindex="-1">45 DAY RETURNS*</a>
+            </div>
+
+            <span class="link-spacer">—</span>
+
+            <div class="icon-link-widget">
+              <div class="icon-wrapper">
+                <img src="/assets/images/icons/kiss.png"
+                     alt=""
+                     width="33"
+                     height="32"
+                     loading="lazy"
+                     sizes="16px">
+              </div>
+              <a [routerLink]="['/shipping-delivery']" tabindex="-1">Discreet Packaging</a>
+            </div>
+
+          </div>
+
         </div>
 
         <!-- Product Pair with -->
