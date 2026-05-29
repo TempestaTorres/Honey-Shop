@@ -89,11 +89,14 @@
 }
 .select-item-buttons-group .select-item-button, .select-color-button {
   display: block;
-  height: 7px;
+  height: .625rem;
   width: 15px;
   padding: 0;
   margin: 0;
   position: relative;
+}
+.select-item-buttons-group .select-item-button.active, .select-color-button.active {
+  height: 7px;
 }
 .select-item-buttons-group .select-item-button:hover {
   cursor: hand;

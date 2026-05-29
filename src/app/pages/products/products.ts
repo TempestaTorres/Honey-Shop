@@ -14,6 +14,7 @@ import { ViewColorsService } from '../../modals/modal-view-colors/view-colors-se
 import { ProductDetailsType } from '../../types/instagram/instagram-feeds-type';
 import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
 import { BuyProductForm } from '../../components/buy-product-form/buy-product-form';
+import { ProductDescription } from '../../components/product-description/product-description';
 
 @Component({
   selector: 'app-products',
@@ -25,6 +26,7 @@ import { BuyProductForm } from '../../components/buy-product-form/buy-product-fo
     CollectionColorButton,
     ModalViewColors,
     BuyProductForm,
+    ProductDescription,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',
@@ -87,7 +89,6 @@ export class Products implements OnInit, OnDestroy {
       this.galleryService$.triggerGallery(product);
 
       if (product) {
-
         if (this.collectionSubscription) {
           this.collectionSubscription.unsubscribe();
         }
@@ -108,5 +109,4 @@ export class Products implements OnInit, OnDestroy {
       }
     });
   }
-
 }

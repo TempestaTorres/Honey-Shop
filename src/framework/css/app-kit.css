@@ -370,11 +370,17 @@
     text-transform: uppercase;
     margin: 0;
   }
+  .text-muted {
+    color: rgba(0,0,0,.56);
+  }
   .typeset, .text-heading {
     font-size: 14px;
     line-height: 20px;
     color: rgba(0,0,0,.56);
     font-weight: 500;
+  }
+  .text-heading.small {
+    font-size: 12px;
   }
   .typeset-primary {
     color: var(--text-color-primary);

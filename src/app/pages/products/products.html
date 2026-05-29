@@ -69,7 +69,9 @@
 
           @if (product.type !== "lingerie-set") {
 
-            <app-buy-product-form [buyProduct]="product"></app-buy-product-form>
+            <app-buy-product-form
+              [productItems]="collectionItem()"
+              [buyProduct]="product"></app-buy-product-form>
 
           }
           <!-- Else For Lingerie sets -->
@@ -105,6 +107,8 @@
 
           </div>
 
+          <!-- Product description -->
+          <app-product-description [buyProduct]="product"></app-product-description>
         </div>
 
         <!-- Product Pair with -->
