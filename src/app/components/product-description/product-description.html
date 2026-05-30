@@ -38,7 +38,10 @@
 
 <!--  Mobile -->
   <div class="mobile-description-list">
-
+    <app-tab-list-description
+      (navigate)="navigateTo($event)"
+      class="tab-list-product-description tab-divider-hidden"
+      [index]="index()"></app-tab-list-description>
   </div>
 
 </div>
