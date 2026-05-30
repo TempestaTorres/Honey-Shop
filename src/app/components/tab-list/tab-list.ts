@@ -18,7 +18,6 @@ import { ObserveElementDirective } from '../../directives/scroll-observer';
   selector: 'app-tab-list',
   imports: [TabContent, ObserveElementDirective],
   templateUrl: './tab-list.html',
-  styleUrl: './tab-list.css',
 })
 export class TabList implements OnInit, AfterViewInit {
   @Input() tabTitles: string[] = [];

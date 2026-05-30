@@ -1,1 +1,47 @@
-<p>product-description works!</p>
+
+<!-- Selectors -->
+<div class="product-description-section">
+
+  <!-- Desktop -->
+  <div class="desktop-description-triggers">
+
+    <button (click)="openModalFeatures('1')"
+            type="button"
+            class="button-link-icon js-modal-dialog-trigger js-tab-index">
+      Features
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+      <title class="title-icon-chevron-right">Icon of chevron right</title>
+      <path class="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+    </svg>
+    </button>
+    <!--    Care -->
+    <button (click)="openModalFeatures('2')"
+            type="button"
+            class="button-link-icon js-modal-dialog-trigger js-tab-index">
+      Care
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+      <title class="title-icon-chevron-right">Icon of chevron right</title>
+      <path class="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+    </svg>
+    </button>
+    <!--    Shipping & Returns -->
+    <button (click)="openModalFeatures('3')"
+            type="button"
+            class="button-link-icon js-modal-dialog-trigger js-tab-index">
+      Shipping & Returns
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+      <title class="title-icon-chevron-right">Icon of chevron right</title>
+      <path class="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+    </svg>
+    </button>
+  </div>
+
+<!--  Mobile -->
+  <div class="mobile-description-list">
+
+  </div>
+
+</div>
+
+<!-- Modal window -->
+<app-modal-features [productItem]="buyProduct()"></app-modal-features>

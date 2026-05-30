@@ -157,7 +157,18 @@
 .product-carousel-tab .tab-title.active::before {
   opacity: 1;
 }
-
+.tab-list-product-description {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.tab-list-product-description .tab-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+  position: relative;
+}
 .tab-list-product-description .tab-titles-wrapper {
   display: flex;
   width: 100%;
@@ -168,18 +179,25 @@
   padding-top: 0;
   padding-bottom: 0;
 }
+.tab-titles.tab-titles-space-between {
+  justify-content: space-between;
+}
 
 .tab-list-product-description .tab-contents-wrapper {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  scrollbar-width: none;
 }
 .tab-list-product-description .tab-contents-wrapper .tab-content {
   height: 100%;
 }
+.js-tab-content {
+  scrollbar-width: none;
+}
 
 .tab-list-product-description button.link {
   margin-top: 1.5rem;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: 0;
@@ -327,4 +345,54 @@
   .mobile-tab-buttons {
     display: none;
   }
+}
+.js-tab-content > .tab-container {
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  .js-tab-content > .tab-container {
+    height: calc(100vh - 208px);
+  }
+}
+.js-tab-content > .tab-container * {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+}
+.tab-content-block {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tab-heading-title {
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .tab-mobile-content-wrapper {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .tab-desktop-content-wrapper {
+    display: none;
+  }
+}
+.tab-read-more {
+  display: block;
+}
+
+.tab-read-more.line-clamp-5 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }

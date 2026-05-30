@@ -1,0 +1,127 @@
+<div class="tab-wrapper">
+
+  <div class="app-widget">
+    <!-- Titles -->
+    <div class="tab-titles-wrapper">
+      <div class="tab-titles scrollbar-hidden js-tab-titles tab-titles-space-between">
+
+        @for (title of titles; track $index) {
+
+          <div
+            (click)="tabClick($index)"
+            [class.active]="tabIndex() === $index"
+            class="tab-title js-tab-title button-link-underline-md" role="tab" tabindex="0">
+            {{ title }}
+          </div>
+        }
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--   Content -->
+  <div class="tab-contents-wrapper">
+
+    <!--     Features -->
+    <div class="tab-content js-tab-content" [class.active]="tabIndex() === 0">
+      <div class="tab-container shopify-policy__container">
+        <div class="tab-content-block">
+
+          <!-- Heading -->
+          <span class="tab-heading-title">{{ titles[0] }}</span>
+
+          <div class="tab-desktop-content-wrapper">
+            <p>
+              Skip the bouquet for hot lingerie. Discover why Whitney is the best of all time.
+              From gradient roses to trailing hearts, every little detail has been carefully
+              considered. Featuring tinted pink tulle, Swiss-designed embroidery, and Italian
+              stretch lace, it’s irresistibly sweet and yet sheer enough to tease.
+              Remember that flowers are overrated, but Whitney certainly isn’t.
+            </p>
+            <ul>
+              <li>Sexy string thong</li>
+              <li>Swiss-designed embroidery on pink tulle</li>
+              <li>Ombré florals &amp; European lurex</li>
+              <li>Heart details as a collection exclusive</li>
+              <li>Premium elastics with picot trim</li>
+              <li>Back keyhole with a sparkly crystal</li>
+              <li>Double string back</li>
+              <li>Cotton lined gusset</li>
+            </ul>
+          </div>
+
+          <div class="tab-mobile-content-wrapper">
+            <div class="tab-read-more" [class.line-clamp-5]="!fReadMore()">
+              <p>
+                Skip the bouquet for hot lingerie. Discover why Whitney is the best of all time.
+                From gradient roses to trailing hearts, every little detail has been carefully
+                considered. Featuring tinted pink tulle, Swiss-designed embroidery, and Italian
+                stretch lace, it’s irresistibly sweet and yet sheer enough to tease.
+                Remember that flowers are overrated, but Whitney certainly isn’t.
+              </p>
+              <ul>
+                <li>Sexy string thong</li>
+                <li>Swiss-designed embroidery on pink tulle</li>
+                <li>Ombré florals &amp; European lurex</li>
+                <li>Heart details as a collection exclusive</li>
+                <li>Premium elastics with picot trim</li>
+                <li>Back keyhole with a sparkly crystal</li>
+                <li>Double string back</li>
+                <li>Cotton lined gusset</li>
+              </ul>
+            </div>
+            <button (click)="readMore(0)" class="link" type="button">{{ fReadMoreTitle() }}</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--     Care -->
+    <div class="tab-content js-tab-content" [class.active]="tabIndex() === 1">
+      <div class="tab-container shopify-policy__container">
+        <div class="tab-content-block">
+
+          <!-- Heading -->
+          <span class="tab-heading-title">{{ titles[1] }}</span>
+
+          <div class="typeset-description-primary">
+            <p>As per the care instructions on each garment. Cold hand wash only.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--     shipping & returns -->
+    <div class="tab-content js-tab-content" [class.active]="tabIndex() === 2">
+      <div class="tab-container shopify-policy__container">
+        <div class="tab-content-block">
+
+          <!-- Heading -->
+          <span class="tab-heading-title">{{ titles[2] }}</span>
+          <div class="typeset-description-primary">
+            <p>Free express shipping on orders over<strong>&nbsp;</strong>150 € within EU.</p>
+            <p>Click
+              <a (click)="navigateTo('/shipping-delivery')"
+                 title="EU shipping" tabindex="0">here
+              </a>
+              &nbsp;for more information and International shipping.
+            </p>
+            <p>For more information on returns, click
+              <a (click)="navigateTo('/returns-exchanges')"
+                 title="Returns & Exchanges"
+                 tabindex="0">here
+              </a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

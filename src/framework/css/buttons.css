@@ -79,6 +79,72 @@
     transform: scaleX(0) scaleY(1);
     transition-duration: 300ms;
   }
+
+  @media (min-width: 768px) {
+    .button-link-underline-md {
+      position: relative;
+      padding-bottom: 0.25rem;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.56);
+      text-decoration-line: none;
+    }
+    .button-link-underline-md.active {
+      color: #000000;
+    }
+
+    .button-link-underline-md::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      height: 1px;
+      width: 100%;
+      transform-origin: right;
+      transform: scaleX(0) scaleY(1);
+      background-color: #000000;
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+      content: '';
+    }
+    .button-link-underline-md.active::after,
+    .button-link-underline-md.active::before {
+      background-color: currentColor;
+      bottom: 0;
+      left: 0;
+      display: block;
+      height: 1px;
+      position: absolute;
+      transition-duration: .15s;
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(.4,0,.2,1);
+      width: 100%;
+      content: "";
+    }
+    .button-link-underline-md.active::before {
+      transform-origin: left;
+      transform: scaleX(0) scaleY(1);
+      transition-duration: .5s;
+    }
+    .button-link-underline-md.active::after {
+      transform-origin: left;
+      transition-duration: 0s;
+    }
+
+    .button-link-underline-md.active::after,
+    .button-link-underline-md.active:hover::before {
+      transform: scaleX(1) scaleY(1);
+    }
+    .button-link-underline-md:hover::after {
+      transform-origin: left;
+      transform: scaleX(1) scaleY(1);
+    }
+
+  }
   .button-link {
     position: relative;
     font-size: 14px;
