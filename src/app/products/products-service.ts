@@ -63,6 +63,33 @@ export class ProductsService {
 
   }
 
+  public getCollectionItemByUrl(collectionName: string, url: string): Observable<ProductType[] | null> {
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+      for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+
+        let item: ProductType[] = AllCollectionsData[i].products[j];
+
+        let product = item.find((item) => item.name === collectionName
+        && item.url === url);
+
+
+        if (product !== undefined) {
+
+          return new Observable<ProductType[]>(observer => {
+            observer.next(item);
+          });
+        }
+      }
+    }
+
+    return new Observable<ProductType[] | null>(observer => {
+      observer.next(null);
+    });
+
+  }
+
   public getShopProduct(url: string): Observable<ProductType | null> {
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {

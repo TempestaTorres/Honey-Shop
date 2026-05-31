@@ -1,6 +1,5 @@
 import { Component, DestroyRef, effect, input, signal, WritableSignal } from '@angular/core';
 import { ProductType } from '../../products/types/product-type';
-import { FsSize } from '../fs-size/fs-size';
 import { ProductCartService } from '../../product-cart/services/product-cart-service';
 import { MiniCartService } from '../../modals/mini-cart/mini-cart-service';
 import { ProductDetailsType } from '../../types/instagram/instagram-feeds-type';
@@ -10,10 +9,11 @@ import { Router, RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { CollectionColorButton } from '../collection-color-button/collection-color-button';
 import { ScrollingService } from '../../services/scrolling-service';
+import { BuyProductSize } from '../buy-product-size/buy-product-size';
 
 @Component({
   selector: 'app-buy-product-form',
-  imports: [FsSize, RouterLink, CurrencyPipe, CollectionColorButton],
+  imports: [RouterLink, CurrencyPipe, CollectionColorButton, BuyProductSize],
   templateUrl: './buy-product-form.html',
   styleUrl: './buy-product-form.css',
 })
@@ -40,7 +40,7 @@ export class BuyProductForm {
     private sizeGuideService: SizeGuideService,
     private router: Router,
     private scrollingService: ScrollingService,
-    private destroyRef: DestroyRef
+    private destroyRef: DestroyRef,
   ) {
     effect(() => {
       this.selectDisabled.set(true);
@@ -68,12 +68,12 @@ export class BuyProductForm {
         }
       }
 
-      window.addEventListener("scroll", this.onScroll.bind(this));
+      window.addEventListener('scroll', this.onScroll.bind(this));
     });
 
     this.destroyRef.onDestroy(() => {
-      window.removeEventListener("scroll", this.onScroll.bind(this));
-    })
+      window.removeEventListener('scroll', this.onScroll.bind(this));
+    });
   }
 
   public colorSelected(i: number): void {
@@ -154,15 +154,15 @@ export class BuyProductForm {
   }
 
   public onScroll(): void {
-
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop >= (window.innerHeight / 2) && scrollTop < (window.innerHeight - window.innerHeight * 0.1)) {
+    if (
+      scrollTop >= window.innerHeight / 2 &&
+      scrollTop < window.innerHeight - window.innerHeight * 0.1
+    ) {
       this.anchorActive.set(true);
-    }
-    else {
+    } else {
       this.anchorActive.set(false);
     }
-
   }
 }

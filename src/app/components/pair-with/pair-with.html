@@ -1,0 +1,50 @@
+<div class="pair-with-widget">
+  <div class="cart-pair-with">
+
+    <!--  Heading -->
+    <h3 class="cart-pair-with-title">Pair with</h3>
+
+      <!-- Swiper -->
+      <div class="swiper carousel-swiper-pair-with js-carousel-swiper-pair-with swiper-backface-hidden">
+
+        <!-- Navigation -->
+        <div class="js-swiper-navigation-wrapper">
+          <!-- Prev -->
+          <button type="button" class="swiper-button-prev js-carousel-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+                <path d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="icon-chevron-left-2"></path>
+              </svg>
+            </svg>
+          </button>
+          <!-- Next -->
+          <button type="button" class="swiper-button-next js-carousel-next">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square" class="icon-chevron-right-2"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="swiper-wrapper">
+
+          @if (initialized()) {
+            @let slides = items();
+            @for (slide of slides; track $index) {
+
+              <div class="swiper-slide pair-with-slide">
+
+                <app-pair-with-slide
+                  [productItems]="collections()[$index]"
+                  [productUrl]="slide.url"
+                  class="pair-with-slide-container"></app-pair-with-slide>
+
+              </div>
+
+            }
+          }
+        </div>
+
+      </div>
+
+  </div>
+</div>

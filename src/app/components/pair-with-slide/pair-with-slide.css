@@ -1,0 +1,53 @@
+.pair-with-image-wrapper {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  height: auto;
+  width: 109px;
+}
+.pair-with-image-wrapper figure {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.pair-with-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.pair-with-info-container {
+  display: flex;
+  flex: 1 1 0;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .75rem;
+  padding: 1rem;
+}
+.pair-with-info-container > .wrapper {
+  flex: 1 1 0;
+}
+.pair-with-wishlist-toggle-button .icon {
+  height: .875rem !important;
+  width: .875rem !important;
+  color: #000000;
+}
+.pair-with__add-to-cart {
+  margin-top: .75rem;
+  min-width: 132px;
+  white-space: nowrap;
+}
+/*============== Media ===================*/
+@media (min-width: 768px) {
+
+  .pair-with-image-wrapper {
+    width: 115px;
+  }
+}
+@media (min-width: 1024px) {
+  .pair-with-image-wrapper {
+    width: 134px;
+  }
+}

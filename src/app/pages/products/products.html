@@ -15,6 +15,7 @@
       <!-- Product summary -->
 
       <div class="js-product-summary-container">
+
         <div class="js-product-summary-wrapper">
 
           <!-- Navigation -->
@@ -112,6 +113,8 @@
         </div>
 
         <!-- Product Pair with -->
+        <app-pair-with class="app-widget" [items]="cartRecommendedItems()"></app-pair-with>
+
       </div>
 
       <app-modal-bio [product]="product"></app-modal-bio>

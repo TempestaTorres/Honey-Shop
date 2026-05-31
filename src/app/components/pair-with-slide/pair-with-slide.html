@@ -1,0 +1,88 @@
+@let slide = productItem();
+@if (slide !== null) {
+
+  <!-- Image -->
+  <a class="pair-with-image-wrapper"
+     tabindex="-1"
+     [routerLink]="['/products', slide.url]">
+
+    <figure>
+      <img [src]="slide.images[0]" [alt]="slide.name" loading="eager" fetchpriority="high">
+    </figure>
+
+  </a>
+
+  <!-- Info -->
+  <div class="pair-with-info-container">
+    <div class="wrapper">
+
+      <!-- Heading -->
+      <div class="product-carousel-heading">
+        <h3 class="heading-title">
+          <a [routerLink]="['/products', slide.url]"
+            [attr.aria-label]="slide.name">
+
+            <span class="product-name">{{ slide.name }}</span>
+            <span class="product-description">{{ slide.description }}</span>
+          </a>
+        </h3>
+      </div>
+
+      <!--      Price -->
+      <div class="product-price-info">
+
+        @if (slide.priceFrom) {
+          <span class="from">From&nbsp;{{ slide.priceFrom | currency }}</span>
+        } @else {
+          <span>{{ slide.price | currency }}</span>
+        }
+      </div>
+
+      <!-- Color button -->
+      <div class="select-item-buttons-group">
+
+        @let items = productItems();
+        @for (item of items; track $index) {
+
+          <button
+            (click)="colorSelected(item.url)"
+            class="select-item-button"
+            [class]="item.colorClass"
+            [class.active]="item.colorName === slide.colorName"
+            [title]="item.colorName"
+            tabindex="0"
+            type="button"></button>
+
+        }
+      </div>
+
+      <!-- Add to Cart -->
+      <button
+        (click)="addToCart(slide)"
+        [attr.aria-label]="'Add to Bag - ' + slide.name"
+        type="button"
+        class="button-icon button-small pair-with__add-to-cart">
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false" class="icon">
+          <path d="M8.98173 13.5H2.55601C2.48586 13.4996 2.41659 13.4844 2.35269 13.4554C2.2888 13.4265 2.23171 13.3844 2.18515 13.3319C2.13858 13.2795 2.10357 13.2178 2.0824 13.1509C2.06123 13.084 2.05436 13.0135 2.06226 12.9438L2.94976 4.94375C2.96495 4.82166 3.02408 4.70927 3.11609 4.62761C3.20811 4.54594 3.32673 4.50058 3.44976 4.5H13.5498C13.6728 4.50058 13.7914 4.54594 13.8834 4.62761C13.9754 4.70927 14.0346 4.82166 14.0498 4.94375L14.4998 7.33333" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          <path d="M6 4.5C6 3.83696 6.26339 3.20107 6.73223 2.73223C7.20107 2.26339 7.83696 2 8.5 2C9.16304 2 9.79893 2.26339 10.2678 2.73223C10.7366 3.20107 11 3.83696 11 4.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M14.5 10V15.3333" stroke="currentColor" stroke-linecap="square"></path>
+          <path d="M17.1665 12.6667L11.8332 12.6667" stroke="currentColor" stroke-linecap="square"></path>
+        </svg>
+        Add to bag
+      </button>
+
+    </div>
+
+    <!-- Wishlist button -->
+    <button
+      (click)="addToWishlist(slide)"
+      class="pair-with-wishlist-toggle-button"
+      type="button"
+      aria-label="Wishlist Toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" class="icon">
+        <path id="icon-heart" d="M7.59571 2.96285L7.00458 3.55698L6.41345 2.96285C5.26474 1.81251 3.40331 1.81251 2.25878 2.96285C1.11426 4.11319 1.11426 5.98407 2.25878 7.13441L2.84991 7.72854L7.00039 11.9001L11.1509 7.72854L11.742 7.13441C12.8865 5.98407 12.8865 4.11319 11.742 2.96285C10.5975 1.81251 8.73605 1.81251 7.59152 2.96285H7.59571Z" stroke="currentColor" stroke-miterlimit="10"></path>
+      </svg>
+    </button>
+  </div>
+}

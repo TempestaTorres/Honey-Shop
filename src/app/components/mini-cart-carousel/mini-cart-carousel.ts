@@ -5,6 +5,9 @@ import { WishlistService } from '../../product-wishlist/wishlist-service';
 import { CurrencyPipe } from '@angular/common';
 import { ProductCartService } from '../../product-cart/services/product-cart-service';
 import { MiniCartService } from '../../modals/mini-cart/mini-cart-service';
+import { ProductsService } from '../../products/products-service';
+import { Subscription } from 'rxjs';
+import { SelectSizeService } from '../../modals/select-size-modal/select-size-service';
 declare var Swiper: any;
 
 @Component({
@@ -18,12 +21,16 @@ export class MiniCartCarousel {
 
   items = input.required<ProductCartType[]>();
 
+  private subscription: Subscription | undefined;
+
   constructor(
     private destroyRef: DestroyRef,
     private router: Router,
     private wishlistService: WishlistService,
     private cartService: ProductCartService,
     private miniCartService: MiniCartService,
+    private productsService: ProductsService,
+    private selectSizeService: SelectSizeService,
   ) {
 
     effect(() => {
@@ -68,6 +75,9 @@ export class MiniCartCarousel {
       if (this.swiper) {
         this.swiper.destroy();
       }
+      if (this.subscription) {
+        this.subscription.unsubscribe();
+      }
     });
   }
 
@@ -81,13 +91,30 @@ export class MiniCartCarousel {
   }
 
   public addToWishlist(product: ProductCartType): void {
-    this.wishlistService.addToWishlist(product);
+    this.wishlistService.wishlistToggle(product);
   }
 
   public addToCart(product: ProductCartType): void {
 
-    setTimeout(() => {
-      this.cartService.addToCart(product);
-    })
+    if (product.type === 'accessory') {
+      requestAnimationFrame(() => {
+        this.cartService.addToCart(product);
+      });
+    }
+    else {
+      if (this.subscription) {
+        this.subscription.unsubscribe();
+      }
+      this.subscription = this.productsService.getShopProduct(product.url)
+        .subscribe(item => {
+
+          if (item !== null) {
+            this.miniCartService.toggleMiniCart(false);
+            // Open select size modal window
+            this.selectSizeService.triggerSizeSelectionChanged(item);
+          }
+        });
+    }
+
   }
 }

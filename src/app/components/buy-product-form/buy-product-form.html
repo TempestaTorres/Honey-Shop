@@ -19,10 +19,10 @@
     @let p = buyProductDetails();
     @if (p !== null) {
 
-      <app-fs-size
-        (fSize)="getFsSize($event)"
-        (cupSize)="getCupSize($event)"
-        [productType]="p"></app-fs-size>
+      <app-buy-product-size
+        (fSizeChanged)="getFsSize($event)"
+        (cupSizeChanged)="getCupSize($event)"
+        [productType]="p"></app-buy-product-size>
 
     }
   </div>

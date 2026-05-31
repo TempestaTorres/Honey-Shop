@@ -2,18 +2,17 @@ import { Component, effect, ElementRef, EventEmitter, input, Output, viewChildre
 import { ProductDetailsType } from '../../types/instagram/instagram-feeds-type';
 
 @Component({
-  selector: 'app-fs-size',
+  selector: 'app-buy-product-size',
   imports: [],
-  templateUrl: './fs-size.html',
+  templateUrl: './buy-product-size.html',
 })
-export class FsSize {
-
-  @Output() cupSize = new EventEmitter<string>();
-  @Output() fSize = new EventEmitter<string>();
+export class BuyProductSize {
+  @Output() cupSizeChanged = new EventEmitter<string>();
+  @Output() fSizeChanged = new EventEmitter<string>();
   productType = input.required<ProductDetailsType>();
 
-  readonly radioCups = viewChildren<ElementRef<HTMLInputElement>>('radioCap');
-  readonly radioSizes = viewChildren<ElementRef<HTMLInputElement>>('radioSize');
+  readonly radioCups = viewChildren<ElementRef<HTMLInputElement>>('radioCapFs');
+  readonly radioSizes = viewChildren<ElementRef<HTMLInputElement>>('radioSizeFs');
 
   private fsSize: string = '';
   private fsCup: string = '';
@@ -35,7 +34,7 @@ export class FsSize {
     if (target !== null) {
       this.fsSize = target.value;
 
-      this.fSize.emit(this.fsSize);
+      this.fSizeChanged.emit(this.fsSize);
     }
 
     if (product.type === "bra") {
@@ -72,7 +71,7 @@ export class FsSize {
     if (target !== null) {
       this.fsCup = target.value;
 
-      this.cupSize.emit(this.fsCup);
+      this.cupSizeChanged.emit(this.fsCup);
     }
 
     let cupSizes = this.radioSizes();

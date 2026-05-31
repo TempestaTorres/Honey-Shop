@@ -9,8 +9,8 @@ export const NewArrivalData: ProductItem[] = [
         description: "3 Piece Lingerie Set",
         url: "everly-emerald-3-piece-lingerie-set",
         collection: "everly-emerald-lingerie-collection",
-        addFavoriteButton: true,
-        addToCartButton: true,
+        addFavoriteButton: false,
+        addToCartButton: false,
         price: 275,
         priceFrom: 275,
         type: "lingerie-set",
@@ -45,8 +45,8 @@ export const NewArrivalData: ProductItem[] = [
         description: "Bra & Bottom Lingerie Set",
         url: "everly-emerald-bra-bottom-lingerie-set",
         collection: "everly-emerald-lingerie-collection",
-        addFavoriteButton: true,
-        addToCartButton: true,
+        addFavoriteButton: false,
+        addToCartButton: false,
         price: 180,
         priceFrom: 180,
         type: "lingerie-set",
@@ -79,8 +79,8 @@ export const NewArrivalData: ProductItem[] = [
         description: "Corset Lingerie Set",
         url: "annalise-corset-lingerie-set",
         collection: "annalise-lingerie-collection",
-        addFavoriteButton: true,
-        addToCartButton: true,
+        addFavoriteButton: false,
+        addToCartButton: false,
         price: 235,
         priceFrom: 235,
         type: "lingerie-set",
@@ -111,8 +111,8 @@ export const NewArrivalData: ProductItem[] = [
         description: "3 Piece Lingerie Set",
         url: "annalise-3-piece-lingerie-set",
         collection: "annalise-lingerie-collection",
-        addFavoriteButton: true,
-        addToCartButton: true,
+        addFavoriteButton: false,
+        addToCartButton: false,
         price: 275,
         priceFrom: 275,
         type: "lingerie-set",
@@ -147,8 +147,8 @@ export const NewArrivalData: ProductItem[] = [
         description: "Bra & Bottom Lingerie Set",
         url: "annalise-bra-bottom-lingerie-set",
         collection: "annalise-lingerie-collection",
-        addFavoriteButton: true,
-        addToCartButton: true,
+        addFavoriteButton: false,
+        addToCartButton: false,
         price: 185,
         priceFrom: 185,
         type: "lingerie-set",
@@ -730,7 +730,7 @@ export const NewArrivalData: ProductItem[] = [
   {
     product: [
       {
-        name: "CHARTREUSE GARTER BELT",
+        name: "CHARTREUSE SUSPENDER",
         description: "Stockings",
         imageTitle: "BUY 2 GET 1 FREE",
         url: "whitney-stockings-chartreuse",
@@ -802,9 +802,10 @@ export const NewArrivalData: ProductItem[] = [
         ],
         sizes: dressSizes,
         ratings: {
-          stars: [1,2,3,4,5],
-          score: "4.9 (14)"
-        }
+          stars: [1,1,1,1,1],
+          score: "14"
+        },
+        models: ["sianie"]
       },
     ]
   },

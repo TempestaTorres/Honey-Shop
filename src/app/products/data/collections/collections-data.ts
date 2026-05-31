@@ -1448,6 +1448,33 @@ export const AllCollectionsData: ShopCollectionType[] = [
           },
           models: ["sianie"]
         },
+        {
+          name: "WHITNEY",
+          description: "Black Bodysuit",
+          url: "whitney-black-new-bodysuit",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 180,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "bodysuit",
+          images: [
+            "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_Front1.jpg",
+            "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_Back1.jpg",
+            "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_Side1.jpg",
+            "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_FrontZOOM1.jpg",
+            "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_BackZOOM.jpg",
+            "/assets/images/products/whitney-bodysuit/black/WhitneyBlack_Bodysuit_SideZOOM1.jpg",
+            "/assets/images/products/whitney-bodysuit/black/H033.jpg",
+          ],
+          sizes: dressSizes,
+          ratings: {
+            stars: [1,1,1,1,1],
+            score: "14"
+          },
+          models: ["sianie"]
+        },
       ],
       [
         {
@@ -1717,7 +1744,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           },
           models: ["esha", "sianie"],
         },
-      ]
+      ],
     ]
   },
 ]

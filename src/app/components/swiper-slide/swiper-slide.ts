@@ -14,6 +14,7 @@ import { NgClass } from '@angular/common';
 import { WishlistService } from '../../product-wishlist/wishlist-service';
 import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
 import { SelectSizeService } from '../../modals/select-size-modal/select-size-service';
+import { ProductCartService } from '../../product-cart/services/product-cart-service';
 declare var Swiper: any;
 
 @Component({
@@ -31,7 +32,8 @@ export class SwiperSlide {
   private swiperClassName: string = '';
 
   constructor(private destroyRef: DestroyRef, private wishlistService$: WishlistService,
-              private selectSizeService: SelectSizeService,) {
+              private selectSizeService: SelectSizeService,
+              private cartService: ProductCartService,) {
 
     afterNextRender(() => {
 
@@ -87,8 +89,19 @@ export class SwiperSlide {
 
   public addToCart(index: number): void {
 
-    // Open select size modal window
-    this.selectSizeService.triggerSizeSelectionChanged(this.product[index]);
+    const product = this.product[index];
+
+    if (product.type !== 'accessory') {
+      // Open select size modal window
+      this.selectSizeService.triggerSizeSelectionChanged(product);
+    }
+    else {
+      const item = this.cartService.productTypeToCartType(product);
+      requestAnimationFrame(() => {
+        this.cartService.addToCart(item);
+      });
+    }
+
 
   }
 

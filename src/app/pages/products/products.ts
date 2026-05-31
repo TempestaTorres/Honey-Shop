@@ -11,10 +11,11 @@ import { CollectionColorButton } from '../../components/collection-color-button/
 import { ProductGalleryService } from '../../components/product-gallery/product-gallery-service';
 import { ModalViewColors } from '../../modals/modal-view-colors/modal-view-colors';
 import { ViewColorsService } from '../../modals/modal-view-colors/view-colors-service';
-import { ProductDetailsType } from '../../types/instagram/instagram-feeds-type';
 import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
 import { BuyProductForm } from '../../components/buy-product-form/buy-product-form';
 import { ProductDescription } from '../../components/product-description/product-description';
+import { MiniCartService } from '../../modals/mini-cart/mini-cart-service';
+import { PairWith } from '../../components/pair-with/pair-with';
 
 @Component({
   selector: 'app-products',
@@ -27,6 +28,7 @@ import { ProductDescription } from '../../components/product-description/product
     ModalViewColors,
     BuyProductForm,
     ProductDescription,
+    PairWith,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',
@@ -34,9 +36,11 @@ import { ProductDescription } from '../../components/product-description/product
 export class Products implements OnInit, OnDestroy {
   private productSubscription: Subscription | undefined;
   private collectionSubscription: Subscription | undefined;
+  private pairWithSubscription: Subscription | undefined;
 
   public shopProduct: WritableSignal<ProductType | null> = signal<ProductType | null>(null);
   public collectionItem: WritableSignal<ProductType[] | null> = signal<ProductType[] | null>(null);
+  public cartRecommendedItems: WritableSignal<ProductCartType[]> = signal<ProductCartType[]>([]);
   public index: WritableSignal<number> = signal<number>(0);
 
   public revSelector: string = 'reviews';
@@ -48,6 +52,7 @@ export class Products implements OnInit, OnDestroy {
     private productsService: ProductsService,
     private galleryService$: ProductGalleryService,
     private viewColors$: ViewColorsService,
+    private miniCartService$: MiniCartService,
   ) {}
 
   ngOnInit(): void {
@@ -55,6 +60,15 @@ export class Products implements OnInit, OnDestroy {
       if (params['item']) {
         this.scrollingService.toTop();
         this.getProductType(params['item']);
+
+        if (this.pairWithSubscription) {
+          this.pairWithSubscription.unsubscribe();
+        }
+        this.pairWithSubscription = this.miniCartService$
+          .getRecommendedMiniCartItems()
+          .subscribe((cartItems) => {
+            this.cartRecommendedItems.set(cartItems);
+          });
       }
     });
   }
