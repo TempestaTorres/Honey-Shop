@@ -1,4 +1,4 @@
-import { afterNextRender, Component, effect, input, signal, WritableSignal } from '@angular/core';
+import { Component, effect, input, signal, WritableSignal } from '@angular/core';
 import { ProductType } from '../../products/types/product-type';
 import { WishlistService } from '../../product-wishlist/wishlist-service';
 import { ProductCartService } from '../../product-cart/services/product-cart-service';
