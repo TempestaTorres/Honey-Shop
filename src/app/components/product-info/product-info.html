@@ -46,4 +46,8 @@
 }
 
 <!-- Price -->
-<div class="product-info-price">{{ item.price | currency }}</div>
+@if (item.priceFrom) {
+  <div class="product-info-price">FROM&nbsp;{{ item.priceFrom | currency }}</div>
+} @else {
+  <div class="product-info-price">{{ item.price | currency }}</div>
+}

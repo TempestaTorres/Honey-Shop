@@ -8,7 +8,7 @@ export interface ShopCollectionType {
 }
 export const AllCollectionsData: ShopCollectionType[] = [
   {
-    name: "Everly Emerald",
+    name: "EVERLY EMERALD",
     url: "everly-emerald-lingerie-collection",
     products: [
       [
@@ -76,7 +76,38 @@ export const AllCollectionsData: ShopCollectionType[] = [
           ],
           models: ["olivia", "sianie"]
         },
-      ]
+      ],
+      [
+        {
+          name: "EVERLY EMERALD",
+          description: "Bustier Lingerie Set",
+          url: "everly-emerald-bustier-lingerie-set",
+          collection: "everly-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 255,
+          priceFrom: 255,
+          type: "lingerie-set",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Front2.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_FrontZOOM.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_BackZOOM.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EVERLY2.jpg",
+          ],
+          models: ["olivia"]
+        },
+      ],
     ],
   },
   {

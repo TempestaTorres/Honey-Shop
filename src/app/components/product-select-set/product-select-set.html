@@ -1,0 +1,18 @@
+<div class="select-set-list-widget">
+@let sets = productSets();
+  @for (set of sets; track $index) {
+
+    @if (activeSet() === $index) {
+
+      <div class="select-set-list__item current-item" [title]="set.name + ' ' + set.description">
+        <img [src]="set.images[0]" alt="" loading="lazy">
+      </div>
+    } @else {
+      <a class="select-set-list__item"
+         [title]="set.name + ' ' + set.description"
+        [routerLink]="['/products', set.url]">
+        <img [src]="set.images[0]" alt="" loading="lazy">
+      </a>
+    }
+  }
+</div>

@@ -90,6 +90,30 @@ export class ProductsService {
 
   }
 
+  public getShopProductSets(collection: string, colorName: string): Observable<ProductType[]> {
+
+    let sets: ProductType[] = [];
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+      if (AllCollectionsData[i].name === collection) {
+
+        for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+
+          let product: ProductType | undefined = AllCollectionsData[i].products[j]
+            .find(product => product.type === "lingerie-set" && product.colorName === colorName);
+          if (product !== undefined) {
+            sets.push(product);
+          }
+        }
+      }
+    }
+
+    return new Observable<ProductType[]>(observer => {
+      observer.next(sets);
+    });
+  }
+
   public getShopProduct(url: string): Observable<ProductType | null> {
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {

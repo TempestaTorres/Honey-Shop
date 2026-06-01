@@ -1,0 +1,39 @@
+.select-set-list-widget {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding-top: 1rem;
+}
+.select-set-list__item {
+  position: relative;
+  height: 143px;
+  width: 111px;
+  opacity: .5;
+}
+.select-set-list__item.current-item {
+  opacity: 1;
+  border: 1px solid #000000;
+}
+.select-set-list__item.current-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  border: 2px solid rgb(241,236,228);
+}
+.select-set-list-widget img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* ============== Media =============== */
+@media (min-width: 768px) {
+  .select-set-list__item {
+    height: 155px;
+    width: 120px;
+  }
+}

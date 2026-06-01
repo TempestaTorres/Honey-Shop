@@ -17,6 +17,7 @@ import { ProductDescription } from '../../components/product-description/product
 import { MiniCartService } from '../../modals/mini-cart/mini-cart-service';
 import { PairWith } from '../../components/pair-with/pair-with';
 import { ProductReview } from '../../components/product-review/product-review';
+import { ProductSelectSet } from '../../components/product-select-set/product-select-set';
 
 @Component({
   selector: 'app-products',
@@ -31,6 +32,7 @@ import { ProductReview } from '../../components/product-review/product-review';
     ProductDescription,
     PairWith,
     ProductReview,
+    ProductSelectSet,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',
