@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ReviewsData, ReviewsType, ReviewType } from '../data/reviews-data';
+import { ReviewsData, ReviewsType } from '../data/reviews-data';
 
 @Injectable({
   providedIn: 'root',
