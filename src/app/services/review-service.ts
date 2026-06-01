@@ -7,7 +7,7 @@ import { ReviewsData, ReviewsType } from '../data/reviews-data';
 })
 export class ReviewService {
 
-  public getProductReviews(url: string, offset: number = 0): Observable<ReviewsType> {
+  public getProductReviews(collection: string, offset: number = 0): Observable<ReviewsType> {
 
     let reviews: ReviewsType = {
       count: ReviewsData.length,
@@ -19,7 +19,7 @@ export class ReviewService {
       let end: number = offset + 2;
       for (let index: number = offset; index < ReviewsData.length && index < end; index++) {
 
-        if (ReviewsData[index].productUrl === url) {
+        if (ReviewsData[index].collection === collection) {
           reviews.reviews.push(ReviewsData[index]);
         }
       }
@@ -27,6 +27,6 @@ export class ReviewService {
 
     return new Observable<ReviewsType>(observer => {
       observer.next(reviews);
-    })
+    });
   }
 }

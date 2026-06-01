@@ -34,6 +34,7 @@ export class ProductReview {
         let sum  = product.ratings.stars.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
         this.averageRating.set(sum);
         this.reviewCount.set(product.ratings.score);
+        this.reviews.set([]);
 
         this.getReviews(product);
       }
@@ -63,7 +64,7 @@ export class ProductReview {
         this.reviewSubscription.unsubscribe();
       }
 
-      this.reviewSubscription = this.reviewService.getProductReviews(product.url, this.offset)
+      this.reviewSubscription = this.reviewService.getProductReviews(product.collection, this.offset)
         .subscribe(reviews => {
           this.reviews.update((value) => {
 

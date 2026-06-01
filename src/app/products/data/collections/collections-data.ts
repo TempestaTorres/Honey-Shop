@@ -1306,6 +1306,10 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/whitney/Black/Campaign_Imagery_WhitneyBlk2.jpg",
           ],
           sizes: dressSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "33"
+          },
           models: ["tyniesha"]
         },
         {
@@ -1391,7 +1395,41 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/whitney/ocean/Campaign_Whitney_Ocean.jpg",
           ],
           sizes: dressSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "33"
+          },
           models: ["tyniesha", "keesha"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Chocolate Thong",
+          url: "whitney-string-chocolate",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 80,
+          type: "thong",
+          colorName: "brown",
+          colorClass: "swatch-brown",
+          images: [
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Thong_Suspender_Front.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/brown/FLAT.jpg",
+          ],
+          sizes: dressSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "33"
+          },
+          models: ["renee"]
         },
       ],
       [

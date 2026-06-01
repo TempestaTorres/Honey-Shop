@@ -1,5 +1,5 @@
 export interface ReviewType {
-  productUrl: string;
+  collection: string;
   authorName: string,
   title: string,
   description: string[],
@@ -10,7 +10,7 @@ export interface ReviewsType {
 }
 export const ReviewsData: ReviewType[] = [
   {
-    productUrl: "whitney-love-string",
+    collection: "whitney-lingerie-collection",
     authorName: "Paul",
     title: "My favourite thong",
     description: [
@@ -19,7 +19,7 @@ export const ReviewsData: ReviewType[] = [
     ]
   },
   {
-    productUrl: "whitney-love-string",
+    collection: "whitney-lingerie-collection",
     authorName: "Paul",
     title: "My absolute favourite line",
     description: [
@@ -27,7 +27,7 @@ export const ReviewsData: ReviewType[] = [
     ]
   },
   {
-    productUrl: "whitney-love-string",
+    collection: "whitney-lingerie-collection",
     authorName: "Peng Y.",
     title: "Love it",
     description: [
@@ -35,7 +35,7 @@ export const ReviewsData: ReviewType[] = [
     ]
   },
   {
-    productUrl: "whitney-love-string",
+    collection: "whitney-lingerie-collection",
     authorName: "Mary L. R.",
     title: "Elegant and perfect!",
     description: [
@@ -43,7 +43,7 @@ export const ReviewsData: ReviewType[] = [
     ]
   },
   {
-    productUrl: "whitney-love-string",
+    collection: "whitney-lingerie-collection",
     authorName: "CRISTIAN B.",
     title: "Pink thong",
     description: [
@@ -51,7 +51,7 @@ export const ReviewsData: ReviewType[] = [
     ]
   },
   {
-    productUrl: "whitney-love-string",
+    collection: "whitney-lingerie-collection",
     authorName: "Ilija J. ",
     title: "Fantastic thong",
     description: [
