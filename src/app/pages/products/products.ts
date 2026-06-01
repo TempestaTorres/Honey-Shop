@@ -16,6 +16,7 @@ import { BuyProductForm } from '../../components/buy-product-form/buy-product-fo
 import { ProductDescription } from '../../components/product-description/product-description';
 import { MiniCartService } from '../../modals/mini-cart/mini-cart-service';
 import { PairWith } from '../../components/pair-with/pair-with';
+import { ProductReview } from '../../components/product-review/product-review';
 
 @Component({
   selector: 'app-products',
@@ -29,6 +30,7 @@ import { PairWith } from '../../components/pair-with/pair-with';
     BuyProductForm,
     ProductDescription,
     PairWith,
+    ProductReview,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',

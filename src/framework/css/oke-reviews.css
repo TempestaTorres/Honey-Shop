@@ -1,0 +1,2202 @@
+.oke-w, .oke-modal {
+  --oke-stars-foregroundColor: #000000;
+  --oke-stars-backgroundColor: #F1ECE4;
+  --oke-stars-borderWidth: 0;
+  --oke-title-fontWeight: 500;
+  --oke-title-fontSize: 12px;
+  --oke-title-fontFamily: inherit;
+  --oke-bodyText-fontWeight: 400;
+  --oke-bodyText-fontSize: 12px;
+  --oke-bodyText-fontFamily: inherit;
+  --oke-widget-spaceAbove: 14px;
+  --oke-widget-spaceBelow: 14px;
+  --oke-text-primaryColor: #000000;
+  --oke-text-regular: 12px;
+  --oke-text-fontFamily: inherit;
+  --oke-button-backgroundColor: #000000;
+  --oke-button-backgroundColorHover: #333333;
+  --oke-button-textColor: #FFFFFF;
+  --oke-button-textColorHover: #FFFFFF;
+  --oke-button-borderColor: #DBDDE4;
+  --oke-button-borderColorHover: #333333;
+  --oke-button-borderRadius: 4px;
+  --oke-button-borderWidth: 0px;
+  --oke-button-fontWeight: 700;
+  --oke-button-fontSize: var(--oke-text-regular, 14px);
+  --oke-button-fontFamily: inherit;
+  --oke-starRating-spaceAbove: 0px;
+  --oke-starRating-spaceBelow: 0px;
+  --oke-button-backgroundColorActive: #262626;
+  --oke-button-textColorActive: #FFFFFF;
+  --oke-button-borderColorActive: #262626;
+  --oke-border-color: #B6B6B6;
+  --oke-border-width: 1px;
+  --oke-text-secondaryColor: #000000;
+  --oke-text-small: 12px;
+  --oke-text-large: 20px;
+  --oke-avatar-size: 48px;
+  --oke-avatar-backgroundColor: #E5E5EB;
+  --oke-avatar-placeholderTextColor: #2C3E50;
+  --oke-highlightColor: #262626;
+  --oke-shadingColor: #000000;
+  --oke-productImageSize: 48px;
+  --oke-attributeBar-shadingColor: #b0b0b0;
+  --oke-attributeBar-borderColor: #9A9DB1;
+  --oke-attributeBar-backgroundColor: #dedede;
+  --oke-attributeBar-markerColor: #00CAAA;
+  --oke-filter-backgroundColor: #FFFFFF;
+  --oke-filter-backgroundColorActive: #878787;
+  --oke-filter-borderColor: #DBDDE4;
+  --oke-filter-borderColorActive: #878787;
+  --oke-filter-textColor: #0B0B0B;
+  --oke-filter-textColorActive: #FFFFFF;
+  --oke-filter-borderRadius: 100px;
+  --oke-filter-searchHighlightColor: #a8a8a8;
+  --oke-mediaGrid-chevronColor: #676986;
+}
+/* Masonry*/
+.okeReviews.oke-container .oke-w-reviews-listMasonry,
+div.okeReviews .oke-w-reviews-listMasonry {
+  border-bottom:var(--oke-border-width) solid var(--oke-border-color);
+  padding:16px 0;
+  margin-bottom:16px
+}
+.okeReviews.oke-container .oke-w-reviews-listMasonry-item--testimonial,
+div.okeReviews .oke-w-reviews-listMasonry-item--testimonial {
+  padding-top:calc(var(--oke-avatar-size)/2)
+}
+.okeReviews.oke-container .oke-w-reviews-listMasonry .oke-w-reviews-masonryGrid,
+div.okeReviews .oke-w-reviews-listMasonry .oke-w-reviews-masonryGrid {
+  display:grid;
+  grid-auto-rows:1px;
+  column-gap:10px
+}
+.okeReviews.oke-container .oke-w-reviews-listMasonry .oke-w-reviews-masonryGrid-item,
+div.okeReviews .oke-w-reviews-listMasonry .oke-w-reviews-masonryGrid-item {
+  opacity:0;
+  transition:opacity .3s ease
+}
+.okeReviews.oke-container .oke-w-reviews-listMasonry .oke-w-reviews-masonryGrid-item.loaded,
+div.okeReviews .oke-w-reviews-listMasonry .oke-w-reviews-masonryGrid-item.loaded {
+  opacity:1;
+}
+@media(prefers-reduced-motion:reduce) {
+  .okeReviews.oke-container .oke-w-reviews-listMasonry .oke-w-reviews-masonryGrid-item,
+  div.okeReviews .oke-w-reviews-listMasonry .oke-w-reviews-masonryGrid-item {
+    transition:none
+  }
+}
+/* Reviewer */
+.okeReviews.oke-container .oke-w-reviewer,
+div.okeReviews .oke-w-reviewer {
+  display:flex;
+  flex-flow:row nowrap;
+  align-items:center;
+  font-size:var(--oke-text-small)
+}
+.okeReviews.oke-container .oke-w-reviewer-verified,
+div.okeReviews .oke-w-reviewer-verified {
+  font-weight:600;
+  color:var(--oke-highlightColor)
+}
+.okeReviews.oke-container .oke-w-reviewer-verified-icon:before,
+div.okeReviews .oke-w-reviewer-verified-icon:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  content:"";
+  color:var(--oke-highlightColor);
+  font-size:1em;
+  width:1em;
+  height:1em;
+  display:inline-block;
+  margin-left:2px;
+  position:relative;
+  top:.1em
+}
+.okeReviews.oke-container .oke-w-reviewer-avatar,
+div.okeReviews .oke-w-reviewer-avatar {
+  margin-right:8px
+}
+@media only screen and (min-width:1024px) {
+  .okeReviews.oke-container .oke-w-reviewer-avatar,
+  div.okeReviews .oke-w-reviewer-avatar {
+    margin-right:16px
+  }
+}
+.okeReviews.oke-container .oke-w-reviewer--attributes .oke-w-reviewer-identity,
+.okeReviews.oke-container .oke-w-reviewer--attributes .oke-w-reviewer-verified,
+.okeReviews.oke-container .oke-w-reviewer--minimal .oke-w-reviewer-identity,
+.okeReviews.oke-container .oke-w-reviewer--minimal .oke-w-reviewer-verified,
+div.okeReviews .oke-w-reviewer--attributes .oke-w-reviewer-identity,
+div.okeReviews .oke-w-reviewer--attributes .oke-w-reviewer-verified,
+div.okeReviews .oke-w-reviewer--minimal .oke-w-reviewer-identity,
+div.okeReviews .oke-w-reviewer--minimal .oke-w-reviewer-verified {
+  display:inline-block
+}
+.okeReviews.oke-container .oke-w-reviewer--attributes .oke-w-reviewer-verified,
+.okeReviews.oke-container .oke-w-reviewer--minimal .oke-w-reviewer-verified,
+div.okeReviews .oke-w-reviewer--attributes .oke-w-reviewer-verified,
+div.okeReviews .oke-w-reviewer--minimal .oke-w-reviewer-verified {
+  margin-left:12px
+}
+.okeReviews.oke-container .oke-w-reviewer--stacked,
+div.okeReviews .oke-w-reviewer--stacked {
+  flex-flow:column nowrap
+}
+.okeReviews.oke-container .oke-w-reviewer--stacked .oke-w-reviewer-avatar,
+div.okeReviews .oke-w-reviewer--stacked .oke-w-reviewer-avatar {
+  margin-right:0
+}
+.okeReviews.oke-container .oke-w-reviewer--stacked .oke-w-reviewer-identity,
+div.okeReviews .oke-w-reviewer--stacked .oke-w-reviewer-identity {
+  margin-top:8px
+}
+.okeReviews.oke-container .oke-w-reviewer-identity,
+div.okeReviews .oke-w-reviewer-identity {
+  margin-top:0
+}
+.okeReviews.oke-container .oke-w-reviewer-identity a:hover,
+div.okeReviews .oke-w-reviewer-identity a:hover {
+  text-decoration:underline
+}
+
+/* Card */
+.okeReviews.oke-container .oke-reviewCard,
+div.okeReviews .oke-reviewCard {
+  display:flex;
+  position:relative;
+  flex-flow:column nowrap;
+  max-width:100%;
+  padding:16px;
+  border:var(--oke-border-width) solid var(--oke-border-color);
+  text-align:left;
+  overflow:hidden
+}
+.okeReviews.oke-container .oke-reviewCard-head,
+div.okeReviews .oke-reviewCard-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+.okeReviews.oke-container .oke-reviewCard-head .oke-reviewCard-reviewer .oke-w-reviewer,
+div.okeReviews .oke-reviewCard-head .oke-reviewCard-reviewer .oke-w-reviewer {
+  flex-wrap:wrap
+}
+.okeReviews.oke-container .oke-reviewCard-head .oke-reviewCard-product,
+div.okeReviews .oke-reviewCard-head .oke-reviewCard-product {
+  align-self:flex-end
+}
+@media only screen and (min-width:1024px) {
+  .okeReviews.oke-container .oke-reviewCard-head .oke-reviewCard-product,
+  div.okeReviews .oke-reviewCard-head .oke-reviewCard-product {
+    align-self:center
+  }
+}
+.okeReviews.oke-container .oke-reviewCard-head--hasProductName,
+div.okeReviews .oke-reviewCard-head--hasProductName {
+  flex-wrap:wrap;
+  gap:16px
+}
+.okeReviews.oke-container .oke-reviewCard-head--hasProductName .oke-reviewCard-product,
+.okeReviews.oke-container .oke-reviewCard-head--hasProductName .oke-reviewCard-reviewer,
+div.okeReviews .oke-reviewCard-head--hasProductName .oke-reviewCard-product,
+div.okeReviews .oke-reviewCard-head--hasProductName .oke-reviewCard-reviewer {
+  width:100%
+}
+.okeReviews.oke-container .oke-reviewCard-attributes,
+.okeReviews.oke-container .oke-reviewCard-content,
+.okeReviews.oke-container .oke-reviewCard-media,
+div.okeReviews .oke-reviewCard-attributes,
+div.okeReviews .oke-reviewCard-content,
+div.okeReviews .oke-reviewCard-media {
+  margin-bottom:16px
+}
+.okeReviews.oke-container .oke-reviewCard-achievements,
+div.okeReviews .oke-reviewCard-achievements {
+  width:100%;
+  margin-bottom:16px
+}
+.okeReviews.oke-container .oke-reviewCard .oke-w-review-footer,
+div.okeReviews .oke-reviewCard .oke-w-review-footer {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:4px;
+  justify-content:space-between;
+  order:5;
+  text-align:right
+}
+.okeReviews.oke-container .oke-reviewCard .oke-w-review-footer .oke-helpful,
+div.okeReviews .oke-reviewCard .oke-w-review-footer .oke-helpful {
+  margin-left:auto
+}
+.okeReviews.oke-container .oke-reviewCard-reply,
+div.okeReviews .oke-reviewCard-reply {
+  border-top:1px solid #e5e5eb;
+  margin-bottom:16px;
+  padding-top:16px
+}
+.okeReviews.oke-container .oke-reviewCard--above .oke-reviewCard-content,
+div.okeReviews .oke-reviewCard--above .oke-reviewCard-content {
+  margin-top:16px
+}
+.okeReviews.oke-container .oke-reviewCard--above .oke-w-review-helpful,
+div.okeReviews .oke-reviewCard--above .oke-w-review-helpful {
+  margin-top:auto
+}
+.okeReviews.oke-container .oke-reviewCard--below .oke-reviewCard-head,
+div.okeReviews .oke-reviewCard--below .oke-reviewCard-head {
+  border-top:1px solid #e5e5eb;
+  margin-bottom:16px;
+  margin-top:auto;
+  order:4;
+  padding-top:16px
+}
+.okeReviews.oke-container .oke-reviewCard--below:not(.oke-reviewCard--hasContent) .oke-reviewCard-head,
+div.okeReviews .oke-reviewCard--below:not(.oke-reviewCard--hasContent) .oke-reviewCard-head {
+  margin-top:auto
+}
+.okeReviews.oke-container .oke-reviewCard--below:not(.oke-reviewCard--hasContent) .oke-reviewCard-reply,
+div.okeReviews .oke-reviewCard--below:not(.oke-reviewCard--hasContent) .oke-reviewCard-reply {
+  margin-top:0
+}
+/* Review content */
+.okeReviews.oke-container .oke-w-reviewSimple,
+div.okeReviews .oke-w-reviewSimple {
+  display:flex;
+  flex-flow:row wrap
+}
+.okeReviews.oke-container .oke-w-reviewSimple-content,
+.okeReviews.oke-container .oke-w-reviewSimple-helpful,
+.okeReviews.oke-container .oke-w-reviewSimple-product,
+div.okeReviews .oke-w-reviewSimple-content,
+div.okeReviews .oke-w-reviewSimple-helpful,
+div.okeReviews .oke-w-reviewSimple-product {
+  width:100%
+}
+.okeReviews.oke-container .oke-w-reviewSimple-content,
+.okeReviews.oke-container .oke-w-reviewSimple-product,
+div.okeReviews .oke-w-reviewSimple-content,
+div.okeReviews .oke-w-reviewSimple-product {
+  margin-top:16px
+}
+.okeReviews.oke-container .oke-reviewContainer,
+.okeReviews.oke-container .oke-reviewContent,
+div.okeReviews .oke-reviewContainer,
+div.okeReviews .oke-reviewContent {
+  width:100%
+}
+.okeReviews.oke-container .oke-w-reviewSimple-product,
+div.okeReviews .oke-w-reviewSimple-product {
+  font-size:var(--oke-text-small)
+}
+.okeReviews.oke-container .oke-w-reviewSimple-helpful,
+div.okeReviews .oke-w-reviewSimple-helpful {
+  margin-top:24px;
+  text-align:right
+}
+.oke-product {
+  display:flex;
+  align-items:center
+}
+.oke-product-thumbnail {
+  width:var(--oke-productImageSize);
+  height:var(--oke-productImageSize);
+  min-width:var(--oke-productImageSize);
+  min-height:var(--oke-productImageSize);
+  margin-right:16px;
+  display:inline-block;
+  line-height:0
+}
+.oke-product-thumbnail-image {
+  width:100%;
+  height:100%;
+  border:var(--oke-border-width) solid var(--oke-border-color);
+  overflow:hidden;
+  -o-object-fit:cover;
+  object-fit:cover
+}
+.oke-product-details-title {
+  font-weight:600
+}
+.oke-product-details-name {
+  color:inherit
+}
+.oke-product-details-variant {
+  color:var(--oke-text-secondaryColor);
+  display:block;
+  font-weight:400
+}
+.oke-product--stacked {
+  flex-flow:column nowrap;
+  text-align:center
+}
+.oke-product--stacked .oke-product-thumbnail {
+  margin-right:0;
+  margin-bottom:4px;
+  background-color:var(--oke-shadingColor)
+}
+.oke-product--imageOnly {
+  flex-direction:column
+}
+.oke-product--imageOnly .oke-product-thumbnail {
+  margin-right:0;
+  background-color:var(--oke-shadingColor)
+}
+.okeReviews.oke-container .oke-reviewContent>:first-child,
+div.okeReviews .oke-reviewContent>:first-child {
+  margin-top:0
+}
+.okeReviews.oke-container .oke-reviewContent-body,
+.okeReviews.oke-container .oke-reviewContent-title,
+div.okeReviews .oke-reviewContent-body,
+div.okeReviews .oke-reviewContent-title {
+  width:100%;
+  margin-top:8px
+}
+.okeReviews.oke-container .oke-reviewContent-title,
+div.okeReviews .oke-reviewContent-title {
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden
+}
+.okeReviews.oke-container .oke-reviewContent-top,
+div.okeReviews .oke-reviewContent-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px
+}
+.okeReviews.oke-container .oke-reviewContent--center,
+div.okeReviews .oke-reviewContent--center {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  padding-bottom:32px;
+  position:relative;
+  text-align:center
+}
+.okeReviews.oke-container .oke-reviewContent--center .oke-reviewContent-date,
+div.okeReviews .oke-reviewContent--center .oke-reviewContent-date {
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%)
+}
+.okeReviews.oke-container .oke-reviewContent-stars,
+div.okeReviews .oke-reviewContent-stars {
+  margin-left:-2px
+}
+.okeReviews.oke-container .oke-reviewContent-date,
+div.okeReviews .oke-reviewContent-date {
+  color:var(--oke-text-secondaryColor);
+  font-size:var(--oke-text-small)
+}
+.okeReviews.oke-container .oke-reviewContent-readMore,
+div.okeReviews .oke-reviewContent-readMore {
+  display:none;
+  width:100%;
+  margin-right:auto;
+  text-align:inherit;
+  line-height:1.8
+}
+.okeReviews.oke-container .oke-reviewContent-readMore.oke-is-loading,
+div.okeReviews .oke-reviewContent-readMore.oke-is-loading {
+  outline:0
+}
+.okeReviews.oke-container .oke-reviewContent-readMore .oke-loader,
+div.okeReviews .oke-reviewContent-readMore .oke-loader {
+  margin-left:4px
+}
+.okeReviews.oke-container .oke-reviewContent-highlight,
+div.okeReviews .oke-reviewContent-highlight {
+  background-color:var(--oke-filter-searchHighlightColor);
+  border-radius:9999px;
+  box-shadow:0 0 0 1px var(--oke-filter-searchHighlightColor);
+  line-height:1.5;
+  padding:0 7px
+}
+.okeReviews.oke-container .oke-reviewContent.oke-is-truncated .oke-reviewContent-body,
+div.okeReviews .oke-reviewContent.oke-is-truncated .oke-reviewContent-body {
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  overflow:hidden
+}
+.okeReviews.oke-container .oke-reviewContent.oke-is-truncated .oke-reviewContent-readMore,
+.okeReviews.oke-container .oke-w-reviewerRecommendation,
+div.okeReviews .oke-reviewContent.oke-is-truncated .oke-reviewContent-readMore,
+div.okeReviews .oke-w-reviewerRecommendation {
+  display:block
+}
+.okeReviews.oke-container .oke-w-reviewerRecommendation--yes:before,
+div.okeReviews .oke-w-reviewerRecommendation--yes:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  content:"";
+  color:#fff;
+  font-size:10px;
+  display:inline-block;
+  padding:3px;
+  width:16px;
+  height:16px;
+  background-color:var(--oke-highlightColor);
+  border-radius:50%;
+  margin-right:4px;
+  margin-bottom:-4px;
+  vertical-align:center
+}
+.oke-w-reviewReply {
+  font-size:var(--oke-text-small);
+  display:flex
+}
+.oke-w-reviewReply-main {
+  display:flex;
+  justify-content:space-between;
+  flex-flow:row wrap;
+  flex-grow:1
+}
+.oke-w-reviewReply-avatar {
+  flex-grow:0;
+  margin-right:16px
+}
+.oke-w-reviewReply-date,
+.oke-w-reviewReply-title {
+  margin-bottom:4px
+}
+.oke-w-reviewReply-title {
+  font-weight:600
+}
+.oke-w-reviewReply-body {
+  width:100%;
+  margin-bottom:4px;
+  overflow:hidden
+}
+.oke-w-reviewReply-date {
+  color:var(--oke-text-secondaryColor)
+}
+.oke-w-reviewReply-readMore-text {
+  text-decoration:underline;
+  color:var(--oke-text-primaryColor);
+  font-size:var(--oke-text-small);
+  cursor:pointer;
+  display:block
+}
+/* Voting */
+.okeReviews.oke-container .oke-footerBadges,
+div.okeReviews .oke-footerBadges {
+  display:flex;
+  gap:4px;
+  flex-wrap:wrap
+}
+.okeReviews.oke-container .oke-footerBadges--full,
+div.okeReviews .oke-footerBadges--full {
+  width:100%
+}
+.okeReviews.oke-container .oke-helpful,
+div.okeReviews .oke-helpful {
+  color:var(--oke-text-secondaryColor);
+  display:block;
+  font-size:var(--oke-text-small);
+  line-height:1
+}
+.okeReviews.oke-container .oke-helpful-question,
+div.okeReviews .oke-helpful-question {
+  vertical-align:middle
+}
+.okeReviews.oke-container .oke-helpful-vote,
+div.okeReviews .oke-helpful-vote {
+  display:inline-block;
+  margin-left:1em;
+  line-height:1;
+  vertical-align:text-bottom
+}
+.okeReviews.oke-container .oke-helpful-vote-button,
+div.okeReviews .oke-helpful-vote-button {
+  background:none;
+  border:none;
+  color:var(--oke-text-secondaryColor);
+  cursor:pointer;
+  padding:0;
+  transition:opacity .3s ease;
+  vertical-align:middle;
+  width:auto;
+  position:relative
+}
+@media(prefers-reduced-motion:reduce) {
+  .okeReviews.oke-container .oke-helpful-vote-button,
+  div.okeReviews .oke-helpful-vote-button {
+    transition:none
+  }
+}
+.okeReviews.oke-container .oke-helpful-vote-button:before,
+div.okeReviews .oke-helpful-vote-button:before {
+  vertical-align:middle;
+  margin-bottom:.3em
+}
+.okeReviews.oke-container .oke-helpful-vote-button--positive:before,
+div.okeReviews .oke-helpful-vote-button--positive:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  content:"";
+  color:var(--oke-text-secondaryColor)
+}
+.okeReviews.oke-container .oke-helpful-vote-button--negative:before,
+div.okeReviews .oke-helpful-vote-button--negative:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  content:"";
+  color:var(--oke-text-secondaryColor)
+}
+.okeReviews.oke-container .oke-helpful-vote-button--negative,
+div.okeReviews .oke-helpful-vote-button--negative {
+  margin-left:1em
+}
+.okeReviews.oke-container .oke-helpful-vote-button--negative:before,
+.okeReviews.oke-container .oke-helpful-vote-button--positive:before,
+div.okeReviews .oke-helpful-vote-button--negative:before,
+div.okeReviews .oke-helpful-vote-button--positive:before {
+  opacity:.5
+}
+.okeReviews.oke-container .oke-helpful-vote-button--negative.oke-is-voted:before,
+.okeReviews.oke-container .oke-helpful-vote-button--positive.oke-is-voted:before,
+div.okeReviews .oke-helpful-vote-button--negative.oke-is-voted:before,
+div.okeReviews .oke-helpful-vote-button--positive.oke-is-voted:before {
+  color:inherit;
+  opacity:1
+}
+.okeReviews.oke-container .oke-helpful-vote-button.is-oke-disabled,
+div.okeReviews .oke-helpful-vote-button.is-oke-disabled {
+  opacity:.3
+}
+.okeReviews.oke-container .oke-helpful-vote-counter,
+div.okeReviews .oke-helpful-vote-counter {
+  display:inline-block;
+  margin-left:.25em;
+  pointer-events:none;
+  vertical-align:middle
+}
+.okeReviews.oke-container .oke-incentivized-review-tooltip-text,
+div.okeReviews .oke-incentivized-review-tooltip-text {
+  text-align:center
+}
+
+
+/* Widget */
+.okeReviews.oke-container .oke-showMore,
+div.okeReviews .oke-showMore {
+  text-align:center
+}
+.oke-sortSelect-label {
+  font-weight:600;
+  margin-right:16px
+}
+.oke-alert {
+  position:absolute;
+  overflow:hidden;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  pointer-events:none;
+  z-index:2
+}
+.oke-alert-inner {
+  display:inline-block;
+  transition:transform .2s ease-out;
+  padding:8px 24px;
+  border:var(--oke-border-width) solid var(--oke-border-color);
+  background-color:var(--oke-shadingColor)
+}
+@media(prefers-reduced-motion:reduce) {
+  .oke-alert-inner {
+    transition:none
+  }
+}
+.oke-alert--top {
+  top:0
+}
+.oke-alert--top .oke-alert-inner {
+  top:12px;
+  transform:translateY(-101%)
+}
+.oke-alert--bottom {
+  bottom:0
+}
+.oke-alert--bottom .oke-alert-inner {
+  bottom:12px;
+  transform:translateY(100%)
+}
+.oke-alert.oke-is-visible.oke-alert--bottom .oke-alert-inner,
+.oke-alert.oke-is-visible.oke-alert--top .oke-alert-inner {
+  top:auto;
+  transform:translateY(0)
+}
+.okeReviews.oke-container .oke-w-reviews-head,
+div.okeReviews .oke-w-reviews-head {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-between;
+  margin-bottom:40px
+}
+.okeReviews.oke-container .oke-w-reviews-writeReview,
+div.okeReviews .oke-w-reviews-writeReview {
+  margin-left:auto;
+  flex-shrink:0;
+  order:2
+}
+.okeReviews.oke-container .oke-w-reviews-controls,
+div.okeReviews .oke-w-reviews-controls {
+  display:flex;
+  justify-content:space-between;
+  padding-bottom:8px;
+  align-items:flex-end
+}
+.okeReviews.oke-container .oke-w-reviews-count,
+div.okeReviews .oke-w-reviews-count {
+  color:var(--oke-text-secondaryColor)
+}
+.okeReviews.oke-container .oke-w-reviews-filterToggle,
+div.okeReviews .oke-w-reviews-filterToggle {
+  order:1
+}
+.okeReviews.oke-container .oke-w-reviews-filterToggle .oke-icon,
+div.okeReviews .oke-w-reviews-filterToggle .oke-icon {
+  vertical-align:middle
+}
+.okeReviews.oke-container .oke-w-reviews-filterToggle .oke-icon:before,
+div.okeReviews .oke-w-reviews-filterToggle .oke-icon:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  content:"";
+  color:inherit;
+  font-size:var(--oke-button-fontSize,14px);
+  display:inline-block;
+  width:var(--oke-button-fontSize,14px);
+  height:var(--oke-button-fontSize,14px)
+}
+.okeReviews.oke-container .oke-w-reviews-filters,
+div.okeReviews .oke-w-reviews-filters {
+  order:3;
+  width:100%
+}
+.okeReviews.oke-container .oke-w-reviews-main,
+div.okeReviews .oke-w-reviews-main {
+  position:relative
+}
+.okeReviews.oke-container .oke-w-reviews-main--nav-divider,
+div.okeReviews .oke-w-reviews-main--nav-divider {
+  border-top:var(--oke-border-width) solid var(--oke-border-color)
+}
+.okeReviews.oke-container .oke-w-reviews-main--nav-divider .oke-w-reviews-emptyResults,
+div.okeReviews .oke-w-reviews-main--nav-divider .oke-w-reviews-emptyResults {
+  border-top:none
+}
+.okeReviews.oke-container .oke-w-reviews-main.oke-is-loading,
+div.okeReviews .oke-w-reviews-main.oke-is-loading {
+  position:relative
+}
+.okeReviews.oke-container .oke-w-reviews-main.oke-is-loading:before,
+div.okeReviews .oke-w-reviews-main.oke-is-loading:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  content:"";
+  color:var(--oke-text-primaryColor);
+  font-size:16px;
+  display:inline-block;
+  animation:oke-spin 1s linear infinite;
+  position:absolute;
+  width:16px;
+  height:16px;
+  left:0;
+  right:0;
+  margin:auto;
+  top:48px;
+  bottom:auto;
+  z-index:2
+}
+.okeReviews.oke-container .oke-w-reviews-main.oke-is-loading>*,
+div.okeReviews .oke-w-reviews-main.oke-is-loading>* {
+  opacity:.5
+}
+.okeReviews.oke-container .oke-w-reviews-empty,
+div.okeReviews .oke-w-reviews-empty {
+  padding-bottom:24px;
+  padding-top:8px;
+  border-bottom:var(--oke-border-width) solid var(--oke-border-color)
+}
+.okeReviews.oke-container .oke-w-reviews-empty-text,
+div.okeReviews .oke-w-reviews-empty-text {
+  margin-bottom:8px
+}
+.okeReviews.oke-container .oke-w-reviews-emptyResults,
+div.okeReviews .oke-w-reviews-emptyResults {
+  border-bottom:var(--oke-border-width) solid var(--oke-border-color);
+  padding:16px 0;
+  text-align:center
+}
+.okeReviews.oke-container .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-filterToggle,
+div.okeReviews .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-filterToggle {
+  display:none
+}
+.okeReviews.oke-container .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-filters,
+div.okeReviews .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-filters {
+  order:1;
+  width:auto
+}
+.okeReviews.oke-container .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-filters .oke-w-filter:first-child,
+div.okeReviews .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-filters .oke-w-filter:first-child {
+  margin-top:0
+}
+.okeReviews.oke-container .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-head,
+div.okeReviews .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-head {
+  flex-flow:row nowrap
+}
+.okeReviews.oke-container .oke-w-reviews .oke-w-reviews-main--nav-divider .oke-alert--top .oke-alert-inner,
+div.okeReviews .oke-w-reviews .oke-w-reviews-main--nav-divider .oke-alert--top .oke-alert-inner {
+  border-top-width:0
+}
+
+@media (max-width:767px) {
+  .okeReviews.oke-container .oke-is-small .oke-w-reviewer--minimal,
+  div.okeReviews .oke-is-small .oke-w-reviewer--minimal {
+    align-items:flex-start
+  }
+  .okeReviews.oke-container .oke-is-small .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-head,
+  div.okeReviews .oke-is-small .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-head {
+    flex-flow:row wrap
+  }
+  .okeReviews.oke-container .oke-is-small .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-writeReview,
+  div.okeReviews .oke-is-small .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-writeReview {
+    order:1;
+    margin-bottom:16px;
+    margin-left:0
+  }
+  .okeReviews.oke-container .oke-is-small .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-filters,
+  div.okeReviews .oke-is-small .oke-w-reviews--filtersAlwaysOpen .oke-w-reviews-filters {
+    order:2
+  }
+  .oke-is-small .oke-w-header-content {
+    width:100%;
+    margin-right:0
+  }
+  .oke-is-small .oke-w-header-content-block {
+    margin-right:0
+  }
+  .oke-is-small .oke-w-header-content-block--full,
+  .oke-is-small .oke-w-header-content-block--half,
+  .oke-is-small .oke-w-header-content-block--oneThird,
+  .oke-is-small .oke-w-header-content-block--twoThirds {
+    width:100%
+  }
+  .oke-is-small .oke-w-header-content-module {
+    justify-content:center!important;
+    text-align:center!important;
+  }
+}
+.okeReviews.oke-container .oke-w-navBar,
+div.okeReviews .oke-w-navBar {
+  text-align:left
+}
+.okeReviews.oke-container .oke-w-navBar-item,
+div.okeReviews .oke-w-navBar-item {
+  outline:0;
+  outline-offset:4px;
+  margin-right:24px;
+  padding-bottom:4px;
+  font-weight:600;
+  background:none;
+  border:0;
+  color:inherit;
+  cursor:pointer;
+  display:inline-block;
+  height:auto;
+  border-bottom:3px solid transparent
+}
+.okeReviews.oke-container .oke-w-navBar-item a,
+div.okeReviews .oke-w-navBar-item a {
+  color:inherit
+}
+.okeReviews.oke-container .oke-w-navBar-item[aria-selected=true],
+div.okeReviews .oke-w-navBar-item[aria-selected=true] {
+  border-color:var(--oke-border-color)
+}
+.okeReviews.oke-container .oke-w-navBar-item[aria-selected=true]:focus-visible,
+div.okeReviews .oke-w-navBar-item[aria-selected=true]:focus-visible {
+  border-color:var(--oke-button-backgroundColor)
+}
+.okeReviews.oke-container .oke-w-navBar-item-count,
+div.okeReviews .oke-w-navBar-item-count {
+  display:inline-block
+}
+.okeReviews.oke-container .oke-w-navBar-item-count:before,
+div.okeReviews .oke-w-navBar-item-count:before {
+  content:"("
+}
+.okeReviews.oke-container .oke-w-navBar-item-count:after,
+div.okeReviews .oke-w-navBar-item-count:after {
+  content:")"
+}
+.oke-w-header {
+  overflow-x:clip
+}
+.oke-w-header-content {
+  display:flex;
+  flex-wrap:wrap;
+  width:calc(100% + 48px);
+  margin-right:-48px
+}
+.oke-w-header-content--verticalAlignTop .oke-w-header-content-block {
+  justify-content:flex-start
+}
+.oke-w-header-content--verticalAlignCenter .oke-w-header-content-block {
+  justify-content:center
+}
+.oke-w-header-content--verticalAlignBottom .oke-w-header-content-block {
+  justify-content:flex-end
+}
+.oke-w-header-content--center {
+  justify-content:center
+}
+.oke-w-header-content--left {
+  justify-content:left
+}
+.oke-w-header-content--right {
+  justify-content:right
+}
+.oke-w-header-content--spaceAround {
+  justify-content:space-around
+}
+.oke-w-header-content--spaceBetween {
+  justify-content:space-between
+}
+.oke-w-header-content-block {
+  display:flex;
+  flex-direction:column;
+  margin-right:48px;
+  margin-bottom:24px
+}
+.oke-w-header-content-block--oneThird {
+  width:calc(33.33333% - 48px)
+}
+.oke-w-header-content-block--oneThird .oke-w-attrModule,
+.oke-w-header-content-block--oneThird .oke-w-breakdownModule {
+  width:100%;
+  max-width:100%
+}
+.oke-w-header-content-block--twoThirds {
+  width:calc(66.66667% - 48px)
+}
+.oke-w-header-content-block--half {
+  width:calc(50% - 48px)
+}
+.oke-w-header-content-block--full {
+  width:calc(100% - 48px)
+}
+.oke-w-header-content-block--left .oke-w-header-content-module {
+  justify-content:flex-start
+}
+.oke-w-header-content-block--center .oke-w-header-content-module {
+  justify-content:center
+}
+.oke-w-header-content-block--right .oke-w-header-content-module {
+  justify-content:flex-end
+}
+.oke-w-header-content-block .oke-w-header-content-module {
+  display:flex;
+  height:fit-content;
+  margin-bottom:24px
+}
+.oke-w-header-content-block .oke-w-header-content-module:last-child {
+  margin-bottom:0
+}
+.oke-w-header-content-block .oke-w-header-content-module--contain {
+  width:auto
+}
+.oke-w-header-content-block .oke-w-header-content-module--stretch {
+  width:calc(100% - 48px)
+}
+.oke-w-header-content-block .oke-w-header-content-module--left {
+  text-align:left
+}
+.oke-w-header-content-block .oke-w-header-content-module--center {
+  text-align:center
+}
+.oke-w-header-content-block .oke-w-header-content-module--right {
+  text-align:right
+}
+.oke-is-medium .oke-w-header-content {
+  justify-content:center
+}
+.oke-is-medium .oke-w-header-content-block--half,
+.oke-is-medium .oke-w-header-content-block--oneThird {
+  width:calc(50% - 48px)
+}
+.oke-is-medium .oke-w-header-content-block--full,
+.oke-is-medium .oke-w-header-content-block--twoThirds {
+  width:calc(100% - 48px)
+}
+.oke-w-ratingAverageModule-rating {
+  font-size:var(--oke-text-large);
+  font-weight:600
+}
+.oke-w-ratingAverageModule-rating-average,
+.oke-w-ratingAverageModule-rating-stars {
+  display:inline-block
+}
+.oke-w-ratingAverageModule-rating-average {
+  margin-right:8px
+}
+.oke-w-ratingAverageModule-count {
+  font-size:var(--oke-text-small);
+  color:var(--oke-text-secondaryColor)
+}
+.oke-w-ratingAverageModule--oneLine {
+  display:flex;
+  align-items:center;
+  -moz-column-gap:16px;
+  column-gap:16px
+}
+.oke-w-ratingAverageModule--threeLine .oke-w-ratingAverageModule-rating-average {
+  display:block;
+  margin-right:0
+}
+/* Key words*/
+.okeReviews.oke-container .oke-w-header-content-module--left .oke-reviewsKeywords-list,
+.okeReviews.oke-container .oke-w-header-content-module--left .oke-reviewsKeywords .oke-translateButton,
+div.okeReviews .oke-w-header-content-module--left .oke-reviewsKeywords-list,
+div.okeReviews .oke-w-header-content-module--left .oke-reviewsKeywords .oke-translateButton {
+  justify-content:flex-start
+}
+.okeReviews.oke-container .oke-w-header-content-module--center .oke-reviewsKeywords-list,
+.okeReviews.oke-container .oke-w-header-content-module--center .oke-reviewsKeywords .oke-translateButton,
+div.okeReviews .oke-w-header-content-module--center .oke-reviewsKeywords-list,
+div.okeReviews .oke-w-header-content-module--center .oke-reviewsKeywords .oke-translateButton {
+  justify-content:center
+}
+.okeReviews.oke-container .oke-w-header-content-module--right .oke-reviewsKeywords-list,
+.okeReviews.oke-container .oke-w-header-content-module--right .oke-reviewsKeywords .oke-translateButton,
+div.okeReviews .oke-w-header-content-module--right .oke-reviewsKeywords-list,
+div.okeReviews .oke-w-header-content-module--right .oke-reviewsKeywords .oke-translateButton {
+  justify-content:flex-end
+}
+.okeReviews.oke-container .oke-w-header-content-module .oke-w-reviewsKeywordsModule,
+div.okeReviews .oke-w-header-content-module .oke-w-reviewsKeywordsModule {
+  width:100%
+}
+.oke-rk {
+  display:block
+}
+.okeReviews.oke-container .oke-reviewsKeywords-heading,
+div.okeReviews .oke-reviewsKeywords-heading {
+  font-weight:700;
+  margin-bottom:8px
+}
+.okeReviews.oke-container .oke-reviewsKeywords-heading-skeleton,
+div.okeReviews .oke-reviewsKeywords-heading-skeleton {
+  height:calc(var(--oke-button-fontSize) + 4px);
+  width:150px
+}
+.okeReviews.oke-container .oke-reviewsKeywords-list,
+div.okeReviews .oke-reviewsKeywords-list {
+  display:inline-flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:4px
+}
+.okeReviews.oke-container .oke-reviewsKeywords-list-category,
+div.okeReviews .oke-reviewsKeywords-list-category {
+  background-color:var(--oke-filter-backgroundColor);
+  color:var(--oke-filter-textColor);
+  border:1px solid var(--oke-filter-borderColor);
+  border-radius:var(--oke-filter-borderRadius);
+  padding:6px 16px;
+  transition:background-color .1s ease-out,border-color .1s ease-out;
+  white-space:nowrap
+}
+.okeReviews.oke-container .oke-reviewsKeywords-list-category.oke-is-clickable,
+div.okeReviews .oke-reviewsKeywords-list-category.oke-is-clickable {
+  cursor:pointer
+}
+.okeReviews.oke-container .oke-reviewsKeywords-list-category.oke-is-active,
+div.okeReviews .oke-reviewsKeywords-list-category.oke-is-active {
+  background-color:var(--oke-filter-backgroundColorActive);
+  color:var(--oke-filter-textColorActive);
+  border-color:var(--oke-filter-borderColorActive)
+}
+.okeReviews.oke-container .oke-reviewsKeywords .oke-translateButton,
+div.okeReviews .oke-reviewsKeywords .oke-translateButton {
+  margin-top:12px
+}
+
+@media (max-width: 767px) {
+  .okeReviews.oke-container .oke-is-small .oke-reviewsKeywords .oke-translateButton,
+  .okeReviews.oke-container .oke-is-small .oke-w-header-content-module .oke-reviewsKeywords-list,
+  div.okeReviews .oke-is-small .oke-reviewsKeywords .oke-translateButton,
+  div.okeReviews .oke-is-small .oke-w-header-content-module .oke-reviewsKeywords-list {
+    justify-content:center
+  }
+}
+/* ============== */
+
+.okeReviews.oke-container.oke-w {
+  margin: 0 !important;
+  max-width: none !important;
+  overflow-x: hidden;
+  padding: 1rem 0 0 !important;
+}
+.okeReviews.oke-container.oke-w .oke-w-header {
+  width: 100%
+}
+
+@media (min-width: 1024px) {
+  .okeReviews.oke-container.oke-w .oke-w-header {
+    position: absolute;
+    width: 20rem
+  }
+}
+.okeReviews.oke-container.oke-w .oke-w-header .oke-w-header-content {
+  width: 100%;
+  justify-content: center
+}
+
+@media (min-width: 1024px) {
+  .okeReviews.oke-container.oke-w .oke-w-header .oke-w-header-content {
+    width: auto;
+    justify-content: flex-start
+  }
+}
+.okeReviews.oke-container.oke-w .oke-w-header .oke-w-header-content-block {
+  margin-bottom: 0;
+  margin-right: 0
+}
+.okeReviews.oke-container.oke-w .oke-w-header .oke-w-header-content-block--half,
+.okeReviews.oke-container.oke-w .oke-w-header .oke-w-header-content-block--oneThird {
+  width: auto
+}
+.okeReviews.oke-container.oke-w .oke-w-header .oke-w-ratingAverageModule--oneLine {
+  height: 1.5rem;
+  justify-content: center;
+  column-gap: 0.5rem
+}
+@media (min-width: 1024px) {
+  .okeReviews.oke-container.oke-w .oke-w-main {
+    position: relative
+  }
+}
+
+.okeReviews.oke-container.oke-w .oke-w-main .oke-w-reviews-head {
+  margin-bottom: 1.5rem;
+  align-items: center;
+  padding-top: 1.5rem
+}
+
+.okeReviews.oke-container.oke-w .oke-w-main .oke-w-reviews-listMasonry {
+  margin-bottom: 1.5rem;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important
+}
+
+.okeReviews.oke-container.oke-w .oke-w-main .oke-w-reviews-controls {
+  display: none
+}
+
+.okeReviews.oke-container.oke-w .oke-w-main .oke-reviewContent-readMore-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+.okeReviews.oke-container.oke-w .oke-w-main .oke-w-reviews-main--nav-divider {
+  border-color: rgba(0, 0, 0, 0.08) !important
+}
+.okeReviews.oke-container.oke-w .oke-w-main .oke-w-reviews-masonryGrid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1.5rem !important
+}
+.okeReviews.oke-container.oke-w .oke-w-main .oke-w-reviews-masonryGrid .oke-w-reviews-masonryGrid-item {
+  width: 100% !important;
+  border-radius: 0.25rem !important;
+  background-color: rgba(233, 227, 218, 1) !important;
+}
+
+@media (min-width: 1024px) {
+  .okeReviews.oke-container.oke-w .oke-w-main .oke-w-reviews-masonryGrid .oke-w-reviews-masonryGrid-item {
+    width: calc(50% - 12px) !important
+  }
+}
+
+.okeReviews.oke-container.oke-w .oke-w-main .oke-w-reviews-masonryGrid .oke-w-reviews-masonryGrid-item .oke-reviewCard {
+  border-style: none !important;
+  padding: 1.5rem !important
+}
+.okeReviews.oke-container.oke-w .oke-w-ratingAverageModule-rating-average {
+  position: relative;
+  margin: 0 !important;
+  padding-left: 26px;
+  padding-right: 0.5rem;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1);
+}
+.okeReviews.oke-container.oke-w .oke-w-ratingAverageModule-rating-average::after {
+  position: absolute;
+  left: 0.5rem;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  content: '';
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 14 14\"><path fill=\"%23000\" d=\"M6.997 9.632 3.39 12.25l1.38-4.234-3.606-2.617h4.457l1.376-4.232 1.377 4.232h4.457L9.226 8.016l1.376 4.234z\"/></svg>")
+}
+.okeReviews.oke-container.oke-w .oke-w-ratingAverageModule-rating-average::before {
+  position: absolute;
+  top: -0.25rem;
+  left: 0;
+  height: 1.5rem;
+  width: 100%;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.08);
+  content: '';
+}
+.okeReviews.oke-container.oke-w .oke-w-ratingAverageModule-rating {
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center
+}
+.okeReviews.oke-container.oke-w .oke-w-ratingAverageModule-rating-stars {
+  display: none
+}
+.okeReviews.oke-container.oke-w .oke-w-ratingAverageModule-count {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1);
+}
+.okeReviews.oke-container.oke-w .oke-w-recommendsModule-text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1);
+}
+.okeReviews.oke-container.oke-w .oke-button {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  min-height: 2rem;
+  width: 106px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  border-style: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 1px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0)
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .okeReviews.oke-container.oke-w .oke-button:hover {
+    background-color: rgba(51, 51, 51, 1);
+    box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0) !important;
+  }
+}
+@media (max-width: 1023px) {
+  .okeReviews.oke-container.oke-w .oke-w-reviews-writeReview {
+    margin-left: auto !important;
+    margin-right: auto !important
+  }
+}
+.okeReviews.oke-container.oke-w .oke-w-writeReview {
+  display: flex;
+  min-width: 127px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border-width: 0;
+  background-color: rgba(0, 0, 0, 1);
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 1px !important;
+  font-weight: 500 !important;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0)
+}
+.okeReviews.oke-container.oke-w .oke-w-writeReview::before {
+  content: '';
+  display: none
+}
+@media (hover: hover) and (pointer: fine) {
+  .okeReviews.oke-container.oke-w .oke-w-writeReview:hover {
+    border-color: rgba(51, 51, 51, 1) !important;
+    background-color: rgba(51, 51, 51, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .okeReviews.oke-container.oke-w .oke-w-writeReview {
+    position: absolute;
+    top: -1rem;
+    right: 0
+  }
+}
+
+.okeReviews.oke-container.oke-w .oke-state--noTopBorder {
+  border-bottom-width: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important
+}
+.okeReviews.oke-container.oke-w .oke-state-empty .oke-state-empty-text {
+  font-family: futura-pt, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 1px !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.okeReviews.oke-container.oke-w .oke-state-empty .oke-state-empty-button {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 1rem !important;
+  width: fit-content !important
+}
+.okeReviews.oke-container.oke-w .oke-state-empty .oke-state-empty-button .oke-w-writeReview {
+  position: relative !important;
+  top: 0 !important
+}
+.okeReviews.oke-container.oke-w .oke-reviewCardFeaturedMedia {
+  border-style: none
+}
+.okeReviews.oke-container.oke-w .oke-reviewCardFeaturedMedia-container {
+  border-radius: 0.25rem;
+  background-color: rgba(233, 227, 218, 1);
+  padding: 1.5rem !important
+}
+.okeReviews.oke-container.oke-w .oke-reviewCardFeaturedMedia-head {
+  position: absolute;
+  margin-top: 0 !important;
+  width: auto
+}
+.okeReviews.oke-container.oke-w .oke-reviewCardFeaturedMedia-content {
+  position: relative
+}
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-w-barAttributes-item {
+  max-width: 100% !important
+}
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-attrBar-title {
+  margin-bottom: 0.5rem !important
+}
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-attrBar-title-text {
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 1px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-attrBar-labels {
+  margin-top: 0.75rem !important
+}
+
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-attrBar-labels .oke-attrBar-labels-label {
+  font-size: 12px !important;
+  line-height: 10px !important;
+  letter-spacing: 0.48px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  color: rgba(85, 85, 85, 1) !important;
+}
+
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks {
+  position: relative;
+  height: 0.125rem !important
+}
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks::after,
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks::before {
+  position: absolute;
+  top: -3px;
+  height: 0.5rem !important;
+  width: 0.125rem !important;
+  background-color: rgba(0, 0, 0, 1);
+  content: '';
+}
+
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks::after {
+  right: 0
+}
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks::before {
+  left: 0
+}
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks .oke-barBlocks-bg {
+  border-style: none !important;
+  background-color: rgba(0, 0, 0, 0.08) !important
+}
+
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks .oke-barBlocks-bg::before,
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks .oke-barBlocks-bg::after,
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks .oke-barBlocks-bg-centerLine {
+  top: -3px;
+  height: 0.5rem !important;
+  width: 0.125rem !important;
+  border-style: none !important;
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+.okeReviews.oke-container.oke-w .oke-reviewCard-container .oke-barBlocks .oke-barBlocks-bg-shading {
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+.okeReviews.oke-container.oke-w .oke-w-reviewer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem
+}
+.okeReviews.oke-container.oke-w .oke-w-reviewer > div .oke-w-reviewer-identity .oke-w-reviewer-name {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1);
+}
+.okeReviews.oke-container.oke-w .oke-w-reviewer > div .oke-w-reviewer-verified {
+  position: relative;
+  margin-left: 1.25rem;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 400 !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+.okeReviews.oke-container.oke-w .oke-w-reviewer > div .oke-w-reviewer-verified::after {
+  position: absolute;
+  left: -1.25rem;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  content: '';
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\"><path fill=\"%23000\" fill-opacity=\".08\" d=\"M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12\"/><path stroke=\"%23000\" stroke-linecap=\"square\" d=\"M10.75 6.5 7.081 10 5.25 8.25\"/></svg>")
+}
+.okeReviews.oke-container.oke-w .oke-w-reviewer > div .oke-w-reviewer-verified span {
+  display: none
+}
+.okeReviews.oke-container.oke-w .oke-w-reviewer > div .oke-w-reviewer-verified::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% + 20px);
+  background-color: rgba(233, 227, 218, 1);
+  content: 'Verified Buyer';
+}
+.okeReviews.oke-container.oke-w .oke-reviewContent .oke-reviewContent-top {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem
+}
+.okeReviews.oke-container.oke-w .oke-reviewContent .oke-reviewContent-title {
+  margin-top: 0 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 1px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1) !important;
+}
+.okeReviews.oke-container.oke-w .oke-reviewContent .oke-reviewContent-body.oke-bodyText {
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+.okeReviews.oke-container.oke-w .oke-reviewContent .oke-reviewContent-readMore.oke-readMore {
+  width: fit-content !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1) !important;
+  text-decoration-line: none
+}
+.okeReviews.oke-container.oke-sr .oke-sr-count {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1);
+  text-decoration-line: underline
+}
+.okeReviews.oke-container.oke-sr .oke-stars-foreground svg {
+  color: rgba(0, 0, 0, 1);
+}
+.okeReviews.oke-container.oke-sr .oke-stars-foreground svg, .okeReviews.oke-container.oke-sr .oke-stars-background svg {
+  height: 0.875rem
+}
+.okeReviews.oke-container .oke-w-reviews-alerts,
+.okeReviews.oke-container .oke-w-review-footer {
+  display: none !important
+}
+.oke-is-clickable .oke-sr-stars {
+  margin-left: 0.5rem !important;
+  margin-right: 0.25rem !important
+}
+.oke-is-clickable .oke-sr-count {
+  font-family: futura-pt, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 1px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1) !important;
+  text-decoration-line: none !important
+}
+.oke-is-clickable .oke-sr-count .oke-sr-count-number {
+  position: relative;
+  display: inline-block
+}
+.oke-is-clickable .oke-sr-count .oke-sr-count-number::after {
+  position: absolute;
+  top: -0.25rem;
+  left: -27px;
+  height: 1.5rem;
+  width: calc(100% + 33px);
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.08);
+  content: '';
+}
+.oke-is-clickable .oke-sr-count .oke-sr-label-text {
+  display: none
+}
+.oke-w-reviews:not(:has(.oke-showMore)) .oke-w-reviews-listMasonry {
+  margin-bottom: 0 !important;
+  border-style: none !important;
+  padding-bottom: 0 !important
+}
+.oke-sr-total-text,
+.oke-reviewContent-readMore.oke-readMore {
+  position: relative;
+  margin-left: 1rem;
+  display: inline-block
+}
+.oke-sr-total-text::before,
+.oke-sr-total-text::after,
+.oke-reviewContent-readMore.oke-readMore::before,
+.oke-reviewContent-readMore.oke-readMore::after {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: currentColor;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  content: '';
+}
+
+.oke-sr-total-text::before, .oke-reviewContent-readMore.oke-readMore::before {
+  transform-origin: left;
+  --scale-x: 0;
+  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+  transition-duration: 500ms
+}
+.oke-sr-total-text::after, .oke-reviewContent-readMore.oke-readMore::after {
+  transform-origin: left;
+  --scale-x: 1;
+  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+  transition-duration: 0s
+}
+.oke-sr-total-text:hover::before, .oke-reviewContent-readMore.oke-readMore:hover::before {
+  --scale-x: 1;
+  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+  transition-delay: 500ms
+}
+.oke-sr-total-text:hover::after, .oke-reviewContent-readMore.oke-readMore:hover::after {
+  transform-origin: right;
+  --scale-x: 0;
+  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+  transition-duration: 300ms
+}
+/* Styles */
+.okeReviews.oke-container,
+div.okeReviews {
+  font-size:var(--oke-text-regular);
+  font-weight:400;
+  font-family:var(--oke-text-fontFamily), sans-serif;
+  line-height:1.6
+}
+.okeReviews.oke-container *,
+.okeReviews.oke-container :after,
+.okeReviews.oke-container :before,
+div.okeReviews *,
+div.okeReviews :after,
+div.okeReviews :before {
+  box-sizing:border-box
+}
+.okeReviews.oke-container h1,
+.okeReviews.oke-container h2,
+.okeReviews.oke-container h3,
+.okeReviews.oke-container h4,
+.okeReviews.oke-container h5,
+.okeReviews.oke-container h6,
+div.okeReviews h1,
+div.okeReviews h2,
+div.okeReviews h3,
+div.okeReviews h4,
+div.okeReviews h5,
+div.okeReviews h6 {
+  font-size:1em;
+  font-weight:400;
+  line-height:1.4;
+  margin:0
+}
+.okeReviews.oke-container ul,
+div.okeReviews ul {
+  padding:0;
+  margin:0
+}
+.okeReviews.oke-container li,
+div.okeReviews li {
+  list-style-type:none;
+  padding:0
+}
+.okeReviews.oke-container p,
+div.okeReviews p {
+  line-height:1.8;
+  margin:0 0 4px
+}
+.okeReviews.oke-container p:last-child,
+div.okeReviews p:last-child {
+  margin-bottom:0
+}
+.okeReviews.oke-container a,
+div.okeReviews a {
+  text-decoration:none;
+  color:inherit
+}
+.okeReviews.oke-container button,
+div.okeReviews button {
+  border-radius:0;
+  border:0;
+  box-shadow:none;
+  margin:0;
+  width:auto;
+  min-width:auto;
+  padding:0;
+  background-color:transparent;
+  min-height:auto
+}
+.okeReviews.oke-container button,
+.okeReviews.oke-container input,
+.okeReviews.oke-container select,
+.okeReviews.oke-container textarea,
+div.okeReviews button,
+div.okeReviews input,
+div.okeReviews select,
+div.okeReviews textarea {
+  font-family:inherit;
+  font-size:1em
+}
+.okeReviews.oke-container label,
+.okeReviews.oke-container select,
+div.okeReviews label,
+div.okeReviews select {
+  display:inline
+}
+.okeReviews.oke-container select,
+div.okeReviews select {
+  width:auto
+}
+.okeReviews.oke-container article,
+.okeReviews.oke-container aside,
+div.okeReviews article,
+div.okeReviews aside {
+  margin:0
+}
+.okeReviews.oke-container table,
+div.okeReviews table {
+  background:transparent;
+  border:0;
+  border-collapse:collapse;
+  border-spacing:0;
+  font-family:inherit;
+  font-size:1em;
+  table-layout:auto
+}
+.okeReviews.oke-container table td,
+.okeReviews.oke-container table th,
+.okeReviews.oke-container table tr,
+div.okeReviews table td,
+div.okeReviews table th,
+div.okeReviews table tr {
+  border:0;
+  font-family:inherit;
+  font-size:1em
+}
+.okeReviews.oke-container table td,
+.okeReviews.oke-container table th,
+div.okeReviews table td,
+div.okeReviews table th {
+  background:transparent;
+  font-weight:400;
+  letter-spacing:normal;
+  padding:0;
+  text-align:left;
+  text-transform:none;
+  vertical-align:middle
+}
+.okeReviews.oke-container table tr:hover td,
+.okeReviews.oke-container table tr:hover th,
+div.okeReviews table tr:hover td,
+div.okeReviews table tr:hover th {
+  background:transparent
+}
+.okeReviews.oke-container fieldset,
+div.okeReviews fieldset {
+  border:0;
+  padding:0;
+  margin:0;
+  min-width:0
+}
+.okeReviews.oke-container img,
+.okeReviews.oke-container svg,
+div.okeReviews img,
+div.okeReviews svg {
+  max-width:none
+}
+.okeReviews.oke-container div:empty,
+div.okeReviews div:empty {
+  display:block
+}
+.okeReviews.oke-container .oke-button,
+div.okeReviews .oke-button {
+  display:inline-block;
+  border-style:solid;
+  border-color:var(--oke-button-borderColor);
+  border-width:var(--oke-button-borderWidth);
+  background-color:var(--oke-button-backgroundColor);
+  line-height:1;
+  padding:12px 24px;
+  margin:0;
+  border-radius:var(--oke-button-borderRadius);
+  color:var(--oke-button-textColor);
+  text-align:center;
+  position:relative;
+  font-weight:var(--oke-button-fontWeight);
+  font-size:var(--oke-button-fontSize);
+  font-family:var(--oke-button-fontFamily), sans-serif;
+  outline:0
+}
+.okeReviews.oke-container .oke-button-text,
+.okeReviews.oke-container .oke-button .oke-icon,
+div.okeReviews .oke-button-text,
+div.okeReviews .oke-button .oke-icon {
+  line-height:1
+}
+.okeReviews.oke-container .oke-button.oke-is-loading,
+div.okeReviews .oke-button.oke-is-loading {
+  position:relative
+}
+.okeReviews.oke-container .oke-button.oke-is-loading:before,
+div.okeReviews .oke-button.oke-is-loading:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  content:"";
+  font-size:12px;
+  display:inline-block;
+  animation:oke-spin 1s linear infinite;
+  position:absolute;
+  width:12px;
+  height:12px;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  margin:auto
+}
+.okeReviews.oke-container .oke-button.oke-is-loading>*,
+div.okeReviews .oke-button.oke-is-loading>* {
+  opacity:0
+}
+.okeReviews.oke-container .oke-button.oke-is-active,
+div.okeReviews .oke-button.oke-is-active {
+  background-color:var(--oke-button-backgroundColorActive);
+  color:var(--oke-button-textColorActive);
+  border-color:var(--oke-button-borderColorActive)
+}
+.okeReviews.oke-container .oke-button:not(.oke-is-loading),
+div.okeReviews .oke-button:not(.oke-is-loading) {
+  cursor:pointer
+}
+.okeReviews.oke-container .oke-button:not(.oke-is-loading):not(.oke-is-active):hover,
+div.okeReviews .oke-button:not(.oke-is-loading):not(.oke-is-active):hover {
+  background-color:var(--oke-button-backgroundColorHover);
+  color:var(--oke-button-textColorHover);
+  border-color:var(--oke-button-borderColorHover);
+  box-shadow:0 0 0 2px var(--oke-button-backgroundColorHover)
+}
+.okeReviews.oke-container .oke-button:not(.oke-is-loading):not(.oke-is-active):active,
+.okeReviews.oke-container .oke-button:not(.oke-is-loading):not(.oke-is-active):hover:active,
+div.okeReviews .oke-button:not(.oke-is-loading):not(.oke-is-active):active,
+div.okeReviews .oke-button:not(.oke-is-loading):not(.oke-is-active):hover:active {
+  background-color:var(--oke-button-backgroundColorActive);
+  color:var(--oke-button-textColorActive);
+  border-color:var(--oke-button-borderColorActive)
+}
+.okeReviews.oke-container .oke-title,
+div.okeReviews .oke-title {
+  font-weight:var(--oke-title-fontWeight);
+  font-size:var(--oke-title-fontSize);
+  font-family:var(--oke-title-fontFamily), sans-serif;
+}
+.okeReviews.oke-container .oke-bodyText,
+div.okeReviews .oke-bodyText {
+  font-weight:var(--oke-bodyText-fontWeight);
+  font-size:var(--oke-bodyText-fontSize);
+  font-family:var(--oke-bodyText-fontFamily), sans-serif;
+}
+.okeReviews.oke-container .oke-linkButton,
+div.okeReviews .oke-linkButton {
+  cursor:pointer;
+  font-weight:700;
+  pointer-events:auto;
+  text-decoration:underline
+}
+.okeReviews.oke-container .oke-linkButton:hover,
+div.okeReviews .oke-linkButton:hover {
+  text-decoration:none
+}
+.okeReviews.oke-container .oke-readMore,
+div.okeReviews .oke-readMore {
+  cursor:pointer;
+  color:inherit;
+  text-decoration:underline
+}
+.okeReviews.oke-container .oke-select,
+div.okeReviews .oke-select {
+  cursor:pointer;
+  background-repeat:no-repeat;
+  background-position-x:100%;
+  background-position-y:50%;
+  border:none;
+  padding:0 24px 0 12px;
+  appearance:none;
+  color:inherit;
+  -webkit-appearance:none;
+  background-color:transparent;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg fill='currentColor' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  outline-offset:4px
+}
+.okeReviews.oke-container .oke-select:disabled,
+div.okeReviews .oke-select:disabled {
+  background-color:transparent;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%239a9db1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E")
+}
+.okeReviews.oke-container .oke-loader,
+div.okeReviews .oke-loader {
+  position:relative
+}
+.okeReviews.oke-container .oke-loader:before,
+div.okeReviews .oke-loader:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  content:"";
+  color:var(--oke-text-secondaryColor);
+  font-size:12px;
+  display:inline-block;
+  animation:oke-spin 1s linear infinite;
+  position:absolute;
+  width:12px;
+  height:12px;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  margin:auto
+}
+.okeReviews.oke-container .oke-a11yText,
+div.okeReviews .oke-a11yText {
+  border:0;
+  clip:rect(0 0 0 0);
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px
+}
+.okeReviews.oke-container .oke-hidden,
+div.okeReviews .oke-hidden {
+  display:none
+}
+.okeReviews.oke-container .oke-modal,
+div.okeReviews .oke-modal {
+  bottom:0;
+  left:0;
+  overflow:auto;
+  position:fixed;
+  right:0;
+  top:0;
+  z-index:2147483647;
+  max-height:100%;
+  background-color:rgba(0,0,0,.5);
+  padding:40px 0 12px
+}
+@media only screen and (min-width:1024px) {
+  .okeReviews.oke-container .oke-modal,
+  div.okeReviews .oke-modal {
+    display:flex;
+    align-items:center;
+    padding:48px 0
+  }
+}
+.okeReviews.oke-container .oke-modal ::-moz-selection,
+div.okeReviews .oke-modal ::-moz-selection {
+  background-color:rgba(39,45,69,.2)
+}
+.okeReviews.oke-container .oke-modal ::selection,
+div.okeReviews .oke-modal ::selection {
+  background-color:rgba(39,45,69,.2)
+}
+.okeReviews.oke-container .oke-modal,
+.okeReviews.oke-container .oke-modal p,
+div.okeReviews .oke-modal,
+div.okeReviews .oke-modal p {
+  color:#272d45
+}
+.okeReviews.oke-container .oke-modal-content,
+div.okeReviews .oke-modal-content {
+  background-color:#fff;
+  margin:auto;
+  position:relative;
+  will-change:transform,opacity;
+  width:calc(100% - 24px)
+}
+@media only screen and (min-width:1024px) {
+  .okeReviews.oke-container .oke-modal-content,
+  div.okeReviews .oke-modal-content {
+    max-width:1000px
+  }
+}
+.okeReviews.oke-container .oke-modal-close,
+div.okeReviews .oke-modal-close {
+  cursor:pointer;
+  position:absolute;
+  width:32px;
+  height:32px;
+  top:-32px;
+  padding:4px;
+  right:-4px;
+  line-height:1
+}
+.okeReviews.oke-container .oke-modal-close:before,
+div.okeReviews .oke-modal-close:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  content:"";
+  color:#fff;
+  font-size:24px;
+  display:inline-block;
+  width:24px;
+  height:24px
+}
+.okeReviews.oke-container .oke-modal-overlay,
+div.okeReviews .oke-modal-overlay {
+  background-color:rgba(43,46,56,.9)
+}
+@media only screen and (min-width:1024px) {
+  .okeReviews.oke-container .oke-modal--large .oke-modal-content,
+  div.okeReviews .oke-modal--large .oke-modal-content {
+    max-width:1200px
+  }
+}
+.okeReviews.oke-container .oke-modal .oke-helpful,
+.okeReviews.oke-container .oke-modal .oke-helpful-vote-button,
+.okeReviews.oke-container .oke-modal .oke-reviewContent-date,
+div.okeReviews .oke-modal .oke-helpful,
+div.okeReviews .oke-modal .oke-helpful-vote-button,
+div.okeReviews .oke-modal .oke-reviewContent-date {
+  color:#676986
+}
+.oke-modal .okeReviews.oke-container.oke-w,
+.oke-modal div.okeReviews.oke-w {
+  color:#272d45
+}
+.okeReviews.oke-container .oke-tag,
+div.okeReviews .oke-tag {
+  align-items:center;
+  color:#272d45;
+  display:flex;
+  font-size:var(--oke-text-small);
+  font-weight:600;
+  text-align:left;
+  position:relative;
+  z-index:2;
+  background-color:#f4f4f6;
+  padding:4px 6px;
+  border:none;
+  border-radius:4px;
+  gap:6px;
+  line-height:1
+}
+.okeReviews.oke-container .oke-tag svg,
+div.okeReviews .oke-tag svg {
+  fill:currentColor;
+  height:1rem
+}
+.okeReviews.oke-container .hooper,
+div.okeReviews .hooper {
+  height:auto
+}
+.okeReviews--left {
+  text-align:left
+}
+.okeReviews--right {
+  text-align:right
+}
+.okeReviews--center {
+  text-align:center
+}
+.okeReviews :not([tabindex="-1"]):focus-visible {
+  outline:5px auto -webkit-focus-ring-color
+}
+.is-oke-modalOpen {
+  overflow:hidden!important
+}
+img.oke-is-error {
+  background-color:var(--oke-shadingColor);
+  background-size:cover;
+  background-position:50% 50%;
+  box-shadow:inset 0 0 0 1px var(--oke-border-color)
+}
+@keyframes oke-spin {
+  0% {
+    transform:rotate(0deg)
+  }
+  to {
+    transform:rotate(1turn)
+  }
+}
+@keyframes oke-fade-in {
+  0% {
+    opacity:0
+  }
+  to {
+    opacity:1
+  }
+}
+.layout-panel-flex>div:has(.oke-container) {
+  width:100%
+}
+.okeReviews.oke-container.oke-w,
+div.okeReviews.oke-w {
+  max-width:1200px;
+  margin:0 auto;
+  color:var(--oke-text-primaryColor);
+  padding:var(--oke-widget-spaceAbove) 0 var(--oke-widget-spaceBelow)
+}
+.okeReviews.oke-container.oke-w .oke-w-panel,
+div.okeReviews.oke-w .oke-w-panel {
+  outline:0
+}
+.okeReviews.oke-container.oke-w .oke-w-questions-loading .oke-state,
+div.okeReviews.oke-w .oke-w-questions-loading .oke-state {
+  border-top:0;
+  padding-top:8px
+}
+.okeReviews.oke-container.oke-w .oke-w-controls-nav,
+div.okeReviews.oke-w .oke-w-controls-nav {
+  display:flex;
+  flex-flow:initial;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  border-bottom:var(--oke-border-width) solid var(--oke-border-color);
+  margin-bottom:16px
+}
+.okeReviews.oke-container.oke-w .oke-w-controls-nav .oke-w-navBar,
+div.okeReviews.oke-w .oke-w-controls-nav .oke-w-navBar {
+  display:flex;
+  align-self:flex-end;
+  width:100%
+}
+.okeReviews.oke-container.oke-w .oke-w-controls-nav .oke-poweredBy,
+div.okeReviews.oke-w .oke-w-controls-nav .oke-poweredBy {
+  order:-1;
+  margin-bottom:12px
+}
+
+@media (min-width: 768px) {
+  .okeReviews.oke-container.oke-w .oke-is-large .oke-w-controls-nav,
+  .okeReviews.oke-container.oke-w .oke-is-medium .oke-w-controls-nav,
+  div.okeReviews.oke-w .oke-is-large .oke-w-controls-nav,
+  div.okeReviews.oke-w .oke-is-medium .oke-w-controls-nav {
+    flex-flow:row nowrap
+  }
+  .okeReviews.oke-container.oke-w .oke-is-large .oke-w-controls-nav .oke-w-navBar,
+  .okeReviews.oke-container.oke-w .oke-is-medium .oke-w-controls-nav .oke-w-navBar,
+  div.okeReviews.oke-w .oke-is-large .oke-w-controls-nav .oke-w-navBar,
+  div.okeReviews.oke-w .oke-is-medium .oke-w-controls-nav .oke-w-navBar {
+    width:auto
+  }
+  .okeReviews.oke-container.oke-w .oke-is-large .oke-w-controls-nav .oke-poweredBy,
+  .okeReviews.oke-container.oke-w .oke-is-medium .oke-w-controls-nav .oke-poweredBy,
+  div.okeReviews.oke-w .oke-is-large .oke-w-controls-nav .oke-poweredBy,
+  div.okeReviews.oke-w .oke-is-medium .oke-w-controls-nav .oke-poweredBy {
+    order:2;
+    margin:0 0 12px auto
+  }
+}
+.okeReviews.oke-container .oke-icon:before,
+div.okeReviews .oke-icon:before {
+  font-family:oke-widget-icons!important;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  color:inherit
+}
+.okeReviews.oke-container .oke-icon--select-arrow:before,
+div.okeReviews .oke-icon--select-arrow:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--loading:before,
+div.okeReviews .oke-icon--loading:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--pencil:before,
+div.okeReviews .oke-icon--pencil:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--filter:before,
+div.okeReviews .oke-icon--filter:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--play:before,
+div.okeReviews .oke-icon--play:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--tick-circle:before,
+div.okeReviews .oke-icon--tick-circle:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--chevron-left:before,
+div.okeReviews .oke-icon--chevron-left:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--chevron-right:before,
+div.okeReviews .oke-icon--chevron-right:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--thumbs-down:before,
+div.okeReviews .oke-icon--thumbs-down:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--thumbs-up:before,
+div.okeReviews .oke-icon--thumbs-up:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--close:before,
+div.okeReviews .oke-icon--close:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--chevron-up:before,
+div.okeReviews .oke-icon--chevron-up:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--chevron-down:before,
+div.okeReviews .oke-icon--chevron-down:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--star:before,
+div.okeReviews .oke-icon--star:before {
+  content:""
+}
+.okeReviews.oke-container .oke-icon--magnifying-glass:before,
+div.okeReviews .oke-icon--magnifying-glass:before {
+  content:""
+}
+@font-face {
+  font-family:oke-widget-icons;
+  src:url("/assets/fonts/oke-widget-icons.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap
+}
+
+

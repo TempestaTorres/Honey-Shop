@@ -126,8 +126,16 @@
   <!--  Reviews -->
   @if (product !== null && product.ratings) {
 
-    <section id="reviews">
+    <section id="reviews" class="section-boxed section-reviews">
 
+      <!-- Heading -->
+      <div class="app-widget app-widget-heading app-widget-heading-default section-reviews-heading">
+        <div class="app-widget-container">
+          <h2 class="app-heading-title">Reviews</h2>
+        </div>
+      </div>
+      <!-- Reviews -->
+      <app-product-review class="app-widget" [productItem]="product"></app-product-review>
     </section>
   }
 </main>

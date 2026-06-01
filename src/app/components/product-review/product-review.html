@@ -1,0 +1,216 @@
+@let rev = reviews();
+@if (rev.length > 0) {
+
+  <div class="okeReviews oke-w oke-container">
+    <div class="js-oke-widgetSize oke-is-large oke-is-small">
+
+      <!-- Header -->
+      <div class="oke-w-header">
+        <div class="oke-w-header-content oke-w-header-content--verticalAlignTop oke-w-header-content--left">
+          <div class="oke-w-header-content-block oke-w-header-content-block--full oke-w-header-content-block--left">
+
+            <!-- Rating Header module -->
+            <div class="oke-w-header-content-module oke-w-header-content-module--left">
+              <div class="oke-w-ratingAverageModule oke-w-ratingAverageModule--oneLine oke-w-ratingAverageModule--left">
+
+                <div class="oke-w-ratingAverageModule-rating">
+                  <!-- Stars -->
+                  <span class="oke-w-ratingAverageModule-rating-average"> {{ averageRating() }} </span>
+                </div>
+                <!-- Count -->
+                <div class="oke-w-ratingAverageModule-count"> Based on {{ reviewCount() }} reviews </div>
+              </div>
+            </div>
+
+            <!-- KeyWords Header module -->
+            <div class="oke-w-header-content-module oke-w-header-content-module--left">
+              <div class="oke-w-reviewsKeywordsModule">
+                <div class="oke-reviewsKeywords">
+                  <!--  Heading -->
+                  <div class="oke-reviewsKeywords-heading">
+                    <span class="oke-reviewsKeywords-heading-text"> Customers Talked About </span>
+                  </div>
+                  <!-- List -->
+                  <ul role="menu" tabindex="-1" class="oke-reviewsKeywords-list">
+                    <li role="menuitem" tabindex="0" class="oke-reviewsKeywords-list-category"> Fit </li>
+                    <li role="menuitem" tabindex="0" class="oke-reviewsKeywords-list-category"> Appearance </li>
+                    <li role="menuitem" tabindex="0" class="oke-reviewsKeywords-list-category"> Quality </li>
+                    <li role="menuitem" tabindex="0" class="oke-reviewsKeywords-list-category"> Comfort </li>
+                    <li role="menuitem" tabindex="0" class="oke-reviewsKeywords-list-category"> Details </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div class="oke-w-main">
+        <div class="oke-w-panel">
+          <div class="oke-w-reviewsTab">
+            <div class="oke-w-reviews">
+
+              <!-- Header -->
+              <div class="oke-w-reviews-head">
+
+                <!-- Write review -->
+                <div class="oke-w-reviews-writeReview">
+                  <a class="oke-w-writeReview oke-button">Write a Review</a>
+                </div>
+              </div>
+
+              <!-- Reviews -->
+              <div
+                [class.oke-is-loading]="loading()"
+                class="oke-w-reviews-main oke-w-reviews-main--nav-divider">
+
+                <div class="reviews-loading-container">
+                  <div class="oke-w-reviews-listMasonry">
+                    <ul class="oke-w-reviews-masonryGrid">
+
+                      <!-- Review Items -->
+                      @for (item of rev; track $index) {
+
+                        <li class="oke-w-reviews-masonryGrid-item" [class.loaded]="!loading()">
+                          <div class="oke-reviewCard masonryContent oke-w-reviews-js-masonryContent oke-reviewCard--above">
+
+                            <!-- Heading -->
+                            <div class="oke-reviewCard-head">
+                              <div class="oke-reviewCard-reviewer">
+                                <div class="oke-w-reviewer oke-w-reviewer--minimal">
+
+                                  <div>
+                                    <div class="oke-w-reviewer-identity">
+                                      <strong class="oke-w-reviewer-name"> {{ item.authorName }} </strong>
+                                    </div>
+                                    <!-- Verified buyer -->
+                                    <div class="oke-w-reviewer-verified"> Verified Buyer </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="oke-reviewCard-content">
+                              <div class="oke-reviewContainer">
+                                <div class="oke-reviewContent oke-reviewContent--left">
+
+                                  <!-- Stars -->
+                                  <div class="oke-reviewContent-top">
+                                    <div class="oke-reviewContent-stars">
+                                      <div class="oke-stars">
+                                        <div class="oke-stars-background">
+                                          <svg height="15" viewBox="0 0 88.53333333333333 16" aria-hidden="true" role="none">
+                                            <use x="0" href="#oke-star-empty">
+                                              <symbol id="oke-star-empty">
+                                                <path id="star-thin--empty" fill="var(--oke-stars-backgroundColor)" stroke="var(--oke-stars-borderColor)" stroke-width="var(--oke-stars-borderWidth)" d="M9.944 6.4L8 0L6.056 6.4H0L4.944 9.928L3.064 16L8 12.248L12.944 16L11.064 9.928L16 6.4H9.944Z"></path>
+                                              </symbol>
+                                            </use>
+                                            <use x="18.133333333333333" href="#oke-star-empty"></use>
+                                            <use x="36.266666666666666" href="#oke-star-empty"></use>
+                                            <use x="54.4" href="#oke-star-empty"></use>
+                                            <use x="72.53333333333333" href="#oke-star-empty"></use>
+                                          </svg>
+                                        </div>
+                                        <div class="oke-stars-foreground">
+                                          <svg height="15" viewBox="0 0 88.53333333333333 16" aria-hidden="true" role="none">
+                                            <use x="0" href="#oke-star-filled">
+                                              <symbol id="oke-star-filled">
+                                                <path id="star-thin--filled" fill="var(--oke-stars-foregroundColor)" stroke="var(--oke-stars-borderColor)" stroke-width="var(--oke-stars-borderWidth)" d="M9.944 6.4L8 0L6.056 6.4H0L4.944 9.928L3.064 16L8 12.248L12.944 16L11.064 9.928L16 6.4H9.944Z"></path>
+                                              </symbol>
+                                            </use>
+                                            <use x="18.133333333333333" href="#oke-star-filled"></use>
+                                            <use x="36.266666666666666" href="#oke-star-filled"></use>
+                                            <use x="54.4" href="#oke-star-filled"></use>
+                                            <use x="72.53333333333333" href="#oke-star-filled"></use>
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <!-- Title -->
+                                  <div class="oke-reviewContent-title oke-title">{{ item.title }}</div>
+
+                                  <!-- Text -->
+                                  <div class="oke-reviewContent-body oke-bodyText">
+
+                                    @for (line of item.description; track $index) {
+                                      <p>{{ line }}</p>
+                                    }
+                                  </div>
+
+                                  <button type="button" class="oke-reviewContent-readMore oke-readMore">
+                                    <span class="oke-reviewContent-readMore-text oke-bodyText">Read More</span>
+                                  </button>
+
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="oke-w-review-footer">
+                              <div class="oke-footerBadges"></div>
+                              <div class="oke-w-review-helpful">
+                                <div class="oke-helpful">
+                                  <span class="oke-helpful-label">Was this helpful?</span>
+                                  <div class="oke-helpful-vote">
+                                    <button type="button"
+                                            tabindex="0"
+                                            class="oke-helpful-vote-button oke-helpful-vote-button--positive oke-is-voted">
+                                      <span class="oke-helpful-vote-counter">
+                                        <span class="oke-a11yText">Yes, this review from Paul was helpful.</span> 1
+                                        <span class="oke-a11yText">person voted yes</span>
+                                      </span>
+                                    </button>
+
+                                    <button type="button"
+                                            tabindex="0"
+                                            class="oke-helpful-vote-button oke-helpful-vote-button--negative">
+                                      <span class="oke-helpful-vote-counter">
+                                        <span class="oke-a11yText">No, this review from Paul was not helpful.</span> 0
+                                        <span class="oke-a11yText">people voted no</span>
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </li>
+                      }
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Footer -->
+              <div class="oke-w-reviews-footer">
+                <div class="oke-showMore">
+                  <!-- Needs class oke-is-loading -->
+                  <button (click)="loadReviews()"
+                    type="button"
+                    aria-label="Show more reviews"
+                    tabindex="0"
+                    class="oke-showMore-button oke-button"
+                          [class.hidden]="loadingDisabled()"
+                          [class.oke-is-loading]="loading()">
+                    <span class="oke-showMore-button-text oke-button-text"> Show More </span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+}

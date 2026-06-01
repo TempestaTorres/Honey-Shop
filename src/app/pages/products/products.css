@@ -8,6 +8,13 @@
   justify-content: center;
   padding: 1.5rem 0;
 }
+.section-reviews {
+  padding: 1.5rem 1rem;
+  flex-wrap: wrap;
+}
+.section-reviews-heading .app-widget-container {
+  text-align: center;
+}
 
 /*========= Media ===============*/
 @media (min-width: 768px) {
@@ -15,11 +22,20 @@
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
+  .section-reviews-heading .app-widget-container {
+    text-align: left;
+  }
 }
 @media (min-width: 1200px) {
   .js-product-summary-wrapper {
     padding-left: 120px;
     padding-right: 120px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-reviews {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 @media (min-width: 1536px) {
