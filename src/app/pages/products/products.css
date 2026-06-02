@@ -25,7 +25,20 @@
 .js-collection-set-items .app-widget-heading-default .app-heading-title {
   margin-bottom: 1rem;
 }
-
+.section-complete-the-look {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+.app-widget-heading-default.complete-the-look-heading {
+  padding: 0 1rem 1.5rem 1rem;
+}
+.js-section-product-recommendations {
+  padding: 24px 0 0 0;
+}
+.app-widget-heading.product-recommendations-heading > .app-widget-container {
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
 /*========= Media ===============*/
 @media (min-width: 768px) {
   .js-product-summary-wrapper {
@@ -34,6 +47,15 @@
   }
   .section-reviews-heading .app-widget-container {
     text-align: left;
+  }
+  .app-widget-heading-default.complete-the-look-heading {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .app-widget-heading.product-recommendations-heading > .app-widget-container {
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 @media (min-width: 1200px) {

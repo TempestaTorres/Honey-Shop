@@ -93,7 +93,7 @@ export const RecommendedData: ProductItem[] = [
         price: 95,
         colorName: "sparkling pink",
         colorClass: "swatch-sparkling-pink",
-        type: "thong",
+        type: "brief",
         images: [
           "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Bra_Brief_Back.jpg",
         ],

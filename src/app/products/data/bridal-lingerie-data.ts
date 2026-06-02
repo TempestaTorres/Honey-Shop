@@ -14,7 +14,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 95,
         colorName: "ivory",
         colorClass: "swatch-ivory",
-        type: "thong",
+        type: "brief",
         images: [
           "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Front.jpg",
@@ -277,7 +277,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 105,
         colorName: "blue",
         colorClass: "swatch-blue",
-        type: "thong",
+        type: "brief",
         images: [
           "/assets/images/products/bridal-lingerie/kate/panty/blue/Kate_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/kate/panty/blue/Kate_Brief_Front.jpg",
@@ -385,7 +385,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 95,
         colorName: "white",
         colorClass: "swatch-white",
-        type: "thong",
+        type: "brief",
         images: [
           "/assets/images/products/bridal-lingerie/maisie/panty/white/Maisie_Bra_Brief_Back.jpg",
           "/assets/images/products/bridal-lingerie/maisie/panty/white/Maisie_Brief_Front.jpg",
@@ -546,7 +546,7 @@ export const BridalLingerieData: ProductItem[] = [
         price: 105,
         colorName: "black",
         colorClass: "swatch-black",
-        type: "thong",
+        type: "brief",
         images: [
           "/assets/images/products/bridal-lingerie/gabrielle/panty/black/Gabrielle_Bra_Brief_Back2.jpg",
           "/assets/images/products/bridal-lingerie/gabrielle/panty/black/Gabrielle_Brief_Front1.jpg",

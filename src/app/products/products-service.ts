@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { filter, Observable } from 'rxjs';
 import { NewsType } from './types/news';
 import { NewsData } from './data/news-data';
 import { LingerieData } from './data/lingerie-data';
@@ -152,6 +152,48 @@ export class ProductsService {
 
     return new Observable<ProductType[]>(observer => {
       observer.next(sets);
+    });
+  }
+
+  public getCompleteLook(collectionUrl: string, productType: string, colorName: string): Observable<Array<ProductType[]>> {
+    let set: Array<ProductType[]> = [];
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+      if (AllCollectionsData[i].url === collectionUrl) {
+
+        for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+
+          if (AllCollectionsData[i].products[j][0].type !== productType) {
+
+            let item = AllCollectionsData[i].products[j]
+              .filter(product => product.type !== "lingerie-set");
+
+            if (item !== undefined) {
+
+              let color = item.find((p) => p.colorName === colorName);
+              if (color !== undefined) {
+
+                let index: number = item.indexOf(color);
+                if (index !== 0) {
+                  let p = item[0];
+                  item[0] = color;
+                  item[index] = p;
+                }
+
+
+                set.push(item);
+              }
+
+            }
+          }
+
+        }
+      }
+    }
+
+    return new Observable<Array<ProductType[]>>(observer => {
+      observer.next(set);
     });
   }
 

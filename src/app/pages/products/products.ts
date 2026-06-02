@@ -19,6 +19,9 @@ import { PairWith } from '../../components/pair-with/pair-with';
 import { ProductReview } from '../../components/product-review/product-review';
 import { ProductSelectSet } from '../../components/product-select-set/product-select-set';
 import { ProductSet } from '../../components/product-set/product-set';
+import { CompleteLook } from '../../components/complete-look/complete-look';
+import { ProductCarousel } from '../../components/product-carousel/product-carousel';
+import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
 
 @Component({
   selector: 'app-products',
@@ -35,6 +38,9 @@ import { ProductSet } from '../../components/product-set/product-set';
     ProductReview,
     ProductSelectSet,
     ProductSet,
+    CompleteLook,
+    ProductCarousel,
+    InstagramFeed,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',

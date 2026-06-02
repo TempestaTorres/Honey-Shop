@@ -216,7 +216,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 85,
-          type: "thong",
+          type: "brief",
           colorName: "emerald",
           colorClass: "swatch-emerald",
           images: [
@@ -568,7 +568,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 105,
-          type: "thong",
+          type: "brief",
           colorName: "hot pink",
           colorClass: "swatch-hot-pink",
           images: [
@@ -777,7 +777,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 95,
-          type: "thong",
+          type: "brief",
           colorName: "pink",
           colorClass: "swatch-pink",
           images: [
@@ -1104,6 +1104,36 @@ export const AllCollectionsData: ShopCollectionType[] = [
           },
           models: ["sianie"]
         },
+        {
+          name: "WHITNEY",
+          description: "Chocolate Bra",
+          url: "whitney-underwire-balconette-chocolate",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 120,
+          type: "bra",
+          colorName: "brown",
+          colorClass: "swatch-brown",
+          images: [
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_BraZOOM1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_BraZOOM.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/brown/08_13394_FLATcopy.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["renee"]
+        },
       ],
       [
         {
@@ -1272,6 +1302,34 @@ export const AllCollectionsData: ShopCollectionType[] = [
           },
           models: ["sianie"]
         },
+        {
+          name: "WHITNEY",
+          description: "Chocolate Suspender",
+          url: "whitney-suspender-slim-chocolate",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 100,
+          type: "suspender",
+          colorName: "brown",
+          colorClass: "swatch-brown",
+          images: [
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Thong_Suspender_Front2.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Thong_Suspender_Back1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Thong_Suspender_Side.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Suspender_Thong_Front2.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Suspender_Thong_Back1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Suspender_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/brown/FLAT.jpg",
+          ],
+          sizes: stockingsSizes,
+          ratings: {
+            stars: [1,1,1,1,1],
+            score: "11"
+          },
+          models: ["renee"]
+        },
       ],
       [
         {
@@ -1282,7 +1340,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 90,
-          type: "thong",
+          type: "brief",
           colorName: "chartreuse",
           colorClass: "swatch-chartreuse",
           images: [
@@ -1306,7 +1364,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 90,
-          type: "thong",
+          type: "brief",
           colorName: "black",
           colorClass: "swatch-black",
           images: [
@@ -1333,7 +1391,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 90,
-          type: "thong",
+          type: "brief",
           colorName: "limoncello",
           colorClass: "swatch-limoncello",
           images: [
@@ -1362,7 +1420,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 90,
-          type: "thong",
+          type: "brief",
           colorName: "love",
           colorClass: "swatch-love",
           images: [
@@ -1388,7 +1446,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 90,
-          type: "thong",
+          type: "brief",
           colorName: "ocean",
           colorClass: "swatch-ocean",
           images: [
@@ -1418,7 +1476,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           addFavoriteButton: true,
           addToCartButton: true,
           price: 90,
-          type: "thong",
+          type: "brief",
           colorName: "sparkling pink",
           colorClass: "swatch-sparkling-pink",
           images: [
@@ -1437,6 +1495,34 @@ export const AllCollectionsData: ShopCollectionType[] = [
             score: "17"
           },
           models: ["esha"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Chocolate Brief",
+          url: "whitney-brazilian-chocolate",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 90,
+          type: "brief",
+          colorName: "brown",
+          colorClass: "swatch-brown",
+          images: [
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Brief_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Brief_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Brief_Side.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/whitney/brown/FLAT.jpg",
+          ],
+          sizes: dressSizes,
+          ratings: {
+            stars: [1,1,1,1,1],
+            score: "17"
+          },
+          models: ["melita"]
         },
       ],
       [

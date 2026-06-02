@@ -1,9 +1,8 @@
 <main class="outline-none">
-
+  @let product = shopProduct();
   <!--  Main section -->
   <section class="section-boxed js-product-main">
 
-    @let product = shopProduct();
 
     @if (product !== null) {
 
@@ -165,4 +164,41 @@
       <app-product-review class="app-widget" [productItem]="product"></app-product-review>
     </section>
   }
+
+<!--  Complete your look -->
+  @if (product !== null) {
+    <section class="section-boxed section-complete-the-look">
+      <div class="app-wrapper">
+        <!-- Heading -->
+        <div class="app-widget app-widget-heading app-widget-heading-default complete-the-look-heading">
+          <div class="app-widget-container">
+            <h2 class="app-heading-title">Complete your look</h2>
+          </div>
+        </div>
+        <!-- Products Carousel -->
+        <app-complete-look
+          [className]="'js-carousel-swiper-complete-the-look'"
+          [shopProduct]="product" class="app-wrapper"></app-complete-look>
+      </div>
+    </section>
+
+    <!--  Recommendations -->
+    <section class="section-boxed js-section-product-recommendations">
+      <div class="app-wrapper">
+        <!-- Heading -->
+        <div class="app-widget app-widget-heading app-widget-heading-default product-recommendations-heading">
+          <div class="app-widget-container">
+            <h2 class="app-heading-title">Recommended</h2>
+          </div>
+        </div>
+        <!-- Products Carousel -->
+        <app-product-carousel [className]="'js-carousel-swiper-recommended'" [requestType]="'recommended'" class="app-wrapper"></app-product-carousel>
+      </div>
+    </section>
+  }
+
+  <!--  Instagram -->
+  <section class="section-boxed">
+    <app-instagram-feed class="app-widget"></app-instagram-feed>
+  </section>
 </main>

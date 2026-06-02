@@ -1,15 +1,12 @@
 import {
   afterNextRender,
   Component,
-  DestroyRef, ElementRef,
-  Input,
-  OnDestroy,
-  OnInit,
+  DestroyRef, effect, ElementRef, input,
   signal, ViewChild,
   WritableSignal
 } from '@angular/core';
 import { ProductsService } from '../../products/products-service';
-import { ProductItem, ProductRequestType } from '../../products/types/product-type';
+import { ProductItem } from '../../products/types/product-type';
 import { Subscription } from 'rxjs';
 import { SwiperSlide } from '../swiper-slide/swiper-slide';
 declare var Swiper: any;
@@ -19,14 +16,14 @@ declare var Swiper: any;
   imports: [SwiperSlide],
   templateUrl: './product-carousel.html',
 })
-export class ProductCarousel implements OnInit, OnDestroy {
-  @Input() requestType: ProductRequestType = {type: ''};
-  @Input() className: string = '';
+export class ProductCarousel {
+  requestType = input.required<string>();
+  className = input.required<string>();
 
   @ViewChild('swiperElement') swiperElement!: ElementRef;
 
   public loading: WritableSignal<boolean> = signal<boolean>(true);
-  public products: ProductItem[] = [];
+  public products: WritableSignal<ProductItem[]> = signal<ProductItem[]>([]);
 
   public medium: WritableSignal<boolean> = signal<boolean>(false);
 
@@ -35,14 +32,89 @@ export class ProductCarousel implements OnInit, OnDestroy {
 
   constructor(private service: ProductsService, private destroyRef: DestroyRef) {
 
+    effect(() => {
+
+      const type = this.requestType();
+
+      if (this.swiper) {
+        this.swiper.destroy();
+        this.loadProducts(type);
+      }
+    });
+
+
     afterNextRender(() => {
 
-      const swp = this.swiperElement.nativeElement;
+      const type = this.requestType();
+      this.loadProducts(type);
 
-      if (swp) {
-        swp.classList.add(this.className);
+    });
 
-        this.swiper = new Swiper('.' + this.className, {
+    this.destroyRef.onDestroy(() => {
+      if (this.swiper) this.swiper.destroy();
+
+      if (this.productSubscription$) {
+        this.productSubscription$.unsubscribe();
+      }
+    });
+  }
+
+  private loadProducts(type: string): void {
+
+    this.products.set([]);
+    this.loading.set(true);
+    this.medium.set(false);
+
+    if (this.productSubscription$) {
+      this.productSubscription$.unsubscribe();
+    }
+
+    if (type === 'new-arrivals') {
+      this.productSubscription$ = this.service.getNewArrivals().subscribe((items) => {
+        this.products.set(items);
+
+        if (this.products().length > 0) {
+          this.loading.set(false);
+
+          this.initSwiper();
+        }
+      });
+    }
+    else if (type === 'bridal-lingerie') {
+
+      this.productSubscription$ = this.service.getBridalLingerie().subscribe((items) => {
+        this.products.set(items);
+
+        if (this.products().length > 0) {
+          this.loading.set(false);
+          this.initSwiper();
+        }
+      });
+
+    }
+    else if (type === 'recommended') {
+
+      this.productSubscription$ = this.service.getRecommended().subscribe((items) => {
+        this.products.set(items);
+
+        if (this.products().length > 0) {
+          this.loading.set(false);
+          this.medium.set(true);
+          this.initSwiper();
+        }
+      });
+    }
+  }
+
+  private initSwiper(): void {
+
+    const swp = this.swiperElement.nativeElement;
+
+    if (swp) {
+      swp.classList.add(this.className());
+
+      setTimeout(() => {
+        this.swiper = new Swiper('.' + this.className(), {
           slidesPerView: 'auto',
           spaceBetween: 4,
           keyboard: true,
@@ -65,53 +137,9 @@ export class ProductCarousel implements OnInit, OnDestroy {
           }
 
         });
-      }
+      }, 400);
 
-    });
-
-    this.destroyRef.onDestroy(() => {
-      if (this.swiper) this.swiper.destroy();
-    });
-  }
-
-  ngOnInit() {
-
-    if (this.requestType.type === 'new-arrivals') {
-      this.productSubscription$ = this.service.getNewArrivals().subscribe((items) => {
-        this.products = items;
-
-        if (this.products.length > 0) {
-          this.loading.set(false);
-        }
-      });
-    }
-    else if (this.requestType.type === 'bridal-lingerie') {
-
-      this.productSubscription$ = this.service.getBridalLingerie().subscribe((items) => {
-        this.products = items;
-
-        if (this.products.length > 0) {
-          this.loading.set(false);
-        }
-      });
-
-    }
-    else if (this.requestType.type === 'recommended') {
-      this.medium.set(true);
-
-      this.productSubscription$ = this.service.getRecommended().subscribe((items) => {
-        this.products = items;
-
-        if (this.products.length > 0) {
-          this.loading.set(false);
-        }
-      });
     }
   }
 
-  ngOnDestroy() {
-    if (this.productSubscription$) {
-      this.productSubscription$.unsubscribe();
-    }
-  }
 }
