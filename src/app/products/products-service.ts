@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { filter, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { NewsType } from './types/news';
 import { NewsData } from './data/news-data';
 import { LingerieData } from './data/lingerie-data';
