@@ -19,6 +19,7 @@ export interface ProductType {
   },
   sizes?: {key:string, sizes:string[]}[],
   models?: string[],
+  setItems?: string[],
 }
 export type ProductItem = {
   product: ProductType[]

@@ -90,6 +90,47 @@ export class ProductsService {
 
   }
 
+  public getShopProductSet(collection: string, url: string): Observable<ProductType[]> {
+    let set: ProductType[] = [];
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+      if (AllCollectionsData[i].name === collection) {
+
+        for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+
+          let product: ProductType | undefined = AllCollectionsData[i].products[j]
+            .find(product => product.type === "lingerie-set" && product.url === url);
+
+          if (product !== undefined && product.setItems !== undefined) {
+            set = this.getSet(product.setItems);
+
+            return new Observable<ProductType[]>(observer => {
+              observer.next(set);
+            });
+          }
+        }
+      }
+    }
+
+    return new Observable<ProductType[]>(observer => {
+      observer.next(set);
+    });
+  }
+
+  private getSet(sets: string[]): ProductType[] {
+    let set: ProductType[] = [];
+
+    for (let i: number = 0; i < sets.length; i++) {
+
+      let item = this.getProduct(sets[i]);
+      if (item !== null) {
+        set.push(item);
+      }
+    }
+    return set;
+  }
+
   public getShopProductSets(collection: string, colorName: string): Observable<ProductType[]> {
 
     let sets: ProductType[] = [];
@@ -133,6 +174,25 @@ export class ProductsService {
     return new Observable<ProductType | null>(observer => {
       observer.next(null);
     })
+  }
+
+  private getProduct(url: string): ProductType | null {
+
+    let product: ProductType | null = null;
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+      for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+
+        let item: ProductType | undefined = AllCollectionsData[i].products[j].find(product => product.url === url);
+
+        if (item !== undefined) {
+          return item;
+        }
+      }
+    }
+
+    return product;
   }
 
   public getNewArrivals(): Observable<ProductItem[]> {

@@ -40,7 +40,12 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Back.jpg",
             "/assets/images/products/collections/everly-emerald/EVERLY7.jpg",
           ],
-          models: ["olivia", "sianie"]
+          models: ["olivia", "sianie"],
+          setItems: [
+            "everly-underwire-balconette-emerald-black",
+            "everly-bikini-emerald-black",
+            "everly-thong-emerald-black",
+          ]
         },
       ],
       [
@@ -74,7 +79,14 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Back1.jpg",
             "/assets/images/products/collections/everly-emerald/EVERLY7.jpg",
           ],
-          models: ["olivia", "sianie"]
+          models: ["olivia", "sianie"],
+          setItems: [
+            "everly-underwire-balconette-emerald-black",
+            "everly-suspender-midi-emerald-black",
+            "everly-bikini-emerald-black",
+            "everly-thong-emerald-black",
+            "new-black-bowties-suspender-stockings",
+          ]
         },
       ],
       [
@@ -105,9 +117,150 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Back.jpg",
             "/assets/images/products/collections/everly-emerald/EVERLY2.jpg",
           ],
+          models: ["olivia"],
+          setItems: [
+            "everly-bustier-emerald-black",
+            "everly-bikini-emerald-black",
+            "everly-thong-emerald-black",
+            "new-black-bowties-suspender-stockings",
+          ]
+        },
+      ],
+      [
+        {
+          name: "EVERLY EMERALD",
+          description: "Bra",
+          url: "everly-underwire-balconette-emerald-black",
+          collection: "everly-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "bra",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Front4.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Back3.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Side3.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_FrontZOOM2.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EVERLY3.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "EVERLY EMERALD",
+          description: "Bustier",
+          url: "everly-bustier-emerald-black",
+          collection: "everly-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 180,
+          type: "bra",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Front3.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Side1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_FrontZOOM2.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_BackZOOM1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EVERLY1.jpg",
+          ],
+          sizes: braSizes,
           models: ["olivia"]
         },
       ],
+      [
+        {
+          name: "EVERLY EMERALD",
+          description: "Suspender",
+          url: "everly-suspender-midi-emerald-black",
+          collection: "everly-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 90,
+          type: "suspender",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Suspender_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Suspender_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Suspender_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EVERLY3.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "EVERLY EMERALD",
+          description: "Brief",
+          url: "everly-bikini-emerald-black",
+          collection: "everly-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Brief_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Brief_Side1.jpg",
+            "/assets/images/products/collections/everly-emerald/EVERLY7.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "EVERLY EMERALD",
+          description: "Thong",
+          url: "everly-thong-emerald-black",
+          collection: "everly-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 75,
+          type: "thong",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Side1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/everly-emerald/EVERLY11.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ]
     ],
   },
   {
@@ -1816,4 +1969,63 @@ export const AllCollectionsData: ShopCollectionType[] = [
       ],
     ]
   },
+  {
+    name: "STOCKINGS",
+    url: "stockings",
+    products: [
+      [
+        {
+          name: "Black Bowties Suspender",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "new-black-bowties-suspender-stockings",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 25,
+          type: "stockings",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/stockings/black/Bowties_Black_Stockings_Web.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+        {
+          name: "Red Bowties Suspender",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "red-chic-hold-up-stockings",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 25,
+          type: "stockings",
+          colorName: "red",
+          colorClass: "swatch-red",
+          images: [
+            "/assets/images/products/collections/stockings/red/Bowties_Red_Stockings_Web.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+        {
+          name: "Ivory Bowties Suspender",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "ivory-natural-bowties-suspender-stockings",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 25,
+          type: "stockings",
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          images: [
+            "/assets/images/products/collections/stockings/ivory/Bowties_Ivory_Stockings_Web.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+      ],
+    ]
+  }
 ]

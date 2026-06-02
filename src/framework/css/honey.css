@@ -125,6 +125,39 @@
 .hidden {
   display: none!important;
 }
+/* Needs class - transition-all-default*/
+.added-to-cart-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  left: 1rem;
+  bottom: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: hsla(0,0%,100%,.16);
+  backdrop-filter: blur(2px);
+  color: #ffffff;
+  padding: .5rem;
+  height: 2rem;
+  width: calc(100% - 32px);
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.added-to-cart-wrapper.added {
+  opacity: 1;
+  visibility: visible;
+}
+.added-to-cart-wrapper .icon {
+  height: .625rem !important;
+  width: .625rem !important;
+  color: #ffffff;
+}
 .image-wrapper {
   width: fit-content;
   overflow: hidden;

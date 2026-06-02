@@ -15,9 +15,15 @@
 .section-reviews-heading .app-widget-container {
   text-align: center;
 }
-.js-collection-sets {
+.js-collection-sets, .js-collection-set-items {
   padding-top: 1.5rem;
   border-top: 1px solid rgba(0,0,0,.08);
+}
+.js-collection-set-items {
+  margin-top: 1.5rem;
+}
+.js-collection-set-items .app-widget-heading-default .app-heading-title {
+  margin-bottom: 1rem;
 }
 
 /*========= Media ===============*/

@@ -11,11 +11,13 @@ export class ProductCartService {
 
   public cartCount: BehaviorSubject<number>;
   public cartSubtotal: BehaviorSubject<number>;
+  public itemAdded: BehaviorSubject<string>;
 
   constructor() {
     //For initial values, we need to get requests
     this.cartCount = new BehaviorSubject<number>(0);
     this.cartSubtotal = new BehaviorSubject<number>(0);
+    this.itemAdded = new BehaviorSubject<string>('');
   }
 
   public productTypeToCartType(item: ProductType): ProductCartType {
@@ -35,6 +37,18 @@ export class ProductCartService {
 
     this.cartCount.next(this.products.length);
     this.cartSubtotal.next(this.getSubtotalAmount());
+    this.itemAdded.next(productCartType.url);
+  }
+
+  public isAdded(url: string): boolean {
+    if (this.products.length === 0) return false;
+
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].url === url) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public removeFromCart(productCartType: ProductCartType): void {
