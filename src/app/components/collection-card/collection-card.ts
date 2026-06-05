@@ -17,7 +17,6 @@ import { RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { SwiperService } from '../../services/swiper-service';
 import { Subscription } from 'rxjs';
-declare var Swiper: any;
 
 @Component({
   selector: 'app-collection-card',
