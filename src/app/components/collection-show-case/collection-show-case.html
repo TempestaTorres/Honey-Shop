@@ -1,0 +1,158 @@
+<div class="js-plp-collection" [title]="collectionName()">
+
+  <!--  Header -->
+  <div class="js-plp-collection-header">
+
+    <!-- Navigation -->
+    <div class="js-plp-nav breadcrumbs-widget js-desktop-nav">
+      <ol>
+        <li class="breadcrumb">
+          <a [routerLink]="['/']" tabindex="-1">Home</a>
+        </li>
+        <li class="breadcrumb-separator" tabindex="-1"> — </li>
+        <li class="breadcrumb">
+          <a [routerLink]="['/collections', 'all-lingerie']" tabindex="-1">Collections</a>
+        </li>
+        <li class="breadcrumb-separator" tabindex="-1"> — </li>
+        <li class="breadcrumb truncate">{{ collectionName() }}</li>
+      </ol>
+    </div>
+
+    <!-- Items count -->
+    <div class="collection-items-count">
+      <span>{{ itemsCount() }}&nbsp;Products</span>
+    </div>
+
+    <!-- Actions -->
+    <div class="js-plp-header-buttons">
+
+      <!-- Layout -->
+      <div class="js-select-layout-buttons" role="radiogroup">
+
+        <!-- 2 Column -->
+        <button (click)="switchLayoutSwitcher(0)"
+                [class.active]="layoutSwitcher() === 0"
+                aria-label="Gird View: 2 Columns"
+                role="radio" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+            <path d="M6.66699 2.66666H2.66699V13.3333H6.66699V2.66666Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+            <path d="M13.333 2.66666H9.33301V13.3333H13.333V2.66666Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+          </svg>
+        </button>
+        <!-- 4 Column -->
+        <button (click)="switchLayoutSwitcher(1)"
+                [class.active]="layoutSwitcher() === 1"
+                aria-label="Gird View: 4 Columns"
+                role="radio" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+            <path d="M6.66699 2.70767H2.66699V6.70767H6.66699V2.70767Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+            <path d="M6.66699 9.37436H2.66699V13.3744H6.66699V9.37436Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+            <path d="M13.333 2.70767H9.33301V6.70767H13.333V2.70767Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+            <path d="M13.333 9.37436H9.33301V13.3744H13.333V9.37436Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+          </svg>
+        </button>
+
+      </div>
+
+      <!-- Filter -->
+      <button (click)="triggerFilter()" type="button"><span>Filter</span></button>
+
+      <!-- Sort -->
+      <div>
+        <div class="js-sort-widget">
+          <button
+            (click)="sortOpenClick()"
+            class="js-sort-button"
+            type="button">
+            <span>Sort</span>
+            <span class="applied-sort">{{ sort() }}</span>
+          </button>
+          <!-- Sort window -->
+          <div class="js-sort-select-wrapper" [class.is-active]="sortOpen()">
+            <button
+              #jsSelectSortButton
+              (click)="selectSortClick('Featured')"
+              data-value="Featured"
+              type="button"
+              class="js-select-sort-button">
+              Featured
+            </button>
+            <button
+              #jsSelectSortButton
+              (click)="selectSortClick('Price – low to high')"
+              data-value="Price – low to high"
+              type="button"
+              class="js-select-sort-button">
+              Price – low to high
+            </button>
+            <button
+              #jsSelectSortButton
+              (click)="selectSortClick('Price – High to Low')"
+              data-value="Price – High to Low"
+              type="button"
+              class="js-select-sort-button">
+              Price – High to Low
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  @let items = collectionProducts();
+  @if (items !== null) {
+
+    <!--  Collection -->
+    <div #collection
+      [class.grid-col-4]="layoutSwitcher() === 1"
+      [class.grid-col-2]="layoutSwitcher() === 0"
+      class="js-plp-collection-grid">
+
+      <div class="js-plp-collection-wrapper">
+
+        @for (card of items; track $index) {
+
+          <app-collection-card
+            [productItem]="card"
+            class="group js-collection-card"></app-collection-card>
+        }
+
+      </div>
+
+    </div>
+
+    <!--    Pagination -->
+    <div class="js-plp-collection-pagination">
+      <div class="js-plp-collection-pagination__header">Showing {{ items.length }} of {{ itemsCount() }}</div>
+      <nav>
+        <!-- Prev -->
+        <button
+          (click)="prevPage()"
+          [class.disabled]="currentPage() === 1"
+          class="js-plp-page-button js-plp-prev" type="button" title="Prev page">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" class="icon">
+            <path class="icon-chevron-left" d="M7.5 9.75L3.75 6L7.5 2.25" stroke="currentColor" stroke-linecap="square"></path>
+          </svg>
+        </button>
+
+        @for (button of totalPageButtons(); track $index) {
+          <button
+            (click)="pageClicked($index + 1)"
+            [class.active]="button"
+            class="js-plp-page-button" type="button">{{ $index + 1 }}</button>
+        }
+
+        <!-- Next -->
+        <button
+          (click)="nextPage()"
+          [class.disabled]="currentPage() === totalPages()"
+          class="js-plp-page-button js-plp-next" type="button" title="Next page">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" class="icon">
+            <path class="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  }
+</div>

@@ -31,20 +31,24 @@
 
           @for (product of shopCollection; track $index) {
 
-            <div #item
-                 appObserveElement
-                 [isContinuous]="false"
-                 (isIntersecting)="isIntersecting($event, item)"
-                 role="listitem"
-                class="shop-the-look-list__item scroll-trigger--offscreen scroll-trigger animate--slide-in">
+            @if (product[0].type !== "lingerie-set") {
 
-              <app-shop-the-look-item
-                (showProduct)="navigateToProduct($event)"
-                (addToBag)="addToCart($event)"
-                (addItemToWishlist)="addToWishList($event)"
-                [product]="product"></app-shop-the-look-item>
+              <div #item
+                   appObserveElement
+                   [isContinuous]="false"
+                   (isIntersecting)="isIntersecting($event, item)"
+                   role="listitem"
+                   class="shop-the-look-list__item scroll-trigger--offscreen scroll-trigger animate--slide-in">
 
-            </div>
+                <app-shop-the-look-item
+                  (showProduct)="navigateToProduct($event)"
+                  (addToBag)="addToCart($event)"
+                  (addItemToWishlist)="addToWishList($event)"
+                  [product]="product"></app-shop-the-look-item>
+
+              </div>
+
+            }
 
           }
 

@@ -1,0 +1,99 @@
+.js-plp-collection-header {
+  position: sticky;
+  top: calc(var(--header-height));
+  z-index: 39;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsla(37,32%,92%,.88);
+  backdrop-filter: blur(5px);
+  padding: .75rem 1rem;
+}
+.js-plp-collection-header * {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.js-plp-nav {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.collection-items-count {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+}
+.js-plp-header-buttons {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  justify-content: flex-end;
+  column-gap: 1.5rem;
+}
+.js-select-layout-buttons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+.js-select-layout-buttons::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background-color: rgba(0,0,0,.32);
+  width: 1px;
+  height: .5rem;
+  transform: translate(0, -50%);
+}
+.js-select-layout-buttons button {
+  color: rgba(0,0,0,.32);
+  padding: .25rem;
+}
+.js-select-layout-buttons button.active {
+  color: #000000;
+}
+.js-select-layout-buttons button .icon {
+  width: 1rem;
+  height: 1rem;
+}
+.js-plp-collection-grid {
+  min-height: 500px;
+}
+.js-plp-collection-grid > .js-plp-collection-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1,minmax(0,1fr));
+  gap: .25rem;
+}
+.js-plp-collection-grid.grid-col-4 > .js-plp-collection-wrapper {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+}
+
+/* ============ Media ================= */
+@media (min-width: 768px) {
+  .js-plp-collection-grid.grid-col-4 > .js-plp-collection-wrapper {
+    grid-template-columns: repeat(4,minmax(0,1fr));
+  }
+  .js-plp-collection-grid.grid-col-2 > .js-plp-collection-wrapper {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .js-plp-collection-header {
+    padding: 1rem 1.5rem;
+  }
+  .collection-items-count {
+    justify-content: center;
+  }
+  .js-select-layout-buttons {
+    gap: .5rem;
+  }
+  .js-select-layout-buttons button {
+    padding: .5rem;
+  }
+}

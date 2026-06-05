@@ -90,6 +90,7 @@ export class CompleteLook {
           slidesPerView: 'auto',
           spaceBetween: 4,
           keyboard: true,
+          grabCursor: true,
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

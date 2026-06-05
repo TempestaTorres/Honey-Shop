@@ -215,6 +215,62 @@
   flex-direction: column;
   position: relative;
 }
+/*Sort widget*/
+.js-sort-widget {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.js-sort-widget .js-sort-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.js-sort-widget .js-sort-button .applied-sort {
+  padding-left: .25rem;
+  color: rgba(0,0,0,.56);
+}
+.js-sort-select-wrapper {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: var(--global--color-primary);
+  z-index: 30;
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: linear
+}
+.js-sort-select-wrapper.is-active {
+  visibility: visible;
+  opacity: 1;
+}
+.js-sort-widget .js-select-sort-button {
+  padding: 1rem;
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000000;
+}
+.js-sort-widget .js-select-sort-button.active {
+  text-decoration-line: underline;
+}
+@media (hover: hover) and (pointer: fine) {
+  .js-sort-widget .js-select-sort-button:hover {
+    text-decoration-line: underline;
+  }
+}
+/* Image widget */
 .app-widget-image {
   overflow: hidden;
   background-color: var(--global--color-primary);

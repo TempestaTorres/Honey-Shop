@@ -1,32 +1,35 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, signal, WritableSignal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ScrollingService } from '../../services/scrolling-service';
+import { CollectionsHeader } from '../../components/collections-header/collections-header';
+import { CollectionShowCase } from '../../components/collection-show-case/collection-show-case';
+import { ProductCarousel } from '../../components/product-carousel/product-carousel';
 
 @Component({
   selector: 'app-collections',
-  imports: [],
+  imports: [CollectionsHeader, CollectionShowCase, ProductCarousel],
   templateUrl: './collections.html',
   styleUrl: './collections.css',
 })
-export class Collections implements OnInit, OnDestroy {
+export class Collections implements OnInit {
+  public collectionType: WritableSignal<string> = signal<string>('');
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute,
-              private scrollingService: ScrollingService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private scrollingService: ScrollingService,
+  ) {}
 
   ngOnInit() {
-
     this.scrollingService.toTop();
 
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['type']) {
+        let type: string = params['type'];
 
-      if (params['category']) {
-        let category: string = params['category'];
-
-        console.log(category);
+        if (type && type !== '') {
+          this.collectionType.set(type);
+        }
       }
-    })
-  }
-  ngOnDestroy() {
-
+    });
   }
 }

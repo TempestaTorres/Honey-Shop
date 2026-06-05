@@ -19,6 +19,12 @@
 .swiper-container-initialized .swiper-button-prev {
   opacity: 1;
 }
+.swiper-initialized .swiper-navigation,
+.swiper-initialized .swiper-scrollbar,
+.swiper-initialized .swiper-button-next,
+.swiper-initialized .swiper-button-prev {
+  opacity: 1;
+}
 .swiper {
   position: relative;
   z-index: 1;

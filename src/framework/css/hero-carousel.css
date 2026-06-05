@@ -39,7 +39,8 @@
   visibility: hidden;
 }
 
-.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide {
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide,
+.carousel-swiper-hero-carousel.swiper-initialized.swiper-container-fade .swiper-slide {
   pointer-events: none;
   visibility: hidden;
   z-index: -1;
@@ -48,7 +49,8 @@
   transition-duration: 500ms !important;
   transition-timing-function: linear;
 }
-.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide .hero-carousel-content {
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide .hero-carousel-content,
+.carousel-swiper-hero-carousel.swiper-initialized.swiper-container-fade .swiper-slide .hero-carousel-content {
   --translate-y: 1rem;
   visibility: hidden;
   transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
@@ -59,24 +61,28 @@
   transition-timing-function: linear;
 }
 
-.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide img {
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide img,
+.carousel-swiper-hero-carousel.swiper-initialized.swiper-container-fade .swiper-slide img{
   visibility: hidden;
 }
-.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active {
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active,
+.carousel-swiper-hero-carousel.swiper-initialized.swiper-container-fade .swiper-slide.swiper-slide-active{
   pointer-events: auto;
   visibility: visible;
   z-index: 7;
   opacity: 1 !important;
 }
 
-.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active .hero-carousel-content {
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active .hero-carousel-content,
+.carousel-swiper-hero-carousel.swiper-initialized.swiper-container-fade .swiper-slide.swiper-slide-active .hero-carousel-content{
   --translate-y: 0px;
   visibility: visible;
   transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
   opacity: 1;
 }
 
-.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active img {
+.carousel-swiper-hero-carousel.swiper-container-initialized.swiper-container-fade .swiper-slide.swiper-slide-active img,
+.carousel-swiper-hero-carousel.swiper-initialized.swiper-container-fade .swiper-slide.swiper-slide-active img{
   visibility: visible;
 }
 .carousel-swiper-hero-carousel .swiper-pagination {

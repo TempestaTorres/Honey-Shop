@@ -14,10 +14,34 @@ import { AllCollectionsData } from './data/collections/collections-data';
 import { CollectionsNewsType } from './types/collections-news-type';
 import { CollectionsNewsData } from './data/collections/collections-news-data';
 
+export interface SortedPageType {
+  name: string,
+  count: number,
+  pages: number,
+  items: Array<ProductType[]>
+}
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
+
+  public getCollectionInfoHeader(url: string): Observable<string[]> {
+
+    let description: string[] = [];
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+      if (AllCollectionsData[i].url === url) {
+        description[0] = AllCollectionsData[i].name;
+        description[1] = AllCollectionsData[i].description;
+        break;
+      }
+    }
+
+    return new Observable<string[]>(observer => {
+      observer.next(description);
+    });
+  }
 
   public getCollection(url: string): Observable<Array<ProductType[]> | null> {
 
@@ -32,6 +56,287 @@ export class ProductsService {
     }
 
     return new Observable<Array<ProductType[]> | null>(observer => {
+      observer.next(null);
+    });
+  }
+
+  public getFullSortedCollection(url: string, sortType: string, page: number): Observable<SortedPageType | null> {
+
+    if (url === "all-lingerie") {
+      return this.getFullSortedCollectionAll(sortType, page);
+    }
+    if (sortType === 'Featured') {
+      return this.getFullCollection(url, page);
+    }
+    if (sortType === 'price-asc') {
+      return this.getFullPriceAscCollection(url, page);
+    }
+    if (sortType === 'price-desc') {
+      return this.getFullPriceDescCollection(url, page);
+    }
+
+    return new Observable<SortedPageType | null>(observer => {
+      observer.next(null);
+    });
+  }
+
+  public getFullSortedCollectionAll(sortType: string, page: number): Observable<SortedPageType | null> {
+
+    if (sortType === 'Featured') {
+      return this.getFullCollectionAll(page);
+    }
+    if (sortType === 'price-asc') {
+      return this.getFullPriceAscCollectionAll(page);
+    }
+    if (sortType === 'price-desc') {
+     return this.getFullPriceDescCollectionAll(page);
+    }
+
+    return new Observable<SortedPageType | null>(observer => {
+      observer.next(null);
+    });
+  }
+
+  public getFullCollectionAll(page: number): Observable<SortedPageType> {
+
+    let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
+
+    for (let i: number = 1; i < AllCollectionsData.length; i++) {
+
+      items = items.concat(AllCollectionsData[i].products);
+
+    }
+
+    let pageItems: Array<ProductType[]> = [];
+    let offset: number = 40 * (page - 1);
+    let endOffset: number = page * 40;
+
+    for (let j: number = offset; j < items.length && j < endOffset; j++) {
+
+      pageItems.push(items[j]);
+
+    }
+
+    let result: SortedPageType = {
+      name: "ALL LINGERIE",
+      count: items.length,
+      pages: Math.ceil(items.length / 40),
+      items: pageItems
+    }
+
+    return new Observable<SortedPageType>(observer => {
+      observer.next(result);
+    });
+  }
+
+  public getFullPriceAscCollectionAll(page: number): Observable<SortedPageType> {
+
+
+    let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
+
+    for (let i: number = 1; i < AllCollectionsData.length; i++) {
+
+      items = items.concat(AllCollectionsData[i].products);
+
+    }
+
+    items = items.sort((a, b) => {
+      if (a[0].price && b[0].price)
+        return a[0].price - b[0].price;
+      else return 0;
+    });
+
+    let pageItems: Array<ProductType[]> = [];
+    let offset: number = 40 * (page - 1);
+    let endOffset: number = page * 40;
+
+    for (let j: number = offset; j < items.length && j < endOffset; j++) {
+
+      pageItems.push(items[j]);
+
+    }
+
+    let result: SortedPageType = {
+      name: "ALL LINGERIE",
+      count: items.length,
+      pages: Math.ceil(items.length / 40),
+      items: pageItems
+    }
+
+    return new Observable<SortedPageType>(observer => {
+      observer.next(result);
+    });
+
+  }
+
+  public getFullPriceDescCollectionAll(page: number): Observable<SortedPageType> {
+
+
+    let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
+
+    for (let i: number = 1; i < AllCollectionsData.length; i++) {
+
+      items = items.concat(AllCollectionsData[i].products);
+
+    }
+
+    items = items.sort((a, b) => {
+      if (a[0].price && b[0].price)
+        return b[0].price - a[0].price;
+      else return 0;
+    });
+
+    let pageItems: Array<ProductType[]> = [];
+    let offset: number = 40 * (page - 1);
+    let endOffset: number = page * 40;
+
+    for (let j: number = offset; j < items.length && j < endOffset; j++) {
+
+      pageItems.push(items[j]);
+
+    }
+
+    let result: SortedPageType = {
+      name: "ALL LINGERIE",
+      count: items.length,
+      pages: Math.ceil(items.length / 40),
+      items: pageItems
+    }
+
+    return new Observable<SortedPageType>(observer => {
+      observer.next(result);
+    });
+
+  }
+
+  public getFullPriceAscCollection(url: string, page: number): Observable<SortedPageType | null> {
+
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+      if (AllCollectionsData[i].url === url) {
+
+        let items = [...AllCollectionsData[i].products];
+        items = items.sort((a, b) => {
+          if (a[0].price && b[0].price)
+            return a[0].price - b[0].price;
+          else return 0;
+        });
+
+        let result: SortedPageType = {
+          name: AllCollectionsData[i].name,
+          count: AllCollectionsData[i].products.length,
+          pages: Math.ceil(AllCollectionsData[i].products.length / 40),
+          items: items
+        }
+
+        if (items.length > 40) {
+
+          let pageItems: Array<ProductType[]> = [];
+          let offset: number = 40 * (page - 1);
+          let endOffset: number = page * 40;
+
+          for (let j: number = offset; j < items.length && j < endOffset; j++) {
+
+            pageItems.push(items[j]);
+
+          }
+          result.items = pageItems;
+        }
+
+        return new Observable<SortedPageType | null>(observer => {
+          observer.next(result);
+        });
+      }
+    }
+
+    return new Observable<SortedPageType | null>(observer => {
+      observer.next(null);
+    });
+
+  }
+
+
+  public getFullPriceDescCollection(url: string, page: number): Observable<SortedPageType | null> {
+
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+      if (AllCollectionsData[i].url === url) {
+
+        let items = [...AllCollectionsData[i].products];
+        items = items.sort((a, b) => {
+          if (a[0].price && b[0].price)
+            return b[0].price - a[0].price;
+          else return 0;
+        });
+
+        let result: SortedPageType = {
+          name: AllCollectionsData[i].name,
+          count: AllCollectionsData[i].products.length,
+          pages: Math.ceil(AllCollectionsData[i].products.length / 40),
+          items: items
+        }
+
+        if (items.length > 40) {
+
+          let pageItems: Array<ProductType[]> = [];
+          let offset: number = 40 * (page - 1);
+          let endOffset: number = page * 40;
+
+          for (let j: number = offset; j < items.length && j < endOffset; j++) {
+
+            pageItems.push(items[j]);
+
+          }
+          result.items = pageItems;
+        }
+
+        return new Observable<SortedPageType | null>(observer => {
+          observer.next(result);
+        });
+      }
+    }
+
+    return new Observable<SortedPageType | null>(observer => {
+      observer.next(null);
+    });
+
+  }
+
+  public getFullCollection(url: string, page: number): Observable<SortedPageType | null> {
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+      if (AllCollectionsData[i].url === url) {
+
+        let result: SortedPageType = {
+          name: AllCollectionsData[i].name,
+          count: AllCollectionsData[i].products.length,
+          pages: Math.ceil(AllCollectionsData[i].products.length / 40),
+          items: AllCollectionsData[i].products
+        }
+
+        if (AllCollectionsData[i].products.length > 40) {
+
+          let pageItems: Array<ProductType[]> = [];
+          let offset: number = 40 * (page - 1);
+          let endOffset: number = page * 40;
+
+          for (let j: number = offset; j < AllCollectionsData[i].products.length && j < endOffset; j++) {
+
+            pageItems.push(AllCollectionsData[i].products[j]);
+
+          }
+          result.items = pageItems;
+        }
+
+        return new Observable<SortedPageType | null>(observer => {
+          observer.next(result);
+        });
+
+      }
+    }
+
+    return new Observable<SortedPageType | null>(observer => {
       observer.next(null);
     });
   }
@@ -164,28 +469,43 @@ export class ProductsService {
 
         for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
 
-          if (AllCollectionsData[i].products[j][0].type !== productType) {
+          if (productType.includes('lingerie-collection')) {
 
-            let item = AllCollectionsData[i].products[j]
-              .filter(product => product.type !== "lingerie-set");
+            if (AllCollectionsData[i].products[j][0].type !== productType) {
 
-            if (item !== undefined) {
+              let item = AllCollectionsData[i].products[j]
+                .filter(product => product.type !== "lingerie-set");
 
-              let color = item.find((p) => p.colorName === colorName);
-              if (color !== undefined) {
+              if (item !== undefined) {
 
-                let index: number = item.indexOf(color);
-                if (index !== 0) {
-                  let p = item[0];
-                  item[0] = color;
-                  item[index] = p;
+                let color = item.find((p) => p.colorName === colorName);
+                if (color !== undefined) {
+
+                  let index: number = item.indexOf(color);
+                  if (index !== 0) {
+                    let p = item[0];
+                    item[0] = color;
+                    item[index] = p;
+                  }
                 }
-
-
                 set.push(item);
               }
-
             }
+
+          }
+          else {
+            let item = AllCollectionsData[i].products[j];
+            let color = item.find((p) => p.colorName === colorName);
+            if (color !== undefined) {
+
+              let index: number = item.indexOf(color);
+              if (index !== 0) {
+                let p = item[0];
+                item[0] = color;
+                item[index] = p;
+              }
+            }
+            set.push(item);
           }
 
         }
@@ -243,6 +563,7 @@ export class ProductsService {
       observer.next(NewArrivalData);
     });
   }
+
   public getBridalLingerie(): Observable<ProductItem[]> {
 
     return new Observable<ProductItem[]>(observer => {
@@ -256,6 +577,7 @@ export class ProductsService {
       observer.next(CollectionsNewsData);
     });
   }
+
   public getNews(): Observable<NewsType[]> {
 
     return new Observable<NewsType[]>(observer => {

@@ -1,0 +1,61 @@
+<div class="js-collection-plp-header">
+
+  <!--  Heading -->
+  <div class="app-widget-heading plp-header-heading">
+    <div class="app-widget-container">
+      <h1 class="app-heading-title">{{ headerTitle() }}</h1>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="app-widget-text-editor plp-text-editor typeset typeset-description-primary">
+    <div class="typeset-description-block">
+
+      @if (headerTitle() === 'all lingerie') {
+
+        <p>
+          Wrapped in lace, satin, or leather - Honey’s luxury
+          <a [routerLink]="['/collections', 'lingerie-sets']">lingerie sets</a>,
+          <a [routerLink]="['/collections', 'bras']">bras</a>,
+          <a [routerLink]="['/collections', 'thongs']">thongs</a>,
+          <a [routerLink]="['/collections', 'stockings']">stockings</a>&nbsp;and
+          <a [routerLink]="['/collections', 'suspenders']">suspenders</a>
+          are made to inspire confidence,
+          <span>empowerment, and unapologetic pleasure</span>.&nbsp;From delicate
+          <a [routerLink]="['/collections', 'lace-bras']">lace bras</a>
+          to daring
+          <a [routerLink]="['/collections', 'bondage-lingerie']">bondage lingerie</a>
+          and accessories, every piece is crafted to perfection. Explore lingerie designed for you,
+          because every moment deserves a little luxury.
+        </p>
+
+      } @else {
+        <p>{{  headerDescription() }}</p>
+      }
+
+    </div>
+  </div>
+
+  <!--  Navigation -->
+  <div class="js-collection-plp-navigation">
+
+    @if (navigationNeeded()) {
+
+      <div class="swiper js-plp-header">
+        <div class="swiper-wrapper">
+
+          @for (link of plpHeaderData; track $index) {
+
+            <div class="swiper-slide js-plp-slide">
+              <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+            </div>
+
+          }
+
+        </div>
+      </div>
+    }
+
+  </div>
+
+</div>

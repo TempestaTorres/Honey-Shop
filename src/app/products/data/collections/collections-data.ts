@@ -4,12 +4,421 @@ import { braSizes, dressSizes, robeSizes, stockingsSizes } from '../../../data/i
 export interface ShopCollectionType {
   name: string;
   url: string;
+  description: string;
   products: Array<ProductType[]>;
 }
 export const AllCollectionsData: ShopCollectionType[] = [
   {
+    name: "CHARLOTTA",
+    url: "charlotta-emerald-lingerie-collection",
+    description: "Unwrap excitement in emerald lingerie. Our coveted collection returns in this dazzling, deep green. Featuring decadent embroidery of Swiss design, Charlotta is the perfect mix of stretch lace and illusion tulle, finished with crystals, bows, and shimmering frills. Looks incredible? You know it is. ",
+    products: [
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald Suspender",
+          url: "charlotta-suspender-slim-deep-emerald",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "suspender",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/Charlotta.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+        {
+          name: "CHARLOTTA",
+          description: "NAVY Suspender",
+          url: "charlotta-navy-suspender-slim",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "suspender",
+          colorName: "navy",
+          colorClass: "swatch-navy",
+          images: [
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Thong_Suspender_Back1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Thong_Suspender_Side.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Suspender_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/navy/24_15170_FLAT.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["melita"]
+        },
+      ],
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald Bustier",
+          url: "charlotta-bustier-deep-emerald",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 175,
+          type: "bra",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_FrontZOOM.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_BackZOOM.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_SideZOOM.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaE.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+        {
+          name: "CHARLOTTA",
+          description: "Navy Bustier",
+          url: "charlotta-bustier-deep-emerald",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 175,
+          type: "bra",
+          colorName: "navy",
+          colorClass: "swatch-navy",
+          images: [
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bustier_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bustier_Thong_FrontZOOM1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bustier_Thong_BackZOOM1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bustier_Thong_SideZOOM.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bustier_Thong_FrontZOOM.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bustier_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bustier_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bustier_Thong_Side1.jpg",
+            "/assets/images/products/collections/charlotta/navy/24_15101_FLAT.jpg",
+          ],
+          sizes: braSizes,
+          models: ["melita"]
+        },
+      ],
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald Thong",
+          url: "charlotta-thong-ouvert-deep-emerald",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaE.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+        {
+          name: "CHARLOTTA",
+          description: "Navy Thong",
+          url: "charlotta-navy-thong-ouvert",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "navy",
+          colorClass: "swatch-navy",
+          images: [
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Thong_Side2.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Thong_Suspender_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Back_1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Side2.jpg",
+            "/assets/images/products/collections/charlotta/navy/24_15219_FLAT.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["melita"]
+        },
+      ],
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald Bra",
+          url: "charlotta-contour-1-4-cup-deep-emerald",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_FrontZOOM6.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaE2.jpg",
+          ],
+          sizes: braSizes,
+          models: ["esha"]
+        },
+        {
+          name: "CHARLOTTA",
+          description: "Navy Bra",
+          url: "charlotta-navy-contour-1-4-cup",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "navy",
+          colorClass: "swatch-navy",
+          images: [
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Front3.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Back2.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Side.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_BraZOOM1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_BraZOOM.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/charlotta/navy/24_15249_FLAT.jpg",
+          ],
+          sizes: braSizes,
+          models: ["melita"]
+        },
+      ],
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald Brief",
+          url: "charlotta-brazilian-deep-emerald",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          type: "brief",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_BriefZOOM.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaE2.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["esha"]
+        },
+        {
+          name: "CHARLOTTA",
+          description: "Navy Brief",
+          url: "charlotta-navy-brazilian",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          type: "brief",
+          colorName: "navy",
+          colorClass: "swatch-navy",
+          images: [
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/navy/24_15261_FLAT.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["renee"]
+        },
+      ],
+      [
+        {
+          name: "Emerald Suspender",
+          description: "Stockings",
+          url: "charlotta-susp-stocking-deep-emerald",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 35,
+          type: "stockings",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/Charlotta_Emerald_Stockings_Web.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Side.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+      ],
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald 3 Piece Lingerie Set",
+          url: "charlotta-emerald-3-piece-lingerie-set",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 325,
+          priceFrom: 325,
+          type: "lingerie-set",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Suspender_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Front4.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Back3.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Side3.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_FrontZOOM5.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaE3.jpg",
+          ],
+          models: ["esha", "sianie"],
+          setItems: [
+            "charlotta-contour-1-4-cup-deep-emerald",
+            "charlotta-suspender-slim-deep-emerald",
+            "charlotta-brazilian-deep-emerald",
+            "charlotta-thong-ouvert-deep-emerald",
+            "charlotta-susp-stocking-deep-emerald",
+          ]
+        },
+      ],
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald Bra & Bottom Lingerie Set",
+          url: "charlotta-emerald-bra-bottom-lingerie-set",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 215,
+          priceFrom: 215,
+          type: "lingerie-set",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Back1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_FrontZOOM.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_BriefZOOM.jpg",
+          ],
+          models: ["esha", "sianie"],
+          setItems: [
+            "charlotta-contour-1-4-cup-deep-emerald",
+            "charlotta-suspender-slim-deep-emerald",
+            "charlotta-brazilian-deep-emerald",
+            "charlotta-thong-ouvert-deep-emerald",
+            "charlotta-susp-stocking-deep-emerald",
+          ]
+        },
+      ],
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald Bustier Lingerie Set",
+          url: "charlotta-emerald-bustier-lingerie-set",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 260,
+          priceFrom: 260,
+          type: "lingerie-set",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_Side1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_FrontZOOM1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_BackZOOM.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bustier_Thong_SideZOOM1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Brief_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaE1.jpg",
+          ],
+          models: ["sianie", "esha"],
+          setItems: [
+            "charlotta-bustier-deep-emerald",
+            "charlotta-brazilian-deep-emerald",
+            "charlotta-thong-ouvert-deep-emerald",
+            "charlotta-susp-stocking-deep-emerald",
+          ]
+        },
+      ],
+    ]
+  },
+  {
     name: "EVERLY EMERALD",
     url: "everly-emerald-lingerie-collection",
+    description: "Lingerie that captivates. Feel confident and radiant in our Everly Emerald collection. Featuring Swiss-designed embroidery and charming French florals, Everly pulls focus with custom flower crystals, deep emerald accents, and shimmering green lurex. Enhanced with beautiful black lace and double picot trims, every element is made to entice.",
     products: [
       [
         {
@@ -17,8 +426,8 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "Bra & Bottom Lingerie Set",
           url: "everly-emerald-bra-bottom-lingerie-set",
           collection: "everly-emerald-lingerie-collection",
-          addFavoriteButton: true,
-          addToCartButton: true,
+          addFavoriteButton: false,
+          addToCartButton: false,
           price: 180,
           priceFrom: 180,
           type: "lingerie-set",
@@ -54,8 +463,8 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "3 Piece Lingerie Set",
           url: "everly-emerald-3-piece-lingerie-set",
           collection: "everly-emerald-lingerie-collection",
-          addFavoriteButton: true,
-          addToCartButton: true,
+          addFavoriteButton: false,
+          addToCartButton: false,
           price: 275,
           priceFrom: 275,
           type: "lingerie-set",
@@ -95,8 +504,8 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "Bustier Lingerie Set",
           url: "everly-emerald-bustier-lingerie-set",
           collection: "everly-emerald-lingerie-collection",
-          addFavoriteButton: true,
-          addToCartButton: true,
+          addFavoriteButton: false,
+          addToCartButton: false,
           price: 255,
           priceFrom: 255,
           type: "lingerie-set",
@@ -132,8 +541,8 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "Bra",
           url: "everly-underwire-balconette-emerald-black",
           collection: "everly-emerald-lingerie-collection",
-          addFavoriteButton: true,
-          addToCartButton: true,
+          addFavoriteButton: false,
+          addToCartButton: false,
           price: 110,
           type: "bra",
           colorName: "emerald",
@@ -266,6 +675,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
   {
     name: "ANNALISE",
     url: "annalise-lingerie-collection",
+    description: "Light blue lingerie, designed to be yours. Featuring dimensional embroidery framed in sky-blue binds, the Annalise collection is pure femininity. While double scallop edges meet see-through tulle, Annalise captivates with embroidery on top. Finished with light-catching crystals and flashes of iridescence, this must-have collection is made to be adored.",
     products: [
       [
         {
@@ -351,6 +761,32 @@ export const AllCollectionsData: ShopCollectionType[] = [
       [
         {
           name: "ANNALISE",
+          description: "Brief",
+          url: "annalise-brazilian-sky-blue",
+          collection: "annalise-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "brief",
+          colorName: "sky blue",
+          colorClass: "swatch-sky-blue",
+          images: [
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Front.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Back.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Brief_Side1.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/ANNALISE4.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "ANNALISE",
           description: "Corset",
           url: "annalise-corset-sky-blue",
           collection: "annalise-lingerie-collection",
@@ -382,8 +818,8 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "Bra & Bottom Lingerie Set",
           url: "annalise-bra-bottom-lingerie-set",
           collection: "annalise-lingerie-collection",
-          addFavoriteButton: true,
-          addToCartButton: true,
+          addFavoriteButton: false,
+          addToCartButton: false,
           price: 185,
           priceFrom: 185,
           type: "lingerie-set",
@@ -405,7 +841,13 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Back.jpg",
             "/assets/images/products/collections/annalise/sky-blue/ANNALISE1.jpg",
           ],
-          models: ["olivia", "sianie"]
+          models: ["olivia", "sianie"],
+          setItems: [
+            "annalise-underwire-plunge-sky-blue",
+            "annalise-brazilian-sky-blue",
+            "annalise-string-sky-blue",
+            "annalise-stay-ups-sky-blue",
+          ]
         },
       ],
       [
@@ -414,8 +856,8 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "3 Piece Lingerie Set",
           url: "annalise-3-piece-lingerie-set",
           collection: "annalise-lingerie-collection",
-          addFavoriteButton: true,
-          addToCartButton: true,
+          addFavoriteButton: false,
+          addToCartButton: false,
           price: 275,
           priceFrom: 275,
           type: "lingerie-set",
@@ -439,7 +881,14 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Back.jpg",
             "/assets/images/products/collections/annalise/sky-blue/ANNALISE2.jpg",
           ],
-          models: ["olivia", "sianie"]
+          models: ["olivia", "sianie"],
+          setItems: [
+            "annalise-underwire-plunge-sky-blue",
+            "annalise-suspender-slim-sky-blue",
+            "annalise-brazilian-sky-blue",
+            "annalise-string-sky-blue",
+            "annalise-stay-ups-sky-blue",
+          ]
         },
       ],
       [
@@ -448,8 +897,8 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "Corset Lingerie Set",
           url: "annalise-corset-lingerie-set",
           collection: "annalise-lingerie-collection",
-          addFavoriteButton: true,
-          addToCartButton: true,
+          addFavoriteButton: false,
+          addToCartButton: false,
           price: 235,
           priceFrom: 235,
           type: "lingerie-set",
@@ -469,7 +918,13 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Back.jpg",
             "/assets/images/products/collections/annalise/sky-blue/ANNALISE6.jpg",
           ],
-          models: ["olivia"]
+          models: ["olivia"],
+          setItems: [
+            "annalise-corset-sky-blue",
+            "annalise-suspender-slim-sky-blue",
+            "annalise-brazilian-sky-blue",
+            "annalise-stay-ups-sky-blue",
+          ]
         },
       ],
       [
@@ -500,6 +955,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
   {
     name: "TARA",
     url: "tara-lingerie-collection",
+    description: "Hot pink lingerie. Now that’s a bold move. Taking elements of inspiration from bandage-style strapping and bondage bodysuits, Tara layers elastics with panels of illusion tulle. While keeping things sheer in all the right places, Tara’s ribbed elastics entice lovers to touch. Layer up the lingerie and complete the full collection with the two-way bandage skirt.",
     products: [
       [
         {
@@ -615,6 +1071,32 @@ export const AllCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
+          name: "TARA",
+          description: "Tara Skirt",
+          url: "tara-skirt-hot-pink",
+          collection: "tara-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 255,
+          type: "dress",
+          colorName: "hot pink",
+          colorClass: "swatch-hot-pink",
+          images: [
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Skirt_Front.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Skirt_Front1.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Skirt_Back.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Skirt_Side.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Skirt_BackZOOM.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Skirt_Front1.jpg",
+            "/assets/images/products/collections/tara/hot-pink/TARA4.jpg",
+
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
           name: "Hot Pink Sheers Stay Up",
           description: "Stockings",
           imageTitle: "BUY 2 GET 1 FREE",
@@ -675,7 +1157,15 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/tara/complete-lingerie-set/love/Tara_Skirt_BackZOOM.jpg",
             "/assets/images/products/tara/complete-lingerie-set/love/TARA5.jpg",
           ],
-          models: ["sianie", "olivia"]
+          models: ["sianie", "olivia"],
+          setItems: [
+            "tara-underwire-balconette-hot-pink",
+            "tara-suspender-garter-hot-pink",
+            "tara-high-waist-brazilian-hot-pink",
+            "tara-thong-hot-pink",
+            "tara-skirt-hot-pink",
+            "tara-stay-ups-hot-pink",
+          ]
         },
       ],
       [
@@ -706,14 +1196,57 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Thong_Back.jpg",
             "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/TARA.jpg",
           ],
-          models: ["sianie", "olivia"]
+          models: ["sianie", "olivia"],
+          setItems: [
+            "tara-underwire-balconette-hot-pink",
+            "tara-high-waist-brazilian-hot-pink",
+            "tara-thong-hot-pink",
+          ]
         },
       ],
+      [
+        {
+          name: "TARA",
+          description: "Tara 3 Piece Lingerie Set",
+          url: "tara-3-piece-lingerie-set",
+          collection: "tara-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          priceFrom: 345,
+          type: "lingerie-set",
+          colorName: "hot pink",
+          colorClass: "swatch-hot-pink",
+          images: [
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Bra_SuspenderStockings_Thong_Front.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Bra_SuspenderStockings_Thong_Back.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Bra_SuspenderStockings_Thong_Side.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Bra_Front.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Bra_Back.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Bra_FrontZOOM4.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Thong_SuspenderStockings_Front1.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Thong_SuspenderStockings_Back.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Brief_Front.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Brief_Back.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Thong_Front.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/Tara_Thong_Back.jpg",
+            "/assets/images/products/tara/bra-bottom-lingerie-set/hot-pink/TARA_6.jpg",
+          ],
+          models: ["sianie", "olivia"],
+          setItems: [
+            "tara-underwire-balconette-hot-pink",
+            "tara-high-waist-brazilian-hot-pink",
+            "tara-thong-hot-pink",
+            "tara-suspender-garter-hot-pink",
+            "tara-stay-ups-hot-pink",
+          ]
+        },
+      ]
     ]
   },
   {
     name: "ELODIE ROMANCE",
     url: "elodie-romance-lingerie-collection",
+    description: "Get amorous in Elodie. Made effortlessly elegant with whisper-soft florals, this seductive lingerie style features garlands of forget-me-nots by Australian and Swiss design. Mixing perfect florals with glittering green accents, Elodie is delicate and dimensional, but she’s got open intentions and nothing to hide. Slip on the ouvert string thong and let her prove it to you…",
     products: [
       [
         {
@@ -875,6 +1408,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           collection: "elodie-romance-lingerie-collection",
           addFavoriteButton: false,
           addToCartButton: false,
+          price: 325,
           priceFrom: 325,
           type: "lingerie-set",
           colorName: "sparkling pink",
@@ -898,6 +1432,13 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/eloidie/3-piece-lingerie-set/white/ELODIE5.jpg",
           ],
           models: ['sianie', 'olivia'],
+          setItems: [
+            "elodie-underwire-balconette-romantic-pink",
+            "elodie-suspender-slim-romantic-pink",
+            "elodie-brazilian-romantic-pink",
+            "elodie-string-ouvert-romantic-pink",
+            "elodie-suspender-stockings-romantic-pink",
+          ]
         },
       ],
       [
@@ -908,6 +1449,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           collection: "elodie-romance-lingerie-collection",
           addFavoriteButton: false,
           addToCartButton: false,
+          price: 215,
           priceFrom: 215,
           type: "lingerie-set",
           colorName: "sparkling pink",
@@ -928,6 +1470,11 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/eloidie/lingerie-set/pink/ElodieRomance_Thong_Back.jpg",
             "/assets/images/products/eloidie/lingerie-set/pink/ELODIE2.jpg",
           ],
+          setItems: [
+            "elodie-underwire-balconette-romantic-pink",
+            "elodie-brazilian-romantic-pink",
+            "elodie-string-ouvert-romantic-pink",
+          ]
         },
       ]
     ]
@@ -935,6 +1482,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
   {
     name: "WHITNEY",
     url: "whitney-lingerie-collection",
+    description: "High on the most-wanted list, Whitney is perfectly elevated for the everyday. Our best-selling bombshell features Swiss-designed embroidery, crystal accents and sheer tulle. Everything you could need for loungewear and lingerie, Whitney has it all.",
     products: [
       [
         {
@@ -2058,6 +2606,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
   {
     name: "STOCKINGS",
     url: "stockings",
+    description: "A silky-smooth feel and sheer, glossy finish that elongates your legs like no other; Honey Birdette’s signature stockings are the ultimate finishing touch. Designed thigh-high for a retro-inspired edge, simply attach them to your suspender and pair with matching lingerie for the full effect. Show-stopping in heels… or nothing else, honey.",
     products: [
       [
         {
@@ -2091,6 +2640,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           colorClass: "swatch-red",
           images: [
             "/assets/images/products/collections/stockings/red/Bowties_Red_Stockings_Web.jpg",
+            "/assets/images/products/collections/stockings/red/Gloria_Thong_Suspender_Front.jpg",
           ],
           sizes: stockingsSizes,
         },
@@ -2108,8 +2658,70 @@ export const AllCollectionsData: ShopCollectionType[] = [
           colorClass: "swatch-ivory",
           images: [
             "/assets/images/products/collections/stockings/ivory/Bowties_Ivory_Stockings_Web.jpg",
+            "/assets/images/products/collections/stockings/ivory/JulesIvory_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/stockings/ivory/JulesIvory_Thong_Suspender_Back1.jpg",
+            "/assets/images/products/collections/stockings/ivory/JulesIvory_Thong_Suspender_Side.jpg",
           ],
           sizes: stockingsSizes,
+        },
+      ],
+      [
+        {
+          name: "Emerald Suspender",
+          description: "Stockings",
+          url: "charlotta-susp-stocking-deep-emerald",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 35,
+          type: "stockings",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/Charlotta_Emerald_Stockings_Web.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Front.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+      ],
+      [
+        {
+          name: "SKY BLUE SHEERS STAY UP",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "annalise-stay-ups-sky-blue",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 30,
+          type: "stockings",
+          colorName: "sky blue",
+          colorClass: "swatch-sky-blue",
+          images: [
+            "/assets/images/products/collections/annalise/sky-blue/Annalise_SkyBlue_Stockings_Web.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Suspender_Front1.jpg",
+          ],
+          sizes: stockingsSizes
+        },
+      ],
+      [
+        {
+          name: "Hot Pink Sheers Stay Up",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "tara-stay-ups-hot-pink",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 30,
+          type: "stockings",
+          colorName: "hot pink",
+          colorClass: "swatch-hot-pink",
+          images: [
+            "/assets/images/products/collections/tara/hot-pink/Tara_HotPink_Stockings_Web.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Thong_SuspenderStockings_Front1.jpg",
+          ],
+          sizes: stockingsSizes
         },
       ],
     ]

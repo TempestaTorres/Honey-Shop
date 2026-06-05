@@ -31,7 +31,7 @@ export const routes: Routes = [
     children: [
       {path: '', component: Home},
       {path: 'boutique-finder', component: BoutiqueFinder},
-      {path: 'collections/:category', component: Collections},
+      {path: 'collections/:type', component: Collections},
       {path: 'online-gift-voucher', component: OnlineGiftVoucher},
       {path: 'the-honey-club', component: TheHoneyClub},
       {path: 'terms-conditions', component: TermsConditions},

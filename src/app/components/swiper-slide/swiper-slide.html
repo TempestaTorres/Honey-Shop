@@ -79,9 +79,9 @@
       <div class="product-price-info">
         @if (product[index()].priceFrom) {
           <span class="from">From</span>
-          ${{ product[index()].priceFrom }}
+          {{ product[index()].priceFrom | currency }}
         } @else if (product[index()].price) {
-          ${{ product[index()].price }}
+          {{ product[index()].price | currency }}
         }
       </div>
     </div>
@@ -147,7 +147,7 @@
 
         </div>
         <!-- Score -->
-        <p class="score">{{ product[index()].ratings?.score }}</p>
+        <p class="score">({{ product[index()].ratings?.score }})</p>
       </div>
     }
   </div>

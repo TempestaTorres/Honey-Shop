@@ -1,0 +1,41 @@
+.js-collection-plp-header {
+  padding-top: 2.5rem;
+}
+.app-widget-heading.plp-header-heading > .app-widget-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.app-widget-heading.plp-header-heading .app-heading-title {
+  font-weight: 500;
+  color: #000000;
+}
+.plp-text-editor > .typeset-description-block {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.plp-text-editor p {
+  margin: 0;
+  font-weight: 400;
+}
+.js-collection-plp-navigation {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  overflow: hidden;
+}
+
+/*=========== Media =============*/
+@media (min-width: 768px) {
+  .plp-text-editor > .typeset-description-block {
+    max-width: 540px;
+  }
+}
+@media (min-width: 1024px) {
+  .app-widget-heading.plp-header-heading > .app-widget-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .plp-text-editor > .typeset-description-block {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

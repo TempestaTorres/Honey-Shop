@@ -1,0 +1,161 @@
+.js-collection-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: hsla(0,0%,100%,.32);
+}
+.js-collection-card__image-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 62/81;
+  overflow: hidden;
+  background-color: #000000;
+}
+.js-collection-card__swiper-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  opacity: 1;
+}
+.js-collection-card__swiper-container.is-hidden,
+.js-collection-card__swiper-container.is-hidden > .swiper{
+  opacity: 0;
+  transition-duration: 0s;
+}
+.collection-card__image {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  aspect-ratio: 62/81;
+}
+.collection-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: block;
+  aspect-ratio: 62/81;
+}
+.js-plp-header {
+  overflow: hidden;
+}
+.js-plp-header .js-plp-slide {
+  height: auto;
+  width: fit-content !important;
+  margin-right: .5rem;
+}
+.js-plp-header .js-plp-slide:first-child {
+  margin-left: 1rem;
+}
+.js-plp-link {
+  backdrop-filter: blur(5px);
+  background-color: rgb(233, 227, 218);
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #000000;
+  text-transform: uppercase;
+  padding: .5rem .875rem;
+}
+@media (hover: hover) and (pointer: fine) {
+  .js-plp-link:hover {
+    --text-opacity: 1;
+    color: #111;
+    color: rgba(17,17,17,var(--text-opacity,1));
+    --bg-opacity: 1;
+    background-color: #e3dbd0;
+    background-color: rgba(227,219,208,var(--bg-opacity,1));
+  }
+}
+.js-plp-collection-pagination {
+  width: 100%;
+  padding: 1.5rem 1rem;
+}
+.js-plp-collection-pagination * {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.js-plp-collection-pagination__header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: .75rem;
+}
+.js-plp-collection-pagination nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .25rem;
+}
+.js-plp-page-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.5rem;
+  border-bottom: 1px solid transparent;
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: linear
+}
+.js-plp-page-button.active {
+  pointer-events: none;
+  border-bottom-color: #000000;
+}
+.js-plp-page-button.js-plp-next,
+.js-plp-page-button.js-plp-prev {
+  border-style: none !important;
+}
+.js-plp-page-button.js-plp-next.disabled,
+.js-plp-page-button.js-plp-prev.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.js-plp-page-button.js-plp-next .icon,
+.js-plp-page-button.js-plp-prev .icon {
+  height: .75rem;
+  width: .75rem;
+  display: block;
+}
+@media (hover: hover) and (pointer: fine) {
+  .js-plp-page-button.js-plp-next:hover,
+  .js-plp-page-button.js-plp-prev:hover {
+    color: #000;
+    background-color: var(--global--color-primary);
+  }
+}
+
+/* =================== Media ================== */
+@media (min-width: 768px) {
+  .js-collection-card__image-wrapper,
+  .collection-card__image,
+  .collection-card__image img {
+    aspect-ratio: 357/467;
+  }
+}
+@media (min-width: 1024px) {
+  .js-plp-header .js-plp-slide:first-child {
+    margin-left: 1.5rem;
+  }
+  .js-plp-collection-pagination {
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
+  }
+}

@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { ProductType } from '../../products/types/product-type';
 import { RouterLink } from '@angular/router';
-import { NgClass } from '@angular/common';
+import { CurrencyPipe, NgClass } from '@angular/common';
 import { WishlistService } from '../../product-wishlist/wishlist-service';
 import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
 import { SelectSizeService } from '../../modals/select-size-modal/select-size-service';
@@ -19,7 +19,7 @@ declare var Swiper: any;
 
 @Component({
   selector: 'app-swiper-slide',
-  imports: [RouterLink, NgClass],
+  imports: [RouterLink, NgClass, CurrencyPipe],
   templateUrl: './swiper-slide.html',
 })
 export class SwiperSlide {
@@ -28,17 +28,17 @@ export class SwiperSlide {
   public index: WritableSignal<number> = signal<number>(0);
 
   private swiper: any;
-  private carouselSwp = viewChild<ElementRef<HTMLElement>>('carouselSwiper');
+  readonly carouselSwp = viewChild<ElementRef<HTMLElement>>('carouselSwiper');
   private swiperClassName: string = '';
 
-  constructor(private destroyRef: DestroyRef, private wishlistService$: WishlistService,
-              private selectSizeService: SelectSizeService,
-              private cartService: ProductCartService,) {
-
+  constructor(
+    private destroyRef: DestroyRef,
+    private wishlistService$: WishlistService,
+    private selectSizeService: SelectSizeService,
+    private cartService: ProductCartService,
+  ) {
     afterNextRender(() => {
-
       this.initSwiper();
-
     });
 
     this.destroyRef.onDestroy(() => {
@@ -47,21 +47,18 @@ export class SwiperSlide {
   }
 
   public mouseEnter(): void {
-
     if (this.swiper) {
       this.swiper.slideNext();
     }
   }
 
   public mouseLeave(): void {
-
     if (this.swiper) {
       this.swiper.slidePrev();
     }
   }
 
   public selectColorItemClick(index: number): void {
-
     if (index === this.index()) return;
 
     if (this.swiper) {
@@ -75,40 +72,33 @@ export class SwiperSlide {
   }
 
   public addToWishList(index: number): void {
-
     let product: ProductCartType = {
       name: this.product[index].name,
       url: this.product[index].url,
       price: String(this.product[index].price),
       image: this.product[index].images[0],
-      count: "",
+      count: '',
       favorite: this.product[index].favorite,
-    }
+    };
     this.wishlistService$.wishlistToggle(product);
   }
 
   public addToCart(index: number): void {
-
     const product = this.product[index];
 
     if (product.type !== 'accessory') {
       // Open select size modal window
       this.selectSizeService.triggerSizeSelectionChanged(product);
-    }
-    else {
+    } else {
       const item = this.cartService.productTypeToCartType(product);
       requestAnimationFrame(() => {
         this.cartService.addToCart(item);
       });
     }
-
-
   }
 
   private initSwiper(): void {
-
     if (this.swiperClassName === '') {
-
       const d = new Date();
       let time: number = d.getTime();
 
@@ -121,15 +111,14 @@ export class SwiperSlide {
       }
     }
 
-    let swpSelector: string = "." + this.swiperClassName;
+    let swpSelector: string = '.' + this.swiperClassName;
 
     let options = {
       pagination: {
         el: '.swiper-pagination',
         type: 'progressbar',
       },
-
-    }
+    };
 
     this.swiper = new Swiper(swpSelector, options);
   }

@@ -1,3 +1,34 @@
 <main class="outline-none">
-  <p>Collections</p>
+  <!-- Header -->
+  <section class="section-boxed">
+    <app-collections-header
+      [collectionType]="collectionType()"
+      class="app-wrapper"></app-collections-header>
+  </section>
+
+  <!--  Collection -->
+  <section class="section-boxed">
+    <app-collection-show-case
+      class="collection-show-case"
+      [collectionType]="collectionType()"></app-collection-show-case>
+  </section>
+
+  <!--  Recommendations -->
+  <section class="section-boxed section-recommendations">
+    <div class="app-wrapper">
+      <!-- Heading -->
+      <div class="recommendations-header">
+        <div class="app-widget-heading app-widget-heading-default">
+          <div class="app-widget-container">
+            <h2 class="app-heading-title">Recommended</h2>
+            <div class="app-underline active"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Carousel -->
+      <app-product-carousel [className]="'js-carousel-swiper-recommended'" [requestType]="'recommended'" class="app-wrapper"></app-product-carousel>
+    </div>
+  </section>
+
 </main>

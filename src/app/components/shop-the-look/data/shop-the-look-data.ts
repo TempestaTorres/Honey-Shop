@@ -36,7 +36,12 @@ export const ShopTheLookData: ShopTheLookType[] = [
         name: "WHITNEY CHARTREUSE",
         text: "Made for the limelight. Discover our most-loved lingerie in a high-impact hue.",
         url: "whitney-chartreuse-lingerie-collection"
-      }
+      },
+      {
+        name: "CHARLOTTA EMERALD",
+        text: "NOW 30% OFF",
+        url: "charlotta-emerald-lingerie-collection"
+      },
     ],
     slides: [
       {
@@ -66,6 +71,13 @@ export const ShopTheLookData: ShopTheLookType[] = [
           "/assets/images/shop-look/whitney/ShopLook_Whit_2.jpg",
         ],
         url: "whitney-lingerie-collection"
+      },
+      {
+        images: [
+          "/assets/images/shop-look/charlotta/ShopLook_charlotta_1.jpg",
+          "/assets/images/shop-look/charlotta/ShopLook_charlotta_2.jpg",
+        ],
+        url: "charlotta-emerald-lingerie-collection"
       },
     ]
   }
