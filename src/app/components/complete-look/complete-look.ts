@@ -70,9 +70,10 @@ export class CompleteLook {
         .getCompleteLook(product.collection, product.type, product.colorName)
         .subscribe((items) => {
           this.completeLook.set(items);
+          this.loading.set(false);
 
           if (items.length > 0) {
-            this.loading.set(false);
+
             this.initSwiper();
           }
         });

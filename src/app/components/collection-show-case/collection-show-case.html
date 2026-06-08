@@ -1,5 +1,8 @@
 <div class="js-plp-collection" [title]="collectionName()">
 
+  <!--  Modal Filter -->
+  <app-collection-filter-modal></app-collection-filter-modal>
+
   <!--  Header -->
   <div class="js-plp-collection-header">
 
@@ -55,7 +58,11 @@
       </div>
 
       <!-- Filter -->
-      <button (click)="triggerFilter()" type="button"><span>Filter</span></button>
+      @if (filtersCount() > 0) {
+        <button (click)="triggerFilter()" type="button"><span>Filter ({{ filtersCount() }})</span></button>
+      } @else {
+        <button (click)="triggerFilter()" type="button"><span>Filter</span></button>
+      }
 
       <!-- Sort -->
       <div>
@@ -68,7 +75,7 @@
             <span class="applied-sort">{{ sort() }}</span>
           </button>
           <!-- Sort window -->
-          <div class="js-sort-select-wrapper" [class.is-active]="sortOpen()">
+          <div (mouseleave)="sortOpenClick()" class="js-sort-select-wrapper" [class.is-active]="sortOpen()">
             <button
               #jsSelectSortButton
               (click)="selectSortClick('Featured')"

@@ -1,12 +1,344 @@
 import { ProductType } from '../../types/product-type';
 import { braSizes, dressSizes, robeSizes, stockingsSizes } from '../../../data/instagram-feeds-data';
 
+export interface ShopCollectionColours {
+  url: string;
+  colors: {colorName: string, colorClass: string}[];
+}
+export interface ShopCollectionProductCategoryType {
+  url: string,
+  types: string[]
+}
 export interface ShopCollectionType {
   name: string;
   url: string;
   description: string;
   products: Array<ProductType[]>;
 }
+export const AllCollectionsColoursData: ShopCollectionColours[] = [
+  {
+    url: "all-lingerie",
+    colors: [
+      {
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+      },
+      {
+        colorName: "navy",
+        colorClass: "swatch-navy",
+      },
+      {
+        colorName: "sky blue",
+        colorClass: "swatch-sky-blue",
+      },
+      {
+        colorName: "hot pink",
+        colorClass: "swatch-hot-pink",
+      },
+      {
+        colorName: "pink",
+        colorClass: "swatch-pink",
+      },
+      {
+        colorName: "sparkling pink",
+        colorClass: "swatch-sparkling-pink",
+      },
+      {
+        colorName: "chartreuse",
+        colorClass: "swatch-chartreuse",
+      },
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+      {
+        colorName: "limoncello",
+        colorClass: "swatch-limoncello",
+      },
+      {
+        colorName: "love",
+        colorClass: "swatch-love",
+      },
+      {
+        colorName: "ocean",
+        colorClass: "swatch-ocean",
+      },
+      {
+        colorName: "brown",
+        colorClass: "swatch-brown",
+      },
+      {
+        colorName: "red",
+        colorClass: "swatch-red",
+      },
+      {
+        colorName: "ivory",
+        colorClass: "swatch-ivory",
+      },
+    ]
+  },
+  {
+    url: "charlotta-emerald-lingerie-collection",
+    colors: [
+      {
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+      },
+      {
+        colorName: "navy",
+        colorClass: "swatch-navy",
+      },
+    ]
+  },
+  {
+    url: "everly-emerald-lingerie-collection",
+    colors: [
+      {
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+      },
+    ]
+  },
+  {
+    url: "annalise-lingerie-collection",
+    colors: [
+      {
+        colorName: "sky blue",
+        colorClass: "swatch-sky-blue",
+      },
+    ]
+  },
+  {
+    url: "tara-lingerie-collection",
+    colors: [
+      {
+        colorName: "hot pink",
+        colorClass: "swatch-hot-pink",
+      },
+    ]
+  },
+  {
+    url: "elodie-romance-lingerie-collection",
+    colors: [
+      {
+        colorName: "sparkling pink",
+        colorClass: "swatch-sparkling-pink",
+      },
+    ]
+  },
+  {
+    url: "whitney-lingerie-collection",
+    colors: [
+      {
+        colorName: "chartreuse",
+        colorClass: "swatch-chartreuse",
+      },
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+      {
+        colorName: "limoncello",
+        colorClass: "swatch-limoncello",
+      },
+      {
+        colorName: "love",
+        colorClass: "swatch-love",
+      },
+      {
+        colorName: "ocean",
+        colorClass: "swatch-ocean",
+      },
+      {
+        colorName: "sparkling pink",
+        colorClass: "swatch-sparkling-pink",
+      },
+      {
+        colorName: "brown",
+        colorClass: "swatch-brown",
+      },
+    ]
+  },
+  {
+    url: "pammy-lingerie-collection",
+    colors: [
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+    ]
+  },
+  {
+    url: "lian-lingerie-collection",
+    colors: [
+      {
+        colorName: "ivory",
+        colorClass: "swatch-ivory",
+      },
+    ]
+  },
+  {
+    url: "kukuro-lingerie-collection",
+    colors: [
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+      {
+        colorName: "red",
+        colorClass: "swatch-red",
+      },
+      {
+        colorName: "purple",
+        colorClass: "swatch-purple",
+      },
+    ]
+  },
+  {
+    url: "bras",
+    colors: [
+      {
+        colorName: "navy",
+        colorClass: "swatch-navy",
+      },
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+      {
+        colorName: "chartreuse",
+        colorClass: "swatch-chartreuse",
+      },
+      {
+        colorName: "limoncello",
+        colorClass: "swatch-limoncello",
+      },
+      {
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+      },
+      {
+        colorName: "sky blue",
+        colorClass: "swatch-sky-blue",
+      },
+      {
+        colorName: "hot pink",
+        colorClass: "swatch-hot-pink",
+      },
+      {
+        colorName: "pink",
+        colorClass: "swatch-pink",
+      },
+      {
+        colorName: "sparkling pink",
+        colorClass: "swatch-sparkling-pink",
+      },
+      {
+        colorName: "love",
+        colorClass: "swatch-love",
+      },
+      {
+        colorName: "ocean",
+        colorClass: "swatch-ocean",
+      },
+      {
+        colorName: "brown",
+        colorClass: "swatch-brown",
+      },
+    ]
+  },
+  {
+    url: "lace-bras",
+    colors: [
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+      {
+        colorName: "chartreuse",
+        colorClass: "swatch-chartreuse",
+      },
+      {
+        colorName: "limoncello",
+        colorClass: "swatch-limoncello",
+      },
+      {
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+      },
+      {
+        colorName: "sparkling pink",
+        colorClass: "swatch-sparkling-pink",
+      },
+      {
+        colorName: "love",
+        colorClass: "swatch-love",
+      },
+      {
+        colorName: "ocean",
+        colorClass: "swatch-ocean",
+      },
+      {
+        colorName: "brown",
+        colorClass: "swatch-brown",
+      },
+      {
+        colorName: "ivory",
+        colorClass: "swatch-ivory",
+      },
+    ]
+  },
+  {
+    url: "bondage-bras",
+    colors: [
+      {
+        colorName: "hot pink",
+        colorClass: "swatch-hot-pink",
+      },
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+      {
+        colorName: "red",
+        colorClass: "swatch-red",
+      },
+      {
+        colorName: "purple",
+        colorClass: "swatch-purple",
+      },
+    ]
+  },
+  {
+    url: "stockings",
+    colors: [
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+      {
+        colorName: "red",
+        colorClass: "swatch-red",
+      },
+      {
+        colorName: "ivory",
+        colorClass: "swatch-ivory",
+      },
+      {
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+      },
+      {
+        colorName: "sky blue",
+        colorClass: "swatch-sky-blue",
+      },
+      {
+        colorName: "hot pink",
+        colorClass: "swatch-hot-pink",
+      },
+    ]
+  },
+]
 export const AllCollectionsData: ShopCollectionType[] = [
   {
     name: "CHARLOTTA",
@@ -1012,7 +1344,8 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Suspender_Thong_Side.jpg",
             "/assets/images/products/collections/tara/hot-pink/TARA7.jpg",
           ],
-          sizes: dressSizes
+          sizes: dressSizes,
+          models: ["sianie", "olivia"]
         },
       ],
       [
@@ -1126,6 +1459,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           collection: "tara-lingerie-collection",
           addFavoriteButton: false,
           addToCartButton: false,
+          price: 650,
           priceFrom: 650,
           type: "lingerie-set",
           colorName: "hot pink",
@@ -1176,6 +1510,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           collection: "tara-lingerie-collection",
           addFavoriteButton: false,
           addToCartButton: false,
+          price: 240,
           priceFrom: 240,
           type: "lingerie-set",
           colorName: "hot pink",
@@ -1212,6 +1547,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           collection: "tara-lingerie-collection",
           addFavoriteButton: false,
           addToCartButton: false,
+          price: 345,
           priceFrom: 345,
           type: "lingerie-set",
           colorName: "hot pink",
@@ -1238,6 +1574,260 @@ export const AllCollectionsData: ShopCollectionType[] = [
             "tara-thong-hot-pink",
             "tara-suspender-garter-hot-pink",
             "tara-stay-ups-hot-pink",
+          ]
+        },
+      ]
+    ]
+  },
+  {
+    name: "PAMMY",
+    url: "pammy-lingerie-collection",
+    description: "Instant lift. Incredible cleavage. Get the best of both with this black lingerie set. Featuring a convertible strapless bra with multiple ways to wear, the new Pammy collection includes an assertive suspender, high-waisted brief, classic black thong, and a zip-up halter vest. Designed to be noticed. Made to be seen. Show it off in Pammy and flaunt it because you can.",
+    products: [
+      [
+        {
+          name: "PAMMY",
+          description: "Bra",
+          url: "pammy-push-up-strapless-black",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Back1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Side.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_SideZOOM.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/pammy/black/PAMMY7.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
+          description: "Suspender",
+          url: "pammy-suspender-midi-black",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "suspender",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Suspender_Back1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Suspender_Side1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Suspender_Thong_Back1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Suspender_Thong_Side1.jpg",
+            "/assets/images/products/collections/pammy/black/PAMMY7.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
+          description: "Brief",
+          url: "pammy-high-waist-brazilian-black",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Brief_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Brief_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Brief_Side.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Front2.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Side1.jpg",
+            "/assets/images/products/collections/pammy/black/PAMMY6.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
+          description: "Thong",
+          url: "pammy-thong-black",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Front.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Back1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Side1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/pammy/black/PAMMY4.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
+          description: "Pammy Corset",
+          url: "pammy-halter-vest-black",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 180,
+          type: "corset",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Brief_Front.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Front3.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Back1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Side.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_SideZOOM.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Brief_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Brief_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Brief_Side.jpg",
+            "/assets/images/products/collections/pammy/black/PAMMY6.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
+          description: "Bra & Bottom Lingerie Set",
+          url: "pammy-bra-bottom-lingerie-set",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 240,
+          priceFrom: 240,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Brief_Front.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Brief_Back.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Brief_Side.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Thong_Front.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Thong_Back.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Thong_Side.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Front4.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_Back.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Bra_SideZOOM.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Brief_Front.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Brief_Back.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Thong_Front.jpg",
+            "/assets/images/products/pammy/pammy-bra-bottom-lingerie-set/black/Pammy_Thong_Back.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/PAMMY1.jpg",
+          ],
+          models: ["olivia", "sianie"],
+          setItems: [
+            "pammy-push-up-strapless-black",
+            "pammy-high-waist-brazilian-black",
+            "pammy-thong-black",
+          ]
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
+          description: "3 Piece Lingerie Set",
+          url: "pammy-3-piece-lingerie-set",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 360,
+          priceFrom: 360,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Thong_Side.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Brief_Front1.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Brief_Back.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Suspender_Brief_Side1.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Front1.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_Back1.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Bra_SideZOOM.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Thong_Suspender_Front.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Thong_Suspender_Back.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Brief_Front.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Brief_Back.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Thong_Front2.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/Pammy_Thong_Back.jpg",
+            "/assets/images/products/pammy/pammy-3-piece-lingerie-set/black/PAMMY1.jpg",
+          ],
+          models: ["sianie", "olivia"],
+          setItems: [
+            "pammy-push-up-strapless-black",
+            "pammy-suspender-midi-black",
+            "pammy-high-waist-brazilian-black",
+            "pammy-thong-black",
+            "sheers-black-stay-up-stockings",
+          ]
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
+          description: "Corset Lingerie Set",
+          url: "pammy-corset-lingerie-set",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 265,
+          priceFrom: 265,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Brief_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Brief_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Brief_Side.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Front3.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Back1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_Side1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_SideZOOM1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bustier_FrontZOOM1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Brief_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Brief_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Front2.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Thong_Back.jpg",
+            "/assets/images/products/collections/pammy/black/PAMMY6.jpg",
+          ],
+          models: ["sianie", "olivia"],
+          setItems: [
+            "pammy-halter-vest-black",
+            "pammy-high-waist-brazilian-black",
+            "pammy-thong-black",
           ]
         },
       ]
@@ -1681,6 +2271,59 @@ export const AllCollectionsData: ShopCollectionType[] = [
             score: "41"
           },
           models: ["renee"]
+        },
+      ],
+      [
+        {
+          name: "WHITNEY",
+          description: "Black Bustier",
+          url: "whitney-bustier-black-new",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 220,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/whitney/Black/WhitneyBlk_Bustier_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlk_BustierNoStraps_Brief_FrontZOOM.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlk_Bustier_Thong_BackZOOM.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlk_Bustier_Thong_SideZOOM.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlk_Bustier_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlk_Bustier_Thong_Side.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Ocean Bustier",
+          url: "whitney-bustier-ocean",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 220,
+          type: "bra",
+          colorName: "ocean",
+          colorClass: "swatch-ocean",
+          images: [
+            "/assets/images/products/collections/whitney/ocean/Whitney_BustierNoStraps_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bustier_Thong_FrontZOOM.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bustier_Thong_BackZOOM.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bustier_Thong_SideZOOM.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bustier_Thong_FrontZOOM1.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bustier_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bustier_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bustier_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/ocean/Campaign_Whitney_Ocean2.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "7"
+          },
+          models: ["keesha", "tyniesha"]
         },
       ],
       [
@@ -2604,9 +3247,367 @@ export const AllCollectionsData: ShopCollectionType[] = [
     ]
   },
   {
+    name: "LIAN",
+    url: "lian-lingerie-collection",
+    description: "Barely-there lingerie. Seduction like no other. Inspired by European formal wear and celebrity couture, the Lian lingerie features invisible tulle, floating florals, and a subtle iridescence that twinkles like magic. The closer you get, the more it shines. Whether it’s for the boardroom, bedroom, or as bridal lingerie, Lian is the type to effortlessly entice.",
+    products: [
+      [
+        {
+          name: "LIAN",
+          description: "Brief",
+          url: "lian-ivory-brazilian",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "brief",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Bra_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Bra_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Bra_Brief_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian5.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Bra",
+          url: "lian-ivory-balconette",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "bra",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_SideZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_BraZOOM1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian7.jpg",
+          ],
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Veil",
+          imageTitle: "LIMITED EDITION",
+          url: "lian-ivory-veil",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 240,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "accessory",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Bra_Thong_Veil_Garter_Front2_2.jpg",
+            "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Veil_Back1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Bra_Thong_Veil_Garter_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Veil_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Veil_Box.jpg",
+            "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Veil_Zoom.jpg",
+          ]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Thong",
+          url: "lian-ivory-thong",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "thong",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Suspender_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Suspender_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Back1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Side_1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian11.jpg",
+          ],
+          sizes: dressSizes,
+          models: ['ella']
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "SUSPENDER",
+          url: "lian-ivory-suspender",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "suspender",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Thong_Suspender_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Thong_Suspender_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Thong_Suspender_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Front_2.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Side_1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian7.jpg"
+          ],
+          sizes: dressSizes,
+          models: ['ella']
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Robe",
+          url: "lian-ivory-long-robe",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 280,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "robe",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Bra_Suspender_Thong_Front1_3.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_FrontZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_BackZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_SideZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian9.jpg",
+          ],
+          sizes: robeSizes,
+          models: ["annalise", "ella"]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Garter",
+          imageTitle: "LIMITED EDITION",
+          url: "lian-ivory-garter",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "accessory",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Garter_Box_1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Thong_Garter_Front2.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Garter_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Bra_Thong_Veil_Garter_Side.jpg",
+          ]
+        },
+      ],
+      [
+        {
+          name: "Pearl",
+          description: "Pasties",
+          url: "nipple-pasties-pearl",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          type: "accessory",
+          price: 75,
+          colorName: "white",
+          colorClass: "swatch-white",
+          images: [
+            "/assets/images/products/bridal-lingerie/pearl/Pearl_Pasties_Box.jpg",
+            "/assets/images/products/bridal-lingerie/pearl/Pearl_Pasties_Zoom.jpg",
+          ]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "3 Piece Lingerie Set",
+          url: "lian-3-piece-lingerie-set",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 325,
+          priceFrom: 325,
+          type: "lingerie-set",
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Side_1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_SideZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_BraZOOM1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Thong_Suspender_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Thong_Suspender_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian7.jpg"
+          ],
+          models: ["ella", "annalise"],
+          setItems: [
+            "lian-ivory-balconette",
+            "lian-ivory-suspender",
+            "lian-ivory-thong",
+            "lian-ivory-brazilian",
+            "ivory-natural-bowties-suspender-stockings",
+          ]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Bra & Bottom Lingerie Set",
+          url: "lian-bra-bottom-lingerie-set",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 215,
+          priceFrom: 215,
+          type: "lingerie-set",
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Bra_Thong_Side_1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_SideZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_BraZOOM1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian7.jpg"
+          ],
+          models: ["ella", "annalise"],
+          setItems: [
+            "lian-ivory-balconette",
+            "lian-ivory-thong",
+            "lian-ivory-brazilian",
+          ]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Complete Bridal Lingerie Set",
+          url: "lian-complete-lingerie-set",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 875,
+          priceFrom: 875,
+          type: "lingerie-set",
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Bra_Thong_Veil_Garter_Front2_1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Bra_Thong_Veil_Garter_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter-belt/ivory/Lian_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian_Robe_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_SideZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Suspender_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Suspender_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/panty/ivory/Lian_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/thong/ivory/Lian_Thong_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Veil_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/veil/ivory/Lian_Veil_Back1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Thong_Garter_Front2.jpg",
+            "/assets/images/products/bridal-lingerie/lian/garter/ivory/Lian_Garter_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/robe/ivory/Lian9.jpg"
+          ],
+          models: ["ella", "annalise"],
+          setItems: [
+            "lian-ivory-balconette",
+            "lian-ivory-balconette",
+            "lian-ivory-thong",
+            "lian-ivory-brazilian",
+            "lian-ivory-suspender",
+            "lian-ivory-long-robe",
+            "ivory-natural-bowties-suspender-stockings",
+            "lian-ivory-veil",
+            "lian-ivory-garter",
+          ]
+        },
+      ],
+    ]
+  },
+  {
+    name: "KUKURO",
+    url: "kukuro-lingerie-collection",
+    description: "More Kukuro. More thrills. Our best-selling bondage collection is back with a bang! Combining lingerie and bondage, Kukuro is our most sought-after collection of all time. As always, Kukuro is made for curves with stretchy elastics and adjustable slides. Strap in for a good time… it’s even better from the back.",
+    products: [
+      [
+        {
+          name: "KUKURO",
+          description: "Bra",
+          url: "kukuro-black-bra",
+          collection: "kukuro-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+      ],
+    ]
+  }
+]
+export const AllSubCollectionsData: ShopCollectionType[] = [
+  {
     name: "STOCKINGS",
     url: "stockings",
-    description: "A silky-smooth feel and sheer, glossy finish that elongates your legs like no other; Honey Birdette’s signature stockings are the ultimate finishing touch. Designed thigh-high for a retro-inspired edge, simply attach them to your suspender and pair with matching lingerie for the full effect. Show-stopping in heels… or nothing else, honey.",
+    description: "A silky-smooth feel and sheer, glossy finish that elongates your legs like no other; Honey’s signature stockings are the ultimate finishing touch. Designed thigh-high for a retro-inspired edge, simply attach them to your suspender and pair with matching lingerie for the full effect. Show-stopping in heels… or nothing else, honey.",
     products: [
       [
         {
@@ -2670,7 +3671,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           name: "Emerald Suspender",
           description: "Stockings",
           url: "charlotta-susp-stocking-deep-emerald",
-          collection: "stockings",
+          collection: "charlotta-emerald-lingerie-collection",
           addFavoriteButton: true,
           addToCartButton: true,
           price: 35,
@@ -2690,7 +3691,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "Stockings",
           imageTitle: "BUY 2 GET 1 FREE",
           url: "annalise-stay-ups-sky-blue",
-          collection: "stockings",
+          collection: "annalise-lingerie-collection",
           addFavoriteButton: true,
           addToCartButton: true,
           price: 30,
@@ -2710,7 +3711,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
           description: "Stockings",
           imageTitle: "BUY 2 GET 1 FREE",
           url: "tara-stay-ups-hot-pink",
-          collection: "stockings",
+          collection: "tara-lingerie-collection",
           addFavoriteButton: true,
           addToCartButton: true,
           price: 30,
@@ -2724,6 +3725,711 @@ export const AllCollectionsData: ShopCollectionType[] = [
           sizes: stockingsSizes
         },
       ],
+      [
+        {
+          name: "Black Sheers Stay Up",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "sheers-black-stay-up-stockings",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 25,
+          type: "stockings",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/stockings/black/Sheers_Black_Stockings_Web.jpg",
+          ],
+          sizes: stockingsSizes
+        },
+      ],
     ]
-  }
+  },
+  {
+    name: "BRAS",
+    url: "bras",
+    description: "",
+    products: [
+      [
+        {
+          name: "CHARLOTTA",
+          description: "Emerald Bra",
+          url: "charlotta-contour-1-4-cup-deep-emerald",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Front1.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Back.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Side.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_FrontZOOM6.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/charlotta/emerald/CharlottaE2.jpg",
+          ],
+          sizes: braSizes,
+          models: ["esha"]
+        },
+        {
+          name: "CHARLOTTA",
+          description: "Navy Bra",
+          url: "charlotta-navy-contour-1-4-cup",
+          collection: "charlotta-emerald-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "navy",
+          colorClass: "swatch-navy",
+          images: [
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Front3.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Back2.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Side.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_BraZOOM1.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_BraZOOM.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/charlotta/navy/Charlotta_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/charlotta/navy/24_15249_FLAT.jpg",
+          ],
+          sizes: braSizes,
+          models: ["melita"]
+        },
+      ],
+      [
+        {
+          name: "EVERLY EMERALD",
+          description: "Bra",
+          url: "everly-underwire-balconette-emerald-black",
+          collection: "everly-emerald-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 110,
+          type: "bra",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Front4.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Back3.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Side3.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_FrontZOOM2.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EVERLY3.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "ANNALISE",
+          description: "Bra",
+          url: "annalise-underwire-plunge-sky-blue",
+          collection: "annalise-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "bra",
+          colorName: "sky blue",
+          colorClass: "swatch-sky-blue",
+          images: [
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Front1.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Back2.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Side.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_SideZOOM1.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Front1.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Side1.jpg",
+            "/assets/images/products/collections/annalise/sky-blue/ANNALISE1.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "TARA",
+          description: "Bra",
+          url: "tara-underwire-balconette-hot-pink",
+          collection: "tara-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "hot pink",
+          colorClass: "swatch-hot-pink",
+          images: [
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Front4.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Back5.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Side2.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_FrontZOOM4.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/tara/hot-pink/TARA6.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "ELODIE ROMANCE",
+          description: "Bra",
+          url: "elodie-underwire-balconette-romantic-pink",
+          collection: "elodie-romance-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/elodie-romance/pink/ElodieRomance_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/elodie-romance/pink/ElodieRomance_Bra_Front5.jpg",
+            "/assets/images/products/collections/elodie-romance/pink/ElodieRomance_Bra_Back5.jpg",
+            "/assets/images/products/collections/elodie-romance/pink/ElodieRomance_Bra_Side3.jpg",
+            "/assets/images/products/collections/elodie-romance/pink/ElodieRomance_Bra_SideZOOM3.jpg",
+            "/assets/images/products/collections/elodie-romance/pink/ElodieRomance_Bra_Brief_Front1.jpg",
+            "/assets/images/products/collections/elodie-romance/pink/ElodieRomance_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/elodie-romance/pink/ElodieRomance_Bra_Brief_Side1.jpg",
+            "/assets/images/products/collections/elodie-romance/pink/ELODIE1.jpg",
+          ],
+          sizes: braSizes,
+          models: ['sianie']
+        },
+      ],
+      [
+        {
+          name: "WHITNEY",
+          description: "Chartreuse Bra",
+          url: "whitney-underwire-balconette-chartreuse",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "chartreuse",
+          colorClass: "swatch-chartreuse",
+          images: [
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_SideZOOM1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WHITNEY_CHARTREUSE_5.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Black Bra",
+          url: "whitney-black-bra",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Back2.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Side3.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_FrontZOOM5.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_SideZOOM3.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/whitney/Black/Campaign_Imagery_WhitneyBlk1.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Limoncello Bra",
+          url: "whitney-underwire-balconette-limoncello",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "limoncello",
+          colorClass: "swatch-limoncello",
+          images: [
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_ThongStockings_Front.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Front2.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Back2.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Side1.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_FrontZOOM4.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_SideZOOM4.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/limoncello/Campaign_Imagery_WL2.jpg",
+          ],
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Love Bra",
+          url: "whitney-love-balconette",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "love",
+          colorClass: "swatch-love",
+          images: [
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Back1.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_SideZOOM1.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyLove3.jpg",
+          ],
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Ocean Bra",
+          url: "whitney-underwire-balconette-ocean",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "ocean",
+          colorClass: "swatch-ocean",
+          images: [
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_BraZOOM.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Back_.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Side_.jpg",
+            "/assets/images/products/collections/whitney/ocean/Campaign_Whitney_Ocean.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["tyniesha", "keesha"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Sparkling Pink Bra",
+          url: "whitney-uw-balc-sparkling-pink",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "sparkling pink",
+          colorClass: "swatch-sparkling-pink",
+          images: [
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Front4.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Side1.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_FrontZOOM3.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WHITNEYSPINK.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["sianie"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Chocolate Bra",
+          url: "whitney-underwire-balconette-chocolate",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 120,
+          type: "bra",
+          colorName: "brown",
+          colorClass: "swatch-brown",
+          images: [
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_BraZOOM1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_BraZOOM.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/brown/08_13394_FLATcopy.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["renee"]
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
+          description: "Pammy Bra",
+          url: "pammy-push-up-strapless-black",
+          collection: "pammy-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Front1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Back1.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Side.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_SideZOOM.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/pammy/black/Pammy_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/pammy/black/PAMMY7.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+      ]
+    ]
+  },
+  {
+    name: "LACE BRAS",
+    url: "lace-bras",
+    description: "",
+    products: [
+      [
+        {
+          name: "EVERLY EMERALD",
+          description: "Bra",
+          url: "everly-underwire-balconette-emerald-black",
+          collection: "everly-emerald-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 110,
+          type: "bra",
+          colorName: "emerald",
+          colorClass: "swatch-emerald",
+          images: [
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Front4.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Back3.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Side3.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_FrontZOOM2.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/everly-emerald/EVERLY3.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "WHITNEY",
+          description: "Chartreuse Bra",
+          url: "whitney-underwire-balconette-chartreuse",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "chartreuse",
+          colorClass: "swatch-chartreuse",
+          images: [
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_SideZOOM1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WHITNEY_CHARTREUSE_5.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Black Bra",
+          url: "whitney-black-bra",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Back2.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Side3.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_FrontZOOM5.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_SideZOOM3.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/whitney/Black/Campaign_Imagery_WhitneyBlk1.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Limoncello Bra",
+          url: "whitney-underwire-balconette-limoncello",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "limoncello",
+          colorClass: "swatch-limoncello",
+          images: [
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_ThongStockings_Front.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Front2.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Back2.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Side1.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_FrontZOOM4.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_SideZOOM4.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/limoncello/Campaign_Imagery_WL2.jpg",
+          ],
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Love Bra",
+          url: "whitney-love-balconette",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "love",
+          colorClass: "swatch-love",
+          images: [
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Back1.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_SideZOOM1.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyLove3.jpg",
+          ],
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Ocean Bra",
+          url: "whitney-underwire-balconette-ocean",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "ocean",
+          colorClass: "swatch-ocean",
+          images: [
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_BraZOOM.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Back_.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Side_.jpg",
+            "/assets/images/products/collections/whitney/ocean/Campaign_Whitney_Ocean.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["tyniesha", "keesha"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Sparkling Pink Bra",
+          url: "whitney-uw-balc-sparkling-pink",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "sparkling pink",
+          colorClass: "swatch-sparkling-pink",
+          images: [
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Front4.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Side1.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_FrontZOOM3.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WHITNEYSPINK.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["sianie"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Chocolate Bra",
+          url: "whitney-underwire-balconette-chocolate",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 120,
+          type: "bra",
+          colorName: "brown",
+          colorClass: "swatch-brown",
+          images: [
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_BraZOOM1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_BraZOOM.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/brown/08_13394_FLATcopy.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["renee"]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Bra",
+          url: "lian-ivory-balconette",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "bra",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_SideZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_BraZOOM1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian7.jpg",
+          ],
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+      ],
+    ]
+  },
+  {
+    name: "BONDAGE BRAS",
+    url: "bondage-bras",
+    description: "",
+    products: [
+      [
+        {
+          name: "TARA",
+          description: "Bra",
+          url: "tara-underwire-balconette-hot-pink",
+          collection: "tara-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "hot pink",
+          colorClass: "swatch-hot-pink",
+          images: [
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Front4.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Back5.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Side2.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_FrontZOOM4.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/tara/hot-pink/Tara_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/tara/hot-pink/TARA6.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+      ],
+    ]
+  },
 ]

@@ -30,16 +30,9 @@
               </li>
               <li class="breadcrumb-separator" tabindex="-1"> — </li>
 
-              @if (product.type === "stockings") {
-                <li class="breadcrumb">
-                  <a [routerLink]="['/collections', 'stockings']" tabindex="-1">{{ product.type }}</a>
-                </li>
-              } @else {
-
-                <li class="breadcrumb">
-                  <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.name }}</a>
-                </li>
-              }
+              <li class="breadcrumb">
+                <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.name }}</a>
+              </li>
 
               <li class="breadcrumb-separator" tabindex="-1"> — </li>
               <li class="breadcrumb truncate">{{ product.name }}&nbsp;{{ product.description }}</li>
@@ -178,12 +171,7 @@
   @if (product !== null) {
     <section class="section-boxed section-complete-the-look">
       <div class="app-wrapper">
-        <!-- Heading -->
-        <div class="app-widget app-widget-heading app-widget-heading-default complete-the-look-heading">
-          <div class="app-widget-container">
-            <h2 class="app-heading-title">Complete your look</h2>
-          </div>
-        </div>
+
         <!-- Products Carousel -->
         <app-complete-look
           [className]="'js-carousel-swiper-complete-the-look'"

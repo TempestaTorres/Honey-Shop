@@ -83,6 +83,10 @@
 .modal-dialog.modal-dialog-alert, .modal-dialog.modal-dialog-alert .modal-dialog-content {
   z-index: 100;
 }
+.modal-dialog-content.flex {
+  display: flex;
+  flex-direction: column;
+}
 
 @media (min-width: 360px) {
   .modal-dialog-content.js-mini-cart-content {
@@ -394,5 +398,46 @@
 @media (min-width: 768px) {
   .modal-container {
     height: calc(100dvh - 160px);
+  }
+}
+.modal-section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1 1 0;
+}
+.modal-column {
+  flex-direction: column;
+  display: flex;
+  flex: 1 1 0;
+  position: relative;
+}
+.modal-column > .column-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+}
+.modal-sticky-footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 10;
+  padding: 1.5rem 1rem;
+  background-color: var(--md-bg-color);
+}
+@media (min-width: 768px) {
+  .modal-column > .column-container {
+    height: calc(100% - 88px);
+  }
+  .modal-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .modal-sticky-footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }

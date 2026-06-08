@@ -1,0 +1,182 @@
+<div class="modal-dialog type-slideout" [class.modal-dialog-opened]="open()">
+  <div class="modal-dialog-overlay" (mousedown)="closeModal()"></div>
+
+  <!--  Modal window -->
+  <div class="modal-dialog-content content-small flex">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+      @if (totalFiltersCount() > 0) {
+        <h3>Filters ({{ totalFiltersCount() }})</h3>
+      } @else {
+        <h3>Filters</h3>
+      }
+
+      <!-- Close button -->
+      <button (click)="closeModal()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class="modal-column">
+      <div class="column-container">
+
+        <!--  Section filters -->
+        <div class="modal-section">
+
+          <!-- Accordions -->
+          <div class="accordion-list-widget">
+
+            @if (availableColours().length > 1) {
+
+              <!-- Accordion Item Colour -->
+              <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedFilterItem() === '1'">
+
+                <!-- Header -->
+                <button type="button"
+                        (click)="toggleItem('1')"
+                        class="accordion-item-title js-accordion-button">
+                  @if (filtersCount() > 0) {
+                    <span class="text">Colour ({{ filtersCount() }})</span>
+                  } @else {
+                    <span class="text">Colour</span>
+                  }
+                  <div class="js-accordion-button__icons-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                      <title id="title-icon-plus">Icon of plus</title>
+                      <g id="icon-plus">
+                        <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                        <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                      </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                      <title id="title-icon-minus">Icon of minus</title>
+                      <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <!-- Content -->
+
+                <div #content class="accordion-item-description ease-in-out" [attr.data-id]="1">
+                  <div class="js-accordion-content">
+                    <div class="filter-colours js-filter">
+
+                      @for (colour of availableColours() ; track $index) {
+
+                        <!-- Item -->
+                        <div class="filter-item">
+                          <div class="checkbox-input">
+                            <input #colourFilter
+                                   (change)="colourFilterChanged()"
+                                   [id]="'filter-' + colour.colorName"
+                                   type="checkbox"
+                                   class="checkbox-input__input peer"
+                                   [value]="colour.colorName">
+
+                            <div class="peer-checked" [class]="colour.colorClass"></div>
+
+                            <label [for]="'filter-' + colour.colorName" class="checkbox-input__label">
+                              {{ colour.colorName }}
+                            </label>
+                          </div>
+                        </div>
+
+                      }
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            }
+            @if (availableTypes().length > 1) {
+
+              <!-- Accordion Item Types -->
+              <div class="accordion-item js-accordion-item accordion--faqs" [class.active]="openedFilterItem() === '2'">
+
+                <!-- Header -->
+                <button type="button"
+                        (click)="toggleItem('2')"
+                        class="accordion-item-title js-accordion-button">
+                  @if (filterTypesCount() > 0) {
+                    <span class="text">Product Type ({{ filterTypesCount() }})</span>
+                  } @else {
+                    <span class="text">Product Type</span>
+                  }
+                  <div class="js-accordion-button__icons-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                      <title id="title-icon-plus">Icon of plus</title>
+                      <g id="icon-plus">
+                        <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                        <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                      </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+                      <title id="title-icon-minus">Icon of minus</title>
+                      <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <!-- Content -->
+
+                <div #content class="accordion-item-description ease-in-out" [attr.data-id]="2">
+                  <div class="js-accordion-content">
+                    <div class="filter-types">
+
+                      @for (type of availableTypes() ; track $index) {
+
+                        <!-- Item -->
+                        <div class="filter-item">
+                          <div class="checkbox-input">
+                            <input #typeFilter
+                                   (change)="typeFilterChanged()"
+                                   [id]="'filter-' + type"
+                                   type="checkbox"
+                                   class="checkbox-input__input peer"
+                                   [value]="type">
+
+                            <label [for]="'filter-' + type" class="checkbox-input__label">
+                              {{ type }}
+                            </label>
+                          </div>
+                        </div>
+
+                      }
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+        <!-- Apply Filters Button -->
+
+        <div class="modal-sticky-footer">
+          <button (click)="applyFilters()"
+            type="button" class="button-primary button-large full-width-button">Apply</button>
+          <button (click)="resetAllFilters()"
+            type="button" class="button-link">Reset all filters</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

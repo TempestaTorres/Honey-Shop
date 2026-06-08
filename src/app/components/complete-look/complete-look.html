@@ -1,38 +1,48 @@
-<div class="product-carousel">
-  <div class="carousel-swiper-products-tab">
-    <!-- Loading bar -->
-    <div class="carousel-loading-bar-wrapper" [class.loading]="loading()">
-      <div class="loading-bar loading-bar-black"></div>
+@let items = completeLook();
+<div [class.hidden]="items.length === 0">
+  <!-- Heading -->
+  <div class="app-widget app-widget-heading app-widget-heading-default complete-the-look-heading">
+    <div class="app-widget-container">
+      <h2 class="app-heading-title">Complete your look</h2>
     </div>
+  </div>
 
-    <!-- Swiper -->
-    <div #swiperElement class="swiper swiper-backface-hidden">
-      <!-- Navigation -->
-      <div class="swiper-navigation-wrapper">
-        <button class="swiper-button-prev js-carousel-prev">
-          <svg class="icon-chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-            <path d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </button>
-        <button class="swiper-button-next js-carousel-next">
-          <svg class="icon-chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-            <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square"></path>
-          </svg>
-        </button>
+  <div class="product-carousel">
+    <div class="carousel-swiper-products-tab">
+      <!-- Loading bar -->
+      <div class="carousel-loading-bar-wrapper" [class.loading]="loading()">
+        <div class="loading-bar loading-bar-black"></div>
       </div>
 
-      <div class="swiper-wrapper">
+      <!-- Swiper -->
+      <div #swiperElement class="swiper swiper-backface-hidden">
+        <!-- Navigation -->
+        <div class="swiper-navigation-wrapper">
+          <button class="swiper-button-prev js-carousel-prev">
+            <svg class="icon-chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+              <path d="M10 13L5 8L10 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+          <button class="swiper-button-next js-carousel-next">
+            <svg class="icon-chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+              <path d="M6 2.99969L11 7.99969L6 12.9997" stroke="currentColor" stroke-linecap="square"></path>
+            </svg>
+          </button>
+        </div>
 
-        <!-- Slides -->
-        @for (item of completeLook(); track $index) {
+        <div class="swiper-wrapper">
 
-          <app-swiper-slide class="swiper-slide product-carousel-slide medium"
-                            [product]="item"></app-swiper-slide>
-        }
+          <!-- Slides -->
+          @for (item of items; track $index) {
+
+            <app-swiper-slide class="swiper-slide product-carousel-slide medium"
+                              [product]="item"></app-swiper-slide>
+          }
+
+        </div>
 
       </div>
 
     </div>
-
   </div>
 </div>

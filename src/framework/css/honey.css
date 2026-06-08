@@ -858,6 +858,10 @@ a.picture-wrapper {
 .app-underline.active {
   opacity: 1;
 }
+/*Complete look*/
+.app-widget-heading-default.complete-the-look-heading {
+  padding: 0 1rem 1.5rem 1rem;
+}
 /* Recommendations */
 .section-recommendations {
   padding: 24px 0 0 0;
@@ -880,6 +884,10 @@ a.picture-wrapper {
     flex-direction: row;
   }
   .recommendations-header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .app-widget-heading-default.complete-the-look-heading {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }

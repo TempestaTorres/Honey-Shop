@@ -27,6 +27,7 @@ export class Collections implements OnInit {
         let type: string = params['type'];
 
         if (type && type !== '') {
+          this.scrollingService.toTop();
           this.collectionType.set(type);
         }
       }

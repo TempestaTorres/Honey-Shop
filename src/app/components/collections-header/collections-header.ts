@@ -67,6 +67,86 @@ export class CollectionsHeader {
       url: "stockings"
     },
   ];
+  public plpHeaderBrasData: {name: string, url: string}[] = [
+    {
+      name: "Lace Bras",
+      url: "lace-bras"
+    },
+    {
+      name: "Bondage Bras",
+      url: "bondage-bras"
+    },
+    {
+      name: "Underwire Bras",
+      url: "underwire-bras"
+    },
+    {
+      name: "Bralettes",
+      url: "bralettes"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+  ];
+  public plpHeaderStockingsData: {name: string, url: string}[] = [
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Lingerie Sets",
+      url: "lingerie-sets"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Bottoms",
+      url: "bottoms"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "Suspenders",
+      url: "suspenders"
+    },
+  ];
+  public plpHeaderLaceBrasData: {name: string, url: string}[] = [
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Lace Lingerie",
+      url: "lace-lingerie"
+    },
+    {
+      name: "Bridal Lingerie",
+      url: "bridal-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+  ];
+  public plpHeaderBondageBrasData: {name: string, url: string}[] = [
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+    {
+      name: "Kukuro",
+      url: "kukuro-lingerie-collection"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;
@@ -86,6 +166,10 @@ export class CollectionsHeader {
 
       const nav = this.navigationNeeded();
       if (nav) {
+
+        if (this.swiper) {
+          this.swiper.destroy();
+        }
         setTimeout(() => {
           this.initPlpHeader();
         }, 300);
