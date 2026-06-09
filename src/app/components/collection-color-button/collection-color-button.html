@@ -1,7 +1,7 @@
 @let items = collectionItem();
 @if (items !== null) {
 
-  <span class="color-title">{{ items[index()].colorName }}</span>
+  <span class="color-title">{{ itemColor() }}</span>
 
   <div class="select-item-buttons-group colors-list" role="radiogroup">
 
@@ -9,31 +9,10 @@
 
       <!-- Color Button -->
       <button
-        (click)="colorSelected($index)"
+        (click)="colorSelected(item.colorName)"
         class="select-item-button"
-        [class.active]="$index === itemIndex()"
-        [ngClass]="{swatchChartreuse: item.colorClass === 'swatch-chartreuse', swatchBlack: item.colorClass === 'swatch-black',
-          swatchLove: item.colorClass === 'swatch-love', swatchOcean: item.colorClass === 'swatch-ocean',
-          swatchLimoncello: item.colorClass === 'swatch-limoncello', swatchSparklingPink: item.colorClass === 'swatch-sparkling-pink',
-          swatchHotPink: item.colorClass === 'swatch-hot-pink', swatchIvory: item.colorClass === 'swatch-ivory',
-          swatchAlmond: item.colorClass === 'swatch-almond', swatchAnimalPrint: item.colorClass === 'swatch-animal-print',
-          swatchBlue: item.colorClass === 'swatch-blue', swatchBronze: item.colorClass === 'swatch-bronze',
-          swatchBrown: item.colorClass === 'swatch-brown', swatchCaramel: item.colorClass === 'swatch-caramel',
-          swatchCedar: item.colorClass === 'swatch-cedar', swatchWhite: item.colorClass === 'swatch-white',
-          swatchSkyBlue: item.colorClass === 'swatch-sky-blue', swatchYellow: item.colorClass === 'swatch-yellow',
-          swatchToffee: item.colorClass === 'swatch-toffee', swatchShimmer: item.colorClass === 'swatch-shimmer',
-          swatchRosewood: item.colorClass === 'swatch-rosewood', swatchRed: item.colorClass === 'swatch-red',
-          swatchRainbow: item.colorClass === 'swatch-rainbow', swatchPython: item.colorClass === 'swatch-python',
-          swatchPurple: item.colorClass === 'swatch-purple', swatchPink: item.colorClass === 'swatch-pink',
-          swatchOrange: item.colorClass === 'swatch-orange', swatchNeonPink: item.colorClass === 'swatch-neon-pink',
-          swatchNavy: item.colorClass === 'swatch-navy', swatchMystic: item.colorClass === 'swatch-mystic',
-          swatchNude: item.colorClass === 'swatch-nude', swatchMulti: item.colorClass === 'swatch-multi',
-          swatchMulberry: item.colorClass === 'swatch-mulberry', swatchMidnight: item.colorClass === 'swatch-midnight',
-          swatchMaple: item.colorClass === 'swatch-maple', swatchMahogany: item.colorClass === 'swatch-mahogany',
-          swatchLeopard: item.colorClass === 'swatch-leopard', swatchHoneysuckle: item.colorClass === 'swatch-honeysuckle',
-          swatchGreen: item.colorClass === 'swatch-green', swatchGold: item.colorClass === 'swatch-gold',
-          swatchEmerald: item.colorClass === 'swatch-emerald', swatchChocolate: item.colorClass === 'swatch-chocolate',
-          swatchChestnut: item.colorClass === 'swatch-chestnut'}"
+        [class.active]="item.colorName === itemColor()"
+        [class]="item.colorClass"
         type="button"
         [title]="item.colorName"></button>
     }

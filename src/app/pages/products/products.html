@@ -47,7 +47,7 @@
             <app-collection-color-button
               (itemSelected)="colorSelected($event)"
               class="js-colors-button"
-              [index]="index()"
+              [currentColor]="product.colorName"
               [collectionItem]="collectionItem()"></app-collection-color-button>
 
             <!-- Button Trigger Modal Colors -->

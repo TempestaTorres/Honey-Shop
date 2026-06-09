@@ -3584,20 +3584,64 @@ export const AllCollectionsData: ShopCollectionType[] = [
       [
         {
           name: "KUKURO",
-          description: "Bra",
+          description: "Black Bra",
           url: "kukuro-black-bra",
           collection: "kukuro-lingerie-collection",
           addFavoriteButton: true,
           addToCartButton: true,
-          price: 130,
+          price: 140,
           type: "bra",
           colorName: "black",
           colorClass: "swatch-black",
           images: [
-
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Front3.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Back.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Side2.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Front7_1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Back6_1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Side5_1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_FrontZOOM2.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_FrontZOOM1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/kukuro/black/01_5804_FLAT_S_NEW.jpg",
           ],
           sizes: braSizes,
-          models: ["olivia"]
+          ratings: {
+            stars: [1,1,1,1,1],
+            score: "11"
+          },
+          models: ["sianie"]
+        },
+        {
+          name: "KUKURO",
+          description: "Red Bra",
+          url: "kukuro-crimson-bra",
+          collection: "kukuro-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 140,
+          type: "bra",
+          colorName: "red",
+          colorClass: "swatch-red",
+          images: [
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Brief_Front_3.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Front1_1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Back1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Side_1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_FrontZOOM2red.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Brief_Front1_1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Brief_Side_2.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,1],
+            score: "11"
+          },
+          models: ["sianie"]
         },
       ],
     ]
@@ -4430,6 +4474,69 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           models: ["sianie"]
         },
       ],
+      [
+        {
+          name: "KUKURO",
+          description: "Bra",
+          url: "kukuro-black-bra",
+          collection: "kukuro-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 140,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Front3.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Back.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Side2.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Front7_1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Back6_1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Side5_1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_FrontZOOM2.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_FrontZOOM1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/kukuro/black/Kukuro_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/kukuro/black/01_5804_FLAT_S_NEW.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,1],
+            score: "11"
+          },
+          models: ["sianie"]
+        },
+        {
+          name: "KUKURO",
+          description: "Red Bra",
+          url: "kukuro-crimson-bra",
+          collection: "kukuro-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 140,
+          type: "bra",
+          colorName: "red",
+          colorClass: "swatch-red",
+          images: [
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Brief_Front_3.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Front1_1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Back1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Side_1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_FrontZOOM2red.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Brief_Front1_1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/kukuro/red/Kukuro_Bra_Brief_Side_2.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,1],
+            score: "11"
+          },
+          models: ["sianie"]
+        },
+      ]
     ]
   },
 ]

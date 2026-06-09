@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ReviewsData, ReviewsType } from '../data/reviews-data';
+import { ReviewsData, ReviewsType, ReviewType } from '../data/reviews-data';
 
 @Injectable({
   providedIn: 'root',
@@ -10,17 +10,23 @@ export class ReviewService {
   public getProductReviews(collection: string, offset: number = 0): Observable<ReviewsType> {
 
     let reviews: ReviewsType = {
-      count: ReviewsData.length,
+      count: 0,
       reviews: []
     };
 
-    if (offset >= 0 && offset <  ReviewsData.length) {
+    for (let i: number = 0; i < ReviewsData.length; i++) {
 
-      let end: number = offset + 2;
-      for (let index: number = offset; index < ReviewsData.length && index < end; index++) {
+      const reviewsData: ReviewType[] = [...ReviewsData[i]];
 
-        if (ReviewsData[index].collection === collection) {
-          reviews.reviews.push(ReviewsData[index]);
+      if (reviewsData[0].collection === collection) {
+        reviews.count = reviewsData.length;
+
+        if (offset >= 0 && offset <  reviewsData.length) {
+          let end: number = offset + 2;
+
+          for (let index: number = offset; index < reviewsData.length && index < end; index++) {
+            reviews.reviews.push(reviewsData[index]);
+          }
         }
       }
     }

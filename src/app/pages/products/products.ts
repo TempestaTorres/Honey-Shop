@@ -94,10 +94,20 @@ export class Products implements OnInit, OnDestroy {
     }
   }
 
-  public colorSelected(i: number): void {
+  public colorSelected(color: string): void {
     const items = this.collectionItem();
+    let url: string = '';
+
     if (items !== null) {
-      this.router.navigate(['/products', items[i].url]).then(() => {});
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].colorName === color) {
+          url = items[i].url;
+          break;
+        }
+      }
+      if (url !== '') {
+        this.router.navigate(['/products', url]).then(() => {});
+      }
     }
   }
 
@@ -119,7 +129,7 @@ export class Products implements OnInit, OnDestroy {
           this.collectionSubscription.unsubscribe();
         }
         this.collectionSubscription = this.productsService
-          .getCollectionItem(product.name, product.description)
+          .getCollectionItem(product.collection, product.url)
           .subscribe((item) => {
             this.collectionItem.set(item);
 

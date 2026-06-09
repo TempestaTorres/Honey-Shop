@@ -82,7 +82,7 @@
       <app-collection-color-button
         (itemSelected)="colorSelected($event)"
         class="js-colors-button"
-        [index]="index()"
+        [currentColor]="product.colorName"
         [collectionItem]="productItems()"></app-collection-color-button>
     </div>
 

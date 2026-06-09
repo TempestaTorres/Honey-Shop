@@ -1,34 +1,35 @@
 import { Component, effect, EventEmitter, input, Output, signal, WritableSignal } from '@angular/core';
 import { ProductType } from '../../products/types/product-type';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-collection-color-button',
-  imports: [NgClass],
+  imports: [],
   templateUrl: './collection-color-button.html',
   styleUrl: './collection-color-button.css',
 })
 export class CollectionColorButton {
-  @Output() itemSelected = new EventEmitter<number>();
+  @Output() itemSelected = new EventEmitter<string>();
 
   collectionItem = input.required<ProductType[] | null>();
-  index = input.required<number>();
+  currentColor = input.required<string>();
 
-  itemIndex: WritableSignal<number> = signal<number>(0);
+  itemColor: WritableSignal<string> = signal<string>('');
 
   constructor() {
     effect(() => {
-      this.setColor(this.index());
+
+      const color = this.currentColor();
+      this.setColor(color);
     });
   }
 
-  public colorSelected(i: number): void {
-    this.setColor(i);
-    this.itemSelected.emit(i);
+  public colorSelected(color: string): void {
+    this.setColor(color);
+    this.itemSelected.emit(color);
   }
 
-  private setColor(i: number): void {
+  private setColor(color: string): void {
 
-    this.itemIndex.set(i);
+    this.itemColor.set(color);
   }
 }

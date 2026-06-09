@@ -1041,6 +1041,12 @@ div.okeReviews .oke-reviewsKeywords-list {
   flex-wrap:wrap;
   gap:4px
 }
+@media (min-width: 1024px) {
+  .okeReviews.oke-container .oke-reviewsKeywords-list,
+  div.okeReviews .oke-reviewsKeywords-list {
+    display:none;
+  }
+}
 .okeReviews.oke-container .oke-reviewsKeywords-list-category,
 div.okeReviews .oke-reviewsKeywords-list-category {
   background-color:var(--oke-filter-backgroundColor);

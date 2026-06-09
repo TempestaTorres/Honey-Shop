@@ -699,7 +699,7 @@ export class ProductsService {
     });
   }
 
-  public getCollectionItem(collectionName: string, itemType: string): Observable<ProductType[] | null> {
+  public getCollectionItem(collectionUrl: string, itemUrl: string): Observable<ProductType[] | null> {
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
 
@@ -707,8 +707,8 @@ export class ProductsService {
 
         let item: ProductType[] = AllCollectionsData[i].products[j];
 
-        let product = item.find((item) => item.name === collectionName
-        && item.description === itemType);
+        let product = item.find((item) => item.collection === collectionUrl
+        && item.url === itemUrl);
 
 
         if (product !== undefined) {

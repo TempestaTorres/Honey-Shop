@@ -20,7 +20,6 @@ import { BuyProductSize } from '../buy-product-size/buy-product-size';
 export class BuyProductForm {
   buyProduct = input.required<ProductType>();
   productItems = input.required<ProductType[] | null>();
-  public index: WritableSignal<number> = signal<number>(0);
 
   public buyProductDetails: WritableSignal<ProductDetailsType | null> =
     signal<ProductDetailsType | null>(null);
@@ -58,16 +57,6 @@ export class BuyProductForm {
       };
       this.buyProductDetails.set(details);
 
-      const items = this.productItems();
-      if (items && items.length > 0) {
-        for (let i = 0; i < items.length; i++) {
-          if (this.buyProduct().colorName === items[i].colorName) {
-            this.index.set(i);
-            break;
-          }
-        }
-      }
-
       window.addEventListener('scroll', this.onScroll.bind(this));
     });
 
@@ -76,10 +65,20 @@ export class BuyProductForm {
     });
   }
 
-  public colorSelected(i: number): void {
+  public colorSelected(color: string): void {
     const items = this.productItems();
+    let url: string = '';
+
     if (items !== null) {
-      this.router.navigate(['/products', items[i].url]).then(() => {});
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].colorName === color) {
+          url = items[i].url;
+          break;
+        }
+      }
+      if (url !== '') {
+        this.router.navigate(['/products', url]).then(() => {});
+      }
     }
   }
 
