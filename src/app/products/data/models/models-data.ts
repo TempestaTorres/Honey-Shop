@@ -91,4 +91,22 @@ export const Models: ModelBioType[] = [
     dress: "8",
     image: "/assets/images/models/Racquel_Bra_Thong_Front.jpg",
   },
+  {
+    name: "bianca",
+    height: "5'5\" / 165cm",
+    bust: "30\" / 10E",
+    waist: "23.5\" / 60cm",
+    hips: "34\" / 86cm",
+    dress: "8",
+    image: "/assets/images/models/Seraphina_Bra_Brief_Front1_3.jpg",
+  },
+  {
+    name: "larni",
+    height: "5'9\" / 175cm",
+    bust: "34.5\" / 10D",
+    waist: "26.5 / 67.5cm",
+    hips: "37\" / 93.5cm",
+    dress: "8",
+    image: "/assets/images/models/Kukuro_Bra_Brief_Front.jpg",
+  },
 ]

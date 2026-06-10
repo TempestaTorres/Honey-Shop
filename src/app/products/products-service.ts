@@ -705,7 +705,7 @@ export class ProductsService {
 
       for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
 
-        let item: ProductType[] = AllCollectionsData[i].products[j];
+        let item: ProductType[] = [...AllCollectionsData[i].products[j]];
 
         let product = item.find((item) => item.collection === collectionUrl
         && item.url === itemUrl);
@@ -732,7 +732,7 @@ export class ProductsService {
 
       for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
 
-        let item: ProductType[] = AllCollectionsData[i].products[j];
+        let item: ProductType[] = [...AllCollectionsData[i].products[j]];
 
         let product = item.find((item) => item.name === collectionName
         && item.url === url);
@@ -818,79 +818,64 @@ export class ProductsService {
     });
   }
 
-  public getCompleteLook(collectionUrl: string, productType: string, colorName: string): Observable<Array<ProductType[]>> {
+  public getCompleteLook(collectionUrl: string, productUrl: string, productType: string, colorName: string): Observable<Array<ProductType[]>> {
     let set: Array<ProductType[]> = [];
 
     if (collectionUrl.includes('collection')) {
+
       for (let i: number = 0; i < AllCollectionsData.length; i++) {
 
         if (AllCollectionsData[i].url === collectionUrl) {
 
-          for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+          const items: Array<ProductType[]> = [...AllCollectionsData[i].products];
 
-            if (productType.includes('lingerie-collection')) {
+          if (items.length > 1) {
 
-              if (AllCollectionsData[i].products[j][0].type !== productType) {
+            for (let j: number = 0; j < items.length; j++) {
 
-                let item = AllCollectionsData[i].products[j]
-                  .filter(product => product.type !== "lingerie-set");
+              let collectionSet: ProductType[] = items[j];
 
-                if (item !== undefined) {
+              if (collectionSet[0].type !== productType) {
 
-                  let color = item.find((p) => p.colorName === colorName);
-                  if (color !== undefined) {
-
-                    let index: number = item.indexOf(color);
-                    if (index !== 0) {
-                      let p = item[0];
-                      item[0] = color;
-                      item[index] = p;
-                    }
-                  }
-                  set.push(item);
-                }
+                set.push(collectionSet);
               }
-
-            }
-            else {
-              let item = AllCollectionsData[i].products[j];
-              let color = item.find((p) => p.colorName === colorName);
-              if (color !== undefined) {
-
-                let index: number = item.indexOf(color);
-                if (index !== 0) {
-                  let p = item[0];
-                  item[0] = color;
-                  item[index] = p;
-                }
-              }
-              set.push(item);
             }
 
           }
+
         }
       }
     }
     else {
       for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
         if (AllSubCollectionsData[i].url === collectionUrl) {
 
-          for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
+          const items: Array<ProductType[]> = [...AllSubCollectionsData[i].products];
 
-            let item = AllSubCollectionsData[i].products[j];
-            let color = item.find((p) => p.colorName === colorName);
-            if (color !== undefined) {
+          if (items.length > 1) {
 
-              let index: number = item.indexOf(color);
-              if (index !== 0) {
-                let p = item[0];
-                item[0] = color;
-                item[index] = p;
+            for (let j: number = 0; j < items.length; j++) {
+
+              let collectionSet: ProductType[] = items[j];
+
+              let found: boolean = collectionSet.some((item) => item.url === productUrl);
+
+              if (!found) {
+                set.push(collectionSet);
               }
+              else if (found && collectionSet.length > 1) {
+                let filtered = collectionSet
+                  .filter((item) => item.colorName !== colorName);
+
+                if (filtered.length > 0) {
+                  set.push(filtered);
+                }
+              }
+
             }
-            set.push(item);
+
           }
+
         }
       }
     }

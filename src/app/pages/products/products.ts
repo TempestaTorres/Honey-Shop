@@ -38,9 +38,9 @@ import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
     ProductReview,
     ProductSelectSet,
     ProductSet,
-    CompleteLook,
-    ProductCarousel,
     InstagramFeed,
+    ProductCarousel,
+    CompleteLook,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',
@@ -53,7 +53,6 @@ export class Products implements OnInit, OnDestroy {
   public shopProduct: WritableSignal<ProductType | null> = signal<ProductType | null>(null);
   public collectionItem: WritableSignal<ProductType[] | null> = signal<ProductType[] | null>(null);
   public cartRecommendedItems: WritableSignal<ProductCartType[]> = signal<ProductCartType[]>([]);
-  public index: WritableSignal<number> = signal<number>(0);
 
   public revSelector: string = 'reviews';
 
@@ -132,15 +131,6 @@ export class Products implements OnInit, OnDestroy {
           .getCollectionItem(product.collection, product.url)
           .subscribe((item) => {
             this.collectionItem.set(item);
-
-            if (item) {
-              for (let i = 0, len = item.length; i < len; i++) {
-                if (item[i].colorName === product.colorName) {
-                  this.index.set(i);
-                  break;
-                }
-              }
-            }
           });
       }
     });

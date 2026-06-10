@@ -2,15 +2,14 @@ import {
   afterNextRender,
   Component,
   DestroyRef,
-  ElementRef,
-  Input,
+  ElementRef, input,
   signal,
   viewChild,
   WritableSignal
 } from '@angular/core';
 import { ProductType } from '../../products/types/product-type';
 import { RouterLink } from '@angular/router';
-import { CurrencyPipe, NgClass } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { WishlistService } from '../../product-wishlist/wishlist-service';
 import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
 import { SelectSizeService } from '../../modals/select-size-modal/select-size-service';
@@ -19,11 +18,11 @@ declare var Swiper: any;
 
 @Component({
   selector: 'app-swiper-slide',
-  imports: [RouterLink, NgClass, CurrencyPipe],
+  imports: [RouterLink, CurrencyPipe],
   templateUrl: './swiper-slide.html',
 })
 export class SwiperSlide {
-  @Input() product: ProductType[] = [];
+  product = input.required<ProductType[]>();
 
   public index: WritableSignal<number> = signal<number>(0);
 
@@ -73,18 +72,18 @@ export class SwiperSlide {
 
   public addToWishList(index: number): void {
     let product: ProductCartType = {
-      name: this.product[index].name,
-      url: this.product[index].url,
-      price: String(this.product[index].price),
-      image: this.product[index].images[0],
+      name: this.product()[index].name,
+      url: this.product()[index].url,
+      price: String(this.product()[index].price),
+      image: this.product()[index].images[0],
       count: '',
-      favorite: this.product[index].favorite,
+      favorite: this.product()[index].favorite,
     };
     this.wishlistService$.wishlistToggle(product);
   }
 
   public addToCart(index: number): void {
-    const product = this.product[index];
+    const product = this.product()[index];
 
     if (product.type !== 'accessory') {
       // Open select size modal window

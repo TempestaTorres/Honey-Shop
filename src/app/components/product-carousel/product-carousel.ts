@@ -61,7 +61,6 @@ export class ProductCarousel {
 
   private loadProducts(type: string): void {
 
-    this.products.set([]);
     this.loading.set(true);
     this.medium.set(false);
 
@@ -72,9 +71,9 @@ export class ProductCarousel {
     if (type === 'new-arrivals') {
       this.productSubscription$ = this.service.getNewArrivals().subscribe((items) => {
         this.products.set(items);
+        this.loading.set(false);
 
         if (this.products().length > 0) {
-          this.loading.set(false);
 
           this.initSwiper();
         }
@@ -84,9 +83,9 @@ export class ProductCarousel {
 
       this.productSubscription$ = this.service.getBridalLingerie().subscribe((items) => {
         this.products.set(items);
+        this.loading.set(false);
 
         if (this.products().length > 0) {
-          this.loading.set(false);
           this.initSwiper();
         }
       });
@@ -96,9 +95,10 @@ export class ProductCarousel {
 
       this.productSubscription$ = this.service.getRecommended().subscribe((items) => {
         this.products.set(items);
+        this.loading.set(false);
 
         if (this.products().length > 0) {
-          this.loading.set(false);
+
           this.medium.set(true);
           this.initSwiper();
         }

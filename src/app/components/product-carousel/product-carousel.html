@@ -23,12 +23,17 @@
 
       <div class="swiper-wrapper">
 
-        <!-- Slides -->
-        @for (item of products(); track $index) {
+        @let items = products();
+        @if (items && items.length > 0) {
 
-          <app-swiper-slide class="swiper-slide product-carousel-slide"
-                            [class.medium]="medium()"
-                            [product]="item.product"></app-swiper-slide>
+          <!-- Slides -->
+          @for (item of items; track $index) {
+
+            <app-swiper-slide class="swiper-slide product-carousel-slide"
+                              [class.medium]="medium()"
+                              [product]="item.product"></app-swiper-slide>
+          }
+
         }
 
       </div>

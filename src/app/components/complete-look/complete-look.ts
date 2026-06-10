@@ -62,12 +62,10 @@ export class CompleteLook {
 
   private loadProducts(product: ProductType): void {
     this.loading.set(true);
-    this.completeLook.set([]);
-
 
     if (product && product.type) {
       this.productSubscription$ = this.service
-        .getCompleteLook(product.collection, product.type, product.colorName)
+        .getCompleteLook(product.collection, product.url, product.type, product.colorName)
         .subscribe((items) => {
           this.completeLook.set(items);
           this.loading.set(false);
