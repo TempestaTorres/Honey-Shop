@@ -10,7 +10,17 @@
       @for (slide of slides; track $index) {
 
         <div class="swiper-slide">
-          <app-product-gallery-slide class="js-swiper-slide-zoomable" [slideImage]="slide"></app-product-gallery-slide>
+
+          @if (slide.includes('.mp4')) {
+
+            <app-video-player [url]="slide" class="video-player-wrapper"></app-video-player>
+
+          } @else {
+
+            <app-product-gallery-slide class="js-swiper-slide-zoomable" [slideImage]="slide"></app-product-gallery-slide>
+
+          }
+
         </div>
       }
 

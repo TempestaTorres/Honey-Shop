@@ -30,9 +30,15 @@
               </li>
               <li class="breadcrumb-separator" tabindex="-1"> — </li>
 
-              <li class="breadcrumb">
-                <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.name }}</a>
-              </li>
+              @if (product.collection === "stockings") {
+                <li class="breadcrumb">
+                  <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.collection }}</a>
+                </li>
+              } @else {
+                <li class="breadcrumb">
+                  <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.name }}</a>
+                </li>
+              }
 
               <li class="breadcrumb-separator" tabindex="-1"> — </li>
               <li class="breadcrumb truncate">{{ product.name }}&nbsp;{{ product.description }}</li>

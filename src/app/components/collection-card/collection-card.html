@@ -43,11 +43,12 @@
             @for (slide of items[index()].images; track $index) {
 
               @if ($index < 2) {
-                <div class="swiper-slide">
-                  <figure class="collection-card__image">
-                    <img [src]="slide" alt="" loading="lazy" fetchpriority="auto">
-                  </figure>
-                </div>
+
+              <div class="swiper-slide">
+                <figure class="collection-card__image">
+                  <img [src]="slide" alt="" loading="lazy" fetchpriority="auto">
+                </figure>
+              </div>
               }
             }
           </div>

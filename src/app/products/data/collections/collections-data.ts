@@ -314,6 +314,10 @@ export const AllCollectionsColoursData: ShopCollectionColours[] = [
         colorClass: "swatch-hot-pink",
       },
       {
+        colorName: "pink",
+        colorClass: "swatch-pink",
+      },
+      {
         colorName: "black",
         colorClass: "swatch-black",
       },
@@ -353,6 +357,10 @@ export const AllCollectionsColoursData: ShopCollectionColours[] = [
       {
         colorName: "hot pink",
         colorClass: "swatch-hot-pink",
+      },
+      {
+        colorName: "pink",
+        colorClass: "swatch-pink",
       },
     ]
   },
@@ -515,6 +523,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["melita"]
+        },
+      ],
+      [
+        {
+          name: "CHARLOTTA",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
         },
       ],
       [
@@ -888,6 +910,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
       [
         {
           name: "EVERLY EMERALD",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "EVERLY EMERALD",
           description: "Bra",
           url: "everly-underwire-balconette-emerald-black",
           collection: "everly-emerald-lingerie-collection",
@@ -1106,6 +1142,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "ANNALISE",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
         },
       ],
       [
@@ -1390,6 +1440,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "TARA",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
         },
       ],
       [
@@ -1683,6 +1747,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
       [
         {
           name: "PAMMY",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "PAMMY",
           description: "Thong",
           url: "pammy-thong-black",
           collection: "pammy-lingerie-collection",
@@ -1933,6 +2011,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ['sianie']
+        },
+      ],
+      [
+        {
+          name: "ELODIE ROMANCE",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
         },
       ],
       [
@@ -2538,6 +2630,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
             score: "11"
           },
           models: ["renee"]
+        },
+      ],
+      [
+        {
+          name: "WHITNEY",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
         },
       ],
       [
@@ -3347,6 +3453,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
       [
         {
           name: "LIAN",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "LIAN",
           description: "Thong",
           url: "lian-ivory-thong",
           collection: "lian-lingerie-collection",
@@ -3767,6 +3887,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
       [
         {
           name: "KUKURO",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "KUKURO",
           description: "Black Brief",
           url: "kukuro-black-brief",
           collection: "kukuro-lingerie-collection",
@@ -4144,6 +4278,20 @@ export const AllCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
+          name: "JASMINE",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
           name: "JASMIN",
           description: "White Thong",
           url: "jasmin-white-thong",
@@ -4300,7 +4448,237 @@ export const AllCollectionsData: ShopCollectionType[] = [
     url: "clara-lingerie-collection",
     description: "Get tied up tonight or let your lingerie do it for you. Made with bows, binds, and sumptuous satin, Clara features adaptable ties to cross over the body, designed for styling in different ways. Take romance into your own hands or tie yourself up as a playful present. With the easy-access brief and the naughty ouvert thong, it’s instant gratification and excitement guaranteed.",
     products: [
-
+      [
+        {
+          name: "CLARA",
+          description: "Bra",
+          url: "clara-pink-contour-bra",
+          collection: "clara-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 150,
+          type: "bra",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Stockings_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Front3_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Back5.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Front5.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Back4.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_FrontZOOM1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Stockings_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara2.jpg",
+          ],
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "CLARA",
+          description: "Suspender",
+          url: "clara-pink-suspender",
+          collection: "clara-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 175,
+          type: "suspender",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/clara/pink/Clara_Bra_SuspenderGarters_Thong_Front1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_SuspenderGarters_Front_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_SuspenderGarters_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_SuspenderGarters_Side2.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_SuspenderThong_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Suspender_Thong_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_SuspenderGartersCuffs_Thong_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_SuspenderGartersCuffs_Thong_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara5.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "Pink Bowtie Stay Up",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "clara-pink-stay-ups",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 30,
+          type: "stockings",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/stockings/pink/Clara-pink-stockings.jpg",
+            "/assets/images/products/collections/stockings/pink/Clara_Thong_Suspender_Front_2.jpg",
+            "/assets/images/products/collections/stockings/pink/Clara_Thong_Suspender_Back_2.jpg",
+            "/assets/images/products/collections/stockings/pink/Clara_Thong_Suspender_Side_2.jpg",
+          ],
+          sizes: stockingsSizes
+        },
+      ],
+      [
+        {
+          name: "CLARA",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "CLARA",
+          description: "Brief",
+          url: "clara-pink-brief",
+          collection: "clara-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          type: "brief",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Brief_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Brief_Back1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Brief_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Brief_Side.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "CLARA",
+          description: "Thong",
+          url: "clara-pink-thong",
+          collection: "clara-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          type: "thong",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Suspender_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Suspender_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_SuspenderGarters_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_SuspenderGarters_Back2.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Stockings_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Stockings_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Stockings_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara1.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "CLARA",
+          description: "Bra & Bottom Lingerie Set",
+          url: "clara-bra-bottom-lingerie-set",
+          collection: "clara-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 235,
+          priceFrom: 235,
+          type: "lingerie-set",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Back4.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_FrontZOOM1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Brief_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_ThongStockings_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_ThongStockings_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara2.jpg",
+          ],
+          models: ["annalise"],
+          setItems: [
+            "clara-pink-contour-bra",
+            "clara-pink-brief",
+            "clara-pink-thong",
+            "clara-pink-stay-ups",
+          ]
+        },
+      ],
+      [
+        {
+          name: "CLARA",
+          description: "3 Piece Lingerie Set",
+          url: "clara-3-piece-lingerie-set",
+          collection: "clara-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 410,
+          priceFrom: 410,
+          type: "lingerie-set",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/clara/pink/Clara_Bra_SuspenderGarters_Thong_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_SuspenderGarters_Thong_Back.jpg",
+            "/assets/images/products/collections/clara/pink/clara.mp4",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_SuspenderGarters_Thong_Side1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Front6.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Back7.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Side6.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_FrontZOOM.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_SuspenderGarters_Front_2.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_SuspenderGarters_Back1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_SuspenderGartersCuffs_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Suspender_Front_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Suspender_Back_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Brief_Front_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Brief_Back1_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Front_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Thong_Back_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara4.jpg",
+          ],
+          models: ["annalise"],
+          setItems: [
+            "clara-pink-contour-bra",
+            "clara-pink-brief",
+            "clara-pink-thong",
+            "clara-pink-suspender",
+            "clara-pink-stay-ups",
+          ]
+        },
+      ]
     ]
   }
 ]
@@ -4445,6 +4823,28 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           sizes: stockingsSizes
         },
       ],
+      [
+        {
+          name: "Pink Bowtie Stay Up",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "clara-pink-stay-ups",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 30,
+          type: "stockings",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/stockings/pink/Clara-pink-stockings.jpg",
+            "/assets/images/products/collections/stockings/pink/Clara_Thong_Suspender_Front_2.jpg",
+            "/assets/images/products/collections/stockings/pink/Clara_Thong_Suspender_Back_2.jpg",
+            "/assets/images/products/collections/stockings/pink/Clara_Thong_Suspender_Side_2.jpg",
+          ],
+          sizes: stockingsSizes
+        },
+      ]
     ]
   },
   {
@@ -5252,6 +5652,36 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: braSizes,
           models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "CLARA",
+          description: "Bra",
+          url: "clara-pink-contour-bra",
+          collection: "clara-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 150,
+          type: "bra",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Stockings_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Front3_1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Back5.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Front5.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Back4.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_FrontZOOM1.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Stockings_Back.jpg",
+            "/assets/images/products/collections/clara/pink/Clara_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/clara/pink/Clara2.jpg",
+          ],
+          sizes: braSizes,
+          models: ["annalise"]
         },
       ]
     ]

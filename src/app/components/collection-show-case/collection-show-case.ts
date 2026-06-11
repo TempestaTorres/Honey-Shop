@@ -20,10 +20,11 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ScrollingService } from '../../services/scrolling-service';
 import { CollectionFilterModal } from '../../modals/collection-filter-modal/collection-filter-modal';
 import { FilterService, FilterType } from '../../services/filter-service';
+import { VideoPlayer } from '../video-player/video-player';
 
 @Component({
   selector: 'app-collection-show-case',
-  imports: [RouterLink, CollectionCard, CollectionFilterModal],
+  imports: [RouterLink, CollectionCard, CollectionFilterModal, VideoPlayer],
   templateUrl: './collection-show-case.html',
   styleUrl: './collection-show-case.css',
 })
@@ -35,7 +36,7 @@ export class CollectionShowCase implements OnInit {
   private router = inject(Router);
   // Convert queryParams Observable to Signal
   private queryParams = toSignal(this.route.queryParams, {
-    initialValue: { sort: 'Featured', colors: [], types: [] ,page: 1 },
+    initialValue: { sort: 'Featured', colors: [], types: [], page: 1 },
   });
 
   // Computed signal for current sort (clean and reactive)
@@ -56,7 +57,7 @@ export class CollectionShowCase implements OnInit {
   appliedPage = computed(() => {
     const page = this.queryParams()?.['page'] as string;
     return page ? parseInt(page) : 1;
-  })
+  });
 
   public collectionName: WritableSignal<string> = signal<string>('');
   public collectionProducts: WritableSignal<Array<ProductType[]> | null> = signal<Array<
@@ -118,7 +119,7 @@ export class CollectionShowCase implements OnInit {
   ngOnInit(): void {
     this.scrollingService.toTop();
 
-    this.filterSubscription$ = this.filterService.appliedFilters$.subscribe(apply => {
+    this.filterSubscription$ = this.filterService.appliedFilters$.subscribe((apply) => {
       if (apply) {
         this.scroll();
       }
@@ -135,8 +136,13 @@ export class CollectionShowCase implements OnInit {
     this.currentPage.set(this.appliedPage());
   }
 
-  private setCollection(type: string, sortType: string , page: number, sortColours: string[], sortTypes: string[]): void {
-
+  private setCollection(
+    type: string,
+    sortType: string,
+    page: number,
+    sortColours: string[],
+    sortTypes: string[],
+  ): void {
     this.reset();
 
     if (this.productsSubscription$) {
@@ -159,7 +165,6 @@ export class CollectionShowCase implements OnInit {
 
             return buttons;
           });
-
         }
       });
   }
@@ -168,41 +173,47 @@ export class CollectionShowCase implements OnInit {
     this.scroll();
     this.currentPage.update((page) => page + 1);
 
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: {
-        page: this.currentPage()
-      },
-      queryParamsHandling: 'merge',
-      replaceUrl: true
-    }).then();
+    this.router
+      .navigate([], {
+        relativeTo: this.route,
+        queryParams: {
+          page: this.currentPage(),
+        },
+        queryParamsHandling: 'merge',
+        replaceUrl: true,
+      })
+      .then();
   }
   public prevPage(): void {
     this.scroll();
     this.currentPage.update((page) => page - 1);
 
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: {
-        page: this.currentPage()
-      },
-      queryParamsHandling: 'merge',
-      replaceUrl: true
-    }).then();
+    this.router
+      .navigate([], {
+        relativeTo: this.route,
+        queryParams: {
+          page: this.currentPage(),
+        },
+        queryParamsHandling: 'merge',
+        replaceUrl: true,
+      })
+      .then();
   }
 
   public pageClicked(page: number): void {
     this.scroll();
     this.currentPage.set(page);
 
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: {
-        page: this.currentPage()
-      },
-      queryParamsHandling: 'merge',
-      replaceUrl: true
-    }).then();
+    this.router
+      .navigate([], {
+        relativeTo: this.route,
+        queryParams: {
+          page: this.currentPage(),
+        },
+        queryParamsHandling: 'merge',
+        replaceUrl: true,
+      })
+      .then();
   }
 
   private scroll(): void {
@@ -219,7 +230,6 @@ export class CollectionShowCase implements OnInit {
   }
 
   public triggerFilter(): void {
-
     this.filterService.triggerFilter(true);
   }
 
@@ -241,7 +251,6 @@ export class CollectionShowCase implements OnInit {
   }
 
   public selectSortClick(value: string): void {
-
     const currentSort = this.sort();
     if (currentSort === value) return;
 

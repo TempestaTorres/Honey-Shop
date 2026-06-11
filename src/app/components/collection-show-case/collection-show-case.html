@@ -120,9 +120,27 @@
 
         @for (card of items; track $index) {
 
-          <app-collection-card
-            [productItem]="card"
-            class="group js-collection-card"></app-collection-card>
+          @if (card[0].type === 'video') {
+            @let item = card[0];
+
+            <a [routerLink]="['/collections', item.collection]" class="js-collection-card-banner">
+              <!-- Content -->
+              <div class="js-collection-card-banner__content">
+                <!-- Heading -->
+                <h3 class="js-collection-card-banner__title">{{ item.description }}</h3>
+                <div class="js-collection-card-banner__button button-link-underline">SHOP</div>
+              </div>
+              <!-- Image -->
+              <div class="js-collection-card-banner__image">
+                <app-video-player [url]="item.url" class="video-player-wrapper"></app-video-player>
+              </div>
+            </a>
+
+          } @else {
+            <app-collection-card
+              [productItem]="card"
+              class="group js-collection-card"></app-collection-card>
+          }
         }
 
       </div>

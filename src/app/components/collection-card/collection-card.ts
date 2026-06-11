@@ -41,7 +41,6 @@ export class CollectionCard implements OnInit {
     private cartService: ProductCartService,
     private swiperService: SwiperService,
   ) {
-
     afterNextRender(() => {
       const items = this.productItem();
       if (items.length > 0) {
@@ -56,16 +55,14 @@ export class CollectionCard implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.swiperSubscription = this.swiperService.needWatchResizing$.subscribe(value => {
-
+    this.swiperSubscription = this.swiperService.needWatchResizing$.subscribe((value) => {
       if (value && this.swiper) {
         this.isHidden.set(value);
         this.swiper.destroy();
         setTimeout(() => {
           this.init();
           this.isHidden.set(false);
-        },300);
+        }, 300);
       }
     });
   }
@@ -115,15 +112,12 @@ export class CollectionCard implements OnInit {
     if (index === this.index()) return;
 
     this.index.set(index);
-
   }
 
   private init(): void {
-
     const swp = this.cardSwiper();
 
     if (swp) {
-
       if (this.swiperClassName !== '') {
         swp.nativeElement.classList.remove(this.swiperClassName);
       }
@@ -136,7 +130,6 @@ export class CollectionCard implements OnInit {
       let swpSelector: string = '.' + this.swiperClassName;
 
       this.swiper = this.swiperService.initDefSwiperWithProgressBarOnly(swpSelector);
-
     }
   }
 }

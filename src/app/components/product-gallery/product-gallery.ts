@@ -4,23 +4,24 @@ import { ProductGallerySlide } from '../product-gallery-slide/product-gallery-sl
 import { ModelsService } from '../../products/data/models/models-service';
 import { ProductGalleryService } from './product-gallery-service';
 import { Subscription } from 'rxjs';
+import { VideoPlayer } from '../video-player/video-player';
 declare var Swiper: any;
 
 @Component({
   selector: 'app-product-gallery',
-  imports: [ProductGallerySlide],
+  imports: [ProductGallerySlide, VideoPlayer],
   templateUrl: './product-gallery.html',
 })
 export class ProductGallery implements OnInit {
-
   private swiper: any;
   private subscription$: Subscription | undefined;
   public productType: WritableSignal<ProductType | null> = signal<ProductType | null>(null);
 
-  constructor(private destroyRef: DestroyRef,
-              private modelsService: ModelsService,
-              private galleryService$: ProductGalleryService) {
-
+  constructor(
+    private destroyRef: DestroyRef,
+    private modelsService: ModelsService,
+    private galleryService$: ProductGalleryService,
+  ) {
     this.destroyRef.onDestroy(() => {
       if (this.swiper) {
         this.swiper.destroy();
@@ -32,11 +33,8 @@ export class ProductGallery implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.subscription$ = this.galleryService$.galleryTrigger$.subscribe(item => {
-
+    this.subscription$ = this.galleryService$.galleryTrigger$.subscribe((item) => {
       if (item !== null) {
-
         if (this.swiper) {
           this.swiper.destroy();
         }
@@ -44,25 +42,22 @@ export class ProductGallery implements OnInit {
         this.productType.set(item);
 
         setTimeout(() => {
-
           // Initialize swiper
           this.swiper = new Swiper('.js-carousel-swiper-gallery', {
             slidesPerView: 1,
             keyboard: true,
             pagination: {
               el: '.swiper-pagination',
-              type: "progressbar"
+              type: 'progressbar',
             },
             navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
               addIcons: false,
-            }
+            },
           });
-
         }, 400);
       }
-
     });
   }
 
