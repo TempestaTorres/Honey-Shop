@@ -147,6 +147,24 @@ export class CollectionsHeader {
       url: "bestsellers"
     },
   ];
+  public plpHeaderUnderwireBrasData: {name: string, url: string}[] = [
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Lace Bras",
+      url: "lace-bras"
+    },
+    {
+      name: "Bondage Bras",
+      url: "bondage-bras"
+    },
+    {
+      name: "Push up Bras",
+      url: "push-up-bras"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;

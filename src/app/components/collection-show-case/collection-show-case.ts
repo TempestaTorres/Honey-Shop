@@ -155,8 +155,14 @@ export class CollectionShowCase implements OnInit {
         if (collection !== null) {
           this.collectionName.set(collection.name);
           this.collectionProducts.set(collection.items);
-          this.itemsCount.set(collection.count);
           this.totalPages.set(collection.pages);
+
+          if (this.hasBanner(collection.items)) {
+            this.itemsCount.set(collection.count - 1);
+          }
+          else {
+            this.itemsCount.set(collection.count);
+          }
 
           this.totalPageButtons.update((buttons) => {
             for (let i: number = 0; i < collection.pages; i++) {
@@ -167,6 +173,17 @@ export class CollectionShowCase implements OnInit {
           });
         }
       });
+  }
+
+  private hasBanner(items: ProductType[][]): boolean {
+    for (let i = 0; i < items.length; i++) {
+      let item = items[i];
+      let found: boolean = item.some((value) => value.type === 'video');
+      if (found) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public nextPage(): void {

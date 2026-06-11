@@ -835,7 +835,7 @@ export class ProductsService {
 
               let collectionSet: ProductType[] = items[j];
 
-              if (collectionSet[0].type !== productType) {
+              if (collectionSet[0].type !== productType && collectionSet[0].type !== 'video') {
 
                 set.push(collectionSet);
               }
@@ -858,17 +858,20 @@ export class ProductsService {
 
               let collectionSet: ProductType[] = items[j];
 
-              let found: boolean = collectionSet.some((item) => item.url === productUrl);
+              if (collectionSet[0].type !== 'video') {
 
-              if (!found) {
-                set.push(collectionSet);
-              }
-              else if (found && collectionSet.length > 1) {
-                let filtered = collectionSet
-                  .filter((item) => item.colorName !== colorName);
+                let found: boolean = collectionSet.some((item) => item.url === productUrl);
 
-                if (filtered.length > 0) {
-                  set.push(filtered);
+                if (!found) {
+                  set.push(collectionSet);
+                }
+                else if (found && collectionSet.length > 1) {
+                  let filtered = collectionSet
+                    .filter((item) => item.colorName !== colorName);
+
+                  if (filtered.length > 0) {
+                    set.push(filtered);
+                  }
                 }
               }
 

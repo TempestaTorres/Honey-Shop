@@ -213,6 +213,15 @@ export const AllCollectionsColoursData: ShopCollectionColours[] = [
     ]
   },
   {
+    url: "philippa-lingerie-collection",
+    colors: [
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+    ]
+  },
+  {
     url: "bras",
     colors: [
       {
@@ -258,6 +267,43 @@ export const AllCollectionsColoursData: ShopCollectionColours[] = [
       {
         colorName: "ocean",
         colorClass: "swatch-ocean",
+      },
+      {
+        colorName: "brown",
+        colorClass: "swatch-brown",
+      },
+    ]
+  },
+  {
+    url: "underwire-bras",
+    colors: [
+      {
+        colorName: "black",
+        colorClass: "swatch-black",
+      },
+      {
+        colorName: "chartreuse",
+        colorClass: "swatch-chartreuse",
+      },
+      {
+        colorName: "limoncello",
+        colorClass: "swatch-limoncello",
+      },
+      {
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+      },
+      {
+        colorName: "love",
+        colorClass: "swatch-love",
+      },
+      {
+        colorName: "ocean",
+        colorClass: "swatch-ocean",
+      },
+      {
+        colorName: "ivory",
+        colorClass: "swatch-ivory",
       },
       {
         colorName: "brown",
@@ -4680,6 +4726,243 @@ export const AllCollectionsData: ShopCollectionType[] = [
         },
       ]
     ]
+  },
+  {
+    name: "PHILIPPA",
+    url: "philippa-lingerie-collection",
+    description: "Lacy black lingerie, defined by the details. Featuring pointed peaks of embroidery over barely-there tulle, Philippa is an illusion of seduction and skin. While Swiss-designed scrollwork plays across the body, sumptuous lace breezes over the back of every piece. Made for date night dressing or confidence under clothes, Philippa’s even better when clothes come off…",
+    products: [
+      [
+        {
+          name: "PHILIPPA",
+          description: "Bra",
+          url: "philippa-underwire-balconette-black",
+          collection: "philippa-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Front2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Back3.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Side4.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_5.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Front6.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/philippa/black/PHILIPPA8.jpg",
+          ],
+          sizes: braSizes,
+          models: ["ella"]
+        },
+      ],
+      [
+        {
+          name: "PHILIPPA",
+          description: "Thong",
+          url: "philippa-string-black",
+          collection: "philippa-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 75,
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Front2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Back3.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Side4.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Suspender_Front5.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Suspender_Back6.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Front7.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/philippa/black/PHILIPPA82.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["ella"]
+        },
+      ],
+      [
+        {
+          name: "PHILIPPA",
+          description: "Brief",
+          url: "philippa-brazilian-black",
+          collection: "philippa-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Brief_Back1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Brief_Front2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Brief_Back3.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Brief_Side4.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Brief_6.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_Brief_Back.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Brief_Side8.jpg",
+            "/assets/images/products/collections/philippa/black/PHILIPPA_3.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "PHILIPPA",
+          description: "Bralette",
+          url: "philippa-longline-bralette-black",
+          collection: "philippa-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "bralette",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_6.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_3.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_4.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_5.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_7.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_8.jpg",
+            "/assets/images/products/collections/philippa/black/PHILIPPA4.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name:  "PHILIPPA",
+          description: "Suspender",
+          url: "philippa-suspender-midi-black",
+          collection: "philippa-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 90,
+          type: "suspender",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Suspender_Front2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Suspender_Back3.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Suspender_Side4.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Suspender_Thong_Front5.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Suspender_Thong_Back6.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Suspender_Thong_Side7.jpg",
+            "/assets/images/products/collections/philippa/black/PHILIPPA5.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["ella"]
+        },
+      ],
+      [
+        {
+          name: "PHILIPPA",
+          description: "Bra & Bottom Lingerie Set",
+          url: "philippa-bra-bottom-lingerie-set",
+          collection: "philippa-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 185,
+          priceFrom: 185,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_6.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_7.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Back8.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Side7.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_3.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_SideZOOM1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_Side.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_Back.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Brief_Front.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Brief_Back.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Front1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Back.jpg",
+          ],
+          models: ["annalise", "ella"],
+          setItems: [
+            "philippa-underwire-balconette-black",
+            "philippa-longline-bralette-black",
+            "philippa-brazilian-black",
+            "philippa-string-black",
+          ]
+        },
+      ],
+      [
+        {
+          name: "PHILIPPA",
+          description: "3 Piece Lingerie Set",
+          url: "philippa-3-piece-lingerie-set",
+          collection: "philippa-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 275,
+          priceFrom: 275,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Suspender_Thong_Front3pieceset1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Suspender_Thong_Back3pieceset2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Suspender_Thong_Side3pieceset3.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_6.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_7.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Brief_Side1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Front5.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Back2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_SideZOOM.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_Front.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_Back.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bralette_FrontZOOM.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Suspender_Front.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Brief_Front.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Brief_Back1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Side.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Thong_Back.jpg",
+          ],
+          models: ["annalise", "ella"],
+          setItems: [
+            "philippa-underwire-balconette-black",
+            "philippa-longline-bralette-black",
+            "philippa-brazilian-black",
+            "philippa-string-black",
+            "philippa-suspender-midi-black",
+          ]
+        },
+      ]
+    ]
   }
 ]
 export const AllSubCollectionsData: ShopCollectionType[] = [
@@ -4782,6 +5065,20 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/annalise/sky-blue/Annelise_Thong_Suspender_Front1.jpg",
           ],
           sizes: stockingsSizes
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
         },
       ],
       [
@@ -4955,6 +5252,20 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: braSizes,
           models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
         },
       ],
       [
@@ -5497,6 +5808,20 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           models: ["annalise"]
         },
       ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
     ]
   },
   {
@@ -5656,6 +5981,20 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
           name: "CLARA",
           description: "Bra",
           url: "clara-pink-contour-bra",
@@ -5686,4 +6025,278 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
       ]
     ]
   },
+  {
+    name: "UNDERWIRE BRAS",
+    url: "underwire-bras",
+    description: "",
+    products: [
+      [
+        {
+          name: "WHITNEY",
+          description: "Chartreuse Bra",
+          url: "whitney-underwire-balconette-chartreuse",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "chartreuse",
+          colorClass: "swatch-chartreuse",
+          images: [
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_SideZOOM1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WhitneyChartreuse_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/chartreuse/WHITNEY_CHARTREUSE_5.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Black Bra",
+          url: "whitney-black-bra",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Back2.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Side3.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_FrontZOOM5.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_SideZOOM3.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/whitney/Black/WhitneyBlack_Bra_Brief_Side.jpg",
+            "/assets/images/products/collections/whitney/Black/Campaign_Imagery_WhitneyBlk1.jpg",
+          ],
+          sizes: braSizes,
+          models: ["sianie"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Limoncello Bra",
+          url: "whitney-underwire-balconette-limoncello",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "limoncello",
+          colorClass: "swatch-limoncello",
+          images: [
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_ThongStockings_Front.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Front2.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Back2.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Side1.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_FrontZOOM4.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_SideZOOM4.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/whitney/limoncello/WhitneyLimoncello_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/limoncello/Campaign_Imagery_WL2.jpg",
+          ],
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Love Bra",
+          url: "whitney-love-balconette",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "love",
+          colorClass: "swatch-love",
+          images: [
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Back1.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_SideZOOM1.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyL_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/love/WhitneyLove3.jpg",
+          ],
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Ocean Bra",
+          url: "whitney-underwire-balconette-ocean",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "ocean",
+          colorClass: "swatch-ocean",
+          images: [
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_BraZOOM.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Back_.jpg",
+            "/assets/images/products/collections/whitney/ocean/Whitney_Bra_Thong_Side_.jpg",
+            "/assets/images/products/collections/whitney/ocean/Campaign_Whitney_Ocean.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["tyniesha", "keesha"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Sparkling Pink Bra",
+          url: "whitney-uw-balc-sparkling-pink",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "sparkling pink",
+          colorClass: "swatch-sparkling-pink",
+          images: [
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Front4.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Side1.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_FrontZOOM3.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WhitneyP_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/whitney/sparkling-pink/WHITNEYSPINK.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["sianie"]
+        },
+        {
+          name: "WHITNEY",
+          description: "Chocolate Bra",
+          url: "whitney-underwire-balconette-chocolate",
+          collection: "whitney-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 120,
+          type: "bra",
+          colorName: "brown",
+          colorClass: "swatch-brown",
+          images: [
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Back.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Side.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_BraZOOM1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_BraZOOM.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/whitney/brown/WhitneyChoc_Bra_Thong_Side1.jpg",
+            "/assets/images/products/collections/whitney/brown/08_13394_FLATcopy.jpg",
+          ],
+          sizes: braSizes,
+          ratings: {
+            stars: [1,1,1,1,0.9],
+            score: "41"
+          },
+          models: ["renee"]
+        },
+      ],
+      [
+        {
+          name: "LIAN",
+          description: "Bra",
+          url: "lian-ivory-balconette",
+          collection: "lian-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          colorName: "ivory",
+          colorClass: "swatch-ivory",
+          type: "bra",
+          images: [
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Front.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_SideZOOM.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_BraZOOM1.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Side.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian_Bra_Brief_Back.jpg",
+            "/assets/images/products/bridal-lingerie/lian/bra/ivory/Lian7.jpg",
+          ],
+          sizes: braSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "PHILIPPA",
+          description: "Bra",
+          url: "philippa-underwire-balconette-black",
+          collection: "philippa-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Front2.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Back3.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Side4.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_5.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Front6.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/philippa/black/Phillipa_Bra_Thong_Side.jpg",
+            "/assets/images/products/collections/philippa/black/PHILIPPA8.jpg",
+          ],
+          sizes: braSizes,
+          models: ["ella"]
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+    ]
+  }
 ]

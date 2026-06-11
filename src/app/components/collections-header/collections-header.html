@@ -135,6 +135,15 @@
               </div>
 
             }
+          } @else if (collectionType() === 'underwire-bras') {
+
+            @for (link of plpHeaderUnderwireBrasData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
           }
 
         </div>
