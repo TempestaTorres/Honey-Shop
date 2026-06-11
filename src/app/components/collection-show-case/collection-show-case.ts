@@ -19,7 +19,7 @@ import { inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ScrollingService } from '../../services/scrolling-service';
 import { CollectionFilterModal } from '../../modals/collection-filter-modal/collection-filter-modal';
-import { FilterService, FilterType } from '../../services/filter-service';
+import { FilterService } from '../../services/filter-service';
 import { VideoPlayer } from '../video-player/video-player';
 
 @Component({
