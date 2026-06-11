@@ -34,6 +34,16 @@
                 <li class="breadcrumb">
                   <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.collection }}</a>
                 </li>
+              } @else if (product.type === "stockings" && product.collection !== "stockings" ) {
+
+                <li class="breadcrumb">
+                  <a [routerLink]="['/collections', 'stockings']" tabindex="-1">STOCKINGS</a>
+                </li>
+                <li class="breadcrumb-separator" tabindex="-1"> — </li>
+                <li class="breadcrumb">
+                  <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.collection.split('-')[0] }}</a>
+                </li>
+
               } @else {
                 <li class="breadcrumb">
                   <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.name }}</a>

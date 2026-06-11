@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { WishlistService } from '../../product-wishlist/wishlist-service';
 import { ProductCartType } from '../../product-cart/cart-type/product-cart-type';
 import { AuthService } from '../../auth/auth-service';
-import { CurrencyPipe, NgClass } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { ProductDetailsType } from '../../types/instagram/instagram-feeds-type';
 import { FsSize } from '../../components/fs-size/fs-size';
 import { ProductCartService } from '../../product-cart/services/product-cart-service';
@@ -16,7 +16,7 @@ import { SizeGuideService } from '../size-guide-modal/size-guide-service';
 
 @Component({
   selector: 'app-select-size-modal',
-  imports: [ImageSwiper, CurrencyPipe, NgClass, FsSize],
+  imports: [ImageSwiper, CurrencyPipe, FsSize],
   templateUrl: './select-size-modal.html',
 })
 export class SelectSizeModal implements OnInit, OnDestroy {

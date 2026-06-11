@@ -165,6 +165,42 @@ export class CollectionsHeader {
       url: "push-up-bras"
     },
   ];
+  public plpHeaderPushupBrasData: {name: string, url: string}[] = [
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Lace Bras",
+      url: "lace-bras"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+  ];
+  public plpHeaderRobesData: {name: string, url: string}[] = [
+    {
+      name: "Lounge Lingerie",
+      url: "loungewear"
+    },
+    {
+      name: "Bridal Lingerie",
+      url: "bridal-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;

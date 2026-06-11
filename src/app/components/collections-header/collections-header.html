@@ -15,16 +15,16 @@
 
         <p>
           Wrapped in lace, satin, or leather - Honey’s luxury
-          <a [routerLink]="['/collections', 'lingerie-sets']">lingerie sets</a>,
-          <a [routerLink]="['/collections', 'bras']">bras</a>,
-          <a [routerLink]="['/collections', 'thongs']">thongs</a>,
-          <a [routerLink]="['/collections', 'stockings']">stockings</a>&nbsp;and
-          <a [routerLink]="['/collections', 'suspenders']">suspenders</a>
+          <a [routerLink]="['/collections', 'lingerie-sets']" target="_blank">lingerie sets</a>,
+          <a [routerLink]="['/collections', 'bras']" target="_blank">bras</a>,
+          <a [routerLink]="['/collections', 'thongs']" target="_blank">thongs</a>,
+          <a [routerLink]="['/collections', 'stockings']" target="_blank">stockings</a>&nbsp;and
+          <a [routerLink]="['/collections', 'suspenders']" target="_blank">suspenders</a>
           are made to inspire confidence,
           <span>empowerment, and unapologetic pleasure</span>.&nbsp;From delicate
-          <a [routerLink]="['/collections', 'lace-bras']">lace bras</a>
+          <a [routerLink]="['/collections', 'lace-bras']" target="_blank">lace bras</a>
           to daring
-          <a [routerLink]="['/collections', 'bondage-lingerie']">bondage lingerie</a>
+          <a [routerLink]="['/collections', 'bondage-lingerie']" target="_blank">bondage lingerie</a>
           and accessories, every piece is crafted to perfection. Explore lingerie designed for you,
           because every moment deserves a little luxury.
         </p>
@@ -32,13 +32,13 @@
       } @else if (collectionType() === 'bras') {
 
         <p>Plunging
-          <a [routerLink]="['/collections', 'push-up-bras']" title="push up bras" >push ups</a>, soft
-          <a [routerLink]="['/collections', 'underwire-bras']">underwire bras</a> or
-          <a [routerLink]="['/collections', 'bralettes']">bralettes</a> to layer,
+          <a [routerLink]="['/collections', 'push-up-bras']" target="_blank" title="push up bras" >push ups</a>, soft
+          <a [routerLink]="['/collections', 'underwire-bras']" target="_blank">underwire bras</a> or
+          <a [routerLink]="['/collections', 'bralettes']" target="_blank">bralettes</a> to layer,
           shop Honey collection of luxury women's bras to suit all of your deepest desires. Make hearts race with sultry
-          <a [routerLink]="['/collections', 'lace-bras']">lace bras</a>,
+          <a [routerLink]="['/collections', 'lace-bras']" target="_blank">lace bras</a>,
           or delve into the world of luxurious&nbsp;
-          <a [routerLink]="['/collections', 'lingerie-sets']">lingerie sets</a>
+          <a [routerLink]="['/collections', 'lingerie-sets']" target="_blank">lingerie sets</a>
           made for you.
         </p>
 
@@ -46,16 +46,16 @@
 
         <p>
           Discover Honey’s collection of luxury lace
-          <a [routerLink]="['/collections', 'bras']">bras</a>
+          <a [routerLink]="['/collections', 'bras']" target="_blank">bras</a>
           - seductive, sheer, and designed to be seen. From delicate florals to bold cut-outs,
           our lace bras are made to turn heads and ignite desire.
         </p>
         <p>
           Complete the look with matching lace
-          <a [routerLink]="['/collections', 'thongs']">thongs</a>,
-          <a [routerLink]="['/collections', 'briefs']">briefs</a>,
-          <a [routerLink]="['/collections', 'suspenders']">suspenders</a>, and&nbsp;
-          <a [routerLink]="['/collections', 'lingerie-sets']">lingerie sets</a>.
+          <a [routerLink]="['/collections', 'thongs']" target="_blank">thongs</a>,
+          <a [routerLink]="['/collections', 'briefs']" target="_blank">briefs</a>,
+          <a [routerLink]="['/collections', 'suspenders']" target="_blank">suspenders</a>, and&nbsp;
+          <a [routerLink]="['/collections', 'lingerie-sets']" target="_blank">lingerie sets</a>.
           Whether it’s date night, a daring surprise, or a moment of indulgence, shop lace bras
           and lingerie sets today at Honey.
         </p>
@@ -63,17 +63,33 @@
 
         <p>
           Bound, whipped, and dripping in desire, discover Honey’s collection of bondage bras
-          <a [routerLink]="['/collections', 'bondage-lingerie']"></a>.
+          <a [routerLink]="['/collections', 'bondage-lingerie']" target="_blank"></a>.
           Crafted with leather, luxe gold hardware, and provocative detail, these BDSM-inspired
-          <a [routerLink]="['/collections', 'bras']">bras</a>
+          <a [routerLink]="['/collections', 'bras']" target="_blank">bras</a>
           are made to awaken your wildest fantasies. Pair with
           <a [routerLink]="['/collections', 'bondage-lingerie']">bondage lingerie</a>, suspenders, and
-          <a [routerLink]="['/collections', 'latex-lingerie']">latex</a>
+          <a [routerLink]="['/collections', 'latex-lingerie']" target="_blank">latex</a>
           to complete your look. Whether you're dressing for a night of submission or a
           seductive ménage à trois, our
-          <a [routerLink]="['/collections', 'bondage-lingerie']">bondage lingerie</a>
+          <a [routerLink]="['/collections', 'bondage-lingerie']" target="_blank">bondage lingerie</a>
           is made for your deepest, darkest pleasures.&nbsp;Shop bondage bras and matching sets now at Honey.
         </p>
+      } @else if (collectionType() === 'push-up-bras') {
+
+        <p>
+          Decadent lace, racy leather or sultry satin, shop our collection of push-up bras bound to
+          make the most of all your best assets. Whether pairing with a
+          <a [routerLink]="['/collections', 'robes-chemises']" target="_blank" title="robes &amp; chemises">robe or chemises</a>,
+          a <a [routerLink]="['/collections', 'suspenders']" target="_blank" title="suspenders">suspender</a>
+          , or adding some sugar and spice, a push-up bra is the perfect addition to your
+          late-night rendezvous. Designed to create that ultimate lift, Honey’s collection of
+          push-up bras suits all occasions. From
+          <a [routerLink]="['/collections', 'white-lingerie']" target="_blank" title="white lingerie">
+            white bridal padded bras</a> to everyday wear or your secret late-night rendezvous in
+          <a [routerLink]="['/collections', 'red-lingerie']" target="_blank" title="red lingerie">red lace</a>,
+          shop signature push-ups.
+        </p>
+
       }
       @else {
         <p>{{  headerDescription() }}</p>
@@ -138,6 +154,24 @@
           } @else if (collectionType() === 'underwire-bras') {
 
             @for (link of plpHeaderUnderwireBrasData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'push-up-bras') {
+
+            @for (link of plpHeaderPushupBrasData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'robes-chemises') {
+
+            @for (link of plpHeaderRobesData; track $index) {
 
               <div class="swiper-slide js-plp-slide">
                 <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>

@@ -1,10 +1,10 @@
 import { Component, EventEmitter, input, Output, signal, WritableSignal } from '@angular/core';
 import { ProductType } from '../../products/types/product-type';
-import { CurrencyPipe, NgClass } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-shop-the-look-item',
-  imports: [CurrencyPipe, NgClass],
+  imports: [CurrencyPipe],
   templateUrl: './shop-the-look-item.html',
   styleUrl: './shop-the-look-item.css',
 })
