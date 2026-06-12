@@ -90,6 +90,38 @@
           shop signature push-ups.
         </p>
 
+      } @else if (collectionType() === 'white-lingerie') {
+
+        <p>
+          The illusion of innocence with a taste of seduction. Whether it's a
+          <a [routerLink]="['/collections', 'bridal-lingerie']" target="_blank">bridal</a> affair, a
+          passionate hot night or a subtle confidence boost under a white shirt, our white
+          lingerie sets offer a range of possibilities. From delicate
+          <a [routerLink]="['/collections', 'lace-bras']" target="_blank">lace lingerie</a> to romantic
+          <a [routerLink]="['/collections', 'robes-chemises']" target="_blank">robes &amp; chemises</a>,
+          gaze your eyes on our white lingerie collection.
+        </p>
+
+      } @else if (collectionType() === 'bridal-lingerie') {
+
+        <p>
+          From blushing to bold, we’ve got the perfect wedding lingerie for every type of bride.
+          And, a day as special as your wedding deserves a night to remember, which is just what
+          our stunning wedding night lingerie was designed for. Available in a classic range of ivory and
+          <a [routerLink]="['/collections', 'white-lingerie']" target="_blank" title="white lingerie">white bridal lingerie</a>
+          hues and in styles that are anything but basic. Explore our bridal lingerie collection featuring
+          <a [routerLink]="['/collections', 'bras']" title="bras" target="_blank">bras</a>,
+          silky stockings, figure-hugging corsets and more.
+        </p>
+
+      }  @else if (collectionType() === 'red-lingerie') {
+
+        <p>
+          Sultry red-hot lingerie, bound to turn heads. Nothing says luxury quite like ravishing
+          red bras, thongs, bustiers and corset. Pair your red lingerie with our matching&nbsp;
+          <a [routerLink]="['/collections', 'robes-chemises']" target="_blank" title="robes &amp; chemises">lace robes and lace gowns.</a>
+        </p>
+
       }
       @else {
         <p>{{  headerDescription() }}</p>
@@ -172,6 +204,24 @@
           } @else if (collectionType() === 'robes-chemises') {
 
             @for (link of plpHeaderRobesData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'bridal-lingerie') {
+
+            @for (link of plpHeaderBridalLingerieData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'red-lingerie') {
+
+            @for (link of plpHeaderRedLingerieData; track $index) {
 
               <div class="swiper-slide js-plp-slide">
                 <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>

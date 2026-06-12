@@ -201,6 +201,54 @@ export class CollectionsHeader {
       url: "new-lingerie"
     },
   ];
+  public plpHeaderRedLingerieData: {name: string, url: string}[] = [
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "Black Lingerie",
+      url: "black-lingerie"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Lace Lingerie",
+      url: "lace-lingerie"
+    },
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+  ];
+  public plpHeaderBridalLingerieData: {name: string, url: string}[] = [
+    {
+      name: "Lounge Lingerie",
+      url: "loungewear"
+    },
+    {
+      name: "Lace Lingerie",
+      url: "lace-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+    {
+      name: "Babydoll Lingerie, Robes & Chemises",
+      url: "robes-chemises"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;

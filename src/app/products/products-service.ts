@@ -61,7 +61,7 @@ export class ProductsService {
 
         let product = items[j];
         let type = product[0].type;
-        if (type && type !== 'lingerie-set') {
+        if (type && type !== 'lingerie-set' && type !== 'video') {
 
           let found: boolean = types.some(value => value === type);
           if (!found) {
@@ -76,23 +76,51 @@ export class ProductsService {
       });
     }
 
-    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+    if (collectionUrl.includes('collection')) {
 
-      if (AllCollectionsData[i].url === collectionUrl) {
-        for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+      for (let i: number = 0; i < AllCollectionsData.length; i++) {
 
-          let product = AllCollectionsData[i].products[j];
+        if (AllCollectionsData[i].url === collectionUrl) {
+          for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+
+            let product = [...AllCollectionsData[i].products[j]];
+            let type = product[0].type;
+
+            if (type && type !== 'lingerie-set' && type !== 'video') {
+
+              let found: boolean = types.some(value => value === type);
+              if (!found) {
+                types.push(type);
+              }
+
+            }
+          }
+          return new Observable<string[]>(observer => {
+            observer.next(types);
+          });
+        }
+      }
+
+    }
+
+    for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
+
+      if (AllSubCollectionsData[i].url === collectionUrl) {
+        for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
+
+          let product = [...AllSubCollectionsData[i].products[j]];
           let type = product[0].type;
-          if (type && type !== 'lingerie-set') {
 
+          if (type !== undefined && type !== 'video') {
             let found: boolean = types.some(value => value === type);
             if (!found) {
               types.push(type);
             }
-
           }
         }
-        break;
+        return new Observable<string[]>(observer => {
+          observer.next(types);
+        });
       }
     }
 
