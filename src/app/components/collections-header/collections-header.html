@@ -228,6 +228,24 @@
               </div>
 
             }
+          } @else if (collectionType() === 'suspenders') {
+
+            @for (link of plpHeaderSuspendersData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'nakeds-lingerie-collection') {
+
+            @for (link of plpHeaderNakedsData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
           }
 
         </div>

@@ -310,6 +310,8 @@
 }
 .modal-dialog-image-wrapper.small {
   max-width: 100px;
+  width: 100px;
+  background-color: var(--md-bg-color-accent);
 }
 .modal-dialog-image-wrapper figure {
   max-width: 100%;

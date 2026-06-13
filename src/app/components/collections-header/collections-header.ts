@@ -249,6 +249,46 @@ export class CollectionsHeader {
       url: "robes-chemises"
     },
   ];
+  public plpHeaderSuspendersData: {name: string, url: string}[] = [
+    {
+      name: "Bottoms",
+      url: "bottoms"
+    },
+    {
+      name: "Briefs",
+      url: "briefs"
+    },
+    {
+      name: "Thongs",
+      url: "thongs"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Crotchless Lingerie",
+      url: "crotchless-lingerie"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Stockings",
+      url: "stockings"
+    },
+  ];
+  public plpHeaderNakedsData: {name: string, url: string}[] = [
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;
@@ -316,7 +356,7 @@ export class CollectionsHeader {
             this.headerTitle.set(description[0]);
             this.headerDescription.set(description[1]);
           }
-          if (!type.includes('lingerie-collection')) {
+          if (!type.includes('lingerie-collection') || type === 'nakeds-lingerie-collection') {
             this.navigationNeeded.set(true);
           }
         });

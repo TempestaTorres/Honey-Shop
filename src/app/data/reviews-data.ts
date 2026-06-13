@@ -117,5 +117,56 @@ export const ReviewsData: ReviewType[][] = [
         "My husband loves it 😍"
       ]
     },
+  ],
+  [
+    {
+      collection: "nakeds-lingerie-collection",
+      authorName: " Erin P. ",
+      title: "EVERYONE NEEDS ONE",
+      description: [
+        "This bra should be mandatory for everyones underwear draw!  It is sooooo good. I am a 16d and the fit is perfect.  I must admit that I felt a little exposed at first....for about 10 seconds.  I quickly remembered  that there is no  better feeling than wearing No bra and this is just what this feels like.  BOOM..... Perfect!!!"
+      ]
+    },
+    {
+      collection: "nakeds-lingerie-collection",
+      authorName: "Mari M.",
+      title: "Cup runs small",
+      description: [
+        "I am a DD and I needed a DDD in this brand"
+      ]
+    },
+    {
+      collection: "nakeds-lingerie-collection",
+      authorName: "Lauren",
+      title: "Obsessed",
+      description: [
+        "I love this set so much. Picked up the string, the bra and the waspie in black PLUS the string and bra in toffee and I genuinely wear them every day I can. ",
+        "Comfy while still being sexy. The luminous fabric is so gorgeous in person, honestly indescribably lovely until you see it for yourself. My partner says they’re extremely sexy and classy. He loves the sheer fabric and I love the comfort. Win win. I’ve just picked up two more sets in the Black Friday sale and I’m tempted to get two more so I have a fresh set every day of the week."
+      ]
+    },
+    {
+      collection: "nakeds-lingerie-collection",
+      authorName: "Natasha",
+      title: "The sexy staple",
+      description: [
+        "A beautiful well made bra that's sexy and wearable day to day? yes please. "
+      ]
+    },
+    {
+      collection: "nakeds-lingerie-collection",
+      authorName: "Clémentine A.",
+      title: "All with nothing!",
+      description: [
+        "Comfy, highlights womanhood!"
+      ]
+    },
+    {
+      collection: "nakeds-lingerie-collection",
+      authorName: " Alex H.",
+      title: "Alex H",
+      description: [
+        "Very classy, great fit and comfortable…and very sexy"
+      ]
+    },
   ]
 ]
