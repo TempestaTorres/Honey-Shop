@@ -140,6 +140,11 @@
   aspect-ratio: 3/4;
   object-fit: cover;
 }
+.js-collection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .js-collection-colors-widget {
   display: flex;
   align-items: center;

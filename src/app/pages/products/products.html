@@ -92,18 +92,14 @@
               [buyProduct]="product"></app-buy-product-form>
 
           } @else {
-            <!-- Else For Lingerie sets -->
-            <div class="js-collection-sets">
-            <!-- Heading -->
-            <div class="app-widget app-widget-heading app-widget-heading-default">
-              <div class="app-widget-container">
-                <h2 class="app-heading-title">Select Set</h2>
-              </div>
-            </div>
 
-            <app-product-select-set
-              [shopProduct]="product"
-              class="app-wrapper"></app-product-select-set>
+            <!-- Else For Lingerie sets -->
+
+            <div class="js-collection-sets">
+
+              <app-product-select-set
+                [shopProduct]="product"
+                class="app-wrapper"></app-product-select-set>
 
             </div>
 

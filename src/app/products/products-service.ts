@@ -233,7 +233,11 @@ export class ProductsService {
     let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
 
     for (let i: number = 1; i < AllCollectionsData.length; i++) {
-      items = items.concat(AllCollectionsData[i].products);
+
+      let products = [...AllCollectionsData[i].products];
+      products = products.filter(product => product[0].type !== 'video');
+
+      items = items.concat(products);
     }
     if (colors.length > 0) {
       items = this.sortByColors(items, colors);
@@ -277,7 +281,10 @@ export class ProductsService {
 
     for (let i: number = 1; i < AllCollectionsData.length; i++) {
 
-      items = items.concat(AllCollectionsData[i].products);
+      let products = [...AllCollectionsData[i].products];
+      products = products.filter(product => product[0].type !== 'video');
+
+      items = items.concat(products);
 
     }
 
@@ -369,7 +376,11 @@ export class ProductsService {
     let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
 
     for (let i: number = 1; i < AllCollectionsData.length; i++) {
-      items = items.concat(AllCollectionsData[i].products);
+
+      let products = [...AllCollectionsData[i].products];
+      products = products.filter(product => product[0].type !== 'video');
+
+      items = items.concat(products);
     }
 
     if (colors.length > 0) {

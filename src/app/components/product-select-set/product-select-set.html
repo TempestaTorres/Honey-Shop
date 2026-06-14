@@ -1,18 +1,59 @@
-<div class="select-set-list-widget">
 @let sets = productSets();
+<!-- Header -->
+<div class="js-collection-header">
+
+  <!-- Heading -->
+  <div class="app-widget app-widget-heading app-widget-heading-default">
+    <div class="app-widget-container">
+      <h2 class="app-heading-title">Select Set</h2>
+    </div>
+  </div>
+
+  @if (sets.length > 1) {
+
+    <button
+      (click)="openViewAllSets()"
+      type="button"
+      class="button-link-icon js-modal-dialog-trigger"
+      aria-label="View Colours">
+      View All Sets
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 12 12" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
+        <title id="title-icon-chevron-right">Icon of chevron right</title>
+        <path id="icon-chevron-right" d="M4.625 2.5625L8.0625 6L4.625 9.4375" stroke="currentColor" stroke-linecap="square"></path>
+      </svg>
+    </button>
+  }
+</div>
+
+
+<div class="select-set-list-widget">
+
   @for (set of sets; track $index) {
 
     @if (activeSet() === $index) {
 
       <div class="select-set-list__item current-item" [title]="set.name + ' ' + set.description">
-        <img [src]="set.images[0]" alt="" loading="lazy">
+
+        @if (set.images[0].includes('.mp4')) {
+          <img [src]="set.images[1]" alt="" loading="lazy">
+        } @else {
+          <img [src]="set.images[0]" alt="" loading="lazy">
+        }
+
       </div>
     } @else {
       <a class="select-set-list__item"
          [title]="set.name + ' ' + set.description"
         [routerLink]="['/products', set.url]">
-        <img [src]="set.images[0]" alt="" loading="lazy">
+
+        @if (set.images[0].includes('.mp4')) {
+          <img [src]="set.images[1]" alt="" loading="lazy">
+        } @else {
+          <img [src]="set.images[0]" alt="" loading="lazy">
+        }
+
       </a>
     }
   }
 </div>
+<app-modal-view-sets></app-modal-view-sets>

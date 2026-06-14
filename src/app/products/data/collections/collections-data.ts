@@ -83,6 +83,10 @@ export const AllCollectionsColoursData: ShopCollectionColours[] = [
         colorName: "toffee",
         colorClass: "swatch-toffee",
       },
+      {
+        colorName: "gold",
+        colorClass: "swatch-gold",
+      },
     ]
   },
   {
@@ -252,6 +256,15 @@ export const AllCollectionsColoursData: ShopCollectionColours[] = [
       {
         colorName: "toffee",
         colorClass: "swatch-toffee",
+      },
+    ]
+  },
+  {
+    url: "britt-lingerie-collection",
+    colors: [
+      {
+        colorName: "gold",
+        colorClass: "swatch-gold",
       },
     ]
   },
@@ -500,6 +513,10 @@ export const AllCollectionsColoursData: ShopCollectionColours[] = [
         colorName: "leopard",
         colorClass: "swatch-leopard",
       },
+      {
+        colorName: "gold",
+        colorClass: "swatch-gold",
+      },
     ]
   },
   {
@@ -628,6 +645,10 @@ export const AllCollectionsColoursData: ShopCollectionColours[] = [
       {
         colorName: "toffee",
         colorClass: "swatch-toffee",
+      },
+      {
+        colorName: "gold",
+        colorClass: "swatch-gold",
       },
     ]
   },
@@ -4153,7 +4174,7 @@ export const AllCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
-          name: "KUKURO",
+          name: "BANNER",
           description: "UP TO 70% OFF*",
           url: "/assets/images/products/collections/clara/banner1.mp4",
           collection: "all-lingerie",
@@ -6340,6 +6361,230 @@ export const AllCollectionsData: ShopCollectionType[] = [
         },
       ]
     ]
+  },
+  {
+    name: "BRITT",
+    url: "britt-lingerie-collection",
+    description: "Bringing the heat with Swiss-designed embroidery on nude crystal tulle, Britt features tropical florals, thermo-cut flowers and iridescent foiling that shimmers in the light. Bursting with energy in bright orange binds, Britt is the fiery flirt that demands to be seen.",
+    products: [
+      [
+        {
+          name: "GOLD FLORAL SUSPENDER",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "britt-gold-suspender-stockings",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 35,
+          type: "stockings",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/stockings/gold/Britt_Gold_Stockings_Web.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Side.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+      ],
+      [
+        {
+          name:  "BRITT",
+          description: "Gold Suspender",
+          url: "britt-gold-suspender",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "suspender",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Side.jpg",
+            "/assets/images/products/britt/gold/BRITT3.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["ella"]
+        },
+      ],
+      [
+        {
+          name: "BRITT",
+          description: "Gold Bra",
+          url: "britt-gold-balconette",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Back1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_FrontZOOM.jpg",
+            "/assets/images/products/britt/gold/BrittGold_BraZOOM.jpg",
+            "/assets/images/products/britt/gold/BRITT1.jpg",
+          ],
+          sizes: braSizes,
+          models: ["ella"]
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "BRITT",
+          description: "Gold Thong",
+          url: "britt-gold-string",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/gold/BrittGold_Bra_Thong_Back_1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Front.jpg",
+            "/assets/images/products/britt/gold/BRITT6.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "BRITT",
+          description: "Gold Brief",
+          url: "britt-gold-bikini",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "brief",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Brief_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Brief_Back_1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Brief_Side1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Side.jpg",
+            "/assets/images/products/britt/gold/BRITT5.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["ella"]
+        },
+      ],
+      [
+        {
+          name: "BRITT",
+          description: "Gold Bra & Bottom Lingerie Set",
+          url: "britt-gold-bra-bottom-lingerie-set",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 215,
+          priceFrom: 215,
+          type: "lingerie-set",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Back1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_FrontZOOM.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Side.jpg",
+            "/assets/images/products/britt/gold/BRITT6.jpg",
+          ],
+          setItems: [
+            "britt-gold-balconette",
+            "britt-gold-bikini",
+            "britt-gold-string",
+            "britt-gold-suspender-stockings",
+          ],
+          models: ["ella"]
+        },
+      ],
+      [
+        {
+          name: "BRITT",
+          description: "Gold 3 Piece Lingerie Set",
+          url: "britt-gold-3-piece-lingerie-set",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 325,
+          priceFrom: 325,
+          type: "lingerie-set",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/gold/britt-gold.mp4",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Thong_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Thong_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Back1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Brief_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Side.jpg",
+            "/assets/images/products/britt/gold/BRITT6.jpg",
+          ],
+          setItems: [
+            "britt-gold-balconette",
+            "britt-gold-bikini",
+            "britt-gold-string",
+            "britt-gold-suspender",
+            "britt-gold-suspender-stockings",
+          ],
+          models: ["annalise", "ella"]
+        },
+      ]
+    ]
   }
 ]
 export const AllSubCollectionsData: ShopCollectionType[] = [
@@ -6456,6 +6701,28 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           colorName: "pink",
           colorClass: "swatch-pink",
           images: [],
+        },
+      ],
+      [
+        {
+          name: "GOLD FLORAL SUSPENDER",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "britt-gold-suspender-stockings",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 35,
+          type: "stockings",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/stockings/gold/Britt_Gold_Stockings_Web.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Side.jpg",
+          ],
+          sizes: stockingsSizes,
         },
       ],
       [
@@ -9289,6 +9556,32 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           colorName: "pink",
           colorClass: "swatch-pink",
           images: [],
+        },
+      ],
+      [
+        {
+          name:  "BRITT",
+          description: "Gold Suspender",
+          url: "britt-gold-suspender",
+          collection: "britt-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "suspender",
+          colorName: "gold",
+          colorClass: "swatch-gold",
+          images: [
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Front.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Thong_Suspender_Side.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Front1.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Back.jpg",
+            "/assets/images/products/britt/gold/BrittGold_Bra_Suspender_Brief_Side.jpg",
+            "/assets/images/products/britt/gold/BRITT3.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["ella"]
         },
       ],
       [

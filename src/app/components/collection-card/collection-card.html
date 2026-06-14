@@ -40,17 +40,39 @@
           <div class="swiper-wrapper">
 
             <!-- Slides -->
-            @for (slide of items[index()].images; track $index) {
 
-              @if ($index < 2) {
+            @let slides = items[index()].images;
+
+            @if (slides[0].includes('.mp4') && slides.length >= 3) {
 
               <div class="swiper-slide">
                 <figure class="collection-card__image">
-                  <img [src]="slide" alt="" loading="lazy" fetchpriority="auto">
+                  <img [src]="slides[1]" alt="" loading="lazy" fetchpriority="auto">
                 </figure>
               </div>
+
+              <div class="swiper-slide">
+                <figure class="collection-card__image">
+                  <img [src]="slides[2]" alt="" loading="lazy" fetchpriority="auto">
+                </figure>
+              </div>
+
+            } @else {
+
+              @for (slide of slides; track $index) {
+
+                @if ($index < 2) {
+
+                  <div class="swiper-slide">
+                    <figure class="collection-card__image">
+                      <img [src]="slide" alt="" loading="lazy" fetchpriority="auto">
+                    </figure>
+                  </div>
+                }
               }
+
             }
+
           </div>
 
           <!-- progress bar -->
