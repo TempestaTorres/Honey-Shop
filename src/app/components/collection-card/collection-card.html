@@ -15,6 +15,17 @@
       </div>
     }
 
+    <!--    Discount -->
+    @if (items[index()].off) {
+
+      <div class="js-collection-card-label-wrapper">
+        <div class="js-collection-card-label">
+          <span class="label-text">{{ items[index()].off }}</span>
+        </div>
+      </div>
+
+    }
+
     <!--    Add to Favorites button -->
 
     @if (items[index()].addFavoriteButton) {
@@ -43,17 +54,15 @@
 
             @let slides = items[index()].images;
 
-            @if (slides[0].includes('.mp4') && slides.length >= 3) {
+            @if (slides[0].includes('.mp4') && slides.length > 1) {
 
               <div class="swiper-slide">
-                <figure class="collection-card__image">
-                  <img [src]="slides[1]" alt="" loading="lazy" fetchpriority="auto">
-                </figure>
+                <app-video-player [url]="slides[0]" class="video-player-wrapper"></app-video-player>
               </div>
 
               <div class="swiper-slide">
                 <figure class="collection-card__image">
-                  <img [src]="slides[2]" alt="" loading="lazy" fetchpriority="auto">
+                  <img [src]="slides[1]" alt="" loading="lazy" fetchpriority="auto">
                 </figure>
               </div>
 

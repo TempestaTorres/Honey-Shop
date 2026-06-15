@@ -17,10 +17,11 @@ import { RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { SwiperService } from '../../services/swiper-service';
 import { Subscription } from 'rxjs';
+import { VideoPlayer } from '../video-player/video-player';
 
 @Component({
   selector: 'app-collection-card',
-  imports: [RouterLink, CurrencyPipe],
+  imports: [RouterLink, CurrencyPipe, VideoPlayer],
   templateUrl: './collection-card.html',
   styleUrl: './collection-card.css',
 })

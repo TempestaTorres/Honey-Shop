@@ -69,6 +69,7 @@ export class CollectionShowCase implements OnInit {
   public currentPage: WritableSignal<number> = signal<number>(1);
   public totalPages: WritableSignal<number> = signal<number>(0);
   public totalPageButtons: WritableSignal<boolean[]> = signal<boolean[]>([]);
+  public banner: WritableSignal<number> = signal<number>(0);
 
   readonly sortSelectButtons = viewChildren<ElementRef<HTMLElement>>('jsSelectSortButton');
 
@@ -159,9 +160,11 @@ export class CollectionShowCase implements OnInit {
 
           if (this.hasBanner(collection.items)) {
             this.itemsCount.set(collection.count - 1);
+            this.banner.set(1);
           }
           else {
             this.itemsCount.set(collection.count);
+            this.banner.set(0);
           }
 
           this.totalPageButtons.update((buttons) => {

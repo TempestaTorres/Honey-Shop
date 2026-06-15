@@ -18,6 +18,15 @@
   </button>
 </div>
 
+<!-- Discount -->
+@if (item.off) {
+  <div class="product-info-discount-wrapper">
+    <div class="product-info-discount">
+      <span class="discount">{{ item.off }}</span>
+    </div>
+  </div>
+}
+
 @if (item.ratings) {
 
   <!-- Review -->

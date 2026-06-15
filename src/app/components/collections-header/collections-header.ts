@@ -223,6 +223,28 @@ export class CollectionsHeader {
       url: "bondage-lingerie"
     },
   ];
+  public plpHeaderBlackLingerieData: {name: string, url: string}[] = [
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "Red Lingerie Sets",
+      url: "red-lingerie"
+    },
+    {
+      name: "Lace Lingerie",
+      url: "lace-lingerie"
+    },
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+  ];
   public plpHeaderBridalLingerieData: {name: string, url: string}[] = [
     {
       name: "Lounge Lingerie",
@@ -280,6 +302,140 @@ export class CollectionsHeader {
     },
   ];
   public plpHeaderNakedsData: {name: string, url: string}[] = [
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+  ];
+  public plpHeaderBottomsData: {name: string, url: string}[] = [
+    {
+      name: "Briefs",
+      url: "briefs"
+    },
+    {
+      name: "Thongs",
+      url: "thongs"
+    },
+    {
+      name: "Suspenders",
+      url: "suspenders"
+    },
+    {
+      name: "Crotchless Lingerie",
+      url: "crotchless-lingerie"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Stockings",
+      url: "stockings"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+  ];
+  public plpHeaderBriefsData: {name: string, url: string}[] = [
+    {
+      name: "Thongs",
+      url: "thongs"
+    },
+    {
+      name: "Suspenders",
+      url: "suspenders"
+    },
+    {
+      name: "Crotchless Lingerie",
+      url: "crotchless-lingerie"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Stockings",
+      url: "stockings"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+  ];
+  public plpHeaderThongsData: {name: string, url: string}[] = [
+    {
+      name: "Briefs",
+      url: "briefs"
+    },
+    {
+      name: "Suspenders",
+      url: "suspenders"
+    },
+    {
+      name: "Crotchless Lingerie",
+      url: "crotchless-lingerie"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Stockings",
+      url: "stockings"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+  ];
+  public plpHeaderCrotchlessData: {name: string, url: string}[] = [
+    {
+      name: "Bottoms",
+      url: "bottoms"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Briefs",
+      url: "briefs"
+    },
+    {
+      name: "Thongs",
+      url: "thongs"
+    },
+    {
+      name: "Suspenders",
+      url: "suspenders"
+    },
+    {
+      name: "Stockings",
+      url: "stockings"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+  ];
+  public plpHeaderLingerieSetsData: {name: string, url: string}[] = [
+    {
+      name: "Bottoms",
+      url: "bottoms"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Suspenders",
+      url: "suspenders"
+    },
     {
       name: "New Lingerie Collections",
       url: "new-lingerie"

@@ -18,6 +18,7 @@ import {
 import { CollectionsNewsType } from './types/collections-news-type';
 import { CollectionsNewsData } from './data/collections/collections-news-data';
 
+const ITEMS_PER_PAGE = 80;
 export interface SortedPageType {
   name: string,
   count: number,
@@ -246,7 +247,7 @@ export class ProductsService {
       items = this.sortByTypes(items, types);
     }
 
-    let pages: number = Math.ceil(items.length / 40);
+    let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
     if (page > pages) page = pages;
 
@@ -254,8 +255,8 @@ export class ProductsService {
 
     if (items.length > 0) {
 
-      let offset: number = 40 * (page - 1);
-      let endOffset: number = page * 40;
+      let offset: number = ITEMS_PER_PAGE * (page - 1);
+      let endOffset: number = page * ITEMS_PER_PAGE;
 
       for (let j: number = offset; j < items.length && j < endOffset; j++) {
         pageItems.push(items[j]);
@@ -302,14 +303,14 @@ export class ProductsService {
     });
 
     let pageItems: Array<ProductType[]> = [];
-    let pages: number = Math.ceil(items.length / 40);
+    let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
     if (page > pages) page = pages;
 
     if (items.length > 0) {
 
-      let offset: number = 40 * (page - 1);
-      let endOffset: number = page * 40;
+      let offset: number = ITEMS_PER_PAGE * (page - 1);
+      let endOffset: number = page * ITEMS_PER_PAGE;
 
       for (let j: number = offset; j < items.length && j < endOffset; j++) {
         pageItems.push(items[j]);
@@ -397,13 +398,13 @@ export class ProductsService {
     });
 
     let pageItems: Array<ProductType[]> = [];
-    let pages: number = Math.ceil(items.length / 40);
+    let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
     if (page > pages) page = pages;
 
     if (items.length > 0) {
-      let offset: number = 40 * (page - 1);
-      let endOffset: number = page * 40;
+      let offset: number = ITEMS_PER_PAGE * (page - 1);
+      let endOffset: number = page * ITEMS_PER_PAGE;
 
       for (let j: number = offset; j < items.length && j < endOffset; j++) {
         pageItems.push(items[j]);
@@ -449,13 +450,13 @@ export class ProductsService {
 
         let pageItems: Array<ProductType[]> = [];
 
-        let pages: number = Math.ceil(items.length / 40);
+        let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
         if (page > pages) page = pages;
 
         if (items.length > 0) {
-          let offset: number = 40 * (page - 1);
-          let endOffset: number = page * 40;
+          let offset: number = ITEMS_PER_PAGE * (page - 1);
+          let endOffset: number = page * ITEMS_PER_PAGE;
 
           for (let j: number = offset; j < items.length && j < endOffset; j++) {
             pageItems.push(items[j]);
@@ -500,13 +501,13 @@ export class ProductsService {
 
         let pageItems: Array<ProductType[]> = [];
 
-        let pages: number = Math.ceil(items.length / 40);
+        let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
         if (page > pages) page = pages;
 
         if (items.length > 0) {
-          let offset: number = 40 * (page - 1);
-          let endOffset: number = page * 40;
+          let offset: number = ITEMS_PER_PAGE * (page - 1);
+          let endOffset: number = page * ITEMS_PER_PAGE;
 
           for (let j: number = offset; j < items.length && j < endOffset; j++) {
             pageItems.push(items[j]);
@@ -557,13 +558,13 @@ export class ProductsService {
 
         let pageItems: Array<ProductType[]> = [];
 
-        let pages: number = Math.ceil(items.length / 40);
+        let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
         if (page > pages) page = pages;
 
         if (items.length > 0) {
-          let offset: number = 40 * (page - 1);
-          let endOffset: number = page * 40;
+          let offset: number = ITEMS_PER_PAGE * (page - 1);
+          let endOffset: number = page * ITEMS_PER_PAGE;
 
           for (let j: number = offset; j < items.length && j < endOffset; j++) {
             pageItems.push(items[j]);
@@ -608,13 +609,13 @@ export class ProductsService {
 
         let pageItems: Array<ProductType[]> = [];
 
-        let pages: number = Math.ceil(items.length / 40);
+        let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
         if (page > pages) page = pages;
 
         if (items.length > 0) {
-          let offset: number = 40 * (page - 1);
-          let endOffset: number = page * 40;
+          let offset: number = ITEMS_PER_PAGE * (page - 1);
+          let endOffset: number = page * ITEMS_PER_PAGE;
 
           for (let j: number = offset; j < items.length && j < endOffset; j++) {
             pageItems.push(items[j]);
@@ -660,13 +661,13 @@ export class ProductsService {
 
         let pageItems: Array<ProductType[]> = [];
 
-        let pages: number = Math.ceil(items.length / 40);
+        let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
         if (page > pages) page = pages;
 
         if (items.length > 0) {
-          let offset: number = 40 * (page - 1);
-          let endOffset: number = page * 40;
+          let offset: number = ITEMS_PER_PAGE * (page - 1);
+          let endOffset: number = page * ITEMS_PER_PAGE;
 
           for (let j: number = offset; j < items.length && j < endOffset; j++) {
             pageItems.push(items[j]);
@@ -706,13 +707,13 @@ export class ProductsService {
 
         let pageItems: Array<ProductType[]> = [];
 
-        let pages: number = Math.ceil(items.length / 40);
+        let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
 
         if (page > pages) page = pages;
 
         if (items.length > 0) {
-          let offset: number = 40 * (page - 1);
-          let endOffset: number = page * 40;
+          let offset: number = ITEMS_PER_PAGE * (page - 1);
+          let endOffset: number = page * ITEMS_PER_PAGE;
 
           for (let j: number = offset; j < items.length && j < endOffset; j++) {
             pageItems.push(items[j]);

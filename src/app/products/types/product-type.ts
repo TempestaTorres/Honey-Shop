@@ -8,6 +8,7 @@ export interface ProductType {
   addToCartButton: boolean,
   price?: number,
   priceFrom?: number,
+  off?: string,
   favorite?: boolean,
   type?: string,
   colorName: string,

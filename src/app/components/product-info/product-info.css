@@ -31,3 +31,29 @@
   display: flex;
   gap: .375rem;
 }
+.product-info-discount-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: .5rem;
+  row-gap: .25rem;
+  padding-bottom: 1.5rem;
+}
+.product-info-discount {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 1.25rem;
+  gap: .375rem;
+  padding: .125rem .375rem;
+  background-color: rgb(234, 33, 33);
+  color: rgb(255, 255, 255);
+}
+.product-info-discount .discount {
+  display: block;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+}
