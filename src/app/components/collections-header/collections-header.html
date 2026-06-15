@@ -212,6 +212,22 @@
           <a [routerLink]="['/collections', 'bustiers-corsets']">bustiers and corsets.</a>
         </p>
 
+      } @else if (collectionType() === 'new-lingerie') {
+
+        <p>
+          Welcome to a world of lace, leather, and crystal tulles. Our luxurious lingerie collections
+          are designed to make hearts race and knees shake. From
+          <a [routerLink]="['/collections', 'push-up-bras']">push up bras</a>,
+          <a [routerLink]="['/collections', 'bralettes']">bralettes</a>,
+          <a [routerLink]="['/collections', 'bodysuits']">bodysuits</a> and
+          <a [routerLink]="['/collections', 'bustiers-corsets']">bustiers</a>; to
+          <a [routerLink]="['/collections', 'bondage-lingerie']">bondage lingerie</a>,
+          <a [routerLink]="['/collections', 'bridal-lingerie']">white bridal,</a>
+          <a [routerLink]="['/collections', 'black-lingerie']">black</a> &amp;
+          <a [routerLink]="['/collections', 'red-lingerie']">red lingerie sets</a>.
+          Nothing quite says indulgence like Honey.
+        </p>
+
       }
       @else {
         <p>{{  headerDescription() }}</p>
@@ -384,6 +400,15 @@
           } @else if (collectionType() === 'lingerie-sets') {
 
             @for (link of plpHeaderLingerieSetsData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'new-lingerie') {
+
+            @for (link of plpHeaderNewLingerieData; track $index) {
 
               <div class="swiper-slide js-plp-slide">
                 <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>

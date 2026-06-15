@@ -445,6 +445,32 @@ export class CollectionsHeader {
       url: "bestsellers"
     },
   ];
+  public plpHeaderNewLingerieData: {name: string, url: string}[] = [
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "Lace Lingerie",
+      url: "lace-lingerie"
+    },
+    {
+      name: "Bridal Lingerie",
+      url: "bridal-lingerie"
+    },
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+    {
+      name: "NAKEDS 2.0",
+      url: "nakeds-lingerie-collection"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;

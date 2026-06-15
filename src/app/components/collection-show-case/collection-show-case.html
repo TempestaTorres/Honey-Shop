@@ -127,8 +127,18 @@
               <!-- Content -->
               <div class="js-collection-card-banner__content">
                 <!-- Heading -->
-                <h3 class="js-collection-card-banner__title">{{ item.description }}</h3>
-                <div class="js-collection-card-banner__button button-link-underline">SHOP</div>
+                <h3 class="js-collection-card-banner__title">{{ item.imageTitle }}</h3>
+                @if (item.description !== item.imageTitle && item.description !== '') {
+                  <p class="js-collection-card-banner__description">{{ item.description }}</p>
+                }
+
+                <!--   Button -->
+                @if (item.colorClass === 'button') {
+                  <div class="js-collection-card-banner__button button-link-underline">{{ item.colorName }}</div>
+                } @else {
+                  <div class="js-collection-card-banner__button button-link-underline">SHOP</div>
+                }
+
               </div>
               <!-- Image -->
               <div class="js-collection-card-banner__image">

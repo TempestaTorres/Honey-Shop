@@ -221,6 +221,13 @@
   width: 100%;
   color: #fff !important;
 }
+.js-collection-card-banner__description {
+  display: block;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 1);
+}
 .js-collection-card-banner__image {
   position: relative;
   aspect-ratio: 62/81;
