@@ -377,12 +377,13 @@ export const BridalLingerieData: ProductItem[] = [
     product: [
       {
         name: "Maisie",
-        description: "Panty",
+        description: "Brief",
         url: "maisie-brazilian-ivory",
         collection: "maisie-lingerie-collection",
         addFavoriteButton: true,
         addToCartButton: true,
         price: 95,
+        off: "50% Off",
         colorName: "white",
         colorClass: "swatch-white",
         type: "brief",
@@ -518,6 +519,7 @@ export const BridalLingerieData: ProductItem[] = [
         addFavoriteButton: true,
         addToCartButton: true,
         price: 85,
+        off: "50% Off",
         colorName: "white",
         colorClass: "swatch-white",
         type: "thong",
