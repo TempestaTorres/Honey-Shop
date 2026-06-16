@@ -471,6 +471,146 @@ export class CollectionsHeader {
       url: "nakeds-lingerie-collection"
     },
   ];
+  public plpHeaderBondageLingerieData: {name: string, url: string}[] = [
+    {
+      name: "Bondage Bras",
+      url: "bondage-bras"
+    },
+    {
+      name: "Black Lingerie",
+      url: "black-lingerie"
+    },
+    {
+      name: "Kukuro",
+      url: "kukuro-lingerie-collection"
+    },
+  ];
+  public plpHeaderBralettesData: {name: string, url: string}[] = [
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Lace Bras",
+      url: "lace-bras"
+    },
+    {
+      name: "Bondage Bras",
+      url: "bondage-bras"
+    },
+    {
+      name: "Underwire Bras",
+      url: "underwire-bras"
+    },
+    {
+      name: "Push up Bras",
+      url: "push-up-bras"
+    },
+    {
+      name: "Lace Lingerie",
+      url: "lace-lingerie"
+    },
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+  ];
+  public plpHeaderBodysuitsData: {name: string, url: string}[] = [
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Bottoms",
+      url: "bottoms"
+    },
+    {
+      name: "Bustiers & Corsets",
+      url: "bustiers-corsets"
+    },
+  ];
+  public plpHeaderCorsetsData: {name: string, url: string}[] = [
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+    {
+      name: "Bottoms",
+      url: "bottoms"
+    },
+    {
+      name: "Lingerie Bodysuits",
+      url: "bodysuits"
+    },
+  ];
+  public plpHeaderBestSellersData: {name: string, url: string}[] = [
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Whitney",
+      url: "whitney-lingerie-collection"
+    },
+    {
+      name: "Kukuro",
+      url: "kukuro-lingerie-collection"
+    },
+    {
+      name: "NAKEDS 2.0",
+      url: "nakeds-lingerie-collection"
+    },
+    {
+      name: "Bridal Lingerie",
+      url: "bridal-lingerie"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+  ];
+  public plpHeaderLaceLingerieData: {name: string, url: string}[] = [
+    {
+      name: "Lingerie Sets",
+      url: "lingerie-sets"
+    },
+    {
+      name: "Lace Bras",
+      url: "lace-bras"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "Black Lingerie",
+      url: "black-lingerie"
+    },
+    {
+      name: "Red Lingerie Sets",
+      url: "red-lingerie"
+    },
+    {
+      name: "Bras",
+      url: "bras"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;

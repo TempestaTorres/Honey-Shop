@@ -228,6 +228,59 @@
           Nothing quite says indulgence like Honey.
         </p>
 
+      } @else if (collectionType() === 'bondage-lingerie') {
+
+        <p>
+          Indulge in the world of BDSM and dominate in our powerful range of luxury lingerie,
+          bondage fetish lingerie and BDSM lingerie sets. Unleash your wildest fantasy in our
+          skin-tight latex-look lingerie, bold
+          <a [routerLink]="['/collections', 'black-lingerie']" title="black lingerie">black bondage lingerie</a>
+          and sexy bondage bras featuring cage-like straps and not-so-delicate hardware. Get ready
+          to release your inner vixen and explore the bounds of pleasure with our sexy BDSM lingerie
+          and bondage lingerie collection.
+        </p>
+
+      } @else if (collectionType() === 'bustiers-corsets') {
+
+        <p>
+          From chic to daring, discover our seductive range of corsets featuring show stopping
+          hardware, classic lace bustiers, bridal white corsets and bondage inspired red bustiers
+          or leather corsets. Our exclusive range is designed to accentuate, push up, cinch in and
+          sculpt to make you feel like the ultimate sultry goddess. Lean into your desires and
+          release your inner seductress with our range of sexy
+          <a [routerLink]="['/collections', 'red-lingerie']">red lingerie</a>
+          corsets, daring
+          <a [routerLink]="['/collections', 'black-lingerie']">black lingerie</a>
+          bustiers or playful pink corset bodysuits.
+        </p>
+
+      } @else if (collectionType() === 'bestsellers') {
+
+        <p>
+          Want to add some excitement to the bedroom? Let us guide you! Discover our best selling
+          lingerie sets. Timeless <a [routerLink]="['/collections', 'lace-bras']">lace bras</a>,
+          cinching <a [routerLink]="['/collections', 'suspenders']">suspenders</a>.
+          Feel daring and look lavish in our best selling lingerie.
+        </p>
+
+      } @else if (collectionType() === 'lace-lingerie') {
+
+        <p>
+          Luxurious
+          <a title="Lace Lingerie" [routerLink]="['/collections', 'lace-lingerie']">lace lingerie</a>
+          designed to make a statement. Shop Honey’s collection of fine lace lingerie and
+          <a [routerLink]="['/collections', 'lingerie-sets']">lingerie sets</a>.
+          Complete your fantasy with a lace&nbsp;
+          <a title="Push Up Bras" [routerLink]="['/collections', 'push-up-bras']">push up bra</a>,
+          <a [routerLink]="['/collections', 'suspenders']">suspender</a> and
+          <a title="Thongs" [routerLink]="['/collections', 'thongs']">thong</a>. Whether it is a soft
+          <a title="White Bras" [routerLink]="['/collections', 'white-lingerie']">white lace bra</a>,
+          essential <a title="Black Bra" [routerLink]="['/collections', 'black-lingerie']">black lace bra</a>
+          or a fiery
+          <a title="Red Bras" [routerLink]="['/collections', 'red-lingerie']">red lace bra</a>; shop
+          <a title="All Lingerie" [routerLink]="['/collections', 'all-lingerie']">lingerie</a> with Honey.
+        </p>
+
       }
       @else {
         <p>{{  headerDescription() }}</p>
@@ -409,6 +462,60 @@
           } @else if (collectionType() === 'new-lingerie') {
 
             @for (link of plpHeaderNewLingerieData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'bondage-lingerie') {
+
+            @for (link of plpHeaderBondageLingerieData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'bralettes') {
+
+            @for (link of plpHeaderBralettesData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'bodysuits') {
+
+            @for (link of plpHeaderBodysuitsData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'bustiers-corsets') {
+
+            @for (link of plpHeaderCorsetsData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'bestsellers') {
+
+            @for (link of plpHeaderBestSellersData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'lace-lingerie') {
+
+            @for (link of plpHeaderLaceLingerieData; track $index) {
 
               <div class="swiper-slide js-plp-slide">
                 <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>

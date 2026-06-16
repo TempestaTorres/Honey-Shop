@@ -169,7 +169,9 @@
 
         <div class="modal-sticky-footer">
           <button (click)="applyFilters()"
-            type="button" class="button-primary button-large full-width-button">Apply</button>
+            type="button"
+                  [class.disabled]="availableTypes().length < 2 && availableColours().length < 2"
+                  class="button-primary button-large full-width-button">Apply</button>
           <button (click)="resetAllFilters()"
             type="button" class="button-link">Reset all filters</button>
         </div>

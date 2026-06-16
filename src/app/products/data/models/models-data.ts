@@ -118,4 +118,13 @@ export const Models: ModelBioType[] = [
     dress: "8 / 36",
     image: "/assets/images/models/NNero_Bra_Brief_Front1.jpg",
   },
+  {
+    name: "aurelia",
+    height: "5\"9 / 175cm",
+    bust: "34.5\" / 10D",
+    waist: "61cm / 24\"",
+    hips: "89cm / 35\"",
+    dress: "8 / 36",
+    image: "/assets/images/models/NNero_Bra_Brief_Front1.jpg",
+  },
 ]

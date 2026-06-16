@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, numberAttribute } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NewsType } from './types/news';
 import { NewsData } from './data/news-data';
@@ -11,9 +11,8 @@ import { NewArrivalData } from './data/new-arrival-data';
 import { BridalLingerieData } from './data/bridal-lingerie-data';
 import { RecommendedData } from './data/recommended-data';
 import {
-  AllCollectionsColoursData,
   AllCollectionsData,
-  AllSubCollectionsData
+  AllSubCollectionsData,
 } from './data/collections/collections-data';
 import { CollectionsNewsType } from './types/collections-news-type';
 import { CollectionsNewsData } from './data/collections/collections-news-data';
@@ -34,16 +33,94 @@ export class ProductsService {
 
     let colors: {colorName: string; colorClass: string}[] = [];
 
-    for (let i: number = 0; i < AllCollectionsColoursData.length; i++) {
-      if (AllCollectionsColoursData[i].url === collectionUrl) {
-        colors = AllCollectionsColoursData[i].colors;
-        break;
-      }
+    if (collectionUrl === 'all-lingerie') {
+      colors = this.getColours();
+    }
+    else {
+      colors = this.getColours(collectionUrl);
     }
 
     return new Observable(observer => {
       observer.next(colors);
     });
+  }
+
+  private getColours(url: string | null = null): {colorName: string; colorClass: string}[] {
+    let collectionColors: {colorName: string; colorClass: string}[] = [];
+
+    if (url === null || url === '') {
+
+      for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+        for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
+
+          let colors: ProductType[] = AllCollectionsData[i].products[j];
+
+          for (let k: number = 0; k < colors.length; k++) {
+
+            if (colors[k].type !== 'video') {
+
+              let colorName: string = colors[k].colorName;
+
+              let found = collectionColors
+                .find(color => color.colorName === colorName);
+
+              if (found === undefined) {
+                collectionColors.push({colorName: colorName, colorClass: colors[k].colorClass});
+              }
+            }
+
+          }
+        }
+      }
+    }
+    else {
+
+      let items: Array<ProductType[]> = [];
+
+      for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+        if (AllCollectionsData[i].url === url) {
+          items = AllCollectionsData[i].products;
+          break;
+        }
+      }
+
+      if (items.length === 0) {
+
+        for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
+
+          if (AllSubCollectionsData[i].url === url) {
+            items = AllSubCollectionsData[i].products;
+            break;
+          }
+        }
+      }
+
+      for (let i: number = 0; i < items.length; i++) {
+
+        let colors: ProductType[] = items[i];
+
+        for (let k: number = 0; k < colors.length; k++) {
+
+          if (colors[k].type !== 'video') {
+
+            let colorName: string = colors[k].colorName;
+
+            let found = collectionColors
+              .find(color => color.colorName === colorName);
+
+            if (found === undefined) {
+              collectionColors.push({colorName: colorName, colorClass: colors[k].colorClass});
+            }
+          }
+
+        }
+      }
+
+    }
+
+    return collectionColors;
   }
 
   public getCollectionProductTypes(collectionUrl: string): Observable<string[]> {
