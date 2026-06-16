@@ -324,5 +324,41 @@
 
       <label class="fs-option-label fs-small-text" for="fs-option_value_Size_L">L</label>
     </div>
+
+  } @else if (product.type === "latex") {
+
+    <div class="fs-variant-select">
+      <input #radioSizeFs
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="SizeFs" id="fs-option_value_Size_XS/S" value="XS/S">
+
+      <label class="fs-option-label fs-small-text" for="fs-option_value_Size_XS/S">XS/S</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSizeFs
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="SizeFs" id="fs-option_value_Size_M/L" value="M/L">
+
+      <label class="fs-option-label fs-small-text" for="fs-option_value_Size_M/L">M/L</label>
+    </div>
+
+    <div class="fs-variant-select">
+      <input #radioSizeFs
+             (change)="sizeChange($event, product)"
+             role="button"
+             type="radio"
+             class="fs-option"
+             name="SizeFs" id="fs-option_value_Size_XL/XXL" value="XL/XXL">
+
+      <label class="fs-option-label fs-small-text" for="fs-option_value_Size_XL/XXL">XL/XXL</label>
+    </div>
+
   }
 }

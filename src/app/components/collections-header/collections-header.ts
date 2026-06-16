@@ -611,6 +611,12 @@ export class CollectionsHeader {
       url: "bras"
     },
   ];
+  public plpHeaderLatexLingerieData: {name: string, url: string}[] = [
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;

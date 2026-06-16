@@ -281,6 +281,15 @@
           <a title="All Lingerie" [routerLink]="['/collections', 'all-lingerie']">lingerie</a> with Honey.
         </p>
 
+      } @else if (collectionType() === 'latex-lingerie') {
+
+        <p>Seductive, sleek, and screaming with sensation; delve into new passions and fantasies
+          with Honey collection of latex lingerie. Excite all your senses with fetish wear that is
+          bound to please. Layer and pair your latex with
+          <a [routerLink]="['/collections', 'lingerie-sets']">lingerie sets</a>
+          for the perfect, devious, ménage à trois of pleasure!
+        </p>
+
       }
       @else {
         <p>{{  headerDescription() }}</p>
@@ -516,6 +525,15 @@
           } @else if (collectionType() === 'lace-lingerie') {
 
             @for (link of plpHeaderLaceLingerieData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'latex-lingerie') {
+
+            @for (link of plpHeaderLatexLingerieData; track $index) {
 
               <div class="swiper-slide js-plp-slide">
                 <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>

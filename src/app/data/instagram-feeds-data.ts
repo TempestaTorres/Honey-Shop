@@ -55,6 +55,12 @@ export const stockingsSizes = [
     sizes: ["S", "M", "L"]
   }
 ];
+export const latexSizes = [
+  {
+    key: "",
+    sizes: ["XS/S", "M/L", "XL/XXL"]
+  }
+];
 
 export const InstagramFeedsData: InstagramFeedType[] = [
   {

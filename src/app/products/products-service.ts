@@ -837,6 +837,25 @@ export class ProductsService {
       }
     }
 
+    for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
+
+      for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
+
+        let item: ProductType[] = [...AllSubCollectionsData[i].products[j]];
+
+        let product = item.find((item) => item.collection === collectionUrl
+          && item.url === itemUrl);
+
+
+        if (product !== undefined) {
+
+          return new Observable<ProductType[]>(observer => {
+            observer.next(item);
+          });
+        }
+      }
+    }
+
     return new Observable<ProductType[] | null>(observer => {
       observer.next(null);
     });
