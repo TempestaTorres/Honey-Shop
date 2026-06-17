@@ -617,6 +617,46 @@ export class CollectionsHeader {
       url: "bondage-lingerie"
     },
   ];
+  public plpHeaderLoungeData: {name: string, url: string}[] = [
+    {
+      name: "Babydoll Lingerie, Robes & Chemises",
+      url: "robes-chemises"
+    },
+    {
+      name: "New Lingerie Collections",
+      url: "new-lingerie"
+    },
+    {
+      name: "Best Sellers",
+      url: "bestsellers"
+    },
+    {
+      name: "Lace Lingerie",
+      url: "lace-lingerie"
+    },
+  ];
+  public plpHeaderLoveLaceData: {name: string, url: string}[] = [
+    {
+      name: "Lingerie Sets",
+      url: "lingerie-sets"
+    },
+    {
+      name: "Lace Lingerie",
+      url: "lace-lingerie"
+    },
+    {
+      name: "Red Lingerie Sets",
+      url: "red-lingerie"
+    },
+    {
+      name: "Black Lingerie",
+      url: "black-lingerie"
+    },
+    {
+      name: "Lace Bras",
+      url: "lace-bras"
+    },
+  ];
 
   private productsSubscription$: Subscription | undefined;
   private descriptionSubscription$: Subscription | undefined;

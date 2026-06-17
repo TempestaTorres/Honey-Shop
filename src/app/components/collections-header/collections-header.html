@@ -290,6 +290,18 @@
           for the perfect, devious, ménage à trois of pleasure!
         </p>
 
+      }  @else if (collectionType() === 'love-lace') {
+
+        <p>Wrap yourself in sheer seduction with Honey’s love
+          <a [routerLink]="['/collections', 'robes-chemises']">lace robes</a>,
+          designed to drape over
+          <a [routerLink]="['/collections', 'lingerie-sets']">lingerie sets</a>
+          for a red hot reveal or wear all on their own.
+        </p>
+        <p>Crafted for comfort, made for desire. From romantic nights in to seductive surprises, our lace
+          <a [routerLink]="['/collections', 'robes-chemises']">robes &amp; chemises</a>&nbsp;
+          add effortless elegance to every moment.
+        </p>
       }
       @else {
         <p>{{  headerDescription() }}</p>
@@ -534,6 +546,24 @@
           } @else if (collectionType() === 'latex-lingerie') {
 
             @for (link of plpHeaderLatexLingerieData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'loungewear') {
+
+            @for (link of plpHeaderLoungeData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'love-lace') {
+
+            @for (link of plpHeaderLoveLaceData; track $index) {
 
               <div class="swiper-slide js-plp-slide">
                 <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
