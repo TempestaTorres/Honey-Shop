@@ -3,12 +3,12 @@ import { NewsType } from '../types/news';
 export const NewsData:NewsType[] = [
   {
     category: 'New Lingerie',
-    image: '/assets/images/categories/bustiers/BUSTIERS_1.jpg',
+    image: '/assets/images/categories/new/VIDEO_BUFFER_MOBILE_25.jpg',
     url: 'new-lingerie'
   },
   {
     category: 'Best Sellers',
-    image: '/assets/images/news/SHOP_THE_LOOK.jpg',
+    image: '/assets/images/news/EVERLY_7.jpg',
     url: 'bestsellers'
   },
   {
@@ -17,8 +17,8 @@ export const NewsData:NewsType[] = [
     url: 'lingerie-sets'
   },
   {
-    category: 'Simple Pleasures',
-    image: '/assets/images/news/PHILIPPA_3.jpg',
+    category: "Let's Ride",
+    image: '/assets/images/categories/bustiers/BUSTIERS_1.jpg',
     url: 'simple-pleasures'
   },
 ]
