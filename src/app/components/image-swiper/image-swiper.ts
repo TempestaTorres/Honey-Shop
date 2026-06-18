@@ -1,4 +1,4 @@
-import { afterNextRender, Component, DestroyRef, ElementRef, input, ViewChild, viewChild } from '@angular/core';
+import { afterNextRender, Component, DestroyRef, ElementRef, input, ViewChild } from '@angular/core';
 import { VideoPlayer } from '../video-player/video-player';
 declare var Swiper: any;
 
