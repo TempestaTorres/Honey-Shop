@@ -57,7 +57,9 @@
             @if (slides[0].includes('.mp4') && slides.length > 1) {
 
               <div class="swiper-slide">
-                <app-video-player [url]="slides[0]" class="video-player-wrapper"></app-video-player>
+                <div class="collection-card__image">
+                  <app-video-player [url]="slides[0]" class="video-player-wrapper"></app-video-player>
+                </div>
               </div>
 
               <div class="swiper-slide">
@@ -75,7 +77,9 @@
               </div>
 
               <div class="swiper-slide">
-                <app-video-player [url]="slides[1]" class="video-player-wrapper"></app-video-player>
+                <div class="collection-card__image">
+                  <app-video-player [url]="slides[1]" class="video-player-wrapper"></app-video-player>
+                </div>
               </div>
 
             } @else {

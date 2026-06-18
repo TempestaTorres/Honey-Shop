@@ -5,9 +5,17 @@
 
       <!-- Slide -->
       <div class="swiper-slide mobile-slide" [attr.aria-label]="$index + 1 + '/' + images().length">
+
+      @if (image.includes('.mp4')) {
+        <div class="portrait-image">
+          <app-video-player [url]="image" class="video-player-wrapper"></app-video-player>
+        </div>
+      } @else {
         <figure class="portrait-image">
           <img [src]="image" alt="" loading="lazy" fetchpriority="auto">
         </figure>
+      }
+
       </div>
     }
   </div>
