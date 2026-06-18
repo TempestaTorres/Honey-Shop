@@ -19,6 +19,11 @@ export const NewsData:NewsType[] = [
   {
     category: "Let's Ride",
     image: '/assets/images/categories/bustiers/BUSTIERS_1.jpg',
+    url: 'lets-ride'
+  },
+  {
+    category: "Simple pleasures",
+    image: '/assets/images/news/SHOP_THE_LOOK.jpg',
     url: 'simple-pleasures'
   },
 ]

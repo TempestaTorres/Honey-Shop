@@ -66,6 +66,18 @@
                 </figure>
               </div>
 
+            } @else if (slides.length > 1 && slides[1].includes('.mp4')) {
+
+              <div class="swiper-slide">
+                <figure class="collection-card__image">
+                  <img [src]="slides[0]" alt="" loading="lazy" fetchpriority="auto">
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <app-video-player [url]="slides[1]" class="video-player-wrapper"></app-video-player>
+              </div>
+
             } @else {
 
               @for (slide of slides; track $index) {
@@ -124,9 +136,9 @@
       <div class="product-price-info">
         @if (items[index()].priceFrom) {
           <span class="from">From</span>
-          {{ items[index()].priceFrom | currency }}
+          {{ items[index()].priceFrom | currency : undefined: 'symbol': '2.0' }}
         } @else if (items[index()].price) {
-          {{ items[index()].price | currency }}
+          {{ items[index()].price | currency : undefined: 'symbol': '2.0' }}
         }
       </div>
     </div>

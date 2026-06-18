@@ -82,9 +82,9 @@
         <div class="product-price-info">
           @if (items[index()].priceFrom) {
             <span class="from">From</span>
-            {{ items[index()].priceFrom | currency }}
+            {{ items[index()].priceFrom | currency : undefined: 'symbol': '2.0' }}
           } @else if (items[index()].price) {
-            {{ items[index()].price | currency }}
+            {{ items[index()].price | currency : undefined: 'symbol': '2.0' }}
           }
         </div>
       </div>
