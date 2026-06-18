@@ -407,6 +407,17 @@
   padding-right: 1rem;
   flex: 1 1 0;
 }
+.modal-notification-panel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+}
+.modal-notification-heading .app-heading-title {
+  text-transform: capitalize;
+  margin-bottom: .75rem;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+}
 .modal-column {
   flex-direction: column;
   display: flex;

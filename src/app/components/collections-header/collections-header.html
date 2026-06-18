@@ -302,6 +302,22 @@
           <a [routerLink]="['/collections', 'robes-chemises']">robes &amp; chemises</a>&nbsp;
           add effortless elegance to every moment.
         </p>
+
+      } @else if (collectionType() === 'bondage') {
+
+        <p>
+          Push boundaries and embrace your desires with Honey’s
+          <a [routerLink]="['/collections', 'bondage']">bondage</a>&nbsp;collection.
+          Discover
+          <a [routerLink]="['/collections', 'bondage-lingerie']">bondage lingerie</a>
+          and BDSM wear like never before - featuring high-quality leather
+          <a [routerLink]="['/collections', 'fashion-fetish-cuffs-collars']">cuffs</a>,
+          satin restraints, and provocative bondage-inspired lingerie. Dark, desirable, and
+          dangerously seductive, our pieces are made to explore new sensations. From riding crops
+          to paddles, collars, blindfolds and statement straps. Delve deeper into control, power,
+          and lust. Honey, the world of fetish has never looked so good.
+        </p>
+
       }
       @else {
         <p>{{  headerDescription() }}</p>
@@ -564,6 +580,24 @@
           } @else if (collectionType() === 'love-lace') {
 
             @for (link of plpHeaderLoveLaceData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'massage-candles') {
+
+            @for (link of plpHeaderCandlesData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'bondage') {
+
+            @for (link of plpHeaderBondageData; track $index) {
 
               <div class="swiper-slide js-plp-slide">
                 <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>

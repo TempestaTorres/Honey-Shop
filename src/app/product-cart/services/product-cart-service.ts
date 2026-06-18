@@ -12,12 +12,14 @@ export class ProductCartService {
   public cartCount: BehaviorSubject<number>;
   public cartSubtotal: BehaviorSubject<number>;
   public itemAdded: BehaviorSubject<string>;
+  public itemRemoved: BehaviorSubject<string>;
 
   constructor() {
     //For initial values, we need to get requests
     this.cartCount = new BehaviorSubject<number>(0);
     this.cartSubtotal = new BehaviorSubject<number>(0);
     this.itemAdded = new BehaviorSubject<string>('');
+    this.itemRemoved = new BehaviorSubject<string>('');
   }
 
   public productTypeToCartType(item: ProductType): ProductCartType {
@@ -60,6 +62,7 @@ export class ProductCartService {
 
     this.cartCount.next(this.products.length);
     this.cartSubtotal.next(this.getSubtotalAmount());
+    this.itemRemoved.next(productCartType.url);
   }
 
   public getCartItems(): Observable<ProductCartType[]> {

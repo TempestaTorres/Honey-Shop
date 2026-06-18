@@ -44,6 +44,12 @@
                   <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.collection.split('-')[0] }}</a>
                 </li>
 
+              } @else if (product.collection === "bondage" ) {
+
+                <li class="breadcrumb">
+                  <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.collection }}</a>
+                </li>
+
               } @else {
                 <li class="breadcrumb">
                   <a [routerLink]="['/collections', product.collection]" tabindex="-1">{{ product.name }}</a>
@@ -85,13 +91,19 @@
 
           </div>
 
-          @if (product.type !== "lingerie-set") {
+          @if (product.type !== "lingerie-set" && product.type !== "accessory"
+                && product.type !== 'candles' && product.type !== 'bondage') {
 
             <app-buy-product-form
               [productItems]="collectionItem()"
               [buyProduct]="product"></app-buy-product-form>
 
-          } @else {
+          } @else if ((product.type === "accessory" || product.type === 'candles' || product.type === 'bondage')) {
+
+            <!-- Add to cart button -->
+            <app-add-to-cart-module [productItem]="product" class="app-wrapper"></app-add-to-cart-module>
+
+          } @else if ((product.type === "lingerie-set")) {
 
             <!-- Else For Lingerie sets -->
 

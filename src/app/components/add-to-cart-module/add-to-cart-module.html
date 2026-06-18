@@ -1,0 +1,14 @@
+<div class="app-widget js-button-add-to-cart">
+
+  <button
+    (click)="addToCart()"
+    [class.disabled]="buttonDisabled()"
+    class="button-primary button-large full-width-button"
+    type="button" aria-label="Add to Cart">{{ buttonTitle() }}
+
+    @if (loading()) {
+      <div class="loading-bar loading-bar-white"></div>
+    }
+
+  </button>
+</div>

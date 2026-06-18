@@ -18,6 +18,7 @@ import { CurrencyPipe } from '@angular/common';
 import { SwiperService } from '../../services/swiper-service';
 import { Subscription } from 'rxjs';
 import { VideoPlayer } from '../video-player/video-player';
+import { MiniCartService } from '../../modals/mini-cart/mini-cart-service';
 
 @Component({
   selector: 'app-collection-card',
@@ -40,6 +41,7 @@ export class CollectionCard implements OnInit {
     private wishlistService$: WishlistService,
     private selectSizeService: SelectSizeService,
     private cartService: ProductCartService,
+    private miniCartService: MiniCartService,
     private swiperService: SwiperService,
   ) {
     afterNextRender(() => {
@@ -98,13 +100,14 @@ export class CollectionCard implements OnInit {
     const items = this.productItem();
     const product = items[index];
 
-    if (product.type !== 'accessory') {
+    if (product.type !== 'accessory' && product.type !== 'candles' && product.type !== 'bondage') {
       // Open select size modal window
       this.selectSizeService.triggerSizeSelectionChanged(product);
     } else {
       const item = this.cartService.productTypeToCartType(product);
       requestAnimationFrame(() => {
         this.cartService.addToCart(item);
+        this.miniCartService.toggleMiniCart(true);
       });
     }
   }

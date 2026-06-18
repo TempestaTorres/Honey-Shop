@@ -34189,5 +34189,196 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
         },
       ],
     ]
+  },
+  {
+    name: "MASSAGE CANDLES",
+    url: "massage-candles",
+    description: "Discover our best-selling massage candles, loved for their sensual touch and intoxicating scent. Crafted with signature aromas and sleek designs, each melting massage candle transforms into a warm, silky oil- perfect for foreplay, couples massage, gifting, or solo indulgence. Light the flame, feel the heat, and let the ambience take over. Lights off. Clothes off. Let desire melt in...",
+    products: [
+      [
+        {
+          name: "GET NAKED",
+          description: "Massage Candle",
+          imageTitle: "2 FOR $100",
+          url: "candle-get-naked-champagne-candy",
+          collection: "massage-candles",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 65,
+          colorName: "hot pink",
+          colorClass: "swatch-hot-pink",
+          type: "candles",
+          images: [
+            "/assets/images/products/collections/candles/hot-pink/MassageCandle_Leather_Pink_1.jpg",
+            "/assets/images/products/collections/candles/hot-pink/MassageCandle_Leather_Pink_2.jpg",
+            "/assets/images/products/collections/candles/hot-pink/MassageCandle_Leather_Pink.jpg",
+          ]
+        },
+        {
+          name: "ALWAYS DTF",
+          description: "Massage Candle",
+          imageTitle: "2 FOR $100",
+          url: "candle-always-dtf-amber-leather",
+          collection: "massage-candles",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 65,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "candles",
+          images: [
+            "/assets/images/products/collections/candles/black/MassageCandle_Leather_Black_1.jpg",
+            "/assets/images/products/collections/candles/black/MassageCandle_Leather_Black_3.jpg",
+          ]
+        },
+      ],
+      [
+        {
+          name: "ALWAYS DTF",
+          description: "Massage Candle",
+          imageTitle: "2 FOR $100",
+          url: "candle-always-dtf-amber-leather",
+          collection: "massage-candles",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 65,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "candles",
+          images: [
+            "/assets/images/products/collections/candles/black/MassageCandle_Leather_Black_1.jpg",
+            "/assets/images/products/collections/candles/black/MassageCandle_Leather_Black_3.jpg",
+          ]
+        },
+        {
+          name: "GET NAKED",
+          description: "Massage Candle",
+          imageTitle: "2 FOR $100",
+          url: "candle-get-naked-champagne-candy",
+          collection: "massage-candles",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 65,
+          colorName: "hot pink",
+          colorClass: "swatch-hot-pink",
+          type: "candles",
+          images: [
+            "/assets/images/products/collections/candles/hot-pink/MassageCandle_Leather_Pink_1.jpg",
+            "/assets/images/products/collections/candles/hot-pink/MassageCandle_Leather_Pink_2.jpg",
+            "/assets/images/products/collections/candles/hot-pink/MassageCandle_Leather_Pink.jpg",
+          ]
+        },
+      ],
+      [
+        {
+          name: "BITE ME",
+          description: "Massage Candle",
+          imageTitle: "2 FOR $100",
+          url: "bite-me-massage-candle",
+          collection: "massage-candles",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 60,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "candles",
+          images: [
+            "/assets/images/products/collections/candles/black/MassageCandle_BiteMe_3.jpg",
+            "/assets/images/products/collections/candles/black/MassageCandle_BiteMe_2.jpg",
+          ]
+        },
+        {
+          name: "WHIP ME",
+          description: "Massage Candle",
+          imageTitle: "2 FOR $100",
+          url: "whip-me-massage-candle",
+          collection: "massage-candles",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 60,
+          colorName: "caramel",
+          colorClass: "swatch-caramel",
+          type: "candles",
+          images: [
+            "/assets/images/products/collections/candles/MassageCandle_WhipMe_3.jpg",
+            "/assets/images/products/collections/candles/MassageCandle_WhipMe_2.jpg",
+          ]
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "Lingerie that keeps selling out. Discover our most desired collections.",
+          imageTitle: "BEST SELLERS",
+          url: "/assets/images/products/videos/bestsellers.mp4",
+          collection: "bestsellers",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "Discover",
+          colorClass: "button",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "WHIP ME",
+          description: "Massage Candle",
+          imageTitle: "2 FOR $100",
+          url: "whip-me-massage-candle",
+          collection: "massage-candles",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 60,
+          colorName: "caramel",
+          colorClass: "swatch-caramel",
+          type: "candles",
+          images: [
+            "/assets/images/products/collections/candles/MassageCandle_WhipMe_3.jpg",
+            "/assets/images/products/collections/candles/MassageCandle_WhipMe_2.jpg",
+          ]
+        },
+        {
+          name: "BITE ME",
+          description: "Massage Candle",
+          imageTitle: "2 FOR $100",
+          url: "bite-me-massage-candle",
+          collection: "massage-candles",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 60,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "candles",
+          images: [
+            "/assets/images/products/collections/candles/black/MassageCandle_BiteMe_3.jpg",
+            "/assets/images/products/collections/candles/black/MassageCandle_BiteMe_2.jpg",
+          ]
+        },
+      ],
+    ]
+  },
+  {
+    name: "BONDAGE",
+    url: "bondage",
+    description: "",
+    products: [
+
+    ]
   }
 ];

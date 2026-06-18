@@ -108,7 +108,7 @@
   </div>
 
   @let items = collectionProducts();
-  @if (items !== null) {
+  @if (items !== null && items.length > 0) {
 
     <!--  Collection -->
     <div #collection
@@ -189,5 +189,23 @@
         </button>
       </nav>
     </div>
+  } @else if ((items !== null && items.length === 0)) {
+
+    <!-- Empty collection -->
+    <div class="js-plp-collection-grid">
+      <div class="js-plp-collection-no-items">
+        <!-- Heading -->
+        <h4 class="app-heading-title">Oops! No Products Found</h4>
+        <!-- Text -->
+        <div class="js-plp-collection-typeset">
+          <span>
+            It seems there are no products available in this collection at the moment. Please feel
+            free to explore our other collections, or refine your search to discover the perfect
+            items for you.
+          </span>
+        </div>
+      </div>
+    </div>
+
   }
 </div>

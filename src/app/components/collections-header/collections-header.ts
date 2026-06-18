@@ -484,6 +484,10 @@ export class CollectionsHeader {
       name: "Kukuro",
       url: "kukuro-lingerie-collection"
     },
+    {
+      name: "Bondage",
+      url: "bondage"
+    },
   ];
   public plpHeaderBralettesData: {name: string, url: string}[] = [
     {
@@ -615,6 +619,30 @@ export class CollectionsHeader {
     {
       name: "Bondage Lingerie",
       url: "bondage-lingerie"
+    },
+  ];
+  public plpHeaderCandlesData: {name: string, url: string}[] = [
+    {
+      name: "Bondage",
+      url: "bondage"
+    },
+  ];
+  public plpHeaderBondageData: {name: string, url: string}[] = [
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+    {
+      name: "Fashion Fetish Cuffs & Collars",
+      url: "fashion-fetish-cuffs-collars"
+    },
+    {
+      name: "Latex Lingerie",
+      url: "latex-lingerie"
+    },
+    {
+      name: "Massage Candles",
+      url: "massage-candles"
     },
   ];
   public plpHeaderLoungeData: {name: string, url: string}[] = [

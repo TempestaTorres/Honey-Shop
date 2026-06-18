@@ -22,6 +22,8 @@ import { ProductSet } from '../../components/product-set/product-set';
 import { CompleteLook } from '../../components/complete-look/complete-look';
 import { ProductCarousel } from '../../components/product-carousel/product-carousel';
 import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
+import { ProductCartService } from '../../product-cart/services/product-cart-service';
+import { AddToCartModule } from '../../components/add-to-cart-module/add-to-cart-module';
 
 @Component({
   selector: 'app-products',
@@ -41,6 +43,7 @@ import { InstagramFeed } from '../../components/instagram-feed/instagram-feed';
     InstagramFeed,
     ProductCarousel,
     CompleteLook,
+    AddToCartModule,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',
@@ -70,6 +73,7 @@ export class Products implements OnInit, OnDestroy {
     this.activatedRoute.params.subscribe((params) => {
       if (params['item']) {
         this.scrollingService.toTop();
+
         this.getProductType(params['item']);
 
         if (this.pairWithSubscription) {

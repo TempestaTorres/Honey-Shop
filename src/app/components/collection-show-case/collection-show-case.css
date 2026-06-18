@@ -73,6 +73,28 @@
 .js-plp-collection-grid.grid-col-4 > .js-plp-collection-wrapper {
   grid-template-columns: repeat(2,minmax(0,1fr));
 }
+.js-plp-collection-no-items {
+  max-width: 704px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.js-plp-collection-no-items .app-heading-title {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.js-plp-collection-no-items .js-plp-collection-typeset {
+  margin-top: 1rem;
+}
+.js-plp-collection-typeset * {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color-primary);
+}
+.js-plp-collection-typeset p {margin:0}
+.js-plp-collection-typeset span {
+  display: inline-block;
+}
 
 /* ============ Media ================= */
 @media (min-width: 768px) {

@@ -336,7 +336,7 @@
   tab-size: 4;
   background-color: var(--bg-color-classic);
 
-  h1 {
+  h1, h4 {
     font-family: var(--global-typography-100-font-family), sans-serif;
     font-size: var(--global-typography-100-font-size);
     font-weight: var(--global-typography-100-font-weight);
