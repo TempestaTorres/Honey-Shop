@@ -5,6 +5,367 @@ export const NewArrivalData: ProductItem[] = [
   {
     product: [
       {
+        name: "CHERRY",
+        description: "Bra & Bottom Lingerie Set",
+        url: "cherry-bra-bottom-lingerie-set",
+        collection: "cherry-lingerie-collection",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        price: 235,
+        priceFrom: 235,
+        type: "lingerie-set",
+        colorName: "dark cherry",
+        colorClass: "swatch-dark-cherry",
+        images: [
+          "/assets/images/products/collections/cherry/Cherry_Bra_Thong_Front1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Front4.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Back4.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Side4.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Brief_Front.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Brief_Back3.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Brief_Side3.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Brief_Front1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_Front1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_Back1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_Side1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Front1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Back.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Side1.jpg",
+          "/assets/images/products/collections/cherry/CHERRY12.jpg",
+
+        ],
+        models: ["sianie", "olivia"],
+        setItems: [
+          "cherry-push-up-balconette-dark-cherry",
+          "cherry-brief-ouvert-dark-cherry",
+          "cherry-thong-dark-cherry",
+          "cherry-stay-ups-dark-cherry",
+        ]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "CHERRY",
+        description: "3 Piece Lingerie Set",
+        url: "cherry-3-piece-lingerie-set",
+        collection: "cherry-lingerie-collection",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        price: 365,
+        priceFrom: 365,
+        type: "lingerie-set",
+        colorName: "dark cherry",
+        colorClass: "swatch-dark-cherry",
+        images: [
+          "/assets/images/products/collections/cherry/Cherry_Bra_Suspender_Brief_Front1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Suspender_Brief_Back.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Suspender_Brief_Side1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_SuspenderStockings_Thong_Cuffs_Back4.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Back.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Side1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_SuspenderStockings_Thong_Cuffs_Back5.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Front4.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Back4.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Side4.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Brief_Front.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Brief_Back3.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Brief_Side3.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_Suspender_Front1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_Suspender_Back1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Thong_Front1.jpg",
+          "/assets/images/products/collections/cherry/CHERRY3.jpg"
+        ],
+        models: ["sianie", "olivia"],
+        setItems: [
+          "cherry-push-up-balconette-dark-cherry",
+          "cherry-suspender-garter-dark-cherry",
+          "cherry-brief-ouvert-dark-cherry",
+          "cherry-thong-dark-cherry",
+          "cherry-stay-ups-dark-cherry",
+        ]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "BURGUNDY SHEERS STAY UP",
+        description: "Stockings",
+        url: "cherry-stay-ups-dark-cherry",
+        collection: "stockings",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 30,
+        type: "stockings",
+        colorName: "dark cherry",
+        colorClass: "swatch-dark-cherry",
+        images: [
+          "/assets/images/products/collections/cherry/Cherry_Stockings_Web.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Front1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Back.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Side1.jpg",
+          "/assets/images/products/collections/cherry/CHERRY3_1.jpg",
+        ],
+        sizes: stockingsSizes,
+        models: ["olivia"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "CHERRY",
+        description: "Dress",
+        url: "cherry-short-dress-dark-cherry",
+        collection: "cherry-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 350,
+        type: "dress",
+        colorName: "dark cherry",
+        colorClass: "swatch-dark-cherry",
+        images: [
+          "/assets/images/products/collections/cherry/Cherry_Dress_Front.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Dress_Back1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Dress_Side.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Dress_FrontZOOM1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Dress_BackZOOM.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Dress_SideZOOM.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Dress_Front_Strapless.jpg",
+          "/assets/images/products/collections/cherry/CHERRY9.jpg",
+        ],
+        sizes: dressSizes,
+        models: ["olivia"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "CHERRY",
+        description: "Handcuffs",
+        url: "cherry-cuffs-dark-cherry",
+        collection: "cherry-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 130,
+        colorName: "dark cherry",
+        colorClass: "swatch-dark-cherry",
+        type: "bondage",
+        images: [
+          "/assets/images/products/collections/cherry/CherryCuffs_3.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Brief_Cuffs_Front1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Bra_Brief_Cuffs_Back.jpg",
+          "/assets/images/products/collections/cherry/Cherry_BraNoChoker_Brief_Cuffs_Side.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Cuff4.jpg",
+          "/assets/images/products/collections/cherry/Cherry_Cuff12.jpg",
+          "/assets/images/products/collections/cherry/CHERRY3.jpg",
+        ],
+        models: ["sianie"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "SIGNATURE SERIES",
+        description: "Cherry Cat Whip",
+        url: "cherry-cat-whip-dark-cherry",
+        collection: "bondage",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 165,
+        colorName: "dark cherry",
+        colorClass: "swatch-dark-cherry",
+        type: "bondage",
+        images: [
+          "/assets/images/products/collections/cherry/Cherry_CatWhip_1.jpg",
+          "/assets/images/products/collections/cherry/Cherry_CatWhip_3.jpg",
+        ]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "AMETHYST",
+        description: "Bodysuit",
+        url: "amethyst-bodysuit-indigo",
+        collection: "amethyst-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 220,
+        colorName: "indigo",
+        colorClass: "swatch-indigo",
+        type: "bodysuit",
+        images: [
+          "/assets/images/products/collections/amethyst/Amethyst_BodysuitChain_Front.jpg",
+          "/assets/images/products/collections/amethyst/Amethyst_Bodysuit_Back.jpg",
+          "/assets/images/products/collections/amethyst/Amethyst_BodysuitChain_Side.jpg",
+          "/assets/images/products/collections/amethyst/Amethyst_BodysuitChain_FrontZOOM3.jpg",
+          "/assets/images/products/collections/amethyst/Amethyst_Bodysuit_BackZOOM2.jpg",
+          "/assets/images/products/collections/amethyst/Amethyst_BodysuitChain_SideZOOM.jpg",
+          "/assets/images/products/collections/amethyst/Amethyst_BodysuitChain_Front2.jpg",
+          "/assets/images/products/collections/amethyst/Amethyst_Bodysuit_Back1.jpg",
+          "/assets/images/products/collections/amethyst/Amethyst_BodysuitChain_Side1.jpg",
+          "/assets/images/products/collections/amethyst/AMETHYST4.jpg",
+        ],
+        sizes: dressSizes,
+        models: ["sianie"]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "LORNA",
+        description: "3 Piece Lingerie Set",
+        url: "lorna-3-piece-lingerie-set",
+        collection: "lorna-lingerie-collection",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        price: 275,
+        priceFrom: 275,
+        colorName: "magenta",
+        colorClass: "swatch-magenta",
+        type: "lingerie-set",
+        images: [
+          "/assets/images/products/collections/lorna/Lorna_Bra_Suspender_Thong_Front1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Suspender_Thong_Back1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Suspender_Thong_Side1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Front1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Back.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Side1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Brief_Front1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Brief_Back.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Brief_Side.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Thong_Front.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Thong_Back1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Thong_Side.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Front1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Back4.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Side5.jpg",
+          "/assets/images/products/collections/lorna/Lorna6.jpg",
+        ],
+        models: ["olivia", "sianie"],
+        setItems: [
+          "lorna-underwire-balconette-magenta",
+          "lorna-suspender-midi-magenta",
+          "lorna-brazilian-magenta",
+          "lorna-string-magenta",
+          "lorna-stay-ups-magenta",
+        ]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "LORNA",
+        description: "Bra & Bottom Lingerie Set",
+        url: "lorna-bra-bottom-lingerie-set",
+        collection: "lorna-lingerie-collection",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        price: 185,
+        priceFrom: 185,
+        colorName: "magenta",
+        colorClass: "swatch-magenta",
+        type: "lingerie-set",
+        images: [
+          "/assets/images/products/collections/lorna/Lorna_Bra_Brief_Front1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Brief_Back.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Brief_Side.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Thong_Front.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Thong_Back1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Thong_Side.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Front1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Back4.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Bra_Side5.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Front1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Back.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Side1.jpg",
+          "/assets/images/products/collections/lorna/Lorna6.jpg",
+        ],
+        models: ["olivia", "sianie"],
+        setItems: [
+          "lorna-underwire-balconette-magenta",
+          "lorna-brazilian-magenta",
+          "lorna-string-magenta",
+          "lorna-stay-ups-magenta",
+        ]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "MAGENTA SHEERS STAY UP",
+        description: "Stockings",
+        imageTitle: "BUY 2 GET 1 FREE",
+        url: "lorna-stay-ups-magenta",
+        collection: "stockings",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 30,
+        type: "stockings",
+        colorName: "magenta",
+        colorClass: "swatch-magenta",
+        images: [
+          "/assets/images/products/collections/lorna/Lorna_Magenta_Stockings_Web.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Front1.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Back.jpg",
+          "/assets/images/products/collections/lorna/Lorna_Thong_Suspender_Side1.jpg",
+          "/assets/images/products/collections/lorna/Lorna8.jpg",
+        ],
+        sizes: stockingsSizes
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "EVERLY EMERALD",
+        description: "Bustier Lingerie Set",
+        url: "everly-emerald-bustier-lingerie-set",
+        collection: "everly-emerald-lingerie-collection",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        price: 255,
+        priceFrom: 255,
+        type: "lingerie-set",
+        colorName: "emerald",
+        colorClass: "swatch-emerald",
+        images: [
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_BustierStockings_Brief_Side.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Front2.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_Side.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_FrontZOOM.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bustier_BackZOOM.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Brief_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Front.jpg",
+          "/assets/images/products/collections/everly-emerald/EverlyEmerald_Thong_Back.jpg",
+          "/assets/images/products/collections/everly-emerald/EVERLY2.jpg",
+        ],
+        models: ["olivia"],
+        setItems: [
+          "everly-bustier-emerald-black",
+          "everly-bikini-emerald-black",
+          "everly-thong-emerald-black",
+          "new-black-bowties-suspender-stockings",
+        ]
+      },
+    ]
+  },
+  {
+    product: [
+      {
         name: "EVERLY EMERALD",
         description: "3 Piece Lingerie Set",
         url: "everly-emerald-3-piece-lingerie-set",

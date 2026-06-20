@@ -12,7 +12,7 @@
   </section>
 
   <!--  Category -->
-  <section class="section-boxed section">
+  <section class="section-boxed section page-section">
     <div #categoryGrid
          appObserveElement
          [isContinuous]="false"
@@ -44,7 +44,7 @@
   </section>
 
   <!-- New arrivals -->
-  <section class="section-boxed js-section-product-carousel">
+  <section class="section-boxed page-section js-section-product-carousel">
     <div class="app-wrapper">
       <!-- Heading -->
       <div class="app-widget app-widget-heading app-widget-heading-default carousel-heading">
@@ -58,10 +58,8 @@
   </section>
 
   <!--  Shop the look slideshow -->
-
-  <section class="section-boxed section-default-padding">
+  <section class="section-boxed page-section section-default-padding">
     <app-shop-the-look [dataIndex]="slideShowDataIndex" class="app-widget"></app-shop-the-look>
-    <app-shop-the-look-modal></app-shop-the-look-modal>
   </section>
 
   <!--  Bestsellers -->
@@ -77,7 +75,7 @@
   </section>
 
   <!-- Categories Whitney & Bondage -->
-  <section class="section-boxed section">
+  <section class="section-boxed page-section section">
 
     <div #categoryBigGrid
          appObserveElement
@@ -131,8 +129,13 @@
     </div>
   </section>
 
+  <!--  Shop the look slideshow -->
+  <section class="section-boxed page-section section-default-padding">
+    <app-shop-the-look [dataIndex]="slideShowDataIndex + 1" class="app-widget"></app-shop-the-look>
+  </section>
+
   <!--  Text block -->
-  <section class="section-text-block">
+  <section class="section-text-block page-section">
     <div class="container">
       <div class="text-block-container"></div>
     </div>
@@ -151,8 +154,42 @@
     </div>
   </section>
 
+  @if (isOff) {
+
+    <!--  Text block -->
+    <section class="section-text-block page-section">
+      <div class="container">
+        <div class="text-block-container"></div>
+      </div>
+    </section>
+
+    <!-- Sale Roses Hero Carousel -->
+    <section class="section-boxed section-hero-carousel">
+      <!-- Cover image -->
+      <div class="cover-image-wrapper">
+        <img src="/assets/images/categories/Fullwidth_Banner_roses_Desktop.jpg" alt="" fetchpriority="high" loading="eager">
+      </div>
+      <!-- Carousel -->
+      <div class="section-hero-carousel__carousel js-default-hero-carousel">
+        <app-hero-carousel [heroData]="salesCarousel" class="app-widget"></app-hero-carousel>
+      </div>
+    </section>
+
+  }
   <!--  Text block -->
-  <section class="section-text-block page-block">
+  <section class="section-text-block page-section">
+    <div class="container">
+      <div class="text-block-container"></div>
+    </div>
+  </section>
+
+  <!--  Parallax -->
+  <section class="section-boxed">
+    <app-parallax-banner class="app-widget" [parallaxData]="parallaxData"></app-parallax-banner>
+  </section>
+
+  <!--  Text block -->
+  <section class="section-text-block page-block page-section">
     <div class="container">
       <div class="text-block-container">
 
@@ -199,7 +236,7 @@
   </section>
 
   <!--  Services -->
-  <section class="section-boxed section-three-columns">
+  <section class="section-boxed section-three-columns page-section">
     <div
       #threeColumns
       appObserveElement
@@ -212,8 +249,8 @@
   </section>
 
   <!--  Instagram -->
-  <section class="section-boxed">
+  <section class="section-boxed page-section">
     <app-instagram-feed class="app-widget"></app-instagram-feed>
   </section>
 </main>
-
+<app-shop-the-look-modal></app-shop-the-look-modal>

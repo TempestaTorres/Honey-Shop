@@ -318,6 +318,19 @@
           and lust. Honey, the world of fetish has never looked so good.
         </p>
 
+      } @else if (collectionType() === 'pleasure-parlour') {
+
+        <p>
+          The perfect accompaniment to any Honey collection. Complete your evening lingerie set
+          with a luxurious&nbsp;
+          <a [routerLink]="['/collections', 'robes-chemises']" title="robes and chemises">lace robe</a>,
+          explore your wild side with a dark twist of
+          <a [routerLink]="['/collections', 'bondage']" title="bondage">bondage, leather</a> and
+          <a [routerLink]="['/collections', 'latex-lingerie']">latex</a>
+          or roll the dice on your perfect date night with&nbsp;
+          <a [routerLink]="['/collections', 'massage-candles']">massage candles</a>.&nbsp;
+        </p>
+
       }
       @else {
         <p>{{  headerDescription() }}</p>
@@ -598,6 +611,24 @@
           } @else if (collectionType() === 'bondage') {
 
             @for (link of plpHeaderBondageData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'fashion-fetish-cuffs-collar') {
+
+            @for (link of plpHeaderFetishData; track $index) {
+
+              <div class="swiper-slide js-plp-slide">
+                <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>
+              </div>
+
+            }
+          } @else if (collectionType() === 'pleasure-parlour') {
+
+            @for (link of plpHeaderAccessoriesData; track $index) {
 
               <div class="swiper-slide js-plp-slide">
                 <a class="js-plp-link" [routerLink]="['/collections', link.url]">{{ link.name }}</a>

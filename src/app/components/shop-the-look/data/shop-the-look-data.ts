@@ -35,7 +35,7 @@ export const ShopTheLookData: ShopTheLookType[] = [
       {
         name: "WHITNEY CHARTREUSE",
         text: "Made for the limelight. Discover our most-loved lingerie in a high-impact hue.",
-        url: "whitney-chartreuse-lingerie-collection"
+        url: "whitney-lingerie-collection"
       },
       {
         name: "CHARLOTTA EMERALD",
@@ -80,6 +80,60 @@ export const ShopTheLookData: ShopTheLookType[] = [
         url: "charlotta-emerald-lingerie-collection"
       },
     ]
-  }
+  },
+  {
+    descriptions: [
+      {
+        name: "CHERRY",
+        text: "Cherry red lingerie. Take a bite, baby.",
+        url: "cherry-lingerie-collection"
+      },
+      {
+        name: "AMETHYST",
+        text: "Leave the lights on, honey. Amethyst shines from every angle.",
+        url: "amethyst-lingerie-collection"
+      },
+      {
+        name: "LORNA",
+        text: "The low balconette that brings out your best.",
+        url: "lorna-lingerie-collection"
+      },
+      {
+        name: "EVERLY",
+        text: "Sexy & supportive. You really can have both.",
+        url: "everly-lingerie-collection"
+      },
+    ],
+    slides: [
+      {
+        images: [
+          "/assets/images/shop-look/cherry/ShopLook_CHERRY_1.jpg",
+          "/assets/images/shop-look/cherry/ShopLook_CHERRY_2.jpg",
+        ],
+        url: "cherry-lingerie-collection"
+      },
+      {
+        images: [
+          "/assets/images/shop-look/amethyst/ShopLook_AMETHYST_1.jpg",
+          "/assets/images/shop-look/amethyst/ShopLook_AMETHYST_2.jpg",
+        ],
+        url: "amethyst-lingerie-collection"
+      },
+      {
+        images: [
+          "/assets/images/shop-look/lorna/ShopLook_LORNA_1.jpg",
+          "/assets/images/shop-look/lorna/ShopLook_LORNA_2.jpg",
+        ],
+        url: "lorna-lingerie-collection"
+      },
+      {
+        images: [
+          "/assets/images/shop-look/everly/ShopLook_EVERLY_1.jpg",
+          "/assets/images/shop-look/everly/ShopLook_EVERLY_2.jpg",
+        ],
+        url: "everly-lingerie-collection"
+      },
+    ]
+  },
 
 ]

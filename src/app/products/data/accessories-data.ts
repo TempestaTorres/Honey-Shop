@@ -9,6 +9,6 @@ export const AccessoriesData:NewsType[] = [
   {
     category: 'Cuffs & Collars',
     image: '/assets/images/news/055_copy.jpg',
-    url: 'fashion-fetish-cuffs-collar'
+    url: 'fashion-fetish-cuffs-collars'
   },
 ]

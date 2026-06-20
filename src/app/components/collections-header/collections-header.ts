@@ -645,6 +645,46 @@ export class CollectionsHeader {
       url: "massage-candles"
     },
   ];
+  public plpHeaderFetishData: {name: string, url: string}[] = [
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+    {
+      name: "Bondage",
+      url: "bondage"
+    },
+    {
+      name: "Latex Lingerie",
+      url: "latex-lingerie"
+    },
+    {
+      name: "Massage Candles",
+      url: "massage-candles"
+    },
+  ];
+  public plpHeaderAccessoriesData: {name: string, url: string}[] = [
+    {
+      name: "Bondage Lingerie",
+      url: "bondage-lingerie"
+    },
+    {
+      name: "Bondage",
+      url: "bondage"
+    },
+    {
+      name: "Fashion Fetish Cuffs & Collars",
+      url: "fashion-fetish-cuffs-collars"
+    },
+    {
+      name: "Latex Lingerie",
+      url: "latex-lingerie"
+    },
+    {
+      name: "Massage Candles",
+      url: "massage-candles"
+    },
+  ];
   public plpHeaderLoungeData: {name: string, url: string}[] = [
     {
       name: "Babydoll Lingerie, Robes & Chemises",

@@ -17,6 +17,7 @@ import {
 import { CollectionsNewsType } from './types/collections-news-type';
 import { CollectionsNewsData } from './data/collections/collections-news-data';
 
+const TODAY_OFF = 70;
 const ITEMS_PER_PAGE = 80;
 export interface SortedPageType {
   name: string,
@@ -28,6 +29,12 @@ export interface SortedPageType {
   providedIn: 'root',
 })
 export class ProductsService {
+
+  private readonly todayIsOff: boolean = true;
+
+  public isOff(): boolean {
+    return this.todayIsOff;
+  }
 
   public getCollectionColours(collectionUrl: string): Observable<{colorName: string, colorClass: string}[]> {
 
@@ -245,8 +252,11 @@ export class ProductsService {
 
         if (AllCollectionsData[i].url === url) {
 
+          let collection = AllCollectionsData[i].products
+            .filter(item => item[0].type !== 'video');
+
           return new Observable<Array<ProductType[]> | null>(observer => {
-            observer.next(AllCollectionsData[i].products);
+            observer.next(collection);
           });
         }
       }
@@ -256,8 +266,11 @@ export class ProductsService {
 
         if (AllSubCollectionsData[i].url === url) {
 
+          let collection = AllSubCollectionsData[i].products
+            .filter(item => item[0].type !== 'video');
+
           return new Observable<Array<ProductType[]> | null>(observer => {
-            observer.next(AllSubCollectionsData[i].products);
+            observer.next(collection);
           });
         }
       }

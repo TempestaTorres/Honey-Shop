@@ -102,9 +102,8 @@ export class CollectionShowCase implements OnInit {
 
       const collectionType: string = this.collectionType();
 
-      setTimeout(() => {
-        this.setCollection(collectionType, currentSort, currentPage, currentColours, currentTypes);
-      }, 500);
+      this.setCollection(collectionType, currentSort, currentPage, currentColours, currentTypes);
+
     });
 
     this.destroyRef.onDestroy(() => {

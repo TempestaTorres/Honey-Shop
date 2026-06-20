@@ -1,0 +1,26 @@
+@let data = parallaxData();
+
+<a class="parallax-banner" tabindex="-1" (click)="navigateTo()">
+  <div class="parallax-banner-wrapper">
+
+    <!-- Image -->
+    <div class="js-parallax-banner-background">
+      <img class="banner-desktop-hidden" [src]="data.desktopImg" alt="Hero Image" loading="eager" fetchpriority="high">
+      <img class="banner-mobile-tablet-hidden" [src]="data.mobileImg" alt="Hero Image" loading="eager" fetchpriority="high">
+    </div>
+
+    <!-- Content -->
+    <div class="parallax-banner-content-wrapper">
+      <div class="hero-carousel-content hero-banner-content content-small">
+        <div class="content-inner">
+
+          <!-- Title -->
+          <div class="js-parallax-banner-heading">{{ data.title }}</div>
+          <!-- Button -->
+          <span class="hero-button" [class]="data.button.buttonType">{{ data.button.buttonText }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</a>

@@ -1,5 +1,6 @@
 export type HeroSlide = {
   image: string,
+  mobileImage?: string,
   imageUrl: {
     url: string | null,
     param: string | null

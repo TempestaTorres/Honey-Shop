@@ -17,6 +17,7 @@ import { Subscription } from 'rxjs';
 import { CollectionsNewsType } from '../../products/types/collections-news-type';
 import { VideoDataService } from '../../services/video-data-service';
 import { VideoDataType } from '../../data/video-data';
+import { ParallaxBanner, ParallaxDataType } from '../../components/parallax-banner/parallax-banner';
 
 @Component({
   selector: 'app-home',
@@ -30,18 +31,36 @@ import { VideoDataType } from '../../data/video-data';
     InstagramFeed,
     ShopTheLook,
     ShopTheLookModal,
+    ParallaxBanner,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home implements OnInit, OnDestroy {
-
   public topHeroCarousel: HeroVideoType = {
     class: 'js-hero-video-carousel',
     slides: [
       {
-        desktopImage: "",
-        mobileImage: "",
+        desktopImage: '',
+        mobileImage: '',
+        imageUrl: {
+          url: '/collections',
+          param: 'all-lingerie',
+        },
+        content: {
+          hasContent: true,
+          title: 'CHERRY',
+          text: 'Introducing',
+          button: {
+            hasButton: true,
+            buttonType: 'link-underline',
+            buttonText: 'Shop New',
+          },
+        },
+      },
+      {
+        desktopImage: '',
+        mobileImage: '',
         imageUrl: {
           url: '/collections',
           param: 'new-lingerie',
@@ -77,6 +96,25 @@ export class Home implements OnInit, OnDestroy {
   public bottomHeroCarousel: HeroVideoType = {
     class: 'js-carousel-swiper-hero-auto-play',
     slides: [
+      {
+        desktopImage: '',
+        mobileImage: '',
+        imageUrl: {
+          url: '/collections',
+          param: 'lets-ride',
+        },
+        content: {
+          hasContent: false,
+          title: '',
+          title2: '',
+          text: '',
+          button: {
+            hasButton: false,
+            buttonType: 'link-underline',
+            buttonText: '',
+          },
+        },
+      },
       {
         desktopImage: '',
         mobileImage: '',
@@ -186,6 +224,56 @@ export class Home implements OnInit, OnDestroy {
       keyboard: true,
     },
   };
+  public salesCarousel: HeroType = {
+    class: 'js-sales-hero-carousel',
+    slides: [
+      {
+        image: '/assets/images/categories/Fullwidth_Banner_roses_Desktop.jpg',
+        mobileImage: '/assets/images/categories/Banner_Mobile_1.jpg',
+        imageUrl: {
+          url: '/collections',
+          param: 'all-lingerie',
+        },
+        content: {
+          hasContent: false,
+          title: '',
+          button: {
+            hasButton: false,
+            buttonType: 'link-underline',
+            buttonText: 'DISCOVER',
+          },
+        },
+      },
+    ],
+    pagination: true,
+    navigation: false,
+    swiperOptions: {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      virtualTranslate: true,
+      keyboard: true,
+    },
+  };
+
+  public parallaxData: ParallaxDataType = {
+    desktopImg: '/assets/images/banners/BEST_SELLERS.jpg',
+    mobileImg: '/assets/images/banners/BEST_SELLERS_MOBILE.jpg',
+    url: '/collections',
+    urlParam: 'all-lingerie',
+    title: 'THE SALE THAT UNDRESSES ITSELF',
+    button: {
+      hasButton: true,
+      buttonType: 'button-link-underline',
+      buttonText: 'SHOP NOW',
+    },
+  };
 
   public servicesVideoData: SwiperVideoCarouselType = {
     className: 'js-carousel-swiper-three-column',
@@ -209,13 +297,13 @@ export class Home implements OnInit, OnDestroy {
       {
         videoSrc: '/assets/video/appointment.mp4',
         videoUrl: {
-          url: '/services',
+          url: '/the-honey-club',
           param: null,
         },
         content: {
-          title: 'Book an Appointment',
+          title: 'The Honey Club',
           description:
-            'Want the VIP treatment? Enjoy a personalized fitting, product insights, and styling advice in the comfort of one of our boutiques.',
+            'Friends with benefits, only better. Sign up for perks such as early access, free gifts, and exclusive concierge services.',
           button: {
             className: 'link',
             buttonText: 'Find out more',
@@ -225,13 +313,13 @@ export class Home implements OnInit, OnDestroy {
       {
         videoSrc: '/assets/video/honey-gift.mp4',
         videoUrl: {
-          url: '/the-honey-club',
+          url: '/shipping-delivery',
           param: null,
         },
         content: {
-          title: 'The Honey Club',
+          title: 'Luxe & Discreet',
           description:
-            'Friends with benefits, only better. Sign up for perks such as early access, free gifts, and exclusive concierge services.',
+            'Wrapped in pleasure, sealed with secrecy. Whether it’s for you or a lover, all orders arrive in style with discreet packaging.',
           button: {
             className: 'link',
             buttonText: 'Find out more',
@@ -267,29 +355,38 @@ export class Home implements OnInit, OnDestroy {
   public collectionsNewsData: CollectionsNewsType[] = [];
   public videoData: VideoDataType[] = [];
 
+  public isOff: boolean;
+
   constructor(
     private scrollingService: ScrollingService,
     private intersectingService: IntersectingService,
     private productsService: ProductsService,
     private videoDataService: VideoDataService,
-  ) {}
+  ) {
+    this.isOff = this.productsService.isOff();
+  }
 
   ngOnInit() {
     this.scrollingService.toTop();
 
-    const newsSub = this.productsService.getCollectionsNews().subscribe(news => {
+    const newsSub = this.productsService.getCollectionsNews().subscribe((news) => {
       this.collectionsNewsData = news;
     });
 
     this.subscriptions.add(newsSub);
 
-    const videoSub = this.videoDataService.getTopHomeVideoData().subscribe(videos => {
+    const videoSub = this.videoDataService.getTopHomeVideoData().subscribe((videos) => {
       this.videoData = videos;
 
       this.topHeroCarousel.slides[0].desktopImage = videos[0].desktopVideo;
       this.topHeroCarousel.slides[0].mobileImage = videos[0].mobileVideo;
-      this.bottomHeroCarousel.slides[0].desktopImage = videos[1].desktopVideo;
-      this.bottomHeroCarousel.slides[0].mobileImage = videos[1].mobileVideo;
+      this.topHeroCarousel.slides[1].desktopImage = videos[1].desktopVideo;
+      this.topHeroCarousel.slides[1].mobileImage = videos[1].mobileVideo;
+
+      this.bottomHeroCarousel.slides[0].desktopImage = videos[2].desktopVideo;
+      this.bottomHeroCarousel.slides[0].mobileImage = videos[2].mobileVideo;
+      this.bottomHeroCarousel.slides[1].desktopImage = videos[3].desktopVideo;
+      this.bottomHeroCarousel.slides[1].mobileImage = videos[3].mobileVideo;
     });
 
     this.subscriptions.add(videoSub);

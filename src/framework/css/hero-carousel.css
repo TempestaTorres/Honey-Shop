@@ -179,9 +179,15 @@
   height: 100%;
   padding: 125px 2.5rem;
 }
+.hero-carousel-content.hero-banner-content {
+  padding: 4rem 2rem;
+}
 .hero-carousel-content > .content-inner {
   margin: 0 auto;
   text-align: center;
+}
+.hero-carousel-content.content-small > .content-inner {
+  max-width: 600px;
 }
 .content-text {
   font-size: 20px;
@@ -278,6 +284,9 @@
   .hero-carousel-content {
     padding: 5rem;
   }
+  .hero-carousel-content.hero-banner-content {
+    padding: 3.5rem;
+  }
   .content-text {
     margin-top: .75rem;
   }
@@ -287,7 +296,7 @@
   .carousel-swiper-hero-carousel .swiper-pagination {
     bottom: 2.5rem;
   }
-  .hero-carousel-content {
+  .hero-carousel-content:not(.hero-banner-content) {
     padding-bottom: 146px !important;
     padding-top: 146px !important;
   }

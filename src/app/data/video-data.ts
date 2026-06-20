@@ -6,8 +6,18 @@ export interface VideoDataType {
 
 export const videoData: VideoDataType[] = [
   {
+    desktopVideo: "/assets/video/lets-ride-desctop.mp4",
+    mobileVideo: "/assets/video/lets-ride-mobile.mp4",
+    coverImage: "/assets/images/common/VIDEO_BUFFER_cafbee.jpg",
+  },
+  {
     desktopVideo: "/assets/video/video-desktop-1.mp4",
     mobileVideo: "/assets/video/video-mobile-1.mp4",
+    coverImage: "/assets/images/common/VIDEO_BUFFER_22.jpg",
+  },
+  {
+    desktopVideo: "/assets/video/lets-ride-full-desktop.mp4",
+    mobileVideo: "/assets/video/lets-ride-full-mobile.mp4",
     coverImage: "/assets/images/common/VIDEO_BUFFER_22.jpg",
   },
   {

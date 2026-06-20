@@ -6,9 +6,4 @@ export const BoutiquesData:NewsType[] = [
     image: '/assets/images/news/1_1.jpg',
     url: 'boutique-finder'
   },
-  {
-    category: 'Book an Appointment',
-    image: '/assets/images/news/2_1.jpg',
-    url: 'services'
-  },
 ]

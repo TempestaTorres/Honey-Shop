@@ -9,19 +9,42 @@
       @if (slide.imageUrl.url === null) {
 
         <div class="slide-image-wrapper">
-          <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+
+          @if (slide.mobileImage) {
+            <img class="mobile-hidden" [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+            <img class="mobile-desktop-hidden" [src]="slide.mobileImage" alt="" fetchpriority="high" loading="eager">
+          } @else {
+            <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+          }
+
         </div>
+
       } @else {
 
         @if (slide.imageUrl.param !== null) {
 
           <a [routerLink]="[slide.imageUrl.url, slide.imageUrl.param]" class="slide-image-wrapper">
-            <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+
+            @if (slide.mobileImage) {
+              <img class="mobile-hidden" [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+              <img class="mobile-desktop-hidden" [src]="slide.mobileImage" alt="" fetchpriority="high" loading="eager">
+            } @else {
+              <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+            }
+
           </a>
+
         } @else {
 
           <a [routerLink]="[slide.imageUrl.url]" class="slide-image-wrapper">
-            <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+
+            @if (slide.mobileImage) {
+              <img class="mobile-hidden" [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+              <img class="mobile-desktop-hidden" [src]="slide.mobileImage" alt="" fetchpriority="high" loading="eager">
+            } @else {
+              <img [src]="slide.image" alt="" fetchpriority="high" loading="eager">
+            }
+
           </a>
         }
       }
