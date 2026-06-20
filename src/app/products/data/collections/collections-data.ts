@@ -8455,6 +8455,204 @@ export const AllCollectionsData: ShopCollectionType[] = [
 ];
 export const AllSubCollectionsData: ShopCollectionType[] = [
   {
+    name: "THANDIE",
+    url: "thandie",
+    description: "Meet the duchess of desire. Luxury lingerie, better than any other. Inspired by the lace cutaway techniques used in high-end couture, this special collection displays thermo-cut embroidery on Corallo voile. Made with a whisper-soft material and the illusion of nestled florals, Thandie includes Preciosa® crystals, fine shimmering gold and lurex throughout.",
+    products: [
+      [
+        {
+          name: "THANDIE",
+          description: "Bra",
+          url: "thandie-underwire-balconette-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          off: "50% Off",
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: braSizes,
+          models: ["crystal"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Suspender",
+          url: "thandie-suspender-slim-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          off: "50% Off",
+          type: "suspender",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Thong",
+          url: "thandie-string-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          off: "50% Off",
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["crystal"]
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Brief",
+          url: "thandie-bikini-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          off: "50% Off",
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Brief_BackEDITED.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["aurelia"]
+        },
+      ],
+      [
+        {
+          name: "THANDIE",
+          description: "CHARTREUSE CHEMISE",
+          url: "thandie-chemise-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 220,
+          off: "50% Off",
+          type: "chemise",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Chemise_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Chemise_Brief_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie2.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["aurelia"]
+        },
+      ],
+      [
+        {
+          name: "THANDIE",
+          description: "Bra & Bottom Lingerie Set",
+          url: "thandie-bra-bottom-lingerie-set",
+          collection: "thandie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 215,
+          priceFrom: 215,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "lingerie-set",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          models: ["crystal", "aurelia"],
+          setItems: [
+            "thandie-underwire-balconette-black",
+            "thandie-bikini-black",
+            "thandie-string-black",
+          ]
+        },
+      ],
+      [
+        {
+          name: "THANDIE",
+          description: "3 Piece Lingerie Set",
+          url: "thandie-3-piece-lingerie-set",
+          collection: "thandie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 325,
+          priceFrom: 325,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "lingerie-set",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          models: ["sianie", "aurelia"],
+          setItems: [
+            "thandie-underwire-balconette-black",
+            "thandie-suspender-slim-black",
+            "thandie-bikini-black",
+            "thandie-string-black",
+          ]
+        },
+      ],
+    ]
+  },
+  {
     name: "STOCKINGS",
     url: "stockings",
     description: "A silky-smooth feel and sheer, glossy finish that elongates your legs like no other; Honey’s signature stockings are the ultimate finishing touch. Designed thigh-high for a retro-inspired edge, simply attach them to your suspender and pair with matching lingerie for the full effect. Show-stopping in heels… or nothing else, honey.",
@@ -9306,6 +9504,29 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/kylah/black/Kylah_Bra_Thong_Side.jpg",
           ],
           sizes: braSizes,
+        },
+      ],
+      [
+        {
+          name: "THANDIE",
+          description: "Bra",
+          url: "thandie-underwire-balconette-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          off: "50% Off",
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: braSizes,
+          models: ["crystal"]
         },
       ],
     ]
@@ -11244,6 +11465,29 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           models: ["sianie"]
         },
       ],
+      [
+        {
+          name: "THANDIE",
+          description: "Bra",
+          url: "thandie-underwire-balconette-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          off: "50% Off",
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: braSizes,
+          models: ["crystal"]
+        },
+      ],
     ]
   },
   {
@@ -11947,6 +12191,28 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: robeSizes,
           models: ["annalise"]
+        },
+      ],
+      [
+        {
+          name: "THANDIE",
+          description: "CHARTREUSE CHEMISE",
+          url: "thandie-chemise-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 220,
+          off: "50% Off",
+          type: "chemise",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Chemise_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Chemise_Brief_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie2.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["aurelia"]
         },
       ],
     ]
@@ -15965,6 +16231,119 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           models: ["annalise"]
         },
       ],
+      [
+        {
+          name: "THANDIE",
+          description: "Bra",
+          url: "thandie-underwire-balconette-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          off: "50% Off",
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: braSizes,
+          models: ["crystal"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Suspender",
+          url: "thandie-suspender-slim-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          off: "50% Off",
+          type: "suspender",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Thong",
+          url: "thandie-string-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          off: "50% Off",
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["crystal"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Brief",
+          url: "thandie-bikini-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          off: "50% Off",
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Brief_BackEDITED.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["aurelia"]
+        },
+      ],
+      [
+        {
+          name: "THANDIE",
+          description: "CHARTREUSE CHEMISE",
+          url: "thandie-chemise-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 220,
+          off: "50% Off",
+          type: "chemise",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Chemise_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Chemise_Brief_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie2.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["aurelia"]
+        },
+      ],
     ]
   },
   {
@@ -17231,6 +17610,29 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Suspender",
+          url: "thandie-suspender-slim-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          off: "50% Off",
+          type: "suspender",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
         },
       ],
     ]
@@ -18956,6 +19358,51 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           models: ["sianie"]
         },
       ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Thong",
+          url: "thandie-string-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          off: "50% Off",
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["crystal"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Brief",
+          url: "thandie-bikini-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          off: "50% Off",
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Brief_BackEDITED.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["aurelia"]
+        },
+      ],
     ]
   },
   {
@@ -19816,6 +20263,28 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Brief",
+          url: "thandie-bikini-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 95,
+          off: "50% Off",
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Brief_BackEDITED.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["aurelia"]
         },
       ],
     ]
@@ -20722,6 +21191,29 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name:  "THANDIE",
+          description: "Thong",
+          url: "thandie-string-black",
+          collection: "thandie",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          off: "50% Off",
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["crystal"]
         },
       ],
     ]
@@ -23435,6 +23927,69 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
             "lorna-brazilian-magenta",
             "lorna-string-magenta",
             "lorna-stay-ups-magenta",
+          ]
+        },
+      ],
+      [
+        {
+          name: "THANDIE",
+          description: "Bra & Bottom Lingerie Set",
+          url: "thandie-bra-bottom-lingerie-set",
+          collection: "thandie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 215,
+          priceFrom: 215,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "lingerie-set",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Front.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          models: ["crystal", "aurelia"],
+          setItems: [
+            "thandie-underwire-balconette-black",
+            "thandie-bikini-black",
+            "thandie-string-black",
+          ]
+        },
+      ],
+      [
+        {
+          name: "THANDIE",
+          description: "3 Piece Lingerie Set",
+          url: "thandie-3-piece-lingerie-set",
+          collection: "thandie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 325,
+          priceFrom: 325,
+          colorName: "black",
+          colorClass: "swatch-black",
+          type: "lingerie-set",
+          images: [
+            "/assets/images/products/collections/thandie/Thandie_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Suspender_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Bra_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Front1.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Thong_Back.jpg",
+            "/assets/images/products/collections/thandie/Thandie_Brief_Front1.jpg",
+            "/assets/images/products/collections/thandie/Campaign_Imagery_Thandie.jpg",
+          ],
+          models: ["sianie", "aurelia"],
+          setItems: [
+            "thandie-underwire-balconette-black",
+            "thandie-suspender-slim-black",
+            "thandie-bikini-black",
+            "thandie-string-black",
           ]
         },
       ],

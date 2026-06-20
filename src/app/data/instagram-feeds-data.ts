@@ -64,6 +64,217 @@ export const latexSizes = [
 
 export const InstagramFeedsData: InstagramFeedType[] = [
   {
+    image: "/assets/images/instagram-feed/insta-19.jpg",
+    title: "One taste won’t be enough. Complete Cherry with the daring ouvert brief, featuring easy access and O-rings ready for the matching cuffs 🍒 As worn by @oliviamir...",
+    date: "18 JUNE 2026",
+    hasLink: true,
+    author: "Honey",
+    details: [
+      {
+        name: "Cherry Bra",
+        image: "/assets/images/products/collections/cherry/Cherry_Bra_Brief_Front1.jpg",
+        type: "bra",
+        price: "150.00",
+        url: "cherry-push-up-balconette-dark-cherry",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 52.59%; left: 46.87%;",
+        sizes: braSizes,
+        soldout: false
+      },
+      {
+        name: "Cherry Brief",
+        image: "/assets/images/products/collections/cherry/Cherry_Bra_Brief_Back1.jpg",
+        type: "brief",
+        price: "95.00",
+        url: "cherry-brief-ouvert-dark-cherry",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 71.24%; left: 50.4%;",
+        sizes: dressSizes,
+        soldout: false
+      },
+    ]
+  },
+  {
+    image: "/assets/images/instagram-feed/insta-18.jpg",
+    title: "Need it now? We think so too. Shop Thandie 3-piece set on SALE 💋 As seen on @sephoramn",
+    date: "31 MAY 2026",
+    hasLink: true,
+    author: "Honey",
+    details: [
+      {
+        name: "Thandie Bra",
+        image: "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Front1.jpg",
+        type: "bra",
+        price: "130.00",
+        url: "thandie-underwire-balconette-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 48.53%; left: 31.27%;",
+        sizes: braSizes,
+        soldout: false
+      },
+      {
+        name: "Thandie Suspender",
+        image: "/assets/images/products/collections/thandie/Thandie_Bra_Suspender_Thong_Front.jpg",
+        type: "suspender",
+        price: "110.00",
+        url: "thandie-suspender-slim-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 68.18%; left: 49.95%;",
+        sizes: dressSizes
+      },
+      {
+        name: "Thandie Thong",
+        image: "/assets/images/products/collections/thandie/Thandie_Bra_Thong_Back.jpg",
+        type: "thong",
+        price: "85.00",
+        url: "thandie-string-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 71.96%; left: 54.14%;",
+        sizes: dressSizes,
+        soldout: false
+      },
+    ]
+  },
+  {
+    image: "/assets/images/instagram-feed/insta-17.jpg",
+    title: "Good lingerie changes the mood. Great lingerie changes the destination. Hop in, honey, Everly is ready to ride. Everly Emerald 3-piece set, as seen on @itsdany..",
+    date: "27 MAY 2026",
+    hasLink: true,
+    author: "Honey",
+    details: [
+      {
+        name: "Everly Emerald Bra",
+        image: "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front.jpg",
+        type: "bra",
+        price: "110.00",
+        url: "everly-underwire-balconette-emerald-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 47.52%; left: 52.57%;",
+        sizes: braSizes,
+        soldout: false
+      },
+      {
+        name: "Everly Emerald Suspender",
+        image: "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Front1.jpg",
+        type: "suspender",
+        price: "90.00",
+        url: "everly-suspender-midi-emerald-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 63.48%; left: 57.71%;",
+        sizes: dressSizes
+      },
+      {
+        name: "Everly Emerald Thong",
+        image: "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Back.jpg",
+        type: "thong",
+        price: "75.00",
+        url: "everly-thong-emerald-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 70.36%; left: 57.29%;",
+        sizes: dressSizes,
+        soldout: false
+      },
+      {
+        name: "Black Bowties Suspender Stockings",
+        image: "/assets/images/products/collections/stockings/black/Bowties_Black_Stockings_Web.jpg",
+        type: "stockings",
+        price: "25.00",
+        url: "new-black-bowties-suspender-stockings",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 90.6%; left: 65.69%;",
+        sizes: stockingsSizes,
+        soldout: false
+      },
+    ]
+  },
+  {
+    image: "/assets/images/instagram-feed/insta-16.jpg",
+    title: " Pull focus in Everly. Finished with custom flower crystals made by Preciosa®, Swiss-designed embroidery and flashes of green lurex. As seen on @itsdanyoliver",
+    date: "25 MAY 2026",
+    hasLink: true,
+    author: "Honey",
+    details: [
+      {
+        name: "Everly Emerald Bra",
+        image: "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Front.jpg",
+        type: "bra",
+        price: "110.00",
+        url: "everly-underwire-balconette-emerald-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 39.23%; left: 33.08%;",
+        sizes: braSizes,
+        soldout: false
+      },
+      {
+        name: "Everly Emerald Suspender",
+        image: "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Suspender_Thong_Front1.jpg",
+        type: "suspender",
+        price: "90.00",
+        url: "everly-suspender-midi-emerald-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 51.62%; left: 20.45%;",
+        sizes: dressSizes
+      },
+      {
+        name: "Black Bowties Suspender Stockings",
+        image: "/assets/images/products/collections/stockings/black/Bowties_Black_Stockings_Web.jpg",
+        type: "stockings",
+        price: "25.00",
+        url: "new-black-bowties-suspender-stockings",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 72.8%; left: 43.01%;",
+        sizes: stockingsSizes,
+        soldout: false
+      },
+      {
+        name: "Everly Emerald Thong",
+        image: "/assets/images/products/collections/everly-emerald/EverlyEmerald_Bra_Thong_Back.jpg",
+        type: "thong",
+        price: "75.00",
+        url: "everly-thong-emerald-black",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 55.96%; left: 34.29%;",
+        sizes: dressSizes,
+        soldout: false
+      },
+    ]
+  },
+  {
+    image: "/assets/images/instagram-feed/insta-15.jpg",
+    title: "Sweet from afar, tempting up close. Take a peek at Annalise 🦋 As seen on @oliviamirah",
+    date: "21 MAY 2026",
+    hasLink: true,
+    author: "Honey",
+    details: [
+      {
+        name: "Annalise Bra",
+        image: "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Brief_Front.jpg",
+        type: "bra",
+        price: "125.00",
+        url: "annalise-underwire-plunge-sky-blue",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 45.01%; left: 53.98%;",
+        sizes: braSizes,
+        soldout: false
+      },
+      {
+        name: "Annalise Suspender",
+        image: "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Suspender_Thong_Front.jpg",
+        type: "suspender",
+        price: "100.00",
+        url: "annalise-suspender-slim-sky-blue",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 62.7%; left: 50.98%;",
+        sizes: dressSizes
+      },
+      {
+        name: "Annalise Thong",
+        image: "/assets/images/products/collections/annalise/sky-blue/Annelise_Bra_Thong_Back.jpg",
+        type: "thong",
+        price: "85.00",
+        url: "annalise-string-sky-blue",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 72.68%; left: 48.27%;",
+        sizes: dressSizes,
+        soldout: false
+      },
+      {
+        name: "Sky Blue Sheers Stay Up Stockings",
+        image: "/assets/images/products/collections/annalise/sky-blue/Annalise_SkyBlue_Stockings_Web.jpg",
+        type: "stockings",
+        price: "30.00",
+        url: "annalise-stay-ups-sky-blue",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 88.81%; left: 55.94%;",
+        sizes: stockingsSizes,
+        soldout: false
+      },
+    ]
+  },
+  {
     image: "/assets/images/instagram-feed/insta-14.jpg",
     title: "Sweet like honey. Dripping in European crystals and garlands of forget-me-nots, Elodie Romance is a sheer sensation. 🌸",
     date: "17 MAY 2026",

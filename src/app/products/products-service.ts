@@ -962,6 +962,23 @@ export class ProductsService {
       }
     }
 
+    if (sets.length === 0) {
+      for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
+
+        if (AllSubCollectionsData[i].name === collection) {
+
+          for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
+
+            let product: ProductType | undefined = AllSubCollectionsData[i].products[j]
+              .find(product => product.type === "lingerie-set" && product.colorName === colorName);
+            if (product !== undefined) {
+              sets.push(product);
+            }
+          }
+        }
+      }
+    }
+
     return new Observable<ProductType[]>(observer => {
       observer.next(sets);
     });
