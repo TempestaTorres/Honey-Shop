@@ -13,7 +13,6 @@ import { FilterService } from '../../services/filter-service';
 import { Subscription } from 'rxjs';
 import { AccordionService } from '../../services/accordion-service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductType } from '../../products/types/product-type';
 import { ProductsService } from '../../products/products-service';
 
 @Component({
@@ -76,6 +75,7 @@ export class CollectionFilterModal implements OnInit {
 
     afterNextRender(() => {
       this.route.queryParams.subscribe((params) => {
+
         if (params['colors'] && this.colours.length === 0) {
           const colors = params['colors'];
 
@@ -123,6 +123,26 @@ export class CollectionFilterModal implements OnInit {
           this.types = appliedTypes;
           this.filterTypesCount.set(appliedTypes.length);
           this.totalFiltersCount.set(appliedTypes.length + this.colours.length);
+        }
+        else if (params['search']) {
+          let q = params['search'];
+
+          if (this.productSubscription$) {
+            this.productSubscription$.unsubscribe();
+          }
+
+          const sub = this.productsService
+            .getSearchColours(q)
+            .subscribe(colours => {
+              this.availableColours.set(colours);
+            });
+          this.productSubscription$.add(sub);
+
+          const sub2 = this.productsService
+            .getSearchTypes(q).subscribe(types => {
+              this.availableTypes.set(types);
+            });
+          this.productSubscription$.add(sub2);
         }
       });
     });

@@ -6,23 +6,29 @@
   <!--  Header -->
   <div class="js-plp-collection-header">
 
-    <!-- Navigation -->
-    <div class="js-plp-nav breadcrumbs-widget js-desktop-nav">
-      <ol>
-        <li class="breadcrumb">
-          <a [routerLink]="['/']" tabindex="-1">Home</a>
-        </li>
-        <li class="breadcrumb-separator" tabindex="-1"> — </li>
-        <li class="breadcrumb">
-          <a [routerLink]="['/collections', 'all-lingerie']" tabindex="-1">Collections</a>
-        </li>
-        <li class="breadcrumb-separator" tabindex="-1"> — </li>
-        <li class="breadcrumb truncate">{{ collectionName() }}</li>
-      </ol>
-    </div>
+    @if (collectionType() !== 'search-collection') {
+
+      <!-- Navigation -->
+      <div class="js-plp-nav breadcrumbs-widget js-desktop-nav">
+        <ol>
+          <li class="breadcrumb">
+            <a [routerLink]="['/']" tabindex="-1">Home</a>
+          </li>
+          <li class="breadcrumb-separator" tabindex="-1"> — </li>
+          <li class="breadcrumb">
+            <a [routerLink]="['/collections', 'all-lingerie']" tabindex="-1">Collections</a>
+          </li>
+          <li class="breadcrumb-separator" tabindex="-1"> — </li>
+          <li class="breadcrumb truncate">{{ collectionName() }}</li>
+        </ol>
+      </div>
+
+    }
 
     <!-- Items count -->
-    <div class="collection-items-count">
+    <div
+      [class.align-start]="collectionType() === 'search-collection'"
+      class="collection-items-count">
       <span>{{ itemsCount() }}&nbsp;Products</span>
     </div>
 

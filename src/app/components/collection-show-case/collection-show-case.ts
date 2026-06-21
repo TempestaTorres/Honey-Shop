@@ -36,13 +36,17 @@ export class CollectionShowCase implements OnInit {
   private router = inject(Router);
   // Convert queryParams Observable to Signal
   private queryParams = toSignal(this.route.queryParams, {
-    initialValue: { sort: 'Featured', colors: [], types: [], page: 1 },
+    initialValue: { sort: 'Featured', colors: [], types: [], page: 1, search: '' },
   });
 
   // Computed signal for current sort (clean and reactive)
   sort = computed(() => {
     const sortParam = this.queryParams()?.['sort'] as string;
     return sortParam || 'Featured';
+  });
+  search = computed(() => {
+    const searchParam = this.queryParams()?.['search'] as string;
+    return searchParam || null;
   });
   appliedColors = computed<string[]>(() => {
     const colors = this.queryParams()?.['colors'];
@@ -127,9 +131,7 @@ export class CollectionShowCase implements OnInit {
   }
 
   private reset(): void {
-    this.collectionProducts.set(null);
-    this.collectionName.set('');
-    this.itemsCount.set(0);
+
     this.totalPages.set(0);
     this.totalPageButtons.set([]);
     this.filtersCount.set(this.appliedColors().length + this.appliedTypes().length);
@@ -149,32 +151,90 @@ export class CollectionShowCase implements OnInit {
       this.productsSubscription$.unsubscribe();
     }
 
-    this.productsSubscription$ = this.productsService
-      .getFullSortedCollection(type, sortType, page, sortColours, sortTypes)
-      .subscribe((collection) => {
-        if (collection !== null) {
-          this.collectionName.set(collection.name);
-          this.collectionProducts.set(collection.items);
-          this.totalPages.set(collection.pages);
+    if (type !== 'search-collection') {
 
-          if (this.hasBanner(collection.items)) {
-            this.itemsCount.set(collection.count - 1);
+      this.productsSubscription$ = this.productsService
+        .getFullSortedCollection(type, sortType, page, sortColours, sortTypes)
+        .subscribe((collection) => {
+          if (collection !== null) {
+            this.collectionName.set(collection.name);
+            this.collectionProducts.set(collection.items);
+            this.totalPages.set(collection.pages);
+
+            if (this.hasBanner(collection.items)) {
+              this.itemsCount.set(collection.count - 1);
+              this.banner.set(1);
+            }
+            else {
+              this.itemsCount.set(collection.count);
+              this.banner.set(0);
+            }
+
+            this.totalPageButtons.update((buttons) => {
+              for (let i: number = 0; i < collection.pages; i++) {
+                buttons[i] = i === page - 1;
+              }
+
+              return buttons;
+            });
+          }
+          else {
+            this.collectionProducts.set(null);
+            this.collectionName.set('');
+            this.itemsCount.set(0);
+          }
+        });
+
+    }
+    else {
+      this.setSearchItems(sortType, page, sortColours, sortTypes);
+    }
+
+  }
+
+  private setSearchItems(sortType: string,
+                         page: number,
+                         sortColours: string[],
+                         sortTypes: string[],): void {
+
+    const q = this.search();
+    if (q !== null) {
+
+      this.productsSubscription$ = this.productsService
+        .getSearchProducts(q,sortType,page, sortColours, sortTypes)
+      .subscribe((products) => {
+
+        if (products !== null) {
+
+          this.collectionProducts.set(products.items);
+          this.totalPages.set(products.pages);
+
+          if (this.hasBanner(products.items)) {
+            this.itemsCount.set(products.count - 1);
             this.banner.set(1);
           }
           else {
-            this.itemsCount.set(collection.count);
+            this.itemsCount.set(products.count);
             this.banner.set(0);
           }
 
           this.totalPageButtons.update((buttons) => {
-            for (let i: number = 0; i < collection.pages; i++) {
+            for (let i: number = 0; i < products.pages; i++) {
               buttons[i] = i === page - 1;
             }
 
             return buttons;
           });
+
         }
+        else {
+          this.collectionProducts.set(null);
+          this.collectionName.set('');
+          this.itemsCount.set(0);
+        }
+
       });
+    }
   }
 
   private hasBanner(items: ProductType[][]): boolean {

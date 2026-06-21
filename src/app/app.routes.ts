@@ -5,7 +5,6 @@ import { BoutiqueFinder } from './pages/boutique-finder/boutique-finder';
 import { Collections } from './pages/collections/collections';
 import { OnlineGiftVoucher } from './pages/online-gift-voucher/online-gift-voucher';
 import { TheHoneyClub } from './pages/the-honey-club/the-honey-club';
-import { Services } from './pages/services/services';
 import { TermsConditions } from './pages/terms-conditions/terms-conditions';
 import { PrivacyPolicy } from './pages/privacy-policy/privacy-policy';
 import { ShippingDelivery } from './pages/shipping-delivery/shipping-delivery';
@@ -23,6 +22,7 @@ import { Cart } from './pages/cart/cart';
 import { SignUp } from './pages/sign-up/sign-up';
 import { SignIn } from './pages/sign-in/sign-in';
 import { Wishlist } from './pages/wishlist/wishlist';
+import { Search } from './pages/search/search';
 
 export const routes: Routes = [
   {
@@ -50,8 +50,8 @@ export const routes: Routes = [
       {path: 'wishlist', component: Wishlist},
       {path: 'sign-up', component: SignUp},
       {path: 'sign-in', component: SignIn},
+      {path: 'search', component: Search},
     ]
   },
-  {path: 'services', component: Services},
   {path: 'join-honey', component: JoinHoney},
 ];

@@ -7,6 +7,7 @@ import { LoginAlertModal } from './modals/login-alert-modal/login-alert-modal';
 import { SelectSizeModal } from './modals/select-size-modal/select-size-modal';
 import { MiniCart } from './modals/mini-cart/mini-cart';
 import { SizeGuideModal } from './modals/size-guide-modal/size-guide-modal';
+import { SearchModal } from './modals/search-modal/search-modal';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { SizeGuideModal } from './modals/size-guide-modal/size-guide-modal';
     SelectSizeModal,
     MiniCart,
     SizeGuideModal,
+    SearchModal,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

@@ -1,0 +1,99 @@
+.js-search-result-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.search-suggestions, .js-search-results-show-case {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  transform: translateY(50px);
+  user-select: none;
+  pointer-events: none;
+}
+.search-suggestions.active, .js-search-results-show-case.active {
+  opacity: 1;
+  height: 100%;
+  overflow: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.suggestions-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.suggestions-nav {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.suggestions-nav a {
+  transition-duration: .3s;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  background-color: rgba(0,0,0,.08);
+  padding: .5rem .875rem;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .suggestions-nav a:hover {
+    --bg-opacity: 1;
+    background-color: rgba(227,219,208,var(--bg-opacity,1));
+    --text-opacity: 1;
+    color: rgba(51,51,51,var(--text-opacity,1));
+  }
+}
+.js-search-results-show-case {
+  display: flex;
+  flex-direction: column;
+}
+.js-search-results-show-case__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+}
+
+/*========== Media ==============*/
+@media (min-width: 1024px) {
+  .js-search-container {
+    margin-bottom: 2.5rem;
+  }
+  .suggestions-nav {
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .js-search-results-show-case__header {
+    padding-bottom: 1rem;
+  }
+}
+@media (max-width: 1023px) {
+  .js-search-container {
+    padding: .5rem 1rem;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    background-color: var(--md-bg-color);
+  }
+  .js-search-result-container {
+    min-height: calc(100% - 64px);
+    padding: 1.5rem 0;
+  }
+}

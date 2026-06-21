@@ -1,0 +1,125 @@
+<div class="js-modal-dialog modal-dialog type-slideout">
+
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  <div class="modal-dialog-content js-content-width-50">
+
+    <!-- Wrapper -->
+    <div class="modal-dialog-wrapper">
+      <div class="modal-dialog-container">
+
+        <!-- Close button -->
+        <button (click)="modalClose()" type="button" class="js-close-modal-button" aria-label="close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+            <title id="title-icon-close">Icon of close</title>
+            <g id="icon-close">
+              <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+              <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </button>
+
+        <form
+          (ngSubmit)="onSubmit()"
+          [formGroup]="searchForm"
+          novalidate
+          class="modal-dialog-form">
+
+          <!--  Search Input -->
+          <div class="js-search-container">
+
+            <div class="input-wrapper">
+
+              <label for="searchslideout" class="sr-only">Search</label>
+              <input
+                (input)="onSearch()"
+                id="searchslideout"
+                type="text"
+                formControlName="search"
+                placeholder="Search"
+                autocomplete="off"
+                autocapitalize="off"
+                aria-label="Search"
+                class="input js-input peer">
+
+              <button
+                type="submit"
+                class="js-input-button"
+                aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" class="icon">
+                  <path d="M6.70833 11.6667C9.44675 11.6667 11.6667 9.44675 11.6667 6.70833C11.6667 3.96992 9.44675 1.75 6.70833 1.75C3.96992 1.75 1.75 3.96992 1.75 6.70833C1.75 9.44675 3.96992 11.6667 6.70833 11.6667Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M10.5 10.5L12.25 12.25" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- Search results -->
+          <div class="js-search-result-container">
+
+            <!-- Suggestions -->
+            <div class="search-suggestions" [class.active]="!hasResult()">
+              <span class="js-form-heading">Top Suggestions</span>
+
+              <div class="suggestions-wrapper">
+                <nav class="suggestions-nav">
+                  <a (click)="navigateTo('bras')"
+                     class="suggestions-nav__link" tabindex="-1">Bras</a>
+                  <a (click)="navigateTo('all-lingerie')"
+                     class="suggestions-nav__link" tabindex="-1">Lingerie</a>
+                  <a (click)="navigateTo('bodysuits')"
+                     class="suggestions-nav__link" tabindex="-1">Bodysuits</a>
+                  <a (click)="navigateTo('latex-lingerie')"
+                     class="suggestions-nav__link" tabindex="-1">Latex</a>
+                </nav>
+              </div>
+
+            </div>
+
+            <!-- Results -->
+            <div class="js-search-results-show-case" [class.active]="hasResult()">
+
+              <!-- Header -->
+              <div class="js-search-results-show-case__header">
+                <!-- Heading -->
+                <div class="js-form-heading">Products&nbsp;
+                  <span class="text-muted">({{ results().length }})</span>
+                </div>
+
+                <button
+                        type="submit"
+                        aria-label="View all"
+                        class="button-link-underline">View all
+                </button>
+              </div>
+
+              <!-- Gallery -->
+              <div class="js-product-gallery-grid grid-column-2 grid-column-3 gap-y-1">
+
+                @let cards = resultCards();
+
+                @for (card of cards; track $index) {
+
+                  @if ($index < 6) {
+                    <app-collection-card
+                      [productItem]="card"
+                      class="group js-collection-card"></app-collection-card>
+                  }
+                }
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

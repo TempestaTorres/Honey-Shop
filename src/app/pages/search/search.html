@@ -1,0 +1,14 @@
+<main class="outline-none">
+  <section class="section-boxed search-result-section">
+    <div class="container">
+      <h1 class="align-center">Results for “{{ query() }}”</h1>
+    </div>
+  </section>
+
+  <!--  Collection -->
+  <section class="section-boxed">
+    <app-collection-show-case
+      class="app-widget"
+      [collectionType]="'search-collection'"></app-collection-show-case>
+  </section>
+</main>

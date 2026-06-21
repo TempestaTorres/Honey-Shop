@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Observable, of, switchMap } from 'rxjs';
 import { NewsType } from './types/news';
 import { NewsData } from './data/news-data';
 import { LingerieData } from './data/lingerie-data';
@@ -10,83 +10,244 @@ import { ProductItem, ProductType } from './types/product-type';
 import { NewArrivalData } from './data/new-arrival-data';
 import { BridalLingerieData } from './data/bridal-lingerie-data';
 import { RecommendedData } from './data/recommended-data';
-import {
-  AllCollectionsData,
-  AllSubCollectionsData,
-} from './data/collections/collections-data';
+import { AllCollectionsData, AllSubCollectionsData } from './data/collections/collections-data';
 import { CollectionsNewsType } from './types/collections-news-type';
 import { CollectionsNewsData } from './data/collections/collections-news-data';
 
 const TODAY_OFF = 70;
 const ITEMS_PER_PAGE = 80;
 export interface SortedPageType {
-  name: string,
-  count: number,
-  pages: number,
-  items: Array<ProductType[]>
+  name: string;
+  count: number;
+  pages: number;
+  items: Array<ProductType[]>;
 }
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-
   private readonly todayIsOff: boolean = true;
 
   public isOff(): boolean {
     return this.todayIsOff;
   }
 
-  public getCollectionColours(collectionUrl: string): Observable<{colorName: string, colorClass: string}[]> {
+  public search(query: string) {
+    const lowerTerm = query.toLowerCase();
 
-    let colors: {colorName: string; colorClass: string}[] = [];
+    return new Observable<ProductType[]>((observer) => {
+      observer.next([]);
+    }).pipe(
+      debounceTime(300), // Wait 300ms after user stops typing
+      distinctUntilChanged(), // Only emit if value changed
+      switchMap((results) => {
+
+        for (let i: number = 0; i < AllCollectionsData.length; i++) {
+          let items = AllCollectionsData[i].products;
+
+          for (let j = 0; j < items.length; j++) {
+
+            let item: ProductType[] = items[j].filter((product) => {
+
+              let str: string = product.name.toLowerCase() + ' ' + product.description.toLowerCase();
+              return str.includes(lowerTerm);
+
+            }
+            );
+
+            item = item.filter((product: ProductType) => {
+
+              if (product.type === 'video') return false;
+
+              for (let k = 0; k < results.length; k++) {
+                if (results[k].url === product.url) {
+                  return false;
+                }
+              }
+              return true;
+            });
+
+            results = results.concat(item);
+          }
+        }
+
+        return of(results);
+      }),
+    );
+  }
+
+  public getSearchProducts(
+    query: string,
+    sortType: string,
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType | null> {
+
+    let result: SortedPageType = {
+      name: '',
+      count: 0,
+      pages: 0,
+      items: [],
+    };
+
+    return new Observable<SortedPageType | null>((observer) => {
+      observer.next(result);
+    }).pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap((result) => {
+
+        let items: Array<ProductType[]> = this.searchSort(query);
+
+        if (colors.length > 0) {
+          items = this.sortByColors(items, colors);
+        }
+        if (types.length > 0) {
+          items = this.sortByTypes(items, types);
+        }
+        if (sortType === 'price-asc') {
+          items = items.sort((a, b) => {
+            if (a[0].price && b[0].price) return a[0].price - b[0].price;
+            else return 0;
+          });
+        }
+        else if (sortType === 'price-desc') {
+          items = items.sort((a, b) => {
+            if (a[0].price && b[0].price) return b[0].price - a[0].price;
+            else return 0;
+          });
+        }
+
+        let pages: number = Math.ceil(items.length / ITEMS_PER_PAGE);
+
+        if (page > pages) page = pages;
+
+        let pageItems: Array<ProductType[]> = [];
+
+        if (items.length > 0) {
+          let offset: number = ITEMS_PER_PAGE * (page - 1);
+          let endOffset: number = page * ITEMS_PER_PAGE;
+
+          for (let j: number = offset; j < items.length && j < endOffset; j++) {
+            pageItems.push(items[j]);
+          }
+        }
+
+        if (result !== null) {
+          result.count = items.length;
+          result.pages = pages;
+          result.items = pageItems;
+        }
+
+        return of(result);
+      })
+    );
+
+  }
+
+  private searchSort(query: string): Array<ProductType[]> {
+    const lowerTerm = query.toLowerCase();
+
+    let items: Array<ProductType[]> = [];
+
+    for (let i: number = 0; i < AllCollectionsData.length; i++) {
+
+      let products = [...AllCollectionsData[i].products];
+
+      products = products.filter((product) => product[0].type !== 'video');
+
+      let sorted: ProductType[][] = [];
+
+      for (let j = 0; j < products.length; j++) {
+
+        let item: ProductType[] = products[j].filter((product) => {
+
+            let str: string = product.name.toLowerCase() + ' ' + product.description.toLowerCase();
+            return str.includes(lowerTerm);
+
+          }
+        );
+
+        if (item.length !== 0)
+          sorted.push(item);
+      }
+
+      items = items.concat(sorted);
+
+    }
+    return items;
+  }
+
+  public getSearchColours(
+    query: string,
+  ): Observable<{ colorName: string; colorClass: string }[]> {
+
+    let searchColors: { colorName: string; colorClass: string }[] = [];
+    let items: Array<ProductType[]> = this.searchSort(query);
+
+    for (let i: number = 0; i < items.length; i++) {
+      let item: ProductType[] = items[i];
+
+      for (let j: number = 0; j < item.length; j++) {
+
+          let colorName: string = item[j].colorName;
+
+          let found = searchColors.find((color) => color.colorName === colorName);
+
+          if (found === undefined) {
+            searchColors.push({ colorName: colorName, colorClass: item[j].colorClass });
+          }
+
+      }
+    }
+
+    return new Observable((observer) => {
+      observer.next(searchColors);
+    });
+  }
+
+  public getCollectionColours(
+    collectionUrl: string,
+  ): Observable<{ colorName: string; colorClass: string }[]> {
+    let colors: { colorName: string; colorClass: string }[] = [];
 
     if (collectionUrl === 'all-lingerie') {
       colors = this.getColours();
-    }
-    else {
+    } else {
       colors = this.getColours(collectionUrl);
     }
 
-    return new Observable(observer => {
+    return new Observable((observer) => {
       observer.next(colors);
     });
   }
 
-  private getColours(url: string | null = null): {colorName: string; colorClass: string}[] {
-    let collectionColors: {colorName: string; colorClass: string}[] = [];
+  private getColours(url: string | null = null): { colorName: string; colorClass: string }[] {
+    let collectionColors: { colorName: string; colorClass: string }[] = [];
 
     if (url === null || url === '') {
-
       for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
         for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
-
           let colors: ProductType[] = AllCollectionsData[i].products[j];
 
           for (let k: number = 0; k < colors.length; k++) {
-
             if (colors[k].type !== 'video') {
-
               let colorName: string = colors[k].colorName;
 
-              let found = collectionColors
-                .find(color => color.colorName === colorName);
+              let found = collectionColors.find((color) => color.colorName === colorName);
 
               if (found === undefined) {
-                collectionColors.push({colorName: colorName, colorClass: colors[k].colorClass});
+                collectionColors.push({ colorName: colorName, colorClass: colors[k].colorClass });
               }
             }
-
           }
         }
       }
-    }
-    else {
-
+    } else {
       let items: Array<ProductType[]> = [];
 
       for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
         if (AllCollectionsData[i].url === url) {
           items = AllCollectionsData[i].products;
           break;
@@ -94,9 +255,7 @@ export class ProductsService {
       }
 
       if (items.length === 0) {
-
         for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
           if (AllSubCollectionsData[i].url === url) {
             items = AllSubCollectionsData[i].products;
             break;
@@ -105,37 +264,51 @@ export class ProductsService {
       }
 
       for (let i: number = 0; i < items.length; i++) {
-
         let colors: ProductType[] = items[i];
 
         for (let k: number = 0; k < colors.length; k++) {
-
           if (colors[k].type !== 'video') {
-
             let colorName: string = colors[k].colorName;
 
-            let found = collectionColors
-              .find(color => color.colorName === colorName);
+            let found = collectionColors.find((color) => color.colorName === colorName);
 
             if (found === undefined) {
-              collectionColors.push({colorName: colorName, colorClass: colors[k].colorClass});
+              collectionColors.push({ colorName: colorName, colorClass: colors[k].colorClass });
             }
           }
-
         }
       }
-
     }
 
     return collectionColors;
   }
 
-  public getCollectionProductTypes(collectionUrl: string): Observable<string[]> {
-
+  public getSearchTypes(query: string): Observable<string[]> {
+    let items: Array<ProductType[]> = this.searchSort(query);
     let types: string[] = [];
 
-    if (collectionUrl === "all-lingerie") {
+    for (let i: number = 0; i < items.length; i++) {
+      let item: ProductType[] = items[i];
+      let type = item[0].type;
 
+      if (type) {
+        let found: boolean = types.some((value) => value === type);
+        if (!found) {
+          types.push(type);
+        }
+      }
+
+    }
+
+    return new Observable<string[]>((observer) => {
+      observer.next(types);
+    });
+  }
+
+  public getCollectionProductTypes(collectionUrl: string): Observable<string[]> {
+    let types: string[] = [];
+
+    if (collectionUrl === 'all-lingerie') {
       let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
 
       for (let i: number = 1; i < AllCollectionsData.length; i++) {
@@ -143,95 +316,79 @@ export class ProductsService {
       }
 
       for (let j: number = 0; j < items.length; j++) {
-
         let product = items[j];
         let type = product[0].type;
         if (type && type !== 'lingerie-set' && type !== 'video') {
-
-          let found: boolean = types.some(value => value === type);
+          let found: boolean = types.some((value) => value === type);
           if (!found) {
             types.push(type);
           }
-
         }
       }
 
-      return new Observable<string[]>(observer => {
+      return new Observable<string[]>((observer) => {
         observer.next(types);
       });
     }
 
     if (collectionUrl.includes('collection')) {
-
       for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
         if (AllCollectionsData[i].url === collectionUrl) {
           for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
-
             let product = [...AllCollectionsData[i].products[j]];
             let type = product[0].type;
 
             if (type && type !== 'lingerie-set' && type !== 'video') {
-
-              let found: boolean = types.some(value => value === type);
+              let found: boolean = types.some((value) => value === type);
               if (!found) {
                 types.push(type);
               }
-
             }
           }
-          return new Observable<string[]>(observer => {
+          return new Observable<string[]>((observer) => {
             observer.next(types);
           });
         }
       }
-
     }
 
     for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
       if (AllSubCollectionsData[i].url === collectionUrl) {
         for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
-
           let product = [...AllSubCollectionsData[i].products[j]];
           let type = product[0].type;
 
           if (type !== undefined && type !== 'video') {
-            let found: boolean = types.some(value => value === type);
+            let found: boolean = types.some((value) => value === type);
             if (!found) {
               types.push(type);
             }
           }
         }
-        return new Observable<string[]>(observer => {
+        return new Observable<string[]>((observer) => {
           observer.next(types);
         });
       }
     }
 
-    return new Observable<string[]>(observer => {
+    return new Observable<string[]>((observer) => {
       observer.next(types);
     });
   }
 
   public getCollectionInfoHeader(url: string): Observable<string[]> {
-
     let description: string[] = [];
 
     if (url.includes('collection')) {
-
       for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
         if (AllCollectionsData[i].url === url) {
           description[0] = AllCollectionsData[i].name;
           description[1] = AllCollectionsData[i].description;
           break;
         }
       }
-    }
-    else {
+    } else {
       for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
         if (AllSubCollectionsData[i].url === url) {
           description[0] = AllSubCollectionsData[i].name;
           description[1] = AllSubCollectionsData[i].description;
@@ -240,51 +397,51 @@ export class ProductsService {
       }
     }
 
-    return new Observable<string[]>(observer => {
+    return new Observable<string[]>((observer) => {
       observer.next(description);
     });
   }
 
   public getCollection(url: string): Observable<Array<ProductType[]> | null> {
-
     if (url.includes('collection')) {
       for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
         if (AllCollectionsData[i].url === url) {
+          let collection = AllCollectionsData[i].products.filter(
+            (item) => item[0].type !== 'video',
+          );
 
-          let collection = AllCollectionsData[i].products
-            .filter(item => item[0].type !== 'video');
-
-          return new Observable<Array<ProductType[]> | null>(observer => {
+          return new Observable<Array<ProductType[]> | null>((observer) => {
             observer.next(collection);
           });
         }
       }
-    }
-    else {
+    } else {
       for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
         if (AllSubCollectionsData[i].url === url) {
+          let collection = AllSubCollectionsData[i].products.filter(
+            (item) => item[0].type !== 'video',
+          );
 
-          let collection = AllSubCollectionsData[i].products
-            .filter(item => item[0].type !== 'video');
-
-          return new Observable<Array<ProductType[]> | null>(observer => {
+          return new Observable<Array<ProductType[]> | null>((observer) => {
             observer.next(collection);
           });
         }
       }
     }
 
-    return new Observable<Array<ProductType[]> | null>(observer => {
+    return new Observable<Array<ProductType[]> | null>((observer) => {
       observer.next(null);
     });
   }
 
-  public getFullSortedCollection(url: string, sortType: string, page: number,
-                                 colors: string[] = [], types: string[] = []): Observable<SortedPageType | null> {
-
-    if (url === "all-lingerie") {
+  public getFullSortedCollection(
+    url: string,
+    sortType: string,
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType | null> {
+    if (url === 'all-lingerie') {
       return this.getFullSortedCollectionAll(sortType, page, colors, types);
     }
     if (sortType === 'Featured') {
@@ -297,13 +454,17 @@ export class ProductsService {
       return this.getFullPriceDescCollection(url, page, colors, types);
     }
 
-    return new Observable<SortedPageType | null>(observer => {
+    return new Observable<SortedPageType | null>((observer) => {
       observer.next(null);
     });
   }
 
-  public getFullSortedCollectionAll(sortType: string, page: number, colors: string[] = [], types: string[] = []): Observable<SortedPageType | null> {
-
+  public getFullSortedCollectionAll(
+    sortType: string,
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType | null> {
     if (sortType === 'Featured') {
       return this.getFullCollectionAll(page, colors, types);
     }
@@ -311,22 +472,24 @@ export class ProductsService {
       return this.getFullPriceAscCollectionAll(page, colors, types);
     }
     if (sortType === 'price-desc') {
-     return this.getFullPriceDescCollectionAll(page, colors, types);
+      return this.getFullPriceDescCollectionAll(page, colors, types);
     }
 
-    return new Observable<SortedPageType | null>(observer => {
+    return new Observable<SortedPageType | null>((observer) => {
       observer.next(null);
     });
   }
 
-  public getFullCollectionAll(page: number, colors: string[] = [], types: string[] = []): Observable<SortedPageType> {
-
+  public getFullCollectionAll(
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType> {
     let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
 
     for (let i: number = 1; i < AllCollectionsData.length; i++) {
-
       let products = [...AllCollectionsData[i].products];
-      products = products.filter(product => product[0].type !== 'video');
+      products = products.filter((product) => product[0].type !== 'video');
 
       items = items.concat(products);
     }
@@ -344,7 +507,6 @@ export class ProductsService {
     let pageItems: Array<ProductType[]> = [];
 
     if (items.length > 0) {
-
       let offset: number = ITEMS_PER_PAGE * (page - 1);
       let endOffset: number = page * ITEMS_PER_PAGE;
 
@@ -354,29 +516,29 @@ export class ProductsService {
     }
 
     let result: SortedPageType = {
-      name: "ALL LINGERIE",
+      name: 'ALL LINGERIE',
       count: items.length,
       pages: pages,
-      items: pageItems
-    }
+      items: pageItems,
+    };
 
-    return new Observable<SortedPageType>(observer => {
+    return new Observable<SortedPageType>((observer) => {
       observer.next(result);
     });
   }
 
-  public getFullPriceAscCollectionAll(page: number, colors: string[] = [], types: string[] = []): Observable<SortedPageType> {
-
-
+  public getFullPriceAscCollectionAll(
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType> {
     let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
 
     for (let i: number = 1; i < AllCollectionsData.length; i++) {
-
       let products = [...AllCollectionsData[i].products];
-      products = products.filter(product => product[0].type !== 'video');
+      products = products.filter((product) => product[0].type !== 'video');
 
       items = items.concat(products);
-
     }
 
     if (colors.length > 0) {
@@ -387,8 +549,7 @@ export class ProductsService {
     }
 
     items = items.sort((a, b) => {
-      if (a[0].price && b[0].price)
-        return a[0].price - b[0].price;
+      if (a[0].price && b[0].price) return a[0].price - b[0].price;
       else return 0;
     });
 
@@ -398,7 +559,6 @@ export class ProductsService {
     if (page > pages) page = pages;
 
     if (items.length > 0) {
-
       let offset: number = ITEMS_PER_PAGE * (page - 1);
       let endOffset: number = page * ITEMS_PER_PAGE;
 
@@ -408,28 +568,25 @@ export class ProductsService {
     }
 
     let result: SortedPageType = {
-      name: "ALL LINGERIE",
+      name: 'ALL LINGERIE',
       count: items.length,
       pages: pages,
-      items: pageItems
-    }
+      items: pageItems,
+    };
 
-    return new Observable<SortedPageType>(observer => {
+    return new Observable<SortedPageType>((observer) => {
       observer.next(result);
     });
-
   }
 
   private sortByColors(items: Array<ProductType[]>, colors: string[]): Array<ProductType[]> {
-
     let filteredItems: Array<ProductType[]> = [];
 
     for (let j = 0; j < colors.length; j++) {
       let color = colors[j];
 
       for (let k = 0; k < items.length; k++) {
-
-        let fItem: ProductType[]  = items[k].filter(item => {
+        let fItem: ProductType[] = items[k].filter((item) => {
           return item.colorName === color;
         });
         if (fItem.length > 0) {
@@ -442,15 +599,13 @@ export class ProductsService {
   }
 
   private sortByTypes(items: Array<ProductType[]>, types: string[]): Array<ProductType[]> {
-
     let filteredItems: Array<ProductType[]> = [];
 
     for (let j = 0; j < types.length; j++) {
       let type = types[j];
 
       for (let k = 0; k < items.length; k++) {
-
-        let fItem: ProductType[]  = items[k].filter(item => {
+        let fItem: ProductType[] = items[k].filter((item) => {
           return item.type === type;
         });
         if (fItem.length > 0) {
@@ -462,14 +617,16 @@ export class ProductsService {
     return filteredItems;
   }
 
-  public getFullPriceDescCollectionAll(page: number, colors: string[] = [], types: string[] = []): Observable<SortedPageType> {
-
+  public getFullPriceDescCollectionAll(
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType> {
     let items: Array<ProductType[]> = [...AllCollectionsData[0].products];
 
     for (let i: number = 1; i < AllCollectionsData.length; i++) {
-
       let products = [...AllCollectionsData[i].products];
-      products = products.filter(product => product[0].type !== 'video');
+      products = products.filter((product) => product[0].type !== 'video');
 
       items = items.concat(products);
     }
@@ -482,8 +639,7 @@ export class ProductsService {
     }
 
     items = items.sort((a, b) => {
-      if (a[0].price && b[0].price)
-        return b[0].price - a[0].price;
+      if (a[0].price && b[0].price) return b[0].price - a[0].price;
       else return 0;
     });
 
@@ -502,27 +658,29 @@ export class ProductsService {
     }
 
     let result: SortedPageType = {
-      name: "ALL LINGERIE",
+      name: 'ALL LINGERIE',
       count: items.length,
       pages: pages,
-      items: pageItems
-    }
+      items: pageItems,
+    };
 
-    return new Observable<SortedPageType>(observer => {
+    return new Observable<SortedPageType>((observer) => {
       observer.next(result);
     });
-
   }
 
-  public getFullPriceAscCollection(url: string, page: number, colors: string[] = [], types: string[] = []): Observable<SortedPageType | null> {
-
+  public getFullPriceAscCollection(
+    url: string,
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType | null> {
     if (!url.includes('collection')) {
       return this.getFullPriceAscSubCollection(url, page, colors);
     }
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
       if (AllCollectionsData[i].url === url) {
-
         let items = [...AllCollectionsData[i].products];
 
         if (colors.length > 0) {
@@ -533,8 +691,7 @@ export class ProductsService {
         }
 
         items = items.sort((a, b) => {
-          if (a[0].price && b[0].price)
-            return a[0].price - b[0].price;
+          if (a[0].price && b[0].price) return a[0].price - b[0].price;
           else return 0;
         });
 
@@ -557,26 +714,27 @@ export class ProductsService {
           name: AllCollectionsData[i].name,
           count: items.length,
           pages: pages,
-          items: pageItems
-        }
+          items: pageItems,
+        };
 
-        return new Observable<SortedPageType | null>(observer => {
+        return new Observable<SortedPageType | null>((observer) => {
           observer.next(result);
         });
       }
     }
 
-    return new Observable<SortedPageType | null>(observer => {
+    return new Observable<SortedPageType | null>((observer) => {
       observer.next(null);
     });
-
   }
 
-  public getFullPriceAscSubCollection(url: string, page: number, colors: string[] = []): Observable<SortedPageType | null> {
-
+  public getFullPriceAscSubCollection(
+    url: string,
+    page: number,
+    colors: string[] = [],
+  ): Observable<SortedPageType | null> {
     for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
       if (AllSubCollectionsData[i].url === url) {
-
         let items = [...AllSubCollectionsData[i].products];
 
         if (colors.length > 0) {
@@ -584,8 +742,7 @@ export class ProductsService {
         }
 
         items = items.sort((a, b) => {
-          if (a[0].price && b[0].price)
-            return a[0].price - b[0].price;
+          if (a[0].price && b[0].price) return a[0].price - b[0].price;
           else return 0;
         });
 
@@ -608,29 +765,32 @@ export class ProductsService {
           name: AllSubCollectionsData[i].name,
           count: items.length,
           pages: pages,
-          items: pageItems
-        }
+          items: pageItems,
+        };
 
-        return new Observable<SortedPageType | null>(observer => {
+        return new Observable<SortedPageType | null>((observer) => {
           observer.next(result);
         });
       }
     }
 
-    return new Observable<SortedPageType | null>(observer => {
+    return new Observable<SortedPageType | null>((observer) => {
       observer.next(null);
     });
   }
 
-  public getFullPriceDescCollection(url: string, page: number, colors: string[] = [], types: string[] = []): Observable<SortedPageType | null> {
-
+  public getFullPriceDescCollection(
+    url: string,
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType | null> {
     if (!url.includes('collection')) {
       return this.getFullPriceDescSubCollection(url, page, colors);
     }
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
       if (AllCollectionsData[i].url === url) {
-
         let items = [...AllCollectionsData[i].products];
 
         if (colors.length > 0) {
@@ -641,8 +801,7 @@ export class ProductsService {
         }
 
         items = items.sort((a, b) => {
-          if (a[0].price && b[0].price)
-            return b[0].price - a[0].price;
+          if (a[0].price && b[0].price) return b[0].price - a[0].price;
           else return 0;
         });
 
@@ -665,26 +824,27 @@ export class ProductsService {
           name: AllCollectionsData[i].name,
           count: items.length,
           pages: pages,
-          items: pageItems
-        }
+          items: pageItems,
+        };
 
-        return new Observable<SortedPageType | null>(observer => {
+        return new Observable<SortedPageType | null>((observer) => {
           observer.next(result);
         });
       }
     }
 
-    return new Observable<SortedPageType | null>(observer => {
+    return new Observable<SortedPageType | null>((observer) => {
       observer.next(null);
     });
-
   }
 
-  public getFullPriceDescSubCollection(url: string, page: number, colors: string[] = []): Observable<SortedPageType | null> {
-
+  public getFullPriceDescSubCollection(
+    url: string,
+    page: number,
+    colors: string[] = [],
+  ): Observable<SortedPageType | null> {
     for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
       if (AllSubCollectionsData[i].url === url) {
-
         let items = [...AllSubCollectionsData[i].products];
 
         if (colors.length > 0) {
@@ -692,8 +852,7 @@ export class ProductsService {
         }
 
         items = items.sort((a, b) => {
-          if (a[0].price && b[0].price)
-            return b[0].price - a[0].price;
+          if (a[0].price && b[0].price) return b[0].price - a[0].price;
           else return 0;
         });
 
@@ -716,30 +875,32 @@ export class ProductsService {
           name: AllSubCollectionsData[i].name,
           count: items.length,
           pages: pages,
-          items: pageItems
-        }
+          items: pageItems,
+        };
 
-        return new Observable<SortedPageType | null>(observer => {
+        return new Observable<SortedPageType | null>((observer) => {
           observer.next(result);
         });
       }
     }
 
-    return new Observable<SortedPageType | null>(observer => {
+    return new Observable<SortedPageType | null>((observer) => {
       observer.next(null);
     });
   }
 
-  public getFullCollection(url: string, page: number, colors: string[] = [], types: string[] = []): Observable<SortedPageType | null> {
-
+  public getFullCollection(
+    url: string,
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType | null> {
     if (!url.includes('collection')) {
-      return this.getFullSubCollection(url, page, colors);
+      return this.getFullSubCollection(url, page, colors, types);
     }
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
       if (AllCollectionsData[i].url === url) {
-
         let items: Array<ProductType[]> = [...AllCollectionsData[i].products];
 
         if (colors.length > 0) {
@@ -768,31 +929,35 @@ export class ProductsService {
           name: AllCollectionsData[i].name,
           count: items.length,
           pages: pages,
-          items: pageItems
-        }
+          items: pageItems,
+        };
 
-        return new Observable<SortedPageType | null>(observer => {
+        return new Observable<SortedPageType | null>((observer) => {
           observer.next(result);
         });
-
       }
     }
 
-    return new Observable<SortedPageType | null>(observer => {
+    return new Observable<SortedPageType | null>((observer) => {
       observer.next(null);
     });
   }
 
-  public getFullSubCollection(url: string, page: number, colors: string[] = []): Observable<SortedPageType | null> {
-
+  public getFullSubCollection(
+    url: string,
+    page: number,
+    colors: string[] = [],
+    types: string[] = [],
+  ): Observable<SortedPageType | null> {
     for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
       if (AllSubCollectionsData[i].url === url) {
-
         let items: Array<ProductType[]> = [...AllSubCollectionsData[i].products];
 
         if (colors.length > 0) {
           items = this.sortByColors(items, colors);
+        }
+        if (types.length > 0) {
+          items = this.sortByTypes(items, types);
         }
 
         let pageItems: Array<ProductType[]> = [];
@@ -814,36 +979,34 @@ export class ProductsService {
           name: AllSubCollectionsData[i].name,
           count: items.length,
           pages: pages,
-          items: pageItems
-        }
+          items: pageItems,
+        };
 
-        return new Observable<SortedPageType | null>(observer => {
+        return new Observable<SortedPageType | null>((observer) => {
           observer.next(result);
         });
-
       }
     }
 
-    return new Observable<SortedPageType | null>(observer => {
+    return new Observable<SortedPageType | null>((observer) => {
       observer.next(null);
     });
   }
 
-  public getCollectionItem(collectionUrl: string, itemUrl: string): Observable<ProductType[] | null> {
-
+  public getCollectionItem(
+    collectionUrl: string,
+    itemUrl: string,
+  ): Observable<ProductType[] | null> {
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
       for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
-
         let item: ProductType[] = [...AllCollectionsData[i].products[j]];
 
-        let product = item.find((item) => item.collection === collectionUrl
-        && item.url === itemUrl);
-
+        let product = item.find(
+          (item) => item.collection === collectionUrl && item.url === itemUrl,
+        );
 
         if (product !== undefined) {
-
-          return new Observable<ProductType[]>(observer => {
+          return new Observable<ProductType[]>((observer) => {
             observer.next(item);
           });
         }
@@ -851,73 +1014,63 @@ export class ProductsService {
     }
 
     for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
       for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
-
         let item: ProductType[] = [...AllSubCollectionsData[i].products[j]];
 
-        let product = item.find((item) => item.collection === collectionUrl
-          && item.url === itemUrl);
-
+        let product = item.find(
+          (item) => item.collection === collectionUrl && item.url === itemUrl,
+        );
 
         if (product !== undefined) {
-
-          return new Observable<ProductType[]>(observer => {
+          return new Observable<ProductType[]>((observer) => {
             observer.next(item);
           });
         }
       }
     }
 
-    return new Observable<ProductType[] | null>(observer => {
+    return new Observable<ProductType[] | null>((observer) => {
       observer.next(null);
     });
-
   }
 
-  public getCollectionItemByUrl(collectionName: string, url: string): Observable<ProductType[] | null> {
-
+  public getCollectionItemByUrl(
+    collectionName: string,
+    url: string,
+  ): Observable<ProductType[] | null> {
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
       for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
-
         let item: ProductType[] = [...AllCollectionsData[i].products[j]];
 
-        let product = item.find((item) => item.name === collectionName
-        && item.url === url);
-
+        let product = item.find((item) => item.name === collectionName && item.url === url);
 
         if (product !== undefined) {
-
-          return new Observable<ProductType[]>(observer => {
+          return new Observable<ProductType[]>((observer) => {
             observer.next(item);
           });
         }
       }
     }
 
-    return new Observable<ProductType[] | null>(observer => {
+    return new Observable<ProductType[] | null>((observer) => {
       observer.next(null);
     });
-
   }
 
   public getShopProductSet(collection: string, url: string): Observable<ProductType[]> {
     let set: ProductType[] = [];
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
       if (AllCollectionsData[i].name === collection) {
-
         for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
-
-          let product: ProductType | undefined = AllCollectionsData[i].products[j]
-            .find(product => product.type === "lingerie-set" && product.url === url);
+          let product: ProductType | undefined = AllCollectionsData[i].products[j].find(
+            (product) => product.type === 'lingerie-set' && product.url === url,
+          );
 
           if (product !== undefined && product.setItems !== undefined) {
             set = this.getSet(product.setItems);
 
-            return new Observable<ProductType[]>(observer => {
+            return new Observable<ProductType[]>((observer) => {
               observer.next(set);
             });
           }
@@ -925,7 +1078,7 @@ export class ProductsService {
       }
     }
 
-    return new Observable<ProductType[]>(observer => {
+    return new Observable<ProductType[]>((observer) => {
       observer.next(set);
     });
   }
@@ -934,7 +1087,6 @@ export class ProductsService {
     let set: ProductType[] = [];
 
     for (let i: number = 0; i < sets.length; i++) {
-
       let item = this.getProduct(sets[i]);
       if (item !== null) {
         set.push(item);
@@ -944,17 +1096,14 @@ export class ProductsService {
   }
 
   public getShopProductSets(collection: string, colorName: string): Observable<ProductType[]> {
-
     let sets: ProductType[] = [];
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
       if (AllCollectionsData[i].name === collection) {
-
         for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
-
-          let product: ProductType | undefined = AllCollectionsData[i].products[j]
-            .find(product => product.type === "lingerie-set" && product.colorName === colorName);
+          let product: ProductType | undefined = AllCollectionsData[i].products[j].find(
+            (product) => product.type === 'lingerie-set' && product.colorName === colorName,
+          );
           if (product !== undefined) {
             sets.push(product);
           }
@@ -964,13 +1113,11 @@ export class ProductsService {
 
     if (sets.length === 0) {
       for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
         if (AllSubCollectionsData[i].name === collection) {
-
           for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
-
-            let product: ProductType | undefined = AllSubCollectionsData[i].products[j]
-              .find(product => product.type === "lingerie-set" && product.colorName === colorName);
+            let product: ProductType | undefined = AllSubCollectionsData[i].products[j].find(
+              (product) => product.type === 'lingerie-set' && product.colorName === colorName,
+            );
             if (product !== undefined) {
               sets.push(product);
             }
@@ -979,92 +1126,77 @@ export class ProductsService {
       }
     }
 
-    return new Observable<ProductType[]>(observer => {
+    return new Observable<ProductType[]>((observer) => {
       observer.next(sets);
     });
   }
 
-  public getCompleteLook(collectionUrl: string, productUrl: string, productType: string, colorName: string): Observable<Array<ProductType[]>> {
+  public getCompleteLook(
+    collectionUrl: string,
+    productUrl: string,
+    productType: string,
+    colorName: string,
+  ): Observable<Array<ProductType[]>> {
     let set: Array<ProductType[]> = [];
 
     if (collectionUrl.includes('collection')) {
-
       for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
         if (AllCollectionsData[i].url === collectionUrl) {
-
           const items: Array<ProductType[]> = [...AllCollectionsData[i].products];
 
           if (items.length > 1) {
-
             for (let j: number = 0; j < items.length; j++) {
-
               let collectionSet: ProductType[] = items[j];
 
               if (collectionSet[0].type !== productType && collectionSet[0].type !== 'video') {
-
                 set.push(collectionSet);
               }
             }
-
           }
-
         }
       }
-    }
-    else {
+    } else {
       for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
         if (AllSubCollectionsData[i].url === collectionUrl) {
-
           const items: Array<ProductType[]> = [...AllSubCollectionsData[i].products];
 
           if (items.length > 1) {
-
             for (let j: number = 0; j < items.length; j++) {
-
               let collectionSet: ProductType[] = items[j];
 
               if (collectionSet[0].type !== 'video') {
-
                 let found: boolean = collectionSet.some((item) => item.url === productUrl);
 
                 if (!found) {
                   set.push(collectionSet);
-                }
-                else if (found && collectionSet.length > 1) {
-                  let filtered = collectionSet
-                    .filter((item) => item.colorName !== colorName);
+                } else if (found && collectionSet.length > 1) {
+                  let filtered = collectionSet.filter((item) => item.colorName !== colorName);
 
                   if (filtered.length > 0) {
                     set.push(filtered);
                   }
                 }
               }
-
             }
-
           }
-
         }
       }
     }
 
-
-    return new Observable<Array<ProductType[]>>(observer => {
+    return new Observable<Array<ProductType[]>>((observer) => {
       observer.next(set);
     });
   }
 
   public getShopProduct(url: string): Observable<ProductType | null> {
-
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
       for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
-
-        let product: ProductType | undefined = AllCollectionsData[i].products[j].find(product => product.url === url);
+        let product: ProductType | undefined = AllCollectionsData[i].products[j].find(
+          (product) => product.url === url,
+        );
 
         if (product) {
-          return new Observable<ProductType | null>(observer => {
+          return new Observable<ProductType | null>((observer) => {
             observer.next(product);
           });
         }
@@ -1072,33 +1204,32 @@ export class ProductsService {
     }
 
     for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
       for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
-
-        let product: ProductType | undefined = AllSubCollectionsData[i].products[j].find(product => product.url === url);
+        let product: ProductType | undefined = AllSubCollectionsData[i].products[j].find(
+          (product) => product.url === url,
+        );
 
         if (product) {
-          return new Observable<ProductType | null>(observer => {
+          return new Observable<ProductType | null>((observer) => {
             observer.next(product);
           });
         }
       }
     }
 
-    return new Observable<ProductType | null>(observer => {
+    return new Observable<ProductType | null>((observer) => {
       observer.next(null);
-    })
+    });
   }
 
   private getProduct(url: string): ProductType | null {
-
     let product: ProductType | null = null;
 
     for (let i: number = 0; i < AllCollectionsData.length; i++) {
-
       for (let j: number = 0; j < AllCollectionsData[i].products.length; j++) {
-
-        let item: ProductType | undefined = AllCollectionsData[i].products[j].find(product => product.url === url);
+        let item: ProductType | undefined = AllCollectionsData[i].products[j].find(
+          (product) => product.url === url,
+        );
 
         if (item !== undefined) {
           return item;
@@ -1107,12 +1238,11 @@ export class ProductsService {
     }
 
     if (product === null) {
-
       for (let i: number = 0; i < AllSubCollectionsData.length; i++) {
-
         for (let j: number = 0; j < AllSubCollectionsData[i].products.length; j++) {
-
-          let item: ProductType | undefined = AllSubCollectionsData[i].products[j].find(product => product.url === url);
+          let item: ProductType | undefined = AllSubCollectionsData[i].products[j].find(
+            (product) => product.url === url,
+          );
 
           if (item !== undefined) {
             return item;
@@ -1125,64 +1255,55 @@ export class ProductsService {
   }
 
   public getNewArrivals(): Observable<ProductItem[]> {
-
-    return new Observable<ProductItem[]>(observer => {
+    return new Observable<ProductItem[]>((observer) => {
       observer.next(NewArrivalData);
     });
   }
 
   public getBridalLingerie(): Observable<ProductItem[]> {
-
-    return new Observable<ProductItem[]>(observer => {
+    return new Observable<ProductItem[]>((observer) => {
       observer.next(BridalLingerieData);
     });
   }
 
   public getCollectionsNews(): Observable<CollectionsNewsType[]> {
-
-    return new Observable<CollectionsNewsType[]>(observer => {
+    return new Observable<CollectionsNewsType[]>((observer) => {
       observer.next(CollectionsNewsData);
     });
   }
 
   public getNews(): Observable<NewsType[]> {
-
-    return new Observable<NewsType[]>(observer => {
+    return new Observable<NewsType[]>((observer) => {
       observer.next(NewsData);
     });
   }
 
   public getRecommended(): Observable<ProductItem[]> {
-
-    return new Observable<ProductItem[]>(observer => {
+    return new Observable<ProductItem[]>((observer) => {
       observer.next(RecommendedData);
     });
   }
 
   public getNewsLingerie(): Observable<NewsType[]> {
-
-    return new Observable<NewsType[]>(observer => {
+    return new Observable<NewsType[]>((observer) => {
       observer.next(LingerieData);
     });
   }
 
   public getNewsCollections(): Observable<NewsType[]> {
-
-    return new Observable<NewsType[]>(observer => {
+    return new Observable<NewsType[]>((observer) => {
       observer.next(CollectionsData);
     });
   }
 
   public getNewsAccessories(): Observable<NewsType[]> {
-
-    return new Observable<NewsType[]>(observer => {
+    return new Observable<NewsType[]>((observer) => {
       observer.next(AccessoriesData);
     });
   }
 
   public getNewsBoutiques(): Observable<NewsType[]> {
-
-    return new Observable<NewsType[]>(observer => {
+    return new Observable<NewsType[]>((observer) => {
       observer.next(BoutiquesData);
     });
   }

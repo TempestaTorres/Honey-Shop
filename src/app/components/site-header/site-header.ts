@@ -7,6 +7,7 @@ import { MegaMenuService } from '../../services/mega-menu-service';
 import { MegaMenuDesktop } from '../mega-menu-desktop/mega-menu-desktop';
 import { headerLocations } from './header-locations';
 import { WishlistService } from '../../product-wishlist/wishlist-service';
+import { ModalsService } from '../../modals/modals-service';
 
 @Component({
   selector: 'app-site-header',
@@ -41,6 +42,7 @@ export class SiteHeader implements OnInit, OnDestroy {
     private location: Location,
     private megaMenuService: MegaMenuService,
     private wishlistService: WishlistService,
+    private modalsService: ModalsService,
   ) {}
 
   ngOnInit() {
@@ -116,6 +118,10 @@ export class SiteHeader implements OnInit, OnDestroy {
     if (this.wishlist$) {
       this.wishlist$.unsubscribe();
     }
+  }
+
+  public searchOpen(): void {
+    this.modalsService.toggleModalWindow();
   }
 
   private isHeaderTransparent(url: string): boolean {

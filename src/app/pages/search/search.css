@@ -1,0 +1,13 @@
+.search-result-section > .container {
+  padding: 2.5rem 1rem 1rem 1rem;
+  max-width: none;
+}
+
+/*===== Media =============*/
+@media (min-width: 1024px) {
+  .search-result-section > .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}

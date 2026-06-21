@@ -13,8 +13,10 @@
 
         <!-- Mobile left side -->
         <div class="site-header-left-mobile mobile-tablet-hidden">
+
           <!-- Burger button needs class active -->
           <button class="js-menu-trigger" (click)="menuTrigger()" [class.active]="isMenuActive()">
+
             <!-- Burger -->
             <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="presentation" disabled="true" clickable="false" aria-hidden="true">
               <title id="title-icon-menu">Icon of menu</title>
@@ -33,8 +35,13 @@
               </g>
             </svg>
           </button>
+
           <!-- Mobile Search -->
-          <button type="button" class="search-bar-native js-search-toggle" aria-label="open search bar">
+          <button
+            type="button"
+            (click)="searchOpen()"
+            class="search-bar-native js-search-toggle"
+            aria-label="open search bar">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="img" aria-labelledby="title-icon-search">
               <title id="title-icon-search">Icon of search</title>
               <g id="icon-search">
@@ -57,6 +64,7 @@
 
       <!-- Navigation  -->
       <div class="js-header-nav-container">
+
         <!-- Mobile Logo -->
         <h1 class="logo mobile-logo mobile-tablet-hidden">
           <a [routerLink]="['/']" title="Honey Shop">
@@ -65,6 +73,7 @@
             </div>
           </a>
         </h1>
+
         <!-- Desktop navigation -->
         <div class="js-desktop-nav">
           <nav class="menu-navigation-wrapper js-menu-navigation">
@@ -141,7 +150,11 @@
 
           <!-- Desktop Search bar -->
           <div class="icon-wrapper desktop-hidden js-header-icon">
-            <button type="button" class="search-bar-native js-search-toggle" aria-label="open search bar">
+            <button
+              type="button"
+              (click)="searchOpen()"
+              class="search-bar-native js-search-toggle"
+              aria-label="open search bar">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="img" aria-labelledby="title-icon-search">
                 <title id="title-icon-search">Icon of search</title>
                 <g id="icon-search">
