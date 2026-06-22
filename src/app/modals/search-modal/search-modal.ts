@@ -77,7 +77,7 @@ export class SearchModal {
       this.search$ = this.productsService.search(value).subscribe((results) => {
         this.results.set(results);
 
-        this.hasResult.update((value) => (value = results.length > 0));
+        this.hasResult.update((value) => results.length > 0);
       });
     } else {
       this.results.set([]);

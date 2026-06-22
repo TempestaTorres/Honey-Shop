@@ -1,6 +1,5 @@
 import { afterNextRender, Component, signal, WritableSignal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductsService } from '../../products/products-service';
 import { CollectionShowCase } from '../../components/collection-show-case/collection-show-case';
 
 @Component({
@@ -14,7 +13,6 @@ export class Search {
 
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService,
   ) {
     afterNextRender(() => {
       this.route.queryParams.subscribe((params) => {
