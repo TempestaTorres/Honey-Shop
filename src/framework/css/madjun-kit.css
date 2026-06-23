@@ -729,9 +729,6 @@ main.madjun-kit {
     min-width:2em;
     display:inline-block;
     color:transparent;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
     user-select:none;
     opacity:.1;
     animation:fade 1s ease infinite alternate;

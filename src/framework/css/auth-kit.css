@@ -1,0 +1,94 @@
+/* Auth */
+.auth-kit {
+  --global-color-primary-dark:rgb(226,218,206);
+  --global-color: rgb(0,0,0);
+  --global-auth-image: '';
+  --auth-logo-width: 11.5rem;
+  --auth-default-color-accent: rgb(0,0,0);
+  --auth-outline-offset: .2rem;
+
+  background-color: var(--global-color-primary-dark);
+  color: var(--global-color);
+
+  .auth-section {
+    position: relative;
+  }
+
+  .auth-container {
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    width: 100%;
+  }
+  .authorization-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .auth-banner {
+    position: relative;
+    display: none;
+    background-image: var(--global-auth-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .auth-header > .wrapper {
+    position: relative;
+    padding: 4rem 0 2rem 0;
+  }
+  .aut-header-site-logo-banner {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .auth-logo-wrapper {
+    position: relative;
+    max-width: var(--auth-logo-width);
+  }
+  .auth-logo-wrapper a {
+    display: block;
+  }
+  .auth-logo {
+    object-fit: contain;
+    display: block;
+    max-width: 100%;
+    min-inline-size: 12px;
+    max-inline-size: min(100%,1000px);
+    border-style: none;
+  }
+  .auth-footer > .wrapper {
+    position: relative;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    justify-content: center;
+  }
+  .auth-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    outline: 0 solid var(--global-color, var(--auth-default-color-accent));
+    outline-offset: var(--auth-outline-offset);
+    width: fit-content;
+    height: auto;
+    transition-duration: 0.2s;
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+    transition-timing-function: ease-in-out;
+    user-select: none;
+    color: var(--global-color);
+  }
+  /*================= Media =====================*/
+  @media (min-width: 854px) {
+    .auth-container {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    }
+    .auth-banner {
+      display: block;
+    }
+  }
+}

@@ -1,1 +1,30 @@
-<p>wishlist works!</p>
+<main class="outline-none">
+
+  <section class="section-boxed">
+    @if (empty()) {
+
+      <div class="wishlist-empty-wrapper">
+
+        <div class="wishlist-notify">
+          <!-- Heading -->
+          <div class="app-widget app-widget-heading app-widget-heading-primary wishlist-notify__heading">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">your wishlist is empty</h2>
+            </div>
+          </div>
+
+          @if (!isLoggedIn()) {
+
+            <!-- Button -->
+            <a [routerLink]="['/sign-in']"
+               class="button-primary button-large wishlist-notify__button">login or create an account</a>
+          }
+
+        </div>
+
+      </div>
+
+    }
+  </section>
+
+</main>

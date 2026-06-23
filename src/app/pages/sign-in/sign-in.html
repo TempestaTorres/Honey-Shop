@@ -1,1 +1,47 @@
-<p>sign-in works!</p>
+<main class="outline-none">
+  <section class="section-boxed auth-section">
+
+    <!-- Main container -->
+    <div class="auth-container">
+
+      <!-- Authorization -->
+      <div class="authorization-block">
+
+        <!-- Header -->
+        <header class="auth-header">
+          <div class="wrapper">
+            <div class="aut-header-site-logo-banner">
+              <div class="auth-logo-wrapper">
+                <a [routerLink]="['/']">
+                  <img
+                    class="auth-logo"
+                    width="184"
+                    height="42"
+                    src="/assets/images/logo/honey-logo-2025.svg"
+                    alt="Honey Logo"
+                    decoding="async" fetchpriority="high">
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Footer -->
+        <footer class="auth-footer">
+          <div class="wrapper">
+            <button (click)="openPopup()" class="auth-button" type="button" aria-haspopup="dialog">
+              <span>Privacy policy</span>
+            </button>
+          </div>
+        </footer>
+      </div>
+
+      <!-- Authorization Banner -->
+      <div class="auth-banner" [style]="authBannerUrl"></div>
+
+    </div>
+
+  </section>
+
+  <app-pop-up class="app-widget" [popupType]="popUpType()"></app-pop-up>
+</main>

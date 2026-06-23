@@ -48,10 +48,10 @@ export const routes: Routes = [
       {path: 'book-return', component: BookReturn},
       {path: 'cart', component: Cart},
       {path: 'wishlist', component: Wishlist},
-      {path: 'sign-up', component: SignUp},
-      {path: 'sign-in', component: SignIn},
       {path: 'search', component: Search},
     ]
   },
+  {path: 'sign-up', component: SignUp},
+  {path: 'sign-in', component: SignIn},
   {path: 'join-honey', component: JoinHoney},
 ];
