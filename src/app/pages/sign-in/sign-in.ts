@@ -9,7 +9,6 @@ import { SigninCodeForm } from '../../components/signin-code-form/signin-code-fo
   selector: 'app-sign-in',
   imports: [RouterLink, PopUp, ReactiveFormsModule, SigninCodeForm],
   templateUrl: './sign-in.html',
-  styleUrl: './sign-in.css',
 })
 export class SignIn implements OnInit {
   public authBannerUrl: string =

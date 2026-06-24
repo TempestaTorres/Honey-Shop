@@ -23,6 +23,9 @@ import { SignUp } from './pages/sign-up/sign-up';
 import { SignIn } from './pages/sign-in/sign-in';
 import { Wishlist } from './pages/wishlist/wishlist';
 import { Search } from './pages/search/search';
+import { Orders } from './pages/orders/orders';
+import { Profile } from './pages/profile/profile';
+import { authGuard, loginGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   {
@@ -51,7 +54,9 @@ export const routes: Routes = [
       {path: 'search', component: Search},
     ]
   },
-  {path: 'sign-up', component: SignUp},
-  {path: 'sign-in', component: SignIn},
+  {path: 'sign-up', component: SignUp, canActivate: [loginGuard]},
+  {path: 'sign-in', component: SignIn, canActivate: [loginGuard]},
+  {path: 'orders', component: Orders, canActivate: [authGuard]},
+  {path: 'profile', component: Profile, canActivate: [authGuard]},
   {path: 'join-honey', component: JoinHoney},
 ];

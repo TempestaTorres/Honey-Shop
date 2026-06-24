@@ -37,6 +37,12 @@ export class AuthService {
     this.userLogged$.next(this.isLogged);
   }
 
+  public login(userEmail: string): void {
+    localStorage.setItem(this.userKey, userEmail);
+    this.isLogged = true;
+    this.userLogged$.next(this.isLogged);
+  }
+
   public isUserExist(email: string): Observable<boolean> {
 
     let result: boolean = Users.some((user) => user.email === email);

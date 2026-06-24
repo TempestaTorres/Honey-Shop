@@ -10,6 +10,8 @@ import {
   WritableSignal
 } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../auth/auth-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin-code-form',
@@ -35,7 +37,7 @@ export class SigninCodeForm {
     digitInput: new FormControl('', [Validators.required, Validators.maxLength(6)]),
   });
 
-  constructor() {
+  constructor(private authService: AuthService, private router: Router) {
 
     effect(() => {
       const sActive = this.spinnerActive();
@@ -62,6 +64,11 @@ export class SigninCodeForm {
           this.codeShake.set(false);
           this.codeForm.reset();
           this.reset();
+
+          // Log in
+          this.authService.login(this.userEmail());
+          this.router.navigate(['/orders']).then(() => {});
+
         }, 800);
       }
     }
