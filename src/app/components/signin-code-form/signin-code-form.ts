@@ -47,6 +47,16 @@ export class SigninCodeForm {
           this.spinnerEnd.emit(false);
         }, 1000);
       }
+
+      const i = this.digitActive();
+      if (i > 6) {
+        setTimeout(() => {
+          const btn = this.submitBtn()?.nativeElement;
+          if (btn) {
+            btn.click();
+          }
+        }, 100);
+      }
     });
   }
 
@@ -65,11 +75,12 @@ export class SigninCodeForm {
           this.codeForm.reset();
           this.reset();
 
-          // Log in
-          this.authService.login(this.userEmail());
-          this.router.navigate(['/orders']).then(() => {});
-
         }, 800);
+      }
+      else {
+        // Log in
+        this.authService.login(this.userEmail());
+        this.router.navigate(['/orders']).then(() => {});
       }
     }
   }
@@ -115,16 +126,8 @@ export class SigninCodeForm {
                 target.innerHTML = value;
                 target.classList.add('digit-enter');
 
-                if (index < 6) {
-                  index++;
-                  this.digitActive.set(index);
-                }
-                else {
-                  const btn = this.submitBtn()?.nativeElement;
-                  if (btn) {
-                    btn.click();
-                  }
-                }
+                index++;
+                this.digitActive.set(index);
 
               }
               else if (value === 'Backspace' && i > 0 && index > 1) {
