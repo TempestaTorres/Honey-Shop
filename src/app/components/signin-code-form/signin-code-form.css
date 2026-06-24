@@ -1,0 +1,166 @@
+.digit-code-form {
+  width: 100%;
+  position: relative;
+  display: contents;
+}
+.spinner-wrapper {
+  position:relative;
+  min-height:6rem
+}
+.digit-field {
+  --digit-count: 6;
+  --shake-duration: 800ms;
+  opacity: 0;
+  position:relative;
+  transition:opacity var(--x-duration-base) var(--x-timing-base);
+  container-type:inline-size;
+  --digit-cell-width: calc( (100cqi - (var(--digit-count) - 1) * var(--x-spacing-small-200)) / var(--digit-count) )
+}
+.digit-field.active {
+  opacity: 1;
+}
+.digit-field__input {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+  width:100%;
+  height:100%;
+  box-shadow:none;
+  outline:none;
+  -webkit-appearance:none;
+  appearance:none;
+  border:none;
+  background:transparent;
+  color:transparent;
+  caret-color:transparent;
+  font-family:monospace;
+  line-height:1;
+  letter-spacing:-.6em;
+  forced-color-adjust:none;
+  font-size:calc(var(--digit-cell-width) * 14 / 11);
+  margin:0;
+  padding:0;
+}
+.digit-field__input::selection {
+  color:transparent;
+  background-color:transparent
+}
+.digit-wrapper {
+  display:grid;
+  grid-template-columns:repeat(var(--digit-count),minmax(0,1fr));
+  column-gap:var(--x-spacing-small-200);
+  user-select:none;
+  pointer-events:none;
+  max-height:300px;
+}
+.digit-container {
+  position:relative;
+  padding-top:calc(14 / 11 * 100%);
+  color: var(--x-default-color-text);
+}
+.code-digit {
+  position:absolute;
+  top:0;
+  left:0;
+  outline:1px solid transparent;
+  border-radius: var(--x-border-radius-base);
+  border: 1px solid var(--x-default-color-border);
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  font-family:var(--x-typography-primary-fonts), sans-serif;
+  font-size:28px;
+  font-weight:500;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+  transition:color .3s cubic-bezier(.4,0,.2,1),border-color .3s cubic-bezier(.4,0,.2,1),outline-color .3s cubic-bezier(.4,0,.2,1),background-color .3s cubic-bezier(.4,0,.2,1)
+}
+.digit-field:focus-within .code-active:after {
+  content:"";
+  position:absolute;
+  top:25%;
+  left:50%;
+  margin-inline-start:-.5px;
+  width:1px;
+  height:50%;
+  background-color:#000000;
+  pointer-events:none;
+  user-select:none;
+  opacity:0;
+  animation:_blink 1s step-end .5s infinite
+}
+.digit-enter {
+  animation:_digitEnter .25s cubic-bezier(.34,1.56,.64,1) forwards
+}
+.digit-exit {
+  animation:_digitExit .2s cubic-bezier(.36,0,.66,-.56) forwards
+}
+.shake {
+  animation:_shake var(--shake-duration) cubic-bezier(.25,.46,.45,.94)
+}
+.submit {
+  border-width: 0;
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.digit-code-error {
+  padding-top: var(--x-spacing-small-400);
+  position: relative;
+  color: rgb(177,14,14);
+}
+.digit-field:focus-within .code-active {
+  --x-default-color-border: var(--x-default-color-accent);
+  outline-color:var(--x-default-color-accent)
+}
+@media(forced-colors:active) {
+  .digit-field:focus-within .code-active {
+    outline-offset:2px
+  }
+}
+
+.digit-spinner {
+  top:1.1rem;
+  position:absolute;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+  user-select:none;
+  opacity:0;
+  transition:opacity var(--x-duration-base) var(--x-timing-base)
+}
+.digit-spinner.active {
+  opacity:1
+}
+.digit-spinner__spinner {
+  --d-spinner-size: calc(var(--x-typography-size-default) * 2.2857142857142856);
+  min-width: var(--d-spinner-size);
+  min-height: var(--d-spinner-size);
+  width: var(--d-spinner-size);
+  height: var(--d-spinner-size);
+  color: var(--x-default-color-accent);
+  max-width: 100%;
+  max-height: 100%;
+  transition-duration: var(--x-duration-base);
+  transition-timing-function: var(--x-timing-base);
+  transition-property: color,background-color,border-color,box-shadow;
+  animation: _fadein .5s ease-in-out,_rotate .5s linear infinite;
+  fill: currentColor;
+}
+@media(prefers-reduced-motion:reduce) {
+  .digit-spinner {
+    font-weight:600
+  }
+}
+

@@ -27,7 +27,7 @@
         <div class="popup-modal-body">
           <div class="popup-modal-body-container modal-typeset">
 
-            @if (popupType() === 'privacy policy') {
+            @if (popupType() === 'privacy policy' || popupType() === 'terms of service') {
 
               <span>Please review our&nbsp;</span>
               <a [routerLink]="['/privacy-policy']" target="_blank">Privacy Policy</a>

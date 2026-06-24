@@ -26,14 +26,169 @@
           </div>
         </header>
 
+        <!-- Main -->
+        <section class="auth-main-section">
+
+          <!--  Header -->
+          <div class="auth-main-section__header" [class.active]="formActive()">
+
+            @if (processingDone()) {
+              <h1><span>Enter Code</span></h1>
+              <!-- Text -->
+              <div class="auth-group-wrapper">
+                <div class="auth-typeset">
+                  <p>Send to {{ userEmail() }}</p>
+                </div>
+                <a class="auth-button" (click)="onChange()">Change</a>
+              </div>
+
+            } @else {
+              <h1><span>Sign in</span></h1>
+              <!-- Text -->
+              <div class="auth-group-wrapper">
+                <div class="auth-typeset">
+                  <p>Sign in or create an account</p>
+                </div>
+              </div>
+            }
+
+          </div>
+
+          <!-- Form Email -->
+          <div [class.active]="formActive()" class="auth-form">
+
+            @if (processingDone()) {
+
+              <app-signin-code-form
+                class="app-widget"
+                [spinnerActive]="spinnerActive()"
+                (spinnerEnd)="onSpinner($event)"
+                [userEmail]="userEmail()"></app-signin-code-form>
+
+            } @else {
+
+              <div>
+                <form
+                  (ngSubmit)="onSubmit()"
+                  [formGroup]="authForm"
+                  class="auth-form__form"
+                  novalidate>
+
+                  <div class="body">
+
+                    <div class="auth-form__inputs-wrapper">
+
+                      <!-- Email -->
+                      <div class="auth-input-container">
+
+                        <div class="auth-input-wrapper">
+
+                          <label class="auth-input-label" for="customer-authentication-web-email">
+                            <span>Email</span>
+                          </label>
+
+                          <input
+                            formControlName="email"
+                            class="auth-input"
+                            id="customer-authentication-web-email"
+                            required
+                            placeholder="Email"
+                            type="email">
+
+                          <div class="auth-input-accessory">
+                            <div class="auth-submit-wrapper">
+                              <!-- Submit Button -->
+                              <button
+                                [class.loading]="processing()"
+                                class="auth-button auth-submit-button">
+
+                                <!-- Icon -->
+                                <span class="auth-icon-wrapper">
+                                <span>
+                                  <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M1.5 7h11m0 0-3.826 4.75M12.5 7 8.674 2.25" vector-effect="non-scaling-stroke"></path>
+                                  </svg>
+                                </span>
+                              </span>
+
+                                <!-- Loader -->
+                                <span class="auth-spinner-wrapper">
+                                <div class="auth-spinner">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" focusable="false" aria-label="Processing…">
+                                    <path d="M20 10c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0v2a8 8 0 1 0 8 8z"></path>
+                                  </svg>
+                                </div>
+                              </span>
+
+                              </button>
+
+                            </div>
+                          </div>
+
+                        </div>
+
+                        @if (hasError()) {
+                          <span class="auth-error">Enter a valid email address</span>
+                        }
+                      </div>
+
+                      <!-- Check box -->
+                      <div class="auth-input-box-container">
+
+                        <!-- Check box -->
+                        <div class="auth-checkbox-wrapper">
+                          <input
+                            class="auth-check-box"
+                            formControlName="consent"
+                            type="checkbox"
+                            id="marketing-consent">
+
+                          <div class="auth-check-box-icon">
+                          <span>
+                            <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m1.5 7.097 3.596 3.602c.104.105.156.157.216.175a.25.25 0 0 0 .16-.004c.059-.022.108-.077.206-.188L12.5 3" vector-effect="non-scaling-stroke"></path>
+                            </svg>
+                          </span>
+                          </div>
+                        </div>
+
+                        <!-- Label -->
+                        <label for="marketing-consent">Email me with news and offers</label>
+                      </div>
+
+                    </div>
+
+                    <!-- Button modal -->
+                    <div class="auth-typeset typeset-small align-center">
+                      <p>
+                        By continuing, you agree to our&nbsp;
+                        <button (click)="openPopup('terms of service')" class="auth-button auth-button-underline" type="button" aria-haspopup="dialog">
+                          <span>Terms of service</span>
+                        </button>
+                      </p>
+                    </div>
+
+                  </div>
+
+
+                </form>
+              </div>
+
+            }
+
+          </div>
+
+        </section>
+
         <!-- Footer -->
         <footer class="auth-footer">
           <div class="wrapper">
-            <button (click)="openPopup()" class="auth-button" type="button" aria-haspopup="dialog">
+            <button (click)="openPopup('privacy policy')" class="auth-button" type="button" aria-haspopup="dialog">
               <span>Privacy policy</span>
             </button>
           </div>
         </footer>
+
       </div>
 
       <!-- Authorization Banner -->
