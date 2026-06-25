@@ -1,1 +1,48 @@
-<p>orders works!</p>
+<main class="outline-none">
+ <section class="section-boxed section-orders">
+    <div class="app-container">
+
+      <div class="app-widget-column">
+        <div class="app-widget-container">
+
+          <!--  List -->
+          <div class="order-list">
+
+            <!-- Header -->
+            <div class="order-list-header">
+              <div class="order-list-header-wrap">
+                <div class="app-widget app-widget-heading app-widget-heading-default">
+                  <div class="app-widget-container">
+                    <h1 class="app-heading-title">Orders</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orders -->
+            <div class="order-list-items-container">
+
+              @if (!hasOrders()) {
+
+                <div class="order-list-empty">
+
+                  <div class="app-widget app-widget-heading app-widget-heading-default">
+                    <div class="app-widget-container">
+                      <h2 class="app-heading-title">No Orders yet</h2>
+                    </div>
+                  </div>
+
+                  <p>Go to store to place an order.</p>
+                </div>
+              }
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+ </section>
+</main>

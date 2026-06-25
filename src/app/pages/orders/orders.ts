@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-orders',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './orders.html',
   styleUrl: './orders.css',
 })
-export class Orders {}
+export class Orders {
+
+  public hasOrders: WritableSignal<boolean> = signal<boolean>(false);
+}
