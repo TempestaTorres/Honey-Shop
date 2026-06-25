@@ -1,0 +1,81 @@
+
+.customer-properties-kit {
+
+  --x-box-shadow-extra-small: 0 1px 1.75px 0 rgba(0, 0, 0, .12), 0 -.5px 1.5px 0 rgba(0, 0, 0, .09), 0 3px 4px 0 rgba(0, 0, 0, .03);
+  --x-box-shadow-small: 0 1px 2px -.5px rgba(0, 0, 0, .05), 0 2px 4px -1px rgba(0, 0, 0, .08), 0 3px 6px -1.5px rgba(0, 0, 0, .08), 0 -.5px 1.5px 0 rgba(0, 0, 0, .09);
+  --x-box-shadow-base: 0 1px 2px -.5px rgba(0, 0, 0, .05), 0 2px 4px -1px rgba(0, 0, 0, .08), 0 3px 6px -1.5px rgba(0, 0, 0, .08), 0 8px 16px -6px rgba(0, 0, 0, .06), 0 -.5px 2px 0 rgba(0, 0, 0, .09);
+  --x-box-shadow-large: 0 1px 2px -.5px rgba(0, 0, 0, .05), 0 2px 4px -1px rgba(0, 0, 0, .08), 0 3px 6px -1.5px rgba(0, 0, 0, .08), 0 8px 16px -6px rgba(0, 0, 0, .06), 0 24px 40px -12px rgba(0, 0, 0, .06), 0 -.5px 1.5px 0 rgba(0, 0, 0, .09);
+  --x-box-shadow-extra-large: 0 1px 2px -.5px rgba(0, 0, 0, .05), 0 2px 4px -1px rgba(0, 0, 0, .08), 0 3px 6px -1.5px rgba(0, 0, 0, .08), 0 8px 16px -6px rgba(0, 0, 0, .06), 0 24px 40px -12px rgba(0, 0, 0, .06), 0 32px 48px -12px rgba(0, 0, 0, .06), 0 -.5px 1.5px 0 rgba(0, 0, 0, .09);
+
+  --x-global-typography-kerning: normal;
+  --x-global-typography-line-size-default: 1.5;
+  --x-global-typography-line-size-small: 1.2;
+
+  --left-nav-width: 80vw;
+  --left-nav-duration: .33s;
+  --x-typography-primary-fonts: "futura-pt", sans-serif;
+  --x-typography-primary-weight-base: 400;
+  --x-typography-size-default: 14px;
+  --x-default-color-background: rgb(226,218,206);
+  --x-default-color-text: rgb(0, 0, 0);
+  --x-default-color-background-subdued:rgb(220,209,193);
+  --x-default-color-icon: rgba(0,0,0,0.56);
+  --x-default-color-accent-hovered:rgb(0,0,0);
+
+  --x-spacing-base: 14px;
+  --x-spacing-small-200: 8px;
+  --x-spacing-small-400: 4px;
+  --x-spacing-large-200: 20px;
+  --x-spacing-large-500: 40px;
+
+  --x-duration-faster: 88.9ms;
+  --x-duration-fast: .1333s;
+  --x-duration-base: .2s;
+  --x-duration-slow: .3s;
+  --x-duration-slower: .45s;
+  --x-duration-slowest: 675ms;
+  --x-duration-reduced-motion: 1ms;
+  --x-timing-base: ease-in-out;
+  --x-timing-ease-out: cubic-bezier(.3, .5, .5, 1);
+  --x-timing-linear: linear;
+  --x-timing-spring: cubic-bezier(.3, 0, 0, 1);
+  --x-global-transform-direction-modifier: 1;
+
+  --x-border-radius-small: 4px;
+  --x-border-radius-base: 8px;
+  --x-border-width-base: 1px;
+
+  background-color: var(--x-default-color-background);
+  color: var(--x-default-color-text);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: var(--x-typography-size-default);
+  line-height: var(--x-global-typography-line-size-default);
+  font-family: var(--x-typography-primary-fonts), sans-serif;
+  font-weight: var(--x-typography-primary-weight-base);
+  letter-spacing: var(--x-global-typography-kerning);
+
+}
+.customer-block {
+  position: relative;
+}
+.customer-wrap {
+  background-attachment: fixed;
+  position: relative;
+}
+.customer-main-container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100dvh;
+  position: relative;
+}
+.customer-main-content-wrapper {
+  --header-height: 0px;
+  --header-hidden: 0;
+  --header-transition-timing: ease-out;
+  --header-transition-duration: 0.2s;
+}

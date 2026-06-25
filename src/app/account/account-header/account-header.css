@@ -1,0 +1,317 @@
+.account-header {
+  --x-announcement-bar-height: 0px;
+}
+.account-header-section {
+  position: relative;
+  color: var(--x-default-color-text);
+  background-color: var(--x-default-color-background);
+}
+.account-header-section > .account-container {
+  position: relative;
+  padding: var(--x-spacing-base)  var(--x-spacing-large-200);
+  margin: auto;
+  max-width: 1200px;
+}
+.account-header-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: none;
+  gap: 0;
+  align-items: center;
+}
+.account-button {
+  position: relative;
+  display: inline-block;
+  color: var(--x-default-color-text);
+  font-size: var(--x-typography-size-default);
+  line-height: var(--x-global-typography-line-size-default);
+  font-family: var(--x-typography-primary-fonts), sans-serif;
+  font-weight: var(--x-typography-primary-weight-base);
+  letter-spacing: var(--x-global-typography-kerning);
+  outline-color: rgb(0, 0, 0);
+  outline-offset: 4px;
+  transition-duration: var(--x-duration-fast);
+  transition-property: color,background-color,border-color,box-shadow,opacity,transform;
+  transition-timing-function: var(--x-timing-base);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: var(--x-border-radius-base);
+}
+.account-button::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 0 transparent;
+  transition: inherit;
+  top: -2px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  border-radius: var(--x-border-radius-base);
+}
+.account-button:focus {
+  outline:none
+}
+.account-button:focus:after {
+  box-shadow:0 0 0 2px var(--x-default-color-accent-hovered)
+}
+.account-button:focus:not(:focus-visible):after {
+  box-shadow:none
+}
+.account-button:focus-visible:after {
+  box-shadow:0 0 0 .2rem var(--x-default-color-accent-hovered)
+}
+
+.account-logo img {
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  height: auto;
+  block-size: auto;
+  min-width: 12px;
+  min-inline-size: 12px;
+  max-width: min(100%,1000px);
+  max-inline-size: min(100%,1000px);
+  width: 184px;
+}
+.desktop-account-navigation {
+  position: relative;
+}
+.desktop-account-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+.desktop-account-navigation li {
+  position: relative;
+  display: block;
+}
+.desktop-account-navigation a,
+.mobile-main-navigation a {
+  padding: var(--x-spacing-small-200) var(--x-spacing-base);
+  text-align: left;
+}
+.desktop-account-navigation a.active,
+.mobile-main-navigation a.active{
+  color: var(--x-default-color-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.desktop-account-navigation a:hover, .desktop-account-navigation a:focus-visible,
+.mobile-main-navigation a:hover, .mobile-main-navigation a:focus-visible {
+  background-color: var(--x-default-color-background-subdued);
+}
+.user-account {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--x-spacing-base);
+}
+.user-account .account-button {
+  transition: scale .12s ease-in-out,background-color .12s ease-in-out,color .12s ease-in-out;
+}
+
+.user-account__profile {
+  position: relative;
+  display: flex;
+}
+.user-account__profile > div {
+  --icon-size: calc(var(--x-typography-size-default) * 2.251875390625001);
+  position: relative;
+  transition: scale .12s ease-in-out,box-shadow .12s ease-in-out;
+  outline: 1px rgba(0,0,0,.08) solid;
+  outline-offset: -1px;
+  height: var(--icon-size);
+  width: var(--icon-size);
+  border-radius: 100%;
+  background-color: var(--x-default-color-background-subdued);
+  color: var(--x-default-color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-account__profile > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+  pointer-events: none;
+}
+.user-account .account-button:hover .user-account__profile > div {
+  scale:1.05;
+  box-shadow:0 1px 3px rgba(0,0,0,.08)
+}
+.user-account__profile span {
+  display: block;
+  stroke: currentColor;
+  color: var(--x-default-color-icon);
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  transition-timing-function: var(--x-timing-base);
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: var(--x-duration-base);
+}
+.user-account__profile svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  fill: none;
+  stroke-width: 1.5px;
+}
+.mobile-account-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+}
+.main-navigation-button {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  color: inherit;
+  outline: 0 solid initial;
+  outline-offset: 1px;
+  border-radius: var(--x-border-radius-base);
+}
+.main-navigation-button::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: calc((100% - 24px)/2);
+  left: calc((100% - 24px)/2);
+}
+.main-navigation-button span {
+  --icon-size: calc(var(--x-typography-size-default) * 1.2857142857142858);
+  display: block;
+  min-width: var(--icon-size);
+  min-height: var(--icon-size);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  max-width: 100%;
+  max-height: 100%;
+  transition-duration: var(--x-duration-base);
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-timing-function: var(--x-timing-base);
+  stroke: currentColor;
+}
+.main-navigation-button svg {
+  display: none;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.main-navigation-button[aria-expanded="false"] .icon-open {
+  display: block;
+}
+.main-navigation-button[aria-expanded="true"] .icon-close {
+  display: block;
+}
+.mobile-main-navigation {
+  position:absolute;
+  z-index:999;
+  left: 0;
+  top:calc(100% + var(--x-border-width-base));
+  inset-inline-start:0;
+  width:var(--left-nav-width);
+  height:calc(100dvh - 100% - var(--x-announcement-bar-height, 0));
+  overflow-y:auto;
+  visibility:hidden;
+  transform:translate(calc(var(--left-nav-width) * var(--x-global-transform-direction-modifier) * -1));
+  transition:visibility var(--left-nav-duration) linear,transform var(--left-nav-duration) ease
+}
+.mobile-main-navigation.opened {
+  transform:translate(0);
+  visibility:visible;
+  transition:visibility 0s linear,transform var(--left-nav-duration) ease
+}
+.main-nav-wrapper {
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  height: calc(100dvh - 100%);
+  min-height: 100%;
+  color: var(--x-default-color-text);
+  background-color: var(--x-default-color-background);
+}
+.nav-underlay {
+  content:"";
+  position:absolute;
+  z-index:999;
+  top:calc(100% + var(--x-border-width-base));
+  left:0;
+  width:100vw;
+  height:calc(100dvh - 100% - var(--x-announcement-bar-height, 0));
+  background-color:rgba(0,0,0,.6);
+  animation:fadeIn var(--left-nav-duration) ease;
+  animation-fill-mode:forwards
+}
+.main-nav-wrapper ul {
+  list-style:none;
+  margin:0;
+  position:relative;
+  overflow: hidden auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--x-spacing-small-400);
+  padding: var(--x-spacing-base) var(--x-spacing-large-200);
+}
+.main-nav-wrapper li {
+  display:block;
+  position:relative;
+}
+.mobile-main-navigation a {
+  width: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+/*=============== Media ===============*/
+@media screen and (min-width: 750px) {
+
+  .account-header-wrapper {
+    grid-template-columns: auto 1fr auto;
+    column-gap: var(--x-spacing-large-200);
+    row-gap: var(--x-spacing-large-200);
+  }
+  .account-logo img {
+    object-position: left center;
+  }
+  .mobile-account-wrapper {
+    display: none;
+  }
+  .mobile-main-navigation {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .account-header-section > .account-container {
+    padding-right: var(--x-spacing-large-500);
+    padding-left: var(--x-spacing-large-500);
+  }
+}
+@media screen and (max-width: 749px) {
+  .desktop-account-navigation {
+    display: none;
+  }
+}

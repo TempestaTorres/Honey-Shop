@@ -80,7 +80,7 @@ export class SigninCodeForm {
       else {
         // Log in
         this.authService.login(this.userEmail());
-        this.router.navigate(['/orders']).then(() => {});
+        this.router.navigate(['account/orders']).then(() => {});
       }
     }
   }

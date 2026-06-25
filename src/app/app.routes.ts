@@ -26,6 +26,7 @@ import { Search } from './pages/search/search';
 import { Orders } from './pages/orders/orders';
 import { Profile } from './pages/profile/profile';
 import { authGuard, loginGuard } from './guards/auth-guard';
+import { Account } from './account/account';
 
 export const routes: Routes = [
   {
@@ -54,9 +55,15 @@ export const routes: Routes = [
       {path: 'search', component: Search},
     ]
   },
+  {
+    path: 'account',
+    component: Account,
+    children: [
+      {path: 'orders', component: Orders, canActivate: [authGuard]},
+      {path: 'profile', component: Profile, canActivate: [authGuard]},
+    ]
+  },
   {path: 'sign-up', component: SignUp, canActivate: [loginGuard]},
   {path: 'sign-in', component: SignIn, canActivate: [loginGuard]},
-  {path: 'orders', component: Orders, canActivate: [authGuard]},
-  {path: 'profile', component: Profile, canActivate: [authGuard]},
   {path: 'join-honey', component: JoinHoney},
 ];
