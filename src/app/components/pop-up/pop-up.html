@@ -32,6 +32,31 @@
               <span>Please review our&nbsp;</span>
               <a [routerLink]="['/privacy-policy']" target="_blank">Privacy Policy</a>
               <span>&nbsp;on the website.&nbsp;<br><br></span>
+
+            } @else if (popupType() === 'refund policy') {
+
+              <span>We will happily credit,&nbsp;</span>
+              <a [routerLink]="['/returns-exchanges']" target="_blank">refund or exchange</a>
+              <span>&nbsp;
+                items of the same style for a different size, providing the items meet our
+                terms and conditions.
+              </span>
+
+            } @else if (popupType() === 'contact information') {
+
+              <span>
+                Our customer obsessive honeys are here to help you. If you have any enquiries,
+                please do not hesitate to contact us at&nbsp;
+              </span>
+              <a href="mailto:honey@honey.com">honey&#64;honey.com</a>
+              <span>.</span>
+
+            } @else if (popupType() === 'shipping') {
+
+              <span>Please review our&nbsp;</span>
+              <a [routerLink]="['/shipping-delivery']" target="_blank">Shipping & Delivery</a>
+              <span>&nbsp;information on the website.&nbsp;<br><br></span>
+
             }
 
           </div>

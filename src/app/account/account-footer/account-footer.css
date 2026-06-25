@@ -1,0 +1,61 @@
+.account-footer {
+  position: relative;
+}
+.account-footer-container {
+  position: relative;
+  padding: 0;
+  max-width: 1200px;
+  margin: auto;
+  border-top: 1px solid var(--x-default-color-border);
+}
+.account-footer-wrapper {
+  width: 100%;
+  padding: var(--x-spacing-large-200);
+}
+.account-footer-navigation-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: var(--x-spacing-large-100);
+  position: relative;
+}
+.account-footer-navigation-wrapper > nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: var(--x-spacing-small-400);
+  column-gap: var(--x-spacing-base);
+  align-items: center;
+  position: relative;
+}
+.account-footer-navigation-wrapper button[aria-haspopup="dialog"] {
+  display: block;
+  position: relative;
+  width: fit-content;
+  height: auto;
+  cursor: pointer;
+  outline: 0 solid var(--x-default-color-accent);
+  color: var(--x-default-color-text);
+  outline-offset: 3px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  letter-spacing: var(--x-global-typography-kerning);
+  transition-duration: var(--x-duration-base);
+  transition-property: color,background-color,border-color,box-shadow,opacity,transform;
+  transition-timing-function: var(--x-timing-base);
+  user-select: none;
+}
+small {
+  font-size: var(--x-typography-size-small);
+}
+/*===== Media =========*/
+@media screen and (min-width: 1000px) {
+  .account-footer-container {
+    padding-right: var(--x-spacing-large-500);
+    padding-left: var(--x-spacing-large-500);
+  }
+  .account-footer-wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

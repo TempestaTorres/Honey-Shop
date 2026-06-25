@@ -1,1 +1,30 @@
+<footer class="account-footer">
+  <div class="account-footer-container">
+    <div class="account-footer-wrapper">
+      <div class="account-footer-navigation-wrapper">
+        <nav>
+          <button (click)="openPopup('refund policy')" type="button" aria-haspopup="dialog">
+            <span><small>Refund policy</small></span>
+          </button>
 
+          <button (click)="openPopup('shipping')" type="button" aria-haspopup="dialog">
+            <span><small>Shipping</small></span>
+          </button>
+
+          <button (click)="openPopup('privacy policy')" type="button" aria-haspopup="dialog">
+            <span><small>Privacy policy</small></span>
+          </button>
+
+          <button (click)="openPopup('terms of service')" type="button" aria-haspopup="dialog">
+            <span><small>Terms of service</small></span>
+          </button>
+
+          <button (click)="openPopup('contact information')" type="button" aria-haspopup="dialog">
+            <span><small>Contact information</small></span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <app-pop-up class="app-widget" [popupType]="popUpType()"></app-pop-up>
+</footer>
