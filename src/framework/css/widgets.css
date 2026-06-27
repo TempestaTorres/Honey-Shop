@@ -412,3 +412,11 @@
     margin-right: 1rem;
   }
 }
+@keyframes _switch {
+  0% {
+    stroke-dashoffset:-50px
+  }
+  to {
+    stroke-dashoffset:0px
+  }
+}

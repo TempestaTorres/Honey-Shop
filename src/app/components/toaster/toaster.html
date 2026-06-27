@@ -1,0 +1,17 @@
+@if (activated()) {
+
+  <div class="toaster">
+    <span class="toaster-wrapper">
+      <div class="toaster-body">
+        <span class="toaster-text">{{ message() }}</span>
+        <button (click)="close()" type="button" class="toaster-close-button">
+          <span>
+            <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+              <path stroke-linecap="round" d="M2.5 2.5 7 7m4.5 4.5L7 7m0 0 4.5-4.5M7 7l-4.5 4.5" vector-effect="non-scaling-stroke"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </span>
+  </div>
+}

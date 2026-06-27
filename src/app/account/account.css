@@ -29,9 +29,11 @@
   --x-default-color-accent-hovered:rgb(0,0,0);
   --x-default-color-accent:rgb(0,0,0);
   --x-default-color-border:rgb(192,187,180);
+  --x-default-color-accent-contrast:rgb(255,255,255);
 
   --x-max-width-base:30rem;
   --x-border-radius-large: 12px;
+  --x-border-radius-fully-rounded: 36px;
 
   --x-spacing-base: 14px;
   --x-spacing-small-100: 10px;

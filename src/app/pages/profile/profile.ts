@@ -5,10 +5,11 @@ import { Subscription } from 'rxjs';
 import { PopUpService } from '../../components/pop-up/pop-up-service';
 import { PopUpEditor } from '../../components/pop-up-editor/pop-up-editor';
 import { Router } from '@angular/router';
+import { Toaster } from '../../components/toaster/toaster';
 
 @Component({
   selector: 'app-profile',
-  imports: [CurrencyPipe, PopUpEditor],
+  imports: [CurrencyPipe, PopUpEditor, Toaster],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
@@ -19,6 +20,7 @@ export class Profile {
   public userName: WritableSignal<string> = signal<string>('Name');
   public popUpType: WritableSignal<string> = signal<string>('');
   public hasUserAddress: WritableSignal<boolean> = signal<boolean>(false);
+  public prefUpdated: WritableSignal<boolean> = signal<boolean>(false);
 
   private authSubscription$: Subscription = new Subscription();
 
@@ -63,5 +65,14 @@ export class Profile {
   public onSignOut(): void {
     this.authService.logout();
     this.router.navigate(['/']).then(() => {});
+  }
+
+  public onSwitch(checked: boolean): void {
+    console.log(checked);
+    this.prefUpdated.set(true);
+
+    setTimeout(() => {
+      this.prefUpdated.set(false);
+    }, 6000);
   }
 }

@@ -191,6 +191,53 @@
                 </div>
               </div>
 
+              <!-- Marketing preferences -->
+              <div class="user-info-data-display">
+                <div class="user-profile-details user-profile-container">
+
+                  <div class="user-editable-name">
+                    <span class="info-data-title uppercase">Marketing preferences</span>
+                  </div>
+
+                  <div class="user-profile-preferences-container">
+
+                    <!-- Icon -->
+                    <span class="user-profile-icon">
+                    <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                      <path d="M1 4.5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2z" vector-effect="non-scaling-stroke"></path>
+                      <path stroke-linecap="round" d="m3.25 5.25 3.515 1.875a.5.5 0 0 0 .47 0L10.75 5.25" vector-effect="non-scaling-stroke"></path>
+                    </svg>
+                  </span>
+
+                    <!--  Title -->
+                    <div class="info-data">
+                      <span class="info-data-title info-data-title-primary">Email</span>
+                    </div>
+
+                    <!-- Switcher -->
+                    <div class="switcher-widget">
+                      <div>
+                        <input #switcher
+                          (change)="onSwitch(switcher.checked)"
+                          type="checkbox"
+                          role="switch"
+                          id="SwitchEmail"
+                          name="emailMarketing"
+                          aria-label="Email">
+
+                        <span class="switcher-ball"></span>
+                        <span class="switcher-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+                            <path d="m12.1 2.8-5.877 8.843a.35.35 0 0 1-.54.054L1.4 7.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <!--  Footer -->
@@ -214,3 +261,4 @@
 
   <app-pop-up-editor class="app-widget popup-modal-default" [popupType]="popUpType()"></app-pop-up-editor>
 </main>
+<app-toaster [message]="'Marketing preferences updated'" [active]="prefUpdated()"></app-toaster>

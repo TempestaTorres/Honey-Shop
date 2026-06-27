@@ -1,0 +1,89 @@
+.toaster {
+  --x-z-index-portal: 1000;
+  position: fixed;
+  z-index:calc(var(--x-z-index-portal) + 1);
+  bottom:var(--x-spacing-large-200);
+  width:100%;
+  display:grid;
+  gap:var(--x-spacing-large-200);
+  justify-items:center;
+  justify-content:center;
+  pointer-events:none
+}
+.toaster > .toaster-wrapper {
+  --_slide-in-distance: var(--x-spacing-large-200);
+  --_duration: .3s;
+  padding:var(--x-spacing-small-200) var(--x-spacing-small-100);
+  background-color:var(--x-default-color-text);
+  color:var(--x-default-color-background);
+  border-radius:var(--x-border-radius-base);
+  pointer-events:auto;
+  will-change:transform;
+  animation:_tHide var(--_duration) ease,_tSlide var(--_duration) ease,_tHide2 var(--_duration) ease 5s forwards
+}
+.toaster-body {
+  position: relative;
+  display: flex;
+  flex-wrap:wrap;
+  gap: var(--x-spacing-small-400);
+  align-items: center;
+}
+.toaster-close-button {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  color: inherit;
+  outline: 0 solid var(--x-default-color-accent);
+  outline-offset: 1px;
+}
+.toaster-close-button::after {
+  position: absolute;
+  content: "";
+  left: calc((100% - 24px)/2);
+  width: 24px;
+  height: 24px;
+  top: calc((100% - 24px)/2);
+}
+.toaster-close-button > span {
+  display: block;
+  stroke: currentColor;
+  --icon-size: calc(var(--x-typography-size-default) * .7142857142857143);
+  min-width: var(--icon-size);
+  min-height: var(--icon-size);
+  max-width: 100%;
+  max-height: 100%;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  transition-timing-function: var(--x-timing-base);
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: var(--x-duration-base);
+}
+.toaster-close-button > span svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  fill: none;
+  stroke-width: 1.5px;
+}
+@media(prefers-reduced-motion) {
+  .toaster > .toaster-wrapper {
+    --_slide-in-distance: 0
+  }
+}
+
+@keyframes _tHide {
+  0% {
+    opacity:0
+  }
+}
+@keyframes _tSlide {
+  0% {
+    transform:translateY(var(--_slide-in-distance))
+  }
+}
+@keyframes _tHide2 {
+  to {
+    opacity:0
+  }
+}
