@@ -1,3 +1,8 @@
+.popup-modal-default {
+  --x-default-color-background: rgb(255, 255, 255);
+  --x-max-width-base: 640px;
+  --x-default-color-background-subdued:rgb(248,246,244);
+}
 .popup-main {
   position: fixed;
   top: 0;

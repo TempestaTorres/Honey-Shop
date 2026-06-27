@@ -8,6 +8,7 @@ import { MegaMenuDesktop } from '../mega-menu-desktop/mega-menu-desktop';
 import { headerLocations } from './header-locations';
 import { WishlistService } from '../../product-wishlist/wishlist-service';
 import { ModalsService } from '../../modals/modals-service';
+import { AuthService } from '../../auth/auth-service';
 
 @Component({
   selector: 'app-site-header',
@@ -30,6 +31,7 @@ export class SiteHeader implements OnInit, OnDestroy {
   public isHalfInverse = signal(false);
   public isBlackMobile = signal(false);
   public isMenuActive = signal(false);
+  public isLogged = signal(false);
 
   public wishlistCount: WritableSignal<number> = signal<number>(0);
 
@@ -37,15 +39,22 @@ export class SiteHeader implements OnInit, OnDestroy {
   private megaMenuDesktop$: Subscription | undefined;
   private wishlist$: Subscription | undefined;
 
+  private authSubscription$: Subscription | undefined;
+
   constructor(
     private router: Router,
     private location: Location,
     private megaMenuService: MegaMenuService,
     private wishlistService: WishlistService,
     private modalsService: ModalsService,
+    private authService: AuthService,
   ) {}
 
   ngOnInit() {
+
+    this.authSubscription$ = this.authService.userLogged$.subscribe(status => {
+      this.isLogged.set(status);
+    });
 
     this.wishlist$ = this.wishlistService.wishlistCount.subscribe((wishlistCount) => {
       this.wishlistCount.set(wishlistCount);
@@ -117,6 +126,19 @@ export class SiteHeader implements OnInit, OnDestroy {
     }
     if (this.wishlist$) {
       this.wishlist$.unsubscribe();
+    }
+    if (this.authSubscription$) {
+      this.authSubscription$.unsubscribe();
+    }
+  }
+
+  public onAccountClick(): void {
+
+    if (this.isLogged()) {
+      this.router.navigate(['/account/orders']).then(() => {});
+    }
+    else {
+      this.router.navigate(['/sign-in']).then(() => {});
     }
   }
 

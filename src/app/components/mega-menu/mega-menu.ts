@@ -1,15 +1,25 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, signal, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  signal,
+  ViewChild,
+  WritableSignal
+} from '@angular/core';
 import { MegaMenuService } from '../../services/mega-menu-service';
 import { Subscription } from 'rxjs';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { GeoLocationService } from '../../services/geoloc-service';
 import { GeoLocationType } from '../../types/geoloc-types';
 import { ProductsService } from '../../products/products-service';
 import { NewsType } from '../../products/types/news';
+import { AuthService } from '../../auth/auth-service';
 
 @Component({
   selector: 'app-mega-menu',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './mega-menu.html',
 })
 export class MegaMenu implements OnInit, OnDestroy, AfterViewInit {
@@ -30,7 +40,9 @@ export class MegaMenu implements OnInit, OnDestroy, AfterViewInit {
     signal<boolean>(false),
     signal<boolean>(false),
     signal<boolean>(false),
-  ]
+  ];
+
+  public isLogged: WritableSignal<boolean> = signal<boolean>(false);
 
   private megaMenu$: Subscription | undefined;
   private geolocationType$: Subscription | undefined;
@@ -39,6 +51,7 @@ export class MegaMenu implements OnInit, OnDestroy, AfterViewInit {
   constructor(private megaMenuService: MegaMenuService,
               private geoLocationService: GeoLocationService,
               private productsService: ProductsService,
+              private authService: AuthService,
               private router: Router) { }
 
   ngOnInit() {
@@ -82,6 +95,11 @@ export class MegaMenu implements OnInit, OnDestroy, AfterViewInit {
     });
 
     this.subscriptions$.add(sub5);
+
+    const sub6 = this.authService.userLogged$.subscribe(logged => {
+      this.isLogged.set(logged);
+    });
+    this.subscriptions$.add(sub6);
   }
 
   ngAfterViewInit() {
@@ -112,13 +130,34 @@ export class MegaMenu implements OnInit, OnDestroy, AfterViewInit {
   public subMenuCollectionsItemClick(url: string): void {
 
     this.megaMenuService.megaMenuTrigger();
-    this.router.navigate(['/collections', url]).then(() => {});
+
+    setTimeout(() => {
+
+      this.router.navigate(['/collections', url]).then(() => {});
+    }, 400);
 
   }
 
   public navigateTo(url: string): void {
     this.megaMenuService.megaMenuTrigger();
-    this.router.navigate(['/' + url]).then(() => {});
+
+    setTimeout(() => {
+      this.router.navigate(['/' + url]).then(() => {});
+    }, 400);
   }
 
+  public onAccountClick(): void {
+    this.megaMenuService.megaMenuTrigger();
+
+    setTimeout(() => {
+
+      if (this.isLogged()) {
+        this.router.navigate(['/account/orders']).then(() => {});
+      }
+      else {
+        this.router.navigate(['/sign-in']).then(() => {});
+      }
+    }, 400);
+
+  }
 }

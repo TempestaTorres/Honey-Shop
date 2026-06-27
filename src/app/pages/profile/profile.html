@@ -1,1 +1,216 @@
-<p>profile works!</p>
+<main class="outline-none">
+
+  <section class="section-boxed section-user-profile">
+    <div class="app-container">
+
+      <div class="user-profile user-profile-container">
+
+        <!--  Club Info -->
+        <div class="user-club-info user-profile-container">
+
+          <!-- Balance -->
+          <div class="club-info-container">
+            <div class="user-profile-container">
+
+              <!-- Header -->
+              <div class="club-info-header">
+
+                <!-- Title -->
+                <div class="user-profile-container">
+                  <p class="club-info-title">Honey Club Balance</p>
+                  <p class="user-info-description">Track your points and rewards balance</p>
+                </div>
+
+                <!-- Info Track -->
+                <div class="club-info-track"></div>
+
+                <!-- Display -->
+                <div class="club-display-info">
+                  <div class="display-info-container">{{ clubBalance() | currency }}</div>
+                </div>
+
+              </div>
+
+              <!-- Spacer -->
+              <div class="club-info-spacer"></div>
+
+              <!-- Content -->
+              <div class="club-info-content">
+                <div class="user-profile-container"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Level -->
+          <div class="club-info-container">
+            <div class="user-profile-container">
+
+              <!-- Header -->
+              <div class="club-info-header">
+
+                <!-- Title -->
+                <div class="user-profile-container">
+                  <p class="club-info-title">Honey Club Level</p>
+                </div>
+
+                <!-- Info Track -->
+                <div class="club-info-track"></div>
+
+                <!-- Display -->
+                <div class="club-display-info">
+                  <div class="display-info-container">
+                    <p class="user-info-description">Yearly progress: </p>
+                    {{ yearlyProgress() }}</div>
+                </div>
+
+              </div>
+
+              <!-- Spacer -->
+              <div class="club-info-spacer"></div>
+
+              <!-- Content -->
+              <div class="club-info-content">
+                <div class="user-profile-container"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Profile Info -->
+        <div class="user-profile-info user-profile-container">
+
+          <!-- Header -->
+          <div class="user-profile-info-header">
+            <!-- Heading -->
+            <div class="app-widget-heading-default user-profile-heading">
+              <h1 class="app-heading-title">Profile</h1>
+            </div>
+          </div>
+
+          <!--  Container -->
+          <div class="user-profile-container user-profile-info-data">
+
+            <!-- Info Data -->
+            <div class="user-profile-container user-profile-info-editor">
+
+              <!-- Name Email -->
+              <div class="user-info-data-display">
+                <div class="user-profile-details user-profile-container">
+
+                  <!-- Name -->
+                  <div class="user-name-editor">
+
+                    <div class="user-editable-name">
+                      <span class="info-data-title">{{ userName() }}</span>
+                    </div>
+
+                    <button (click)="openPopup('edit profile')"
+                            class="button"
+                            type="button"
+                            aria-haspopup="dialog">
+                      <span>
+                        <span>
+                          <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                            <path stroke-linejoin="round" d="M9.19 2.31a1.5 1.5 0 0 1 2.12 0l.354.354a1.5 1.5 0 0 1 0 2.121l-6.477 6.477a1.5 1.5 0 0 1-.846.424l-1.737.252a.5.5 0 0 1-.567-.567l.252-1.737a1.5 1.5 0 0 1 .424-.846z" vector-effect="non-scaling-stroke"></path>
+                            <path d="m8 3.5 1.237 1.237 1.238 1.238" vector-effect="non-scaling-stroke"></path>
+                          </svg>
+                        </span>
+                      </span>
+                    </button>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="user-info-data-items">
+                    <div class="user-info-data">
+                      <div class="info-data">
+                        <span class="info-data-title">Email:</span>
+                        <span class="info-data-description">{{ userEmail() }}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="user-info-data-display">
+                <div class="user-profile-details details-large user-profile-container">
+
+                  <!-- Address Header -->
+                  <div class="user-info-data-editor">
+
+                    <div class="user-editable-name">
+                      <span class="info-data-title">ADDRESSES</span>
+                    </div>
+
+                    <!-- Add Button -->
+                    <div class="user-command-button-wrapper">
+                      <button (click)="openPopup('edit addresses')"
+                              class="button underline-none"
+                              type="button"
+                              aria-haspopup="dialog">
+                      <span>
+                        <span class="icon-small">
+                          <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                            <path stroke-linecap="round" d="M2 7h10M7 2v10" vector-effect="non-scaling-stroke"></path>
+                          </svg>
+                        </span>
+                        <strong>Add</strong>
+                      </span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!--  Info Data -->
+                  <div class="user-profile-details user-profile-container">
+                    <div class="user-details-block">
+
+                      @if (!hasUserAddress()) {
+
+                        <div class="user-data-display">
+
+                          <div class="user-display-icon">
+                            <span>
+                              <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                                <circle cx="7" cy="7" r="5.5" vector-effect="non-scaling-stroke"></circle>
+                                <path stroke-linejoin="round" d="M6.99 4.49h.02v.02h-.02z" vector-effect="non-scaling-stroke"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 9.75v-3" vector-effect="non-scaling-stroke"></path>
+                              </svg>
+                            </span>
+                          </div>
+
+                          <div class="user-display-content">No addresses added</div>
+
+                        </div>
+                      }
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <!--  Footer -->
+            <section class="user-profile-footer auth-kit">
+              <div class="user-profile-container">
+                <button
+                  (click)="onSignOut()"
+                  class="auth-button auth-primary-button auth-outline-button user-logout">
+                  <span>Sign Out</span>
+                </button>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <app-pop-up-editor class="app-widget popup-modal-default" [popupType]="popUpType()"></app-pop-up-editor>
+</main>

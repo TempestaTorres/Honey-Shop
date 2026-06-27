@@ -463,7 +463,7 @@
       <ul>
         <!-- Account item -->
         <li>
-          <a class="menu-link" [routerLink]="['/login']">
+          <a class="menu-link" tabindex="-1" role="button" (click)="onAccountClick()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" class="icon">
               <g id="icon-person">
                 <path d="M4.37524 4.4704C4.37524 2.96797 5.56688 1.75 7.03684 1.75C8.5068 1.75 9.69844 2.96797 9.69844 4.4704C9.69844 5.97284 8.5068 7.19081 7.03684 7.19081C6.33094 7.19081 5.65395 6.90419 5.15481 6.39402C4.65566 5.88384 4.37524 5.1919 4.37524 4.4704Z" stroke="currentColor"></path>
@@ -474,7 +474,7 @@
         </li>
         <!-- Contact item -->
         <li>
-          <a class="menu-link" [routerLink]="['/contacts']">
+          <a class="menu-link" (click)="navigateTo('contact-us')" tabindex="-1" role="button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" class="icon">
               <path id="icon-user" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M2.483 9.68a5.245 5.245 0 1 1 1.837 1.837v0l-1.815.514a.433.433 0 0 1-.536-.536l.514-1.815Z"></path>
             </svg>

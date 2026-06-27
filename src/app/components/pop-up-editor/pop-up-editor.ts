@@ -1,14 +1,14 @@
 import { afterNextRender, Component, DestroyRef, input, signal, WritableSignal } from '@angular/core';
-import { PopUpService } from './pop-up-service';
 import { Subscription } from 'rxjs';
-import { RouterLink } from '@angular/router';
+import { PopUpService } from '../pop-up/pop-up-service';
+import { ProfileEditor } from '../profile-editor/profile-editor';
 
 @Component({
-  selector: 'app-pop-up',
-  imports: [RouterLink],
-  templateUrl: './pop-up.html',
+  selector: 'app-pop-up-editor',
+  imports: [ProfileEditor],
+  templateUrl: './pop-up-editor.html',
 })
-export class PopUp {
+export class PopUpEditor {
   popupType = input.required<string>();
 
   public open: WritableSignal<boolean> = signal<boolean>(false);

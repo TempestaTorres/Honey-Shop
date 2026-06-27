@@ -137,7 +137,7 @@
 
           <!-- User -->
           <div class="icon-wrapper desktop-hidden js-header-icon">
-            <a [routerLink]="['account']" title="account">
+            <a (click)="onAccountClick()" title="account" tabindex="-1" role="button">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon header-item" viewBox="0 0 14 14" fill="none" role="img" aria-labelledby="title-icon-person">
                 <title id="title-icon-person">Icon of person</title>
                 <g id="icon-person">

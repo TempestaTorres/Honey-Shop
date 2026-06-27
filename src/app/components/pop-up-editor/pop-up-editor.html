@@ -1,0 +1,46 @@
+@if (open()) {
+
+  <div class="popup-main" (mousedown)="mouseDown($event)" [class.active]="active()">
+
+    <div class="popup-modal" [class.active]="active()">
+
+      <div class="popup-modal-container">
+
+        <div class="popup-modal-header">
+
+          <!-- Heading -->
+          <div class="popup-modal-heading">
+            <h2 class="heading-title">{{ popupType() }}</h2>
+          </div>
+
+          <!-- Close Button -->
+          <button (click)="popupClose()" class="popup-modal-close-button" type="button" aria-label="Close">
+            <span>
+              <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                <path stroke-linecap="round" d="M2.5 2.5 7 7m4.5 4.5L7 7m0 0 4.5-4.5M7 7l-4.5 4.5" vector-effect="non-scaling-stroke"></path>
+              </svg>
+            </span>
+          </button>
+
+        </div>
+
+        <div class="popup-modal-body">
+
+          <div class="popup-modal-body-container modal-typeset">
+
+            @if (popupType() === 'edit profile') {
+
+              <app-profile-editor (editorClose)="popupClose()" class="app-wrapper"></app-profile-editor>
+
+            }
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}

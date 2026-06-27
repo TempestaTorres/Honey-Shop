@@ -1,0 +1,136 @@
+<div class="auth-kit" style="--x-default-color-background: #ffffffff;">
+  <form
+    (ngSubmit)="onSubmit()"
+    [formGroup]="profileForm"
+    novalidate
+    class="standard-form auth-form__form">
+
+    <div class="form-container">
+      <div class="body">
+
+        <!-- Names -->
+        <div class="auth-form-input-group">
+
+          <!-- First Name -->
+          <div class="auth-input-container">
+            <div class="auth-input-wrapper">
+
+              <label class="auth-input-label" for="profile-edt-first-name">
+                <span>First name</span>
+              </label>
+
+              <input
+                (input)="onInputChange()"
+                formControlName="firstName"
+                class="auth-input"
+                id="profile-edt-first-name"
+                placeholder="First name"
+                type="text">
+
+            </div>
+          </div>
+
+          <!-- Last Name -->
+          <div class="auth-input-container">
+            <div class="auth-input-wrapper">
+
+              <label class="auth-input-label" for="profile-edt-last-name">
+                <span>Last name</span>
+              </label>
+
+              <input
+                (input)="onInputChange()"
+                formControlName="lastName"
+                class="auth-input"
+                id="profile-edt-last-name"
+                placeholder="Last name"
+                type="text">
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Email -->
+        <div class="auth-form__inputs-wrapper">
+
+          <!-- Email -->
+          <div class="auth-input-container">
+
+            <div class="auth-input-wrapper">
+
+              <label class="auth-input-label" for="customer-authentication-web-email">
+                <span>Email</span>
+              </label>
+
+              <input
+                formControlName="email"
+                (input)="onInputChange()"
+                class="auth-input"
+                id="customer-authentication-web-email"
+                placeholder="Email"
+                type="email">
+
+            </div>
+
+            @if (email?.errors?.['email'] && (email?.dirty || email?.touched)) {
+              <span class="auth-error">Enter a valid email address</span>
+            }
+          </div>
+
+          <!-- Check box -->
+          <div class="auth-input-box-container">
+
+            <!-- Check box -->
+            <div class="auth-checkbox-wrapper">
+              <input
+                class="auth-check-box"
+                (change)="isChecked()"
+                formControlName="consent"
+                type="checkbox"
+                id="marketing-consent">
+
+              <div class="auth-check-box-icon">
+                <span>
+                  <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m1.5 7.097 3.596 3.602c.104.105.156.157.216.175a.25.25 0 0 0 .16-.004c.059-.022.108-.077.206-.188L12.5 3" vector-effect="non-scaling-stroke"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Label -->
+            <label for="marketing-consent">Email me with news and offers</label>
+          </div>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="auth-form-footer">
+          <button (click)="onClose()" class="auth-button auth-button-underline" type="button" aria-haspopup="dialog">
+            <span>Cancel</span>
+          </button>
+
+          <button
+            class="auth-button auth-primary-button"
+            [class.loading]="processing()"
+            [class.disabled]="submitDisabled()">
+
+            <span class="auth-icon-wrapper">Save</span>
+
+            <!-- Loader -->
+            <span class="auth-spinner-wrapper">
+            <div class="auth-spinner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" focusable="false" aria-label="Processing…">
+                <path d="M20 10c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0v2a8 8 0 1 0 8 8z"></path>
+              </svg>
+            </div>
+          </span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </form>
+</div>
