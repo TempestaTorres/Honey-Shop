@@ -3,6 +3,10 @@
   --x-max-width-base: 640px;
   --x-default-color-background-subdued:rgb(248,246,244);
 }
+.popup-confirm-modal {
+  --x-default-color-background: rgb(255, 255, 255);
+  --x-default-color-background-subdued:rgb(248,246,244);
+}
 .popup-main {
   position: fixed;
   top: 0;
@@ -145,6 +149,53 @@
 .modal-typeset a {
   text-decoration: underline;
   color: var(--x-default-color-text);
+}
+.popup-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--x-spacing-large-200);
+}
+.popup-action-buttons-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: var(--x-spacing-base);
+  flex-wrap: wrap;
+}
+.popup-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: 0 solid var(--x-default-color-text, var(--x-default-color-accent));
+  outline-offset: var(--auth-outline-offset);
+  width: fit-content;
+  height: auto;
+  transition-duration: 0.2s;
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+  color: var(--x-default-color-text);
+  border-radius: var(--x-border-radius-base);
+}
+.popup-underline-button {
+  --x-link-text-decoration: underline;
+  text-decoration: var(--x-link-text-decoration, none);
+}
+.popup-underline-button:hover {
+  color: var(--x-default-color-accent-hovered);
+}
+.popup-action-button {
+  --x-default-color-background: rgb(0,0,0);
+  --x-default-color-accent: rgb(0,0,0);
+  --x-default-color-text: rgb(255,255,255);
+  --x-primary-button-inline-padding: var(--x-spacing-base);
+
+  background-color: var(--x-default-color-background);
+  align-content: center;
+  padding: var(--x-primary-button-inline-padding);
 }
 
 /* Media */

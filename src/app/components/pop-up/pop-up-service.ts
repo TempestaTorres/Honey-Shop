@@ -14,11 +14,14 @@ export class PopUpService {
   public popUpOpen(query: string): void {
     this.popUpOpen$.next(query);
 
+    /*
     if (query === 'close') {
       document.body.style = '';
     } else {
-      let y = window.scrollY;
+      let y = window.scrollY * -1;
       document.body.style = `position: fixed; top: ${y}px; overflow: hidden; width: 100%; height: 100%;`;
     }
+
+     */
   }
 }

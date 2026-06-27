@@ -260,5 +260,9 @@
   </section>
 
   <app-pop-up-editor class="app-widget popup-modal-default" [popupType]="popUpType()"></app-pop-up-editor>
+  <app-pop-up-confirm class="app-widget popup-confirm-modal"
+                      (onClose)="onConfirm($event)"
+                      [popupMessage]="popUpConfirmMessage()"
+                      [popupType]="popUpConfirmType()"></app-pop-up-confirm>
 </main>
 <app-toaster [message]="'Marketing preferences updated'" [active]="prefUpdated()"></app-toaster>
