@@ -4,7 +4,7 @@ export const CollectionsNewsData: CollectionsNewsType[] = [
   {
     title: "NEW",
     url: "new-lingerie",
-    image: "/assets/images/categories/new/NEW_44.jpg",
+    image: "/assets/images/categories/new/NEW_3.jpg",
   },
   {
     title: "BRAS",

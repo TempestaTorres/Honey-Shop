@@ -19,7 +19,6 @@ import { Products } from './pages/products/products';
 import { BridalEdit } from './pages/bridal-edit/bridal-edit';
 import { BookReturn } from './pages/book-return/book-return';
 import { Cart } from './pages/cart/cart';
-import { SignUp } from './pages/sign-up/sign-up';
 import { SignIn } from './pages/sign-in/sign-in';
 import { Wishlist } from './pages/wishlist/wishlist';
 import { Search } from './pages/search/search';
@@ -63,7 +62,6 @@ export const routes: Routes = [
       {path: 'profile', component: Profile, canActivate: [authGuard]},
     ]
   },
-  {path: 'sign-up', component: SignUp, canActivate: [loginGuard]},
   {path: 'sign-in', component: SignIn, canActivate: [loginGuard]},
   {path: 'join-honey', component: JoinHoney},
 ];

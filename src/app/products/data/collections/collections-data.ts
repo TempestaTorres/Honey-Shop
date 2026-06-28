@@ -4241,6 +4241,216 @@ export const AllCollectionsData: ShopCollectionType[] = [
     ]
   },
   {
+    name: "KATRINA",
+    url: "katrina-lingerie-collection",
+    description: "Classic black lingerie, now a whole lot sexier. From the moment you wear Katrina, you’ll never be the same. Covering the body with fine-line embroidery, Katrina gives the illusion of roses on skin. Dripping with custom crystal pendants and gold rosettes, black picot binds frame every curve. Choose the underwire plunge bra for stunning natural cleavage or the ultra-low-cut bodysuit to accentuate your shape.",
+    products: [
+      [
+        {
+          name: "KATRINA",
+          description: "Bra & Bottom Lingerie Set",
+          url: "katrina-bra-bottom-lingerie-set",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 215,
+          priceFrom: 215,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/KATRINA6.jpg",
+          ],
+          models: ["sianie", "olivia"],
+          setItems: [
+            "katrina-underwire-plunge-black",
+            "katrina-thong-black",
+            "katrina-high-waist-brazilian-black",
+            "katrina-stay-ups-black",
+          ]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Black 3 Piece Lingerie Set",
+          url: "katrina-3-piece-lingerie-set",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 325,
+          priceFrom: 325,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/KATRINA6.jpg",
+          ],
+          models: ["sianie", "olivia"],
+          setItems: [
+            "katrina-underwire-plunge-black",
+            "katrina-suspender-midi-black",
+            "katrina-thong-black",
+            "katrina-high-waist-brazilian-black",
+            "katrina-stay-ups-black",
+          ]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Bra",
+          url: "katrina-underwire-plunge-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA9.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Suspender",
+          url: "katrina-suspender-midi-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "suspender",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA6.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Thong",
+          url: "katrina-thong-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA1.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Brief",
+          url: "katrina-high-waist-brazilian-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 105,
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/KATRINA12.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Bodysuit",
+          url: "katrina-bodysuit-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 190,
+          type: "bodysuit",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA8.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "ROSE PRINT SHEERS STAY UP",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "katrina-stay-ups-black",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 30,
+          type: "stockings",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Stockings_Web.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA3.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+      ],
+    ]
+  },
+  {
     name: "JASMIN",
     url: "jasmin-lingerie-collection",
     description: "Buckle up, lovers! Jasmin is the lingerie collection that demands to be seen. Made with bold elastics, diamond mesh, and luxury vegan leather, each piece is detailed with studs, clips, hooks, and chains. Featuring statement gold hardware and a detachable collar, Jasmin is ready to play.",
@@ -8659,6 +8869,27 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     products: [
       [
         {
+          name: "ROSE PRINT SHEERS STAY UP",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "katrina-stay-ups-black",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 30,
+          type: "stockings",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Stockings_Web.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA3.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+      ],
+      [
+        {
           name: "BURGUNDY SHEERS STAY UP",
           description: "Stockings",
           url: "cherry-stay-ups-dark-cherry",
@@ -8739,6 +8970,21 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
           name: "Emerald Suspender",
           description: "Stockings",
           url: "charlotta-susp-stocking-deep-emerald",
@@ -8754,21 +9000,6 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
             "/assets/images/products/collections/charlotta/emerald/CharlottaEmerald_Thong_Suspender_Front.jpg",
           ],
           sizes: stockingsSizes,
-        },
-      ],
-      [
-        {
-          name: "BANNER",
-          description: "UP TO 70% OFF*",
-          imageTitle: "UP TO 70% OFF*",
-          url: "/assets/images/products/collections/clara/banner1.mp4",
-          collection: "all-lingerie",
-          addFavoriteButton: false,
-          addToCartButton: false,
-          type: "video",
-          colorName: "pink",
-          colorClass: "swatch-pink",
-          images: [],
         },
       ],
       [
@@ -10217,6 +10448,28 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     products: [
       [
         {
+          name: "KATRINA",
+          description: "Bodysuit",
+          url: "katrina-bodysuit-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 190,
+          type: "bodysuit",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA8.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
           name: "WHITNEY",
           description: "CHARTREUSE BODYSUIT",
           url: "whitney-bodysuit-chartreuse",
@@ -10356,6 +10609,21 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
           name: "MAISIE",
           description: "Bodysuit",
           url: "maisie-long-sleeved-bodysuit-ivory",
@@ -10382,21 +10650,6 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["esha"]
-        },
-      ],
-      [
-        {
-          name: "BANNER",
-          description: "UP TO 70% OFF*",
-          imageTitle: "UP TO 70% OFF*",
-          url: "/assets/images/products/collections/clara/banner1.mp4",
-          collection: "all-lingerie",
-          addFavoriteButton: false,
-          addToCartButton: false,
-          type: "video",
-          colorName: "pink",
-          colorClass: "swatch-pink",
-          images: [],
         },
       ],
       [
@@ -11044,6 +11297,29 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     products: [
       [
         {
+          name: "KATRINA",
+          description: "Bra",
+          url: "katrina-underwire-plunge-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA9.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
           name: "WHITNEY",
           description: "Chartreuse Bra",
           url: "whitney-underwire-balconette-chartreuse",
@@ -11270,6 +11546,21 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
           name: "PHILIPPA",
           description: "Bra",
           url: "philippa-underwire-balconette-black",
@@ -11293,21 +11584,6 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: braSizes,
           models: ["ella"]
-        },
-      ],
-      [
-        {
-          name: "BANNER",
-          description: "UP TO 70% OFF*",
-          imageTitle: "UP TO 70% OFF*",
-          url: "/assets/images/products/collections/clara/banner1.mp4",
-          collection: "all-lingerie",
-          addFavoriteButton: false,
-          addToCartButton: false,
-          type: "video",
-          colorName: "pink",
-          colorClass: "swatch-pink",
-          images: [],
         },
       ],
       [
@@ -13767,6 +14043,155 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     products: [
       [
         {
+          name: "KATRINA",
+          description: "Bra",
+          url: "katrina-underwire-plunge-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 130,
+          type: "bra",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA9.jpg",
+          ],
+          sizes: braSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Suspender",
+          url: "katrina-suspender-midi-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "suspender",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA6.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Thong",
+          url: "katrina-thong-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA1.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Brief",
+          url: "katrina-high-waist-brazilian-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 105,
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/KATRINA12.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Bodysuit",
+          url: "katrina-bodysuit-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 190,
+          type: "bodysuit",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bodysuit_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA8.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "ROSE PRINT SHEERS STAY UP",
+          description: "Stockings",
+          imageTitle: "BUY 2 GET 1 FREE",
+          url: "katrina-stay-ups-black",
+          collection: "stockings",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 30,
+          type: "stockings",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Stockings_Web.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA3.jpg",
+          ],
+          sizes: stockingsSizes,
+        },
+      ],
+      [
+        {
           name: "WHITNEY",
           description: "Black Bra",
           url: "whitney-black-bra",
@@ -14211,21 +14636,6 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
             score: "11"
           },
           models: ["renee"]
-        },
-      ],
-      [
-        {
-          name: "BANNER",
-          description: "UP TO 70% OFF*",
-          imageTitle: "UP TO 70% OFF*",
-          url: "/assets/images/products/collections/clara/banner1.mp4",
-          collection: "all-lingerie",
-          addFavoriteButton: false,
-          addToCartButton: false,
-          type: "video",
-          colorName: "pink",
-          colorClass: "swatch-pink",
-          images: [],
         },
       ],
       [
@@ -16693,6 +17103,29 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     products: [
       [
         {
+          name: "KATRINA",
+          description: "Suspender",
+          url: "katrina-suspender-midi-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 110,
+          type: "suspender",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA6.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
           name: "CHERRY",
           description: "Suspender",
           url: "cherry-suspender-garter-dark-cherry",
@@ -16751,6 +17184,21 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
           name:  "ADDISON",
           description: "Suspender",
           url: "addison-suspender-midi-leopard",
@@ -16773,21 +17221,6 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["sianie"]
-        },
-      ],
-      [
-        {
-          name: "BANNER",
-          description: "UP TO 70% OFF*",
-          imageTitle: "UP TO 70% OFF*",
-          url: "/assets/images/products/collections/clara/banner1.mp4",
-          collection: "all-lingerie",
-          addFavoriteButton: false,
-          addToCartButton: false,
-          type: "video",
-          colorName: "pink",
-          colorClass: "swatch-pink",
-          images: [],
         },
       ],
       [
@@ -17644,6 +18077,51 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     products: [
       [
         {
+          name: "KATRINA",
+          description: "Thong",
+          url: "katrina-thong-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA1.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Brief",
+          url: "katrina-high-waist-brazilian-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 105,
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/KATRINA12.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
           name: "CHERRY",
           description: "Brief",
           url: "cherry-brief-ouvert-dark-cherry",
@@ -17664,6 +18142,21 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["sianie"]
+        },
+      ],
+      [
+        {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
         },
       ],
       [
@@ -17743,21 +18236,6 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["melita"]
-        },
-      ],
-      [
-        {
-          name: "BANNER",
-          description: "UP TO 70% OFF*",
-          imageTitle: "UP TO 70% OFF*",
-          url: "/assets/images/products/collections/clara/banner1.mp4",
-          collection: "all-lingerie",
-          addFavoriteButton: false,
-          addToCartButton: false,
-          type: "video",
-          colorName: "pink",
-          colorClass: "swatch-pink",
-          images: [],
         },
       ],
       [
@@ -19412,6 +19890,28 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     products: [
       [
         {
+          name: "KATRINA",
+          description: "Brief",
+          url: "katrina-high-waist-brazilian-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 105,
+          type: "brief",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/KATRINA12.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["sianie"]
+        },
+      ],
+      [
+        {
           name: "CHERRY",
           description: "Brief",
           url: "cherry-brief-ouvert-dark-cherry",
@@ -20296,6 +20796,29 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     products: [
       [
         {
+          name: "KATRINA",
+          description: "Thong",
+          url: "katrina-thong-black",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: true,
+          addToCartButton: true,
+          price: 85,
+          type: "thong",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Side1.jpg",
+            "/assets/images/products/collections/katrina/KATRINA1.jpg",
+          ],
+          sizes: dressSizes,
+          models: ["olivia"]
+        },
+      ],
+      [
+        {
           name: "CHERRY",
           description: "Thong",
           url: "cherry-thong-dark-cherry",
@@ -20400,6 +20923,21 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
       ],
       [
         {
+          name: "BANNER",
+          description: "UP TO 70% OFF*",
+          imageTitle: "UP TO 70% OFF*",
+          url: "/assets/images/products/collections/clara/banner1.mp4",
+          collection: "all-lingerie",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          type: "video",
+          colorName: "pink",
+          colorClass: "swatch-pink",
+          images: [],
+        },
+      ],
+      [
+        {
           name: "EVERLY EMERALD",
           description: "Thong",
           url: "everly-thong-emerald-black",
@@ -20424,21 +20962,6 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
           ],
           sizes: dressSizes,
           models: ["sianie"]
-        },
-      ],
-      [
-        {
-          name: "BANNER",
-          description: "UP TO 70% OFF*",
-          imageTitle: "UP TO 70% OFF*",
-          url: "/assets/images/products/collections/clara/banner1.mp4",
-          collection: "all-lingerie",
-          addFavoriteButton: false,
-          addToCartButton: false,
-          type: "video",
-          colorName: "pink",
-          colorClass: "swatch-pink",
-          images: [],
         },
       ],
       [
@@ -21865,6 +22388,75 @@ export const AllSubCollectionsData: ShopCollectionType[] = [
     url: "lingerie-sets",
     description: "",
     products: [
+      [
+        {
+          name: "KATRINA",
+          description: "Bra & Bottom Lingerie Set",
+          url: "katrina-bra-bottom-lingerie-set",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 215,
+          priceFrom: 215,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/KATRINA6.jpg",
+          ],
+          models: ["sianie", "olivia"],
+          setItems: [
+            "katrina-underwire-plunge-black",
+            "katrina-thong-black",
+            "katrina-high-waist-brazilian-black",
+            "katrina-stay-ups-black",
+          ]
+        },
+      ],
+      [
+        {
+          name: "KATRINA",
+          description: "Black 3 Piece Lingerie Set",
+          url: "katrina-3-piece-lingerie-set",
+          collection: "katrina-lingerie-collection",
+          addFavoriteButton: false,
+          addToCartButton: false,
+          price: 325,
+          priceFrom: 325,
+          type: "lingerie-set",
+          colorName: "black",
+          colorClass: "swatch-black",
+          images: [
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+            "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+            "/assets/images/products/collections/katrina/KATRINA6.jpg",
+          ],
+          models: ["sianie", "olivia"],
+          setItems: [
+            "katrina-underwire-plunge-black",
+            "katrina-suspender-midi-black",
+            "katrina-thong-black",
+            "katrina-high-waist-brazilian-black",
+            "katrina-stay-ups-black",
+          ]
+        },
+      ],
       [
         {
           name: "CHERRY",

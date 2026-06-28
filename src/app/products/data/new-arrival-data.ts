@@ -5,6 +5,127 @@ export const NewArrivalData: ProductItem[] = [
   {
     product: [
       {
+        name: "KATRINA",
+        description: "Bra & Bottom Lingerie Set",
+        url: "katrina-bra-bottom-lingerie-set",
+        collection: "katrina-lingerie-collection",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        price: 215,
+        priceFrom: 215,
+        type: "lingerie-set",
+        colorName: "black",
+        colorClass: "swatch-black",
+        images: [
+          "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Front.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bra_Brief_Back.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Back1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+          "/assets/images/products/collections/katrina/KATRINA6.jpg",
+        ],
+        models: ["sianie", "olivia"],
+        setItems: [
+          "katrina-underwire-plunge-black",
+          "katrina-thong-black",
+          "katrina-high-waist-brazilian-black",
+          "katrina-stay-ups-black",
+        ]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "KATRINA",
+        description: "Black 3 Piece Lingerie Set",
+        url: "katrina-3-piece-lingerie-set",
+        collection: "katrina-lingerie-collection",
+        addFavoriteButton: false,
+        addToCartButton: false,
+        price: 325,
+        priceFrom: 325,
+        type: "lingerie-set",
+        colorName: "black",
+        colorClass: "swatch-black",
+        images: [
+          "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Front1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bra_Suspender_Thong_Back1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bra_Front2.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bra_Back1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Thong_Front1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Thong_Back1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Brief_Front.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Brief_Back.jpg",
+          "/assets/images/products/collections/katrina/KATRINA6.jpg",
+        ],
+        models: ["sianie", "olivia"],
+        setItems: [
+          "katrina-underwire-plunge-black",
+          "katrina-suspender-midi-black",
+          "katrina-thong-black",
+          "katrina-high-waist-brazilian-black",
+          "katrina-stay-ups-black",
+        ]
+      },
+    ]
+  },
+  {
+    product: [
+      {
+        name: "KATRINA",
+        description: "Bodysuit",
+        url: "katrina-bodysuit-black",
+        collection: "katrina-lingerie-collection",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 190,
+        type: "bodysuit",
+        colorName: "black",
+        colorClass: "swatch-black",
+        images: [
+          "/assets/images/products/collections/katrina/Katrina_Bodysuit_Front.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bodysuit_Back1.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Bodysuit_Side1.jpg",
+          "/assets/images/products/collections/katrina/KATRINA8.jpg",
+        ],
+        sizes: dressSizes,
+        models: ["sianie"]
+      },
+    ]
+  },
+
+  {
+    product: [
+      {
+        name: "ROSE PRINT SHEERS STAY UP",
+        description: "Stockings",
+        imageTitle: "BUY 2 GET 1 FREE",
+        url: "katrina-stay-ups-black",
+        collection: "stockings",
+        addFavoriteButton: true,
+        addToCartButton: true,
+        price: 30,
+        type: "stockings",
+        colorName: "black",
+        colorClass: "swatch-black",
+        images: [
+          "/assets/images/products/collections/katrina/Katrina_Stockings_Web.jpg",
+          "/assets/images/products/collections/katrina/Katrina_Thong_Suspender_Front1.jpg",
+          "/assets/images/products/collections/katrina/KATRINA3.jpg",
+        ],
+        sizes: stockingsSizes,
+      },
+    ]
+  },
+  {
+    product: [
+      {
         name: "CHERRY",
         description: "Bra & Bottom Lingerie Set",
         url: "cherry-bra-bottom-lingerie-set",
