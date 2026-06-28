@@ -48,11 +48,15 @@
             <div class="user-account__profile">
               <div>
                 <span>
-                  <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                  @if (userLetter() === null) {
+                    <svg viewBox="0 0 14 14" focusable="false" aria-hidden="true">
                       <circle cx="7" cy="7" r="5.5" vector-effect="non-scaling-stroke"></circle>
                       <circle cx="7" cy="5.5" r="1.75" vector-effect="non-scaling-stroke"></circle>
                       <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 11-.088-.11A4.37 4.37 0 0 0 7 9.25a4.37 4.37 0 0 0-3.412 1.64L3.5 11" vector-effect="non-scaling-stroke"></path>
                   </svg>
+                  } @else {
+                    {{ userLetter() }}
+                  }
                 </span>
               </div>
             </div>
