@@ -49,6 +49,24 @@ export class Home implements OnInit, OnDestroy {
         },
         content: {
           hasContent: true,
+          title: 'KATRINA',
+          text: 'Introducing',
+          button: {
+            hasButton: true,
+            buttonType: 'link-underline',
+            buttonText: 'Shop New',
+          },
+        },
+      },
+      {
+        desktopImage: '',
+        mobileImage: '',
+        imageUrl: {
+          url: '/collections',
+          param: 'all-lingerie',
+        },
+        content: {
+          hasContent: true,
           title: 'CHERRY',
           text: 'Introducing',
           button: {
@@ -155,6 +173,23 @@ export class Home implements OnInit, OnDestroy {
   public bestsellersCarousel: HeroType = {
     class: 'js-bestsellers-hero-carousel',
     slides: [
+      {
+        image: '/assets/images/banners/BESTSELLERS.jpg',
+        mobileImage: '/assets/images/banners/BESTSELLERS-1.jpg',
+        imageUrl: {
+          url: '/collections',
+          param: 'bestsellers',
+        },
+        content: {
+          hasContent: false,
+          title: 'BESTSELLERS',
+          button: {
+            hasButton: true,
+            buttonType: 'link-underline',
+            buttonText: 'DISCOVER',
+          },
+        },
+      },
       {
         image: '/assets/images/common/BESTSELLERS.jpg',
         imageUrl: {
@@ -382,11 +417,13 @@ export class Home implements OnInit, OnDestroy {
       this.topHeroCarousel.slides[0].mobileImage = videos[0].mobileVideo;
       this.topHeroCarousel.slides[1].desktopImage = videos[1].desktopVideo;
       this.topHeroCarousel.slides[1].mobileImage = videos[1].mobileVideo;
+      this.topHeroCarousel.slides[2].desktopImage = videos[2].desktopVideo;
+      this.topHeroCarousel.slides[2].mobileImage = videos[2].mobileVideo;
 
-      this.bottomHeroCarousel.slides[0].desktopImage = videos[2].desktopVideo;
-      this.bottomHeroCarousel.slides[0].mobileImage = videos[2].mobileVideo;
-      this.bottomHeroCarousel.slides[1].desktopImage = videos[3].desktopVideo;
-      this.bottomHeroCarousel.slides[1].mobileImage = videos[3].mobileVideo;
+      this.bottomHeroCarousel.slides[0].desktopImage = videos[3].desktopVideo;
+      this.bottomHeroCarousel.slides[0].mobileImage = videos[3].mobileVideo;
+      this.bottomHeroCarousel.slides[1].desktopImage = videos[4].desktopVideo;
+      this.bottomHeroCarousel.slides[1].mobileImage = videos[4].mobileVideo;
     });
 
     this.subscriptions.add(videoSub);

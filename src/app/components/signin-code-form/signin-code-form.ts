@@ -33,6 +33,8 @@ export class SigninCodeForm {
   public codeError: WritableSignal<boolean> = signal<boolean>(false);
   public codeShake: WritableSignal<boolean> = signal<boolean>(false);
 
+  public submitted: WritableSignal<boolean> = signal<boolean>(false);
+
   public codeForm: FormGroup = new FormGroup({
     digitInput: new FormControl('', [Validators.required, Validators.maxLength(6)]),
   });
@@ -40,6 +42,15 @@ export class SigninCodeForm {
   constructor(private authService: AuthService, private router: Router) {
 
     effect(() => {
+
+      const submitted = this.submitted();
+      if (submitted) {
+
+        setTimeout(() => {
+          this.authService.login(this.userEmail());
+          this.router.navigate(['account/orders']).then(() => {});
+        }, 1000);
+      }
       const sActive = this.spinnerActive();
 
       if (sActive) {
@@ -79,8 +90,8 @@ export class SigninCodeForm {
       }
       else {
         // Log in
-        this.authService.login(this.userEmail());
-        this.router.navigate(['account/orders']).then(() => {});
+        this.submitted.set(true);
+
       }
     }
   }

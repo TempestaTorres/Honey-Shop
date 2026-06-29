@@ -2,25 +2,28 @@ import { Injectable } from '@angular/core';
 import { ProductCartType } from '../product-cart/cart-type/product-cart-type';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AuthService } from '../auth/auth-service';
+import { WishlistType } from './wishlist-type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WishlistService {
 
-  private products: ProductCartType[] = [];
+  private wishlist: WishlistType[] = [];
 
   public wishlistCount: BehaviorSubject<number>;
+  public wishlistOpen$: BehaviorSubject<ProductCartType | null>;
 
   constructor(private authService: AuthService) {
     this.wishlistCount = new BehaviorSubject<number>(0);
+    this.wishlistOpen$ = new BehaviorSubject<ProductCartType | null>(null);
   }
 
-  public wishlistToggle(product: ProductCartType) {
+  public wishlistToggle(product: ProductCartType | null): void {
 
     if (this.authService.isLoggedIn()) {
 
-      this.proceedWishlist(product);
+      this.wishlistOpen$.next(product);
 
     } else {
       this.authService.toggleAlert(true, "wishlist");
@@ -28,45 +31,76 @@ export class WishlistService {
 
   }
 
-  private proceedWishlist(product: ProductCartType): void {
-    if (product.favorite === undefined) {
-      product.favorite = false;
-    }
-    product.favorite = !product.favorite;
+  public addToWishlist(wishlistName: string, product: ProductCartType): boolean {
 
-    this.wishlistAddRemove(product);
-  }
+    let result: boolean = false;
 
+    for (let i = 0; i < this.wishlist.length; i++) {
 
-  public wishlistAddRemove(item: ProductCartType) {
-    if (item.favorite)
-      this.addToWishlist(item);
-    else
-      this.wishlistRemove(item);
-  }
+      if (wishlistName === this.wishlist[i].name) {
 
-  public addToWishlist(productCartType: ProductCartType): void {
-    this.products.push(productCartType);
+        let find = this.wishlist[i].products
+          .find(p => p.url === product.url);
 
-    this.wishlistCount.next(this.products.length);
-  }
-
-  public wishlistRemove(productCartType: ProductCartType): void {
-
-    if (this.products.length > 1) {
-      this.products = this.products.filter(product => product.url !== productCartType.url);
-    }
-    else if (this.products[0].url === productCartType.url) {
-      this.products = [];
+        if (find === undefined) {
+          result = true;
+          product.favorite = true;
+          this.wishlist[i].products.push(product);
+          break;
+        }
+      }
     }
 
-    this.wishlistCount.next(this.products.length);
+    if (result) {
+      this.updateWishlistCount();
+    }
+
+    return result;
   }
 
-  public getWishlist(): Observable<ProductCartType[]> {
+  public removeFromWishlist(wishlistName: string,product: ProductCartType): void {
 
-    return new Observable<ProductCartType[]>(observer => {
-      observer.next(this.products);
+    for (let i = 0; i < this.wishlist.length; i++) {
+      if (wishlistName === this.wishlist[i].name) {
+        this.wishlist[i].products = this.wishlist[i].products
+          .filter(p => p.url === product.url);
+      }
+    }
+
+    this.updateWishlistCount();
+  }
+
+  public getWishlists(): Observable<{name: string, count: number}[]> {
+
+    let wishlist: {name: string, count: number}[] = [];
+
+    for (let i = 0; i < this.wishlist.length; i++) {
+      let wishlistType = this.wishlist[i];
+      let list: {name: string, count: number} = {
+        name: wishlistType.name,
+        count: wishlistType.products.length,
+      }
+
+      wishlist.push(list);
+    }
+
+    return new Observable<{name: string, count: number}[]>(observer => {
+      observer.next(wishlist);
     });
+  }
+
+  public createWishlist(name: string): void {
+    this.wishlist.push({name: name, products: []});
+  }
+
+  private updateWishlistCount(): void {
+
+    let count: number = 0;
+
+    for (let i = 0; i < this.wishlist.length; i++) {
+      count += this.wishlist[i].products.length;
+    }
+
+    this.wishlistCount.next(count);
   }
 }

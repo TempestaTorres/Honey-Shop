@@ -13,6 +13,7 @@ import { ModalGeolocation } from '../../components/modal-geolocation/modal-geolo
 import { SearchModal } from '../../modals/search-modal/search-modal';
 import { SelectSizeModal } from '../../modals/select-size-modal/select-size-modal';
 import { SizeGuideModal } from '../../modals/size-guide-modal/size-guide-modal';
+import { WishlistModal } from '../../modals/wishlist-modal/wishlist-modal';
 
 @Component({
   selector: 'app-layout',
@@ -30,6 +31,7 @@ import { SizeGuideModal } from '../../modals/size-guide-modal/size-guide-modal';
     SearchModal,
     SelectSizeModal,
     SizeGuideModal,
+    WishlistModal,
   ],
   templateUrl: './layout.html',
 })

@@ -57,6 +57,41 @@
     </div>
   </section>
 
+  <!-- Categories Corsets & Bodysuits -->
+  <section class="section-boxed page-section section">
+
+    <div #categoryTowColumnGrid
+         appObserveElement
+         [isContinuous]="false"
+         (isIntersecting)="isIntersecting($event, categoryTowColumnGrid)"
+         class="product-gallery-grid grid-column-2 scroll-trigger--offscreen scroll-trigger animate--slide-in">
+
+      <!-- Category item Bustiers -->
+      <a [routerLink]="['/collections', 'bustiers-corsets']" title="Bustiers" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/bustiers/BUSTIERS.jpg" alt="Bustiers">
+          </div>
+        </div>
+
+      </a>
+
+      <!-- Category item Bodysuits -->
+      <a [routerLink]="['/collections', 'bodysuits']" title="Bodysuits" class="picture-wrapper group">
+
+        <div class="picture-image gradient-card aspect-4-5 group-hover-scale">
+          <div class="app-widget-container">
+            <img src="/assets/images/categories/bodysuits/BODYSUITS-1.jpg" alt="Bondage">
+          </div>
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
   <!--  Shop the look slideshow -->
   <section class="section-boxed page-section section-default-padding">
     <app-shop-the-look [dataIndex]="slideShowDataIndex" class="app-widget"></app-shop-the-look>

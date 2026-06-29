@@ -301,6 +301,56 @@
     --text-opacity: 1;
     color: rgba(255, 255, 255, var(--text-opacity, 1));
   }
+  .button-primary.loading span:first-child {
+    opacity: 0;
+  }
+  .button-spinner-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(.5);
+    transform-origin: left top;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+    transition-delay: .1s;
+  }
+  .button-primary.loading .button-spinner-wrapper {
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+  }
+  .button-spinner {
+    --x-default-color-spinner: #ffffffff;
+    --x-duration-base: .2s;
+    --x-timing-base: ease-in-out;
+    --x-typography-size-default: .875rem;
+    --spinner-size: calc(var(--x-typography-size-default) * 1.2857142857142858);
+    min-width: var(--spinner-size);
+    min-height: var(--spinner-size);
+    width: var(--spinner-size);
+    height: var(--spinner-size);
+    max-width: 100%;
+    max-height: 100%;
+    color: var(--x-default-color-spinner);
+    transition-duration: var(--x-duration-base);
+    transition-timing-function: var(--x-timing-base);
+    transition-property: color,background-color,border-color,box-shadow;
+    animation: _fadein .5s ease-in-out,_rotate .5s linear infinite;
+    fill: currentColor;
+  }
+  .button-spinner svg {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
   /* Button blur */
   .button-blur {
     position: relative;

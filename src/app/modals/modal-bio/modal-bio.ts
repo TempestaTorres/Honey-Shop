@@ -30,7 +30,7 @@ export class ModalBio implements OnDestroy, OnInit {
 
         setTimeout(() => {
           this.open.set(state);
-        },300);
+        },400);
       }else {
         this.open.set(state);
       }

@@ -1,0 +1,112 @@
+<div class="modal-dialog type-slideout" [class.modal-dialog-opened]="open()">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  <!--  Modal window -->
+  <div class="modal-dialog-content default-content">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+      <h3>Save to wishlist</h3>
+
+      <!-- Close button -->
+      <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class="modal-boxed">
+
+      @let list = wishlist();
+
+      @if (list.length === 0) {
+
+        <div class="wishlist-notify-message typeset">
+          <p class="text-heading">You have no any wishlist yet</p>
+        </div>
+
+      }
+
+      <div class="wishlist-container">
+
+        @for (item of list; track $index) {
+
+          <button #wishlist
+                  type="button"
+                  (click)="wishlistToggle(item.name, $index + 1)"
+                  [attr.data-id]="$index + 1"
+                  class="wishlist-item-button">
+
+            <div class="wishlist-info">
+              <span class="wishlist-heading">{{ item.name }}</span>
+              <span class="typeset">{{ item.count }}&nbsp;Items</span>
+            </div>
+
+            <span class="wishlist-button-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                <path fill="#000" stroke="currentColor" stroke-linecap="square" d="M16.25 3.125H3.75a.625.625 0 0 0-.625.625v12.5c0 .345.28.625.625.625h12.5c.345 0 .625-.28.625-.625V3.75a.625.625 0 0 0-.625-.625Z"></path>
+                <path stroke="#F1ECE4" stroke-linecap="square" stroke-linejoin="round" d="M13.438 8.125 8.851 12.5l-2.29-2.188"></path>
+              </svg>
+            </span>
+
+          </button>
+
+        }
+
+        @if (!needNewWishlist()) {
+
+          <button (click)="addNewWishlist()" type="button" class="add-new-wishlist-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false">
+              <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+            </svg>
+            Create new wishlist
+          </button>
+
+        } @else {
+
+          <form (ngSubmit)="onCreate()" class="wishlist-form" novalidate>
+
+            <input
+              type="text"
+              (input)="onInput()"
+              placeholder="Wishlist name"
+              [(ngModel)]="listName"
+              name="new-wishlist"
+              aria-label="Wishlist name">
+
+            <div class="wishlist-action-buttons">
+              <button type="button"
+                      (click)="onCancel()"
+                      class="button-secondary full-width-button">Cancel</button>
+
+              <button type="submit"
+                      [disabled]="newWishlistName().length === 0"
+                      [class.loading]="processing()"
+                      class="button-primary full-width-button">
+                <span>Create</span>
+                <span class="button-spinner-wrapper">
+                  <div class="button-spinner">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" focusable="false" aria-label="Processing…">
+                      <path d="M20 10c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0v2a8 8 0 1 0 8 8z"></path>
+                    </svg>
+                  </div>
+                </span>
+              </button>
+            </div>
+          </form>
+        }
+
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
