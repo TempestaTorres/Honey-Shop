@@ -24,7 +24,50 @@
 
       </div>
 
+    } @else {
+
+      <div class="app-wrapper">
+
+        <!-- Heading -->
+        <div class="wishlist-heading align-center">
+          <h1>Wishlist</h1>
+        </div>
+
+        <!-- Actions -->
+        <div class="wishlists-actions">
+
+          <!-- Add new wishlist button -->
+          <button
+            (click)="addNewWishlist()"
+            class="wishlist-action-button"
+            type="button">
+            New wishlist
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+
+          <!-- Share button -->
+          <button
+            class="wishlist-action-button gap-small"
+            type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" class="icon">
+              <path d="M3 7.5C3.82843 7.5 4.5 6.82843 4.5 6C4.5 5.17157 3.82843 4.5 3 4.5C2.17157 4.5 1.5 5.17157 1.5 6C1.5 6.82843 2.17157 7.5 3 7.5Z" stroke="currentColor" stroke-linecap="square"></path>
+              <path d="M8.25 10.875C9.07843 10.875 9.75 10.2034 9.75 9.375C9.75 8.54657 9.07843 7.875 8.25 7.875C7.42157 7.875 6.75 8.54657 6.75 9.375C6.75 10.2034 7.42157 10.875 8.25 10.875Z" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+              <path d="M8.25 4.125C9.07843 4.125 9.75 3.45343 9.75 2.625C9.75 1.79657 9.07843 1.125 8.25 1.125C7.42157 1.125 6.75 1.79657 6.75 2.625C6.75 3.45343 7.42157 4.125 8.25 4.125Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M6.98911 3.43591L4.26099 5.18904" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M4.26099 6.81091L6.98911 8.56404" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Share wishlist
+          </button>
+
+        </div>
+
+      </div>
+
     }
   </section>
 
+  <app-wishlist-create-modal></app-wishlist-create-modal>
 </main>

@@ -12,11 +12,19 @@ export class WishlistService {
   private wishlist: WishlistType[] = [];
 
   public wishlistCount: BehaviorSubject<number>;
+  public customerWishlistsCount: BehaviorSubject<number>;
   public wishlistOpen$: BehaviorSubject<ProductCartType | null>;
+  public wishlistCreateOpen$: BehaviorSubject<boolean>;
 
   constructor(private authService: AuthService) {
     this.wishlistCount = new BehaviorSubject<number>(0);
+    this.customerWishlistsCount = new BehaviorSubject<number>(this.wishlist.length);
     this.wishlistOpen$ = new BehaviorSubject<ProductCartType | null>(null);
+    this.wishlistCreateOpen$ = new BehaviorSubject<boolean>(false);
+  }
+
+  public wishlistCreateToggle(status: boolean): void {
+    this.wishlistCreateOpen$.next(status);
   }
 
   public wishlistToggle(product: ProductCartType | null): void {
@@ -91,6 +99,7 @@ export class WishlistService {
 
   public createWishlist(name: string): void {
     this.wishlist.push({name: name, products: []});
+    this.updateWishlistCount();
   }
 
   private updateWishlistCount(): void {
@@ -102,5 +111,6 @@ export class WishlistService {
     }
 
     this.wishlistCount.next(count);
+    this.customerWishlistsCount.next(this.wishlist.length);
   }
 }

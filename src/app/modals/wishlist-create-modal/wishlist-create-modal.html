@@ -1,0 +1,64 @@
+<div class="modal-dialog type-slideout" [class.modal-dialog-opened]="open()">
+  <div class="modal-dialog-overlay" (mousedown)="modalClose()"></div>
+
+  <!--  Modal window -->
+  <div class="modal-dialog-content default-content">
+
+    <!-- Header -->
+    <div class="modal-dialog-content-header default-layout sticky">
+      <h3>Create a new wishlist</h3>
+
+      <!-- Close button -->
+      <button (click)="modalClose()" type="button" class="js-close-modal-dialog" aria-label="close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-close">
+          <title id="title-icon-close">Icon of close</title>
+          <g id="icon-close">
+            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class="modal-boxed">
+
+      <div class="wishlist-container">
+
+        <form [formGroup]="wishlistForm" (ngSubmit)="onCreate()" class="wishlist-form" novalidate>
+
+          <input
+            type="text"
+            (input)="onInput()"
+            placeholder="Wishlist name"
+            formControlName="wishlistName"
+            aria-label="Wishlist name">
+
+          <div class="wishlist-action-buttons">
+            <button type="button"
+                    (click)="modalClose()"
+                    class="button-secondary full-width-button">Cancel</button>
+
+            <button type="submit"
+                    [disabled]="newWishlistName().length === 0"
+                    [class.loading]="processing()"
+                    class="button-primary full-width-button">
+              <span>Create</span>
+              <span class="button-spinner-wrapper">
+                  <div class="button-spinner">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" focusable="false" aria-label="Processing…">
+                      <path d="M20 10c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0v2a8 8 0 1 0 8 8z"></path>
+                    </svg>
+                  </div>
+                </span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
