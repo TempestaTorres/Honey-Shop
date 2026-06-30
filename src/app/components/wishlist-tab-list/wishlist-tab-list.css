@@ -1,0 +1,93 @@
+.wishlist-tabs {
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.wishlist-tabs > .wishlist-tabs-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0 1rem;
+}
+.wishlist-tab-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition-duration: .15s;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  opacity: .56;
+}
+.wishlist-tab-button.active {
+  opacity: 1;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.wishlist-tab-button button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  white-space: nowrap;
+  padding: 1rem 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.56);
+}
+
+.wishlist-tab-button.active button {
+  color: rgb(0, 0, 0);
+}
+.wishlist-tab-button form {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding-bottom: .75rem;
+  padding-top: .75rem;
+}
+.wishlist-tab-button input {
+  border: 1px solid transparent;
+  background-color: rgb(255, 255, 255);
+  padding: .25rem .5rem;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  outline: transparent solid 0;
+}
+.wishlist-tab-button input:focus {
+  outline: 1px solid rgb(0, 0, 0) !important;
+}
+.wishlist-tab-button form button[type="button"] {
+  color: rgba(0,0,0,.56);
+}
+.wishlist-tab-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition-property: opacity, height;
+  transition-timing-function: linear;
+  transition-duration: .3s;
+  will-change: opacity, height;
+}
+.wishlist-tab-content.active {
+  opacity: 1;
+  height: auto;
+  overflow: visible;
+}
+/*============== Media ===========*/
+@media (min-width: 768px) {
+  .wishlist-tabs > .wishlist-tabs-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

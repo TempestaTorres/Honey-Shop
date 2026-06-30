@@ -5,10 +5,11 @@ import { RouterLink } from '@angular/router';
 import { AuthService } from '../../auth/auth-service';
 import { Subscription } from 'rxjs';
 import { WishlistCreateModal } from '../../modals/wishlist-create-modal/wishlist-create-modal';
+import { WishlistTabList } from '../../components/wishlist-tab-list/wishlist-tab-list';
 
 @Component({
   selector: 'app-wishlist',
-  imports: [RouterLink, WishlistCreateModal],
+  imports: [RouterLink, WishlistCreateModal, WishlistTabList],
   templateUrl: './wishlist.html',
   styleUrl: './wishlist.css',
 })
@@ -37,6 +38,17 @@ export class Wishlist implements OnInit {
         if (count > 0) {
           const sub2 = this.wishlistService$.getWishlists().subscribe((wishlists) => {
             this.wishlists.set(wishlists);
+
+            const sub3 = this.wishlistService$.wishlistEdited$.subscribe((status) => {
+              if (status) {
+                const sub4 = this.wishlistService$.getWishlists().subscribe((wishlists) => {
+                  this.wishlists.set(wishlists);
+                });
+
+                this.wishlistSubscription.add(sub4);
+              }
+            });
+            this.wishlistSubscription.add(sub3);
           });
 
           this.wishlistSubscription.add(sub2);
@@ -44,6 +56,7 @@ export class Wishlist implements OnInit {
       });
 
       this.wishlistSubscription.add(sub);
+
     });
 
     this.destroyRef.onDestroy(() => {

@@ -1,0 +1,78 @@
+.wishlist-content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 0;
+  padding: 1.5rem 1rem;
+}
+.wishlist-content-info-center {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.wishlist-content-info-center * {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+}
+.wishlist-edit-button {
+  position: relative;
+}
+.wishlist-no-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  min-height: 300px;
+  color: rgba(0,0,0,.56);
+  text-align: center;
+  width: 100%;
+}
+.wishlist-editor {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  margin-top: .5rem;
+  width: 12rem;
+  border: 1px solid rgba(0,0,0,.08);
+  background-color: rgb(255, 255, 255);
+  padding: .5rem 0;
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0;
+  animation: fadeIn 1s;
+}
+.wishlist-editor button {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: left;
+  width: 100%;
+  padding: .5rem .75rem;
+  display: block;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .wishlist-editor button:hover {
+    --bg-opacity: 1;
+    background-color: rgba(241,236,228,var(--bg-opacity,1));
+  }
+}
+.wishlist-editor button:disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
+/*============== Media ===========*/
+@media (min-width: 768px) {
+  .wishlist-content-header, .wishlist-no-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

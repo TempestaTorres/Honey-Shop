@@ -1,0 +1,36 @@
+@let list = wishlist();
+
+@if (list !== null) {
+
+  @let products = list.products;
+
+  <div class="wishlist-content-header">
+    <div class="wishlist-content-info-center">
+      <p>{{ products.length }}&nbsp;Items</p>
+
+      <div class="wishlist-edit-button">
+        <button (click)="toggleEditor()" type="button">Edit</button>
+
+        @if (editorOpen()) {
+
+          <div class="wishlist-editor" (mouseleave)="toggleEditor()">
+            <button (click)="rename()" type="button">Rename</button>
+            <button (click)="move(1)" type="button" [disabled]="isFirst()">Move left</button>
+            <button (click)="move(2)" type="button" [disabled]="isLast()">Move right</button>
+            <button (click)="delete()" type="button">Delete</button>
+          </div>
+
+        }
+
+      </div>
+    </div>
+  </div>
+
+  @if (products.length === 0) {
+
+    <div class="wishlist-no-content"><span>This wishlist is empty.</span></div>
+
+  }
+
+}
+

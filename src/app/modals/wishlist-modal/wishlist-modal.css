@@ -58,14 +58,14 @@
   padding: .75rem;
   background-color: rgb(255, 255, 255);
   border: 1px solid var(--md-bg-color-accent);
-  outline: none;
+  outline: transparent solid 0;
   box-shadow: none;
 }
 .wishlist-form input::placeholder {
   color: rgba(0, 0, 0, 0.56);
 }
 
-.wishlist-form input:focus-visible, .wishlist-form input:focus {
+.wishlist-form input:focus {
   outline: 1px solid rgb(0, 0, 0) !important;
 }
  .wishlist-action-buttons {

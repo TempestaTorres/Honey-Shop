@@ -1,0 +1,52 @@
+@let lists = wishlists();
+
+<!-- Tab Navigation Buttons -->
+<div class="wishlist-tabs">
+  <div class="wishlist-tabs-container">
+
+    @for (list of lists; track $index) {
+
+      <div class="wishlist-tab-button" [class.active]="activeTab() === $index">
+
+        @if (editName() && activeTab() === $index) {
+
+          <form
+            (ngSubmit)="onSubmit(list.name)"
+            [formGroup]="editForm"
+            novalidate>
+
+            <input
+              required
+              formControlName="editName"
+              type="text">
+
+            <button type="submit">Save</button>
+            <button (click)="onCancel()" type="button">Cancel</button>
+
+          </form>
+
+        } @else {
+
+          <button (click)="onTabClick($index)"
+                  type="button"
+                  [attr.data-id]="$index">
+            <span>{{ list.name }}</span>
+            <span>({{ list.count }})</span>
+          </button>
+
+        }
+
+      </div>
+
+    }
+  </div>
+</div>
+
+<!-- Tab Content -->
+@for (list of lists; track $index) {
+
+  <app-wishlist-tab-content
+    (requestRename)="onRename($event)"
+    [class.active]="activeTab() === $index"
+    class="wishlist-tab-content" [wishlistName]="list.name"></app-wishlist-tab-content>
+}
