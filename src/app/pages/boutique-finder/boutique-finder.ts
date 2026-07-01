@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { FeaturesType } from '../../types/geoloc-types';
 import * as L from 'leaflet';
 import 'leaflet-defaulticon-compatibility';
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
+//import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 import { ScrollingService } from '../../services/scrolling-service';
 
 @Component({
