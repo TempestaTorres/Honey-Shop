@@ -28,7 +28,12 @@
                 "glob": "**/*",
                 "input": "src/assets/",
                 "output": "/assets/"
-              }
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet-defaulticon-compatibility/dist/images",
+                "output": "/images/"
+              },
             ],
             "styles": [
               "node_modules/leaflet/dist/leaflet.css",
