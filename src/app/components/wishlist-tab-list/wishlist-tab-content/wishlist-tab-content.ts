@@ -11,15 +11,16 @@ import {
 import { WishlistService } from '../../../product-wishlist/wishlist-service';
 import { WishlistType } from '../../../product-wishlist/wishlist-type';
 import { Subscription } from 'rxjs';
+import { WishlistProductCard } from '../../wishlist-product-card/wishlist-product-card';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-wishlist-tab-content',
-  imports: [],
+  imports: [WishlistProductCard, RouterLink],
   templateUrl: './wishlist-tab-content.html',
   styleUrl: './wishlist-tab-content.css',
 })
 export class WishlistTabContent {
-
   wishlistName = input.required<string>();
   requestRename = output<boolean>();
 
@@ -32,12 +33,9 @@ export class WishlistTabContent {
   public isLast: WritableSignal<boolean> = signal<boolean>(false);
 
   constructor(private destroyRef: DestroyRef) {
-
     effect(() => {
-
       const name: string = this.wishlistName();
-      const sub = this.wishlistService$.getWishlist(name)
-      .subscribe(wishlist => {
+      const sub = this.wishlistService$.getWishlist(name).subscribe((wishlist) => {
         this.wishlist.set(wishlist);
         this.isFirst.set(this.wishlistService$.isFirst(name));
         this.isLast.set(this.wishlistService$.isLast(name));
@@ -51,7 +49,7 @@ export class WishlistTabContent {
   }
 
   public toggleEditor(): void {
-    this.editorOpen.update(value => !value);
+    this.editorOpen.update((value) => !value);
   }
 
   public rename(): void {

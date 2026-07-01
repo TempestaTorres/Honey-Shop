@@ -1,0 +1,30 @@
+.js-grid {
+  --row-gap: 0;
+  --column-gap: .25rem;
+  position: relative;
+  width: 100%;
+  display: grid;
+  column-gap: var(--column-gap);
+  row-gap: var(--row-gap);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Media */
+@media (min-width: 450px) {
+  .js-grid-cols-2 {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .js-grid {
+    row-gap: calc(var(--row-gap) * 2);
+  }
+  .js-grid-cols-3 {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+}
+@media (min-width: 1200px) {
+  .js-grid-cols-4 {
+    grid-template-columns: repeat(4,minmax(0,1fr));
+  }
+}

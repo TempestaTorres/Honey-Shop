@@ -917,3 +917,11 @@ a.picture-wrapper {
     display: none !important;
   }
 }
+.divider {
+  display: inline-block;
+  margin-left: .75rem;
+  margin-right: .75rem;
+  width: 1px;
+  height: .75rem;
+  background-color: rgba(0,0,0,.08);
+}

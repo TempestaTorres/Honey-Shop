@@ -16,6 +16,7 @@ import { WishlistTabList } from '../../components/wishlist-tab-list/wishlist-tab
 export class Wishlist implements OnInit {
   public empty: WritableSignal<boolean> = signal<boolean>(true);
   public isLoggedIn: WritableSignal<boolean> = signal<boolean>(false);
+  public count: WritableSignal<number> = signal<number>(0);
 
   public wishlists: WritableSignal<{ name: string; count: number }[]> = signal<
     { name: string; count: number }[]
@@ -31,6 +32,12 @@ export class Wishlist implements OnInit {
   ) {
     afterNextRender(() => {
       this.isLoggedIn.set(this.authService.isLoggedIn());
+
+      const countSub = this.wishlistService$.wishlistCount.subscribe(count => {
+        this.count.set(count);
+      });
+
+      this.wishlistSubscription.add(countSub);
 
       const sub = this.wishlistService$.customerWishlistsCount.subscribe((count) => {
         this.empty.update((value) => count === 0);

@@ -28,7 +28,29 @@
 
   @if (products.length === 0) {
 
-    <div class="wishlist-no-content"><span>This wishlist is empty.</span></div>
+    <div class="wishlist-no-content">
+      <div class="app-widget-heading">
+        <div class="app-widget-container">
+          <span>This wishlist is empty.</span>
+        </div>
+      </div>
+      <a [routerLink]="['/collections', 'all-lingerie']" class="button-primary button-large wishlist-notify__button">Continue shopping</a>
+    </div>
+
+  } @else {
+
+    <!-- Wishlist products -->
+    <div class="wishlist-grid js-grid js-grid-cols-2 js-grid-cols-3 js-grid-cols-4">
+
+    @for (item of products; track $index) {
+
+      <app-wishlist-product-card
+        class="app-wrapper"
+        [wishlistName]="list.name"
+        [productItem]="item"></app-wishlist-product-card>
+
+    }
+    </div>
 
   }
 

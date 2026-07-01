@@ -66,6 +66,7 @@ export class WishlistModal {
   }
 
   public modalClose(): void {
+    this.resetWishlists();
     this.wishlistService$.wishlistToggle(null);
   }
 
@@ -102,6 +103,18 @@ export class WishlistModal {
 
     }, 1000);
 
+  }
+
+  private resetWishlists(): void {
+    const lists = this.wishlistItems();
+
+    for (let i = 0; i < lists.length; i++) {
+      let item = lists[i];
+
+      if (item && item.nativeElement.classList.contains('checked')) {
+        item.nativeElement.classList.remove('checked');
+      }
+    }
   }
 
   public wishlistToggle(wishlistName: string, dataId: number): void {

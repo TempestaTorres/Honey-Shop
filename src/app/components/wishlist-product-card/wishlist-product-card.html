@@ -1,0 +1,159 @@
+@let product = shopProduct();
+@if (product !== null) {
+
+  <div class="wishlist-card">
+
+    <!-- Image -->
+    <a class="wishlist-card-image" [routerLink]="['/products', product.url]"
+       tabindex="-1"
+       [title]="product.name + ' ' + product.description">
+
+      <figure>
+        <img [src]="product.images[0]" alt="" loading="lazy" fetchpriority="auto">
+      </figure>
+
+    </a>
+
+    <!-- Remove Button -->
+    <button
+      (click)="remove()"
+      class="wishlist-remove-button"
+      title="Remove"
+      type="button"
+      aria-label="Remove product from wishlist">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" class="icon">
+        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-linecap="square"></path>
+        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+
+    <!--  Content -->
+    <div class="wishlist-card-content">
+
+      <!-- Header -->
+      <div class="wishlist-card-header">
+        <h3 class="wishlist-card-heading">
+          <a [routerLink]="['/products', product.url]"
+             [attr.aria-label]="'View ' + product.name + ' ' + product.description + ' product'">
+
+            <span>{{ product.name }}</span>
+            <span>{{ product.description }}</span>
+          </a>
+        </h3>
+
+        <!-- Price -->
+        <div class="wishlist-card-price-info">
+          @if (product.priceFrom) {
+            <span>From</span>
+            {{ product.priceFrom | currency }}
+          } @else {
+            {{ product.price | currency }}
+          }
+        </div>
+      </div>
+
+      @let cartItem = cartProduct();
+
+      <!-- Edit -->
+      <div class="wishlist-card-item-info typeset">
+        <div>
+          <span class="text-heading">{{ product.colorName }}</span>
+
+          @if (cartItem !== null && cartItem.size) {
+
+            <span class="divider"></span>
+            <span>
+            @if (cartItem.type === 'bra') {
+              {{ cartItem.size.value}}&nbsp;/&nbsp;{{ cartItem.size.key }}
+            } @else {
+              {{ cartItem.size.value }}
+            }
+          </span>
+
+          }
+
+        </div>
+
+        <!-- Button Edit / Update -->
+        <button (click)="toggleEdit()"
+          class="link wishlist-item-edit-button"
+          type="button">{{ editorButton() }}</button>
+      </div>
+
+      <!-- Update -->
+      @if (editorButton() === 'Update') {
+
+        <div class="wishlist-card-update-container">
+
+          <div class="wishlist-card-select-wrapper">
+            <label for="card-select-size" class="input-label sr-only">Size</label>
+
+            <select #select
+                    class="input"
+                    name="select-size"
+                    id="card-select-size">
+
+              <option disabled value="">Select Size</option>
+
+              @if (product.sizes) {
+
+                @for (value of product.sizes[0].sizes; track $index) {
+                  <option [value]="value">{{ value }}</option>
+                }
+
+              }
+
+            </select>
+          </div>
+
+          @if (product.sizes && product.sizes[0].key !== '') {
+
+            <div class="wishlist-card-select-wrapper">
+
+              <label for="card-select-cup" class="input-label sr-only">Size</label>
+
+              <select #selectCup
+                      class="input"
+                      name="select-cup"
+                      id="card-select-cup">
+
+                <option disabled value="">Select Cup</option>
+
+                @if (product.sizes) {
+
+                  @for (value of product.sizes; track $index) {
+                    <option [value]="value.key">{{ value.key }}</option>
+                  }
+
+                }
+
+              </select>
+
+            </div>
+
+          }
+
+        </div>
+
+      }
+
+      <!-- Add to cart -->
+      <div class="wishlist-card-footer">
+        <div class="app-widget">
+          <button
+            (click)="addToCart()"
+            type="button" class="button-primary full-width-button" aria-label="add to cart">
+            <span>Add to bag</span>
+
+            @if (loading()) {
+              <div class="loading-bar loading-bar-white"></div>
+            }
+
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+}

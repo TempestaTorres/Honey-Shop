@@ -148,7 +148,7 @@ export class WishlistService {
     for (let i = 0; i < this.wishlist.length; i++) {
       if (wishlistName === this.wishlist[i].name) {
         this.wishlist[i].products = this.wishlist[i].products
-          .filter(p => p.url === product.url);
+          .filter(p => p.url !== product.url);
       }
     }
 
