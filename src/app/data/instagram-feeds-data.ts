@@ -64,6 +64,45 @@ export const latexSizes = [
 
 export const InstagramFeedsData: InstagramFeedType[] = [
   {
+    image: "/assets/images/instagram-feed/insta-20.jpg",
+    title: "Opens at the front, honey. Built-in push-up, layered elastics and custom HB slides make Cherry easy to wear and impossible to ignore 🍒",
+    date: "28 JUNE 2026",
+    hasLink: true,
+    author: "Honey",
+    details: [
+      {
+        name: "Cherry Bra",
+        image: "/assets/images/products/collections/cherry/Cherry_Bra_Brief_Front1.jpg",
+        type: "bra",
+        price: "150.00",
+        url: "cherry-push-up-balconette-dark-cherry",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 54.83%; left: 50.58%;",
+        sizes: braSizes,
+        soldout: false
+      },
+      {
+        name: "Cherry Suspender",
+        image: "/assets/images/products/collections/cherry/Cherry_Thong_SuspenderStockings_Front1.jpg",
+        type: "suspender",
+        price: "150.00",
+        url: "cherry-suspender-garter-dark-cherry",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 68.09%; left: 56.45%;",
+        sizes: dressSizes,
+        soldout: false
+      },
+      {
+        name: "Cherry Thong",
+        image: "/assets/images/products/collections/cherry/Cherry_Bra_Thong_Back1.jpg",
+        type: "thong",
+        price: "95.00",
+        url: "cherry-thong-dark-cherry",
+        linkStyle: "position: absolute; color: rgb(34, 34, 34); top: 78.17%; left: 55.61%;",
+        sizes: dressSizes,
+        soldout: false
+      },
+    ]
+  },
+  {
     image: "/assets/images/instagram-feed/insta-19.jpg",
     title: "One taste won’t be enough. Complete Cherry with the daring ouvert brief, featuring easy access and O-rings ready for the matching cuffs 🍒 As worn by @oliviamir...",
     date: "18 JUNE 2026",
